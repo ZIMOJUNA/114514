@@ -5425,7 +5425,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 			if (i === -1) return;
 			let a = ts(i), o = Qo.mvuDataMap.get(i), s = Object.keys(a).length === 0, c = o ? Object.keys(o).length === 0 : !0;
 			!(s && c) && a !== o && Qo.mvuDataMap.set(i, a);
-			let l = n.textContent || "", u = n.getAttribute("is_user") === "true", d = l.includes("<initvar>") || l.includes("pm-custom-char-mount-point"), f = n.querySelector(".mes_text");
+			let l = n.textContent || "", u = n.getAttribute("is_user") === "true", d = l.includes("<initvar>") || l.includes("pm-custom-char-mount-point"), f = n.querySelector(".mes_block");
 			if (l.includes("pm-custom-char-mount-point") && !n.hasAttribute("data-setup-mounted")) {
 				n.setAttribute("data-setup-mounted", "true");
 				let a = `pm-setup-root-${i}`;
