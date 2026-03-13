@@ -3751,89 +3751,87 @@ var $ = /* @__PURE__ */ jt({
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, Lu = ["disabled"], Ru = { class: "shop-container" }, zu = { class: "shop-section" }, Bu = { class: "image-upload-row" }, Vu = ["src"], Hu = {
+} }, Lu = ["disabled"], Ru = { class: "shop-container" }, zu = { class: "shop-section" }, Bu = { class: "image-upload-row" }, Vu = { class: "player-portrait-box" }, Hu = ["src"], Uu = {
 	key: 1,
-	class: "image-preview",
-	style: {
-		display: "flex",
-		"align-items": "center",
-		"justify-content": "center",
-		color: "#888",
-		"font-size": "0.8em"
-	}
-}, Uu = { class: "persona-grid" }, Wu = { class: "shop-section" }, Gu = { class: "stat-grid" }, Ku = { class: "stat-row" }, qu = { class: "stat-controls" }, Ju = ["disabled"], Yu = { class: "stat-val" }, Xu = ["disabled"], Zu = { class: "stat-row" }, Qu = { class: "stat-controls" }, $u = ["disabled"], ed = { class: "stat-val" }, td = { class: "stat-row" }, nd = { class: "stat-controls" }, rd = ["disabled"], id = { class: "stat-val" }, ad = { class: "stat-row" }, od = { class: "stat-controls" }, sd = ["disabled"], cd = { class: "stat-val" }, ld = ["disabled"], ud = { class: "stat-row" }, dd = { class: "stat-controls" }, fd = ["disabled"], pd = { class: "stat-val" }, md = ["disabled"], hd = { class: "stat-grid" }, gd = { class: "stat-name" }, _d = { class: "stat-controls" }, vd = ["disabled", "onClick"], yd = { class: "stat-val" }, bd = ["disabled", "onClick"], xd = { class: "shop-section" }, Sd = { class: "diy-list" }, Cd = { class: "diy-header" }, wd = { class: "diy-title" }, Td = { style: {
+	class: "player-portrait-placeholder"
+}, Wu = { style: {
+	display: "flex",
+	"flex-direction": "column",
+	gap: "10px",
+	"justify-content": "center"
+} }, Gu = { class: "persona-grid" }, Ku = { class: "shop-section" }, qu = { class: "stat-grid" }, Ju = { class: "stat-row" }, Yu = { class: "stat-controls" }, Xu = ["disabled"], Zu = { class: "stat-val" }, Qu = ["disabled"], $u = { class: "stat-row" }, ed = { class: "stat-controls" }, td = ["disabled"], nd = { class: "stat-val" }, rd = { class: "stat-row" }, id = { class: "stat-controls" }, ad = ["disabled"], od = { class: "stat-val" }, sd = { class: "stat-row" }, cd = { class: "stat-controls" }, ld = ["disabled"], ud = { class: "stat-val" }, dd = ["disabled"], fd = { class: "stat-row" }, pd = { class: "stat-controls" }, md = ["disabled"], hd = { class: "stat-val" }, gd = ["disabled"], _d = { class: "stat-grid" }, vd = { class: "stat-name" }, yd = { class: "stat-controls" }, bd = ["disabled", "onClick"], xd = { class: "stat-val" }, Sd = ["disabled", "onClick"], Cd = { class: "shop-section" }, wd = { class: "diy-list" }, Td = { class: "diy-header" }, Ed = { class: "diy-title" }, Dd = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Ed = {
+} }, Od = {
 	key: 0,
 	class: "diy-cost-display"
-}, Dd = ["disabled", "onClick"], Od = ["onClick"], kd = ["onUpdate:modelValue", "onInput"], Ad = ["onUpdate:modelValue", "onInput"], jd = ["onUpdate:modelValue", "onChange"], Md = ["value"], Nd = { class: "diy-list" }, Pd = { class: "diy-header" }, Fd = { class: "diy-title" }, Id = { style: {
+}, kd = ["disabled", "onClick"], Ad = ["onClick"], jd = ["onUpdate:modelValue", "onInput"], Md = ["onUpdate:modelValue", "onInput"], Nd = ["onUpdate:modelValue", "onChange"], Pd = ["value"], Fd = { class: "diy-list" }, Id = { class: "diy-header" }, Ld = { class: "diy-title" }, Rd = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Ld = {
+} }, zd = {
 	key: 0,
 	class: "diy-cost-display"
-}, Rd = ["disabled", "onClick"], zd = ["onClick"], Bd = ["onUpdate:modelValue", "onInput"], Vd = ["onUpdate:modelValue", "onInput"], Hd = ["onUpdate:modelValue", "onChange"], Ud = ["value"], Wd = { class: "diy-list" }, Gd = { class: "diy-header" }, Kd = { class: "diy-title" }, qd = { style: {
+}, Bd = ["disabled", "onClick"], Vd = ["onClick"], Hd = ["onUpdate:modelValue", "onInput"], Ud = ["onUpdate:modelValue", "onInput"], Wd = ["onUpdate:modelValue", "onChange"], Gd = ["value"], Kd = { class: "diy-list" }, qd = { class: "diy-header" }, Jd = { class: "diy-title" }, Yd = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Jd = {
+} }, Xd = {
 	key: 0,
 	class: "diy-cost-display"
-}, Yd = ["disabled", "onClick"], Xd = ["onClick"], Zd = ["onUpdate:modelValue", "onInput"], Qd = ["onUpdate:modelValue", "onInput"], $d = ["onUpdate:modelValue", "onChange"], ef = ["value"], tf = { class: "diy-list" }, nf = { class: "diy-header" }, rf = { class: "diy-title" }, af = { style: {
+}, Zd = ["disabled", "onClick"], Qd = ["onClick"], $d = ["onUpdate:modelValue", "onInput"], ef = ["onUpdate:modelValue", "onInput"], tf = ["onUpdate:modelValue", "onChange"], nf = ["value"], rf = { class: "diy-list" }, af = { class: "diy-header" }, of = { class: "diy-title" }, sf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, of = {
+} }, cf = {
 	key: 0,
 	class: "diy-cost-display"
-}, sf = ["disabled", "onClick"], cf = ["onClick"], lf = ["onUpdate:modelValue", "onInput"], uf = ["onUpdate:modelValue", "onInput"], df = ["onUpdate:modelValue", "onChange"], ff = ["value"], pf = { class: "diy-list" }, mf = { class: "diy-header" }, hf = {
+}, lf = ["disabled", "onClick"], uf = ["onClick"], df = ["onUpdate:modelValue", "onInput"], ff = ["onUpdate:modelValue", "onInput"], pf = ["onUpdate:modelValue", "onChange"], mf = ["value"], hf = { class: "diy-list" }, gf = { class: "diy-header" }, _f = {
 	class: "diy-title",
 	style: { color: "var(--pm-dark-red)" }
-}, gf = { style: {
+}, vf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, _f = {
+} }, yf = {
 	key: 0,
 	class: "diy-cost-display refund"
-}, vf = ["disabled", "onClick"], yf = ["onClick"], bf = ["onUpdate:modelValue", "onInput"], xf = ["onUpdate:modelValue", "onInput"], Sf = ["onUpdate:modelValue", "onChange"], Cf = ["value"], wf = { class: "shop-section" }, Tf = { class: "rl-grid" }, Ef = ["onClick"], Df = { class: "rl-type" }, Of = { class: "rl-name" }, kf = { class: "rl-desc" }, Af = { class: "rl-cost" }, jf = { class: "rl-grid" }, Mf = ["onClick"], Nf = { class: "rl-type" }, Pf = { class: "rl-name" }, Ff = { class: "rl-desc" }, If = { class: "rl-cost" }, Lf = { class: "rl-grid" }, Rf = ["onClick"], zf = { class: "rl-type" }, Bf = { class: "rl-name" }, Vf = { class: "rl-desc" }, Hf = { class: "rl-cost refund" }, Uf = { class: "shop-section" }, Wf = { style: {
+}, bf = ["disabled", "onClick"], xf = ["onClick"], Sf = ["onUpdate:modelValue", "onInput"], Cf = ["onUpdate:modelValue", "onInput"], wf = ["onUpdate:modelValue", "onChange"], Tf = ["value"], Ef = { class: "shop-section" }, Df = { class: "rl-grid" }, Of = ["onClick"], kf = { class: "rl-type" }, Af = { class: "rl-name" }, jf = { class: "rl-desc" }, Mf = { class: "rl-cost" }, Nf = { class: "rl-grid" }, Pf = ["onClick"], Ff = { class: "rl-type" }, If = { class: "rl-name" }, Lf = { class: "rl-desc" }, Rf = { class: "rl-cost" }, zf = { class: "rl-grid" }, Bf = ["onClick"], Vf = { class: "rl-type" }, Hf = { class: "rl-name" }, Uf = { class: "rl-desc" }, Wf = { class: "rl-cost refund" }, Gf = { class: "shop-section" }, Kf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px",
 	cursor: "pointer",
 	"font-weight": "bold",
 	"margin-bottom": "15px"
-} }, Gf = {
+} }, qf = {
 	key: 0,
 	style: {
 		display: "grid",
 		gap: "15px"
 	}
-}, Kf = { class: "shop-section" }, qf = { class: "custom-idea-box" }, Jf = { style: {
+}, Jf = { class: "shop-section" }, Yf = { class: "custom-idea-box" }, Xf = { style: {
 	"text-align": "center",
 	"margin-top": "40px"
-} }, Yf = {
+} }, Zf = {
 	key: 0,
 	class: "negative-warning"
-}, Xf = {
+}, Qf = {
 	key: 1,
 	style: {
 		color: "red",
 		"font-weight": "bold",
 		"margin-top": "15px"
 	}
-}, Zf = ["disabled"], Qf = {
+}, $f = ["disabled"], ep = {
 	key: "settings",
 	class: "page-settings"
-}, $f = { style: {
+}, tp = { style: {
 	"font-size": "1.2em",
 	color: "var(--pm-dark-red)",
 	"font-weight": "bold",
 	"margin-bottom": "30px"
-} }, ep = { style: { "text-decoration": "underline" } }, tp = { class: "mbti-diff-grid" }, np = { class: "mbti-box" }, rp = { class: "mbti-row" }, ip = { class: "mbti-row" }, ap = { class: "mbti-row" }, op = { class: "mbti-row" }, sp = { class: "mbti-result" }, cp = { class: "diff-box" }, lp = { class: "toggles-grid" }, up = ["onClick"], dp = { class: "dm-section" }, fp = { class: "dm-presets" }, pp = ["disabled"], mp = /* @__PURE__ */ Zn({
+} }, np = { style: { "text-decoration": "underline" } }, rp = { class: "mbti-diff-grid" }, ip = { class: "mbti-box" }, ap = { class: "mbti-row" }, op = { class: "mbti-row" }, sp = { class: "mbti-row" }, cp = { class: "mbti-row" }, lp = { class: "mbti-result" }, up = { class: "diff-box" }, dp = { class: "toggles-grid" }, fp = ["onClick"], pp = { class: "dm-section" }, mp = { class: "dm-presets" }, hp = ["disabled"], gp = /* @__PURE__ */ Zn({
 	__name: "SetupModal",
 	setup(e) {
 		let t = /* @__PURE__ */ V(!0), n = /* @__PURE__ */ V("check"), r = /* @__PURE__ */ V(!1), i = /* @__PURE__ */ V(!1), a = /* @__PURE__ */ V(!1), o = /* @__PURE__ */ V(!1), s = /* @__PURE__ */ V(""), c = /* @__PURE__ */ V("https://files.catbox.moe/wfjl6u.png"), l = /* @__PURE__ */ V(""), u = /* @__PURE__ */ V(null), d = () => {
@@ -3880,7 +3878,7 @@ var $ = /* @__PURE__ */ jt({
 		}, S = () => {
 			window.__PM_GLOBAL_AUDIO || (window.__PM_GLOBAL_AUDIO = new Audio());
 			let e = window.__PM_GLOBAL_AUDIO;
-			e.src = "https://music.163.com/song/media/outer/url?id=3346496288.mp3", e.volume = .4, e.loop = !0, e.play().catch((e) => console.log("BGM Autoplay prevented:", e)), n.value = "transition", setTimeout(() => {
+			e.src = "https://music.163.com/song/media/outer/url?id=3069914354.mp3", e.volume = .4, e.loop = !0, e.play().catch((e) => console.log("BGM Autoplay prevented:", e)), n.value = "transition", setTimeout(() => {
 				n.value = "library", a.value = !0;
 			}, 5e3);
 		}, C = [
@@ -4803,13 +4801,12 @@ var $ = /* @__PURE__ */ jt({
 					q("div", Ru, [
 						q("div", zu, [
 							y[77] ||= q("div", { class: "shop-title" }, "身份档案 (Profile)", -1),
-							q("div", Bu, [
-								l.value ? (G(), K("img", {
-									key: 0,
-									src: l.value,
-									class: "image-preview",
-									onError: y[4] ||= (e) => l.value = ""
-								}, null, 40, Vu)) : (G(), K("div", Hu, "无图")),
+							q("div", Bu, [q("div", Vu, [l.value ? (G(), K("img", {
+								key: 0,
+								src: l.value,
+								class: "player-portrait-img",
+								onError: y[4] ||= (e) => l.value = ""
+							}, null, 40, Hu)) : (G(), K("div", Uu, "无图"))]), q("div", Wu, [
 								q("input", {
 									ref_key: "playerFileInput",
 									ref: u,
@@ -4823,12 +4820,12 @@ var $ = /* @__PURE__ */ jt({
 									onClick: d
 								}, "📁 上传玩家立绘"),
 								l.value ? (G(), K("button", {
-									key: 2,
+									key: 0,
 									class: "pm-btn-small",
 									onClick: y[5] ||= (e) => l.value = ""
 								}, "🗑️ 清除")) : Y("", !0)
-							]),
-							q("div", Uu, [
+							])]),
+							q("div", Gu, [
 								H(q("input", {
 									"onUpdate:modelValue": y[6] ||= (e) => O.name = e,
 									type: "text",
@@ -4859,35 +4856,35 @@ var $ = /* @__PURE__ */ jt({
 								"margin-top": "5px"
 							} }, "* 开局降临坐标将由命运（系统）在L巢废墟及周边区域中随机空投。", -1)
 						]),
-						q("div", Wu, [
+						q("div", Ku, [
 							y[89] ||= q("div", { class: "shop-title" }, "常驻市价表 (基础属性)", -1),
-							q("div", Gu, [
-								q("div", Ku, [
+							q("div", qu, [
+								q("div", Ju, [
 									y[79] ||= q("span", { class: "stat-name" }, "等级 (Max 30)", -1),
-									q("div", qu, [
+									q("div", Yu, [
 										q("button", {
 											disabled: D.level <= 1,
 											class: "stat-btn",
 											onClick: y[10] ||= (e) => D.level--
-										}, "-", 8, Ju),
-										q("span", Yu, F(D.level), 1),
+										}, "-", 8, Xu),
+										q("span", Zu, F(D.level), 1),
 										q("button", {
 											disabled: D.level >= 30,
 											class: "stat-btn",
 											onClick: y[11] ||= (e) => D.level++
-										}, "+", 8, Xu)
+										}, "+", 8, Qu)
 									]),
 									y[80] ||= q("span", { class: "stat-cost" }, "100/级", -1)
 								]),
-								q("div", Zu, [
+								q("div", $u, [
 									y[81] ||= q("span", { class: "stat-name" }, "最大 HP", -1),
-									q("div", Qu, [
+									q("div", ed, [
 										q("button", {
 											disabled: D.hp <= 10,
 											class: "stat-btn",
 											onClick: y[12] ||= (e) => D.hp -= 10
-										}, "-", 8, $u),
-										q("span", ed, F(D.hp), 1),
+										}, "-", 8, td),
+										q("span", nd, F(D.hp), 1),
 										q("button", {
 											class: "stat-btn",
 											onClick: y[13] ||= (e) => D.hp += 10
@@ -4895,15 +4892,15 @@ var $ = /* @__PURE__ */ jt({
 									]),
 									y[82] ||= q("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								q("div", td, [
+								q("div", rd, [
 									y[83] ||= q("span", { class: "stat-name" }, "最大 MP", -1),
-									q("div", nd, [
+									q("div", id, [
 										q("button", {
 											disabled: D.mp <= 10,
 											class: "stat-btn",
 											onClick: y[14] ||= (e) => D.mp -= 10
-										}, "-", 8, rd),
-										q("span", id, F(D.mp), 1),
+										}, "-", 8, ad),
+										q("span", od, F(D.mp), 1),
 										q("button", {
 											class: "stat-btn",
 											onClick: y[15] ||= (e) => D.mp += 10
@@ -4911,37 +4908,37 @@ var $ = /* @__PURE__ */ jt({
 									]),
 									y[84] ||= q("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								q("div", ad, [
+								q("div", sd, [
 									y[85] ||= q("span", { class: "stat-name" }, "理智值 (SP)", -1),
-									q("div", od, [
+									q("div", cd, [
 										q("button", {
 											disabled: D.sp <= 10,
 											class: "stat-btn",
 											onClick: y[16] ||= (e) => D.sp--
-										}, "-", 8, sd),
-										q("span", cd, F(D.sp), 1),
+										}, "-", 8, ld),
+										q("span", ud, F(D.sp), 1),
 										q("button", {
 											disabled: D.sp >= 50,
 											class: "stat-btn",
 											onClick: y[17] ||= (e) => D.sp++
-										}, "+", 8, ld)
+										}, "+", 8, dd)
 									]),
 									y[86] ||= q("span", { class: "stat-cost" }, "50/点", -1)
 								]),
-								q("div", ud, [
+								q("div", fd, [
 									y[87] ||= q("span", { class: "stat-name" }, "理智稳定性", -1),
-									q("div", dd, [
+									q("div", pd, [
 										q("button", {
 											disabled: D.stability <= 10,
 											class: "stat-btn",
 											onClick: y[18] ||= (e) => D.stability -= 5
-										}, "-", 8, fd),
-										q("span", pd, F(D.stability), 1),
+										}, "-", 8, md),
+										q("span", hd, F(D.stability), 1),
 										q("button", {
 											disabled: D.stability >= 100,
 											class: "stat-btn",
 											onClick: y[19] ||= (e) => D.stability += 5
-										}, "+", 8, md)
+										}, "+", 8, gd)
 									]),
 									y[88] ||= q("span", { class: "stat-cost" }, "30/点", -1)
 								])
@@ -4953,7 +4950,7 @@ var $ = /* @__PURE__ */ jt({
 									"font-size": "1.2em"
 								}
 							}, "六维属性 (10-15: 50点/级 | 16-20: 150点/级)", -1),
-							q("div", hd, [(G(), K(W, null, U([
+							q("div", _d, [(G(), K(W, null, U([
 								"str",
 								"dex",
 								"con",
@@ -4963,21 +4960,21 @@ var $ = /* @__PURE__ */ jt({
 							], (e) => q("div", {
 								key: e,
 								class: "stat-row"
-							}, [q("span", gd, F(oe[e]), 1), q("div", _d, [
+							}, [q("span", vd, F(oe[e]), 1), q("div", yd, [
 								q("button", {
 									disabled: D[e] <= 10,
 									class: "stat-btn",
 									onClick: (t) => D[e]--
-								}, "-", 8, vd),
-								q("span", yd, F(D[e]), 1),
+								}, "-", 8, bd),
+								q("span", xd, F(D[e]), 1),
 								q("button", {
 									disabled: D[e] >= 20,
 									class: "stat-btn",
 									onClick: (t) => D[e]++
-								}, "+", 8, bd)
+								}, "+", 8, Sd)
 							])])), 64))])
 						]),
-						q("div", xd, [
+						q("div", Cd, [
 							y[101] ||= q("div", { class: "shop-title" }, "DIY 锻造与深渊契约端口", -1),
 							y[102] ||= q("div", { class: "dm-warning" }, [
 								q("strong", null, "【跑团娘的善意提醒】"),
@@ -4985,7 +4982,7 @@ var $ = /* @__PURE__ */ jt({
 								q("br"),
 								q("span", { style: { color: "var(--pm-dark-red)" } }, "* 提示：如果你不知道具体的伤害数值（如1d8），可以只写效果，AI 会根据你选择的评级自动为你补全合理的数值。")
 							], -1),
-							q("div", Sd, [
+							q("div", wd, [
 								y[92] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -4998,18 +4995,18 @@ var $ = /* @__PURE__ */ jt({
 									key: "trait" + t,
 									class: "diy-box"
 								}, [
-									q("div", Cd, [q("span", wd, "特质 #" + F(t + 1), 1), q("div", Td, [
-										e.rolled ? (G(), K("span", Ed, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", Td, [q("span", Ed, "特质 #" + F(t + 1), 1), q("div", Dd, [
+										e.rolled ? (G(), K("span", Od, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => fe("traits", t)
-										}, "评估代价 (Roll)", 8, Dd),
+										}, "评估代价 (Roll)", 8, kd),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => de("traits", t)
-										}, "×", 8, Od)
+										}, "×", 8, Ad)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5017,13 +5014,13 @@ var $ = /* @__PURE__ */ jt({
 										class: "pm-input",
 										placeholder: "特质名称 (如: 异想体血肉共生)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, kd), [[Z, e.name]]),
+									}, null, 40, jd), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "特质效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Ad), [[Z, e.desc]]),
+									}, null, 40, Md), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5031,14 +5028,14 @@ var $ = /* @__PURE__ */ jt({
 									}, [y[91] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(ce, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, Md)), 64))], 40, jd), [[Vo, e.tier]])
+									}, F(e.label), 9, Pd)), 64))], 40, Nd), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: y[20] ||= (e) => ue("traits")
 								}, "➕ 添加自定义特质")
 							]),
-							q("div", Nd, [
+							q("div", Fd, [
 								y[94] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5052,18 +5049,18 @@ var $ = /* @__PURE__ */ jt({
 									key: "weapon" + t,
 									class: "diy-box"
 								}, [
-									q("div", Pd, [q("span", Fd, "武器 #" + F(t + 1), 1), q("div", Id, [
-										e.rolled ? (G(), K("span", Ld, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", Id, [q("span", Ld, "武器 #" + F(t + 1), 1), q("div", Rd, [
+										e.rolled ? (G(), K("span", zd, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => fe("weapons", t)
-										}, "评估代价 (Roll)", 8, Rd),
+										}, "评估代价 (Roll)", 8, Bd),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => de("weapons", t)
-										}, "×", 8, zd)
+										}, "×", 8, Vd)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5071,13 +5068,13 @@ var $ = /* @__PURE__ */ jt({
 										class: "pm-input",
 										placeholder: "武器名称 (如: ALEPH级·拟态幼体)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Bd), [[Z, e.name]]),
+									}, null, 40, Hd), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "武器效果与【副作用代价】描述... (未写明伤害骰子AI将自动补全)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Vd), [[Z, e.desc]]),
+									}, null, 40, Ud), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5085,14 +5082,14 @@ var $ = /* @__PURE__ */ jt({
 									}, [y[93] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(ce, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, Ud)), 64))], 40, Hd), [[Vo, e.tier]])
+									}, F(e.label), 9, Gd)), 64))], 40, Wd), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: y[21] ||= (e) => ue("weapons")
 								}, "➕ 添加自定义武器")
 							]),
-							q("div", Wd, [
+							q("div", Kd, [
 								y[96] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5106,18 +5103,18 @@ var $ = /* @__PURE__ */ jt({
 									key: "armor" + t,
 									class: "diy-box"
 								}, [
-									q("div", Gd, [q("span", Kd, "防具 #" + F(t + 1), 1), q("div", qd, [
-										e.rolled ? (G(), K("span", Jd, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", qd, [q("span", Jd, "防具 #" + F(t + 1), 1), q("div", Yd, [
+										e.rolled ? (G(), K("span", Xd, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => fe("armors", t)
-										}, "评估代价 (Roll)", 8, Yd),
+										}, "评估代价 (Roll)", 8, Zd),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => de("armors", t)
-										}, "×", 8, Xd)
+										}, "×", 8, Qd)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5125,13 +5122,13 @@ var $ = /* @__PURE__ */ jt({
 										class: "pm-input",
 										placeholder: "防具名称 (如: W公司清剿服)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Zd), [[Z, e.name]]),
+									}, null, 40, $d), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "防具效果与代价描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Qd), [[Z, e.desc]]),
+									}, null, 40, ef), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5139,14 +5136,14 @@ var $ = /* @__PURE__ */ jt({
 									}, [y[95] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(ce, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, ef)), 64))], 40, $d), [[Vo, e.tier]])
+									}, F(e.label), 9, nf)), 64))], 40, tf), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: y[22] ||= (e) => ue("armors")
 								}, "➕ 添加自定义防具")
 							]),
-							q("div", tf, [
+							q("div", rf, [
 								y[98] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5160,18 +5157,18 @@ var $ = /* @__PURE__ */ jt({
 									key: "item" + t,
 									class: "diy-box"
 								}, [
-									q("div", nf, [q("span", rf, "道具 #" + F(t + 1), 1), q("div", af, [
-										e.rolled ? (G(), K("span", of, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", af, [q("span", of, "道具 #" + F(t + 1), 1), q("div", sf, [
+										e.rolled ? (G(), K("span", cf, "-" + F(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => fe("items", t)
-										}, "评估代价 (Roll)", 8, sf),
+										}, "评估代价 (Roll)", 8, lf),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => de("items", t)
-										}, "×", 8, cf)
+										}, "×", 8, uf)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5179,13 +5176,13 @@ var $ = /* @__PURE__ */ jt({
 										class: "pm-input",
 										placeholder: "道具名称 (如: K公司高浓度安瓿)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, lf), [[Z, e.name]]),
+									}, null, 40, df), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "道具效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, uf), [[Z, e.desc]]),
+									}, null, 40, ff), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5193,14 +5190,14 @@ var $ = /* @__PURE__ */ jt({
 									}, [y[97] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(ce, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, ff)), 64))], 40, df), [[Vo, e.tier]])
+									}, F(e.label), 9, mf)), 64))], 40, pf), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: y[23] ||= (e) => ue("items")
 								}, "➕ 添加自定义道具")
 							]),
-							q("div", pf, [
+							q("div", hf, [
 								y[100] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5219,19 +5216,19 @@ var $ = /* @__PURE__ */ jt({
 										background: "rgba(139, 0, 0, 0.02)"
 									}
 								}, [
-									q("div", mf, [q("span", hf, "业障 #" + F(t + 1), 1), q("div", gf, [
-										e.rolled ? (G(), K("span", _f, "+" + F(e.refund) + " 点", 1)) : Y("", !0),
+									q("div", gf, [q("span", _f, "业障 #" + F(t + 1), 1), q("div", vf, [
+										e.rolled ? (G(), K("span", yf, "+" + F(e.refund) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											style: { background: "var(--pm-dark-red)" },
 											onClick: (e) => fe("karmas", t)
-										}, "评估返还 (Roll)", 8, vf),
+										}, "评估返还 (Roll)", 8, bf),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => de("karmas", t)
-										}, "×", 8, yf)
+										}, "×", 8, xf)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5239,13 +5236,13 @@ var $ = /* @__PURE__ */ jt({
 										class: "pm-input",
 										placeholder: "业障名称 (如: 注定的扭曲)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, bf), [[Z, e.name]]),
+									}, null, 40, Sf), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "业障的负面效果与触发条件描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, xf), [[Z, e.desc]]),
+									}, null, 40, Cf), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5253,7 +5250,7 @@ var $ = /* @__PURE__ */ jt({
 									}, [y[99] ||= q("option", { value: "" }, "-- 选择痛苦评级 --", -1), (G(), K(W, null, U(le, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, Cf)), 64))], 40, Sf), [[Vo, e.tier]])
+									}, F(e.label), 9, Tf)), 64))], 40, wf), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
@@ -5265,7 +5262,7 @@ var $ = /* @__PURE__ */ jt({
 								}, "➕ 添加自定义业障")
 							])
 						]),
-						q("div", wf, [
+						q("div", Ef, [
 							y[103] ||= q("div", { class: "shop-title" }, "本局限定商品 (Roguelike 刷新池)", -1),
 							y[104] ||= q("p", { style: {
 								color: "#555",
@@ -5276,50 +5273,50 @@ var $ = /* @__PURE__ */ jt({
 								color: "var(--pm-text)",
 								"margin-bottom": "10px"
 							} }, "特殊背景 / 特质", -1),
-							q("div", Tf, [(G(!0), K(W, null, U(j.backgrounds, (e) => (G(), K("div", {
+							q("div", Df, [(G(!0), K(W, null, U(j.backgrounds, (e) => (G(), K("div", {
 								key: e.name,
 								class: M([{ selected: Oe("backgrounds", e) }, "rl-card"]),
 								onClick: (t) => De("backgrounds", e)
 							}, [
-								q("div", Df, F(e.type), 1),
-								q("div", Of, F(e.name), 1),
-								q("div", kf, F(e.desc), 1),
-								q("div", Af, "-" + F(e.cost) + " 点", 1)
-							], 10, Ef))), 128))]),
+								q("div", kf, F(e.type), 1),
+								q("div", Af, F(e.name), 1),
+								q("div", jf, F(e.desc), 1),
+								q("div", Mf, "-" + F(e.cost) + " 点", 1)
+							], 10, Of))), 128))]),
 							y[106] ||= q("h4", { style: {
 								color: "var(--pm-text)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "稀有遗物 / E.G.O", -1),
-							q("div", jf, [(G(!0), K(W, null, U(j.egos, (e) => (G(), K("div", {
+							q("div", Nf, [(G(!0), K(W, null, U(j.egos, (e) => (G(), K("div", {
 								key: e.name,
 								class: M([{ selected: Oe("egos", e) }, "rl-card"]),
 								onClick: (t) => De("egos", e)
 							}, [
-								q("div", Nf, F(e.type), 1),
-								q("div", Pf, F(e.name), 1),
-								q("div", Ff, F(e.desc), 1),
-								q("div", If, "-" + F(e.cost) + " 点", 1)
-							], 10, Mf))), 128))]),
+								q("div", Ff, F(e.type), 1),
+								q("div", If, F(e.name), 1),
+								q("div", Lf, F(e.desc), 1),
+								q("div", Rf, "-" + F(e.cost) + " 点", 1)
+							], 10, Pf))), 128))]),
 							y[107] ||= q("h4", { style: {
 								color: "var(--pm-dark-red)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "专属业障 (必须至少选择一项，可返还点数)", -1),
-							q("div", Lf, [(G(!0), K(W, null, U(j.karmas, (e) => (G(), K("div", {
+							q("div", zf, [(G(!0), K(W, null, U(j.karmas, (e) => (G(), K("div", {
 								key: e.name,
 								class: M([{ selected: Oe("karmas", e) }, "rl-card"]),
 								onClick: (t) => De("karmas", e)
 							}, [
-								q("div", zf, F(e.type), 1),
-								q("div", Bf, F(e.name), 1),
-								q("div", Vf, F(e.desc), 1),
-								q("div", Hf, "+" + F(e.refund) + " 点", 1)
-							], 10, Rf))), 128))])
+								q("div", Vf, F(e.type), 1),
+								q("div", Hf, F(e.name), 1),
+								q("div", Uf, F(e.desc), 1),
+								q("div", Wf, "+" + F(e.refund) + " 点", 1)
+							], 10, Bf))), 128))])
 						]),
-						q("div", Uf, [
+						q("div", Gf, [
 							y[109] ||= q("div", { class: "shop-title" }, "同行伙伴 (Companion) - 消耗 2000 点", -1),
-							q("label", Wf, [H(q("input", {
+							q("label", Kf, [H(q("input", {
 								"onUpdate:modelValue": y[25] ||= (e) => k.enabled = e,
 								type: "checkbox",
 								style: {
@@ -5327,7 +5324,7 @@ var $ = /* @__PURE__ */ jt({
 									height: "20px"
 								}
 							}, null, 512), [[Ro, k.enabled]]), y[108] ||= J(" 携带一名自定义伙伴降临废土 ", -1)]),
-							k.enabled ? (G(), K("div", Gf, [H(q("input", {
+							k.enabled ? (G(), K("div", qf, [H(q("input", {
 								"onUpdate:modelValue": y[26] ||= (e) => k.name = e,
 								type: "text",
 								class: "pm-input",
@@ -5340,7 +5337,7 @@ var $ = /* @__PURE__ */ jt({
 								placeholder: "伙伴的身份、能力与性格设定..."
 							}, null, 512), [[Z, k.desc]])])) : Y("", !0)
 						]),
-						q("div", Kf, [
+						q("div", Jf, [
 							y[110] ||= q("div", { class: "shop-title" }, "完全自定义议约", -1),
 							y[111] ||= q("p", { style: {
 								color: "#555",
@@ -5350,30 +5347,30 @@ var $ = /* @__PURE__ */ jt({
 								q("br"),
 								J("注意：DM 会在游戏开始后为你进行点数估价，并强行缝合一个恶毒的专属业障。")
 							], -1),
-							q("div", qf, [H(q("textarea", {
+							q("div", Yf, [H(q("textarea", {
 								"onUpdate:modelValue": y[28] ||= (e) => pe.value = e,
 								placeholder: "在此输入你的自定义设定..."
 							}, null, 512), [[Z, pe.value]])])
 						])
 					]),
-					q("div", Jf, [
-						Ee.value < 0 ? (G(), K("div", Yf, [...y[112] ||= [
+					q("div", Xf, [
+						Ee.value < 0 ? (G(), K("div", Zf, [...y[112] ||= [
 							J(" 【跑团娘的嘲弄】哎呀呀，点数透支了呢？没关系，你可以带着这身华丽的负债降临。", -1),
 							q("br", null, null, -1),
 							J(" 只不过……开局负数骰子意味着你已经被都市的厄运标记。准备好在『心灵镜牢』里打一辈子黑工还债了吗，可怜的耗子？ ", -1)
 						]])) : Y("", !0),
-						!ke.value && !pe.value ? (G(), K("p", Xf, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : Y("", !0),
+						!ke.value && !pe.value ? (G(), K("p", Qf, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : Y("", !0),
 						q("button", {
 							disabled: !ke.value && !pe.value,
 							class: "pm-btn-embark",
 							onClick: Ae
-						}, "确认降临姿态", 8, Zf)
+						}, "确认降临姿态", 8, $f)
 					])
-				])) : Y("", !0)])) : n.value === "settings" ? (G(), K("div", Qf, [
+				])) : Y("", !0)])) : n.value === "settings" ? (G(), K("div", ep, [
 					y[121] ||= q("div", { class: "settings-title" }, "契约与法则", -1),
 					y[122] ||= q("div", { class: "settings-warning" }, "“深渊的边界由你划定。一旦铭刻，不可反悔。”", -1),
-					q("div", $f, [y[114] ||= J("已选定降临姿态：", -1), q("span", ep, F(ne.value), 1)]),
-					q("div", tp, [q("div", np, [
+					q("div", tp, [y[114] ||= J("已选定降临姿态：", -1), q("span", np, F(ne.value), 1)]),
+					q("div", rp, [q("div", ip, [
 						y[115] ||= q("div", {
 							class: "dm-title",
 							style: {
@@ -5386,36 +5383,36 @@ var $ = /* @__PURE__ */ jt({
 							color: "#666",
 							"margin-bottom": "15px"
 						} }, "决定你的理智恢复机制与卡门破防逻辑。", -1),
-						q("div", rp, [q("button", {
+						q("div", ap, [q("button", {
 							class: M([{ active: L.ei === "E" }, "mbti-btn"]),
 							onClick: y[29] ||= (e) => L.ei = "E"
 						}, "E (外向)", 2), q("button", {
 							class: M([{ active: L.ei === "I" }, "mbti-btn"]),
 							onClick: y[30] ||= (e) => L.ei = "I"
 						}, "I (内向)", 2)]),
-						q("div", ip, [q("button", {
+						q("div", op, [q("button", {
 							class: M([{ active: L.sn === "S" }, "mbti-btn"]),
 							onClick: y[31] ||= (e) => L.sn = "S"
 						}, "S (感觉)", 2), q("button", {
 							class: M([{ active: L.sn === "N" }, "mbti-btn"]),
 							onClick: y[32] ||= (e) => L.sn = "N"
 						}, "N (直觉)", 2)]),
-						q("div", ap, [q("button", {
+						q("div", sp, [q("button", {
 							class: M([{ active: L.tf === "T" }, "mbti-btn"]),
 							onClick: y[33] ||= (e) => L.tf = "T"
 						}, "T (思考)", 2), q("button", {
 							class: M([{ active: L.tf === "F" }, "mbti-btn"]),
 							onClick: y[34] ||= (e) => L.tf = "F"
 						}, "F (情感)", 2)]),
-						q("div", op, [q("button", {
+						q("div", cp, [q("button", {
 							class: M([{ active: L.jp === "J" }, "mbti-btn"]),
 							onClick: y[35] ||= (e) => L.jp = "J"
 						}, "J (判断)", 2), q("button", {
 							class: M([{ active: L.jp === "P" }, "mbti-btn"]),
 							onClick: y[36] ||= (e) => L.jp = "P"
 						}, "P (知觉)", 2)]),
-						q("div", sp, F(je.value), 1)
-					]), q("div", cp, [
+						q("div", lp, F(je.value), 1)
+					]), q("div", up, [
 						y[117] ||= q("div", {
 							class: "dm-title",
 							style: {
@@ -5445,15 +5442,15 @@ var $ = /* @__PURE__ */ jt({
 							onClick: y[40] ||= (e) => Me.value = "地狱 (Hell)"
 						}, "地狱 (Hell) - 机制杀频发，卡门时刻注视", 2)
 					])]),
-					q("div", lp, [(G(!0), K(W, null, U(w.sensitiveToggles, (e, t) => (G(), K("div", {
+					q("div", dp, [(G(!0), K(W, null, U(w.sensitiveToggles, (e, t) => (G(), K("div", {
 						key: t,
 						class: M(["toggle-btn", { active: e }]),
 						onClick: (n) => w.sensitiveToggles[t] = !e
-					}, F(String(t).replace(/_/g, " / ")), 11, up))), 128))]),
-					q("div", dp, [
+					}, F(String(t).replace(/_/g, " / ")), 11, fp))), 128))]),
+					q("div", pp, [
 						y[119] ||= q("div", { class: "dm-title" }, "观测者化身设定", -1),
 						y[120] ||= q("div", { class: "dm-desc" }, "“接下来，我的化身将与你同行，但她只会作为无情的DM存在。你希望她用什么态度来见证你的挣扎？”", -1),
-						q("div", fp, [
+						q("div", mp, [
 							q("button", {
 								class: M([{ active: w.dmPersonality === "三无机娘，冷酷客观，毫无感情波动" }, "pm-preset-btn"]),
 								onClick: y[41] ||= (e) => w.dmPersonality = "三无机娘，冷酷客观，毫无感情波动"
@@ -5488,7 +5485,7 @@ var $ = /* @__PURE__ */ jt({
 						disabled: r.value,
 						class: "pm-btn-embark",
 						onClick: Pe
-					}, F(r.value ? "引擎连接中..." : "踏上旅程"), 9, pp)
+					}, F(r.value ? "引擎连接中..." : "踏上旅程"), 9, hp)
 				])) : Y("", !0)]),
 				_: 1
 			})
@@ -5509,7 +5506,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 		let e = n();
 		if (!e.getElementById("pm-global-styles")) {
 			let t = e.createElement("style");
-			t.id = "pm-global-styles", t.innerHTML = "\n        /* 隐藏原生标签 */\n        .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n        .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n            display: none !important;\n        }\n        .mes_text narrative { display: block !important; }\n\n        /* =========================================\n           全局与羊皮纸基底 (废墟图书馆美学)\n           ========================================= */\n        :root {\n          --pm-gold: #d4af37;\n          --pm-dark-red: #8b0000;\n          --pm-black: #1a1105;\n          --pm-text: #2c241b;\n          --pm-bg-light: #ffffff;\n          --pm-bg-mid: #fcfaf5;\n          --pm-bg-dark: #f4ebd8;\n        }\n\n        /* 🚨 恢复老版本的“聊天框内全屏”效果 */\n        .pm-master-container {\n          position: relative;\n          width: 100%;\n          min-height: 100vh;\n          border-radius: 12px;\n          border: 2px solid var(--pm-gold);\n          z-index: 10;\n          background: radial-gradient(circle at center, var(--pm-bg-light) 0%, var(--pm-bg-mid) 50%, var(--pm-bg-dark) 100%);\n          padding: 20px;\n          box-sizing: border-box;\n          color: var(--pm-text);\n          overflow-x: hidden;\n          box-shadow: inset 0 0 40px rgba(255, 255, 255, 1);\n          display: flex;\n          flex-direction: column;\n          align-items: center;\n          font-family: 'Noto Serif SC', 'Songti SC', serif;\n          margin-top: 15px;\n          margin-bottom: 15px;\n        }\n        .pm-master-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 3px solid rgba(212, 175, 55, 0.8); border-radius: 12px; animation: pm-border-glow 4s infinite alternate ease-in-out; pointer-events: none; z-index: 2; }\n        .pm-master-container::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noiseFilter\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noiseFilter)\" opacity=\"0.05\"/></svg>'); pointer-events: none; z-index: 1; }\n        @keyframes pm-border-glow { 0% { box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1), 0 0 15px rgba(212, 175, 55, 0.2); border-color: rgba(212, 175, 55, 0.4); } 100% { box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.5); border-color: rgba(212, 175, 55, 1); } }\n\n        /* 状态栏主容器 */\n        @keyframes stb-pm-terminal-breathe { 0% { border-color: #222; } 50% { border-color: #444; } 100% { border-color: #222; } }\n        .stb-pm-wrapper { width: 100%; max-width: 100%; overflow-x: hidden; overflow-wrap: anywhere; box-sizing: border-box; background: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); background-size: 24px 24px; border: 1px solid #333; border-top: 4px solid #8a0303; border-bottom: 4px solid #d4af37; border-radius: 12px; font-family: 'Nunito', 'Quicksand', 'Segoe UI Rounded', 'Helvetica Rounded', Arial, sans-serif; color: #d0d0d0; padding: 16px; animation: stb-pm-terminal-breathe 8s infinite ease-in-out; position: relative; margin-top: 15px; margin-bottom: 10px; }\n        .stb-pm-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 12px; margin-bottom: 12px; position: relative; }\n        .stb-pm-header::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 30%; height: 2px; background: #d4af37; box-shadow: 0 0 10px #d4af37; border-radius: 2px; }\n        .stb-pm-location { font-family: 'Quicksand', 'Georgia', serif; font-size: clamp(16px, 4vw, 18px); font-weight: bold; color: #d4af37; letter-spacing: 1px; text-shadow: 0 0 12px rgba(212, 175, 55, 0.6); word-break: break-word; display: flex; align-items: center; gap: 8px; flex: 1; }\n        .stb-pm-location::before { content: '◆'; font-size: 12px; color: #8a0303; text-shadow: 0 0 6px #8a0303; }\n        .stb-pm-env-col { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }\n        .stb-pm-tag { background: rgba(0, 0, 0, 0.8); border: 1px solid #444; padding: 4px 10px; border-radius: 12px; white-space: nowrap; font-size: 12px; box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05); letter-spacing: 0.5px; }\n        .stb-pm-tag-time { color: #aaa; border-color: #555; }\n        .stb-pm-tag-weather { color: #ff6b6b; border-color: #8a0303; text-shadow: 0 0 5px rgba(138, 3, 3, 0.8); }\n\n        /* BGM 播放器 */\n        .stb-pm-bgm-container { margin-bottom: 16px; }\n        .stb-pm-bgm-container details { background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #81d4fa; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }\n        .stb-pm-bgm-container summary { padding: 12px 16px; font-size: 14px; color: #81d4fa; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }\n        .stb-pm-bgm-container summary::-webkit-details-marker { display: none; }\n        .stb-pm-bgm-container summary:hover { background: rgba(129, 212, 250, 0.1); }\n        .stb-pm-bgm-arrow { transition: transform 0.3s ease; }\n        .stb-pm-bgm-container details[open] .stb-pm-bgm-arrow { transform: rotate(180deg); }\n        .stb-pm-bgm-content { padding: 12px; border-top: 1px solid #333; display: flex; justify-content: center; background: #000; overflow: hidden; }\n        .stb-pm-bgm-content > iframe, .stb-pm-bgm-content > audio { width: 100% !important; max-width: 330px; height: 86px; border-radius: 6px; outline: none; border: none; }\n\n        /* 按钮与徽章 */\n        @keyframes stb-btn-breathe-gold { 0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } 50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); } 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } }\n        @keyframes stb-btn-breathe-blue { 0% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } 50% { box-shadow: 0 0 15px rgba(129, 212, 250, 0.6); } 100% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } }\n        .stb-pm-actions { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }\n        .stb-pm-btn { flex: 1; min-width: 140px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 14px; font-weight: bold; letter-spacing: 1px; border-radius: 20px; transition: all 0.2s ease; cursor: pointer; touch-action: manipulation; }\n        .stb-pm-btn:active { transform: scale(0.96); }\n        .stb-pm-btn-guide { background: linear-gradient(180deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #d4af37; color: #f4e7c1; animation: stb-btn-breathe-gold 3s infinite ease-in-out; }\n        .stb-pm-btn-mirror { background: linear-gradient(180deg, rgba(129, 212, 250, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #81d4fa; color: #e1f5fe; animation: stb-btn-breathe-blue 3s infinite ease-in-out; }\n        .stb-pm-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }\n        .stb-pm-badge { background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #d4af37; padding: 8px 14px; border-radius: 8px; font-size: 14px; color: #e0e0e0; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); }\n        .stb-pm-badge strong { color: #d4af37; font-weight: bold; }\n        .stb-pm-badge-title { flex: 1 1 100%; border-left-color: #81d4fa; }\n        .stb-pm-badge-title strong { color: #81d4fa; }\n\n        /* Tabs 切换 */\n        .stb-pm-tabs-container { display: flex; flex-wrap: wrap; gap: 4px; position: relative; min-height: 400px; }\n        .stb-pm-tab-label { display: inline-block; }\n        .stb-pm-tab-radio { display: none; }\n        .stb-tab-btn { padding: 10px 16px; font-size: 14px; color: #777; background: linear-gradient(to bottom, #0a0a0a, #111); border: 1px solid #222; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; position: relative; letter-spacing: 1px; user-select: none; }\n        .stb-pm-tab-content { position: absolute; left: 16px; right: 16px; display: none; flex-direction: column; gap: 16px; max-height: 55vh; overflow-y: auto; padding-right: 8px; padding-top: 16px; border-top: 1px solid #222; scrollbar-width: thin; scrollbar-color: #555 #0a0a0a; -webkit-overflow-scrolling: touch; }\n        .stb-pm-tab-content::-webkit-scrollbar { width: 6px; }\n        .stb-pm-tab-content::-webkit-scrollbar-track { background: #0a0a0a; border-radius: 3px; }\n        .stb-pm-tab-content::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }\n        .stb-pm-tab-radio:checked ~ .stb-tab-btn { color: #fff; background: linear-gradient(to bottom, rgba(138, 3, 3, 0.25), #0a0a0a); border-color: #555; text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); font-weight: bold; }\n        .stb-pm-tab-radio:checked ~ .stb-tab-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: #d4af37; box-shadow: 0 -2px 12px #d4af37, 0 0 6px #fff; border-radius: 2px; z-index: 2; }\n        .stb-pm-tab-radio:checked ~ .stb-pm-tab-content { display: flex; top: 100%; margin-top: 40px; }\n\n        /* 面板与进度条 */\n        .stb-pm-panel { background: rgba(15, 15, 18, 0.8); border: 1px solid #222; border-left: 4px solid #555; border-radius: 8px; padding: 16px; min-width: 0; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8); transition: border-color 0.3s ease, box-shadow 0.3s ease; position: relative; }\n        .stb-pm-panel:hover { border-left-color: #d4af37; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), -3px 0 12px rgba(212, 175, 55, 0.25); }\n        .stb-pm-panel-title { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); padding-bottom: 6px; display: flex; align-items: center; font-weight: bold; }\n        .stb-pm-panel-title::before { content: '■'; font-size: 10px; margin-right: 8px; color: #555; }\n        .stb-pm-bar-container { margin-bottom: 14px; }\n        .stb-pm-bar-header { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }\n        .stb-pm-bar-label { font-weight: bold; text-shadow: 0 0 5px currentColor; letter-spacing: 1px; }\n        .stb-pm-bar-value { font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #ccc; }\n        .stb-pm-bar-track { width: 100%; height: 14px; background: #0a0a0a; border: 1px solid #333; border-radius: 7px; overflow: hidden; box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.9), 0 1px 0 rgba(255, 255, 255, 0.05); position: relative; }\n        .stb-pm-bar-fill { height: 100%; transition: width 0.5s ease; border-radius: 7px; }\n        .stb-pm-bar-hp { background: linear-gradient(90deg, #ff6b6b, #8a0303); box-shadow: 0 0 8px rgba(255, 107, 107, 0.6); }\n        .stb-pm-bar-mp { background: linear-gradient(90deg, #81d4fa, #0277bd); box-shadow: 0 0 8px rgba(129, 212, 250, 0.6); }\n        .stb-pm-bar-sp { background: linear-gradient(90deg, #81c784, #2e7d32); box-shadow: 0 0 8px rgba(129, 199, 132, 0.6); }\n        .stb-pm-bar-xp { background: linear-gradient(90deg, #fff59d, #fbc02d); box-shadow: 0 0 8px rgba(255, 245, 157, 0.6); }\n\n        /* 肢体状态 */\n        .stb-pm-limbs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }\n        @keyframes stb-critical-flash { 0% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } 50% { border-color: #550000; box-shadow: none; background: rgba(255, 68, 68, 0.05); } 100% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } }\n        .stb-pm-limb-card { background: linear-gradient(180deg, #1a1a1a, #0d0d0d); border: 1px solid #333; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.2s ease, border-color 0.2s ease; position: relative; overflow: hidden; }\n        .stb-pm-limb-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #333; }\n        .stb-pm-limb-name { font-size: 12px; color: #888; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }\n        .stb-pm-limb-stat { font-size: 14px; font-weight: bold; text-align: center; word-break: break-word; white-space: normal; }\n        .stb-pm-limb-card[data-status*='完好']::before { background: #555; }\n        .stb-pm-limb-card[data-status*='完好'] .stb-pm-limb-stat { color: #999; }\n        .stb-pm-limb-card[data-status*='轻度']::before { background: #aaa; }\n        .stb-pm-limb-card[data-status*='轻度'] .stb-pm-limb-stat { color: #ddd; text-shadow: 0 0 4px rgba(255, 255, 255, 0.3); }\n        .stb-pm-limb-card[data-status*='重伤'] { border-color: #ffb74d; }\n        .stb-pm-limb-card[data-status*='重伤']::before { background: #ffb74d; box-shadow: 0 0 6px #ffb74d; }\n        .stb-pm-limb-card[data-status*='重伤'] .stb-pm-limb-stat { color: #ffcc80; text-shadow: 0 0 6px rgba(255, 204, 128, 0.6); }\n        .stb-pm-limb-card[data-status*='残废'], .stb-pm-limb-card[data-status*='断裂'] { animation: stb-critical-flash 1s infinite; }\n        .stb-pm-limb-card[data-status*='残废']::before, .stb-pm-limb-card[data-status*='断裂']::before { background: #ff4444; }\n        .stb-pm-limb-card[data-status*='残废'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='断裂'] .stb-pm-limb-stat { color: #ff6b6b; text-decoration: line-through; }\n        .stb-pm-limb-card[data-status*='义体'], .stb-pm-limb-card[data-status*='同化'], .stb-pm-limb-card[data-status*='再生'] { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); }\n        .stb-pm-limb-card[data-status*='义体']::before, .stb-pm-limb-card[data-status*='同化']::before, .stb-pm-limb-card[data-status*='再生']::before { background: #d4af37; box-shadow: 0 0 6px #d4af37; }\n        .stb-pm-limb-card[data-status*='义体'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='同化'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='再生'] .stb-pm-limb-stat { color: #f4e7c1; text-shadow: 0 0 6px rgba(212, 175, 55, 0.5); }\n\n        /* 属性与折叠夹 */\n        .stb-pm-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }\n        .stb-pm-stat-box { background: rgba(255, 255, 255, 0.02); border: 1px solid #333; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); }\n        .stb-pm-stat-label { font-size: 13px; color: #888; text-transform: uppercase; font-weight: bold; }\n        .stb-pm-stat-value { font-size: 16px; font-weight: bold; color: #d4af37; font-family: monospace; text-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }\n        .stb-pm-folder { background: rgba(255, 255, 255, 0.03); border: 1px solid #333; border-radius: 6px; margin-bottom: 10px; overflow: hidden; transition: all 0.3s ease; }\n        .stb-pm-folder summary { padding: 12px 14px; font-size: 14px; color: #eee; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; background: rgba(0, 0, 0, 0.4); }\n        .stb-pm-folder summary::-webkit-details-marker { display: none; }\n        .stb-pm-folder summary:hover { background: rgba(255, 255, 255, 0.05); }\n        .stb-pm-folder-arrow { transition: transform 0.3s ease; color: #888; font-size: 12px; }\n        .stb-pm-folder[open] .stb-pm-folder-arrow { transform: rotate(180deg); }\n        .stb-pm-folder-content { padding: 12px; border-top: 1px solid #333; }\n        .stb-pm-folder-actions { display: flex; justify-content: flex-end; padding: 8px 12px; background: rgba(0, 0, 0, 0.6); border-top: 1px dashed #444; }\n        .stb-pm-btn-small { background: #222; border: 1px solid #555; color: #ccc; padding: 4px 12px; border-radius: 4px; font-size: 12px; text-decoration: none; transition: all 0.2s; cursor: pointer; }\n        .stb-pm-btn-small:hover { background: #8a0303; border-color: #ff6b6b; color: #fff; }\n\n        /* 文本与传闻卡片 */\n        .stb-pm-text-block { font-size: 15px; color: #ccc; line-height: 1.6; word-wrap: break-word; white-space: normal; }\n        .stb-pm-rumor-card { background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), rgba(0, 0, 0, 0.6)); border: 1px solid #222; border-left: 4px solid #d4af37; padding: 12px 16px; margin-bottom: 12px; border-radius: 4px 8px 8px 4px; transition: all 0.3s ease; position: relative; }\n        .stb-pm-rumor-card::after { content: ''; position: absolute; top: 0; right: 0; width: 30px; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.9)); }\n        .stb-pm-rumor-card:hover { background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.6)); border-left-width: 6px; transform: translateX(4px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); }\n        .stb-pm-rumor-title { color: #d4af37; font-size: 14px; margin-bottom: 8px; font-weight: bold; letter-spacing: 1.5px; }\n        .stb-pm-rumor-text { color: #ddd; font-size: 15px; line-height: 1.6; position: relative; z-index: 1; }\n        .stb-pm-terminal-data { font-family: 'Courier New', Courier, monospace; font-size: 13px; color: #81d4fa; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }\n        .stb-pm-terminal-data-gold { color: #f4e7c1; }\n        .stb-pm-terminal-data-red { color: #ff6b6b; }\n        .stb-pm-info-row { display: flex; flex-direction: row; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #333; padding-bottom: 4px; }\n        .stb-pm-info-label { font-size: 14px; color: #999; }\n        .stb-pm-info-value { font-size: 14px; font-weight: bold; color: #ccc; }\n\n        /* =========================================\n           车卡界面专属样式\n           ========================================= */\n        /* 🚨 渐入渐出动画 */\n        .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease, transform 0.5s ease; }\n        .fade-enter-from { opacity: 0; transform: translateY(20px); }\n        .fade-leave-to { opacity: 0; transform: translateY(-20px); }\n\n        .page-check, .library-scene, .custom-char-page, .page-settings { width: 100%; max-width: 1000px; flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }\n        .page-check { justify-content: center; }\n        .sys-title { font-size: clamp(2em, 5vw, 3.5em); font-weight: 900; color: var(--pm-black); letter-spacing: 10px; margin-bottom: 5px; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); text-align: center; }\n        .sys-subtitle { font-family: 'Brush Script MT', 'Great Vibes', cursive; font-size: clamp(1.2em, 3vw, 1.8em); color: var(--pm-dark-red); margin-bottom: 50px; letter-spacing: 3px; text-align: center; }\n        .sys-check-box { width: 100%; max-width: 500px; margin: 0 auto 50px; border-top: 2px solid var(--pm-gold); border-bottom: 2px solid var(--pm-gold); padding: 30px 0; }\n        .sys-row { display: flex; justify-content: space-between; margin: 15px 0; font-size: 1.2em; font-weight: bold; color: #333; }\n        .status-ok { font-family: monospace; color: var(--pm-dark-red); text-shadow: 0 0 10px rgba(139, 0, 0, 0.2); }\n        .status-warn { font-family: monospace; color: #d4af37; }\n        .status-loading { font-family: monospace; color: #aaa; animation: pulse 1.5s infinite; }\n        .sys-actions { display: flex; gap: 30px; width: 100%; max-width: 500px; justify-content: center; }\n        .sys-btn { flex: 1; padding: 15px 0; text-align: center; border: 1px solid var(--pm-text); background: transparent; color: var(--pm-text); cursor: pointer; font-family: inherit; font-size: 1.2em; font-weight: bold; letter-spacing: 4px; transition: all 0.3s; border-radius: 4px; }\n        .sys-btn:hover { background: var(--pm-text); color: var(--pm-bg-mid); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }\n        .sys-btn-primary { border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n        .sys-btn-primary:hover:not(:disabled) { background: var(--pm-dark-red); color: white; box-shadow: 0 8px 20px rgba(139, 0, 0, 0.25); }\n        .sys-btn-primary:disabled { opacity: 0.5; border-color: #666; color: #666; cursor: not-allowed; background: transparent; box-shadow: none; }\n\n        .transition-note { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10%; background: radial-gradient(circle at center, #ffffff 0%, #fcfaf5 50%, #f4ebd8 100%); z-index: 210; animation: noteSequence 5.5s forwards ease-in-out; }\n        .note-title { font-size: clamp(1.5em, 3vw, 2em); color: var(--pm-dark-red); margin-bottom: 30px; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; letter-spacing: 3px; font-weight: bold; }\n        .note-content { font-size: clamp(1em, 2vw, 1.2em); line-height: 2; max-width: 800px; color: var(--pm-text); }\n        .note-content li { margin-bottom: 15px; list-style-type: square; }\n        .note-content li strong { color: var(--pm-dark-red); font-weight: 900; }\n\n        .library-scene { width: 100%; padding: 20px 0; box-sizing: border-box; position: relative; z-index: 200; }\n        .bgm-player { position: absolute; top: 0px; left: 0px; width: 280px; opacity: 0.3; transition: opacity 0.4s; z-index: 220; }\n        .bgm-player:hover { opacity: 1; }\n        .bgm-player audio { width: 100%; height: 40px; outline: none; }\n        .scene-text { font-size: clamp(1.1em, 2.5vw, 1.3em); line-height: 2.2; text-align: justify; margin-top: 60px; margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto; text-indent: 2em; color: var(--pm-black); }\n        .scene-text p { margin-bottom: 20px; }\n        .highlight-red { color: var(--pm-dark-red); font-weight: 900; text-shadow: 0 0 5px rgba(139, 0, 0, 0.2); }\n        .highlight-gold { color: var(--pm-gold); font-weight: 900; text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }\n        .trauma-text { color: var(--pm-dark-red); font-weight: bold; font-style: italic; font-size: 0.9em; background: rgba(139, 0, 0, 0.05); padding: 8px 15px; border-left: 3px solid var(--pm-dark-red); border-radius: 4px; display: block; margin: 15px 0; text-indent: 0; }\n\n        /* 🚨 跑团娘立绘相框样式 */\n        .dm-portrait-box {\n            display: flex;\n            justify-content: center;\n            margin: 30px auto 50px auto; /* 增加底部边距，避开下方按钮 */\n            width: 100%;\n        }\n        .dm-portrait-img {\n            max-width: 220px; /* 缩小立绘 */\n            border: 4px solid var(--pm-gold);\n            border-radius: 8px;\n            box-shadow: 0 10px 25px rgba(0,0,0,0.3), inset 0 0 15px rgba(0,0,0,0.5);\n            background: radial-gradient(circle, #2c1810 0%, #1a1105 100%);\n            padding: 5px;\n            object-fit: cover;\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n        .dm-portrait-img:hover {\n            transform: scale(1.05);\n            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(0,0,0,0.6);\n        }\n\n        .dossier-container { max-width: 900px; width: 100%; display: flex; flex-direction: column; gap: 15px; margin: 0 auto 40px auto; }\n        .dossier-folder { background: rgba(255, 255, 255, 0.7); border: 1px solid var(--pm-gold); border-radius: 6px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); overflow: hidden; transition: all 0.3s ease; }\n        .dossier-folder[open] { background: rgba(255, 255, 255, 0.95); box-shadow: 0 10px 25px rgba(139, 0, 0, 0.15); border-color: var(--pm-dark-red); }\n        .dossier-summary { padding: 15px 20px; display: flex; align-items: center; cursor: pointer; list-style: none; border-left: 4px solid var(--pm-gold); transition: all 0.3s; }\n        .dossier-summary::-webkit-details-marker { display: none; }\n        .dossier-summary:hover { background: rgba(212, 175, 55, 0.1); }\n        .dossier-folder[open] .dossier-summary { border-left-color: var(--pm-dark-red); border-bottom: 1px dashed rgba(139, 0, 0, 0.2); background: rgba(139, 0, 0, 0.05); }\n        .ds-type { font-family: monospace; color: #888; font-size: 0.9em; width: 80px; letter-spacing: 1px; }\n        .ds-name { font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 3px; flex: 1; }\n        .ds-desc { color: #555; font-style: italic; font-size: 0.95em; }\n        .dossier-content { padding: 30px; animation: slideDown 0.4s ease-out; }\n        .cp-quote { font-family: 'Georgia', serif; font-size: 1.1em; font-style: italic; color: #555; border-left: 4px solid var(--pm-gold); padding-left: 20px; margin-bottom: 30px; background: rgba(212, 175, 55, 0.05); padding: 15px 20px; }\n        .cp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }\n        .cp-box { border: 1px dashed #b89f7d; padding: 20px; background: rgba(255, 255, 255, 0.6); }\n        .cp-box-title { font-weight: 900; color: var(--pm-dark-red); margin-bottom: 10px; font-size: 1.1em; border-bottom: 1px solid rgba(139, 0, 0, 0.2); padding-bottom: 5px; letter-spacing: 1px; }\n        .cp-box-content { font-size: 1.05em; line-height: 1.8; color: #333; }\n        .cp-actions { display: flex; justify-content: center; margin-top: 20px; }\n        .cp-btn-confirm { padding: 15px 50px; font-size: 1.2em; font-weight: bold; cursor: pointer; border: 2px solid var(--pm-dark-red); background: var(--pm-dark-red); color: #fff; text-decoration: none; letter-spacing: 2px; transition: all 0.3s; border-radius: 4px; display: block; text-align: center; }\n        .cp-btn-confirm:hover { background: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n        .dossier-custom { display: flex; align-items: center; padding: 15px 20px; background: var(--pm-black); border: 1px solid var(--pm-dark-red); border-left: 4px solid var(--pm-dark-red); border-radius: 6px; cursor: pointer; margin-top: 10px; transition: all 0.3s; text-decoration: none; }\n        .dossier-custom:hover { background: #2c1810; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateX(5px); }\n        .dossier-custom .ds-type { color: #aaa; }\n        .dossier-custom .ds-name { color: var(--pm-gold); }\n\n        .custom-char-page { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 20px 0; position: relative; z-index: 200; }\n        .points-header { position: sticky; top: 0; width: 100%; background: rgba(26, 17, 5, 0.95); color: var(--pm-gold); padding: 15px 30px; border-radius: 8px; border: 1px solid var(--pm-gold); display: flex; justify-content: space-between; align-items: center; z-index: 300; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); box-sizing: border-box; margin-bottom: 30px; }\n        .points-header h2 { margin: 0; font-size: 1.5em; letter-spacing: 2px; }\n        .points-display { font-size: 2em; font-weight: 900; font-family: monospace; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); transition: color 0.3s; }\n        .points-display.negative { color: #ff4444; text-shadow: 0 0 15px rgba(255, 0, 0, 0.8); animation: pulse-red 2s infinite; }\n        .preset-bar { width: 100%; background: rgba(255, 255, 255, 0.6); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }\n\n        /* 🚨 强制白底黑字输入框 */\n        .preset-select, .preset-input, .pm-input, .pm-textarea, .pm-select {\n            background-color: #ffffff !important;\n            color: #000000 !important;\n            border: 1px solid #b89f7d !important;\n            padding: 12px; border-radius: 4px; font-family: inherit; font-size: 1em; box-sizing: border-box; outline: none; transition: border-color 0.3s;\n        }\n        .preset-select::placeholder, .preset-input::placeholder, .pm-input::placeholder, .pm-textarea::placeholder, .pm-select::placeholder {\n            color: #888888 !important;\n        }\n        .preset-select, .preset-input { padding: 8px; }\n        .pm-input { width: 100%; margin-bottom: 15px; }\n        .pm-textarea { width: 100%; height: 80px; resize: vertical; }\n        .pm-input:focus, .pm-textarea:focus, .pm-select:focus, .preset-input:focus, .preset-select:focus {\n            border-color: var(--pm-dark-red) !important;\n            box-shadow: 0 0 8px rgba(139, 0, 0, 0.3) !important;\n            background-color: #ffffff !important;\n        }\n\n        .pm-btn-small {\n            padding: 8px 15px;\n            background: #ffffff;\n            color: var(--pm-dark-red);\n            border: 1px solid var(--pm-dark-red);\n            border-radius: 4px;\n            cursor: pointer;\n            font-weight: bold;\n            transition: all 0.2s;\n            font-family: inherit;\n        }\n        .pm-btn-small:hover {\n            background: var(--pm-dark-red);\n            color: #ffffff;\n        }\n\n        .preset-btn { padding: 8px 15px; background: var(--pm-black); color: var(--pm-gold); border: 1px solid var(--pm-gold); border-radius: 4px; cursor: pointer; transition: all 0.2s; }\n        .preset-btn:hover { background: var(--pm-dark-red); color: #fff; }\n        .roll-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; text-align: center; }\n        .roll-btn { width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, var(--pm-dark-red) 0%, var(--pm-black) 100%); border: 4px solid var(--pm-gold); color: var(--pm-gold); font-size: 2em; font-weight: 900; cursor: pointer; transition: all 0.2s; box-shadow: 0 0 30px rgba(139, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; flex-direction: column; }\n        .roll-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); }\n        .roll-btn:active { transform: scale(0.95); }\n        .roll-btn.rolling { animation: shake 0.5s infinite; pointer-events: none; filter: brightness(1.5); }\n        .shop-container { width: 100%; display: grid; grid-template-columns: 1fr; gap: 30px; }\n        .shop-section { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); border-radius: 8px; padding: 25px; }\n        .shop-title { font-size: 1.5em; color: var(--pm-dark-red); border-bottom: 2px solid var(--pm-gold); padding-bottom: 10px; margin-bottom: 20px; font-weight: 900; letter-spacing: 2px; display: flex; justify-content: space-between; align-items: center; }\n        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }\n        .stat-row { display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.05); padding: 10px 15px; border-radius: 4px; border-left: 3px solid var(--pm-gold); }\n        .stat-name { font-weight: bold; color: var(--pm-text); width: 100px; }\n        .stat-controls { display: flex; align-items: center; gap: 10px; }\n\n        .stat-btn { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); font-weight: bold; cursor: pointer; transition: all 0.2s; display: flex; justify-content: center; align-items: center; padding: 0; line-height: 1; }\n        .stat-btn:hover:not(:disabled) { background: var(--pm-dark-red); color: white; }\n        .stat-btn:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }\n        .stat-val { font-family: monospace; font-size: 1.2em; font-weight: bold; width: 40px; text-align: center; }\n        .stat-cost { font-size: 0.8em; color: #888; width: 60px; text-align: right; }\n        .rl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }\n        .rl-card { border: 1px solid #b89f7d; background: #fcfaf5; border-radius: 6px; padding: 15px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }\n        .rl-card:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transform: translateY(-2px); border-color: var(--pm-gold); }\n        .rl-card.selected { border-color: var(--pm-dark-red); background: rgba(139, 0, 0, 0.05); box-shadow: inset 0 0 0 2px var(--pm-dark-red); }\n        .rl-card.selected::after { content: '✓'; position: absolute; top: 10px; right: 15px; color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; }\n        .rl-type { font-size: 0.8em; color: #888; margin-bottom: 5px; font-family: monospace; }\n        .rl-name { font-size: 1.2em; font-weight: bold; color: var(--pm-black); margin-bottom: 10px; }\n        .rl-desc { font-size: 0.9em; color: #555; line-height: 1.5; margin-bottom: 15px; }\n        .rl-cost { font-weight: bold; color: var(--pm-dark-red); text-align: right; font-family: monospace; }\n        .rl-cost.refund { color: #2e7d32; }\n\n        .diy-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }\n        .diy-box { background: rgba(0, 0, 0, 0.03); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; position: relative; }\n        .diy-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }\n        .diy-title { font-weight: bold; color: var(--pm-dark-red); font-size: 1.1em; }\n        .diy-roll-btn { padding: 8px 15px; background: var(--pm-gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; }\n        .diy-roll-btn:hover:not(:disabled) { background: var(--pm-dark-red); }\n        .diy-roll-btn:disabled { background: #ccc; cursor: not-allowed; }\n        .diy-cost-display { font-family: monospace; font-size: 1.2em; font-weight: bold; color: var(--pm-dark-red); }\n        .diy-cost-display.refund { color: #2e7d32; }\n        .btn-add-diy { width: 100%; padding: 10px; background: transparent; border: 1px dashed var(--pm-text); color: var(--pm-text); font-weight: bold; cursor: pointer; border-radius: 4px; transition: all 0.2s; }\n        .btn-add-diy:hover { background: rgba(0,0,0,0.05); border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n\n        .btn-remove-diy { background: transparent; border: none; color: #ff4444; cursor: pointer; font-size: 1.5em; font-weight: bold; display: flex; align-items: center; justify-content: center; padding: 0 5px; transition: transform 0.2s; line-height: 1; }\n        .btn-remove-diy:hover { transform: scale(1.2); }\n\n        .dm-warning { background: rgba(139, 0, 0, 0.05); border-left: 4px solid var(--pm-dark-red); padding: 15px; margin-bottom: 20px; font-size: 0.95em; color: #555; line-height: 1.6; }\n        .dm-warning strong { color: var(--pm-dark-red); }\n        .negative-warning { background: rgba(139, 0, 0, 0.1); border: 2px solid #ff4444; color: #8b0000; padding: 20px; border-radius: 8px; margin-top: 20px; font-weight: bold; text-align: center; animation: pulse-border 2s infinite; line-height: 1.6; }\n        .price-table-details { margin-bottom: 20px; border: 1px solid var(--pm-gold); border-radius: 6px; background: rgba(255, 255, 255, 0.8); }\n        .price-table-summary { padding: 12px 20px; font-weight: bold; color: var(--pm-dark-red); cursor: pointer; list-style: none; background: rgba(212, 175, 55, 0.1); }\n        .price-table-summary::-webkit-details-marker { display: none; }\n        .price-table-content { padding:15px 20px; font-size: 0.9em; color: #444; line-height: 1.8; border-top: 1px dashed var(--pm-gold); }\n        .price-table-content ul { margin: 0; padding-left: 20px; }\n        .price-table-content li { margin-bottom: 5px; }\n\n        .custom-idea-box { width: 100%; margin-top: 20px; }\n        .custom-idea-box textarea {\n            width: 100%; min-height: 150px; padding: 15px; border: 2px dashed var(--pm-gold); border-radius: 6px;\n            background-color: #ffffff !important;\n            color: #000000 !important;\n            font-family: inherit; font-size: 1.05em; resize: vertical; box-sizing: border-box; outline: none; transition: all 0.3s; line-height: 1.6;\n        }\n        .custom-idea-box textarea::placeholder {\n            color: #888888 !important;\n        }\n        .custom-idea-box textarea:focus { border-color: var(--pm-dark-red); border-style: solid; box-shadow: 0 0 10px rgba(139, 0, 0, 0.1); }\n\n        .page-settings { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 40px 0; animation: slideDown 0.5s ease-out; }\n        .settings-title { font-size: 2.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 8px; margin-bottom: 10px; text-align: center; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; width: 100%; max-width: 800px; }\n        .settings-warning { color: #555; font-style: italic; margin-bottom: 40px; letter-spacing: 2px; text-align: center; }\n        .toggles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n        .toggle-btn { padding: 15px; border: 1px solid var(--pm-gold); background: rgba(255, 255, 255, 0.5); border-radius: 8px; text-align: center; cursor: pointer; font-weight: bold; color: #555; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); user-select: none; }\n        .toggle-btn.active { background: var(--pm-dark-red); color: #fff; border-color: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n        .toggle-btn.active::after { content: ' [已开启]'; font-size: 0.8em; opacity: 0.8; }\n        .toggle-btn:not(.active)::after { content: ' [已关闭]'; font-size: 0.8em; opacity: 0.8; }\n        .dm-section { width: 100%; max-width: 800px; background: rgba(212, 175, 55, 0.05); border: 1px dashed var(--pm-gold); padding: 30px; border-radius: 8px; margin-bottom: 30px; box-sizing: border-box; }\n        .dm-title { font-size: 1.5em; color: var(--pm-black); font-weight: bold; margin-bottom: 15px; }\n        .dm-desc { color: #555; line-height: 1.8; margin-bottom: 20px; }\n        .dm-presets { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }\n        .pm-preset-btn { padding: 10px 20px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; transition: all 0.2s; font-family: inherit; font-size: 1em; }\n        .pm-preset-btn:hover, .pm-preset-btn.active { background: var(--pm-dark-red); color: white; }\n        .pm-preset-btn.custom-btn { border-style: dashed; font-weight: bold; }\n        .mbti-diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n        @media (max-width: 768px) { .mbti-diff-grid { grid-template-columns: 1fr; } }\n        .mbti-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; }\n        .mbti-row { display: flex; justify-content: space-between; margin-bottom: 10px; background: rgba(0, 0, 0, 0.05); border-radius: 4px; overflow: hidden; }\n        .mbti-btn { flex: 1; padding: 10px; border: none; background: transparent; cursor: pointer; font-weight: bold; color: #555; transition: all 0.2s; }\n        .mbti-btn.active { background: var(--pm-dark-red); color: white; }\n        .mbti-result { text-align: center; font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); margin-top: 15px; letter-spacing: 2px; }\n        .diff-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 10px; }\n        .diff-btn { padding: 12px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; font-weight: bold; transition: all 0.2s; text-align: left; }\n        .diff-btn:hover, .diff-btn.active { background: var(--pm-dark-red); color: white; }\n        .pm-btn-embark { padding: 20px 60px; font-size: 1.5em; font-weight: 900; background: var(--pm-black); color: var(--pm-gold); border: 2px solid var(--pm-gold); border-radius: 8px; cursor: pointer; letter-spacing: 8px; transition: all 0.4s; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); text-align: center; display: inline-block; margin-top: 20px; }\n        .pm-btn-embark:hover:not(:disabled) { background: var(--pm-dark-red); color: #fff; border-color: #ff4444; box-shadow: 0 15px 30px rgba(139, 0, 0, 0.5); transform: translateY(-3px); }\n        .pm-btn-embark:disabled { opacity: 0.6; cursor: not-allowed; }\n\n        .modal-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background: rgba(0,0,0,0.8); z-index: 999999; display: flex; justify-content: center; align-items: center; padding: 20px; }\n        .modal-content { background: var(--pm-bg-light); border: 2px solid var(--pm-gold); border-radius: 8px; width: 100%; max-width: 800px; max-height: 90vh; display: flex; flex-direction: column; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }\n        .modal-title { color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; margin-bottom: 15px; text-align: center; }\n\n        .modal-textarea {\n            flex: 1; width: 100%; min-height: 300px; padding: 15px; font-family: monospace; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; resize: none; outline: none;\n            background-color: #ffffff !important;\n            color: #000000 !important;\n            margin-bottom: 15px;\n        }\n\n        .modal-btn { padding: 12px 30px; background: var(--pm-dark-red); color: white; border: none; border-radius: 4px; font-size: 1.2em; cursor: pointer; font-weight: bold; align-self: center; }\n        .modal-btn:hover { background: #5a0000; }\n      ", e.head.appendChild(t);
+			t.id = "pm-global-styles", t.innerHTML = "\n        /* 隐藏原生标签 */\n        .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n        .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n            display: none !important;\n        }\n        .mes_text narrative { display: block !important; }\n\n        /* =========================================\n           全局与羊皮纸基底 (废墟图书馆美学)\n           ========================================= */\n        :root {\n          --pm-gold: #d4af37;\n          --pm-dark-red: #8b0000;\n          --pm-black: #1a1105;\n          --pm-text: #2c241b;\n          --pm-bg-light: #ffffff;\n          --pm-bg-mid: #fcfaf5;\n          --pm-bg-dark: #f4ebd8;\n        }\n\n        /* 🚨 恢复老版本的“聊天框内全屏”效果 */\n        .pm-master-container {\n          position: relative;\n          width: 100%;\n          min-height: 100vh;\n          border-radius: 12px;\n          border: 2px solid var(--pm-gold);\n          z-index: 10;\n          background: radial-gradient(circle at center, var(--pm-bg-light) 0%, var(--pm-bg-mid) 50%, var(--pm-bg-dark) 100%);\n          padding: 20px;\n          box-sizing: border-box;\n          color: var(--pm-text);\n          overflow-x: hidden;\n          box-shadow: inset 0 0 40px rgba(255, 255, 255, 1);\n          display: flex;\n          flex-direction: column;\n          align-items: center;\n          font-family: 'Noto Serif SC', 'Songti SC', serif;\n          margin-top: 15px;\n          margin-bottom: 15px;\n        }\n        .pm-master-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 3px solid rgba(212, 175, 55, 0.8); border-radius: 12px; animation: pm-border-glow 4s infinite alternate ease-in-out; pointer-events: none; z-index: 2; }\n        .pm-master-container::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noiseFilter\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noiseFilter)\" opacity=\"0.05\"/></svg>'); pointer-events: none; z-index: 1; }\n        @keyframes pm-border-glow { 0% { box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1), 0 0 15px rgba(212, 175, 55, 0.2); border-color: rgba(212, 175, 55, 0.4); } 100% { box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.5); border-color: rgba(212, 175, 55, 1); } }\n\n        /* 状态栏主容器 */\n        @keyframes stb-pm-terminal-breathe { 0% { border-color: #222; } 50% { border-color: #444; } 100% { border-color: #222; } }\n        .stb-pm-wrapper { width: 100%; max-width: 100%; overflow-x: hidden; overflow-wrap: anywhere; box-sizing: border-box; background: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); background-size: 24px 24px; border: 1px solid #333; border-top: 4px solid #8a0303; border-bottom: 4px solid #d4af37; border-radius: 12px; font-family: 'Nunito', 'Quicksand', 'Segoe UI Rounded', 'Helvetica Rounded', Arial, sans-serif; color: #d0d0d0; padding: 16px; animation: stb-pm-terminal-breathe 8s infinite ease-in-out; position: relative; margin-top: 15px; margin-bottom: 10px; }\n        .stb-pm-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 12px; margin-bottom: 12px; position: relative; }\n        .stb-pm-header::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 30%; height: 2px; background: #d4af37; box-shadow: 0 0 10px #d4af37; border-radius: 2px; }\n        .stb-pm-location { font-family: 'Quicksand', 'Georgia', serif; font-size: clamp(16px, 4vw, 18px); font-weight: bold; color: #d4af37; letter-spacing: 1px; text-shadow: 0 0 12px rgba(212, 175, 55, 0.6); word-break: break-word; display: flex; align-items: center; gap: 8px; flex: 1; }\n        .stb-pm-location::before { content: '◆'; font-size: 12px; color: #8a0303; text-shadow: 0 0 6px #8a0303; }\n        .stb-pm-env-col { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }\n        .stb-pm-tag { background: rgba(0, 0, 0, 0.8); border: 1px solid #444; padding: 4px 10px; border-radius: 12px; white-space: nowrap; font-size: 12px; box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05); letter-spacing: 0.5px; }\n        .stb-pm-tag-time { color: #aaa; border-color: #555; }\n        .stb-pm-tag-weather { color: #ff6b6b; border-color: #8a0303; text-shadow: 0 0 5px rgba(138, 3, 3, 0.8); }\n\n        /* BGM 播放器 */\n        .stb-pm-bgm-container { margin-bottom: 16px; }\n        .stb-pm-bgm-container details { background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #81d4fa; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }\n        .stb-pm-bgm-container summary { padding: 12px 16px; font-size: 14px; color: #81d4fa; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }\n        .stb-pm-bgm-container summary::-webkit-details-marker { display: none; }\n        .stb-pm-bgm-container summary:hover { background: rgba(129, 212, 250, 0.1); }\n        .stb-pm-bgm-arrow { transition: transform 0.3s ease; }\n        .stb-pm-bgm-container details[open] .stb-pm-bgm-arrow { transform: rotate(180deg); }\n        .stb-pm-bgm-content { padding: 12px; border-top: 1px solid #333; display: flex; justify-content: center; background: #000; overflow: hidden; }\n        .stb-pm-bgm-content > iframe, .stb-pm-bgm-content > audio { width: 100% !important; max-width: 330px; height: 86px; border-radius: 6px; outline: none; border: none; }\n\n        /* 按钮与徽章 */\n        @keyframes stb-btn-breathe-gold { 0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } 50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); } 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } }\n        @keyframes stb-btn-breathe-blue { 0% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } 50% { box-shadow: 0 0 15px rgba(129, 212, 250, 0.6); } 100% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } }\n        .stb-pm-actions { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }\n        .stb-pm-btn { flex: 1; min-width: 140px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 14px; font-weight: bold; letter-spacing: 1px; border-radius: 20px; transition: all 0.2s ease; cursor: pointer; touch-action: manipulation; }\n        .stb-pm-btn:active { transform: scale(0.96); }\n        .stb-pm-btn-guide { background: linear-gradient(180deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #d4af37; color: #f4e7c1; animation: stb-btn-breathe-gold 3s infinite ease-in-out; }\n        .stb-pm-btn-mirror { background: linear-gradient(180deg, rgba(129, 212, 250, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #81d4fa; color: #e1f5fe; animation: stb-btn-breathe-blue 3s infinite ease-in-out; }\n        .stb-pm-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }\n        .stb-pm-badge { background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #d4af37; padding: 8px 14px; border-radius: 8px; font-size: 14px; color: #e0e0e0; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); }\n        .stb-pm-badge strong { color: #d4af37; font-weight: bold; }\n        .stb-pm-badge-title { flex: 1 1 100%; border-left-color: #81d4fa; }\n        .stb-pm-badge-title strong { color: #81d4fa; }\n\n        /* Tabs 切换 */\n        .stb-pm-tabs-container { display: flex; flex-wrap: wrap; gap: 4px; position: relative; min-height: 400px; }\n        .stb-pm-tab-label { display: inline-block; }\n        .stb-pm-tab-radio { display: none; }\n        .stb-tab-btn { padding: 10px 16px; font-size: 14px; color: #777; background: linear-gradient(to bottom, #0a0a0a, #111); border: 1px solid #222; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; position: relative; letter-spacing: 1px; user-select: none; }\n        .stb-pm-tab-content { position: absolute; left: 16px; right: 16px; display: none; flex-direction: column; gap: 16px; max-height: 55vh; overflow-y: auto; padding-right: 8px; padding-top: 16px; border-top: 1px solid #222; scrollbar-width: thin; scrollbar-color: #555 #0a0a0a; -webkit-overflow-scrolling: touch; }\n        .stb-pm-tab-content::-webkit-scrollbar { width: 6px; }\n        .stb-pm-tab-content::-webkit-scrollbar-track { background: #0a0a0a; border-radius: 3px; }\n        .stb-pm-tab-content::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }\n        .stb-pm-tab-radio:checked ~ .stb-tab-btn { color: #fff; background: linear-gradient(to bottom, rgba(138, 3, 3, 0.25), #0a0a0a); border-color: #555; text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); font-weight: bold; }\n        .stb-pm-tab-radio:checked ~ .stb-tab-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: #d4af37; box-shadow: 0 -2px 12px #d4af37, 0 0 6px #fff; border-radius: 2px; z-index: 2; }\n        .stb-pm-tab-radio:checked ~ .stb-pm-tab-content { display: flex; top: 100%; margin-top: 40px; }\n\n        /* 面板与进度条 */\n        .stb-pm-panel { background: rgba(15, 15, 18, 0.8); border: 1px solid #222; border-left: 4px solid #555; border-radius: 8px; padding: 16px; min-width: 0; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8); transition: border-color 0.3s ease, box-shadow 0.3s ease; position: relative; }\n        .stb-pm-panel:hover { border-left-color: #d4af37; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), -3px 0 12px rgba(212, 175, 55, 0.25); }\n        .stb-pm-panel-title { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); padding-bottom: 6px; display: flex; align-items: center; font-weight: bold; }\n        .stb-pm-panel-title::before { content: '■'; font-size: 10px; margin-right: 8px; color: #555; }\n        .stb-pm-bar-container { margin-bottom: 14px; }\n        .stb-pm-bar-header { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }\n        .stb-pm-bar-label { font-weight: bold; text-shadow: 0 0 5px currentColor; letter-spacing: 1px; }\n        .stb-pm-bar-value { font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #ccc; }\n        .stb-pm-bar-track { width: 100%; height: 14px; background: #0a0a0a; border: 1px solid #333; border-radius: 7px; overflow: hidden; box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.9), 0 1px 0 rgba(255, 255, 255, 0.05); position: relative; }\n        .stb-pm-bar-fill { height: 100%; transition: width 0.5s ease; border-radius: 7px; }\n        .stb-pm-bar-hp { background: linear-gradient(90deg, #ff6b6b, #8a0303); box-shadow: 0 0 8px rgba(255, 107, 107, 0.6); }\n        .stb-pm-bar-mp { background: linear-gradient(90deg, #81d4fa, #0277bd); box-shadow: 0 0 8px rgba(129, 212, 250, 0.6); }\n        .stb-pm-bar-sp { background: linear-gradient(90deg, #81c784, #2e7d32); box-shadow: 0 0 8px rgba(129, 199, 132, 0.6); }\n        .stb-pm-bar-xp { background: linear-gradient(90deg, #fff59d, #fbc02d); box-shadow: 0 0 8px rgba(255, 245, 157, 0.6); }\n\n        /* 肢体状态 */\n        .stb-pm-limbs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }\n        @keyframes stb-critical-flash { 0% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } 50% { border-color: #550000; box-shadow: none; background: rgba(255, 68, 68, 0.05); } 100% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } }\n        .stb-pm-limb-card { background: linear-gradient(180deg, #1a1a1a, #0d0d0d); border: 1px solid #333; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.2s ease, border-color 0.2s ease; position: relative; overflow: hidden; }\n        .stb-pm-limb-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #333; }\n        .stb-pm-limb-name { font-size: 12px; color: #888; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }\n        .stb-pm-limb-stat { font-size: 14px; font-weight: bold; text-align: center; word-break: break-word; white-space: normal; }\n        .stb-pm-limb-card[data-status*='完好']::before { background: #555; }\n        .stb-pm-limb-card[data-status*='完好'] .stb-pm-limb-stat { color: #999; }\n        .stb-pm-limb-card[data-status*='轻度']::before { background: #aaa; }\n        .stb-pm-limb-card[data-status*='轻度'] .stb-pm-limb-stat { color: #ddd; text-shadow: 0 0 4px rgba(255, 255, 255, 0.3); }\n        .stb-pm-limb-card[data-status*='重伤'] { border-color: #ffb74d; }\n        .stb-pm-limb-card[data-status*='重伤']::before { background: #ffb74d; box-shadow: 0 0 6px #ffb74d; }\n        .stb-pm-limb-card[data-status*='重伤'] .stb-pm-limb-stat { color: #ffcc80; text-shadow: 0 0 6px rgba(255, 204, 128, 0.6); }\n        .stb-pm-limb-card[data-status*='残废'], .stb-pm-limb-card[data-status*='断裂'] { animation: stb-critical-flash 1s infinite; }\n        .stb-pm-limb-card[data-status*='残废']::before, .stb-pm-limb-card[data-status*='断裂']::before { background: #ff4444; }\n        .stb-pm-limb-card[data-status*='残废'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='断裂'] .stb-pm-limb-stat { color: #ff6b6b; text-decoration: line-through; }\n        .stb-pm-limb-card[data-status*='义体'], .stb-pm-limb-card[data-status*='同化'], .stb-pm-limb-card[data-status*='再生'] { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); }\n        .stb-pm-limb-card[data-status*='义体']::before, .stb-pm-limb-card[data-status*='同化']::before, .stb-pm-limb-card[data-status*='再生']::before { background: #d4af37; box-shadow: 0 0 6px #d4af37; }\n        .stb-pm-limb-card[data-status*='义体'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='同化'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='再生'] .stb-pm-limb-stat { color: #f4e7c1; text-shadow: 0 0 6px rgba(212, 175, 55, 0.5); }\n\n        /* 属性与折叠夹 */\n        .stb-pm-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }\n        .stb-pm-stat-box { background: rgba(255, 255, 255, 0.02); border: 1px solid #333; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); }\n        .stb-pm-stat-label { font-size: 13px; color: #888; text-transform: uppercase; font-weight: bold; }\n        .stb-pm-stat-value { font-size: 16px; font-weight: bold; color: #d4af37; font-family: monospace; text-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }\n        .stb-pm-folder { background: rgba(255, 255, 255, 0.03); border: 1px solid #333; border-radius: 6px; margin-bottom: 10px; overflow: hidden; transition: all 0.3s ease; }\n        .stb-pm-folder summary { padding: 12px 14px; font-size: 14px; color: #eee; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; background: rgba(0, 0, 0, 0.4); }\n        .stb-pm-folder summary::-webkit-details-marker { display: none; }\n        .stb-pm-folder summary:hover { background: rgba(255, 255, 255, 0.05); }\n        .stb-pm-folder-arrow { transition: transform 0.3s ease; color: #888; font-size: 12px; }\n        .stb-pm-folder[open] .stb-pm-folder-arrow { transform: rotate(180deg); }\n        .stb-pm-folder-content { padding: 12px; border-top: 1px solid #333; }\n        .stb-pm-folder-actions { display: flex; justify-content: flex-end; padding: 8px 12px; background: rgba(0, 0, 0, 0.6); border-top: 1px dashed #444; }\n        .stb-pm-btn-small { background: #222; border: 1px solid #555; color: #ccc; padding: 4px 12px; border-radius: 4px; font-size: 12px; text-decoration: none; transition: all 0.2s; cursor: pointer; }\n        .stb-pm-btn-small:hover { background: #8a0303; border-color: #ff6b6b; color: #fff; }\n\n        /* 文本与传闻卡片 */\n        .stb-pm-text-block { font-size: 15px; color: #ccc; line-height: 1.6; word-wrap: break-word; white-space: normal; }\n        .stb-pm-rumor-card { background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), rgba(0, 0, 0, 0.6)); border: 1px solid #222; border-left: 4px solid #d4af37; padding: 12px 16px; margin-bottom: 12px; border-radius: 4px 8px 8px 4px; transition: all 0.3s ease; position: relative; }\n        .stb-pm-rumor-card::after { content: ''; position: absolute; top: 0; right: 0; width: 30px; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.9)); }\n        .stb-pm-rumor-card:hover { background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.6)); border-left-width: 6px; transform: translateX(4px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); }\n        .stb-pm-rumor-title { color: #d4af37; font-size: 14px; margin-bottom: 8px; font-weight: bold; letter-spacing: 1.5px; }\n        .stb-pm-rumor-text { color: #ddd; font-size: 15px; line-height: 1.6; position: relative; z-index: 1; }\n        .stb-pm-terminal-data { font-family: 'Courier New', Courier, monospace; font-size: 13px; color: #81d4fa; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }\n        .stb-pm-terminal-data-gold { color: #f4e7c1; }\n        .stb-pm-terminal-data-red { color: #ff6b6b; }\n        .stb-pm-info-row { display: flex; flex-direction: row; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #333; padding-bottom: 4px; }\n        .stb-pm-info-label { font-size: 14px; color: #999; }\n        .stb-pm-info-value { font-size: 14px; font-weight: bold; color: #ccc; }\n\n        /* =========================================\n           车卡界面专属样式\n           ========================================= */\n        /* 🚨 渐入渐出动画 */\n        .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease, transform 0.5s ease; }\n        .fade-enter-from { opacity: 0; transform: translateY(20px); }\n        .fade-leave-to { opacity: 0; transform: translateY(-20px); }\n\n        .page-check, .library-scene, .custom-char-page, .page-settings { width: 100%; max-width: 1000px; flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }\n        .page-check { justify-content: center; }\n        .sys-title { font-size: clamp(2em, 5vw, 3.5em); font-weight: 900; color: var(--pm-black); letter-spacing: 10px; margin-bottom: 5px; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); text-align: center; }\n        .sys-subtitle { font-family: 'Brush Script MT', 'Great Vibes', cursive; font-size: clamp(1.2em, 3vw, 1.8em); color: var(--pm-dark-red); margin-bottom: 50px; letter-spacing: 3px; text-align: center; }\n        .sys-check-box { width: 100%; max-width: 500px; margin: 0 auto 50px; border-top: 2px solid var(--pm-gold); border-bottom: 2px solid var(--pm-gold); padding: 30px 0; }\n        .sys-row { display: flex; justify-content: space-between; margin: 15px 0; font-size: 1.2em; font-weight: bold; color: #333; }\n        .status-ok { font-family: monospace; color: var(--pm-dark-red); text-shadow: 0 0 10px rgba(139, 0, 0, 0.2); }\n        .status-warn { font-family: monospace; color: #d4af37; }\n        .status-loading { font-family: monospace; color: #aaa; animation: pulse 1.5s infinite; }\n        .sys-actions { display: flex; gap: 30px; width: 100%; max-width: 500px; justify-content: center; }\n        .sys-btn { flex: 1; padding: 15px 0; text-align: center; border: 1px solid var(--pm-text); background: transparent; color: var(--pm-text); cursor: pointer; font-family: inherit; font-size: 1.2em; font-weight: bold; letter-spacing: 4px; transition: all 0.3s; border-radius: 4px; }\n        .sys-btn:hover { background: var(--pm-text); color: var(--pm-bg-mid); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }\n        .sys-btn-primary { border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n        .sys-btn-primary:hover:not(:disabled) { background: var(--pm-dark-red); color: white; box-shadow: 0 8px 20px rgba(139, 0, 0, 0.25); }\n        .sys-btn-primary:disabled { opacity: 0.5; border-color: #666; color: #666; cursor: not-allowed; background: transparent; box-shadow: none; }\n\n        .transition-note { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10%; background: radial-gradient(circle at center, #ffffff 0%, #fcfaf5 50%, #f4ebd8 100%); z-index: 210; animation: noteSequence 5.5s forwards ease-in-out; }\n        .note-title { font-size: clamp(1.5em, 3vw, 2em); color: var(--pm-dark-red); margin-bottom: 30px; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; letter-spacing: 3px; font-weight: bold; }\n        .note-content { font-size: clamp(1em, 2vw, 1.2em); line-height: 2; max-width: 800px; color: var(--pm-text); }\n        .note-content li { margin-bottom: 15px; list-style-type: square; }\n        .note-content li strong { color: var(--pm-dark-red); font-weight: 900; }\n\n        .library-scene { width: 100%; padding: 20px 0; box-sizing: border-box; position: relative; z-index: 200; }\n        .bgm-player { position: absolute; top: 0px; left: 0px; width: 280px; opacity: 0.3; transition: opacity 0.4s; z-index: 220; }\n        .bgm-player:hover { opacity: 1; }\n        .bgm-player audio { width: 100%; height: 40px; outline: none; }\n        .scene-text { font-size: clamp(1.1em, 2.5vw, 1.3em); line-height: 2.2; text-align: justify; margin-top: 60px; margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto; text-indent: 2em; color: var(--pm-black); }\n        .scene-text p { margin-bottom: 20px; }\n        .highlight-red { color: var(--pm-dark-red); font-weight: 900; text-shadow: 0 0 5px rgba(139, 0, 0, 0.2); }\n        .highlight-gold { color: var(--pm-gold); font-weight: 900; text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }\n        .trauma-text { color: var(--pm-dark-red); font-weight: bold; font-style: italic; font-size: 0.9em; background: rgba(139, 0, 0, 0.05); padding: 8px 15px; border-left: 3px solid var(--pm-dark-red); border-radius: 4px; display: block; margin: 15px 0; text-indent: 0; }\n\n        /* 🚨 跑团娘立绘相框样式 */\n        .dm-portrait-box {\n            display: flex;\n            justify-content: center;\n            margin: 30px auto 50px auto;\n            width: 100%;\n        }\n        .dm-portrait-img {\n            max-width: 220px;\n            border: 4px solid var(--pm-gold);\n            border-radius: 8px;\n            box-shadow: 0 10px 25px rgba(0,0,0,0.3), inset 0 0 15px rgba(0,0,0,0.5);\n            background: radial-gradient(circle, #2c1810 0%, #1a1105 100%);\n            padding: 5px;\n            object-fit: cover;\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n        .dm-portrait-img:hover {\n            transform: scale(1.05);\n            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(0,0,0,0.6);\n        }\n\n        .dossier-container { max-width: 900px; width: 100%; display: flex; flex-direction: column; gap: 15px; margin: 0 auto 40px auto; }\n        .dossier-folder { background: rgba(255, 255, 255, 0.7); border: 1px solid var(--pm-gold); border-radius: 6px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); overflow: hidden; transition: all 0.3s ease; }\n        .dossier-folder[open] { background: rgba(255, 255, 255, 0.95); box-shadow: 0 10px 25px rgba(139, 0, 0, 0.15); border-color: var(--pm-dark-red); }\n        .dossier-summary { padding: 15px 20px; display: flex; align-items: center; cursor: pointer; list-style: none; border-left: 4px solid var(--pm-gold); transition: all 0.3s; }\n        .dossier-summary::-webkit-details-marker { display: none; }\n        .dossier-summary:hover { background: rgba(212, 175, 55, 0.1); }\n        .dossier-folder[open] .dossier-summary { border-left-color: var(--pm-dark-red); border-bottom: 1px dashed rgba(139, 0, 0, 0.2); background: rgba(139, 0, 0, 0.05); }\n        .ds-type { font-family: monospace; color: #888; font-size: 0.9em; width: 80px; letter-spacing: 1px; }\n        .ds-name { font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 3px; flex: 1; }\n        .ds-desc { color: #555; font-style: italic; font-size: 0.95em; }\n        .dossier-content { padding: 30px; animation: slideDown 0.4s ease-out; }\n        .cp-quote { font-family: 'Georgia', serif; font-size: 1.1em; font-style: italic; color: #555; border-left: 4px solid var(--pm-gold); padding-left: 20px; margin-bottom: 30px; background: rgba(212, 175, 55, 0.05); padding: 15px 20px; }\n        .cp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }\n        .cp-box { border: 1px dashed #b89f7d; padding: 20px; background: rgba(255, 255, 255, 0.6); }\n        .cp-box-title { font-weight: 900; color: var(--pm-dark-red); margin-bottom: 10px; font-size: 1.1em; border-bottom: 1px solid rgba(139, 0, 0, 0.2); padding-bottom: 5px; letter-spacing: 1px; }\n        .cp-box-content { font-size: 1.05em; line-height: 1.8; color: #333; }\n        .cp-actions { display: flex; justify-content: center; margin-top: 20px; }\n        .cp-btn-confirm { padding: 15px 50px; font-size: 1.2em; font-weight: bold; cursor: pointer; border: 2px solid var(--pm-dark-red); background: var(--pm-dark-red); color: #fff; text-decoration: none; letter-spacing: 2px; transition: all 0.3s; border-radius: 4px; display: block; text-align: center; }\n        .cp-btn-confirm:hover { background: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n        .dossier-custom { display: flex; align-items: center; padding: 15px 20px; background: var(--pm-black); border: 1px solid var(--pm-dark-red); border-left: 4px solid var(--pm-dark-red); border-radius: 6px; cursor: pointer; margin-top: 10px; transition: all 0.3s; text-decoration: none; }\n        .dossier-custom:hover { background: #2c1810; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateX(5px); }\n        .dossier-custom .ds-type { color: #aaa; }\n        .dossier-custom .ds-name { color: var(--pm-gold); }\n\n        .custom-char-page { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 20px 0; position: relative; z-index: 200; }\n        .points-header { position: sticky; top: 0; width: 100%; background: rgba(26, 17, 5, 0.95); color: var(--pm-gold); padding: 15px 30px; border-radius: 8px; border: 1px solid var(--pm-gold); display: flex; justify-content: space-between; align-items: center; z-index: 300; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); box-sizing: border-box; margin-bottom: 30px; }\n        .points-header h2 { margin: 0; font-size: 1.5em; letter-spacing: 2px; }\n        .points-display { font-size: 2em; font-weight: 900; font-family: monospace; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); transition: color 0.3s; }\n        .points-display.negative { color: #ff4444; text-shadow: 0 0 15px rgba(255, 0, 0, 0.8); animation: pulse-red 2s infinite; }\n        .preset-bar { width: 100%; background: rgba(255, 255, 255, 0.6); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }\n\n        /* 🚨 强制白底黑字输入框 */\n        .preset-select, .preset-input, .pm-input, .pm-textarea, .pm-select {\n            background-color: #ffffff !important;\n            color: #000000 !important;\n            border: 1px solid #b89f7d !important;\n            padding: 12px; border-radius: 4px; font-family: inherit; font-size: 1em; box-sizing: border-box; outline: none; transition: border-color 0.3s;\n        }\n        .preset-select::placeholder, .preset-input::placeholder, .pm-input::placeholder, .pm-textarea::placeholder, .pm-select::placeholder {\n            color: #888888 !important;\n        }\n        .preset-select, .preset-input { padding: 8px; }\n        .pm-input { width: 100%; margin-bottom: 15px; }\n        .pm-textarea { width: 100%; height: 80px; resize: vertical; }\n        .pm-input:focus, .pm-textarea:focus, .pm-select:focus, .preset-input:focus, .preset-select:focus {\n            border-color: var(--pm-dark-red) !important;\n            box-shadow: 0 0 8px rgba(139, 0, 0, 0.3) !important;\n            background-color: #ffffff !important;\n        }\n\n        .pm-btn-small {\n            padding: 8px 15px;\n            background: #ffffff;\n            color: var(--pm-dark-red);\n            border: 1px solid var(--pm-dark-red);\n            border-radius: 4px;\n            cursor: pointer;\n            font-weight: bold;\n            transition: all 0.2s;\n            font-family: inherit;\n        }\n        .pm-btn-small:hover {\n            background: var(--pm-dark-red);\n            color: #ffffff;\n        }\n\n        /* 🚨 玩家立绘自适应画框样式 */\n        .image-upload-row { display: flex; gap: 25px; align-items: stretch; margin-bottom: 25px; width: 100%; }\n        .player-portrait-box {\n            flex-shrink: 0;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n        }\n        .player-portrait-img, .player-portrait-placeholder {\n            max-width: 140px;\n            max-height: 180px;\n            width: auto;\n            height: auto;\n            border: 3px solid var(--pm-gold);\n            border-radius: 6px;\n            box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.5);\n            background: radial-gradient(circle, #2c1810 0%, #1a1105 100%);\n            padding: 4px;\n            object-fit: contain;\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n        .player-portrait-img:hover {\n            transform: scale(1.05);\n            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(0,0,0,0.6);\n        }\n        .player-portrait-placeholder {\n            width: 100px;\n            height: 120px;\n            color: #888;\n            font-size: 1em;\n            font-weight: bold;\n            letter-spacing: 2px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        .preset-btn { padding: 8px 15px; background: var(--pm-black); color: var(--pm-gold); border: 1px solid var(--pm-gold); border-radius: 4px; cursor: pointer; transition: all 0.2s; }\n        .preset-btn:hover { background: var(--pm-dark-red); color: #fff; }\n        .roll-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; text-align: center; }\n        .roll-btn { width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, var(--pm-dark-red) 0%, var(--pm-black) 100%); border: 4px solid var(--pm-gold); color: var(--pm-gold); font-size: 2em; font-weight: 900; cursor: pointer; transition: all 0.2s; box-shadow: 0 0 30px rgba(139, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; flex-direction: column; }\n        .roll-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); }\n        .roll-btn:active { transform: scale(0.95); }\n        .roll-btn.rolling { animation: shake 0.5s infinite; pointer-events: none; filter: brightness(1.5); }\n        .shop-container { width: 100%; display: grid; grid-template-columns: 1fr; gap: 30px; }\n        .shop-section { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); border-radius: 8px; padding: 25px; }\n        .shop-title { font-size: 1.5em; color: var(--pm-dark-red); border-bottom: 2px solid var(--pm-gold); padding-bottom: 10px; margin-bottom: 20px; font-weight: 900; letter-spacing: 2px; display: flex; justify-content: space-between; align-items: center; }\n        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }\n        .stat-row { display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.05); padding: 10px 15px; border-radius: 4px; border-left: 3px solid var(--pm-gold); }\n        .stat-name { font-weight: bold; color: var(--pm-text); width: 100px; }\n        .stat-controls { display: flex; align-items: center; gap: 10px; }\n\n        .stat-btn { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); font-weight: bold; cursor: pointer; transition: all 0.2s; display: flex; justify-content: center; align-items: center; padding: 0; line-height: 1; }\n        .stat-btn:hover:not(:disabled) { background: var(--pm-dark-red); color: white; }\n        .stat-btn:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }\n        .stat-val { font-family: monospace; font-size: 1.2em; font-weight: bold; width: 40px; text-align: center; }\n        .stat-cost { font-size: 0.8em; color: #888; width: 60px; text-align: right; }\n        .rl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }\n        .rl-card { border: 1px solid #b89f7d; background: #fcfaf5; border-radius: 6px; padding: 15px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }\n        .rl-card:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transform: translateY(-2px); border-color: var(--pm-gold); }\n        .rl-card.selected { border-color: var(--pm-dark-red); background: rgba(139, 0, 0, 0.05); box-shadow: inset 0 0 0 2px var(--pm-dark-red); }\n        .rl-card.selected::after { content: '✓'; position: absolute; top: 10px; right: 15px; color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; }\n        .rl-type { font-size: 0.8em; color: #888; margin-bottom: 5px; font-family: monospace; }\n        .rl-name { font-size: 1.2em; font-weight: bold; color: var(--pm-black); margin-bottom: 10px; }\n        .rl-desc { font-size: 0.9em; color: #555; line-height: 1.5; margin-bottom: 15px; }\n        .rl-cost { font-weight: bold; color: var(--pm-dark-red); text-align: right; font-family: monospace; }\n        .rl-cost.refund { color: #2e7d32; }\n\n        .diy-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }\n        .diy-box { background: rgba(0, 0, 0, 0.03); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; position: relative; }\n        .diy-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }\n        .diy-title { font-weight: bold; color: var(--pm-dark-red); font-size: 1.1em; }\n        .diy-roll-btn { padding: 8px 15px; background: var(--pm-gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; }\n        .diy-roll-btn:hover:not(:disabled) { background: var(--pm-dark-red); }\n        .diy-roll-btn:disabled { background: #ccc; cursor: not-allowed; }\n        .diy-cost-display { font-family: monospace; font-size: 1.2em; font-weight: bold; color: var(--pm-dark-red); }\n        .diy-cost-display.refund { color: #2e7d32; }\n        .btn-add-diy { width: 100%; padding: 10px; background: transparent; border: 1px dashed var(--pm-text); color: var(--pm-text); font-weight: bold; cursor: pointer; border-radius: 4px; transition: all 0.2s; }\n        .btn-add-diy:hover { background: rgba(0,0,0,0.05); border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n\n        .btn-remove-diy { background: transparent; border: none; color: #ff4444; cursor: pointer; font-size: 1.5em; font-weight: bold; display: flex; align-items: center; justify-content: center; padding: 0 5px; transition: transform 0.2s; line-height: 1; }\n        .btn-remove-diy:hover { transform: scale(1.2); }\n\n        .dm-warning { background: rgba(139, 0, 0, 0.05); border-left: 4px solid var(--pm-dark-red); padding: 15px; margin-bottom: 20px; font-size: 0.95em; color: #555; line-height: 1.6; }\n        .dm-warning strong { color: var(--pm-dark-red); }\n        .negative-warning { background: rgba(139, 0, 0, 0.1); border: 2px solid #ff4444; color: #8b0000; padding: 20px; border-radius: 8px; margin-top: 20px; font-weight: bold; text-align: center; animation: pulse-border 2s infinite; line-height: 1.6; }\n        .price-table-details { margin-bottom: 20px; border: 1px solid var(--pm-gold); border-radius: 6px; background: rgba(255, 255, 255, 0.8); }\n        .price-table-summary { padding: 12px 20px; font-weight: bold; color: var(--pm-dark-red); cursor: pointer; list-style: none; background: rgba(212, 175, 55, 0.1); }\n        .price-table-summary::-webkit-details-marker { display: none; }\n        .price-table-content { padding:15px 20px; font-size: 0.9em; color: #444; line-height: 1.8; border-top: 1px dashed var(--pm-gold); }\n        .price-table-content ul { margin: 0; padding-left: 20px; }\n        .price-table-content li { margin-bottom: 5px; }\n\n        .custom-idea-box { width: 100%; margin-top: 20px; }\n        .custom-idea-box textarea {\n            width: 100%; min-height: 150px; padding: 15px; border: 2px dashed var(--pm-gold); border-radius: 6px;\n            background-color: #ffffff !important;\n            color: #000000 !important;\n            font-family: inherit; font-size: 1.05em; resize: vertical; box-sizing: border-box; outline: none; transition: all 0.3s; line-height: 1.6;\n        }\n        .custom-idea-box textarea::placeholder {\n            color: #888888 !important;\n        }\n        .custom-idea-box textarea:focus { border-color: var(--pm-dark-red); border-style: solid; box-shadow: 0 0 10px rgba(139, 0, 0, 0.1); }\n\n        .page-settings { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 40px 0; animation: slideDown 0.5s ease-out; }\n        .settings-title { font-size: 2.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 8px; margin-bottom: 10px; text-align: center; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; width: 100%; max-width: 800px; }\n        .settings-warning { color: #555; font-style: italic; margin-bottom: 40px; letter-spacing: 2px; text-align: center; }\n        .toggles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n        .toggle-btn { padding: 15px; border: 1px solid var(--pm-gold); background: rgba(255, 255, 255, 0.5); border-radius: 8px; text-align: center; cursor: pointer; font-weight: bold; color: #555; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); user-select: none; }\n        .toggle-btn.active { background: var(--pm-dark-red); color: #fff; border-color: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n        .toggle-btn.active::after { content: ' [已开启]'; font-size: 0.8em; opacity: 0.8; }\n        .toggle-btn:not(.active)::after { content: ' [已关闭]'; font-size: 0.8em; opacity: 0.8; }\n        .dm-section { width: 100%; max-width: 800px; background: rgba(212, 175, 55, 0.05); border: 1px dashed var(--pm-gold); padding: 30px; border-radius: 8px; margin-bottom: 30px; box-sizing: border-box; }\n        .dm-title { font-size: 1.5em; color: var(--pm-black); font-weight: bold; margin-bottom: 15px; }\n        .dm-desc { color: #555; line-height: 1.8; margin-bottom: 20px; }\n        .dm-presets { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }\n        .pm-preset-btn { padding: 10px 20px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; transition: all 0.2s; font-family: inherit; font-size: 1em; }\n        .pm-preset-btn:hover, .pm-preset-btn.active { background: var(--pm-dark-red); color: white; }\n        .pm-preset-btn.custom-btn { border-style: dashed; font-weight: bold; }\n        .mbti-diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n        @media (max-width: 768px) { .mbti-diff-grid { grid-template-columns: 1fr; } }\n        .mbti-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; }\n        .mbti-row { display: flex; justify-content: space-between; margin-bottom: 10px; background: rgba(0, 0, 0, 0.05); border-radius: 4px; overflow: hidden; }\n        .mbti-btn { flex: 1; padding: 10px; border: none; background: transparent; cursor: pointer; font-weight: bold; color: #555; transition: all 0.2s; }\n        .mbti-btn.active { background: var(--pm-dark-red); color: white; }\n        .mbti-result { text-align: center; font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); margin-top: 15px; letter-spacing: 2px; }\n        .diff-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 10px; }\n        .diff-btn { padding: 12px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; font-weight: bold; transition: all 0.2s; text-align: left; }\n        .diff-btn:hover, .diff-btn.active { background: var(--pm-dark-red); color: white; }\n        .pm-btn-embark { padding: 20px 60px; font-size: 1.5em; font-weight: 900; background: var(--pm-black); color: var(--pm-gold); border: 2px solid var(--pm-gold); border-radius: 8px; cursor: pointer; letter-spacing: 8px; transition: all 0.4s; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); text-align: center; display: inline-block; margin-top: 20px; }\n        .pm-btn-embark:hover:not(:disabled) { background: var(--pm-dark-red); color: #fff; border-color: #ff4444; box-shadow: 0 15px 30px rgba(139, 0, 0, 0.5); transform: translateY(-3px); }\n        .pm-btn-embark:disabled { opacity: 0.6; cursor: not-allowed; }\n\n        .modal-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background: rgba(0,0,0,0.8); z-index: 999999; display: flex; justify-content: center; align-items: center; padding: 20px; }\n        .modal-content { background: var(--pm-bg-light); border: 2px solid var(--pm-gold); border-radius: 8px; width: 100%; max-width: 800px; max-height: 90vh; display: flex; flex-direction: column; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }\n        .modal-title { color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; margin-bottom: 15px; text-align: center; }\n\n        .modal-textarea {\n            flex: 1; width: 100%; min-height: 300px; padding: 15px; font-family: monospace; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; resize: none; outline: none;\n            background-color: #ffffff !important;\n            color: #000000 !important;\n            margin-bottom: 15px;\n        }\n\n        .modal-btn { padding: 12px 30px; background: var(--pm-dark-red); color: white; border: none; border-radius: 4px; font-size: 1.2em; cursor: pointer; font-weight: bold; align-self: center; }\n        .modal-btn:hover { background: #5a0000; }\n      ", e.head.appendChild(t);
 		}
 	}, i = () => {
 		let r = n();
@@ -5539,7 +5536,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 			if (u) {
 				if (s.includes("pm-custom-char-mount-point")) {
 					let n = `pm-setup-root-${i}`, a = r.getElementById(n);
-					a || (a = r.createElement("div"), a.id = n, a.style.cssText = "margin-top: 15px; width: 100%; position: relative; clear: both;", u.appendChild(a), t = Xo(mp), t.mount(a), e.set(`setup_${i}`, t));
+					a || (a = r.createElement("div"), a.id = n, a.style.cssText = "margin-top: 15px; width: 100%; position: relative; clear: both;", u.appendChild(a), t = Xo(gp), t.mount(a), e.set(`setup_${i}`, t));
 				}
 				if (!c && !l) {
 					let t = `pm-app-${i}`, n = r.getElementById(t);
