@@ -3,7 +3,7 @@
                 if (typeof document !== 'undefined' && !document.getElementById('seven-days-injected-styles')) {
                   var style = document.createElement('style');
                   style.id = 'seven-days-injected-styles';
-                  style.textContent = "@keyframes stb-pm-terminal-breathe-c36aba3a{0%{border-color:#222}50%{border-color:#444}to{border-color:#222}}.stb-pm-wrapper[data-v-c36aba3a]{overflow-wrap:anywhere;box-sizing:border-box;color:#d0d0d0;background-color:#050505;background-image:linear-gradient(#ffffff05 1px,#0000 1px),linear-gradient(90deg,#ffffff05 1px,#0000 1px);background-position:0 0;background-repeat:repeat;background-size:24px 24px;background-attachment:scroll;background-origin:padding-box;background-clip:border-box;border:1px solid #333;border-top:4px solid #8a0303;border-bottom:4px solid #d4af37;border-radius:12px;width:100%;max-width:100%;padding:16px;font-family:Nunito,Quicksand,Segoe UI Rounded,Helvetica Rounded,Arial,sans-serif;animation:8s ease-in-out infinite stb-pm-terminal-breathe-c36aba3a;position:relative;overflow-x:hidden}.stb-pm-header[data-v-c36aba3a]{border-bottom:1px solid #d4af3733;justify-content:space-between;align-items:flex-start;margin-bottom:12px;padding-bottom:12px;display:flex;position:relative}.stb-pm-header[data-v-c36aba3a]:after{content:\"\";background:#d4af37;border-radius:2px;width:30%;height:2px;position:absolute;bottom:-1px;left:0;box-shadow:0 0 10px #d4af37}.stb-pm-location[data-v-c36aba3a]{color:#d4af37;letter-spacing:1px;text-shadow:0 0 12px #d4af3799;word-break:break-word;flex:1;align-items:center;gap:8px;font-family:Quicksand,Georgia,serif;font-size:clamp(16px,4vw,18px);font-weight:700;display:flex}.stb-pm-location[data-v-c36aba3a]:before{content:\"◆\";color:#8a0303;text-shadow:0 0 6px #8a0303;font-size:12px}.stb-pm-env-col[data-v-c36aba3a]{flex-direction:column;flex-shrink:0;align-items:flex-end;gap:6px;display:flex}.stb-pm-tag[data-v-c36aba3a]{white-space:nowrap;letter-spacing:.5px;background:#000c;border:1px solid #444;border-radius:12px;padding:4px 10px;font-size:12px;box-shadow:inset 0 0 8px #ffffff0d}.stb-pm-tag-time[data-v-c36aba3a]{color:#aaa;border-color:#555}.stb-pm-tag-weather[data-v-c36aba3a]{color:#ff6b6b;text-shadow:0 0 5px #8a0303cc;border-color:#8a0303}.stb-pm-bgm-container[data-v-c36aba3a]{margin-bottom:16px}.stb-pm-bgm-container details[data-v-c36aba3a]{background:linear-gradient(90deg,#ffffff08,#00000080);border:1px solid #333;border-left:3px solid #81d4fa;border-radius:8px;transition:all .3s;overflow:hidden}.stb-pm-bgm-container summary[data-v-c36aba3a]{color:#81d4fa;cursor:pointer;justify-content:space-between;align-items:center;padding:12px 16px;font-size:14px;font-weight:700;list-style:none;display:flex}.stb-pm-bgm-container summary[data-v-c36aba3a]::-webkit-details-marker{display:none}.stb-pm-bgm-container summary[data-v-c36aba3a]:hover{background:#81d4fa1a}.stb-pm-bgm-arrow[data-v-c36aba3a]{transition:transform .3s}.stb-pm-bgm-container details[open] .stb-pm-bgm-arrow[data-v-c36aba3a]{transform:rotate(180deg)}.stb-pm-bgm-content[data-v-c36aba3a]{background:#000;border-top:1px solid #333;justify-content:center;padding:12px;display:flex;overflow:hidden}.stb-pm-bgm-content>iframe[data-v-c36aba3a],.stb-pm-bgm-content>audio[data-v-c36aba3a]{border:none;border-radius:6px;outline:none;max-width:330px;height:86px;width:100%!important}@keyframes stb-btn-breathe-gold-c36aba3a{0%{box-shadow:0 0 5px #d4af3733}50%{box-shadow:0 0 15px #d4af3799}to{box-shadow:0 0 5px #d4af3733}}@keyframes stb-btn-breathe-blue-c36aba3a{0%{box-shadow:0 0 5px #81d4fa33}50%{box-shadow:0 0 15px #81d4fa99}to{box-shadow:0 0 5px #81d4fa33}}.stb-pm-actions[data-v-c36aba3a]{flex-wrap:wrap;gap:10px;margin-bottom:16px;display:flex}.stb-pm-btn[data-v-c36aba3a]{letter-spacing:1px;cursor:pointer;touch-action:manipulation;border-radius:20px;flex:1;justify-content:center;align-items:center;min-width:140px;height:40px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;display:flex}.stb-pm-btn[data-v-c36aba3a]:active{transform:scale(.96)}@media (hover:hover){.stb-pm-btn[data-v-c36aba3a]:hover{filter:brightness(1.2)}}.stb-pm-btn-guide[data-v-c36aba3a]{color:#f4e7c1;background:linear-gradient(#d4af3726,#000c);border:1px solid #d4af37;animation:3s ease-in-out infinite stb-btn-breathe-gold-c36aba3a}.stb-pm-btn-mirror[data-v-c36aba3a]{color:#e1f5fe;background:linear-gradient(#81d4fa26,#000c);border:1px solid #81d4fa;animation:3s ease-in-out infinite stb-btn-breathe-blue-c36aba3a}.stb-pm-badges[data-v-c36aba3a]{flex-wrap:wrap;gap:10px;margin-bottom:16px;display:flex}.stb-pm-badge[data-v-c36aba3a]{color:#e0e0e0;background:linear-gradient(135deg,#ffffff0d,#00000080);border:1px solid #333;border-left:3px solid #d4af37;border-radius:8px;align-items:center;gap:8px;padding:8px 14px;font-size:14px;display:flex;box-shadow:0 2px 6px #00000080}.stb-pm-badge strong[data-v-c36aba3a]{color:#d4af37;font-weight:700}.stb-pm-badge-title[data-v-c36aba3a]{border-left-color:#81d4fa;flex:100%}.stb-pm-badge-title strong[data-v-c36aba3a]{color:#81d4fa}.stb-pm-tabs-container[data-v-c36aba3a]{flex-wrap:wrap;gap:4px;min-height:400px;display:flex;position:relative}.stb-pm-tab-label[data-v-c36aba3a]{display:inline-block}.stb-pm-tab-radio[data-v-c36aba3a]{display:none}.stb-tab-btn[data-v-c36aba3a]{color:#777;cursor:pointer;white-space:nowrap;letter-spacing:1px;user-select:none;background:linear-gradient(#0a0a0a,#111);border:1px solid #222;border-bottom:none;border-radius:8px 8px 0 0;padding:10px 16px;font-size:14px;transition:all .3s;position:relative}.stb-pm-tab-content[data-v-c36aba3a]{scrollbar-width:thin;scrollbar-color:#555 #0a0a0a;-webkit-overflow-scrolling:touch;border-top:1px solid #222;flex-direction:column;gap:16px;max-height:55vh;padding-top:16px;padding-right:8px;display:none;position:absolute;left:16px;right:16px;overflow-y:auto}.stb-pm-tab-content[data-v-c36aba3a]::-webkit-scrollbar{width:6px}.stb-pm-tab-content[data-v-c36aba3a]::-webkit-scrollbar-track{background:#0a0a0a;border-radius:3px}.stb-pm-tab-content[data-v-c36aba3a]::-webkit-scrollbar-thumb{background:#555;border-radius:3px}.stb-pm-tab-radio:checked~.stb-tab-btn[data-v-c36aba3a]{color:#fff;text-shadow:0 0 6px #fff9;background:linear-gradient(#8a030340,#0a0a0a);border-color:#555;font-weight:700}.stb-pm-tab-radio:checked~.stb-tab-btn[data-v-c36aba3a]:after{content:\"\";z-index:2;background:#d4af37;border-radius:2px;width:100%;height:3px;position:absolute;bottom:-1px;left:0;box-shadow:0 -2px 12px #d4af37,0 0 6px #fff}.stb-pm-tab-radio:checked~.stb-pm-tab-content[data-v-c36aba3a]{margin-top:40px;display:flex;top:100%}.stb-pm-panel[data-v-c36aba3a]{background:#0f0f12cc;border:1px solid #222;border-left:4px solid #555;border-radius:8px;min-width:0;padding:16px;transition:border-color .3s,box-shadow .3s;position:relative;box-shadow:inset 0 0 20px #000c}.stb-pm-panel[data-v-c36aba3a]:hover{border-left-color:#d4af37;box-shadow:inset 0 0 20px #000c,-3px 0 12px #d4af3740}.stb-pm-panel-title[data-v-c36aba3a]{color:#999;text-transform:uppercase;letter-spacing:2px;border-bottom:1px dashed #ffffff26;align-items:center;margin-bottom:12px;padding-bottom:6px;font-size:13px;font-weight:700;display:flex}.stb-pm-panel-title[data-v-c36aba3a]:before{content:\"■\";color:#555;margin-right:8px;font-size:10px}.stb-pm-bar-container[data-v-c36aba3a]{margin-bottom:14px}.stb-pm-bar-header[data-v-c36aba3a]{justify-content:space-between;margin-bottom:6px;font-size:14px;display:flex}.stb-pm-bar-label[data-v-c36aba3a]{text-shadow:0 0 5px;letter-spacing:1px;font-weight:700}.stb-pm-bar-value[data-v-c36aba3a]{color:#ccc;font-family:Courier New,Courier,monospace;font-size:14px}.stb-pm-bar-track[data-v-c36aba3a]{background:#0a0a0a;border:1px solid #333;border-radius:7px;width:100%;height:14px;position:relative;overflow:hidden;box-shadow:inset 0 2px 6px #000000e6,0 1px #ffffff0d}.stb-pm-bar-fill[data-v-c36aba3a]{border-radius:7px;height:100%;transition:width .5s}.stb-pm-bar-hp[data-v-c36aba3a]{background:linear-gradient(90deg,#ff6b6b,#8a0303);box-shadow:0 0 8px #ff6b6b99}.stb-pm-bar-mp[data-v-c36aba3a]{background:linear-gradient(90deg,#81d4fa,#0277bd);box-shadow:0 0 8px #81d4fa99}.stb-pm-bar-sp[data-v-c36aba3a]{background:linear-gradient(90deg,#81c784,#2e7d32);box-shadow:0 0 8px #81c78499}.stb-pm-bar-xp[data-v-c36aba3a]{background:linear-gradient(90deg,#fff59d,#fbc02d);box-shadow:0 0 8px #fff59d99}.stb-pm-status-list[data-v-c36aba3a]{flex-direction:column;gap:8px;margin-bottom:12px;display:flex}.stb-pm-limbs-grid[data-v-c36aba3a]{grid-template-columns:repeat(2,1fr);gap:10px;display:grid}@keyframes stb-critical-flash-c36aba3a{0%{background:#ff444426;border-color:#f44;box-shadow:0 0 10px #ff4444b3}50%{box-shadow:none;background:#ff44440d;border-color:#500}to{background:#ff444426;border-color:#f44;box-shadow:0 0 10px #ff4444b3}}.stb-pm-limb-card[data-v-c36aba3a]{background:linear-gradient(#1a1a1a,#0d0d0d);border:1px solid #333;border-radius:8px;flex-direction:column;justify-content:center;align-items:center;padding:12px;transition:transform .2s,border-color .2s;display:flex;position:relative;overflow:hidden}.stb-pm-limb-card[data-v-c36aba3a]:before{content:\"\";background:#333;width:100%;height:4px;position:absolute;top:0;left:0}.stb-pm-limb-name[data-v-c36aba3a]{color:#888;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-size:12px}.stb-pm-limb-stat[data-v-c36aba3a]{text-align:center;word-break:break-word;white-space:normal;font-size:14px;font-weight:700}.stb-pm-limb-card[data-status*=完好][data-v-c36aba3a]:before{background:#555}.stb-pm-limb-card[data-status*=完好] .stb-pm-limb-stat[data-v-c36aba3a]{color:#999}.stb-pm-limb-card[data-status*=轻度][data-v-c36aba3a]:before{background:#aaa}.stb-pm-limb-card[data-status*=轻度] .stb-pm-limb-stat[data-v-c36aba3a]{color:#ddd;text-shadow:0 0 4px #ffffff4d}.stb-pm-limb-card[data-status*=重伤][data-v-c36aba3a]{border-color:#ffb74d}.stb-pm-limb-card[data-status*=重伤][data-v-c36aba3a]:before{background:#ffb74d;box-shadow:0 0 6px #ffb74d}.stb-pm-limb-card[data-status*=重伤] .stb-pm-limb-stat[data-v-c36aba3a]{color:#ffcc80;text-shadow:0 0 6px #ffcc8099}.stb-pm-limb-card[data-status*=残废][data-v-c36aba3a],.stb-pm-limb-card[data-status*=断裂][data-v-c36aba3a]{animation:1s infinite stb-critical-flash-c36aba3a}.stb-pm-limb-card[data-status*=残废][data-v-c36aba3a]:before,.stb-pm-limb-card[data-status*=断裂][data-v-c36aba3a]:before{background:#f44}.stb-pm-limb-card[data-status*=残废] .stb-pm-limb-stat[data-v-c36aba3a],.stb-pm-limb-card[data-status*=断裂] .stb-pm-limb-stat[data-v-c36aba3a]{color:#ff6b6b;text-decoration:line-through}.stb-pm-limb-card[data-status*=义体][data-v-c36aba3a],.stb-pm-limb-card[data-status*=同化][data-v-c36aba3a],.stb-pm-limb-card[data-status*=再生][data-v-c36aba3a]{background:#d4af370d;border-color:#d4af37}.stb-pm-limb-card[data-status*=义体][data-v-c36aba3a]:before,.stb-pm-limb-card[data-status*=同化][data-v-c36aba3a]:before,.stb-pm-limb-card[data-status*=再生][data-v-c36aba3a]:before{background:#d4af37;box-shadow:0 0 6px #d4af37}.stb-pm-limb-card[data-status*=义体] .stb-pm-limb-stat[data-v-c36aba3a],.stb-pm-limb-card[data-status*=同化] .stb-pm-limb-stat[data-v-c36aba3a],.stb-pm-limb-card[data-status*=再生] .stb-pm-limb-stat[data-v-c36aba3a]{color:#f4e7c1;text-shadow:0 0 6px #d4af3780}.stb-pm-stats-grid[data-v-c36aba3a]{grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px;display:grid}.stb-pm-stat-box[data-v-c36aba3a]{background:#ffffff05;border:1px solid #333;border-radius:6px;justify-content:space-between;align-items:center;padding:10px 14px;display:flex;box-shadow:inset 0 0 10px #00000080}.stb-pm-stat-label[data-v-c36aba3a]{color:#888;text-transform:uppercase;font-size:13px;font-weight:700}.stb-pm-stat-value[data-v-c36aba3a]{color:#d4af37;text-shadow:0 0 5px #d4af3766;font-family:monospace;font-size:16px;font-weight:700}.stb-pm-folder[data-v-c36aba3a]{background:#ffffff08;border:1px solid #333;border-radius:6px;margin-bottom:10px;transition:all .3s;overflow:hidden}.stb-pm-folder summary[data-v-c36aba3a]{color:#eee;cursor:pointer;background:#0006;justify-content:space-between;align-items:center;padding:12px 14px;font-size:14px;font-weight:700;list-style:none;display:flex}.stb-pm-folder summary[data-v-c36aba3a]::-webkit-details-marker{display:none}.stb-pm-folder summary[data-v-c36aba3a]:hover{background:#ffffff0d}.stb-pm-folder-arrow[data-v-c36aba3a]{color:#888;font-size:12px;transition:transform .3s}.stb-pm-folder[open] .stb-pm-folder-arrow[data-v-c36aba3a]{transform:rotate(180deg)}.stb-pm-folder-content[data-v-c36aba3a]{border-top:1px solid #333;padding:12px}.stb-pm-folder-actions[data-v-c36aba3a]{background:#0009;border-top:1px dashed #444;justify-content:flex-end;padding:8px 12px;display:flex}.stb-pm-btn-small[data-v-c36aba3a]{color:#ccc;cursor:pointer;background:#222;border:1px solid #555;border-radius:4px;padding:4px 12px;font-size:12px;text-decoration:none;transition:all .2s}.stb-pm-btn-small[data-v-c36aba3a]:hover{color:#fff;background:#8a0303;border-color:#ff6b6b}.stb-pm-text-block[data-v-c36aba3a]{color:#ccc;word-wrap:break-word;white-space:normal;font-size:15px;line-height:1.6}.stb-pm-rumor-card[data-v-c36aba3a]{background:linear-gradient(90deg,#d4af3714,#0009);border:1px solid #222;border-left:4px solid #d4af37;border-radius:4px 8px 8px 4px;margin-bottom:12px;padding:12px 16px;transition:all .3s;position:relative}.stb-pm-rumor-card[data-v-c36aba3a]:after{content:\"\";background:linear-gradient(90deg,#0000,#000000e6);width:30px;height:100%;position:absolute;top:0;right:0}.stb-pm-rumor-card[data-v-c36aba3a]:hover{background:linear-gradient(90deg,#d4af3726,#0009);border-left-width:6px;transform:translate(4px);box-shadow:0 4px 12px #0009}.stb-pm-rumor-title[data-v-c36aba3a]{color:#d4af37;letter-spacing:1.5px;margin-bottom:8px;font-size:14px;font-weight:700}.stb-pm-rumor-text[data-v-c36aba3a]{color:#ddd;z-index:1;font-size:15px;line-height:1.6;position:relative}.stb-pm-terminal-data[data-v-c36aba3a]{color:#81d4fa;white-space:pre-wrap;word-break:break-all;font-family:Courier New,Courier,monospace;font-size:13px;line-height:1.5}.stb-pm-terminal-data-gold[data-v-c36aba3a]{color:#f4e7c1}.stb-pm-terminal-data-red[data-v-c36aba3a]{color:#ff6b6b}.stb-pm-info-row[data-v-c36aba3a]{border-bottom:1px dashed #333;flex-direction:row;justify-content:space-between;margin-bottom:8px;padding-bottom:4px;display:flex}.stb-pm-info-label[data-v-c36aba3a]{color:#999;font-size:14px}.stb-pm-info-value[data-v-c36aba3a]{color:#ccc;font-size:14px;font-weight:700}.pm-master-container[data-v-7204989c]{--pm-gold:#d4af37;--pm-dark-red:#8b0000;--pm-black:#1a1105;--pm-text:#2c241b;--pm-bg-light:#fff;--pm-bg-mid:#fcfaf5;--pm-bg-dark:#f4ebd8;border:2px solid var(--pm-gold);z-index:10;background:radial-gradient(circle at center,var(--pm-bg-light) 0%,var(--pm-bg-mid) 50%,var(--pm-bg-dark) 100%);box-sizing:border-box;width:100%;max-height:85vh;color:var(--pm-text);-webkit-overflow-scrolling:touch;border-radius:12px;flex-direction:column;align-items:center;padding:20px;font-family:Noto Serif SC,Songti SC,serif;display:flex;position:relative;overflow:hidden auto;box-shadow:inset 0 0 40px #fff}.pm-master-container[data-v-7204989c]:before{content:\"\";pointer-events:none;z-index:2;border:3px solid #d4af37cc;border-radius:12px;animation:4s ease-in-out infinite alternate pm-border-glow-7204989c;position:absolute;inset:0}.pm-master-container[data-v-7204989c]:after{content:\"\";pointer-events:none;z-index:1;background-image:url(\"data:image/svg+xml;utf8,<svg viewBox=\\\"0 0 200 200\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\"><filter id=\\\"noiseFilter\\\"><feTurbulence type=\\\"fractalNoise\\\" baseFrequency=\\\"0.85\\\" numOctaves=\\\"3\\\" stitchTiles=\\\"stitch\\\"/></filter><rect width=\\\"100%\\\" height=\\\"100%\\\" filter=\\\"url(%23noiseFilter)\\\" opacity=\\\"0.05\\\"/></svg>\");border-radius:12px;position:absolute;inset:0}@keyframes pm-border-glow-7204989c{0%{border-color:#d4af3766;box-shadow:inset 0 0 15px #d4af371a,0 0 15px #d4af3733}to{border-color:#d4af37;box-shadow:inset 0 0 40px #d4af374d,0 0 40px #d4af3780}}@keyframes slideDown-7204989c{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.fade-enter-active[data-v-7204989c],.fade-leave-active[data-v-7204989c]{transition:opacity .6s,transform .6s}.fade-enter-from[data-v-7204989c],.fade-leave-to[data-v-7204989c]{opacity:0;transform:translateY(15px)}.page-check[data-v-7204989c],.library-scene[data-v-7204989c],.custom-char-page[data-v-7204989c],.page-settings[data-v-7204989c]{z-index:10;flex-direction:column;flex:1;align-items:center;width:100%;max-width:1000px;display:flex;position:relative}.page-check[data-v-7204989c]{justify-content:center}.sys-title[data-v-7204989c]{color:var(--pm-black);letter-spacing:10px;text-shadow:0 0 15px #d4af3799;text-align:center;margin-bottom:5px;font-size:clamp(2em,5vw,3.5em);font-weight:900}.sys-subtitle[data-v-7204989c]{color:var(--pm-dark-red);letter-spacing:3px;text-align:center;margin-bottom:50px;font-family:Brush Script MT,Great Vibes,cursive;font-size:clamp(1.2em,3vw,1.8em)}.sys-check-box[data-v-7204989c]{border-top:2px solid var(--pm-gold);border-bottom:2px solid var(--pm-gold);width:100%;max-width:500px;margin:0 auto 50px;padding:30px 0}.sys-row[data-v-7204989c]{color:#333;justify-content:space-between;margin:15px 0;font-size:1.2em;font-weight:700;display:flex}.status-ok[data-v-7204989c]{color:var(--pm-dark-red);text-shadow:0 0 10px #8b000033;font-family:monospace}.status-warn[data-v-7204989c]{color:#d4af37;font-family:monospace}.status-loading[data-v-7204989c]{color:#aaa;font-family:monospace;animation:1.5s infinite pulse-7204989c}@keyframes pulse-7204989c{0%{opacity:.5}50%{opacity:1}to{opacity:.5}}.sys-actions[data-v-7204989c]{justify-content:center;gap:30px;width:100%;max-width:500px;display:flex}.sys-btn[data-v-7204989c]{text-align:center;border:1px solid var(--pm-text);color:var(--pm-text);cursor:pointer;letter-spacing:4px;background:0 0;border-radius:4px;flex:1;padding:15px 0;font-family:inherit;font-size:1.2em;font-weight:700;transition:all .3s}.sys-btn[data-v-7204989c]:hover{background:var(--pm-text);color:var(--pm-bg-mid);box-shadow:0 8px 20px #00000026}.sys-btn-primary[data-v-7204989c]{border-color:var(--pm-dark-red);color:var(--pm-dark-red)}.sys-btn-primary[data-v-7204989c]:hover:not(:disabled){background:var(--pm-dark-red);color:#fff;box-shadow:0 8px 20px #8b000040}.sys-btn-primary[data-v-7204989c]:disabled{opacity:.5;color:#666;cursor:not-allowed;box-shadow:none;background:0 0;border-color:#666}.transition-note[data-v-7204989c]{z-index:210;background:radial-gradient(circle,#fff 0%,#fcfaf5 50%,#f4ebd8 100%);border-radius:12px;flex-direction:column;justify-content:center;align-items:center;padding:10%;animation:5.5s ease-in-out forwards noteSequence-7204989c;display:flex;position:absolute;inset:0}@keyframes noteSequence-7204989c{0%{opacity:0;transform:scale(.95)}10%{opacity:1;transform:scale(1)}80%{opacity:1;transform:scale(1)}to{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.05)}}.note-title[data-v-7204989c]{color:var(--pm-dark-red);border-bottom:2px solid var(--pm-gold);letter-spacing:3px;margin-bottom:30px;padding-bottom:15px;font-size:clamp(1.5em,3vw,2em);font-weight:700}.note-content[data-v-7204989c]{max-width:800px;color:var(--pm-text);font-size:clamp(1em,2vw,1.2em);line-height:2}.note-content li[data-v-7204989c]{margin-bottom:15px;list-style-type:square}.note-content li strong[data-v-7204989c]{color:var(--pm-dark-red);font-weight:900}.library-scene[data-v-7204989c]{box-sizing:border-box;z-index:200;width:100%;padding:20px 0;position:relative}.bgm-player[data-v-7204989c]{opacity:.3;z-index:220;width:280px;transition:opacity .4s;position:absolute;top:0;left:0}.bgm-player[data-v-7204989c]:hover{opacity:1}.bgm-player audio[data-v-7204989c]{outline:none;width:100%;height:40px}.scene-text[data-v-7204989c]{text-align:justify;text-indent:2em;max-width:900px;color:var(--pm-black);margin:60px auto 50px;font-size:clamp(1.1em,2.5vw,1.3em);line-height:2.2}.scene-text p[data-v-7204989c]{margin-bottom:20px}.highlight-red[data-v-7204989c]{color:var(--pm-dark-red);text-shadow:0 0 5px #8b000033;font-weight:900}.highlight-gold[data-v-7204989c]{color:var(--pm-gold);text-shadow:0 0 5px #d4af374d;font-weight:900}.trauma-text[data-v-7204989c]{color:var(--pm-dark-red);border-left:3px solid var(--pm-dark-red);text-indent:0;background:#8b00000d;border-radius:4px;margin:15px 0;padding:8px 15px;font-size:.9em;font-style:italic;font-weight:700;display:block}.dossier-container[data-v-7204989c]{flex-direction:column;gap:15px;width:100%;max-width:900px;margin:0 auto 40px;display:flex}.dossier-folder[data-v-7204989c]{border:1px solid var(--pm-gold);background:#ffffffb3;border-radius:6px;transition:all .3s;overflow:hidden;box-shadow:0 4px 10px #0000000d}.dossier-folder[open][data-v-7204989c]{border-color:var(--pm-dark-red);background:#fffffff2;box-shadow:0 10px 25px #8b000026}.dossier-summary[data-v-7204989c]{cursor:pointer;border-left:4px solid var(--pm-gold);align-items:center;padding:15px 20px;list-style:none;transition:all .3s;display:flex}.dossier-summary[data-v-7204989c]::-webkit-details-marker{display:none}.dossier-summary[data-v-7204989c]:hover{background:#d4af371a}.dossier-folder[open] .dossier-summary[data-v-7204989c]{border-left-color:var(--pm-dark-red);background:#8b00000d;border-bottom:1px dashed #8b000033}.ds-type[data-v-7204989c]{color:#888;letter-spacing:1px;width:80px;font-family:monospace;font-size:.9em}.ds-name[data-v-7204989c]{color:var(--pm-dark-red);letter-spacing:3px;flex:1;font-size:1.5em;font-weight:900}.ds-desc[data-v-7204989c]{color:#555;font-size:.95em;font-style:italic}.dossier-content[data-v-7204989c]{padding:30px;animation:.4s ease-out slideDown-7204989c}.cp-quote[data-v-7204989c]{color:#555;border-left:4px solid var(--pm-gold);background:#d4af370d;margin-bottom:30px;padding:15px 20px;font-family:Georgia,serif;font-size:1.1em;font-style:italic}.cp-grid[data-v-7204989c]{grid-template-columns:1fr 1fr;gap:25px;margin-bottom:30px;display:grid}.cp-box[data-v-7204989c]{background:#fff9;border:1px dashed #b89f7d;padding:20px}.cp-box-title[data-v-7204989c]{color:var(--pm-dark-red);letter-spacing:1px;border-bottom:1px solid #8b000033;margin-bottom:10px;padding-bottom:5px;font-size:1.1em;font-weight:900}.cp-box-content[data-v-7204989c]{color:#333;font-size:1.05em;line-height:1.8}.cp-actions[data-v-7204989c]{justify-content:center;margin-top:20px;display:flex}.cp-btn-confirm[data-v-7204989c]{cursor:pointer;border:2px solid var(--pm-dark-red);background:var(--pm-dark-red);color:#fff;letter-spacing:2px;text-align:center;border-radius:4px;padding:15px 50px;font-size:1.2em;font-weight:700;text-decoration:none;transition:all .3s;display:block}.cp-btn-confirm[data-v-7204989c]:hover{background:#5a0000;transform:translateY(-2px);box-shadow:0 5px 15px #8b00004d}.dossier-custom[data-v-7204989c]{background:var(--pm-black);border:1px solid var(--pm-dark-red);border-left:4px solid var(--pm-dark-red);cursor:pointer;border-radius:6px;align-items:center;margin-top:10px;padding:15px 20px;text-decoration:none;transition:all .3s;display:flex}.dossier-custom[data-v-7204989c]:hover{background:#2c1810;transform:translate(5px);box-shadow:0 5px 15px #8b00004d}.dossier-custom .ds-type[data-v-7204989c]{color:#aaa}.dossier-custom .ds-name[data-v-7204989c]{color:var(--pm-gold)}.custom-char-page[data-v-7204989c]{z-index:200;flex-direction:column;align-items:center;width:100%;padding:20px 0;display:flex;position:relative}.points-header[data-v-7204989c]{width:100%;color:var(--pm-gold);border:1px solid var(--pm-gold);z-index:300;backdrop-filter:blur(5px);box-sizing:border-box;background:#1a1105f2;border-radius:8px;justify-content:space-between;align-items:center;margin-bottom:30px;padding:15px 30px;display:flex;position:sticky;top:0;box-shadow:0 10px 20px #00000080}.points-header h2[data-v-7204989c]{letter-spacing:2px;margin:0;font-size:1.5em}.points-display[data-v-7204989c]{text-shadow:0 0 10px #d4af3780;font-family:monospace;font-size:2em;font-weight:900;transition:color .3s}.points-display.negative[data-v-7204989c]{color:#f44;text-shadow:0 0 15px #f00c;animation:2s infinite pulse-red-7204989c}@keyframes pulse-red-7204989c{0%{opacity:1}50%{opacity:.7}to{opacity:1}}.preset-bar[data-v-7204989c]{border:1px dashed var(--pm-gold);background:#fff9;border-radius:6px;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;width:100%;margin-bottom:20px;padding:15px;display:flex}.preset-select[data-v-7204989c]{border:1px solid var(--pm-gold);background:#fff;border-radius:4px;outline:none;padding:8px;font-family:inherit}.preset-btn[data-v-7204989c]{background:var(--pm-black);color:var(--pm-gold);border:1px solid var(--pm-gold);cursor:pointer;border-radius:4px;padding:8px 15px;transition:all .2s}.preset-btn[data-v-7204989c]:hover{background:var(--pm-dark-red);color:#fff}.preset-input[data-v-7204989c]{border:1px solid var(--pm-gold);border-radius:4px;outline:none;padding:8px}.roll-screen[data-v-7204989c]{text-align:center;flex-direction:column;justify-content:center;align-items:center;min-height:50vh;display:flex}.roll-btn[data-v-7204989c]{background:radial-gradient(circle,var(--pm-dark-red) 0%,var(--pm-black) 100%);border:4px solid var(--pm-gold);width:200px;height:200px;color:var(--pm-gold);cursor:pointer;border-radius:50%;flex-direction:column;justify-content:center;align-items:center;font-size:2em;font-weight:900;transition:all .2s;display:flex;box-shadow:0 0 30px #8b000080}.roll-btn[data-v-7204989c]:hover{transform:scale(1.05);box-shadow:0 0 50px #d4af3799}.roll-btn[data-v-7204989c]:active{transform:scale(.95)}.roll-btn.rolling[data-v-7204989c]{pointer-events:none;filter:brightness(1.5);animation:.5s infinite shake}.shop-container[data-v-7204989c]{grid-template-columns:1fr;gap:30px;width:100%;display:grid}.shop-section[data-v-7204989c]{border:1px solid var(--pm-gold);background:#fff9;border-radius:8px;padding:25px}.shop-title[data-v-7204989c]{color:var(--pm-dark-red);border-bottom:2px solid var(--pm-gold);letter-spacing:2px;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:10px;font-size:1.5em;font-weight:900;display:flex}.pm-input[data-v-7204989c]{box-sizing:border-box;background:#fffc;border:1px solid #ccc;border-radius:4px;outline:none;width:100%;margin-bottom:15px;padding:12px;font-family:inherit;font-size:1em;transition:border-color .3s}.pm-input[data-v-7204989c]:focus{border-color:var(--pm-dark-red);box-shadow:0 0 5px #8b000033}.pm-textarea[data-v-7204989c]{resize:vertical;box-sizing:border-box;background:#fffc;border:1px solid #ccc;border-radius:4px;outline:none;width:100%;height:80px;padding:12px;font-family:inherit;font-size:1em;transition:border-color .3s}.pm-textarea[data-v-7204989c]:focus{border-color:var(--pm-dark-red);box-shadow:0 0 5px #8b000033}.pm-select[data-v-7204989c]{background:#fffc;border:1px solid #ccc;border-radius:4px;outline:none;padding:12px;font-family:inherit;font-size:1em}.stat-grid[data-v-7204989c]{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;display:grid}.stat-row[data-v-7204989c]{border-left:3px solid var(--pm-gold);background:#0000000d;border-radius:4px;justify-content:space-between;align-items:center;padding:10px 15px;display:flex}.stat-name[data-v-7204989c]{color:var(--pm-text);width:100px;font-weight:700}.stat-controls[data-v-7204989c]{align-items:center;gap:10px;display:flex}.stat-btn[data-v-7204989c]{border:1px solid var(--pm-dark-red);width:30px;height:30px;color:var(--pm-dark-red);cursor:pointer;background:0 0;border-radius:50%;font-weight:700;transition:all .2s}.stat-btn[data-v-7204989c]:hover:not(:disabled){background:var(--pm-dark-red);color:#fff}.stat-btn[data-v-7204989c]:disabled{color:#ccc;cursor:not-allowed;border-color:#ccc}.stat-val[data-v-7204989c]{text-align:center;width:40px;font-family:monospace;font-size:1.2em;font-weight:700}.stat-cost[data-v-7204989c]{color:#888;text-align:right;width:60px;font-size:.8em}.rl-grid[data-v-7204989c]{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;display:grid}.rl-card[data-v-7204989c]{cursor:pointer;background:#fcfaf5;border:1px solid #b89f7d;border-radius:6px;padding:15px;transition:all .3s;position:relative;overflow:hidden}.rl-card[data-v-7204989c]:hover{border-color:var(--pm-gold);transform:translateY(-2px);box-shadow:0 5px 15px #0000001a}.rl-card.selected[data-v-7204989c]{border-color:var(--pm-dark-red);box-shadow:inset 0 0 0 2px var(--pm-dark-red);background:#8b00000d}.rl-card.selected[data-v-7204989c]:after{content:\"✓\";color:var(--pm-dark-red);font-size:1.5em;font-weight:700;position:absolute;top:10px;right:15px}.rl-type[data-v-7204989c]{color:#888;margin-bottom:5px;font-family:monospace;font-size:.8em}.rl-name[data-v-7204989c]{color:var(--pm-black);margin-bottom:10px;font-size:1.2em;font-weight:700}.rl-desc[data-v-7204989c]{color:#555;margin-bottom:15px;font-size:.9em;line-height:1.5}.rl-cost[data-v-7204989c]{color:var(--pm-dark-red);text-align:right;font-family:monospace;font-weight:700}.rl-cost.refund[data-v-7204989c]{color:#2e7d32}.diy-list[data-v-7204989c]{flex-direction:column;gap:15px;margin-bottom:20px;display:flex}.diy-box[data-v-7204989c]{border:1px dashed var(--pm-gold);background:#00000008;border-radius:6px;padding:15px;position:relative}.diy-header[data-v-7204989c]{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}.diy-title[data-v-7204989c]{color:var(--pm-dark-red);font-size:1.1em;font-weight:700}.diy-roll-btn[data-v-7204989c]{background:var(--pm-gold);color:#fff;cursor:pointer;border:none;border-radius:4px;padding:8px 15px;font-weight:700;transition:all .2s}.diy-roll-btn[data-v-7204989c]:hover:not(:disabled){background:var(--pm-dark-red)}.diy-roll-btn[data-v-7204989c]:disabled{cursor:not-allowed;background:#ccc}.diy-cost-display[data-v-7204989c]{color:var(--pm-dark-red);font-family:monospace;font-size:1.2em;font-weight:700}.diy-cost-display.refund[data-v-7204989c]{color:#2e7d32}.btn-add-diy[data-v-7204989c]{border:1px dashed var(--pm-text);width:100%;color:var(--pm-text);cursor:pointer;background:0 0;border-radius:4px;padding:10px;font-weight:700;transition:all .2s}.btn-add-diy[data-v-7204989c]:hover{border-color:var(--pm-dark-red);color:var(--pm-dark-red);background:#0000000d}.btn-remove-diy[data-v-7204989c]{color:#f44;cursor:pointer;background:0 0;border:none;font-size:1.2em;font-weight:700;position:absolute;top:10px;right:10px}.btn-remove-diy[data-v-7204989c]:hover{transform:scale(1.2)}.dm-warning[data-v-7204989c]{border-left:4px solid var(--pm-dark-red);color:#555;background:#8b00000d;margin-bottom:20px;padding:15px;font-size:.95em;line-height:1.6}.dm-warning strong[data-v-7204989c]{color:var(--pm-dark-red)}.negative-warning[data-v-7204989c]{color:#8b0000;text-align:center;background:#8b00001a;border:2px solid #f44;border-radius:8px;margin-top:20px;padding:20px;font-weight:700;line-height:1.6;animation:2s infinite pulse-border-7204989c}@keyframes pulse-border-7204989c{0%{box-shadow:0 0 #f446}70%{box-shadow:0 0 15px #f440}to{box-shadow:0 0 #f440}}.price-table-details[data-v-7204989c]{border:1px solid var(--pm-gold);background:#fffc;border-radius:6px;margin-bottom:20px}.price-table-summary[data-v-7204989c]{color:var(--pm-dark-red);cursor:pointer;background:#d4af371a;padding:12px 20px;font-weight:700;list-style:none}.price-table-summary[data-v-7204989c]::-webkit-details-marker{display:none}.price-table-content[data-v-7204989c]{color:#444;border-top:1px dashed var(--pm-gold);padding:15px 20px;font-size:.9em;line-height:1.8}.price-table-content ul[data-v-7204989c]{margin:0;padding-left:20px}.price-table-content li[data-v-7204989c]{margin-bottom:5px}.custom-idea-box[data-v-7204989c]{width:100%;margin-top:20px}.custom-idea-box textarea[data-v-7204989c]{border:2px dashed var(--pm-gold);resize:vertical;box-sizing:border-box;background:#ffffffe6;border-radius:6px;outline:none;width:100%;min-height:150px;padding:15px;font-family:inherit;font-size:1.05em;line-height:1.6;transition:all .3s}.custom-idea-box textarea[data-v-7204989c]:focus{border-color:var(--pm-dark-red);border-style:solid;box-shadow:0 0 10px #8b00001a}.page-settings[data-v-7204989c]{flex-direction:column;align-items:center;width:100%;padding:40px 0;animation:.5s ease-out slideDown-7204989c;display:flex}.settings-title[data-v-7204989c]{color:var(--pm-dark-red);letter-spacing:8px;text-align:center;border-bottom:2px solid var(--pm-gold);width:100%;max-width:800px;margin-bottom:10px;padding-bottom:15px;font-size:2.5em;font-weight:900}.settings-warning[data-v-7204989c]{color:#555;letter-spacing:2px;text-align:center;margin-bottom:40px;font-style:italic}.toggles-grid[data-v-7204989c]{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;width:100%;max-width:800px;margin-bottom:50px;display:grid}.toggle-btn[data-v-7204989c]{border:1px solid var(--pm-gold);text-align:center;cursor:pointer;color:#555;user-select:none;background:#ffffff80;border-radius:8px;padding:15px;font-weight:700;transition:all .3s;box-shadow:0 4px 6px #0000000d}.toggle-btn.active[data-v-7204989c]{background:var(--pm-dark-red);color:#fff;border-color:#5a0000;transform:translateY(-2px);box-shadow:0 5px 15px #8b00004d}.toggle-btn.active[data-v-7204989c]:after{content:\" [已开启]\";opacity:.8;font-size:.8em}.toggle-btn[data-v-7204989c]:not(.active):after{content:\" [已关闭]\";opacity:.8;font-size:.8em}.dm-section[data-v-7204989c]{border:1px dashed var(--pm-gold);box-sizing:border-box;background:#d4af370d;border-radius:8px;width:100%;max-width:800px;margin-bottom:30px;padding:30px}.dm-title[data-v-7204989c]{color:var(--pm-black);margin-bottom:15px;font-size:1.5em;font-weight:700}.dm-desc[data-v-7204989c]{color:#555;margin-bottom:20px;line-height:1.8}.dm-presets[data-v-7204989c]{flex-wrap:wrap;align-items:center;gap:15px;margin-bottom:20px;display:flex}.pm-preset-btn[data-v-7204989c]{border:1px solid var(--pm-dark-red);color:var(--pm-dark-red);cursor:pointer;background:0 0;border-radius:4px;padding:10px 20px;font-family:inherit;font-size:1em;transition:all .2s}.pm-preset-btn[data-v-7204989c]:hover,.pm-preset-btn.active[data-v-7204989c]{background:var(--pm-dark-red);color:#fff}.pm-preset-btn.custom-btn[data-v-7204989c]{border-style:dashed;font-weight:700}.mbti-diff-grid[data-v-7204989c]{grid-template-columns:1fr 1fr;gap:30px;width:100%;max-width:800px;margin-bottom:50px;display:grid}@media (width<=768px){.mbti-diff-grid[data-v-7204989c]{grid-template-columns:1fr}}.mbti-box[data-v-7204989c]{border:1px solid var(--pm-gold);background:#fff9;border-radius:8px;padding:20px}.mbti-row[data-v-7204989c]{background:#0000000d;border-radius:4px;justify-content:space-between;margin-bottom:10px;display:flex;overflow:hidden}.mbti-btn[data-v-7204989c]{cursor:pointer;color:#555;background:0 0;border:none;flex:1;padding:10px;font-weight:700;transition:all .2s}.mbti-btn.active[data-v-7204989c]{background:var(--pm-dark-red);color:#fff}.mbti-result[data-v-7204989c]{text-align:center;color:var(--pm-dark-red);letter-spacing:2px;margin-top:15px;font-size:1.5em;font-weight:900}.diff-box[data-v-7204989c]{border:1px solid var(--pm-gold);background:#fff9;border-radius:8px;flex-direction:column;gap:10px;padding:20px;display:flex}.diff-btn[data-v-7204989c]{border:1px solid var(--pm-dark-red);color:var(--pm-dark-red);cursor:pointer;text-align:left;background:0 0;border-radius:4px;padding:12px;font-weight:700;transition:all .2s}.diff-btn[data-v-7204989c]:hover,.diff-btn.active[data-v-7204989c]{background:var(--pm-dark-red);color:#fff}.pm-btn-embark[data-v-7204989c]{background:var(--pm-black);color:var(--pm-gold);border:2px solid var(--pm-gold);cursor:pointer;letter-spacing:8px;text-align:center;border-radius:8px;margin-top:20px;padding:20px 60px;font-size:1.5em;font-weight:900;transition:all .4s;display:inline-block;box-shadow:0 10px 20px #0000004d}.pm-btn-embark[data-v-7204989c]:hover:not(:disabled){background:var(--pm-dark-red);color:#fff;border-color:#f44;transform:translateY(-3px);box-shadow:0 15px 30px #8b000080}.pm-btn-embark[data-v-7204989c]:disabled{opacity:.6;cursor:not-allowed}.persona-grid[data-v-7204989c]{grid-template-columns:repeat(3,1fr);gap:15px;display:grid}@media (width<=768px){.pm-master-container[data-v-7204989c]{padding:15px 10px}.sys-title[data-v-7204989c]{letter-spacing:2px;font-size:1.8em}.sys-subtitle[data-v-7204989c]{margin-bottom:30px;font-size:1em}.cp-grid[data-v-7204989c]{grid-template-columns:1fr;gap:15px}.persona-grid[data-v-7204989c]{grid-template-columns:1fr}.points-header[data-v-7204989c]{text-align:center;flex-direction:column;align-items:center;gap:10px;padding:15px;position:relative}.points-header>div[data-v-7204989c]{flex-direction:column;justify-content:center;align-items:center;width:100%;display:flex;text-align:center!important}.preset-bar[data-v-7204989c]{flex-direction:column;align-items:stretch}.preset-bar>div[data-v-7204989c]{flex-direction:column;align-items:stretch;width:100%}.diy-header[data-v-7204989c]{flex-direction:column;align-items:flex-start;gap:10px}.diy-header>div[data-v-7204989c]{justify-content:space-between;align-items:center;width:100%;display:flex}.pm-btn-embark[data-v-7204989c]{letter-spacing:4px;box-sizing:border-box;width:100%;padding:15px 20px;font-size:1.2em}.sys-actions[data-v-7204989c]{flex-direction:column;gap:15px;width:100%}.sys-btn[data-v-7204989c]{width:100%}.cp-btn-confirm[data-v-7204989c]{padding:15px 20px}.bgm-player[data-v-7204989c]{opacity:.8;width:100%;margin-bottom:20px;position:relative}.dossier-content[data-v-7204989c]{padding:15px}.ds-type[data-v-7204989c]{width:60px;font-size:.8em}.ds-name[data-v-7204989c]{font-size:1.2em}.stat-row[data-v-7204989c]{padding:10px}.stat-name[data-v-7204989c]{width:80px;font-size:.9em}.stat-cost[data-v-7204989c]{width:50px;font-size:.75em}}.modal-overlay[data-v-7204989c]{z-index:999999;background:#000c;border-radius:12px;justify-content:center;align-items:center;padding:20px;display:flex;position:absolute;inset:0}.modal-content[data-v-7204989c]{background:var(--pm-bg-light);border:2px solid var(--pm-gold);border-radius:8px;flex-direction:column;width:100%;max-width:800px;max-height:90vh;padding:20px;display:flex;box-shadow:0 10px 30px #00000080}.modal-title[data-v-7204989c]{color:var(--pm-dark-red);text-align:center;margin-bottom:15px;font-size:1.5em;font-weight:700}.modal-textarea[data-v-7204989c]{resize:none;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;outline:none;flex:1;width:100%;min-height:300px;margin-bottom:15px;padding:15px;font-family:monospace;font-size:14px}.modal-btn[data-v-7204989c]{background:var(--pm-dark-red);color:#fff;cursor:pointer;border:none;border-radius:4px;align-self:center;padding:12px 30px;font-size:1.2em;font-weight:700}.modal-btn[data-v-7204989c]:hover{background:#5a0000}\n/*$vite$:1*/";
+                  style.textContent = "@keyframes stb-pm-terminal-breathe{0%{border-color:#222}50%{border-color:#444}to{border-color:#222}}.stb-pm-wrapper{overflow-wrap:anywhere;box-sizing:border-box;color:#d0d0d0;background-color:#050505;background-image:linear-gradient(#ffffff05 1px,#0000 1px),linear-gradient(90deg,#ffffff05 1px,#0000 1px);background-position:0 0;background-repeat:repeat;background-size:24px 24px;background-attachment:scroll;background-origin:padding-box;background-clip:border-box;border:1px solid #333;border-top:4px solid #8a0303;border-bottom:4px solid #d4af37;border-radius:12px;width:100%;max-width:100%;padding:16px;font-family:Nunito,Quicksand,Segoe UI Rounded,Helvetica Rounded,Arial,sans-serif;animation:8s ease-in-out infinite stb-pm-terminal-breathe;position:relative;overflow-x:hidden}.stb-pm-header{border-bottom:1px solid #d4af3733;justify-content:space-between;align-items:flex-start;margin-bottom:12px;padding-bottom:12px;display:flex;position:relative}.stb-pm-header:after{content:\"\";background:#d4af37;border-radius:2px;width:30%;height:2px;position:absolute;bottom:-1px;left:0;box-shadow:0 0 10px #d4af37}.stb-pm-location{color:#d4af37;letter-spacing:1px;text-shadow:0 0 12px #d4af3799;word-break:break-word;flex:1;align-items:center;gap:8px;font-family:Quicksand,Georgia,serif;font-size:clamp(16px,4vw,18px);font-weight:700;display:flex}.stb-pm-location:before{content:\"◆\";color:#8a0303;text-shadow:0 0 6px #8a0303;font-size:12px}.stb-pm-env-col{flex-direction:column;flex-shrink:0;align-items:flex-end;gap:6px;display:flex}.stb-pm-tag{white-space:nowrap;letter-spacing:.5px;background:#000c;border:1px solid #444;border-radius:12px;padding:4px 10px;font-size:12px;box-shadow:inset 0 0 8px #ffffff0d}.stb-pm-tag-time{color:#aaa;border-color:#555}.stb-pm-tag-weather{color:#ff6b6b;text-shadow:0 0 5px #8a0303cc;border-color:#8a0303}.stb-pm-bgm-container{margin-bottom:16px}.stb-pm-bgm-container details{background:linear-gradient(90deg,#ffffff08,#00000080);border:1px solid #333;border-left:3px solid #81d4fa;border-radius:8px;transition:all .3s;overflow:hidden}.stb-pm-bgm-container summary{color:#81d4fa;cursor:pointer;justify-content:space-between;align-items:center;padding:12px 16px;font-size:14px;font-weight:700;list-style:none;display:flex}.stb-pm-bgm-container summary::-webkit-details-marker{display:none}.stb-pm-bgm-container summary:hover{background:#81d4fa1a}.stb-pm-bgm-arrow{transition:transform .3s}.stb-pm-bgm-container details[open] .stb-pm-bgm-arrow{transform:rotate(180deg)}.stb-pm-bgm-content{background:#000;border-top:1px solid #333;justify-content:center;padding:12px;display:flex;overflow:hidden}.stb-pm-bgm-content>iframe,.stb-pm-bgm-content>audio{border:none;border-radius:6px;outline:none;max-width:330px;height:86px;width:100%!important}@keyframes stb-btn-breathe-gold{0%{box-shadow:0 0 5px #d4af3733}50%{box-shadow:0 0 15px #d4af3799}to{box-shadow:0 0 5px #d4af3733}}@keyframes stb-btn-breathe-blue{0%{box-shadow:0 0 5px #81d4fa33}50%{box-shadow:0 0 15px #81d4fa99}to{box-shadow:0 0 5px #81d4fa33}}.stb-pm-actions{flex-wrap:wrap;gap:10px;margin-bottom:16px;display:flex}.stb-pm-btn{letter-spacing:1px;cursor:pointer;touch-action:manipulation;border-radius:20px;flex:1;justify-content:center;align-items:center;min-width:140px;height:40px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;display:flex}.stb-pm-btn:active{transform:scale(.96)}@media (hover:hover){.stb-pm-btn:hover{filter:brightness(1.2)}}.stb-pm-btn-guide{color:#f4e7c1;background:linear-gradient(#d4af3726,#000c);border:1px solid #d4af37;animation:3s ease-in-out infinite stb-btn-breathe-gold}.stb-pm-btn-mirror{color:#e1f5fe;background:linear-gradient(#81d4fa26,#000c);border:1px solid #81d4fa;animation:3s ease-in-out infinite stb-btn-breathe-blue}.stb-pm-badges{flex-wrap:wrap;gap:10px;margin-bottom:16px;display:flex}.stb-pm-badge{color:#e0e0e0;background:linear-gradient(135deg,#ffffff0d,#00000080);border:1px solid #333;border-left:3px solid #d4af37;border-radius:8px;align-items:center;gap:8px;padding:8px 14px;font-size:14px;display:flex;box-shadow:0 2px 6px #00000080}.stb-pm-badge strong{color:#d4af37;font-weight:700}.stb-pm-badge-title{border-left-color:#81d4fa;flex:100%}.stb-pm-badge-title strong{color:#81d4fa}.stb-pm-tabs-container{flex-wrap:wrap;gap:4px;min-height:400px;display:flex;position:relative}.stb-pm-tab-label{display:inline-block}.stb-pm-tab-radio{display:none}.stb-tab-btn{color:#777;cursor:pointer;white-space:nowrap;letter-spacing:1px;user-select:none;background:linear-gradient(#0a0a0a,#111);border:1px solid #222;border-bottom:none;border-radius:8px 8px 0 0;padding:10px 16px;font-size:14px;transition:all .3s;position:relative}.stb-pm-tab-content{scrollbar-width:thin;scrollbar-color:#555 #0a0a0a;-webkit-overflow-scrolling:touch;border-top:1px solid #222;flex-direction:column;gap:16px;max-height:55vh;padding-top:16px;padding-right:8px;display:none;position:absolute;left:16px;right:16px;overflow-y:auto}.stb-pm-tab-content::-webkit-scrollbar{width:6px}.stb-pm-tab-content::-webkit-scrollbar-track{background:#0a0a0a;border-radius:3px}.stb-pm-tab-content::-webkit-scrollbar-thumb{background:#555;border-radius:3px}.stb-pm-tab-radio:checked~.stb-tab-btn{color:#fff;text-shadow:0 0 6px #fff9;background:linear-gradient(#8a030340,#0a0a0a);border-color:#555;font-weight:700}.stb-pm-tab-radio:checked~.stb-tab-btn:after{content:\"\";z-index:2;background:#d4af37;border-radius:2px;width:100%;height:3px;position:absolute;bottom:-1px;left:0;box-shadow:0 -2px 12px #d4af37,0 0 6px #fff}.stb-pm-tab-radio:checked~.stb-pm-tab-content{margin-top:40px;display:flex;top:100%}.stb-pm-panel{background:#0f0f12cc;border:1px solid #222;border-left:4px solid #555;border-radius:8px;min-width:0;padding:16px;transition:border-color .3s,box-shadow .3s;position:relative;box-shadow:inset 0 0 20px #000c}.stb-pm-panel:hover{border-left-color:#d4af37;box-shadow:inset 0 0 20px #000c,-3px 0 12px #d4af3740}.stb-pm-panel-title{color:#999;text-transform:uppercase;letter-spacing:2px;border-bottom:1px dashed #ffffff26;align-items:center;margin-bottom:12px;padding-bottom:6px;font-size:13px;font-weight:700;display:flex}.stb-pm-panel-title:before{content:\"■\";color:#555;margin-right:8px;font-size:10px}.stb-pm-bar-container{margin-bottom:14px}.stb-pm-bar-header{justify-content:space-between;margin-bottom:6px;font-size:14px;display:flex}.stb-pm-bar-label{text-shadow:0 0 5px;letter-spacing:1px;font-weight:700}.stb-pm-bar-value{color:#ccc;font-family:Courier New,Courier,monospace;font-size:14px}.stb-pm-bar-track{background:#0a0a0a;border:1px solid #333;border-radius:7px;width:100%;height:14px;position:relative;overflow:hidden;box-shadow:inset 0 2px 6px #000000e6,0 1px #ffffff0d}.stb-pm-bar-fill{border-radius:7px;height:100%;transition:width .5s}.stb-pm-bar-hp{background:linear-gradient(90deg,#ff6b6b,#8a0303);box-shadow:0 0 8px #ff6b6b99}.stb-pm-bar-mp{background:linear-gradient(90deg,#81d4fa,#0277bd);box-shadow:0 0 8px #81d4fa99}.stb-pm-bar-sp{background:linear-gradient(90deg,#81c784,#2e7d32);box-shadow:0 0 8px #81c78499}.stb-pm-bar-xp{background:linear-gradient(90deg,#fff59d,#fbc02d);box-shadow:0 0 8px #fff59d99}.stb-pm-status-list{flex-direction:column;gap:8px;margin-bottom:12px;display:flex}.stb-pm-limbs-grid{grid-template-columns:repeat(2,1fr);gap:10px;display:grid}@keyframes stb-critical-flash{0%{background:#ff444426;border-color:#f44;box-shadow:0 0 10px #ff4444b3}50%{box-shadow:none;background:#ff44440d;border-color:#500}to{background:#ff444426;border-color:#f44;box-shadow:0 0 10px #ff4444b3}}.stb-pm-limb-card{background:linear-gradient(#1a1a1a,#0d0d0d);border:1px solid #333;border-radius:8px;flex-direction:column;justify-content:center;align-items:center;padding:12px;transition:transform .2s,border-color .2s;display:flex;position:relative;overflow:hidden}.stb-pm-limb-card:before{content:\"\";background:#333;width:100%;height:4px;position:absolute;top:0;left:0}.stb-pm-limb-name{color:#888;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-size:12px}.stb-pm-limb-stat{text-align:center;word-break:break-word;white-space:normal;font-size:14px;font-weight:700}.stb-pm-limb-card[data-status*=完好]:before{background:#555}.stb-pm-limb-card[data-status*=完好] .stb-pm-limb-stat{color:#999}.stb-pm-limb-card[data-status*=轻度]:before{background:#aaa}.stb-pm-limb-card[data-status*=轻度] .stb-pm-limb-stat{color:#ddd;text-shadow:0 0 4px #ffffff4d}.stb-pm-limb-card[data-status*=重伤]{border-color:#ffb74d}.stb-pm-limb-card[data-status*=重伤]:before{background:#ffb74d;box-shadow:0 0 6px #ffb74d}.stb-pm-limb-card[data-status*=重伤] .stb-pm-limb-stat{color:#ffcc80;text-shadow:0 0 6px #ffcc8099}.stb-pm-limb-card[data-status*=残废],.stb-pm-limb-card[data-status*=断裂]{animation:1s infinite stb-critical-flash}.stb-pm-limb-card[data-status*=残废]:before,.stb-pm-limb-card[data-status*=断裂]:before{background:#f44}.stb-pm-limb-card[data-status*=残废] .stb-pm-limb-stat,.stb-pm-limb-card[data-status*=断裂] .stb-pm-limb-stat{color:#ff6b6b;text-decoration:line-through}.stb-pm-limb-card[data-status*=义体],.stb-pm-limb-card[data-status*=同化],.stb-pm-limb-card[data-status*=再生]{background:#d4af370d;border-color:#d4af37}.stb-pm-limb-card[data-status*=义体]:before,.stb-pm-limb-card[data-status*=同化]:before,.stb-pm-limb-card[data-status*=再生]:before{background:#d4af37;box-shadow:0 0 6px #d4af37}.stb-pm-limb-card[data-status*=义体] .stb-pm-limb-stat,.stb-pm-limb-card[data-status*=同化] .stb-pm-limb-stat,.stb-pm-limb-card[data-status*=再生] .stb-pm-limb-stat{color:#f4e7c1;text-shadow:0 0 6px #d4af3780}.stb-pm-stats-grid{grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px;display:grid}.stb-pm-stat-box{background:#ffffff05;border:1px solid #333;border-radius:6px;justify-content:space-between;align-items:center;padding:10px 14px;display:flex;box-shadow:inset 0 0 10px #00000080}.stb-pm-stat-label{color:#888;text-transform:uppercase;font-size:13px;font-weight:700}.stb-pm-stat-value{color:#d4af37;text-shadow:0 0 5px #d4af3766;font-family:monospace;font-size:16px;font-weight:700}.stb-pm-folder{background:#ffffff08;border:1px solid #333;border-radius:6px;margin-bottom:10px;transition:all .3s;overflow:hidden}.stb-pm-folder summary{color:#eee;cursor:pointer;background:#0006;justify-content:space-between;align-items:center;padding:12px 14px;font-size:14px;font-weight:700;list-style:none;display:flex}.stb-pm-folder summary::-webkit-details-marker{display:none}.stb-pm-folder summary:hover{background:#ffffff0d}.stb-pm-folder-arrow{color:#888;font-size:12px;transition:transform .3s}.stb-pm-folder[open] .stb-pm-folder-arrow{transform:rotate(180deg)}.stb-pm-folder-content{border-top:1px solid #333;padding:12px}.stb-pm-folder-actions{background:#0009;border-top:1px dashed #444;justify-content:flex-end;padding:8px 12px;display:flex}.stb-pm-btn-small{color:#ccc;cursor:pointer;background:#222;border:1px solid #555;border-radius:4px;padding:4px 12px;font-size:12px;text-decoration:none;transition:all .2s}.stb-pm-btn-small:hover{color:#fff;background:#8a0303;border-color:#ff6b6b}.stb-pm-text-block{color:#ccc;word-wrap:break-word;white-space:normal;font-size:15px;line-height:1.6}.stb-pm-rumor-card{background:linear-gradient(90deg,#d4af3714,#0009);border:1px solid #222;border-left:4px solid #d4af37;border-radius:4px 8px 8px 4px;margin-bottom:12px;padding:12px 16px;transition:all .3s;position:relative}.stb-pm-rumor-card:after{content:\"\";background:linear-gradient(90deg,#0000,#000000e6);width:30px;height:100%;position:absolute;top:0;right:0}.stb-pm-rumor-card:hover{background:linear-gradient(90deg,#d4af3726,#0009);border-left-width:6px;transform:translate(4px);box-shadow:0 4px 12px #0009}.stb-pm-rumor-title{color:#d4af37;letter-spacing:1.5px;margin-bottom:8px;font-size:14px;font-weight:700}.stb-pm-rumor-text{color:#ddd;z-index:1;font-size:15px;line-height:1.6;position:relative}.stb-pm-terminal-data{color:#81d4fa;white-space:pre-wrap;word-break:break-all;font-family:Courier New,Courier,monospace;font-size:13px;line-height:1.5}.stb-pm-terminal-data-gold{color:#f4e7c1}.stb-pm-terminal-data-red{color:#ff6b6b}.stb-pm-info-row{border-bottom:1px dashed #333;flex-direction:row;justify-content:space-between;margin-bottom:8px;padding-bottom:4px;display:flex}.stb-pm-info-label{color:#999;font-size:14px}.stb-pm-info-value{color:#ccc;font-size:14px;font-weight:700}.pm-master-container{--pm-gold:#d4af37;--pm-dark-red:#8b0000;--pm-black:#1a1105;--pm-text:#2c241b;--pm-bg-light:#fff;--pm-bg-mid:#fcfaf5;--pm-bg-dark:#f4ebd8;border:2px solid var(--pm-gold);z-index:10;background:radial-gradient(circle at center,var(--pm-bg-light) 0%,var(--pm-bg-mid) 50%,var(--pm-bg-dark) 100%);box-sizing:border-box;width:100%;height:auto;min-height:500px;max-height:80vh;color:var(--pm-text);-webkit-overflow-scrolling:touch;border-radius:12px;flex-direction:column;align-items:center;padding:20px;font-family:Noto Serif SC,Songti SC,serif;display:flex;position:relative;overflow:hidden auto;box-shadow:inset 0 0 40px #fff}.pm-master-container:before{content:\"\";pointer-events:none;z-index:2;border:3px solid #d4af37cc;border-radius:12px;animation:4s ease-in-out infinite alternate pm-border-glow;position:absolute;inset:0}.pm-master-container:after{content:\"\";pointer-events:none;z-index:1;background-image:url(\"data:image/svg+xml;utf8,<svg viewBox=\\\"0 0 200 200\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\"><filter id=\\\"noiseFilter\\\"><feTurbulence type=\\\"fractalNoise\\\" baseFrequency=\\\"0.85\\\" numOctaves=\\\"3\\\" stitchTiles=\\\"stitch\\\"/></filter><rect width=\\\"100%\\\" height=\\\"100%\\\" filter=\\\"url(%23noiseFilter)\\\" opacity=\\\"0.05\\\"/></svg>\");border-radius:12px;position:absolute;inset:0}@keyframes pm-border-glow{0%{border-color:#d4af3766;box-shadow:inset 0 0 15px #d4af371a,0 0 15px #d4af3733}to{border-color:#d4af37;box-shadow:inset 0 0 40px #d4af374d,0 0 40px #d4af3780}}@keyframes slideDown{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}.fade-enter-active,.fade-leave-active{transition:opacity .6s,transform .6s}.fade-enter-from,.fade-leave-to{opacity:0;transform:translateY(15px)}.page-check,.library-scene,.custom-char-page,.page-settings{z-index:10;flex-direction:column;flex:1;align-items:center;width:100%;max-width:1000px;display:flex;position:relative}.page-check{justify-content:center}.sys-title{color:var(--pm-black);letter-spacing:10px;text-shadow:0 0 15px #d4af3799;text-align:center;margin-bottom:5px;font-size:clamp(2em,5vw,3.5em);font-weight:900}.sys-subtitle{color:var(--pm-dark-red);letter-spacing:3px;text-align:center;margin-bottom:50px;font-family:Brush Script MT,Great Vibes,cursive;font-size:clamp(1.2em,3vw,1.8em)}.sys-check-box{border-top:2px solid var(--pm-gold);border-bottom:2px solid var(--pm-gold);width:100%;max-width:500px;margin:0 auto 50px;padding:30px 0}.sys-row{color:#333;justify-content:space-between;margin:15px 0;font-size:1.2em;font-weight:700;display:flex}.status-ok{color:var(--pm-dark-red);text-shadow:0 0 10px #8b000033;font-family:monospace}.status-warn{color:#d4af37;font-family:monospace}.status-loading{color:#aaa;font-family:monospace;animation:1.5s infinite pulse}@keyframes pulse{0%{opacity:.5}50%{opacity:1}to{opacity:.5}}.sys-actions{justify-content:center;gap:30px;width:100%;max-width:500px;display:flex}.sys-btn{text-align:center;border:1px solid var(--pm-text);color:var(--pm-text);cursor:pointer;letter-spacing:4px;background:0 0;border-radius:4px;flex:1;padding:15px 0;font-family:inherit;font-size:1.2em;font-weight:700;transition:all .3s}.sys-btn:hover{background:var(--pm-text);color:var(--pm-bg-mid);box-shadow:0 8px 20px #00000026}.sys-btn-primary{border-color:var(--pm-dark-red);color:var(--pm-dark-red)}.sys-btn-primary:hover:not(:disabled){background:var(--pm-dark-red);color:#fff;box-shadow:0 8px 20px #8b000040}.sys-btn-primary:disabled{opacity:.5;color:#666;cursor:not-allowed;box-shadow:none;background:0 0;border-color:#666}.transition-note{z-index:210;background:radial-gradient(circle,#fff 0%,#fcfaf5 50%,#f4ebd8 100%);border-radius:12px;flex-direction:column;justify-content:center;align-items:center;padding:10%;animation:5.5s ease-in-out forwards noteSequence;display:flex;position:absolute;inset:0}@keyframes noteSequence{0%{opacity:0;transform:scale(.95)}10%{opacity:1;transform:scale(1)}80%{opacity:1;transform:scale(1)}to{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.05)}}.note-title{color:var(--pm-dark-red);border-bottom:2px solid var(--pm-gold);letter-spacing:3px;margin-bottom:30px;padding-bottom:15px;font-size:clamp(1.5em,3vw,2em);font-weight:700}.note-content{max-width:800px;color:var(--pm-text);font-size:clamp(1em,2vw,1.2em);line-height:2}.note-content li{margin-bottom:15px;list-style-type:square}.note-content li strong{color:var(--pm-dark-red);font-weight:900}.library-scene{box-sizing:border-box;z-index:200;width:100%;padding:20px 0;position:relative}.bgm-player{opacity:.3;z-index:220;width:280px;transition:opacity .4s;position:absolute;top:0;left:0}.bgm-player:hover{opacity:1}.bgm-player audio{outline:none;width:100%;height:40px}.scene-text{text-align:justify;text-indent:2em;max-width:900px;color:var(--pm-black);margin:60px auto 50px;font-size:clamp(1.1em,2.5vw,1.3em);line-height:2.2}.scene-text p{margin-bottom:20px}.highlight-red{color:var(--pm-dark-red);text-shadow:0 0 5px #8b000033;font-weight:900}.highlight-gold{color:var(--pm-gold);text-shadow:0 0 5px #d4af374d;font-weight:900}.trauma-text{color:var(--pm-dark-red);border-left:3px solid var(--pm-dark-red);text-indent:0;background:#8b00000d;border-radius:4px;margin:15px 0;padding:8px 15px;font-size:.9em;font-style:italic;font-weight:700;display:block}.dossier-container{flex-direction:column;gap:15px;width:100%;max-width:900px;margin:0 auto 40px;display:flex}.dossier-folder{border:1px solid var(--pm-gold);background:#ffffffb3;border-radius:6px;transition:all .3s;overflow:hidden;box-shadow:0 4px 10px #0000000d}.dossier-folder[open]{border-color:var(--pm-dark-red);background:#fffffff2;box-shadow:0 10px 25px #8b000026}.dossier-summary{cursor:pointer;border-left:4px solid var(--pm-gold);align-items:center;padding:15px 20px;list-style:none;transition:all .3s;display:flex}.dossier-summary::-webkit-details-marker{display:none}.dossier-summary:hover{background:#d4af371a}.dossier-folder[open] .dossier-summary{border-left-color:var(--pm-dark-red);background:#8b00000d;border-bottom:1px dashed #8b000033}.ds-type{color:#888;letter-spacing:1px;width:80px;font-family:monospace;font-size:.9em}.ds-name{color:var(--pm-dark-red);letter-spacing:3px;flex:1;font-size:1.5em;font-weight:900}.ds-desc{color:#555;font-size:.95em;font-style:italic}.dossier-content{padding:30px;animation:.4s ease-out slideDown}.cp-quote{color:#555;border-left:4px solid var(--pm-gold);background:#d4af370d;margin-bottom:30px;padding:15px 20px;font-family:Georgia,serif;font-size:1.1em;font-style:italic}.cp-grid{grid-template-columns:1fr 1fr;gap:25px;margin-bottom:30px;display:grid}.cp-box{background:#fff9;border:1px dashed #b89f7d;padding:20px}.cp-box-title{color:var(--pm-dark-red);letter-spacing:1px;border-bottom:1px solid #8b000033;margin-bottom:10px;padding-bottom:5px;font-size:1.1em;font-weight:900}.cp-box-content{color:#333;font-size:1.05em;line-height:1.8}.cp-actions{justify-content:center;margin-top:20px;display:flex}.cp-btn-confirm{cursor:pointer;border:2px solid var(--pm-dark-red);background:var(--pm-dark-red);color:#fff;letter-spacing:2px;text-align:center;border-radius:4px;padding:15px 50px;font-size:1.2em;font-weight:700;text-decoration:none;transition:all .3s;display:block}.cp-btn-confirm:hover{background:#5a0000;transform:translateY(-2px);box-shadow:0 5px 15px #8b00004d}.dossier-custom{background:var(--pm-black);border:1px solid var(--pm-dark-red);border-left:4px solid var(--pm-dark-red);cursor:pointer;border-radius:6px;align-items:center;margin-top:10px;padding:15px 20px;text-decoration:none;transition:all .3s;display:flex}.dossier-custom:hover{background:#2c1810;transform:translate(5px);box-shadow:0 5px 15px #8b00004d}.dossier-custom .ds-type{color:#aaa}.dossier-custom .ds-name{color:var(--pm-gold)}.custom-char-page{z-index:200;flex-direction:column;align-items:center;width:100%;padding:20px 0;display:flex;position:relative}.points-header{width:100%;color:var(--pm-gold);border:1px solid var(--pm-gold);z-index:300;backdrop-filter:blur(5px);box-sizing:border-box;background:#1a1105f2;border-radius:8px;justify-content:space-between;align-items:center;margin-bottom:30px;padding:15px 30px;display:flex;position:sticky;top:0;box-shadow:0 10px 20px #00000080}.points-header h2{letter-spacing:2px;margin:0;font-size:1.5em}.points-display{text-shadow:0 0 10px #d4af3780;font-family:monospace;font-size:2em;font-weight:900;transition:color .3s}.points-display.negative{color:#f44;text-shadow:0 0 15px #f00c;animation:2s infinite pulse-red}@keyframes pulse-red{0%{opacity:1}50%{opacity:.7}to{opacity:1}}.preset-bar{border:1px dashed var(--pm-gold);background:#fff9;border-radius:6px;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;width:100%;margin-bottom:20px;padding:15px;display:flex}.preset-select{border:1px solid var(--pm-gold);background:#fff;border-radius:4px;outline:none;padding:8px;font-family:inherit}.preset-btn{background:var(--pm-black);color:var(--pm-gold);border:1px solid var(--pm-gold);cursor:pointer;border-radius:4px;padding:8px 15px;transition:all .2s}.preset-btn:hover{background:var(--pm-dark-red);color:#fff}.preset-input{border:1px solid var(--pm-gold);border-radius:4px;outline:none;padding:8px}.roll-screen{text-align:center;flex-direction:column;justify-content:center;align-items:center;min-height:50vh;display:flex}.roll-btn{background:radial-gradient(circle,var(--pm-dark-red) 0%,var(--pm-black) 100%);border:4px solid var(--pm-gold);width:200px;height:200px;color:var(--pm-gold);cursor:pointer;border-radius:50%;flex-direction:column;justify-content:center;align-items:center;font-size:2em;font-weight:900;transition:all .2s;display:flex;box-shadow:0 0 30px #8b000080}.roll-btn:hover{transform:scale(1.05);box-shadow:0 0 50px #d4af3799}.roll-btn:active{transform:scale(.95)}.roll-btn.rolling{pointer-events:none;filter:brightness(1.5);animation:.5s infinite shake}.shop-container{grid-template-columns:1fr;gap:30px;width:100%;display:grid}.shop-section{border:1px solid var(--pm-gold);background:#fff9;border-radius:8px;padding:25px}.shop-title{color:var(--pm-dark-red);border-bottom:2px solid var(--pm-gold);letter-spacing:2px;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:10px;font-size:1.5em;font-weight:900;display:flex}.pm-input{box-sizing:border-box;background:#fffc;border:1px solid #ccc;border-radius:4px;outline:none;width:100%;margin-bottom:15px;padding:12px;font-family:inherit;font-size:1em;transition:border-color .3s}.pm-input:focus{border-color:var(--pm-dark-red);box-shadow:0 0 5px #8b000033}.pm-textarea{resize:vertical;box-sizing:border-box;background:#fffc;border:1px solid #ccc;border-radius:4px;outline:none;width:100%;height:80px;padding:12px;font-family:inherit;font-size:1em;transition:border-color .3s}.pm-textarea:focus{border-color:var(--pm-dark-red);box-shadow:0 0 5px #8b000033}.pm-select{background:#fffc;border:1px solid #ccc;border-radius:4px;outline:none;padding:12px;font-family:inherit;font-size:1em}.stat-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;display:grid}.stat-row{border-left:3px solid var(--pm-gold);background:#0000000d;border-radius:4px;justify-content:space-between;align-items:center;padding:10px 15px;display:flex}.stat-name{color:var(--pm-text);width:100px;font-weight:700}.stat-controls{align-items:center;gap:10px;display:flex}.stat-btn{border:1px solid var(--pm-dark-red);width:30px;height:30px;color:var(--pm-dark-red);cursor:pointer;background:0 0;border-radius:50%;font-weight:700;transition:all .2s}.stat-btn:hover:not(:disabled){background:var(--pm-dark-red);color:#fff}.stat-btn:disabled{color:#ccc;cursor:not-allowed;border-color:#ccc}.stat-val{text-align:center;width:40px;font-family:monospace;font-size:1.2em;font-weight:700}.stat-cost{color:#888;text-align:right;width:60px;font-size:.8em}.rl-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;display:grid}.rl-card{cursor:pointer;background:#fcfaf5;border:1px solid #b89f7d;border-radius:6px;padding:15px;transition:all .3s;position:relative;overflow:hidden}.rl-card:hover{border-color:var(--pm-gold);transform:translateY(-2px);box-shadow:0 5px 15px #0000001a}.rl-card.selected{border-color:var(--pm-dark-red);box-shadow:inset 0 0 0 2px var(--pm-dark-red);background:#8b00000d}.rl-card.selected:after{content:\"✓\";color:var(--pm-dark-red);font-size:1.5em;font-weight:700;position:absolute;top:10px;right:15px}.rl-type{color:#888;margin-bottom:5px;font-family:monospace;font-size:.8em}.rl-name{color:var(--pm-black);margin-bottom:10px;font-size:1.2em;font-weight:700}.rl-desc{color:#555;margin-bottom:15px;font-size:.9em;line-height:1.5}.rl-cost{color:var(--pm-dark-red);text-align:right;font-family:monospace;font-weight:700}.rl-cost.refund{color:#2e7d32}.diy-list{flex-direction:column;gap:15px;margin-bottom:20px;display:flex}.diy-box{border:1px dashed var(--pm-gold);background:#00000008;border-radius:6px;padding:15px;position:relative}.diy-header{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}.diy-title{color:var(--pm-dark-red);font-size:1.1em;font-weight:700}.diy-roll-btn{background:var(--pm-gold);color:#fff;cursor:pointer;border:none;border-radius:4px;padding:8px 15px;font-weight:700;transition:all .2s}.diy-roll-btn:hover:not(:disabled){background:var(--pm-dark-red)}.diy-roll-btn:disabled{cursor:not-allowed;background:#ccc}.diy-cost-display{color:var(--pm-dark-red);font-family:monospace;font-size:1.2em;font-weight:700}.diy-cost-display.refund{color:#2e7d32}.btn-add-diy{border:1px dashed var(--pm-text);width:100%;color:var(--pm-text);cursor:pointer;background:0 0;border-radius:4px;padding:10px;font-weight:700;transition:all .2s}.btn-add-diy:hover{border-color:var(--pm-dark-red);color:var(--pm-dark-red);background:#0000000d}.btn-remove-diy{color:#f44;cursor:pointer;background:0 0;border:none;font-size:1.2em;font-weight:700;position:absolute;top:10px;right:10px}.btn-remove-diy:hover{transform:scale(1.2)}.dm-warning{border-left:4px solid var(--pm-dark-red);color:#555;background:#8b00000d;margin-bottom:20px;padding:15px;font-size:.95em;line-height:1.6}.dm-warning strong{color:var(--pm-dark-red)}.negative-warning{color:#8b0000;text-align:center;background:#8b00001a;border:2px solid #f44;border-radius:8px;margin-top:20px;padding:20px;font-weight:700;line-height:1.6;animation:2s infinite pulse-border}@keyframes pulse-border{0%{box-shadow:0 0 #f446}70%{box-shadow:0 0 15px #f440}to{box-shadow:0 0 #f440}}.price-table-details{border:1px solid var(--pm-gold);background:#fffc;border-radius:6px;margin-bottom:20px}.price-table-summary{color:var(--pm-dark-red);cursor:pointer;background:#d4af371a;padding:12px 20px;font-weight:700;list-style:none}.price-table-summary::-webkit-details-marker{display:none}.price-table-content{color:#444;border-top:1px dashed var(--pm-gold);padding:15px 20px;font-size:.9em;line-height:1.8}.price-table-content ul{margin:0;padding-left:20px}.price-table-content li{margin-bottom:5px}.custom-idea-box{width:100%;margin-top:20px}.custom-idea-box textarea{border:2px dashed var(--pm-gold);resize:vertical;box-sizing:border-box;background:#ffffffe6;border-radius:6px;outline:none;width:100%;min-height:150px;padding:15px;font-family:inherit;font-size:1.05em;line-height:1.6;transition:all .3s}.custom-idea-box textarea:focus{border-color:var(--pm-dark-red);border-style:solid;box-shadow:0 0 10px #8b00001a}.page-settings{flex-direction:column;align-items:center;width:100%;padding:40px 0;animation:.5s ease-out slideDown;display:flex}.settings-title{color:var(--pm-dark-red);letter-spacing:8px;text-align:center;border-bottom:2px solid var(--pm-gold);width:100%;max-width:800px;margin-bottom:10px;padding-bottom:15px;font-size:2.5em;font-weight:900}.settings-warning{color:#555;letter-spacing:2px;text-align:center;margin-bottom:40px;font-style:italic}.toggles-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;width:100%;max-width:800px;margin-bottom:50px;display:grid}.toggle-btn{border:1px solid var(--pm-gold);text-align:center;cursor:pointer;color:#555;user-select:none;background:#ffffff80;border-radius:8px;padding:15px;font-weight:700;transition:all .3s;box-shadow:0 4px 6px #0000000d}.toggle-btn.active{background:var(--pm-dark-red);color:#fff;border-color:#5a0000;transform:translateY(-2px);box-shadow:0 5px 15px #8b00004d}.toggle-btn.active:after{content:\" [已开启]\";opacity:.8;font-size:.8em}.toggle-btn:not(.active):after{content:\" [已关闭]\";opacity:.8;font-size:.8em}.dm-section{border:1px dashed var(--pm-gold);box-sizing:border-box;background:#d4af370d;border-radius:8px;width:100%;max-width:800px;margin-bottom:30px;padding:30px}.dm-title{color:var(--pm-black);margin-bottom:15px;font-size:1.5em;font-weight:700}.dm-desc{color:#555;margin-bottom:20px;line-height:1.8}.dm-presets{flex-wrap:wrap;align-items:center;gap:15px;margin-bottom:20px;display:flex}.pm-preset-btn{border:1px solid var(--pm-dark-red);color:var(--pm-dark-red);cursor:pointer;background:0 0;border-radius:4px;padding:10px 20px;font-family:inherit;font-size:1em;transition:all .2s}.pm-preset-btn:hover,.pm-preset-btn.active{background:var(--pm-dark-red);color:#fff}.pm-preset-btn.custom-btn{border-style:dashed;font-weight:700}.mbti-diff-grid{grid-template-columns:1fr 1fr;gap:30px;width:100%;max-width:800px;margin-bottom:50px;display:grid}@media (width<=768px){.mbti-diff-grid{grid-template-columns:1fr}}.mbti-box{border:1px solid var(--pm-gold);background:#fff9;border-radius:8px;padding:20px}.mbti-row{background:#0000000d;border-radius:4px;justify-content:space-between;margin-bottom:10px;display:flex;overflow:hidden}.mbti-btn{cursor:pointer;color:#555;background:0 0;border:none;flex:1;padding:10px;font-weight:700;transition:all .2s}.mbti-btn.active{background:var(--pm-dark-red);color:#fff}.mbti-result{text-align:center;color:var(--pm-dark-red);letter-spacing:2px;margin-top:15px;font-size:1.5em;font-weight:900}.diff-box{border:1px solid var(--pm-gold);background:#fff9;border-radius:8px;flex-direction:column;gap:10px;padding:20px;display:flex}.diff-btn{border:1px solid var(--pm-dark-red);color:var(--pm-dark-red);cursor:pointer;text-align:left;background:0 0;border-radius:4px;padding:12px;font-weight:700;transition:all .2s}.diff-btn:hover,.diff-btn.active{background:var(--pm-dark-red);color:#fff}.pm-btn-embark{background:var(--pm-black);color:var(--pm-gold);border:2px solid var(--pm-gold);cursor:pointer;letter-spacing:8px;text-align:center;border-radius:8px;margin-top:20px;padding:20px 60px;font-size:1.5em;font-weight:900;transition:all .4s;display:inline-block;box-shadow:0 10px 20px #0000004d}.pm-btn-embark:hover:not(:disabled){background:var(--pm-dark-red);color:#fff;border-color:#f44;transform:translateY(-3px);box-shadow:0 15px 30px #8b000080}.pm-btn-embark:disabled{opacity:.6;cursor:not-allowed}.persona-grid{grid-template-columns:repeat(3,1fr);gap:15px;display:grid}@media (width<=768px){.pm-master-container{padding:15px 10px}.sys-title{letter-spacing:2px;font-size:1.8em}.sys-subtitle{margin-bottom:30px;font-size:1em}.cp-grid{grid-template-columns:1fr;gap:15px}.persona-grid{grid-template-columns:1fr}.points-header{text-align:center;flex-direction:column;align-items:center;gap:10px;padding:15px;position:relative}.points-header>div{flex-direction:column;justify-content:center;align-items:center;width:100%;display:flex;text-align:center!important}.preset-bar{flex-direction:column;align-items:stretch}.preset-bar>div{flex-direction:column;align-items:stretch;width:100%}.diy-header{flex-direction:column;align-items:flex-start;gap:10px}.diy-header>div{justify-content:space-between;align-items:center;width:100%;display:flex}.pm-btn-embark{letter-spacing:4px;box-sizing:border-box;width:100%;padding:15px 20px;font-size:1.2em}.sys-actions{flex-direction:column;gap:15px;width:100%}.sys-btn{width:100%}.cp-btn-confirm{padding:15px 20px}.bgm-player{opacity:.8;width:100%;margin-bottom:20px;position:relative}.dossier-content{padding:15px}.ds-type{width:60px;font-size:.8em}.ds-name{font-size:1.2em}.stat-row{padding:10px}.stat-name{width:80px;font-size:.9em}.stat-cost{width:50px;font-size:.75em}}.modal-overlay{z-index:999999;background:#000c;border-radius:12px;justify-content:center;align-items:center;padding:20px;display:flex;position:absolute;inset:0}.modal-content{background:var(--pm-bg-light);border:2px solid var(--pm-gold);border-radius:8px;flex-direction:column;width:100%;max-width:800px;max-height:90vh;padding:20px;display:flex;box-shadow:0 10px 30px #00000080}.modal-title{color:var(--pm-dark-red);text-align:center;margin-bottom:15px;font-size:1.5em;font-weight:700}.modal-textarea{resize:none;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;outline:none;flex:1;width:100%;min-height:300px;margin-bottom:15px;padding:15px;font-family:monospace;font-size:14px}.modal-btn{background:var(--pm-dark-red);color:#fff;cursor:pointer;border:none;border-radius:4px;align-self:center;padding:12px 30px;font-size:1.2em;font-weight:700}.modal-btn:hover{background:#5a0000}\n/*$vite$:1*/";
                   document.head.appendChild(style);
                 }
               })();
@@ -3692,107 +3692,103 @@ var Qo = /* @__PURE__ */ At({
 			])
 		], 512)), [[ro, a.value && o.value]]);
 	}
-}), Gl = (e, t) => {
-	let n = e.__vccOpts || e;
-	for (let [e, r] of t) n[e] = r;
-	return n;
-}, Kl = /* @__PURE__ */ Gl(Wl, [["__scopeId", "data-v-c36aba3a"]]), ql = {
+}), Gl = {
 	key: 0,
 	class: "pm-master-container"
-}, Jl = { class: "bgm-player" }, Yl = {
+}, Kl = { class: "bgm-player" }, ql = {
 	key: 0,
 	class: "modal-overlay"
-}, Xl = { class: "modal-content" }, Zl = ["value"], Ql = {
+}, Jl = { class: "modal-content" }, Yl = ["value"], Xl = {
 	key: "already_started",
 	class: "page-check"
-}, $l = {
+}, Zl = {
 	key: "check",
 	class: "page-check"
-}, eu = { class: "sys-check-box" }, tu = {
+}, Ql = { class: "sys-check-box" }, $l = {
 	key: 0,
 	class: "status-loading"
-}, nu = { class: "sys-actions" }, ru = ["disabled"], iu = ["disabled"], au = {
+}, eu = { class: "sys-actions" }, tu = ["disabled"], nu = ["disabled"], ru = {
 	key: "transition",
 	class: "transition-note"
-}, ou = {
+}, iu = {
 	key: "library",
 	class: "library-scene"
-}, su = { class: "scene-text" }, cu = { class: "highlight-gold" }, lu = { class: "dossier-container" }, uu = { class: "dossier-summary" }, du = { class: "ds-type" }, fu = { class: "ds-name" }, pu = { class: "ds-desc" }, mu = { class: "dossier-content" }, hu = {
+}, au = { class: "scene-text" }, ou = { class: "highlight-gold" }, su = { class: "dossier-container" }, cu = { class: "dossier-summary" }, lu = { class: "ds-type" }, uu = { class: "ds-name" }, du = { class: "ds-desc" }, fu = { class: "dossier-content" }, pu = {
 	key: 0,
 	class: "cp-quote"
-}, gu = { class: "cp-grid" }, _u = { class: "cp-box" }, vu = { class: "cp-box-content" }, yu = { class: "cp-box" }, bu = { class: "cp-box-content" }, xu = { class: "cp-actions" }, Su = ["onClick"], Cu = {
+}, mu = { class: "cp-grid" }, hu = { class: "cp-box" }, gu = { class: "cp-box-content" }, _u = { class: "cp-box" }, vu = { class: "cp-box-content" }, yu = { class: "cp-actions" }, bu = ["onClick"], xu = {
 	key: "custom_char",
 	class: "custom-char-page"
-}, wu = {
+}, Su = {
 	key: 0,
 	class: "roll-screen"
-}, Tu = { key: 0 }, Eu = { key: 1 }, Du = {
+}, Cu = { key: 0 }, wu = { key: 1 }, Tu = {
 	key: 1,
 	style: { width: "100%" }
-}, Ou = { class: "points-header" }, ku = { style: {
+}, Eu = { class: "points-header" }, Du = { style: {
 	"font-size": "0.8em",
 	opacity: "0.8"
-} }, Au = { style: { color: "white" } }, ju = { style: { "text-align": "right" } }, Mu = { class: "preset-bar" }, Nu = { style: {
+} }, Ou = { style: { color: "white" } }, ku = { style: { "text-align": "right" } }, Au = { class: "preset-bar" }, ju = { style: {
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, Pu = ["value"], Fu = ["disabled"], Iu = { style: {
+} }, Mu = ["value"], Nu = ["disabled"], Pu = { style: {
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, Lu = ["disabled"], Ru = { class: "shop-container" }, zu = { class: "shop-section" }, Bu = { class: "persona-grid" }, Vu = { class: "shop-section" }, Hu = { class: "stat-grid" }, Uu = { class: "stat-row" }, Wu = { class: "stat-controls" }, Gu = ["disabled"], Ku = { class: "stat-val" }, qu = ["disabled"], Ju = { class: "stat-row" }, Yu = { class: "stat-controls" }, Xu = ["disabled"], Zu = { class: "stat-val" }, Qu = { class: "stat-row" }, $u = { class: "stat-controls" }, ed = ["disabled"], td = { class: "stat-val" }, nd = { class: "stat-row" }, rd = { class: "stat-controls" }, id = ["disabled"], ad = { class: "stat-val" }, od = ["disabled"], sd = { class: "stat-row" }, cd = { class: "stat-controls" }, ld = ["disabled"], ud = { class: "stat-val" }, dd = ["disabled"], fd = { class: "stat-grid" }, pd = { class: "stat-name" }, md = { class: "stat-controls" }, hd = ["disabled", "onClick"], gd = { class: "stat-val" }, _d = ["disabled", "onClick"], vd = { class: "shop-section" }, yd = { class: "diy-list" }, bd = ["onClick"], xd = { class: "diy-header" }, Sd = { class: "diy-title" }, Cd = {
+} }, Fu = ["disabled"], Iu = { class: "shop-container" }, Lu = { class: "shop-section" }, Ru = { class: "persona-grid" }, zu = { class: "shop-section" }, Bu = { class: "stat-grid" }, Vu = { class: "stat-row" }, Hu = { class: "stat-controls" }, Uu = ["disabled"], Wu = { class: "stat-val" }, Gu = ["disabled"], Ku = { class: "stat-row" }, qu = { class: "stat-controls" }, Ju = ["disabled"], Yu = { class: "stat-val" }, Xu = { class: "stat-row" }, Zu = { class: "stat-controls" }, Qu = ["disabled"], $u = { class: "stat-val" }, ed = { class: "stat-row" }, td = { class: "stat-controls" }, nd = ["disabled"], rd = { class: "stat-val" }, id = ["disabled"], ad = { class: "stat-row" }, od = { class: "stat-controls" }, sd = ["disabled"], cd = { class: "stat-val" }, ld = ["disabled"], ud = { class: "stat-grid" }, dd = { class: "stat-name" }, fd = { class: "stat-controls" }, pd = ["disabled", "onClick"], md = { class: "stat-val" }, hd = ["disabled", "onClick"], gd = { class: "shop-section" }, _d = { class: "diy-list" }, vd = ["onClick"], yd = { class: "diy-header" }, bd = { class: "diy-title" }, xd = {
 	key: 0,
 	class: "diy-cost-display"
-}, wd = ["disabled", "onClick"], Td = ["onUpdate:modelValue", "onInput"], Ed = ["onUpdate:modelValue", "onInput"], Dd = ["onUpdate:modelValue", "onChange"], Od = ["value"], kd = { class: "diy-list" }, Ad = ["onClick"], jd = { class: "diy-header" }, Md = { class: "diy-title" }, Nd = {
+}, Sd = ["disabled", "onClick"], Cd = ["onUpdate:modelValue", "onInput"], wd = ["onUpdate:modelValue", "onInput"], Td = ["onUpdate:modelValue", "onChange"], Ed = ["value"], Dd = { class: "diy-list" }, Od = ["onClick"], kd = { class: "diy-header" }, Ad = { class: "diy-title" }, jd = {
 	key: 0,
 	class: "diy-cost-display"
-}, Pd = ["disabled", "onClick"], Fd = ["onUpdate:modelValue", "onInput"], Id = ["onUpdate:modelValue", "onInput"], Ld = ["onUpdate:modelValue", "onChange"], Rd = ["value"], zd = { class: "diy-list" }, Bd = ["onClick"], Vd = { class: "diy-header" }, Hd = { class: "diy-title" }, Ud = {
+}, Md = ["disabled", "onClick"], Nd = ["onUpdate:modelValue", "onInput"], Pd = ["onUpdate:modelValue", "onInput"], Fd = ["onUpdate:modelValue", "onChange"], Id = ["value"], Ld = { class: "diy-list" }, Rd = ["onClick"], zd = { class: "diy-header" }, Bd = { class: "diy-title" }, Vd = {
 	key: 0,
 	class: "diy-cost-display"
-}, Wd = ["disabled", "onClick"], Gd = ["onUpdate:modelValue", "onInput"], Kd = ["onUpdate:modelValue", "onInput"], qd = ["onUpdate:modelValue", "onChange"], Jd = ["value"], Yd = { class: "diy-list" }, Xd = ["onClick"], Zd = { class: "diy-header" }, Qd = { class: "diy-title" }, $d = {
+}, Hd = ["disabled", "onClick"], Ud = ["onUpdate:modelValue", "onInput"], Wd = ["onUpdate:modelValue", "onInput"], Gd = ["onUpdate:modelValue", "onChange"], Kd = ["value"], qd = { class: "diy-list" }, Jd = ["onClick"], Yd = { class: "diy-header" }, Xd = { class: "diy-title" }, Zd = {
 	key: 0,
 	class: "diy-cost-display"
-}, ef = ["disabled", "onClick"], tf = ["onUpdate:modelValue", "onInput"], nf = ["onUpdate:modelValue", "onInput"], rf = ["onUpdate:modelValue", "onChange"], af = ["value"], of = { class: "diy-list" }, sf = ["onClick"], cf = { class: "diy-header" }, lf = {
+}, Qd = ["disabled", "onClick"], $d = ["onUpdate:modelValue", "onInput"], ef = ["onUpdate:modelValue", "onInput"], tf = ["onUpdate:modelValue", "onChange"], nf = ["value"], rf = { class: "diy-list" }, af = ["onClick"], of = { class: "diy-header" }, sf = {
 	class: "diy-title",
 	style: { color: "var(--pm-dark-red)" }
-}, uf = {
+}, cf = {
 	key: 0,
 	class: "diy-cost-display refund"
-}, df = ["disabled", "onClick"], ff = ["onUpdate:modelValue", "onInput"], pf = ["onUpdate:modelValue", "onInput"], mf = ["onUpdate:modelValue", "onChange"], hf = ["value"], gf = { class: "shop-section" }, _f = { class: "rl-grid" }, vf = ["onClick"], yf = { class: "rl-type" }, bf = { class: "rl-name" }, xf = { class: "rl-desc" }, Sf = { class: "rl-cost" }, Cf = { class: "rl-grid" }, wf = ["onClick"], Tf = { class: "rl-type" }, Ef = { class: "rl-name" }, Df = { class: "rl-desc" }, Of = { class: "rl-cost" }, kf = { class: "rl-grid" }, Af = ["onClick"], jf = { class: "rl-type" }, Mf = { class: "rl-name" }, Nf = { class: "rl-desc" }, Pf = { class: "rl-cost refund" }, Ff = { class: "shop-section" }, If = { style: {
+}, lf = ["disabled", "onClick"], uf = ["onUpdate:modelValue", "onInput"], df = ["onUpdate:modelValue", "onInput"], ff = ["onUpdate:modelValue", "onChange"], pf = ["value"], mf = { class: "shop-section" }, hf = { class: "rl-grid" }, gf = ["onClick"], _f = { class: "rl-type" }, vf = { class: "rl-name" }, yf = { class: "rl-desc" }, bf = { class: "rl-cost" }, xf = { class: "rl-grid" }, Sf = ["onClick"], Cf = { class: "rl-type" }, wf = { class: "rl-name" }, Tf = { class: "rl-desc" }, Ef = { class: "rl-cost" }, Df = { class: "rl-grid" }, Of = ["onClick"], kf = { class: "rl-type" }, Af = { class: "rl-name" }, jf = { class: "rl-desc" }, Mf = { class: "rl-cost refund" }, Nf = { class: "shop-section" }, Pf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px",
 	cursor: "pointer",
 	"font-weight": "bold",
 	"margin-bottom": "15px"
-} }, Lf = {
+} }, Ff = {
 	key: 0,
 	style: {
 		display: "grid",
 		gap: "15px"
 	}
-}, Rf = { class: "shop-section" }, zf = { class: "custom-idea-box" }, Bf = { style: {
+}, If = { class: "shop-section" }, Lf = { class: "custom-idea-box" }, Rf = { style: {
 	"text-align": "center",
 	"margin-top": "40px"
-} }, Vf = {
+} }, zf = {
 	key: 0,
 	class: "negative-warning"
-}, Hf = {
+}, Bf = {
 	key: 1,
 	style: {
 		color: "red",
 		"font-weight": "bold",
 		"margin-top": "15px"
 	}
-}, Uf = ["disabled"], Wf = {
+}, Vf = ["disabled"], Hf = {
 	key: "settings",
 	class: "page-settings"
-}, Gf = { style: {
+}, Uf = { style: {
 	"font-size": "1.2em",
 	color: "var(--pm-dark-red)",
 	"font-weight": "bold",
 	"margin-bottom": "30px"
-} }, Kf = { style: { "text-decoration": "underline" } }, qf = { class: "mbti-diff-grid" }, Jf = { class: "mbti-box" }, Yf = { class: "mbti-row" }, Xf = { class: "mbti-row" }, Zf = { class: "mbti-row" }, Qf = { class: "mbti-row" }, $f = { class: "mbti-result" }, ep = { class: "diff-box" }, tp = { class: "toggles-grid" }, np = ["onClick"], rp = { class: "dm-section" }, ip = { class: "dm-presets" }, ap = ["disabled"], op = /* @__PURE__ */ Gl(/* @__PURE__ */ Xn({
+} }, Wf = { style: { "text-decoration": "underline" } }, Gf = { class: "mbti-diff-grid" }, Kf = { class: "mbti-box" }, qf = { class: "mbti-row" }, Jf = { class: "mbti-row" }, Yf = { class: "mbti-row" }, Xf = { class: "mbti-row" }, Zf = { class: "mbti-result" }, Qf = { class: "diff-box" }, $f = { class: "toggles-grid" }, ep = ["onClick"], tp = { class: "dm-section" }, np = { class: "dm-presets" }, rp = ["disabled"], ip = /* @__PURE__ */ Xn({
 	__name: "SetupModal",
 	setup(e) {
 		let t = /* @__PURE__ */ H(!0), n = /* @__PURE__ */ H("check"), r = /* @__PURE__ */ H(!1), i = /* @__PURE__ */ H(!1), a = /* @__PURE__ */ H(!1), o = /* @__PURE__ */ H(!1), s = /* @__PURE__ */ H(""), c = /* @__PURE__ */ kt([{
@@ -4538,12 +4534,12 @@ var Qo = /* @__PURE__ */ At({
 				}, 500);
 			}
 		}, ke = (e) => typeof e == "string" ? e.replace(/"/g, "\\\"").replace(/\n/g, " ") : e;
-		return (e, m) => t.value ? (q(), J("div", ql, [
-			U(Y("div", Jl, [...m[43] ||= [Y("span", { style: {
+		return (e, m) => t.value ? (q(), J("div", Gl, [
+			U(Y("div", Kl, [...m[43] ||= [Y("span", { style: {
 				color: "var(--pm-gold)",
 				"font-size": "0.8em"
 			} }, "🎵 BGM Playing...", -1)]], 512), [[ro, a.value]]),
-			o.value ? (q(), J("div", Yl, [Y("div", Xl, [
+			o.value ? (q(), J("div", ql, [Y("div", Jl, [
 				m[44] ||= Y("div", { class: "modal-title" }, "⚠️ 沙盒环境限制：请手动复制指令", -1),
 				m[45] ||= Y("p", { style: {
 					color: "#555",
@@ -4555,7 +4551,7 @@ var Qo = /* @__PURE__ */ At({
 					value: s.value,
 					class: "modal-textarea",
 					onFocus: m[0] ||= (e) => e.target?.select()
-				}, null, 40, Zl),
+				}, null, 40, Yl),
 				Y("button", {
 					class: "modal-btn",
 					onClick: De
@@ -4565,7 +4561,7 @@ var Qo = /* @__PURE__ */ At({
 				name: "fade",
 				mode: "out-in"
 			}, {
-				default: Cn(() => [n.value === "already_started" ? (q(), J("div", Ql, [
+				default: Cn(() => [n.value === "already_started" ? (q(), J("div", Xl, [
 					m[46] ||= Y("div", { class: "sys-title" }, "旅程已在进行中", -1),
 					m[47] ||= Y("div", { class: "sys-subtitle" }, "The Journey Has Already Begun", -1),
 					m[48] ||= Y("p", { style: {
@@ -4584,26 +4580,26 @@ var Qo = /* @__PURE__ */ At({
 						style: { "margin-top": "30px" },
 						onClick: p
 					}, "关闭界面")
-				])) : n.value === "check" ? (q(), J("div", $l, [
+				])) : n.value === "check" ? (q(), J("div", Zl, [
 					m[49] ||= Y("div", { class: "sys-title" }, "白夜黑昼七日谈", -1),
 					m[50] ||= Y("div", { class: "sys-subtitle" }, "The Seven Days of White Night and Dark Day", -1),
-					Y("div", eu, [(q(!0), J(G, null, W(c, (e) => (q(), J("div", {
+					Y("div", Ql, [(q(!0), J(G, null, W(c, (e) => (q(), J("div", {
 						key: e.id,
 						class: "sys-row"
-					}, [Y("span", null, I(e.label), 1), Y("span", null, [e.status === "loading" ? (q(), J("span", tu, "Checking...")) : (q(), J("span", {
+					}, [Y("span", null, I(e.label), 1), Y("span", null, [e.status === "loading" ? (q(), J("span", $l, "Checking...")) : (q(), J("span", {
 						key: 1,
 						class: F(e.status === "ok" ? "status-ok" : "status-warn")
 					}, I(e.statusText), 3))])]))), 128))]),
-					Y("div", nu, [Y("button", {
+					Y("div", eu, [Y("button", {
 						disabled: i.value,
 						class: "sys-btn",
 						onClick: $(g, ["prevent"])
-					}, "重新检查", 8, ru), Y("button", {
+					}, "重新检查", 8, tu), Y("button", {
 						disabled: !f.value || i.value,
 						class: "sys-btn sys-btn-primary",
 						onClick: _
-					}, I(f.value ? "开始游戏" : "环境异常或校验中..."), 9, iu)])
-				])) : n.value === "transition" ? (q(), J("div", au, [...m[51] ||= [Y("div", { class: "note-title" }, "【系统提示：来自梓墨的笔记簿】", -1), Y("ul", { class: "note-content" }, [
+					}, I(f.value ? "开始游戏" : "环境异常或校验中..."), 9, nu)])
+				])) : n.value === "transition" ? (q(), J("div", ru, [...m[51] ||= [Y("div", { class: "note-title" }, "【系统提示：来自梓墨的笔记簿】", -1), Y("ul", { class: "note-content" }, [
 					Y("li", null, [Y("strong", null, "RP（玩家输入）："), X("在很大程度上决定了逆转生死的关键，只小小输入几句话的话旅人sama是不会成为真正的英雄的哦~")]),
 					Y("li", null, [
 						Y("strong", null, "BGM自定义："),
@@ -4619,13 +4615,13 @@ var Qo = /* @__PURE__ */ At({
 						X("按钮，可一键脱下装备或使用背包道具。")
 					]),
 					Y("li", null, [Y("strong", null, "极端复杂的世界模拟与情感管理系统："), X("你所遇见的，都是一个个鲜活的个体，请好好善待她/他/它们吧~")])
-				], -1)]])) : n.value === "library" ? (q(), J("div", ou, [Y("div", su, [
+				], -1)]])) : n.value === "library" ? (q(), J("div", iu, [Y("div", au, [
 					d.value ? (q(), J(G, { key: 1 }, [
 						m[59] ||= Y("p", null, "骨骼断裂的回音与神经烧焦的幻痛依然在脑海深处轰鸣。但此刻，你只是静静地站在温暖的图书室内，面前是那位戴着单片眼镜的少女。", -1),
 						Y("p", null, [
 							Y("q", null, [
 								m[55] ||= X("“死亡并未宽恕你，", -1),
-								Y("span", cu, I(u.value ? u.value : "伤痕累累的轮回者"), 1),
+								Y("span", ou, I(u.value ? u.value : "伤痕累累的轮回者"), 1),
 								m[56] ||= X("。”", -1)
 							]),
 							m[57] ||= X("她微微欠身，目光扫过你灵魂上烙印的扭曲伤痕，", -1),
@@ -4656,25 +4652,25 @@ var Qo = /* @__PURE__ */ At({
 					m[61] ||= Y("p", null, [Y("q", null, "在这里，每一次挥剑都可能伴随着肢体的断裂，每一次绝望都可能引来卡门的低语。但请记住，你遇到的每一个灵魂，都有着自己的恐惧与渴望。你的选择，将决定他们是成为你的利刃，还是刺入你后背的毒牙。")], -1),
 					m[62] ||= Y("p", null, "幻影散去，她重新坐回桌后，从抽屉里取出了五枚质地各异的档案夹，在桌面上依次排开。", -1),
 					m[63] ||= Y("p", null, [Y("q", null, "那么，演出即将开始。请翻开你的‘档案’，决定你将以何种姿态，降临这片绝望的焦土。")], -1)
-				]), Y("div", lu, [(q(), J(G, null, W(v, (e) => Y("details", {
+				]), Y("div", su, [(q(), J(G, null, W(v, (e) => Y("details", {
 					key: e.id,
 					name: "char-accordion",
 					class: "dossier-folder"
-				}, [Y("summary", uu, [
-					Y("span", du, I(e.type), 1),
-					Y("span", fu, I(e.name), 1),
-					Y("span", pu, I(e.desc), 1)
-				]), Y("div", mu, [
-					e.quote ? (q(), J("div", hu, [Y("q", null, I(e.quote), 1)])) : Zi("", !0),
-					Y("div", gu, [Y("div", _u, [m[64] ||= Y("div", { class: "cp-box-title" }, "核心概念", -1), Y("div", vu, I(e.concept), 1)]), Y("div", yu, [m[65] ||= Y("div", { class: "cp-box-title" }, "生存难度", -1), Y("div", bu, I(e.diff), 1)])]),
-					Y("div", xu, [Y("div", {
+				}, [Y("summary", cu, [
+					Y("span", lu, I(e.type), 1),
+					Y("span", uu, I(e.name), 1),
+					Y("span", du, I(e.desc), 1)
+				]), Y("div", fu, [
+					e.quote ? (q(), J("div", pu, [Y("q", null, I(e.quote), 1)])) : Zi("", !0),
+					Y("div", mu, [Y("div", hu, [m[64] ||= Y("div", { class: "cp-box-title" }, "核心概念", -1), Y("div", gu, I(e.concept), 1)]), Y("div", _u, [m[65] ||= Y("div", { class: "cp-box-title" }, "生存难度", -1), Y("div", vu, I(e.diff), 1)])]),
+					Y("div", yu, [Y("div", {
 						class: "cp-btn-confirm",
 						onClick: (t) => C(e.id)
-					}, "确认降临", 8, Su)])
+					}, "确认降临", 8, bu)])
 				])])), 64)), Y("div", {
 					class: "dossier-custom",
 					onClick: pe
-				}, [...m[66] ||= [Y("span", { class: "ds-type" }, "CUSTOM", -1), Y("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (q(), J("div", Cu, [w.value === "pre-roll" ? (q(), J("div", wu, [
+				}, [...m[66] ||= [Y("span", { class: "ds-type" }, "CUSTOM", -1), Y("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (q(), J("div", xu, [w.value === "pre-roll" ? (q(), J("div", Su, [
 					m[67] ||= Y("h2", {
 						class: "settings-title",
 						style: { border: "none" }
@@ -4686,13 +4682,13 @@ var Qo = /* @__PURE__ */ At({
 					Y("div", {
 						class: F([{ rolling: T.value }, "roll-btn"]),
 						onClick: ve
-					}, [T.value ? (q(), J("span", Eu, "...")) : (q(), J("span", Tu, "ROLL"))], 2)
-				])) : Zi("", !0), w.value === "shopping" ? (q(), J("div", Du, [
-					Y("div", Ou, [Y("div", null, [m[70] ||= Y("h2", null, "黑市终端", -1), Y("div", ku, [m[69] ||= X("商店品质评级: ", -1), Y("span", Au, I(ye.value) + " (Roll: " + I(te.value) + ")", 1)])]), Y("div", ju, [m[71] ||= Y("div", { style: {
+					}, [T.value ? (q(), J("span", wu, "...")) : (q(), J("span", Cu, "ROLL"))], 2)
+				])) : Zi("", !0), w.value === "shopping" ? (q(), J("div", Tu, [
+					Y("div", Eu, [Y("div", null, [m[70] ||= Y("h2", null, "黑市终端", -1), Y("div", Du, [m[69] ||= X("商店品质评级: ", -1), Y("span", Ou, I(ye.value) + " (Roll: " + I(te.value) + ")", 1)])]), Y("div", ku, [m[71] ||= Y("div", { style: {
 						"font-size": "0.8em",
 						opacity: "0.8"
 					} }, "剩余可用点数", -1), Y("div", { class: F([{ negative: xe.value < 0 }, "points-display"]) }, I(xe.value), 3)])]),
-					Y("div", Mu, [Y("div", Nu, [
+					Y("div", Au, [Y("div", ju, [
 						m[73] ||= Y("span", { style: {
 							"font-weight": "bold",
 							color: "var(--pm-dark-red)"
@@ -4703,13 +4699,13 @@ var Qo = /* @__PURE__ */ At({
 						}, [m[72] ||= Y("option", { value: -1 }, "-- 选择预设 --", -1), (q(!0), J(G, null, W(ce.value, (e, t) => (q(), J("option", {
 							key: t,
 							value: t
-						}, I(e.name), 9, Pu))), 128))], 512), [[Bo, le.value]]),
+						}, I(e.name), 9, Mu))), 128))], 512), [[Bo, le.value]]),
 						Y("button", {
 							disabled: le.value === -1,
 							class: "preset-btn",
 							onClick: fe
-						}, "读取", 8, Fu)
-					]), Y("div", Iu, [U(Y("input", {
+						}, "读取", 8, Nu)
+					]), Y("div", Pu, [U(Y("input", {
 						"onUpdate:modelValue": m[2] ||= (e) => P.value = e,
 						type: "text",
 						class: "preset-input",
@@ -4718,7 +4714,7 @@ var Qo = /* @__PURE__ */ At({
 						disabled: !P.value,
 						class: "preset-btn",
 						onClick: de
-					}, "保存当前配置", 8, Lu)])]),
+					}, "保存当前配置", 8, Fu)])]),
 					m[110] ||= Y("details", { class: "price-table-details" }, [Y("summary", { class: "price-table-summary" }, "📜 点击查看：黑市物价与评级参考表"), Y("div", { class: "price-table-content" }, [Y("div", { style: {
 						display: "grid",
 						"grid-template-columns": "1fr 1fr",
@@ -4737,10 +4733,10 @@ var Qo = /* @__PURE__ */ At({
 						Y("li", null, "WAW / 史诗：3501 - 7500 点"),
 						Y("li", null, "ALEPH / 神器：7501 - 9999 点")
 					])])])])], -1),
-					Y("div", Ru, [
-						Y("div", zu, [
+					Y("div", Iu, [
+						Y("div", Lu, [
 							m[74] ||= Y("div", { class: "shop-title" }, "身份档案 (Persona)", -1),
-							Y("div", Bu, [
+							Y("div", Ru, [
 								U(Y("input", {
 									"onUpdate:modelValue": m[3] ||= (e) => O.name = e,
 									type: "text",
@@ -4771,35 +4767,35 @@ var Qo = /* @__PURE__ */ At({
 								"margin-top": "5px"
 							} }, "* 开局降临坐标将由命运（系统）在L巢废墟及周边区域中随机空投。", -1)
 						]),
-						Y("div", Vu, [
+						Y("div", zu, [
 							m[86] ||= Y("div", { class: "shop-title" }, "常驻市价表 (基础属性)", -1),
-							Y("div", Hu, [
-								Y("div", Uu, [
+							Y("div", Bu, [
+								Y("div", Vu, [
 									m[76] ||= Y("span", { class: "stat-name" }, "等级 (Max 30)", -1),
-									Y("div", Wu, [
+									Y("div", Hu, [
 										Y("button", {
 											disabled: D.level <= 1,
 											class: "stat-btn",
 											onClick: m[7] ||= (e) => D.level--
-										}, "-", 8, Gu),
-										Y("span", Ku, I(D.level), 1),
+										}, "-", 8, Uu),
+										Y("span", Wu, I(D.level), 1),
 										Y("button", {
 											disabled: D.level >= 30,
 											class: "stat-btn",
 											onClick: m[8] ||= (e) => D.level++
-										}, "+", 8, qu)
+										}, "+", 8, Gu)
 									]),
 									m[77] ||= Y("span", { class: "stat-cost" }, "100/级", -1)
 								]),
-								Y("div", Ju, [
+								Y("div", Ku, [
 									m[78] ||= Y("span", { class: "stat-name" }, "最大 HP", -1),
-									Y("div", Yu, [
+									Y("div", qu, [
 										Y("button", {
 											disabled: D.hp <= 10,
 											class: "stat-btn",
 											onClick: m[9] ||= (e) => D.hp -= 10
-										}, "-", 8, Xu),
-										Y("span", Zu, I(D.hp), 1),
+										}, "-", 8, Ju),
+										Y("span", Yu, I(D.hp), 1),
 										Y("button", {
 											class: "stat-btn",
 											onClick: m[10] ||= (e) => D.hp += 10
@@ -4807,15 +4803,15 @@ var Qo = /* @__PURE__ */ At({
 									]),
 									m[79] ||= Y("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								Y("div", Qu, [
+								Y("div", Xu, [
 									m[80] ||= Y("span", { class: "stat-name" }, "最大 MP", -1),
-									Y("div", $u, [
+									Y("div", Zu, [
 										Y("button", {
 											disabled: D.mp <= 10,
 											class: "stat-btn",
 											onClick: m[11] ||= (e) => D.mp -= 10
-										}, "-", 8, ed),
-										Y("span", td, I(D.mp), 1),
+										}, "-", 8, Qu),
+										Y("span", $u, I(D.mp), 1),
 										Y("button", {
 											class: "stat-btn",
 											onClick: m[12] ||= (e) => D.mp += 10
@@ -4823,37 +4819,37 @@ var Qo = /* @__PURE__ */ At({
 									]),
 									m[81] ||= Y("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								Y("div", nd, [
+								Y("div", ed, [
 									m[82] ||= Y("span", { class: "stat-name" }, "理智值 (SP)", -1),
-									Y("div", rd, [
+									Y("div", td, [
 										Y("button", {
 											disabled: D.sp <= 10,
 											class: "stat-btn",
 											onClick: m[13] ||= (e) => D.sp--
-										}, "-", 8, id),
-										Y("span", ad, I(D.sp), 1),
+										}, "-", 8, nd),
+										Y("span", rd, I(D.sp), 1),
 										Y("button", {
 											disabled: D.sp >= 50,
 											class: "stat-btn",
 											onClick: m[14] ||= (e) => D.sp++
-										}, "+", 8, od)
+										}, "+", 8, id)
 									]),
 									m[83] ||= Y("span", { class: "stat-cost" }, "50/点", -1)
 								]),
-								Y("div", sd, [
+								Y("div", ad, [
 									m[84] ||= Y("span", { class: "stat-name" }, "理智稳定性", -1),
-									Y("div", cd, [
+									Y("div", od, [
 										Y("button", {
 											disabled: D.stability <= 10,
 											class: "stat-btn",
 											onClick: m[15] ||= (e) => D.stability -= 5
-										}, "-", 8, ld),
-										Y("span", ud, I(D.stability), 1),
+										}, "-", 8, sd),
+										Y("span", cd, I(D.stability), 1),
 										Y("button", {
 											disabled: D.stability >= 100,
 											class: "stat-btn",
 											onClick: m[16] ||= (e) => D.stability += 5
-										}, "+", 8, dd)
+										}, "+", 8, ld)
 									]),
 									m[85] ||= Y("span", { class: "stat-cost" }, "30/点", -1)
 								])
@@ -4865,7 +4861,7 @@ var Qo = /* @__PURE__ */ At({
 									"font-size": "1.2em"
 								}
 							}, "六维属性 (10-15: 50点/级 | 16-20: 150点/级)", -1),
-							Y("div", fd, [(q(), J(G, null, W([
+							Y("div", ud, [(q(), J(G, null, W([
 								"str",
 								"dex",
 								"con",
@@ -4875,21 +4871,21 @@ var Qo = /* @__PURE__ */ At({
 							], (e) => Y("div", {
 								key: e,
 								class: "stat-row"
-							}, [Y("span", pd, I(E[e]), 1), Y("div", md, [
+							}, [Y("span", dd, I(E[e]), 1), Y("div", fd, [
 								Y("button", {
 									disabled: D[e] <= 10,
 									class: "stat-btn",
 									onClick: (t) => D[e]--
-								}, "-", 8, hd),
-								Y("span", gd, I(D[e]), 1),
+								}, "-", 8, pd),
+								Y("span", md, I(D[e]), 1),
 								Y("button", {
 									disabled: D[e] >= 20,
 									class: "stat-btn",
 									onClick: (t) => D[e]++
-								}, "+", 8, _d)
+								}, "+", 8, hd)
 							])])), 64))])
 						]),
-						Y("div", vd, [
+						Y("div", gd, [
 							m[98] ||= Y("div", { class: "shop-title" }, "DIY 锻造与深渊契约端口", -1),
 							m[99] ||= Y("div", { class: "dm-warning" }, [
 								Y("strong", null, "【跑团娘的善意提醒】"),
@@ -4897,7 +4893,7 @@ var Qo = /* @__PURE__ */ At({
 								Y("br"),
 								Y("span", { style: { color: "var(--pm-dark-red)" } }, "* 提示：如果你不知道具体的伤害数值（如1d8），可以只写效果，AI 会根据你选择的评级自动为你补全合理的数值。")
 							], -1),
-							Y("div", yd, [
+							Y("div", _d, [
 								m[89] ||= Y("div", {
 									class: "shop-title",
 									style: {
@@ -4913,26 +4909,26 @@ var Qo = /* @__PURE__ */ At({
 									Y("button", {
 										class: "btn-remove-diy",
 										onClick: (e) => ae("traits", t)
-									}, "×", 8, bd),
-									Y("div", xd, [Y("span", Sd, "特质 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", Cd, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
+									}, "×", 8, vd),
+									Y("div", yd, [Y("span", bd, "特质 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", xd, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
 										disabled: !e.tier,
 										class: "diy-roll-btn",
 										style: { "margin-left": "10px" },
 										onClick: (e) => oe("traits", t)
-									}, "评估代价 (Roll)", 8, wd)])]),
+									}, "评估代价 (Roll)", 8, Sd)])]),
 									U(Y("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
 										class: "pm-input",
 										placeholder: "特质名称 (如: 异想体血肉共生)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Td), [[Q, e.name]]),
+									}, null, 40, Cd), [[Q, e.name]]),
 									U(Y("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "特质效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Ed), [[Q, e.desc]]),
+									}, null, 40, wd), [[Q, e.desc]]),
 									U(Y("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -4940,14 +4936,14 @@ var Qo = /* @__PURE__ */ At({
 									}, [m[88] ||= Y("option", { value: "" }, "-- 选择评级区间 --", -1), (q(), J(G, null, W(A, (e) => Y("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, Od)), 64))], 40, Dd), [[Bo, e.tier]])
+									}, I(e.label), 9, Ed)), 64))], 40, Td), [[Bo, e.tier]])
 								]))), 128)),
 								Y("button", {
 									class: "btn-add-diy",
 									onClick: m[17] ||= (e) => ie("traits")
 								}, "➕ 添加自定义特质")
 							]),
-							Y("div", kd, [
+							Y("div", Dd, [
 								m[91] ||= Y("div", {
 									class: "shop-title",
 									style: {
@@ -4964,26 +4960,26 @@ var Qo = /* @__PURE__ */ At({
 									Y("button", {
 										class: "btn-remove-diy",
 										onClick: (e) => ae("weapons", t)
-									}, "×", 8, Ad),
-									Y("div", jd, [Y("span", Md, "武器 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", Nd, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
+									}, "×", 8, Od),
+									Y("div", kd, [Y("span", Ad, "武器 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", jd, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
 										disabled: !e.tier,
 										class: "diy-roll-btn",
 										style: { "margin-left": "10px" },
 										onClick: (e) => oe("weapons", t)
-									}, "评估代价 (Roll)", 8, Pd)])]),
+									}, "评估代价 (Roll)", 8, Md)])]),
 									U(Y("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
 										class: "pm-input",
 										placeholder: "武器名称 (如: ALEPH级·拟态幼体)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Fd), [[Q, e.name]]),
+									}, null, 40, Nd), [[Q, e.name]]),
 									U(Y("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "武器效果与【副作用代价】描述... (未写明伤害骰子AI将自动补全)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Id), [[Q, e.desc]]),
+									}, null, 40, Pd), [[Q, e.desc]]),
 									U(Y("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -4991,14 +4987,14 @@ var Qo = /* @__PURE__ */ At({
 									}, [m[90] ||= Y("option", { value: "" }, "-- 选择评级区间 --", -1), (q(), J(G, null, W(A, (e) => Y("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, Rd)), 64))], 40, Ld), [[Bo, e.tier]])
+									}, I(e.label), 9, Id)), 64))], 40, Fd), [[Bo, e.tier]])
 								]))), 128)),
 								Y("button", {
 									class: "btn-add-diy",
 									onClick: m[18] ||= (e) => ie("weapons")
 								}, "➕ 添加自定义武器")
 							]),
-							Y("div", zd, [
+							Y("div", Ld, [
 								m[93] ||= Y("div", {
 									class: "shop-title",
 									style: {
@@ -5015,26 +5011,26 @@ var Qo = /* @__PURE__ */ At({
 									Y("button", {
 										class: "btn-remove-diy",
 										onClick: (e) => ae("armors", t)
-									}, "×", 8, Bd),
-									Y("div", Vd, [Y("span", Hd, "防具 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", Ud, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
+									}, "×", 8, Rd),
+									Y("div", zd, [Y("span", Bd, "防具 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", Vd, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
 										disabled: !e.tier,
 										class: "diy-roll-btn",
 										style: { "margin-left": "10px" },
 										onClick: (e) => oe("armors", t)
-									}, "评估代价 (Roll)", 8, Wd)])]),
+									}, "评估代价 (Roll)", 8, Hd)])]),
 									U(Y("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
 										class: "pm-input",
 										placeholder: "防具名称 (如: W公司清剿服)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Gd), [[Q, e.name]]),
+									}, null, 40, Ud), [[Q, e.name]]),
 									U(Y("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "防具效果与代价描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Kd), [[Q, e.desc]]),
+									}, null, 40, Wd), [[Q, e.desc]]),
 									U(Y("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5042,14 +5038,14 @@ var Qo = /* @__PURE__ */ At({
 									}, [m[92] ||= Y("option", { value: "" }, "-- 选择评级区间 --", -1), (q(), J(G, null, W(A, (e) => Y("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, Jd)), 64))], 40, qd), [[Bo, e.tier]])
+									}, I(e.label), 9, Kd)), 64))], 40, Gd), [[Bo, e.tier]])
 								]))), 128)),
 								Y("button", {
 									class: "btn-add-diy",
 									onClick: m[19] ||= (e) => ie("armors")
 								}, "➕ 添加自定义防具")
 							]),
-							Y("div", Yd, [
+							Y("div", qd, [
 								m[95] ||= Y("div", {
 									class: "shop-title",
 									style: {
@@ -5066,26 +5062,26 @@ var Qo = /* @__PURE__ */ At({
 									Y("button", {
 										class: "btn-remove-diy",
 										onClick: (e) => ae("items", t)
-									}, "×", 8, Xd),
-									Y("div", Zd, [Y("span", Qd, "道具 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", $d, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
+									}, "×", 8, Jd),
+									Y("div", Yd, [Y("span", Xd, "道具 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", Zd, "-" + I(e.cost) + " 点", 1)) : Zi("", !0), Y("button", {
 										disabled: !e.tier,
 										class: "diy-roll-btn",
 										style: { "margin-left": "10px" },
 										onClick: (e) => oe("items", t)
-									}, "评估代价 (Roll)", 8, ef)])]),
+									}, "评估代价 (Roll)", 8, Qd)])]),
 									U(Y("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
 										class: "pm-input",
 										placeholder: "道具名称 (如: K公司高浓度安瓿)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, tf), [[Q, e.name]]),
+									}, null, 40, $d), [[Q, e.name]]),
 									U(Y("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "道具效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, nf), [[Q, e.desc]]),
+									}, null, 40, ef), [[Q, e.desc]]),
 									U(Y("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5093,14 +5089,14 @@ var Qo = /* @__PURE__ */ At({
 									}, [m[94] ||= Y("option", { value: "" }, "-- 选择评级区间 --", -1), (q(), J(G, null, W(A, (e) => Y("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, af)), 64))], 40, rf), [[Bo, e.tier]])
+									}, I(e.label), 9, nf)), 64))], 40, tf), [[Bo, e.tier]])
 								]))), 128)),
 								Y("button", {
 									class: "btn-add-diy",
 									onClick: m[20] ||= (e) => ie("items")
 								}, "➕ 添加自定义道具")
 							]),
-							Y("div", of, [
+							Y("div", rf, [
 								m[97] ||= Y("div", {
 									class: "shop-title",
 									style: {
@@ -5122,8 +5118,8 @@ var Qo = /* @__PURE__ */ At({
 									Y("button", {
 										class: "btn-remove-diy",
 										onClick: (e) => ae("karmas", t)
-									}, "×", 8, sf),
-									Y("div", cf, [Y("span", lf, "业障 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", uf, "+" + I(e.refund) + " 点", 1)) : Zi("", !0), Y("button", {
+									}, "×", 8, af),
+									Y("div", of, [Y("span", sf, "业障 #" + I(t + 1), 1), Y("div", null, [e.rolled ? (q(), J("span", cf, "+" + I(e.refund) + " 点", 1)) : Zi("", !0), Y("button", {
 										disabled: !e.tier,
 										class: "diy-roll-btn",
 										style: {
@@ -5131,20 +5127,20 @@ var Qo = /* @__PURE__ */ At({
 											background: "var(--pm-dark-red)"
 										},
 										onClick: (e) => oe("karmas", t)
-									}, "评估返还 (Roll)", 8, df)])]),
+									}, "评估返还 (Roll)", 8, lf)])]),
 									U(Y("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
 										class: "pm-input",
 										placeholder: "业障名称 (如: 注定的扭曲)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, ff), [[Q, e.name]]),
+									}, null, 40, uf), [[Q, e.name]]),
 									U(Y("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "业障的负面效果与触发条件描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, pf), [[Q, e.desc]]),
+									}, null, 40, df), [[Q, e.desc]]),
 									U(Y("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5152,7 +5148,7 @@ var Qo = /* @__PURE__ */ At({
 									}, [m[96] ||= Y("option", { value: "" }, "-- 选择痛苦评级 --", -1), (q(), J(G, null, W(re, (e) => Y("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, hf)), 64))], 40, mf), [[Bo, e.tier]])
+									}, I(e.label), 9, pf)), 64))], 40, ff), [[Bo, e.tier]])
 								]))), 128)),
 								Y("button", {
 									class: "btn-add-diy",
@@ -5164,7 +5160,7 @@ var Qo = /* @__PURE__ */ At({
 								}, "➕ 添加自定义业障")
 							])
 						]),
-						Y("div", gf, [
+						Y("div", mf, [
 							m[100] ||= Y("div", { class: "shop-title" }, "本局限定商品 (Roguelike 刷新池)", -1),
 							m[101] ||= Y("p", { style: {
 								color: "#555",
@@ -5175,50 +5171,50 @@ var Qo = /* @__PURE__ */ At({
 								color: "var(--pm-text)",
 								"margin-bottom": "10px"
 							} }, "特殊背景 / 特质", -1),
-							Y("div", _f, [(q(!0), J(G, null, W(M.backgrounds, (e) => (q(), J("div", {
+							Y("div", hf, [(q(!0), J(G, null, W(M.backgrounds, (e) => (q(), J("div", {
 								key: e.name,
 								class: F([{ selected: Se("backgrounds", e) }, "rl-card"]),
 								onClick: (t) => L("backgrounds", e)
 							}, [
-								Y("div", yf, I(e.type), 1),
-								Y("div", bf, I(e.name), 1),
-								Y("div", xf, I(e.desc), 1),
-								Y("div", Sf, "-" + I(e.cost) + " 点", 1)
-							], 10, vf))), 128))]),
+								Y("div", _f, I(e.type), 1),
+								Y("div", vf, I(e.name), 1),
+								Y("div", yf, I(e.desc), 1),
+								Y("div", bf, "-" + I(e.cost) + " 点", 1)
+							], 10, gf))), 128))]),
 							m[103] ||= Y("h4", { style: {
 								color: "var(--pm-text)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "稀有遗物 / E.G.O", -1),
-							Y("div", Cf, [(q(!0), J(G, null, W(M.egos, (e) => (q(), J("div", {
+							Y("div", xf, [(q(!0), J(G, null, W(M.egos, (e) => (q(), J("div", {
 								key: e.name,
 								class: F([{ selected: Se("egos", e) }, "rl-card"]),
 								onClick: (t) => L("egos", e)
 							}, [
-								Y("div", Tf, I(e.type), 1),
-								Y("div", Ef, I(e.name), 1),
-								Y("div", Df, I(e.desc), 1),
-								Y("div", Of, "-" + I(e.cost) + " 点", 1)
-							], 10, wf))), 128))]),
+								Y("div", Cf, I(e.type), 1),
+								Y("div", wf, I(e.name), 1),
+								Y("div", Tf, I(e.desc), 1),
+								Y("div", Ef, "-" + I(e.cost) + " 点", 1)
+							], 10, Sf))), 128))]),
 							m[104] ||= Y("h4", { style: {
 								color: "var(--pm-dark-red)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "专属业障 (必须至少选择一项，可返还点数)", -1),
-							Y("div", kf, [(q(!0), J(G, null, W(M.karmas, (e) => (q(), J("div", {
+							Y("div", Df, [(q(!0), J(G, null, W(M.karmas, (e) => (q(), J("div", {
 								key: e.name,
 								class: F([{ selected: Se("karmas", e) }, "rl-card"]),
 								onClick: (t) => L("karmas", e)
 							}, [
-								Y("div", jf, I(e.type), 1),
-								Y("div", Mf, I(e.name), 1),
-								Y("div", Nf, I(e.desc), 1),
-								Y("div", Pf, "+" + I(e.refund) + " 点", 1)
-							], 10, Af))), 128))])
+								Y("div", kf, I(e.type), 1),
+								Y("div", Af, I(e.name), 1),
+								Y("div", jf, I(e.desc), 1),
+								Y("div", Mf, "+" + I(e.refund) + " 点", 1)
+							], 10, Of))), 128))])
 						]),
-						Y("div", Ff, [
+						Y("div", Nf, [
 							m[106] ||= Y("div", { class: "shop-title" }, "同行伙伴 (Companion) - 消耗 2000 点", -1),
-							Y("label", If, [U(Y("input", {
+							Y("label", Pf, [U(Y("input", {
 								"onUpdate:modelValue": m[22] ||= (e) => k.enabled = e,
 								type: "checkbox",
 								style: {
@@ -5226,7 +5222,7 @@ var Qo = /* @__PURE__ */ At({
 									height: "20px"
 								}
 							}, null, 512), [[Lo, k.enabled]]), m[105] ||= X(" 携带一名自定义伙伴降临废土 ", -1)]),
-							k.enabled ? (q(), J("div", Lf, [U(Y("input", {
+							k.enabled ? (q(), J("div", Ff, [U(Y("input", {
 								"onUpdate:modelValue": m[23] ||= (e) => k.name = e,
 								type: "text",
 								class: "pm-input",
@@ -5239,7 +5235,7 @@ var Qo = /* @__PURE__ */ At({
 								placeholder: "伙伴的身份、能力与性格设定..."
 							}, null, 512), [[Q, k.desc]])])) : Zi("", !0)
 						]),
-						Y("div", Rf, [
+						Y("div", If, [
 							m[107] ||= Y("div", { class: "shop-title" }, "完全自定义议约", -1),
 							m[108] ||= Y("p", { style: {
 								color: "#555",
@@ -5249,30 +5245,30 @@ var Qo = /* @__PURE__ */ At({
 								Y("br"),
 								X("注意：DM 会在游戏开始后为你进行点数估价，并强行缝合一个恶毒的专属业障。")
 							], -1),
-							Y("div", zf, [U(Y("textarea", {
+							Y("div", Lf, [U(Y("textarea", {
 								"onUpdate:modelValue": m[25] ||= (e) => se.value = e,
 								placeholder: "在此输入你的自定义设定..."
 							}, null, 512), [[Q, se.value]])])
 						])
 					]),
-					Y("div", Bf, [
-						xe.value < 0 ? (q(), J("div", Vf, [...m[109] ||= [
+					Y("div", Rf, [
+						xe.value < 0 ? (q(), J("div", zf, [...m[109] ||= [
 							X(" 【跑团娘的嘲弄】哎呀呀，点数透支了呢？没关系，你可以带着这身华丽的负债降临。", -1),
 							Y("br", null, null, -1),
 							X(" 只不过……开局负数骰子意味着你已经被都市的厄运标记。准备好在『心灵镜牢』里打一辈子黑工还债了吗，可怜的耗子？ ", -1)
 						]])) : Zi("", !0),
-						!Ce.value && !se.value ? (q(), J("p", Hf, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : Zi("", !0),
+						!Ce.value && !se.value ? (q(), J("p", Bf, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : Zi("", !0),
 						Y("button", {
 							disabled: !Ce.value && !se.value,
 							class: "pm-btn-embark",
 							onClick: we
-						}, "确认降临姿态", 8, Uf)
+						}, "确认降临姿态", 8, Vf)
 					])
-				])) : Zi("", !0)])) : n.value === "settings" ? (q(), J("div", Wf, [
+				])) : Zi("", !0)])) : n.value === "settings" ? (q(), J("div", Hf, [
 					m[118] ||= Y("div", { class: "settings-title" }, "契约与法则", -1),
 					m[119] ||= Y("div", { class: "settings-warning" }, "“深渊的边界由你划定。一旦铭刻，不可反悔。”", -1),
-					Y("div", Gf, [m[111] ||= X("已选定降临姿态：", -1), Y("span", Kf, I(S.value), 1)]),
-					Y("div", qf, [Y("div", Jf, [
+					Y("div", Uf, [m[111] ||= X("已选定降临姿态：", -1), Y("span", Wf, I(S.value), 1)]),
+					Y("div", Gf, [Y("div", Kf, [
 						m[112] ||= Y("div", {
 							class: "dm-title",
 							style: {
@@ -5285,36 +5281,36 @@ var Qo = /* @__PURE__ */ At({
 							color: "#666",
 							"margin-bottom": "15px"
 						} }, "决定你的理智恢复机制与卡门破防逻辑。", -1),
-						Y("div", Yf, [Y("button", {
+						Y("div", qf, [Y("button", {
 							class: F([{ active: R.ei === "E" }, "mbti-btn"]),
 							onClick: m[26] ||= (e) => R.ei = "E"
 						}, "E (外向)", 2), Y("button", {
 							class: F([{ active: R.ei === "I" }, "mbti-btn"]),
 							onClick: m[27] ||= (e) => R.ei = "I"
 						}, "I (内向)", 2)]),
-						Y("div", Xf, [Y("button", {
+						Y("div", Jf, [Y("button", {
 							class: F([{ active: R.sn === "S" }, "mbti-btn"]),
 							onClick: m[28] ||= (e) => R.sn = "S"
 						}, "S (感觉)", 2), Y("button", {
 							class: F([{ active: R.sn === "N" }, "mbti-btn"]),
 							onClick: m[29] ||= (e) => R.sn = "N"
 						}, "N (直觉)", 2)]),
-						Y("div", Zf, [Y("button", {
+						Y("div", Yf, [Y("button", {
 							class: F([{ active: R.tf === "T" }, "mbti-btn"]),
 							onClick: m[30] ||= (e) => R.tf = "T"
 						}, "T (思考)", 2), Y("button", {
 							class: F([{ active: R.tf === "F" }, "mbti-btn"]),
 							onClick: m[31] ||= (e) => R.tf = "F"
 						}, "F (情感)", 2)]),
-						Y("div", Qf, [Y("button", {
+						Y("div", Xf, [Y("button", {
 							class: F([{ active: R.jp === "J" }, "mbti-btn"]),
 							onClick: m[32] ||= (e) => R.jp = "J"
 						}, "J (判断)", 2), Y("button", {
 							class: F([{ active: R.jp === "P" }, "mbti-btn"]),
 							onClick: m[33] ||= (e) => R.jp = "P"
 						}, "P (知觉)", 2)]),
-						Y("div", $f, I(Te.value), 1)
-					]), Y("div", ep, [
+						Y("div", Zf, I(Te.value), 1)
+					]), Y("div", Qf, [
 						m[114] ||= Y("div", {
 							class: "dm-title",
 							style: {
@@ -5344,15 +5340,15 @@ var Qo = /* @__PURE__ */ At({
 							onClick: m[37] ||= (e) => Ee.value = "地狱 (Hell)"
 						}, "地狱 (Hell) - 机制杀频发，卡门时刻注视", 2)
 					])]),
-					Y("div", tp, [(q(!0), J(G, null, W(y.sensitiveToggles, (e, t) => (q(), J("div", {
+					Y("div", $f, [(q(!0), J(G, null, W(y.sensitiveToggles, (e, t) => (q(), J("div", {
 						key: t,
 						class: F(["toggle-btn", { active: e }]),
 						onClick: (n) => y.sensitiveToggles[t] = !e
-					}, I(String(t).replace(/_/g, " / ")), 11, np))), 128))]),
-					Y("div", rp, [
+					}, I(String(t).replace(/_/g, " / ")), 11, ep))), 128))]),
+					Y("div", tp, [
 						m[116] ||= Y("div", { class: "dm-title" }, "观测者化身设定", -1),
 						m[117] ||= Y("div", { class: "dm-desc" }, "“接下来，我的化身将与你同行，但她只会作为无情的DM存在。你希望她用什么态度来见证你的挣扎？”", -1),
-						Y("div", ip, [
+						Y("div", np, [
 							Y("button", {
 								class: F([{ active: y.dmPersonality === "三无机娘，冷酷客观，毫无感情波动" }, "pm-preset-btn"]),
 								onClick: m[38] ||= (e) => y.dmPersonality = "三无机娘，冷酷客观，毫无感情波动"
@@ -5387,13 +5383,13 @@ var Qo = /* @__PURE__ */ At({
 						disabled: r.value,
 						class: "pm-btn-embark",
 						onClick: Oe
-					}, I(r.value ? "引擎连接中..." : "踏上旅程"), 9, ap)
+					}, I(r.value ? "引擎连接中..." : "踏上旅程"), 9, rp)
 				])) : Zi("", !0)]),
 				_: 1
 			})
 		])) : Zi("", !0);
 	}
-}), [["__scopeId", "data-v-7204989c"]]);
+});
 //#endregion
 //#region src/seven-days1/index.ts
 if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
@@ -5435,14 +5431,14 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 				let a = `pm-setup-root-${i}`;
 				if (!r.getElementById(a)) {
 					let o = r.createElement("div");
-					o.id = a, o.style.cssText = "margin-top: 15px; width: 100%; position: relative;", n.appendChild(o), t = Yo(op), t.mount(o), e.set(`setup_${i}`, t);
+					o.id = a, o.style.cssText = "margin-top: 15px; width: 100%; position: relative;", n.appendChild(o), t = Yo(ip), t.mount(o), e.set(`setup_${i}`, t);
 				}
 			}
 			if (!u && !d) {
 				let t = n.querySelector(".pm-status-bar-container");
 				if (!t && !e.has(i)) {
 					t = r.createElement("div"), t.className = "pm-status-bar-container", t.id = `pm-app-${i}`, n.appendChild(t);
-					let a = Yo(Kl, { mesId: i });
+					let a = Yo(Wl, { mesId: i });
 					a.mount(t), e.set(i, a);
 				}
 			}
@@ -5473,4 +5469,3 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 	r(), a();
 }
 //#endregion
-
