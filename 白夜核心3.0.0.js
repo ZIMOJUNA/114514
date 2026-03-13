@@ -3575,7 +3575,7 @@ var $ = /* @__PURE__ */ Ot({
 } }, Id = { style: { "text-decoration": "underline" } }, Ld = { class: "mbti-diff-grid" }, Rd = { class: "mbti-box" }, zd = { class: "mbti-row" }, Bd = { class: "mbti-row" }, Vd = { class: "mbti-row" }, Hd = { class: "mbti-row" }, Ud = { class: "mbti-result" }, Wd = { class: "diff-box" }, Gd = { class: "toggles-grid" }, Kd = ["onClick"], qd = { class: "dm-section" }, Jd = { class: "dm-presets" }, Yd = ["disabled"], Xd = /* @__PURE__ */ Jn({
 	__name: "SetupModal",
 	setup(e) {
-		let t = /* @__PURE__ */ W(!0), n = /* @__PURE__ */ W("check"), r = /* @__PURE__ */ W(!1), i = /* @__PURE__ */ W(!1), a = /* @__PURE__ */ W(!1), o = /* @__PURE__ */ W(!1), s = /* @__PURE__ */ W(""), c = /* @__PURE__ */ W(""), l = /* @__PURE__ */ W("https://files.catbox.moe/8b9z9j.png"), u = /* @__PURE__ */ W(""), d = /* @__PURE__ */ W(null), f = () => {
+		let t = /* @__PURE__ */ W(!0), n = /* @__PURE__ */ W("check"), r = /* @__PURE__ */ W(!1), i = /* @__PURE__ */ W(!1), a = /* @__PURE__ */ W(!1), o = /* @__PURE__ */ W(!1), s = /* @__PURE__ */ W(""), c = /* @__PURE__ */ W(""), l = /* @__PURE__ */ W("https://files.catbox.moe/wfjl6u.png"), u = /* @__PURE__ */ W(""), d = /* @__PURE__ */ W(null), f = () => {
 			d.value && d.value.click();
 		}, p = (e) => {
 			let t = e.target.files?.[0];
