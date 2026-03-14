@@ -3346,7 +3346,7 @@ var $ = /* @__PURE__ */ kt({
 								color: "#ce93d8",
 								"border-bottom-color": "rgba(206, 147, 216, 0.3)"
 							}
-						}, "Special Status", -1), Y("div", {
+						}, " Special Status ", -1), Y("div", {
 							class: "stb-pm-status-list",
 							innerHTML: u.value.status
 						}, null, 8, Ms)], 512), [[ro, u.value.status]]),
@@ -3426,7 +3426,7 @@ var $ = /* @__PURE__ */ kt({
 								color: "#d4af37",
 								"border-bottom-color": "rgba(212, 175, 55, 0.3)"
 							}
-						}, "Urban Rumors (都市截获)", -1),
+						}, " Urban Rumors (都市截获) ", -1),
 						W(Y("div", yc, [t[37] ||= Y("div", { class: "stb-pm-rumor-title" }, "旧巷余声", -1), Y("div", {
 							class: "stb-pm-rumor-text",
 							innerHTML: u.value.rumor1
