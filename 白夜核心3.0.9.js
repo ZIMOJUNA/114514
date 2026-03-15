@@ -20,84 +20,84 @@ var t = {}, n = [], r = () => {}, i = () => !1, a = (e) => e.charCodeAt(0) === 1
 }, l = Object.prototype.hasOwnProperty, u = (e, t) => l.call(e, t), d = Array.isArray, f = (e) => x(e) === "[object Map]", p = (e) => x(e) === "[object Set]", m = (e) => x(e) === "[object Date]", h = (e) => typeof e == "function", g = (e) => typeof e == "string", _ = (e) => typeof e == "symbol", v = (e) => typeof e == "object" && !!e, y = (e) => (v(e) || h(e)) && h(e.then) && h(e.catch), b = Object.prototype.toString, x = (e) => b.call(e), S = (e) => x(e).slice(8, -1), C = (e) => x(e) === "[object Object]", w = (e) => g(e) && e !== "NaN" && e[0] !== "-" && "" + parseInt(e, 10) === e, ee = /* @__PURE__ */ e(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted"), te = (e) => {
 	let t = /* @__PURE__ */ Object.create(null);
 	return ((n) => t[n] || (t[n] = e(n)));
-}, ne = /-\w/g, T = te((e) => e.replace(ne, (e) => e.slice(1).toUpperCase())), E = /\B([A-Z])/g, D = te((e) => e.replace(E, "-$1").toLowerCase()), re = te((e) => e.charAt(0).toUpperCase() + e.slice(1)), ie = te((e) => e ? `on${re(e)}` : ""), ae = (e, t) => !Object.is(e, t), oe = (e, ...t) => {
+}, ne = /-\w/g, T = te((e) => e.replace(ne, (e) => e.slice(1).toUpperCase())), E = /\B([A-Z])/g, re = te((e) => e.replace(E, "-$1").toLowerCase()), ie = te((e) => e.charAt(0).toUpperCase() + e.slice(1)), ae = te((e) => e ? `on${ie(e)}` : ""), oe = (e, t) => !Object.is(e, t), se = (e, ...t) => {
 	for (let n = 0; n < e.length; n++) e[n](...t);
-}, O = (e, t, n, r = !1) => {
+}, D = (e, t, n, r = !1) => {
 	Object.defineProperty(e, t, {
 		configurable: !0,
 		enumerable: !1,
 		writable: r,
 		value: n
 	});
-}, se = (e) => {
+}, ce = (e) => {
 	let t = parseFloat(e);
 	return isNaN(t) ? e : t;
-}, ce = (e) => {
+}, le = (e) => {
 	let t = g(e) ? Number(e) : NaN;
 	return isNaN(t) ? e : t;
-}, le, ue = () => le ||= typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : typeof global < "u" ? global : {};
-function k(e) {
+}, ue, de = () => ue ||= typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : typeof global < "u" ? global : {};
+function O(e) {
 	if (d(e)) {
 		let t = {};
 		for (let n = 0; n < e.length; n++) {
-			let r = e[n], i = g(r) ? fe(r) : k(r);
+			let r = e[n], i = g(r) ? pe(r) : O(r);
 			if (i) for (let e in i) t[e] = i[e];
 		}
 		return t;
 	} else if (g(e) || v(e)) return e;
 }
-var A = /;(?![^(]*\))/g, j = /:([^]+)/, de = /\/\*[^]*?\*\//g;
-function fe(e) {
+var k = /;(?![^(]*\))/g, A = /:([^]+)/, fe = /\/\*[^]*?\*\//g;
+function pe(e) {
 	let t = {};
-	return e.replace(de, "").split(A).forEach((e) => {
+	return e.replace(fe, "").split(k).forEach((e) => {
 		if (e) {
-			let n = e.split(j);
+			let n = e.split(A);
 			n.length > 1 && (t[n[0].trim()] = n[1].trim());
 		}
 	}), t;
 }
-function M(e) {
+function j(e) {
 	let t = "";
 	if (g(e)) t = e;
 	else if (d(e)) for (let n = 0; n < e.length; n++) {
-		let r = M(e[n]);
+		let r = j(e[n]);
 		r && (t += r + " ");
 	}
 	else if (v(e)) for (let n in e) e[n] && (t += n + " ");
 	return t.trim();
 }
-var N = "itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly", pe = /* @__PURE__ */ e(N);
-N + "";
-function me(e) {
+var M = "itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly", me = /* @__PURE__ */ e(M);
+M + "";
+function he(e) {
 	return !!e || e === "";
 }
-function he(e, t) {
+function ge(e, t) {
 	if (e.length !== t.length) return !1;
 	let n = !0;
-	for (let r = 0; n && r < e.length; r++) n = P(e[r], t[r]);
+	for (let r = 0; n && r < e.length; r++) n = N(e[r], t[r]);
 	return n;
 }
-function P(e, t) {
+function N(e, t) {
 	if (e === t) return !0;
 	let n = m(e), r = m(t);
 	if (n || r) return n && r ? e.getTime() === t.getTime() : !1;
 	if (n = _(e), r = _(t), n || r) return e === t;
-	if (n = d(e), r = d(t), n || r) return n && r ? he(e, t) : !1;
+	if (n = d(e), r = d(t), n || r) return n && r ? ge(e, t) : !1;
 	if (n = v(e), r = v(t), n || r) {
 		if (!n || !r || Object.keys(e).length !== Object.keys(t).length) return !1;
 		for (let n in e) {
 			let r = e.hasOwnProperty(n), i = t.hasOwnProperty(n);
-			if (r && !i || !r && i || !P(e[n], t[n])) return !1;
+			if (r && !i || !r && i || !N(e[n], t[n])) return !1;
 		}
 	}
 	return String(e) === String(t);
 }
-function F(e, t) {
-	return e.findIndex((e) => P(e, t));
+function P(e, t) {
+	return e.findIndex((e) => N(e, t));
 }
-var ge = (e) => !!(e && e.__v_isRef === !0), I = (e) => g(e) ? e : e == null ? "" : d(e) || v(e) && (e.toString === b || !h(e.toString)) ? ge(e) ? I(e.value) : JSON.stringify(e, _e, 2) : String(e), _e = (e, t) => ge(t) ? _e(e, t.value) : f(t) ? { [`Map(${t.size})`]: [...t.entries()].reduce((e, [t, n], r) => (e[ve(t, r) + " =>"] = n, e), {}) } : p(t) ? { [`Set(${t.size})`]: [...t.values()].map((e) => ve(e)) } : _(t) ? ve(t) : v(t) && !d(t) && !C(t) ? String(t) : t, ve = (e, t = "") => _(e) ? `Symbol(${e.description ?? t})` : e, L, ye = class {
+var _e = (e) => !!(e && e.__v_isRef === !0), F = (e) => g(e) ? e : e == null ? "" : d(e) || v(e) && (e.toString === b || !h(e.toString)) ? _e(e) ? F(e.value) : JSON.stringify(e, ve, 2) : String(e), ve = (e, t) => _e(t) ? ve(e, t.value) : f(t) ? { [`Map(${t.size})`]: [...t.entries()].reduce((e, [t, n], r) => (e[ye(t, r) + " =>"] = n, e), {}) } : p(t) ? { [`Set(${t.size})`]: [...t.values()].map((e) => ye(e)) } : _(t) ? ye(t) : v(t) && !d(t) && !C(t) ? String(t) : t, ye = (e, t = "") => _(e) ? `Symbol(${e.description ?? t})` : e, I, be = class {
 	constructor(e = !1) {
-		this.detached = e, this._active = !0, this._on = 0, this.effects = [], this.cleanups = [], this._isPaused = !1, this.__v_skip = !0, this.parent = L, !e && L && (this.index = (L.scopes ||= []).push(this) - 1);
+		this.detached = e, this._active = !0, this._on = 0, this.effects = [], this.cleanups = [], this._isPaused = !1, this.__v_skip = !0, this.parent = I, !e && I && (this.index = (I.scopes ||= []).push(this) - 1);
 	}
 	get active() {
 		return this._active;
@@ -120,19 +120,19 @@ var ge = (e) => !!(e && e.__v_isRef === !0), I = (e) => g(e) ? e : e == null ? "
 	}
 	run(e) {
 		if (this._active) {
-			let t = L;
+			let t = I;
 			try {
-				return L = this, e();
+				return I = this, e();
 			} finally {
-				L = t;
+				I = t;
 			}
 		}
 	}
 	on() {
-		++this._on === 1 && (this.prevScope = L, L = this);
+		++this._on === 1 && (this.prevScope = I, I = this);
 	}
 	off() {
-		this._on > 0 && --this._on === 0 && (L = this.prevScope, this.prevScope = void 0);
+		this._on > 0 && --this._on === 0 && (I = this.prevScope, this.prevScope = void 0);
 	}
 	stop(e) {
 		if (this._active) {
@@ -152,72 +152,72 @@ var ge = (e) => !!(e && e.__v_isRef === !0), I = (e) => g(e) ? e : e == null ? "
 		}
 	}
 };
-function be() {
-	return L;
+function xe() {
+	return I;
 }
-var R, xe = /* @__PURE__ */ new WeakSet(), Se = class {
+var L, Se = /* @__PURE__ */ new WeakSet(), Ce = class {
 	constructor(e) {
-		this.fn = e, this.deps = void 0, this.depsTail = void 0, this.flags = 5, this.next = void 0, this.cleanup = void 0, this.scheduler = void 0, L && L.active && L.effects.push(this);
+		this.fn = e, this.deps = void 0, this.depsTail = void 0, this.flags = 5, this.next = void 0, this.cleanup = void 0, this.scheduler = void 0, I && I.active && I.effects.push(this);
 	}
 	pause() {
 		this.flags |= 64;
 	}
 	resume() {
-		this.flags & 64 && (this.flags &= -65, xe.has(this) && (xe.delete(this), this.trigger()));
+		this.flags & 64 && (this.flags &= -65, Se.has(this) && (Se.delete(this), this.trigger()));
 	}
 	notify() {
-		this.flags & 2 && !(this.flags & 32) || this.flags & 8 || Ee(this);
+		this.flags & 2 && !(this.flags & 32) || this.flags & 8 || De(this);
 	}
 	run() {
 		if (!(this.flags & 1)) return this.fn();
-		this.flags |= 2, Re(this), ke(this);
-		let e = R, t = Pe;
-		R = this, Pe = !0;
+		this.flags |= 2, Re(this), Ae(this);
+		let e = L, t = R;
+		L = this, R = !0;
 		try {
 			return this.fn();
 		} finally {
-			Ae(this), R = e, Pe = t, this.flags &= -3;
+			je(this), L = e, R = t, this.flags &= -3;
 		}
 	}
 	stop() {
 		if (this.flags & 1) {
-			for (let e = this.deps; e; e = e.nextDep) Ne(e);
+			for (let e = this.deps; e; e = e.nextDep) Pe(e);
 			this.deps = this.depsTail = void 0, Re(this), this.onStop && this.onStop(), this.flags &= -2;
 		}
 	}
 	trigger() {
-		this.flags & 64 ? xe.add(this) : this.scheduler ? this.scheduler() : this.runIfDirty();
+		this.flags & 64 ? Se.add(this) : this.scheduler ? this.scheduler() : this.runIfDirty();
 	}
 	runIfDirty() {
-		je(this) && this.run();
+		Me(this) && this.run();
 	}
 	get dirty() {
-		return je(this);
+		return Me(this);
 	}
-}, Ce = 0, we, Te;
-function Ee(e, t = !1) {
+}, we = 0, Te, Ee;
+function De(e, t = !1) {
 	if (e.flags |= 8, t) {
-		e.next = Te, Te = e;
+		e.next = Ee, Ee = e;
 		return;
 	}
-	e.next = we, we = e;
-}
-function De() {
-	Ce++;
+	e.next = Te, Te = e;
 }
 function Oe() {
-	if (--Ce > 0) return;
-	if (Te) {
-		let e = Te;
-		for (Te = void 0; e;) {
+	we++;
+}
+function ke() {
+	if (--we > 0) return;
+	if (Ee) {
+		let e = Ee;
+		for (Ee = void 0; e;) {
 			let t = e.next;
 			e.next = void 0, e.flags &= -9, e = t;
 		}
 	}
 	let e;
-	for (; we;) {
-		let t = we;
-		for (we = void 0; t;) {
+	for (; Te;) {
+		let t = Te;
+		for (Te = void 0; t;) {
 			let n = t.next;
 			if (t.next = void 0, t.flags &= -9, t.flags & 1) try {
 				t.trigger();
@@ -229,155 +229,155 @@ function Oe() {
 	}
 	if (e) throw e;
 }
-function ke(e) {
+function Ae(e) {
 	for (let t = e.deps; t; t = t.nextDep) t.version = -1, t.prevActiveLink = t.dep.activeLink, t.dep.activeLink = t;
 }
-function Ae(e) {
+function je(e) {
 	let t, n = e.depsTail, r = n;
 	for (; r;) {
 		let e = r.prevDep;
-		r.version === -1 ? (r === n && (n = e), Ne(r), z(r)) : t = r, r.dep.activeLink = r.prevActiveLink, r.prevActiveLink = void 0, r = e;
+		r.version === -1 ? (r === n && (n = e), Pe(r), Fe(r)) : t = r, r.dep.activeLink = r.prevActiveLink, r.prevActiveLink = void 0, r = e;
 	}
 	e.deps = t, e.depsTail = n;
 }
-function je(e) {
-	for (let t = e.deps; t; t = t.nextDep) if (t.dep.version !== t.version || t.dep.computed && (Me(t.dep.computed) || t.dep.version !== t.version)) return !0;
+function Me(e) {
+	for (let t = e.deps; t; t = t.nextDep) if (t.dep.version !== t.version || t.dep.computed && (Ne(t.dep.computed) || t.dep.version !== t.version)) return !0;
 	return !!e._dirty;
 }
-function Me(e) {
-	if (e.flags & 4 && !(e.flags & 16) || (e.flags &= -17, e.globalVersion === ze) || (e.globalVersion = ze, !e.isSSR && e.flags & 128 && (!e.deps && !e._dirty || !je(e)))) return;
+function Ne(e) {
+	if (e.flags & 4 && !(e.flags & 16) || (e.flags &= -17, e.globalVersion === B) || (e.globalVersion = B, !e.isSSR && e.flags & 128 && (!e.deps && !e._dirty || !Me(e)))) return;
 	e.flags |= 2;
-	let t = e.dep, n = R, r = Pe;
-	R = e, Pe = !0;
+	let t = e.dep, n = L, r = R;
+	L = e, R = !0;
 	try {
-		ke(e);
+		Ae(e);
 		let n = e.fn(e._value);
-		(t.version === 0 || ae(n, e._value)) && (e.flags |= 128, e._value = n, t.version++);
+		(t.version === 0 || oe(n, e._value)) && (e.flags |= 128, e._value = n, t.version++);
 	} catch (e) {
 		throw t.version++, e;
 	} finally {
-		R = n, Pe = r, Ae(e), e.flags &= -3;
+		L = n, R = r, je(e), e.flags &= -3;
 	}
 }
-function Ne(e, t = !1) {
+function Pe(e, t = !1) {
 	let { dep: n, prevSub: r, nextSub: i } = e;
 	if (r && (r.nextSub = i, e.prevSub = void 0), i && (i.prevSub = r, e.nextSub = void 0), n.subs === e && (n.subs = r, !r && n.computed)) {
 		n.computed.flags &= -5;
-		for (let e = n.computed.deps; e; e = e.nextDep) Ne(e, !0);
+		for (let e = n.computed.deps; e; e = e.nextDep) Pe(e, !0);
 	}
 	!t && !--n.sc && n.map && n.map.delete(n.key);
 }
-function z(e) {
+function Fe(e) {
 	let { prevDep: t, nextDep: n } = e;
 	t && (t.nextDep = n, e.prevDep = void 0), n && (n.prevDep = t, e.nextDep = void 0);
 }
-var Pe = !0, Fe = [];
-function Ie() {
-	Fe.push(Pe), Pe = !1;
+var R = !0, Ie = [];
+function z() {
+	Ie.push(R), R = !1;
 }
 function Le() {
-	let e = Fe.pop();
-	Pe = e === void 0 ? !0 : e;
+	let e = Ie.pop();
+	R = e === void 0 ? !0 : e;
 }
 function Re(e) {
 	let { cleanup: t } = e;
 	if (e.cleanup = void 0, t) {
-		let e = R;
-		R = void 0;
+		let e = L;
+		L = void 0;
 		try {
 			t();
 		} finally {
-			R = e;
+			L = e;
 		}
 	}
 }
-var ze = 0, Be = class {
+var B = 0, ze = class {
 	constructor(e, t) {
 		this.sub = e, this.dep = t, this.version = t.version, this.nextDep = this.prevDep = this.nextSub = this.prevSub = this.prevActiveLink = void 0;
 	}
-}, Ve = class {
+}, Be = class {
 	constructor(e) {
 		this.computed = e, this.version = 0, this.activeLink = void 0, this.subs = void 0, this.map = void 0, this.key = void 0, this.sc = 0, this.__v_skip = !0;
 	}
 	track(e) {
-		if (!R || !Pe || R === this.computed) return;
+		if (!L || !R || L === this.computed) return;
 		let t = this.activeLink;
-		if (t === void 0 || t.sub !== R) t = this.activeLink = new Be(R, this), R.deps ? (t.prevDep = R.depsTail, R.depsTail.nextDep = t, R.depsTail = t) : R.deps = R.depsTail = t, He(t);
+		if (t === void 0 || t.sub !== L) t = this.activeLink = new ze(L, this), L.deps ? (t.prevDep = L.depsTail, L.depsTail.nextDep = t, L.depsTail = t) : L.deps = L.depsTail = t, Ve(t);
 		else if (t.version === -1 && (t.version = this.version, t.nextDep)) {
 			let e = t.nextDep;
-			e.prevDep = t.prevDep, t.prevDep && (t.prevDep.nextDep = e), t.prevDep = R.depsTail, t.nextDep = void 0, R.depsTail.nextDep = t, R.depsTail = t, R.deps === t && (R.deps = e);
+			e.prevDep = t.prevDep, t.prevDep && (t.prevDep.nextDep = e), t.prevDep = L.depsTail, t.nextDep = void 0, L.depsTail.nextDep = t, L.depsTail = t, L.deps === t && (L.deps = e);
 		}
 		return t;
 	}
 	trigger(e) {
-		this.version++, ze++, this.notify(e);
+		this.version++, B++, this.notify(e);
 	}
 	notify(e) {
-		De();
+		Oe();
 		try {
 			for (let e = this.subs; e; e = e.prevSub) e.sub.notify() && e.sub.dep.notify();
 		} finally {
-			Oe();
+			ke();
 		}
 	}
 };
-function He(e) {
+function Ve(e) {
 	if (e.dep.sc++, e.sub.flags & 4) {
 		let t = e.dep.computed;
 		if (t && !e.dep.subs) {
 			t.flags |= 20;
-			for (let e = t.deps; e; e = e.nextDep) He(e);
+			for (let e = t.deps; e; e = e.nextDep) Ve(e);
 		}
 		let n = e.dep.subs;
 		n !== e && (e.prevSub = n, n && (n.nextSub = e)), e.dep.subs = e;
 	}
 }
-var Ue = /* @__PURE__ */ new WeakMap(), We = /* @__PURE__ */ Symbol(""), Ge = /* @__PURE__ */ Symbol(""), Ke = /* @__PURE__ */ Symbol("");
-function B(e, t, n) {
-	if (Pe && R) {
-		let t = Ue.get(e);
-		t || Ue.set(e, t = /* @__PURE__ */ new Map());
+var He = /* @__PURE__ */ new WeakMap(), Ue = /* @__PURE__ */ Symbol(""), We = /* @__PURE__ */ Symbol(""), Ge = /* @__PURE__ */ Symbol("");
+function Ke(e, t, n) {
+	if (R && L) {
+		let t = He.get(e);
+		t || He.set(e, t = /* @__PURE__ */ new Map());
 		let r = t.get(n);
-		r || (t.set(n, r = new Ve()), r.map = t, r.key = n), r.track();
+		r || (t.set(n, r = new Be()), r.map = t, r.key = n), r.track();
 	}
 }
 function qe(e, t, n, r, i, a) {
-	let o = Ue.get(e);
+	let o = He.get(e);
 	if (!o) {
-		ze++;
+		B++;
 		return;
 	}
 	let s = (e) => {
 		e && e.trigger();
 	};
-	if (De(), t === "clear") o.forEach(s);
+	if (Oe(), t === "clear") o.forEach(s);
 	else {
 		let i = d(e), a = i && w(n);
 		if (i && n === "length") {
 			let e = Number(r);
 			o.forEach((t, n) => {
-				(n === "length" || n === Ke || !_(n) && n >= e) && s(t);
+				(n === "length" || n === Ge || !_(n) && n >= e) && s(t);
 			});
-		} else switch ((n !== void 0 || o.has(void 0)) && s(o.get(n)), a && s(o.get(Ke)), t) {
+		} else switch ((n !== void 0 || o.has(void 0)) && s(o.get(n)), a && s(o.get(Ge)), t) {
 			case "add":
-				i ? a && s(o.get("length")) : (s(o.get(We)), f(e) && s(o.get(Ge)));
+				i ? a && s(o.get("length")) : (s(o.get(Ue)), f(e) && s(o.get(We)));
 				break;
 			case "delete":
-				i || (s(o.get(We)), f(e) && s(o.get(Ge)));
+				i || (s(o.get(Ue)), f(e) && s(o.get(We)));
 				break;
 			case "set":
-				f(e) && s(o.get(We));
+				f(e) && s(o.get(Ue));
 				break;
 		}
 	}
-	Oe();
+	ke();
 }
 function Je(e) {
 	let t = /* @__PURE__ */ V(e);
-	return t === e ? t : (B(t, "iterate", Ke), /* @__PURE__ */ Pt(e) ? t : t.map(Lt));
+	return t === e ? t : (Ke(t, "iterate", Ge), /* @__PURE__ */ Pt(e) ? t : t.map(Lt));
 }
 function Ye(e) {
-	return B(e = /* @__PURE__ */ V(e), "iterate", Ke), e;
+	return Ke(e = /* @__PURE__ */ V(e), "iterate", Ge), e;
 }
 function Xe(e, t) {
 	return /* @__PURE__ */ Nt(e) ? Rt(/* @__PURE__ */ Mt(e) ? Lt(t) : t) : Lt(t);
@@ -501,20 +501,20 @@ function tt(e, t, n, r) {
 }
 function nt(e, t, n) {
 	let r = /* @__PURE__ */ V(e);
-	B(r, "iterate", Ke);
+	Ke(r, "iterate", Ge);
 	let i = r[t](...n);
 	return (i === -1 || i === !1) && /* @__PURE__ */ Ft(n[0]) ? (n[0] = /* @__PURE__ */ V(n[0]), r[t](...n)) : i;
 }
 function rt(e, t, n = []) {
-	Ie(), De();
+	z(), Oe();
 	let r = (/* @__PURE__ */ V(e))[t].apply(e, n);
-	return Oe(), Le(), r;
+	return ke(), Le(), r;
 }
 var it = /* @__PURE__ */ e("__proto__,__v_isRef,__isVue"), at = new Set(/* @__PURE__ */ Object.getOwnPropertyNames(Symbol).filter((e) => e !== "arguments" && e !== "caller").map((e) => Symbol[e]).filter(_));
 function ot(e) {
 	_(e) || (e = String(e));
 	let t = /* @__PURE__ */ V(this);
-	return B(t, "has", e), t.hasOwnProperty(e);
+	return Ke(t, "has", e), t.hasOwnProperty(e);
 }
 var st = class {
 	constructor(e = !1, t = !1) {
@@ -534,7 +534,7 @@ var st = class {
 			if (t === "hasOwnProperty") return ot;
 		}
 		let o = Reflect.get(e, t, /* @__PURE__ */ zt(e) ? e : n);
-		if ((_(t) ? at.has(t) : it(t)) || (r || B(e, "get", t), i)) return o;
+		if ((_(t) ? at.has(t) : it(t)) || (r || Ke(e, "get", t), i)) return o;
 		if (/* @__PURE__ */ zt(o)) {
 			let e = a && w(t) ? o : o.value;
 			return r && v(e) ? /* @__PURE__ */ At(e) : e;
@@ -552,7 +552,7 @@ var st = class {
 			if (!/* @__PURE__ */ Pt(n) && !/* @__PURE__ */ Nt(n) && (i = /* @__PURE__ */ V(i), n = /* @__PURE__ */ V(n)), !a && /* @__PURE__ */ zt(i) && !/* @__PURE__ */ zt(n)) return e || (i.value = n), !0;
 		}
 		let o = a ? Number(t) < e.length : u(e, t), s = Reflect.set(e, t, n, /* @__PURE__ */ zt(e) ? e : r);
-		return e === /* @__PURE__ */ V(r) && (o ? ae(n, i) && qe(e, "set", t, n, i) : qe(e, "add", t, n)), s;
+		return e === /* @__PURE__ */ V(r) && (o ? oe(n, i) && qe(e, "set", t, n, i) : qe(e, "add", t, n)), s;
 	}
 	deleteProperty(e, t) {
 		let n = u(e, t), r = e[t], i = Reflect.deleteProperty(e, t);
@@ -560,10 +560,10 @@ var st = class {
 	}
 	has(e, t) {
 		let n = Reflect.has(e, t);
-		return (!_(t) || !at.has(t)) && B(e, "has", t), n;
+		return (!_(t) || !at.has(t)) && Ke(e, "has", t), n;
 	}
 	ownKeys(e) {
-		return B(e, "iterate", d(e) ? "length" : We), Reflect.ownKeys(e);
+		return Ke(e, "iterate", d(e) ? "length" : Ue), Reflect.ownKeys(e);
 	}
 }, lt = class extends st {
 	constructor(e = !1) {
@@ -579,7 +579,7 @@ var st = class {
 function ht(e, t, n) {
 	return function(...r) {
 		let i = this.__v_raw, a = /* @__PURE__ */ V(i), o = f(a), c = e === "entries" || e === Symbol.iterator && o, l = e === "keys" && o, u = i[e](...r), d = n ? pt : t ? Rt : Lt;
-		return !t && B(a, "iterate", l ? Ge : We), s(Object.create(u), { next() {
+		return !t && Ke(a, "iterate", l ? We : Ue), s(Object.create(u), { next() {
 			let { value: e, done: t } = u.next();
 			return t ? {
 				value: e,
@@ -600,7 +600,7 @@ function _t(e, t) {
 	let n = {
 		get(n) {
 			let r = this.__v_raw, i = /* @__PURE__ */ V(r), a = /* @__PURE__ */ V(n);
-			e || (ae(n, a) && B(i, "get", n), B(i, "get", a));
+			e || (oe(n, a) && Ke(i, "get", n), Ke(i, "get", a));
 			let { has: o } = mt(i), s = t ? pt : e ? Rt : Lt;
 			if (o.call(i, n)) return s(r.get(n));
 			if (o.call(i, a)) return s(r.get(a));
@@ -608,15 +608,15 @@ function _t(e, t) {
 		},
 		get size() {
 			let t = this.__v_raw;
-			return !e && B(/* @__PURE__ */ V(t), "iterate", We), t.size;
+			return !e && Ke(/* @__PURE__ */ V(t), "iterate", Ue), t.size;
 		},
 		has(t) {
 			let n = this.__v_raw, r = /* @__PURE__ */ V(n), i = /* @__PURE__ */ V(t);
-			return e || (ae(t, i) && B(r, "has", t), B(r, "has", i)), t === i ? n.has(t) : n.has(t) || n.has(i);
+			return e || (oe(t, i) && Ke(r, "has", t), Ke(r, "has", i)), t === i ? n.has(t) : n.has(t) || n.has(i);
 		},
 		forEach(n, r) {
 			let i = this, a = i.__v_raw, o = /* @__PURE__ */ V(a), s = t ? pt : e ? Rt : Lt;
-			return !e && B(o, "iterate", We), a.forEach((e, t) => n.call(r, s(e), s(t), i));
+			return !e && Ke(o, "iterate", Ue), a.forEach((e, t) => n.call(r, s(e), s(t), i));
 		}
 	};
 	return s(n, e ? {
@@ -627,14 +627,14 @@ function _t(e, t) {
 	} : {
 		add(e) {
 			let n = /* @__PURE__ */ V(this), r = mt(n), i = /* @__PURE__ */ V(e), a = !t && !/* @__PURE__ */ Pt(e) && !/* @__PURE__ */ Nt(e) ? i : e;
-			return r.has.call(n, a) || ae(e, a) && r.has.call(n, e) || ae(i, a) && r.has.call(n, i) || (n.add(a), qe(n, "add", a, a)), this;
+			return r.has.call(n, a) || oe(e, a) && r.has.call(n, e) || oe(i, a) && r.has.call(n, i) || (n.add(a), qe(n, "add", a, a)), this;
 		},
 		set(e, n) {
 			!t && !/* @__PURE__ */ Pt(n) && !/* @__PURE__ */ Nt(n) && (n = /* @__PURE__ */ V(n));
 			let r = /* @__PURE__ */ V(this), { has: i, get: a } = mt(r), o = i.call(r, e);
 			o ||= (e = /* @__PURE__ */ V(e), i.call(r, e));
 			let s = a.call(r, e);
-			return r.set(e, n), o ? ae(n, s) && qe(r, "set", e, n, s) : qe(r, "add", e, n), this;
+			return r.set(e, n), o ? oe(n, s) && qe(r, "set", e, n, s) : qe(r, "add", e, n), this;
 		},
 		delete(e) {
 			let t = /* @__PURE__ */ V(this), { has: n, get: r } = mt(t), i = n.call(t, e);
@@ -717,7 +717,7 @@ function V(e) {
 	return t ? /* @__PURE__ */ V(t) : e;
 }
 function It(e) {
-	return !u(e, "__v_skip") && Object.isExtensible(e) && O(e, "__v_skip", !0), e;
+	return !u(e, "__v_skip") && Object.isExtensible(e) && D(e, "__v_skip", !0), e;
 }
 var Lt = (e) => v(e) ? /* @__PURE__ */ Ot(e) : e, Rt = (e) => v(e) ? /* @__PURE__ */ At(e) : e;
 /* @__NO_SIDE_EFFECTS__ */
@@ -733,14 +733,14 @@ function Bt(e, t) {
 }
 var Vt = class {
 	constructor(e, t) {
-		this.dep = new Ve(), this.__v_isRef = !0, this.__v_isShallow = !1, this._rawValue = t ? e : /* @__PURE__ */ V(e), this._value = t ? e : Lt(e), this.__v_isShallow = t;
+		this.dep = new Be(), this.__v_isRef = !0, this.__v_isShallow = !1, this._rawValue = t ? e : /* @__PURE__ */ V(e), this._value = t ? e : Lt(e), this.__v_isShallow = t;
 	}
 	get value() {
 		return this.dep.track(), this._value;
 	}
 	set value(e) {
 		let t = this._rawValue, n = this.__v_isShallow || /* @__PURE__ */ Pt(e) || /* @__PURE__ */ Nt(e);
-		e = n ? e : /* @__PURE__ */ V(e), ae(e, t) && (this._rawValue = e, this._value = n ? e : Lt(e), this.dep.trigger());
+		e = n ? e : /* @__PURE__ */ V(e), oe(e, t) && (this._rawValue = e, this._value = n ? e : Lt(e), this.dep.trigger());
 	}
 };
 function Ht(e) {
@@ -758,14 +758,14 @@ function Wt(e) {
 }
 var Gt = class {
 	constructor(e, t, n) {
-		this.fn = e, this.setter = t, this._value = void 0, this.dep = new Ve(this), this.__v_isRef = !0, this.deps = void 0, this.depsTail = void 0, this.flags = 16, this.globalVersion = ze - 1, this.next = void 0, this.effect = this, this.__v_isReadonly = !t, this.isSSR = n;
+		this.fn = e, this.setter = t, this._value = void 0, this.dep = new Be(this), this.__v_isRef = !0, this.deps = void 0, this.depsTail = void 0, this.flags = 16, this.globalVersion = B - 1, this.next = void 0, this.effect = this, this.__v_isReadonly = !t, this.isSSR = n;
 	}
 	notify() {
-		if (this.flags |= 16, !(this.flags & 8) && R !== this) return Ee(this, !0), !0;
+		if (this.flags |= 16, !(this.flags & 8) && L !== this) return De(this, !0), !0;
 	}
 	get value() {
 		let e = this.dep.track();
-		return Me(this), e && (e.version = this.dep.version), this._value;
+		return Ne(this), e && (e.version = this.dep.version), this._value;
 	}
 	set value(e) {
 		this.setter && this.setter(e);
@@ -791,7 +791,7 @@ function Zt(e, n, i = t) {
 		if (h(e)) return f ? f(e, 2) : e();
 	})) : g = h(e) ? n ? f ? () => f(e, 2) : e : () => {
 		if (_) {
-			Ie();
+			z();
 			try {
 				_();
 			} finally {
@@ -809,7 +809,7 @@ function Zt(e, n, i = t) {
 		let e = g, t = o === !0 ? Infinity : o;
 		g = () => Qt(e(), t);
 	}
-	let x = be(), S = () => {
+	let x = xe(), S = () => {
 		m.stop(), x && x.active && c(x.effects, m);
 	};
 	if (s && n) {
@@ -821,7 +821,7 @@ function Zt(e, n, i = t) {
 	let C = b ? Array(e.length).fill(qt) : qt, w = (e) => {
 		if (!(!(m.flags & 1) || !m.dirty && !e)) if (n) {
 			let e = m.run();
-			if (o || y || (b ? e.some((e, t) => ae(e, C[t])) : ae(e, C))) {
+			if (o || y || (b ? e.some((e, t) => oe(e, C[t])) : oe(e, C))) {
 				_ && _();
 				let t = Yt;
 				Yt = m;
@@ -838,7 +838,7 @@ function Zt(e, n, i = t) {
 			}
 		} else m.run();
 	};
-	return u && u(w), m = new Se(g), m.scheduler = l ? () => l(w, !1) : w, v = (e) => Xt(e, !1, m), _ = m.onStop = () => {
+	return u && u(w), m = new Ce(g), m.scheduler = l ? () => l(w, !1) : w, v = (e) => Xt(e, !1, m), _ = m.onStop = () => {
 		let e = Jt.get(m);
 		if (e) {
 			if (f) f(e, 4);
@@ -894,7 +894,7 @@ function tn(e, n, r, i = !0) {
 			t = t.parent;
 		}
 		if (o) {
-			Ie(), $t(o, null, 10, [
+			z(), $t(o, null, 10, [
 				e,
 				i,
 				a
@@ -1015,7 +1015,7 @@ function wn(e, t, n, r) {
 		let s = i[o];
 		a && (s.oldValue = a[o].value);
 		let c = s.dir[r];
-		c && (Ie(), en(c, n, 8, [
+		c && (z(), en(c, n, 8, [
 			e.el,
 			s,
 			e,
@@ -1293,7 +1293,7 @@ function tr(e) {
 	let t = $n.get(e);
 	t && (t.flags |= 8, $n.delete(e));
 }
-ue().requestIdleCallback, ue().cancelIdleCallback;
+de().requestIdleCallback, de().cancelIdleCallback;
 var nr = (e) => !!e.type.__asyncLoader, rr = (e) => e.type.__isKeepAlive;
 function ir(e, t) {
 	or(e, "a", t);
@@ -1324,7 +1324,7 @@ function sr(e, t, n, r) {
 function cr(e, t, n = sa, r = !1) {
 	if (n) {
 		let i = n[e] || (n[e] = []), a = t.__weh ||= (...r) => {
-			Ie();
+			z();
 			let i = da(n), a = en(t, n, e, r);
 			return i(), Le(), a;
 		};
@@ -1396,7 +1396,7 @@ var xr = (e) => e ? pa(e) ? Ca(e) : xr(e.parent) : null, Sr = /* @__PURE__ */ s(
 			else Er && (s[n] = 0);
 		}
 		let d = Sr[n], f, p;
-		if (d) return n === "$attrs" && B(e.attrs, "get", ""), d(e);
+		if (d) return n === "$attrs" && Ke(e.attrs, "get", ""), d(e);
 		if ((f = c.__cssModules) && (f = f[n])) return f;
 		if (r !== t && u(r, n)) return s[n] = 4, r[n];
 		if (p = l.config.globalProperties, u(p, n)) return p[n];
@@ -1420,7 +1420,7 @@ var Er = !0;
 function Dr(e) {
 	let t = jr(e), n = e.proxy, i = e.ctx;
 	Er = !1, t.beforeCreate && kr(t.beforeCreate, e, "bc");
-	let { data: a, computed: o, methods: s, watch: c, provide: l, inject: u, created: f, beforeMount: p, mounted: m, beforeUpdate: g, updated: _, activated: y, deactivated: b, beforeDestroy: x, beforeUnmount: S, destroyed: C, unmounted: w, render: ee, renderTracked: te, renderTriggered: ne, errorCaptured: T, serverPrefetch: E, expose: D, inheritAttrs: re, components: ie, directives: ae, filters: oe } = t;
+	let { data: a, computed: o, methods: s, watch: c, provide: l, inject: u, created: f, beforeMount: p, mounted: m, beforeUpdate: g, updated: _, activated: y, deactivated: b, beforeDestroy: x, beforeUnmount: S, destroyed: C, unmounted: w, render: ee, renderTracked: te, renderTriggered: ne, errorCaptured: T, serverPrefetch: E, expose: re, inheritAttrs: ie, components: ae, directives: oe, filters: se } = t;
 	if (u && Or(u, i, null), s) for (let e in s) {
 		let t = s[e];
 		h(t) && (i[e] = t.bind(n));
@@ -1449,12 +1449,12 @@ function Dr(e) {
 		});
 	}
 	f && kr(f, e, "c");
-	function O(e, t) {
+	function D(e, t) {
 		d(t) ? t.forEach((t) => e(t.bind(n))) : t && e(t.bind(n));
 	}
-	if (O(ur, p), O(dr, m), O(fr, g), O(pr, _), O(ir, y), O(ar, b), O(yr, T), O(vr, te), O(_r, ne), O(mr, S), O(hr, w), O(gr, E), d(D)) if (D.length) {
+	if (D(ur, p), D(dr, m), D(fr, g), D(pr, _), D(ir, y), D(ar, b), D(yr, T), D(vr, te), D(_r, ne), D(mr, S), D(hr, w), D(gr, E), d(re)) if (re.length) {
 		let t = e.exposed ||= {};
-		D.forEach((e) => {
+		re.forEach((e) => {
 			Object.defineProperty(t, e, {
 				get: () => n[e],
 				set: (t) => n[e] = t,
@@ -1462,7 +1462,7 @@ function Dr(e) {
 			});
 		});
 	} else e.exposed ||= {};
-	ee && e.render === r && (e.render = ee), re != null && (e.inheritAttrs = re), ie && (e.components = ie), ae && (e.directives = ae), E && Zn(e);
+	ee && e.render === r && (e.render = ee), ie != null && (e.inheritAttrs = ie), ae && (e.components = ae), oe && (e.directives = oe), E && Zn(e);
 }
 function Or(e, t, n = r) {
 	d(e) && (e = Ir(e));
@@ -1639,13 +1639,13 @@ function Ur(e, t) {
 		return l;
 	};
 }
-var Wr = null, Gr = (e, t) => t === "modelValue" || t === "model-value" ? e.modelModifiers : e[`${t}Modifiers`] || e[`${T(t)}Modifiers`] || e[`${D(t)}Modifiers`];
+var Wr = null, Gr = (e, t) => t === "modelValue" || t === "model-value" ? e.modelModifiers : e[`${t}Modifiers`] || e[`${T(t)}Modifiers`] || e[`${re(t)}Modifiers`];
 function Kr(e, n, ...r) {
 	if (e.isUnmounted) return;
 	let i = e.vnode.props || t, a = r, o = n.startsWith("update:"), s = o && Gr(i, n.slice(7));
-	s && (s.trim && (a = r.map((e) => g(e) ? e.trim() : e)), s.number && (a = r.map(se)));
-	let c, l = i[c = ie(n)] || i[c = ie(T(n))];
-	!l && o && (l = i[c = ie(D(n))]), l && en(l, e, 6, a);
+	s && (s.trim && (a = r.map((e) => g(e) ? e.trim() : e)), s.number && (a = r.map(ce)));
+	let c, l = i[c = ae(n)] || i[c = ae(T(n))];
+	!l && o && (l = i[c = ae(re(n))]), l && en(l, e, 6, a);
 	let u = i[c + "Once"];
 	if (u) {
 		if (!e.emitted) e.emitted = {};
@@ -1668,7 +1668,7 @@ function Jr(e, t, n = !1) {
 	return !a && !c ? (v(e) && r.set(e, null), null) : (d(a) ? a.forEach((e) => o[e] = null) : s(o, a), v(e) && r.set(e, o), o);
 }
 function Yr(e, t) {
-	return !e || !a(t) ? !1 : (t = t.slice(2).replace(/Once$/, ""), u(e, t[0].toLowerCase() + t.slice(1)) || u(e, D(t)) || u(e, t));
+	return !e || !a(t) ? !1 : (t = t.slice(2).replace(/Once$/, ""), u(e, t[0].toLowerCase() + t.slice(1)) || u(e, re(t)) || u(e, t));
 }
 function Xr(e) {
 	let { type: t, vnode: n, proxy: r, withProxy: i, propsOptions: [a], slots: s, attrs: c, emit: l, render: u, renderCache: d, props: f, data: p, setupState: m, ctx: h, inheritAttrs: g } = e, _ = Sn(e), v, y;
@@ -1730,7 +1730,7 @@ function ei(e, t, n) {
 }
 function ti(e, t, n) {
 	let r = e[n], i = t[n];
-	return n === "style" && v(r) && v(i) ? !P(r, i) : r !== i;
+	return n === "style" && v(r) && v(i) ? !N(r, i) : r !== i;
 }
 function ni({ vnode: e, parent: t }, n) {
 	for (; t;) {
@@ -1766,7 +1766,7 @@ function si(e, t, n, r) {
 	} else {
 		ci(e, t, i, a) && (l = !0);
 		let r;
-		for (let a in s) (!t || !u(t, a) && ((r = D(a)) === a || !u(t, r))) && (c ? n && (n[a] !== void 0 || n[r] !== void 0) && (i[a] = li(c, s, a, void 0, e, !0)) : delete i[a]);
+		for (let a in s) (!t || !u(t, a) && ((r = re(a)) === a || !u(t, r))) && (c ? n && (n[a] !== void 0 || n[r] !== void 0) && (i[a] = li(c, s, a, void 0, e, !0)) : delete i[a]);
 		if (a !== s) for (let e in a) (!t || !u(t, e)) && (delete a[e], l = !0);
 	}
 	l && qe(e.attrs, "set", "");
@@ -1803,7 +1803,7 @@ function li(e, t, n, r, i, a) {
 			} else r = e;
 			i.ce && i.ce._setProp(n, r);
 		}
-		o[0] && (a && !e ? r = !1 : o[1] && (r === "" || r === D(n)) && (r = !0));
+		o[0] && (a && !e ? r = !1 : o[1] && (r === "" || r === re(n)) && (r = !0));
 	}
 	return r;
 }
@@ -1870,7 +1870,7 @@ var pi = (e) => e === "_" || e === "_ctx" || e === "$stable", mi = (e) => d(e) ?
 	let r = e.slots = ii();
 	if (e.vnode.shapeFlag & 32) {
 		let e = t._;
-		e ? (vi(r, t, n), n && O(r, "_", e, !0)) : gi(t, r);
+		e ? (vi(r, t, n), n && D(r, "_", e, !0)) : gi(t, r);
 	} else t && _i(e, t);
 }, bi = (e, n, r) => {
 	let { vnode: i, slots: a } = e, o = !0, s = t;
@@ -1884,11 +1884,11 @@ function Si(e) {
 	return Ci(e);
 }
 function Ci(e, i) {
-	let a = ue();
+	let a = de();
 	a.__VUE__ = !0;
 	let { insert: o, remove: s, patchProp: c, createElement: l, createText: u, createComment: d, setText: f, setElementText: p, parentNode: m, nextSibling: h, setScopeId: g = r, insertStaticContent: _ } = e, v = (e, t, n, r = null, i = null, a = null, o = void 0, s = null, c = !!t.dynamicChildren) => {
 		if (e === t) return;
-		e && !Gi(e, t) && (r = he(e), fe(e, i, a, !0), e = null), t.patchFlag === -2 && (c = !1, t.dynamicChildren = null);
+		e && !Gi(e, t) && (r = ge(e), pe(e, i, a, !0), e = null), t.patchFlag === -2 && (c = !1, t.dynamicChildren = null);
 		let { type: l, ref: u, shapeFlag: d } = t;
 		switch (l) {
 			case Pi:
@@ -1901,9 +1901,9 @@ function Ci(e, i) {
 				e ?? x(t, n, r, o);
 				break;
 			case G:
-				ie(e, t, n, r, i, a, o, s, c);
+				ae(e, t, n, r, i, a, o, s, c);
 				break;
-			default: d & 1 ? w(e, t, n, r, i, a, o, s, c) : d & 6 ? ae(e, t, n, r, i, a, o, s, c) : (d & 64 || d & 128) && l.process(e, t, n, r, i, a, o, s, c, ge);
+			default: d & 1 ? w(e, t, n, r, i, a, o, s, c) : d & 6 ? oe(e, t, n, r, i, a, o, s, c) : (d & 64 || d & 128) && l.process(e, t, n, r, i, a, o, s, c, _e);
 		}
 		u != null && i ? er(u, e && e.ref, a, t || e, !t) : u == null && e && e.ref != null && er(e.ref, null, a, e, !0);
 	}, y = (e, t, n, r) => {
@@ -1960,8 +1960,8 @@ function Ci(e, i) {
 		let l = n.el = e.el, { patchFlag: u, dynamicChildren: d, dirs: f } = n;
 		u |= e.patchFlag & 16;
 		let m = e.props || t, h = n.props || t, g;
-		if (r && Ti(r, !1), (g = h.onVnodeBeforeUpdate) && ra(g, r, n, e), f && wn(n, e, r, "beforeUpdate"), r && Ti(r, !0), (m.innerHTML && h.innerHTML == null || m.textContent && h.textContent == null) && p(l, ""), d ? D(e.dynamicChildren, d, l, r, i, wi(n, a), o) : s || k(e, n, l, null, r, i, wi(n, a), o, !1), u > 0) {
-			if (u & 16) re(l, m, h, r, a);
+		if (r && Ti(r, !1), (g = h.onVnodeBeforeUpdate) && ra(g, r, n, e), f && wn(n, e, r, "beforeUpdate"), r && Ti(r, !0), (m.innerHTML && h.innerHTML == null || m.textContent && h.textContent == null) && p(l, ""), d ? re(e.dynamicChildren, d, l, r, i, wi(n, a), o) : s || O(e, n, l, null, r, i, wi(n, a), o, !1), u > 0) {
+			if (u & 16) ie(l, m, h, r, a);
 			else if (u & 2 && m.class !== h.class && c(l, "class", null, h.class, a), u & 4 && c(l, "style", m.style, h.style, a), u & 8) {
 				let e = n.dynamicProps;
 				for (let t = 0; t < e.length; t++) {
@@ -1970,16 +1970,16 @@ function Ci(e, i) {
 				}
 			}
 			u & 1 && e.children !== n.children && p(l, n.children);
-		} else !s && d == null && re(l, m, h, r, a);
+		} else !s && d == null && ie(l, m, h, r, a);
 		((g = h.onVnodeUpdated) || f) && xi(() => {
 			g && ra(g, r, n, e), f && wn(n, e, r, "updated");
 		}, i);
-	}, D = (e, t, n, r, i, a, o) => {
+	}, re = (e, t, n, r, i, a, o) => {
 		for (let s = 0; s < t.length; s++) {
 			let c = e[s], l = t[s];
 			v(c, l, c.el && (c.type === G || !Gi(c, l) || c.shapeFlag & 198) ? m(c.el) : n, null, r, i, a, o, !0);
 		}
-	}, re = (e, n, r, i, a) => {
+	}, ie = (e, n, r, i, a) => {
 		if (n !== r) {
 			if (n !== t) for (let t in n) !ee(t) && !(t in r) && c(e, t, n[t], null, a, i);
 			for (let t in r) {
@@ -1989,34 +1989,34 @@ function Ci(e, i) {
 			}
 			"value" in r && c(e, "value", n.value, r.value, a);
 		}
-	}, ie = (e, t, n, r, i, a, s, c, l) => {
+	}, ae = (e, t, n, r, i, a, s, c, l) => {
 		let d = t.el = e ? e.el : u(""), f = t.anchor = e ? e.anchor : u(""), { patchFlag: p, dynamicChildren: m, slotScopeIds: h } = t;
-		h && (c = c ? c.concat(h) : h), e == null ? (o(d, n, r), o(f, n, r), T(t.children || [], n, f, i, a, s, c, l)) : p > 0 && p & 64 && m && e.dynamicChildren && e.dynamicChildren.length === m.length ? (D(e.dynamicChildren, m, n, i, a, s, c), (t.key != null || i && t === i.subTree) && Di(e, t, !0)) : k(e, t, n, f, i, a, s, c, l);
-	}, ae = (e, t, n, r, i, a, o, s, c) => {
-		t.slotScopeIds = s, e == null ? t.shapeFlag & 512 ? i.ctx.activate(t, n, r, o, c) : O(t, n, r, i, a, o, c) : se(e, t, c);
-	}, O = (e, t, n, r, i, a, o) => {
+		h && (c = c ? c.concat(h) : h), e == null ? (o(d, n, r), o(f, n, r), T(t.children || [], n, f, i, a, s, c, l)) : p > 0 && p & 64 && m && e.dynamicChildren && e.dynamicChildren.length === m.length ? (re(e.dynamicChildren, m, n, i, a, s, c), (t.key != null || i && t === i.subTree) && Di(e, t, !0)) : O(e, t, n, f, i, a, s, c, l);
+	}, oe = (e, t, n, r, i, a, o, s, c) => {
+		t.slotScopeIds = s, e == null ? t.shapeFlag & 512 ? i.ctx.activate(t, n, r, o, c) : D(t, n, r, i, a, o, c) : ce(e, t, c);
+	}, D = (e, t, n, r, i, a, o) => {
 		let s = e.component = oa(e, r, i);
-		if (rr(e) && (s.ctx.renderer = ge), ha(s, !1, o), s.asyncDep) {
-			if (i && i.registerDep(s, ce, o), !e.el) {
+		if (rr(e) && (s.ctx.renderer = _e), ha(s, !1, o), s.asyncDep) {
+			if (i && i.registerDep(s, le, o), !e.el) {
 				let r = s.subTree = Ji(Fi);
 				b(null, r, t, n), e.placeholder = r.el;
 			}
-		} else ce(s, e, t, n, i, a, o);
-	}, se = (e, t, n) => {
+		} else le(s, e, t, n, i, a, o);
+	}, ce = (e, t, n) => {
 		let r = t.component = e.component;
 		if ($r(e, t, n)) if (r.asyncDep && !r.asyncResolved) {
-			le(r, t, n);
+			ue(r, t, n);
 			return;
 		} else r.next = t, r.update();
 		else t.el = e.el, r.vnode = t;
-	}, ce = (e, t, n, r, i, a, o) => {
+	}, le = (e, t, n, r, i, a, o) => {
 		let s = () => {
 			if (e.isMounted) {
 				let { next: t, bu: n, u: r, parent: s, vnode: c } = e;
 				{
 					let n = ki(e);
 					if (n) {
-						t && (t.el = c.el, le(e, t, o)), n.asyncDep.then(() => {
+						t && (t.el = c.el, ue(e, t, o)), n.asyncDep.then(() => {
 							xi(() => {
 								e.isUnmounted || l();
 							}, i);
@@ -2025,14 +2025,14 @@ function Ci(e, i) {
 					}
 				}
 				let u = t, d;
-				Ti(e, !1), t ? (t.el = c.el, le(e, t, o)) : t = c, n && oe(n), (d = t.props && t.props.onVnodeBeforeUpdate) && ra(d, s, t, c), Ti(e, !0);
+				Ti(e, !1), t ? (t.el = c.el, ue(e, t, o)) : t = c, n && se(n), (d = t.props && t.props.onVnodeBeforeUpdate) && ra(d, s, t, c), Ti(e, !0);
 				let f = Xr(e), p = e.subTree;
-				e.subTree = f, v(p, f, m(p.el), he(p), e, i, a), t.el = f.el, u === null && ni(e, f.el), r && xi(r, i), (d = t.props && t.props.onVnodeUpdated) && xi(() => ra(d, s, t, c), i);
+				e.subTree = f, v(p, f, m(p.el), ge(p), e, i, a), t.el = f.el, u === null && ni(e, f.el), r && xi(r, i), (d = t.props && t.props.onVnodeUpdated) && xi(() => ra(d, s, t, c), i);
 			} else {
 				let o, { el: s, props: c } = t, { bm: l, m: u, parent: d, root: f, type: p } = e, m = nr(t);
-				if (Ti(e, !1), l && oe(l), !m && (o = c && c.onVnodeBeforeMount) && ra(o, d, t), Ti(e, !0), s && _e) {
+				if (Ti(e, !1), l && se(l), !m && (o = c && c.onVnodeBeforeMount) && ra(o, d, t), Ti(e, !0), s && ve) {
 					let t = () => {
-						e.subTree = Xr(e), _e(s, e.subTree, e, i, null);
+						e.subTree = Xr(e), ve(s, e.subTree, e, i, null);
 					};
 					m && p.__asyncHydrate ? p.__asyncHydrate(s, e, t) : t();
 				} else {
@@ -2048,35 +2048,35 @@ function Ci(e, i) {
 			}
 		};
 		e.scope.on();
-		let c = e.effect = new Se(s);
+		let c = e.effect = new Ce(s);
 		e.scope.off();
 		let l = e.update = c.run.bind(c), u = e.job = c.runIfDirty.bind(c);
 		u.i = e, u.id = e.uid, c.scheduler = () => pn(u), Ti(e, !0), l();
-	}, le = (e, t, n) => {
+	}, ue = (e, t, n) => {
 		t.component = e;
 		let r = e.vnode.props;
-		e.vnode = t, e.next = null, si(e, t.props, r, n), bi(e, t.children, n), Ie(), gn(e), Le();
-	}, k = (e, t, n, r, i, a, o, s, c = !1) => {
+		e.vnode = t, e.next = null, si(e, t.props, r, n), bi(e, t.children, n), z(), gn(e), Le();
+	}, O = (e, t, n, r, i, a, o, s, c = !1) => {
 		let l = e && e.children, u = e ? e.shapeFlag : 0, d = t.children, { patchFlag: f, shapeFlag: m } = t;
 		if (f > 0) {
 			if (f & 128) {
-				j(l, d, n, r, i, a, o, s, c);
+				A(l, d, n, r, i, a, o, s, c);
 				return;
 			} else if (f & 256) {
-				A(l, d, n, r, i, a, o, s, c);
+				k(l, d, n, r, i, a, o, s, c);
 				return;
 			}
 		}
-		m & 8 ? (u & 16 && me(l, i, a), d !== l && p(n, d)) : u & 16 ? m & 16 ? j(l, d, n, r, i, a, o, s, c) : me(l, i, a, !0) : (u & 8 && p(n, ""), m & 16 && T(d, n, r, i, a, o, s, c));
-	}, A = (e, t, r, i, a, o, s, c, l) => {
+		m & 8 ? (u & 16 && he(l, i, a), d !== l && p(n, d)) : u & 16 ? m & 16 ? A(l, d, n, r, i, a, o, s, c) : he(l, i, a, !0) : (u & 8 && p(n, ""), m & 16 && T(d, n, r, i, a, o, s, c));
+	}, k = (e, t, r, i, a, o, s, c, l) => {
 		e ||= n, t ||= n;
 		let u = e.length, d = t.length, f = Math.min(u, d), p;
 		for (p = 0; p < f; p++) {
 			let n = t[p] = l ? ea(t[p]) : $i(t[p]);
 			v(e[p], n, r, null, a, o, s, c, l);
 		}
-		u > d ? me(e, a, o, !0, !1, f) : T(t, r, i, a, o, s, c, l, f);
-	}, j = (e, t, r, i, a, o, s, c, l) => {
+		u > d ? he(e, a, o, !0, !1, f) : T(t, r, i, a, o, s, c, l, f);
+	}, A = (e, t, r, i, a, o, s, c, l) => {
 		let u = 0, d = t.length, f = e.length - 1, p = d - 1;
 		for (; u <= f && u <= p;) {
 			let n = e[u], i = t[u] = l ? ea(t[u]) : $i(t[u]);
@@ -2095,7 +2095,7 @@ function Ci(e, i) {
 				let e = p + 1, n = e < d ? t[e].el : i;
 				for (; u <= p;) v(null, t[u] = l ? ea(t[u]) : $i(t[u]), r, n, a, o, s, c, l), u++;
 			}
-		} else if (u > p) for (; u <= f;) fe(e[u], a, o, !0), u++;
+		} else if (u > p) for (; u <= f;) pe(e[u], a, o, !0), u++;
 		else {
 			let m = u, h = u, g = /* @__PURE__ */ new Map();
 			for (u = h; u <= p; u++) {
@@ -2107,7 +2107,7 @@ function Ci(e, i) {
 			for (u = m; u <= f; u++) {
 				let n = e[u];
 				if (y >= b) {
-					fe(n, a, o, !0);
+					pe(n, a, o, !0);
 					continue;
 				}
 				let i;
@@ -2116,18 +2116,18 @@ function Ci(e, i) {
 					i = _;
 					break;
 				}
-				i === void 0 ? fe(n, a, o, !0) : (C[i - h] = u + 1, i >= S ? S = i : x = !0, v(n, t[i], r, null, a, o, s, c, l), y++);
+				i === void 0 ? pe(n, a, o, !0) : (C[i - h] = u + 1, i >= S ? S = i : x = !0, v(n, t[i], r, null, a, o, s, c, l), y++);
 			}
 			let w = x ? Oi(C) : n;
 			for (_ = w.length - 1, u = b - 1; u >= 0; u--) {
 				let e = h + u, n = t[e], f = t[e + 1], p = e + 1 < d ? f.el || ji(f) : i;
-				C[u] === 0 ? v(null, n, r, p, a, o, s, c, l) : x && (_ < 0 || u !== w[_] ? de(n, r, p, 2) : _--);
+				C[u] === 0 ? v(null, n, r, p, a, o, s, c, l) : x && (_ < 0 || u !== w[_] ? fe(n, r, p, 2) : _--);
 			}
 		}
-	}, de = (e, t, n, r, i = null) => {
+	}, fe = (e, t, n, r, i = null) => {
 		let { el: a, type: c, transition: l, children: u, shapeFlag: d } = e;
 		if (d & 6) {
-			de(e.component.subTree, t, n, r);
+			fe(e.component.subTree, t, n, r);
 			return;
 		}
 		if (d & 128) {
@@ -2135,12 +2135,12 @@ function Ci(e, i) {
 			return;
 		}
 		if (d & 64) {
-			c.move(e, t, n, ge);
+			c.move(e, t, n, _e);
 			return;
 		}
 		if (c === G) {
 			o(a, t, n);
-			for (let e = 0; e < u.length; e++) de(u[e], t, n, r);
+			for (let e = 0; e < u.length; e++) fe(u[e], t, n, r);
 			o(e.anchor, t, n);
 			return;
 		}
@@ -2160,28 +2160,28 @@ function Ci(e, i) {
 			i ? i(a, u, d) : d();
 		}
 		else o(a, t, n);
-	}, fe = (e, t, n, r = !1, i = !1) => {
+	}, pe = (e, t, n, r = !1, i = !1) => {
 		let { type: a, props: o, ref: s, children: c, dynamicChildren: l, shapeFlag: u, patchFlag: d, dirs: f, cacheIndex: p } = e;
-		if (d === -2 && (i = !1), s != null && (Ie(), er(s, null, n, e, !0), Le()), p != null && (t.renderCache[p] = void 0), u & 256) {
+		if (d === -2 && (i = !1), s != null && (z(), er(s, null, n, e, !0), Le()), p != null && (t.renderCache[p] = void 0), u & 256) {
 			t.ctx.deactivate(e);
 			return;
 		}
 		let m = u & 1 && f, h = !nr(e), g;
-		if (h && (g = o && o.onVnodeBeforeUnmount) && ra(g, t, e), u & 6) pe(e.component, n, r);
+		if (h && (g = o && o.onVnodeBeforeUnmount) && ra(g, t, e), u & 6) me(e.component, n, r);
 		else {
 			if (u & 128) {
 				e.suspense.unmount(n, r);
 				return;
 			}
-			m && wn(e, null, t, "beforeUnmount"), u & 64 ? e.type.remove(e, t, n, ge, r) : l && !l.hasOnce && (a !== G || d > 0 && d & 64) ? me(l, t, n, !1, !0) : (a === G && d & 384 || !i && u & 16) && me(c, t, n), r && M(e);
+			m && wn(e, null, t, "beforeUnmount"), u & 64 ? e.type.remove(e, t, n, _e, r) : l && !l.hasOnce && (a !== G || d > 0 && d & 64) ? he(l, t, n, !1, !0) : (a === G && d & 384 || !i && u & 16) && he(c, t, n), r && j(e);
 		}
 		(h && (g = o && o.onVnodeUnmounted) || m) && xi(() => {
 			g && ra(g, t, e), m && wn(e, null, t, "unmounted");
 		}, n);
-	}, M = (e) => {
+	}, j = (e) => {
 		let { type: t, el: n, anchor: r, transition: i } = e;
 		if (t === G) {
-			N(n, r);
+			M(n, r);
 			return;
 		}
 		if (t === Ii) {
@@ -2195,41 +2195,41 @@ function Ci(e, i) {
 			let { leave: t, delayLeave: r } = i, o = () => t(n, a);
 			r ? r(e.el, a, o) : o();
 		} else a();
-	}, N = (e, t) => {
+	}, M = (e, t) => {
 		let n;
 		for (; e !== t;) n = h(e), s(e), e = n;
 		s(t);
-	}, pe = (e, t, n) => {
+	}, me = (e, t, n) => {
 		let { bum: r, scope: i, job: a, subTree: o, um: s, m: c, a: l } = e;
-		Ai(c), Ai(l), r && oe(r), i.stop(), a && (a.flags |= 8, fe(o, e, t, n)), s && xi(s, t), xi(() => {
+		Ai(c), Ai(l), r && se(r), i.stop(), a && (a.flags |= 8, pe(o, e, t, n)), s && xi(s, t), xi(() => {
 			e.isUnmounted = !0;
 		}, t);
-	}, me = (e, t, n, r = !1, i = !1, a = 0) => {
-		for (let o = a; o < e.length; o++) fe(e[o], t, n, r, i);
-	}, he = (e) => {
-		if (e.shapeFlag & 6) return he(e.component.subTree);
+	}, he = (e, t, n, r = !1, i = !1, a = 0) => {
+		for (let o = a; o < e.length; o++) pe(e[o], t, n, r, i);
+	}, ge = (e) => {
+		if (e.shapeFlag & 6) return ge(e.component.subTree);
 		if (e.shapeFlag & 128) return e.suspense.next();
 		let t = h(e.anchor || e.el), n = t && t[Nn];
 		return n ? h(n) : t;
-	}, P = !1, F = (e, t, n) => {
+	}, N = !1, P = (e, t, n) => {
 		let r;
-		e == null ? t._vnode && (fe(t._vnode, null, null, !0), r = t._vnode.component) : v(t._vnode || null, e, t, null, null, null, n), t._vnode = e, P ||= (P = !0, gn(r), _n(), !1);
-	}, ge = {
+		e == null ? t._vnode && (pe(t._vnode, null, null, !0), r = t._vnode.component) : v(t._vnode || null, e, t, null, null, null, n), t._vnode = e, N ||= (N = !0, gn(r), _n(), !1);
+	}, _e = {
 		p: v,
-		um: fe,
-		m: de,
-		r: M,
-		mt: O,
+		um: pe,
+		m: fe,
+		r: j,
+		mt: D,
 		mc: T,
-		pc: k,
-		pbc: D,
-		n: he,
+		pc: O,
+		pbc: re,
+		n: ge,
 		o: e
-	}, I, _e;
-	return i && ([I, _e] = i(ge)), {
-		render: F,
-		hydrate: I,
-		createApp: Ur(F, I)
+	}, F, ve;
+	return i && ([F, ve] = i(_e)), {
+		render: P,
+		hydrate: F,
+		createApp: Ur(P, F)
 	};
 }
 function wi({ type: e, props: t }, n) {
@@ -2353,7 +2353,7 @@ function Yi(e, t = null, n = null, r = 0, i = null, a = !1) {
 	if (wa(e) && (e = e.__vccOpts), t) {
 		t = Xi(t);
 		let { class: e, style: n } = t;
-		e && !g(e) && (t.class = M(e)), v(n) && (/* @__PURE__ */ Ft(n) && !d(n) && (n = s({}, n)), t.style = k(n));
+		e && !g(e) && (t.class = j(e)), v(n) && (/* @__PURE__ */ Ft(n) && !d(n) && (n = s({}, n)), t.style = O(n));
 	}
 	let o = g(e) ? 1 : Mi(e) ? 128 : Pn(e) ? 64 : v(e) ? 4 : h(e) ? 2 : 0;
 	return J(e, t, n, r, i, o, a, !0);
@@ -2434,8 +2434,8 @@ function na(...e) {
 	let t = {};
 	for (let n = 0; n < e.length; n++) {
 		let r = e[n];
-		for (let e in r) if (e === "class") t.class !== r.class && (t.class = M([t.class, r.class]));
-		else if (e === "style") t.style = k([t.style, r.style]);
+		for (let e in r) if (e === "class") t.class !== r.class && (t.class = j([t.class, r.class]));
+		else if (e === "style") t.style = O([t.style, r.style]);
 		else if (a(e)) {
 			let n = t[e], i = r[e];
 			i && n !== i && !(d(n) && n.includes(i)) && (t[e] = n ? [].concat(n, i) : i);
@@ -2460,7 +2460,7 @@ function oa(e, n, r) {
 		effect: null,
 		update: null,
 		job: null,
-		scope: new ye(!0),
+		scope: new be(!0),
 		render: null,
 		proxy: null,
 		exposed: null,
@@ -2516,7 +2516,7 @@ function oa(e, n, r) {
 }
 var sa = null, ca = () => sa || bn, la, ua;
 {
-	let e = ue(), t = (t, n) => {
+	let e = de(), t = (t, n) => {
 		let r;
 		return (r = e[t]) || (r = e[t] = []), r.push(n), (e) => {
 			r.length > 1 ? r.forEach((t) => t(e)) : r[0](e);
@@ -2548,7 +2548,7 @@ function ga(e, t) {
 	e.accessCache = /* @__PURE__ */ Object.create(null), e.proxy = new Proxy(e.ctx, wr);
 	let { setup: r } = n;
 	if (r) {
-		Ie();
+		z();
 		let n = e.setupContext = r.length > 1 ? Sa(e) : null, i = da(e), a = $t(r, e, 0, [e.props, n]), o = y(a);
 		if (Le(), i(), (o || e.sp) && !nr(e) && Zn(e), o) {
 			if (a.then(fa, fa), t) return a.then((n) => {
@@ -2581,7 +2581,7 @@ function ba(e, t, n) {
 	}
 	{
 		let t = da(e);
-		Ie();
+		z();
 		try {
 			Dr(e);
 		} finally {
@@ -2590,7 +2590,7 @@ function ba(e, t, n) {
 	}
 }
 var xa = { get(e, t) {
-	return B(e, "get", ""), e[t];
+	return Ke(e, "get", ""), e[t];
 } };
 function Sa(e) {
 	return {
@@ -2745,7 +2745,7 @@ function Ga(e) {
 	}
 }
 function Ka(e) {
-	return ce(e);
+	return le(e);
 }
 function qa(e, t) {
 	t.split(/\s+/).forEach((t) => t && e.classList.add(t)), (e[Ra] || (e[Ra] = /* @__PURE__ */ new Set())).add(t);
@@ -2846,7 +2846,7 @@ function fo(e, t, n) {
 	else if (n ??= "", t.startsWith("--")) e.setProperty(t, n);
 	else {
 		let r = ho(e, t);
-		uo.test(n) ? e.setProperty(D(r), n.replace(uo, ""), "important") : e[r] = n;
+		uo.test(n) ? e.setProperty(re(r), n.replace(uo, ""), "important") : e[r] = n;
 	}
 }
 var po = [
@@ -2859,7 +2859,7 @@ function ho(e, t) {
 	if (n) return n;
 	let r = T(t);
 	if (r !== "filter" && r in e) return mo[t] = r;
-	r = re(r);
+	r = ie(r);
 	for (let n = 0; n < po.length; n++) {
 		let i = po[n] + r;
 		if (i in e) return mo[t] = i;
@@ -2867,8 +2867,8 @@ function ho(e, t) {
 	return t;
 }
 var go = "http://www.w3.org/1999/xlink";
-function _o(e, t, n, r, i, a = pe(t)) {
-	r && t.startsWith("xlink:") ? n == null ? e.removeAttributeNS(go, t.slice(6, t.length)) : e.setAttributeNS(go, t, n) : n == null || a && !me(n) ? e.removeAttribute(t) : e.setAttribute(t, a ? "" : _(n) ? String(n) : n);
+function _o(e, t, n, r, i, a = me(t)) {
+	r && t.startsWith("xlink:") ? n == null ? e.removeAttributeNS(go, t.slice(6, t.length)) : e.setAttributeNS(go, t, n) : n == null || a && !he(n) ? e.removeAttribute(t) : e.setAttribute(t, a ? "" : _(n) ? String(n) : n);
 }
 function vo(e, t, n, r, i) {
 	if (t === "innerHTML" || t === "textContent") {
@@ -2884,7 +2884,7 @@ function vo(e, t, n, r, i) {
 	let o = !1;
 	if (n === "" || n == null) {
 		let r = typeof e[t];
-		r === "boolean" ? n = me(n) : n == null && r === "string" ? (n = "", o = !0) : r === "number" && (n = 0, o = !0);
+		r === "boolean" ? n = he(n) : n == null && r === "string" ? (n = "", o = !0) : r === "number" && (n = 0, o = !0);
 	}
 	try {
 		e[t] = n;
@@ -2914,7 +2914,7 @@ function wo(e) {
 		let n;
 		for (; n = e.match(Co);) e = e.slice(0, e.length - n[0].length), t[n[0].toLowerCase()] = !0;
 	}
-	return [e[2] === ":" ? e.slice(3) : D(e.slice(2)), t];
+	return [e[2] === ":" ? e.slice(3) : re(e.slice(2)), t];
 }
 var To = 0, Eo = /* @__PURE__ */ Promise.resolve(), Do = () => To ||= (Eo.then(() => To = 0), Date.now());
 function Oo(e, t) {
@@ -2954,7 +2954,7 @@ function No(e, t) {
 }
 var Po = (e) => {
 	let t = e.props["onUpdate:modelValue"] || !1;
-	return d(t) ? (e) => oe(t, e) : t;
+	return d(t) ? (e) => se(t, e) : t;
 };
 function Fo(e) {
 	e.target.composing = !0;
@@ -2965,7 +2965,7 @@ function Io(e) {
 }
 var Lo = /* @__PURE__ */ Symbol("_assign");
 function Ro(e, t, n) {
-	return t && (e = e.trim()), n && (e = se(e)), e;
+	return t && (e = e.trim()), n && (e = ce(e)), e;
 }
 var Z = {
 	created(e, { modifiers: { lazy: t, trim: n, number: r } }, i) {
@@ -2982,7 +2982,7 @@ var Z = {
 	},
 	beforeUpdate(e, { value: t, oldValue: n, modifiers: { lazy: r, trim: i, number: a } }, o) {
 		if (e[Lo] = Po(o), e.composing) return;
-		let s = (a || e.type === "number") && !/^0\d/.test(e.value) ? se(e.value) : e.value, c = t ?? "";
+		let s = (a || e.type === "number") && !/^0\d/.test(e.value) ? ce(e.value) : e.value, c = t ?? "";
 		s !== c && (document.activeElement === e && e.type !== "range" && (r && t === n || i && e.value.trim() === c) || (e.value = c));
 	}
 }, zo = {
@@ -2991,7 +2991,7 @@ var Z = {
 		e[Lo] = Po(n), yo(e, "change", () => {
 			let t = e._modelValue, n = Wo(e), r = e.checked, i = e[Lo];
 			if (d(t)) {
-				let e = F(t, n), a = e !== -1;
+				let e = P(t, n), a = e !== -1;
 				if (r && !a) i(t.concat(n));
 				else if (!r && a) {
 					let n = [...t];
@@ -3011,29 +3011,29 @@ var Z = {
 function Bo(e, { value: t, oldValue: n }, r) {
 	e._modelValue = t;
 	let i;
-	if (d(t)) i = F(t, r.props.value) > -1;
+	if (d(t)) i = P(t, r.props.value) > -1;
 	else if (p(t)) i = t.has(r.props.value);
 	else {
 		if (t === n) return;
-		i = P(t, Go(e, !0));
+		i = N(t, Go(e, !0));
 	}
 	e.checked !== i && (e.checked = i);
 }
 var Vo = {
 	created(e, { value: t }, n) {
-		e.checked = P(t, n.props.value), e[Lo] = Po(n), yo(e, "change", () => {
+		e.checked = N(t, n.props.value), e[Lo] = Po(n), yo(e, "change", () => {
 			e[Lo](Wo(e));
 		});
 	},
 	beforeUpdate(e, { value: t, oldValue: n }, r) {
-		e[Lo] = Po(r), t !== n && (e.checked = P(t, r.props.value));
+		e[Lo] = Po(r), t !== n && (e.checked = N(t, r.props.value));
 	}
 }, Ho = {
 	deep: !0,
 	created(e, { value: t, modifiers: { number: n } }, r) {
 		let i = p(t);
 		yo(e, "change", () => {
-			let t = Array.prototype.filter.call(e.options, (e) => e.selected).map((e) => n ? se(Wo(e)) : Wo(e));
+			let t = Array.prototype.filter.call(e.options, (e) => e.selected).map((e) => n ? ce(Wo(e)) : Wo(e));
 			e[Lo](e.multiple ? i ? new Set(t) : t : t[0]), e._assigning = !0, dn(() => {
 				e._assigning = !1;
 			});
@@ -3056,9 +3056,9 @@ function Uo(e, t) {
 			let a = e.options[i], o = Wo(a);
 			if (n) if (r) {
 				let e = typeof o;
-				e === "string" || e === "number" ? a.selected = t.some((e) => String(e) === String(o)) : a.selected = F(t, o) > -1;
+				e === "string" || e === "number" ? a.selected = t.some((e) => String(e) === String(o)) : a.selected = P(t, o) > -1;
 			} else a.selected = t.has(o);
-			else if (P(Wo(a), t)) {
+			else if (N(Wo(a), t)) {
 				e.selectedIndex !== i && (e.selectedIndex = i);
 				return;
 			}
@@ -3421,7 +3421,7 @@ var $ = /* @__PURE__ */ Ot({
 		}, { immediate: !0 }), dr(() => {
 			f(), o.value && dn(() => g());
 		}), (e, t) => U((K(), q("div", rs, [
-			J("div", is, [J("div", as, [J("div", os, I(a.value.当前处境?.当前地点 || "未知"), 1), J("div", ss, [J("div", cs, "T+" + I(a.value.当前处境?.累计小时数 || 0) + "H", 1), J("div", ls, I(a.value.当前处境?.当前天象 || "未知"), 1)])]), J("div", us, [J("img", {
+			J("div", is, [J("div", as, [J("div", os, F(a.value.当前处境?.当前地点 || "未知"), 1), J("div", ss, [J("div", cs, "T+" + F(a.value.当前处境?.累计小时数 || 0) + "H", 1), J("div", ls, F(a.value.当前处境?.当前天象 || "未知"), 1)])]), J("div", us, [J("img", {
 				src: i.value,
 				class: "stb-pm-dm-avatar",
 				onError: t[0] ||= (e) => i.value = "https://files.catbox.moe/wfjl6u.png"
@@ -3455,32 +3455,32 @@ var $ = /* @__PURE__ */ Ot({
 					t[37] ||= J("div", { class: "stb-tab-btn" }, "观测主屏", -1),
 					J("div", _s, [
 						J("div", vs, [
-							J("div", ys, [t[26] ||= J("strong", null, "Title:", -1), Y(" " + I(a.value.玩家角色?.基础属性?.称号 || "未知"), 1)]),
-							J("div", bs, [t[27] ||= J("strong", null, "Lv.", -1), Y(" " + I(a.value.玩家角色?.基础属性?.等级 || 1), 1)]),
-							J("div", xs, [t[28] ||= J("strong", null, "Dice:", -1), Y(" " + I(a.value.玩家角色?.基础属性?.骰子点数 || 0), 1)])
+							J("div", ys, [t[26] ||= J("strong", null, "Title:", -1), Y(" " + F(a.value.玩家角色?.基础属性?.称号 || "未知"), 1)]),
+							J("div", bs, [t[27] ||= J("strong", null, "Lv.", -1), Y(" " + F(a.value.玩家角色?.基础属性?.等级 || 1), 1)]),
+							J("div", xs, [t[28] ||= J("strong", null, "Dice:", -1), Y(" " + F(a.value.玩家角色?.基础属性?.骰子点数 || 0), 1)])
 						]),
 						J("div", Ss, [
 							t[33] ||= J("div", { class: "stb-pm-panel-title" }, "Vital Signs", -1),
 							J("div", Cs, [J("div", ws, [t[29] ||= J("span", {
 								class: "stb-pm-bar-label",
 								style: { color: "#ff6b6b" }
-							}, "HP", -1), J("span", Ts, I(a.value.玩家角色?.基础属性?.当前HP ?? 0) + " / " + I(a.value.玩家角色?.基础属性?.最大HP ?? 0), 1)]), J("div", Es, [J("div", {
+							}, "HP", -1), J("span", Ts, F(a.value.玩家角色?.基础属性?.当前HP ?? 0) + " / " + F(a.value.玩家角色?.基础属性?.最大HP ?? 0), 1)]), J("div", Es, [J("div", {
 								class: "stb-pm-bar-fill stb-pm-bar-hp",
-								style: k({ width: p(a.value.玩家角色?.基础属性?.当前HP, a.value.玩家角色?.基础属性?.最大HP) })
+								style: O({ width: p(a.value.玩家角色?.基础属性?.当前HP, a.value.玩家角色?.基础属性?.最大HP) })
 							}, null, 4)])]),
 							J("div", Ds, [J("div", Os, [t[30] ||= J("span", {
 								class: "stb-pm-bar-label",
 								style: { color: "#81d4fa" }
-							}, "MP", -1), J("span", ks, I(a.value.玩家角色?.基础属性?.当前MP ?? 0) + " / " + I(a.value.玩家角色?.基础属性?.最大MP ?? 0), 1)]), J("div", As, [J("div", {
+							}, "MP", -1), J("span", ks, F(a.value.玩家角色?.基础属性?.当前MP ?? 0) + " / " + F(a.value.玩家角色?.基础属性?.最大MP ?? 0), 1)]), J("div", As, [J("div", {
 								class: "stb-pm-bar-fill stb-pm-bar-mp",
-								style: k({ width: p(a.value.玩家角色?.基础属性?.当前MP, a.value.玩家角色?.基础属性?.最大MP) })
+								style: O({ width: p(a.value.玩家角色?.基础属性?.当前MP, a.value.玩家角色?.基础属性?.最大MP) })
 							}, null, 4)])]),
 							J("div", js, [J("div", Ms, [t[31] ||= J("span", {
 								class: "stb-pm-bar-label",
 								style: { color: "#81c784" }
-							}, "SP", -1), J("span", Ns, I(a.value.玩家角色?.基础属性?.理智值 ?? 0) + " / 20", 1)]), J("div", Ps, [J("div", {
+							}, "SP", -1), J("span", Ns, F(a.value.玩家角色?.基础属性?.理智值 ?? 0) + " / 20", 1)]), J("div", Ps, [J("div", {
 								class: "stb-pm-bar-fill stb-pm-bar-sp",
-								style: k({ width: p(a.value.玩家角色?.基础属性?.理智值, 20) })
+								style: O({ width: p(a.value.玩家角色?.基础属性?.理智值, 20) })
 							}, null, 4)])]),
 							J("div", Fs, [t[32] ||= J("span", {
 								class: "stb-pm-info-label",
@@ -3488,7 +3488,7 @@ var $ = /* @__PURE__ */ Ot({
 									color: "#fbc02d",
 									"font-weight": "bold"
 								}
-							}, "XP (经验值)", -1), J("span", Is, I(a.value.玩家角色?.基础属性?.经验值 ?? 0), 1)])
+							}, "XP (经验值)", -1), J("span", Is, F(a.value.玩家角色?.基础属性?.经验值 ?? 0), 1)])
 						]),
 						U(J("div", Ls, [t[34] ||= J("div", {
 							class: "stb-pm-panel-title",
@@ -3511,7 +3511,7 @@ var $ = /* @__PURE__ */ Ot({
 							key: e,
 							"data-status": a.value.玩家角色?.肢体伤病?.[e] || "完好",
 							class: "stb-pm-limb-card"
-						}, [J("div", Hs, I(e), 1), J("div", Us, I(a.value.玩家角色?.肢体伤病?.[e] || "完好"), 1)], 8, Vs)), 64))])]),
+						}, [J("div", Hs, F(e), 1), J("div", Us, F(a.value.玩家角色?.肢体伤病?.[e] || "完好"), 1)], 8, Vs)), 64))])]),
 						U(J("div", Ws, [t[36] ||= J("div", { class: "stb-pm-panel-title" }, "Tactical Focus", -1), J("div", {
 							class: "stb-pm-text-block",
 							innerHTML: d.value.focus
@@ -3529,39 +3529,39 @@ var $ = /* @__PURE__ */ Ot({
 					t[52] ||= J("div", { class: "stb-tab-btn" }, "武装档案", -1),
 					J("div", Js, [
 						J("div", Ys, [t[44] ||= J("div", { class: "stb-pm-panel-title" }, "Core Attributes", -1), J("div", Xs, [
-							J("div", Zs, [t[38] ||= J("span", { class: "stb-pm-stat-label" }, "STR", -1), J("span", Qs, I(a.value.玩家角色?.基础属性?.六维?.力量 || 10), 1)]),
-							J("div", $s, [t[39] ||= J("span", { class: "stb-pm-stat-label" }, "DEX", -1), J("span", ec, I(a.value.玩家角色?.基础属性?.六维?.敏捷 || 10), 1)]),
-							J("div", tc, [t[40] ||= J("span", { class: "stb-pm-stat-label" }, "CON", -1), J("span", nc, I(a.value.玩家角色?.基础属性?.六维?.体质 || 10), 1)]),
-							J("div", rc, [t[41] ||= J("span", { class: "stb-pm-stat-label" }, "INT", -1), J("span", ic, I(a.value.玩家角色?.基础属性?.六维?.智力 || 10), 1)]),
-							J("div", ac, [t[42] ||= J("span", { class: "stb-pm-stat-label" }, "WIS", -1), J("span", oc, I(a.value.玩家角色?.基础属性?.六维?.感知 || 10), 1)]),
-							J("div", sc, [t[43] ||= J("span", { class: "stb-pm-stat-label" }, "CHA", -1), J("span", cc, I(a.value.玩家角色?.基础属性?.六维?.魅力 || 10), 1)])
+							J("div", Zs, [t[38] ||= J("span", { class: "stb-pm-stat-label" }, "STR", -1), J("span", Qs, F(a.value.玩家角色?.基础属性?.六维?.力量 || 10), 1)]),
+							J("div", $s, [t[39] ||= J("span", { class: "stb-pm-stat-label" }, "DEX", -1), J("span", ec, F(a.value.玩家角色?.基础属性?.六维?.敏捷 || 10), 1)]),
+							J("div", tc, [t[40] ||= J("span", { class: "stb-pm-stat-label" }, "CON", -1), J("span", nc, F(a.value.玩家角色?.基础属性?.六维?.体质 || 10), 1)]),
+							J("div", rc, [t[41] ||= J("span", { class: "stb-pm-stat-label" }, "INT", -1), J("span", ic, F(a.value.玩家角色?.基础属性?.六维?.智力 || 10), 1)]),
+							J("div", ac, [t[42] ||= J("span", { class: "stb-pm-stat-label" }, "WIS", -1), J("span", oc, F(a.value.玩家角色?.基础属性?.六维?.感知 || 10), 1)]),
+							J("div", sc, [t[43] ||= J("span", { class: "stb-pm-stat-label" }, "CHA", -1), J("span", cc, F(a.value.玩家角色?.基础属性?.六维?.魅力 || 10), 1)])
 						])]),
 						J("div", lc, [
 							t[49] ||= J("div", { class: "stb-pm-panel-title" }, "Equipped Gear", -1),
 							J("details", {
 								class: "stb-pm-folder",
 								onClick: t[6] ||= Q(() => {}, ["stop"])
-							}, [t[45] ||= J("summary", null, [J("span", null, "⚔️ 主武器"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", uc, I(a.value.玩家角色?.武装战力?.主武器 || "空"), 1)]),
+							}, [t[45] ||= J("summary", null, [J("span", null, "⚔️ 主武器"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", uc, F(a.value.玩家角色?.武装战力?.主武器 || "空"), 1)]),
 							J("details", {
 								class: "stb-pm-folder",
 								onClick: t[7] ||= Q(() => {}, ["stop"])
-							}, [t[46] ||= J("summary", null, [J("span", null, "🛡️ 防具"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", dc, I(a.value.玩家角色?.武装战力?.防具 || "空"), 1)]),
+							}, [t[46] ||= J("summary", null, [J("span", null, "🛡️ 防具"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", dc, F(a.value.玩家角色?.武装战力?.防具 || "空"), 1)]),
 							J("details", {
 								class: "stb-pm-folder",
 								onClick: t[8] ||= Q(() => {}, ["stop"])
-							}, [t[47] ||= J("summary", null, [J("span", null, "💍 饰品"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", fc, [Object.keys(a.value.玩家角色?.武装战力?.饰品 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.饰品, (e, t) => (K(), q("div", { key: t }, "👉 " + I(t) + ": " + I(e), 1))), 128)) : (K(), q("div", pc, "空"))])]),
+							}, [t[47] ||= J("summary", null, [J("span", null, "💍 饰品"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", fc, [Object.keys(a.value.玩家角色?.武装战力?.饰品 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.饰品, (e, t) => (K(), q("div", { key: t }, "👉 " + F(t) + ": " + F(e), 1))), 128)) : (K(), q("div", pc, "空"))])]),
 							J("details", {
 								class: "stb-pm-folder",
 								onClick: t[9] ||= Q(() => {}, ["stop"])
 							}, [t[48] ||= J("summary", null, [J("span", { style: { color: "#ce93d8" } }, "✨ 技能/战技"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", mc, [Object.keys(a.value.玩家角色?.武装战力?.技能列表 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.技能列表, (e, t) => (K(), q("div", {
 								key: t,
 								style: { "margin-bottom": "5px" }
-							}, [J("strong", hc, "[" + I(t) + "]", 1), Y(": " + I(e), 1)]))), 128)) : (K(), q("div", gc, "无"))])])
+							}, [J("strong", hc, "[" + F(t) + "]", 1), Y(": " + F(e), 1)]))), 128)) : (K(), q("div", gc, "无"))])])
 						]),
 						J("div", _c, [t[51] ||= J("div", { class: "stb-pm-panel-title" }, "Inventory", -1), J("details", {
 							class: "stb-pm-folder",
 							onClick: t[10] ||= Q(() => {}, ["stop"])
-						}, [t[50] ||= J("summary", null, [J("span", null, "🎒 背包道具"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", vc, [Object.keys(a.value.玩家角色?.武装战力?.背包道具 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.背包道具, (e, t) => (K(), q("div", { key: t }, " 🍱 " + I(t) + " (" + I(e?.数量 || 1) + ") - " + I(e?.描述 || "无"), 1))), 128)) : (K(), q("div", yc, "无"))])])])
+						}, [t[50] ||= J("summary", null, [J("span", null, "🎒 背包道具"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", vc, [Object.keys(a.value.玩家角色?.武装战力?.背包道具 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.背包道具, (e, t) => (K(), q("div", { key: t }, " 🍱 " + F(t) + " (" + F(e?.数量 || 1) + ") - " + F(e?.描述 || "无"), 1))), 128)) : (K(), q("div", yc, "无"))])])])
 					])
 				]),
 				J("label", bc, [
@@ -3576,10 +3576,10 @@ var $ = /* @__PURE__ */ Ot({
 					J("div", Sc, [
 						J("div", Cc, [
 							t[55] ||= J("div", { class: "stb-pm-panel-title" }, "Sanity Evolution", -1),
-							J("div", wc, [t[53] ||= J("span", { class: "stb-pm-info-label" }, "当前阶段", -1), J("span", Tc, I(a.value.玩家角色?.理智演化?.当前阶段 || "正常"), 1)]),
-							J("div", Ec, [t[54] ||= J("span", { class: "stb-pm-info-label" }, "理智稳定性", -1), J("span", Dc, I(a.value.玩家角色?.基础属性?.理智稳定性 || 100) + " / 100", 1)])
+							J("div", wc, [t[53] ||= J("span", { class: "stb-pm-info-label" }, "当前阶段", -1), J("span", Tc, F(a.value.玩家角色?.理智演化?.当前阶段 || "正常"), 1)]),
+							J("div", Ec, [t[54] ||= J("span", { class: "stb-pm-info-label" }, "理智稳定性", -1), J("span", Dc, F(a.value.玩家角色?.基础属性?.理智稳定性 || 100) + " / 100", 1)])
 						]),
-						J("div", Oc, [t[56] ||= J("div", { class: "stb-pm-panel-title" }, "Karma (专属业障)", -1), J("div", kc, [Object.keys(a.value.玩家角色?.基础属性?.专属业障 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.基础属性?.专属业障, (e, t) => (K(), q("div", { key: t }, "⚡ [" + I(t) + "] " + I(e), 1))), 128)) : (K(), q("div", Ac, "无"))])]),
+						J("div", Oc, [t[56] ||= J("div", { class: "stb-pm-panel-title" }, "Karma (专属业障)", -1), J("div", kc, [Object.keys(a.value.玩家角色?.基础属性?.专属业障 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.基础属性?.专属业障, (e, t) => (K(), q("div", { key: t }, "⚡ [" + F(t) + "] " + F(e), 1))), 128)) : (K(), q("div", Ac, "无"))])]),
 						U(J("div", jc, [t[57] ||= J("div", {
 							class: "stb-pm-panel-title",
 							style: {
@@ -3610,8 +3610,8 @@ var $ = /* @__PURE__ */ Ot({
 									"border-bottom-color": "rgba(129, 212, 250, 0.3)"
 								}
 							}, "Mirror Dungeon", -1),
-							J("div", Rc, [t[59] ||= J("span", { class: "stb-pm-info-label" }, "当前层数", -1), J("span", zc, I(a.value.玩家角色?.特殊机制?.心灵镜牢?.当前层数 || 0) + " / 15", 1)]),
-							J("div", Bc, [t[60] ||= J("span", { class: "stb-pm-info-label" }, "星光余额", -1), J("span", Vc, I(a.value.玩家角色?.特殊机制?.心灵镜牢?.星光余额 || 0), 1)])
+							J("div", Rc, [t[59] ||= J("span", { class: "stb-pm-info-label" }, "当前层数", -1), J("span", zc, F(a.value.玩家角色?.特殊机制?.心灵镜牢?.当前层数 || 0) + " / 15", 1)]),
+							J("div", Bc, [t[60] ||= J("span", { class: "stb-pm-info-label" }, "星光余额", -1), J("span", Vc, F(a.value.玩家角色?.特殊机制?.心灵镜牢?.星光余额 || 0), 1)])
 						]),
 						J("div", Hc, [
 							t[64] ||= J("div", {
@@ -3621,13 +3621,13 @@ var $ = /* @__PURE__ */ Ot({
 									"border-bottom-color": "rgba(206, 147, 216, 0.3)"
 								}
 							}, "Identity Override", -1),
-							J("div", Uc, [t[62] ||= J("span", { class: "stb-pm-info-label" }, "当前人格", -1), J("span", Wc, I(a.value.玩家角色?.特殊机制?.人格覆盖?.当前人格 || "无"), 1)]),
-							J("div", Gc, [t[63] ||= J("span", { class: "stb-pm-info-label" }, "记忆混淆度", -1), J("span", Kc, I(a.value.玩家角色?.特殊机制?.人格覆盖?.记忆混淆度 || 0) + " / 100", 1)])
+							J("div", Uc, [t[62] ||= J("span", { class: "stb-pm-info-label" }, "当前人格", -1), J("span", Wc, F(a.value.玩家角色?.特殊机制?.人格覆盖?.当前人格 || "无"), 1)]),
+							J("div", Gc, [t[63] ||= J("span", { class: "stb-pm-info-label" }, "记忆混淆度", -1), J("span", Kc, F(a.value.玩家角色?.特殊机制?.人格覆盖?.记忆混淆度 || 0) + " / 100", 1)])
 						]),
 						J("div", qc, [t[71] ||= J("div", { class: "stb-pm-panel-title" }, "Loop Clues (轮回线索)", -1), J("div", Jc, [
 							t[65] ||= J("strong", null, "真相碎片:", -1),
 							t[66] ||= J("br", null, null, -1),
-							Y(" " + I(Array.isArray(a.value.玩家角色?.轮回线索?.世界真相碎片) && a.value.玩家角色.轮回线索.世界真相碎片.length > 0 ? a.value.玩家角色.轮回线索.世界真相碎片.join(" / ") : "无"), 1),
+							Y(" " + F(Array.isArray(a.value.玩家角色?.轮回线索?.世界真相碎片) && a.value.玩家角色.轮回线索.世界真相碎片.length > 0 ? a.value.玩家角色.轮回线索.世界真相碎片.join(" / ") : "无"), 1),
 							t[67] ||= J("br", null, null, -1),
 							t[68] ||= J("br", null, null, -1),
 							t[69] ||= J("strong", null, "永久创伤:", -1),
@@ -3635,7 +3635,7 @@ var $ = /* @__PURE__ */ Ot({
 							Object.keys(a.value.玩家角色?.轮回线索?.永久精神创伤 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.轮回线索?.永久精神创伤, (e, t) => (K(), q("div", {
 								key: t,
 								style: { color: "#ff6b6b" }
-							}, "⚠️ [" + I(t) + "]: " + I(e), 1))), 128)) : (K(), q("div", Yc, "无"))
+							}, "⚠️ [" + F(t) + "]: " + F(e), 1))), 128)) : (K(), q("div", Yc, "无"))
 						])])
 					])
 				]),
@@ -3652,8 +3652,9 @@ var $ = /* @__PURE__ */ Ot({
 						t[84] ||= J("div", { class: "stb-pm-panel-title" }, "Social Network", -1),
 						J("details", {
 							class: "stb-pm-folder",
+							open: "",
 							onClick: t[14] ||= Q(() => {}, ["stop"])
-						}, [t[73] ||= J("summary", null, [J("span", null, "🏛️ 势力声望"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", el, [Object.keys(a.value.社交网络?.势力声望 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.势力声望, (e, t) => (K(), q("div", { key: t }, "🏛️ " + I(t) + ": " + I(e ?? 0), 1))), 128)) : (K(), q("div", tl, "无"))])]),
+						}, [t[73] ||= J("summary", null, [J("span", null, "🏛️ 势力声望"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", el, [Object.keys(a.value.社交网络?.势力声望 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.势力声望, (e, t) => (K(), q("div", { key: t }, "🏛️ " + F(t) + ": " + F(e ?? 0), 1))), 128)) : (K(), q("div", tl, "无"))])]),
 						J("details", {
 							class: "stb-pm-folder",
 							open: "",
@@ -3666,18 +3667,18 @@ var $ = /* @__PURE__ */ Ot({
 								"margin-top": "5px"
 							},
 							onClick: t[15] ||= Q(() => {}, ["stop"])
-						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", rl, [J("span", il, "👥 " + I(n) + " (Lv." + I(e?.等级 ?? 1) + ")", 1), t[74] ||= J("span", { class: "stb-pm-folder-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", al, [
-							J("div", ol, "🩸 HP: " + I(e?.当前HP ?? "?") + "/" + I(e?.最大HP ?? "?") + " | 🧠 SP: " + I(e?.理智值 ?? "?"), 1),
-							J("div", null, [t[75] ||= J("strong", null, "⚔️ 武器:", -1), Y(" " + I(e?.武器 || "未知"), 1)]),
-							J("div", null, [t[76] ||= J("strong", null, "👗 服装:", -1), Y(" " + I(e?.服装 || "未知"), 1)]),
-							J("div", null, [t[77] ||= J("strong", null, "✨ 能力:", -1), Y(" " + I(e?.能力 || "未知"), 1)]),
-							J("div", sl, "💭 心里话: \"" + I(e?.心里话 || "...") + "\"", 1),
-							J("div", cl, "🔒 核心记忆: " + I(e?.核心记忆 || "未知"), 1),
+						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", rl, [J("span", il, "👥 " + F(n) + " (Lv." + F(e?.等级 ?? 1) + ")", 1), t[74] ||= J("span", { class: "stb-pm-folder-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", al, [
+							J("div", ol, "🩸 HP: " + F(e?.当前HP ?? "?") + "/" + F(e?.最大HP ?? "?") + " | 🧠 SP: " + F(e?.理智值 ?? "?"), 1),
+							J("div", null, [t[75] ||= J("strong", null, "⚔️ 武器:", -1), Y(" " + F(e?.武器 || "未知"), 1)]),
+							J("div", null, [t[76] ||= J("strong", null, "👗 服装:", -1), Y(" " + F(e?.服装 || "未知"), 1)]),
+							J("div", null, [t[77] ||= J("strong", null, "✨ 能力:", -1), Y(" " + F(e?.能力 || "未知"), 1)]),
+							J("div", sl, "💭 心里话: \"" + F(e?.心里话 || "...") + "\"", 1),
+							J("div", cl, "🔒 核心记忆: " + F(e?.核心记忆 || "未知"), 1),
 							J("div", ll, [
-								J("span", null, "好感: " + I(e?.好感度 ?? 0), 1),
-								J("span", null, "恐惧: " + I(e?.恐惧度 ?? 0), 1),
-								J("span", null, "信任: " + I(e?.信任度 ?? 0), 1),
-								J("span", null, "欲望: " + I(e?.欲望度 ?? 0), 1)
+								J("span", null, "好感: " + F(e?.好感度 ?? 0), 1),
+								J("span", null, "恐惧: " + F(e?.恐惧度 ?? 0), 1),
+								J("span", null, "信任: " + F(e?.信任度 ?? 0), 1),
+								J("span", null, "欲望: " + F(e?.欲望度 ?? 0), 1)
 							])
 						])) : X("", !0)]))), 128)) : (K(), q("div", ul, "无"))])]),
 						J("details", {
@@ -3692,18 +3693,18 @@ var $ = /* @__PURE__ */ Ot({
 								"margin-top": "5px"
 							},
 							onClick: t[17] ||= Q(() => {}, ["stop"])
-						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", fl, [J("span", pl, "🔗 " + I(n) + " (Lv." + I(e?.等级 ?? "?") + ")", 1), t[79] ||= J("span", { class: "stb-pm-folder-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", ml, [
-							J("div", hl, "🩸 HP: " + I(e?.当前HP ?? "?") + "/" + I(e?.最大HP ?? "?"), 1),
-							J("div", null, [t[80] ||= J("strong", null, "⚔️ 武器:", -1), Y(" " + I(e?.武器 || "未知"), 1)]),
-							J("div", null, [t[81] ||= J("strong", null, "👗 服装:", -1), Y(" " + I(e?.服装 || "未知"), 1)]),
-							J("div", null, [t[82] ||= J("strong", null, "✨ 能力:", -1), Y(" " + I(e?.能力 || "未知"), 1)]),
-							J("div", gl, "💭 心里话: \"" + I(e?.心里话 || "...") + "\"", 1),
-							J("div", _l, "🔒 核心记忆: " + I(e?.核心记忆 || "未知"), 1),
+						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", fl, [J("span", pl, "🔗 " + F(n) + " (Lv." + F(e?.等级 ?? "?") + ")", 1), t[79] ||= J("span", { class: "stb-pm-folder-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", ml, [
+							J("div", hl, "🩸 HP: " + F(e?.当前HP ?? "?") + "/" + F(e?.最大HP ?? "?"), 1),
+							J("div", null, [t[80] ||= J("strong", null, "⚔️ 武器:", -1), Y(" " + F(e?.武器 || "未知"), 1)]),
+							J("div", null, [t[81] ||= J("strong", null, "👗 服装:", -1), Y(" " + F(e?.服装 || "未知"), 1)]),
+							J("div", null, [t[82] ||= J("strong", null, "✨ 能力:", -1), Y(" " + F(e?.能力 || "未知"), 1)]),
+							J("div", gl, "💭 心里话: \"" + F(e?.心里话 || "...") + "\"", 1),
+							J("div", _l, "🔒 核心记忆: " + F(e?.核心记忆 || "未知"), 1),
 							J("div", vl, [
-								J("span", null, "好感: " + I(e?.好感度 ?? 0), 1),
-								J("span", null, "恐惧: " + I(e?.恐惧度 ?? 0), 1),
-								J("span", null, "信任: " + I(e?.信任度 ?? 0), 1),
-								J("span", null, "欲望: " + I(e?.欲望度 ?? 0), 1)
+								J("span", null, "好感: " + F(e?.好感度 ?? 0), 1),
+								J("span", null, "恐惧: " + F(e?.恐惧度 ?? 0), 1),
+								J("span", null, "信任: " + F(e?.信任度 ?? 0), 1),
+								J("span", null, "欲望: " + F(e?.欲望度 ?? 0), 1)
 							])
 						])) : X("", !0)]))), 128)) : (K(), q("div", yl, "无"))])])
 					])])
@@ -3719,13 +3720,14 @@ var $ = /* @__PURE__ */ Ot({
 					t[92] ||= J("div", { class: "stb-tab-btn" }, "据点收容", -1),
 					J("div", Sl, [J("div", Cl, [
 						t[89] ||= J("div", { class: "stb-pm-panel-title" }, "Facility Status", -1),
-						J("div", wl, [t[86] ||= J("span", { class: "stb-pm-info-label" }, "供电等级", -1), J("span", Tl, I(a.value.据点收容?.设施状态?.供电等级 || "未知"), 1)]),
-						J("div", El, [t[87] ||= J("span", { class: "stb-pm-info-label" }, "防御等级", -1), J("span", Dl, "Lv." + I(a.value.据点收容?.设施状态?.防御等级 || 0), 1)]),
-						J("div", Ol, [t[88] ||= J("span", { class: "stb-pm-info-label" }, "脑啡肽储量", -1), J("span", kl, I(a.value.据点收容?.资源储备?.脑啡肽储量 || 0), 1)])
+						J("div", wl, [t[86] ||= J("span", { class: "stb-pm-info-label" }, "供电等级", -1), J("span", Tl, F(a.value.据点收容?.设施状态?.供电等级 || "未知"), 1)]),
+						J("div", El, [t[87] ||= J("span", { class: "stb-pm-info-label" }, "防御等级", -1), J("span", Dl, "Lv." + F(a.value.据点收容?.设施状态?.防御等级 || 0), 1)]),
+						J("div", Ol, [t[88] ||= J("span", { class: "stb-pm-info-label" }, "脑啡肽储量", -1), J("span", kl, F(a.value.据点收容?.资源储备?.脑啡肽储量 || 0), 1)])
 					]), J("div", Al, [t[91] ||= J("div", { class: "stb-pm-panel-title" }, "Containment Units", -1), J("details", {
 						class: "stb-pm-folder",
+						open: "",
 						onClick: t[20] ||= Q(() => {}, ["stop"])
-					}, [t[90] ||= J("summary", null, [J("span", null, "📦 收容单元列表"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", jl, [Object.keys(a.value.据点收容?.收容单元 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.据点收容?.收容单元, (e, t) => (K(), q("div", { key: t }, " ⚠️ [" + I(t) + "] 危险:" + I(e?.危险等级 || "未知") + " | 状态:" + I(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", Ml, "无"))])])])])
+					}, [t[90] ||= J("summary", null, [J("span", null, "📦 收容单元列表"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", jl, [Object.keys(a.value.据点收容?.收容单元 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.据点收容?.收容单元, (e, t) => (K(), q("div", { key: t }, " ⚠️ [" + F(t) + "] 危险:" + F(e?.危险等级 || "未知") + " | 状态:" + F(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", Ml, "无"))])])])])
 				]),
 				J("label", Nl, [
 					U(J("input", {
@@ -3739,13 +3741,14 @@ var $ = /* @__PURE__ */ Ot({
 					J("div", Fl, [
 						J("div", Il, [
 							t[95] ||= J("div", { class: "stb-pm-panel-title" }, "Current Encounter", -1),
-							J("div", Ll, [t[93] ||= J("span", { class: "stb-pm-info-label" }, "状态", -1), J("span", Rl, I(a.value.当前处境?.当前遭遇?.状态 || "未知"), 1)]),
-							J("div", zl, [t[94] ||= J("span", { class: "stb-pm-info-label" }, "危险度", -1), J("span", Bl, I(a.value.当前处境?.当前遭遇?.危险度 || "未知"), 1)])
+							J("div", Ll, [t[93] ||= J("span", { class: "stb-pm-info-label" }, "状态", -1), J("span", Rl, F(a.value.当前处境?.当前遭遇?.状态 || "未知"), 1)]),
+							J("div", zl, [t[94] ||= J("span", { class: "stb-pm-info-label" }, "危险度", -1), J("span", Bl, F(a.value.当前处境?.当前遭遇?.危险度 || "未知"), 1)])
 						]),
 						J("div", Vl, [t[97] ||= J("div", { class: "stb-pm-panel-title" }, "Active Quests", -1), J("details", {
 							class: "stb-pm-folder",
+							open: "",
 							onClick: t[22] ||= Q(() => {}, ["stop"])
-						}, [t[96] ||= J("summary", null, [J("span", null, "📜 任务列表"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", Hl, [Object.keys(a.value.当前处境?.任务列表 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.当前处境?.任务列表, (e, t) => (K(), q("div", { key: t }, " 📌 [" + I(t) + "] 评级:" + I(e?.评级 || "未知") + " | 状态:" + I(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", Ul, "无"))])])]),
+						}, [t[96] ||= J("summary", null, [J("span", null, "📜 任务列表"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", Hl, [Object.keys(a.value.当前处境?.任务列表 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.当前处境?.任务列表, (e, t) => (K(), q("div", { key: t }, " 📌 [" + F(t) + "] 评级:" + F(e?.评级 || "未知") + " | 状态:" + F(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", Ul, "无"))])])]),
 						U(J("div", Wl, [
 							t[101] ||= J("div", {
 								class: "stb-pm-panel-title",
@@ -3903,41 +3906,51 @@ var $ = /* @__PURE__ */ Ot({
 } }, Uf = {
 	key: 0,
 	class: "diy-cost-display refund"
-}, Wf = ["disabled", "onClick"], Gf = ["onClick"], Kf = ["onUpdate:modelValue", "onInput"], qf = ["onUpdate:modelValue", "onInput"], Jf = ["onUpdate:modelValue", "onChange"], Yf = ["value"], Xf = { class: "shop-section" }, Zf = { class: "rl-grid" }, Qf = ["onClick"], $f = { class: "rl-type" }, ep = { class: "rl-name" }, tp = { class: "rl-desc" }, np = { class: "rl-cost" }, rp = { class: "rl-grid" }, ip = ["onClick"], ap = { class: "rl-type" }, op = { class: "rl-name" }, sp = { class: "rl-desc" }, cp = { class: "rl-cost" }, lp = { class: "rl-grid" }, up = ["onClick"], dp = { class: "rl-type" }, fp = { class: "rl-name" }, pp = { class: "rl-desc" }, mp = { class: "rl-cost refund" }, hp = { class: "shop-section" }, gp = { style: {
+}, Wf = ["disabled", "onClick"], Gf = ["onClick"], Kf = ["onUpdate:modelValue", "onInput"], qf = ["onUpdate:modelValue", "onInput"], Jf = ["onUpdate:modelValue", "onChange"], Yf = ["value"], Xf = { class: "shop-section" }, Zf = { class: "rl-grid" }, Qf = ["onClick"], $f = { class: "rl-type" }, ep = { class: "rl-name" }, tp = { class: "rl-desc" }, np = { class: "rl-cost" }, rp = { class: "rl-grid" }, ip = ["onClick"], ap = { class: "rl-type" }, op = { class: "rl-name" }, sp = { class: "rl-desc" }, cp = { class: "rl-cost" }, lp = { class: "rl-grid" }, up = ["onClick"], dp = { class: "rl-type" }, fp = { class: "rl-name" }, pp = { class: "rl-desc" }, mp = { class: "rl-cost" }, hp = { class: "rl-grid" }, gp = ["onClick"], _p = { class: "rl-type" }, vp = { class: "rl-name" }, yp = { class: "rl-desc" }, bp = { class: "rl-cost refund" }, xp = { class: "shop-section" }, Sp = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px",
 	cursor: "pointer",
 	"font-weight": "bold",
 	"margin-bottom": "15px"
-} }, _p = {
+} }, Cp = {
 	key: 0,
 	style: {
 		display: "grid",
 		gap: "15px"
 	}
-}, vp = { class: "shop-section" }, yp = { class: "custom-idea-box" }, bp = { style: {
+}, wp = { class: "shop-section" }, Tp = { class: "custom-idea-box" }, Ep = { style: {
 	"text-align": "center",
 	"margin-top": "40px"
-} }, xp = {
+} }, Dp = {
 	key: 0,
 	class: "negative-warning"
-}, Sp = {
+}, Op = {
 	key: 1,
 	style: {
 		color: "red",
 		"font-weight": "bold",
 		"margin-top": "15px"
 	}
-}, Cp = ["disabled"], wp = {
+}, kp = ["disabled"], Ap = {
 	key: "settings",
 	class: "page-settings"
-}, Tp = { style: {
+}, jp = { style: {
 	"font-size": "1.2em",
 	color: "var(--pm-dark-red)",
 	"font-weight": "bold",
 	"margin-bottom": "30px"
-} }, Ep = { style: { "text-decoration": "underline" } }, Dp = { class: "mbti-diff-grid" }, Op = { class: "mbti-box" }, kp = { class: "mbti-row" }, Ap = { class: "mbti-row" }, jp = { class: "mbti-row" }, Mp = { class: "mbti-row" }, Np = { class: "mbti-result" }, Pp = { class: "diff-box" }, Fp = { class: "toggles-grid" }, Ip = ["onClick"], Lp = { class: "dm-section" }, Rp = { class: "dm-presets" }, zp = ["disabled"], Bp = /* @__PURE__ */ Xn({
+} }, Mp = { style: { "text-decoration": "underline" } }, Np = { class: "mbti-diff-grid" }, Pp = { class: "mbti-box" }, Fp = { class: "mbti-row" }, Ip = { class: "mbti-row" }, Lp = { class: "mbti-row" }, Rp = { class: "mbti-row" }, zp = { class: "mbti-result" }, Bp = { class: "diff-box" }, Vp = { class: "toggles-grid" }, Hp = ["onClick"], Up = { class: "dm-section" }, Wp = { class: "dm-presets" }, Gp = ["disabled"], Kp = {
+	key: 1,
+	style: {
+		width: "100%",
+		"text-align": "center",
+		"margin-top": "40px",
+		"padding-bottom": "20px",
+		position: "relative",
+		"z-index": "10"
+	}
+}, qp = /* @__PURE__ */ Xn({
 	__name: "SetupModal",
 	setup(e) {
 		let t = /* @__PURE__ */ H(!0), n = /* @__PURE__ */ H("check"), r = /* @__PURE__ */ H(!1), i = /* @__PURE__ */ H(!1), a = /* @__PURE__ */ H(!1), o = /* @__PURE__ */ H(!1), s = /* @__PURE__ */ H(""), c = /* @__PURE__ */ H(""), l = /* @__PURE__ */ H(localStorage.getItem("pm_dm_avatar_v1") || "https://files.catbox.moe/wfjl6u.png"), u = /* @__PURE__ */ H(null), d = () => {
@@ -3986,7 +3999,7 @@ var $ = /* @__PURE__ */ Ot({
 			}, 500);
 		};
 		dr(() => {
-			ee(), ye();
+			ee(), be();
 		}), hr(() => {
 			w && clearInterval(w);
 		});
@@ -4044,22 +4057,22 @@ var $ = /* @__PURE__ */ Ot({
 				NTR_NTL: !1,
 				卖春_奴隶: !1
 			}
-		}), D = /* @__PURE__ */ H(null), re = () => {
-			D.value && D.value.focus();
-		}, ie = Ta(() => {
-			if (E.character === "custom") return A.name || "自定义(命运掷骰)";
+		}), re = /* @__PURE__ */ H(null), ie = () => {
+			re.value && re.value.focus();
+		}, ae = Ta(() => {
+			if (E.character === "custom") return k.name || "自定义(命运掷骰)";
 			let e = T.find((e) => e.id === E.character);
 			return e ? e.name : "未知";
-		}), ae = (e) => {
+		}), oe = (e) => {
 			E.character = e, n.value = "settings";
-		}, oe = /* @__PURE__ */ H("pre-roll"), O = /* @__PURE__ */ H(!1), se = /* @__PURE__ */ H(0), ce = /* @__PURE__ */ H(0), le = {
+		}, se = /* @__PURE__ */ H("pre-roll"), D = /* @__PURE__ */ H(!1), ce = /* @__PURE__ */ H(0), le = /* @__PURE__ */ H(0), ue = {
 			str: "力量",
 			dex: "敏捷",
 			con: "体质",
 			int: "智力",
 			wis: "感知",
 			cha: "魅力"
-		}, ue = {
+		}, de = {
 			level: 1,
 			hp: 100,
 			mp: 50,
@@ -4071,16 +4084,16 @@ var $ = /* @__PURE__ */ Ot({
 			int: 10,
 			wis: 10,
 			cha: 10
-		}, k = /* @__PURE__ */ Ot({ ...ue }), A = /* @__PURE__ */ Ot({
+		}, O = /* @__PURE__ */ Ot({ ...de }), k = /* @__PURE__ */ Ot({
 			name: "",
 			race: "",
 			profession: "",
 			desc: ""
-		}), j = /* @__PURE__ */ Ot({
+		}), A = /* @__PURE__ */ Ot({
 			enabled: !1,
 			name: "",
 			desc: ""
-		}), de = [
+		}), fe = [
 			{
 				label: "ZAYIN / 普通 (0-500)",
 				min: 0,
@@ -4106,7 +4119,7 @@ var $ = /* @__PURE__ */ Ot({
 				min: 7501,
 				max: 9999
 			}
-		], fe = [
+		], pe = [
 			{
 				label: "轻度折磨 (+500~1000)",
 				min: 500,
@@ -4122,15 +4135,15 @@ var $ = /* @__PURE__ */ Ot({
 				min: 2501,
 				max: 4e3
 			}
-		], N = /* @__PURE__ */ Ot({
+		], M = /* @__PURE__ */ Ot({
 			traits: [],
 			weapons: [],
 			armors: [],
 			items: [],
 			karmas: [],
 			skills: []
-		}), pe = (e) => {
-			N[e].push({
+		}), me = (e) => {
+			M[e].push({
 				name: "",
 				desc: "",
 				tier: "",
@@ -4138,56 +4151,59 @@ var $ = /* @__PURE__ */ Ot({
 				refund: 0,
 				rolled: !1
 			});
-		}, me = (e, t) => {
-			N[e].splice(t, 1);
 		}, he = (e, t) => {
-			let n = N[e][t];
+			M[e].splice(t, 1);
+		}, ge = (e, t) => {
+			let n = M[e][t];
 			if (!n.tier) return;
-			let r = (e === "karmas" ? fe : de).find((e) => e.label === n.tier);
+			let r = (e === "karmas" ? pe : fe).find((e) => e.label === n.tier);
 			if (r) {
 				let t = Math.floor(Math.random() * (r.max - r.min + 1)) + r.min;
 				e === "karmas" ? n.refund = t : n.cost = t, n.rolled = !0;
 			}
-		}, P = /* @__PURE__ */ Ot({
+		}, N = /* @__PURE__ */ Ot({
 			backgrounds: [],
 			egos: [],
-			karmas: []
-		}), F = /* @__PURE__ */ Ot({
+			karmas: [],
+			skills: []
+		}), P = /* @__PURE__ */ Ot({
 			backgrounds: [],
 			egos: [],
-			karmas: []
-		}), ge = /* @__PURE__ */ H(""), _e = /* @__PURE__ */ H([]), ve = /* @__PURE__ */ H(-1), L = /* @__PURE__ */ H(""), ye = () => {
+			karmas: [],
+			skills: []
+		}), _e = /* @__PURE__ */ H(""), ve = /* @__PURE__ */ H([]), ye = /* @__PURE__ */ H(-1), I = /* @__PURE__ */ H(""), be = () => {
 			try {
 				let e = localStorage.getItem("pm_custom_presets_v5");
-				e && (_e.value = JSON.parse(e));
+				e && (ve.value = JSON.parse(e));
 			} catch (e) {
 				console.warn("无法读取本地预设", e);
 			}
-		}, be = () => {
-			if (!L.value) return;
+		}, xe = () => {
+			if (!I.value) return;
 			let e = {
-				name: L.value,
-				stats: { ...k },
-				persona: { ...A },
-				companion: { ...j },
-				diy: JSON.parse(JSON.stringify(N)),
-				idea: ge.value,
+				name: I.value,
+				stats: { ...O },
+				persona: { ...k },
+				companion: { ...A },
+				diy: JSON.parse(JSON.stringify(M)),
+				idea: _e.value,
 				selectedItems: {
-					backgrounds: [...F.backgrounds],
-					egos: [...F.egos],
-					karmas: [...F.karmas]
+					backgrounds: [...P.backgrounds],
+					egos: [...P.egos],
+					karmas: [...P.karmas],
+					skills: [...P.skills]
 				}
 			};
-			_e.value.push(e);
+			ve.value.push(e);
 			try {
-				localStorage.setItem("pm_custom_presets_v5", JSON.stringify(_e.value)), alert("预设保存成功！"), L.value = "", ve.value = _e.value.length - 1;
+				localStorage.setItem("pm_custom_presets_v5", JSON.stringify(ve.value)), alert("预设保存成功！"), I.value = "", ye.value = ve.value.length - 1;
 			} catch {
 				alert("保存失败，可能是浏览器限制了本地存储。");
 			}
-		}, R = () => {
-			if (ve.value === -1) return;
-			let e = _e.value[ve.value];
-			e && (Object.assign(k, e.stats), Object.assign(A, e.persona), Object.assign(j, e.companion), e.diy && [
+		}, L = () => {
+			if (ye.value === -1) return;
+			let e = ve.value[ye.value];
+			e && (Object.assign(O, e.stats), Object.assign(k, e.persona), Object.assign(A, e.companion), e.diy && [
 				"traits",
 				"weapons",
 				"armors",
@@ -4195,17 +4211,19 @@ var $ = /* @__PURE__ */ Ot({
 				"karmas",
 				"skills"
 			].forEach((t) => {
-				N[t].splice(0, N[t].length), e.diy[t] && e.diy[t].length > 0 && N[t].push(...JSON.parse(JSON.stringify(e.diy[t])));
-			}), ge.value = e.idea || "", e.selectedItems && (F.backgrounds.splice(0, F.backgrounds.length, ...e.selectedItems.backgrounds || []), F.egos.splice(0, F.egos.length, ...e.selectedItems.egos || []), F.karmas.splice(0, F.karmas.length, ...e.selectedItems.karmas || []), e.selectedItems.backgrounds.forEach((e) => {
-				P.backgrounds.find((t) => t.name === e.name) || P.backgrounds.push(e);
+				M[t].splice(0, M[t].length), e.diy[t] && e.diy[t].length > 0 && M[t].push(...JSON.parse(JSON.stringify(e.diy[t])));
+			}), _e.value = e.idea || "", e.selectedItems && (P.backgrounds.splice(0, P.backgrounds.length, ...e.selectedItems.backgrounds || []), P.egos.splice(0, P.egos.length, ...e.selectedItems.egos || []), P.karmas.splice(0, P.karmas.length, ...e.selectedItems.karmas || []), P.skills.splice(0, P.skills.length, ...e.selectedItems.skills || []), e.selectedItems.backgrounds.forEach((e) => {
+				N.backgrounds.find((t) => t.name === e.name) || N.backgrounds.push(e);
 			}), e.selectedItems.egos.forEach((e) => {
-				P.egos.find((t) => t.name === e.name) || P.egos.push(e);
+				N.egos.find((t) => t.name === e.name) || N.egos.push(e);
 			}), e.selectedItems.karmas.forEach((e) => {
-				P.karmas.find((t) => t.name === e.name) || P.karmas.push(e);
+				N.karmas.find((t) => t.name === e.name) || N.karmas.push(e);
+			}), e.selectedItems.skills.forEach((e) => {
+				N.skills.find((t) => t.name === e.name) || N.skills.push(e);
 			})), alert("预设读取成功！"));
-		}, xe = () => {
+		}, Se = () => {
 			E.character = "custom", n.value = "custom_char";
-		}, Se = [
+		}, Ce = [
 			{
 				type: "废土异变系",
 				name: "异想体血肉共生",
@@ -4241,7 +4259,7 @@ var $ = /* @__PURE__ */ Ot({
 				cost: 6e3,
 				minQ: 86
 			}
-		], Ce = [
+		], we = [
 			{
 				type: "奇点故障品",
 				name: "过载的F公司妖灵锁",
@@ -4277,7 +4295,7 @@ var $ = /* @__PURE__ */ Ot({
 				cost: 4e3,
 				minQ: 51
 			}
-		], we = [
+		], Te = [
 			{
 				type: "精神折磨类",
 				name: "卡门的偏爱",
@@ -4314,20 +4332,42 @@ var $ = /* @__PURE__ */ Ot({
 				desc: "理智值(SP)上限仅为正常人的一半（Max 10），且无法通过任何手段提升，极易陷入疯狂。",
 				refund: 3500
 			}
-		], Te = (e, t, n) => [...e.filter((e) => !e.minQ || n >= e.minQ)].sort(() => .5 - Math.random()).slice(0, t), Ee = () => {
-			O.value = !0, setTimeout(() => {
-				se.value = Math.floor(Math.random() * 8999) + 1e3, ce.value = Math.floor(Math.random() * 100) + 1, P.backgrounds = Te(Se, 3, ce.value), P.egos = Te(Ce, 3, ce.value), P.karmas = Te(we, 3, ce.value), O.value = !1, oe.value = "shopping";
+		], Ee = [
+			{
+				type: "基础战技",
+				name: "工坊剑术·突刺",
+				desc: "消耗3MP。下一次攻击命中率+20%，若命中则附加流血效果。",
+				cost: 500,
+				minQ: 1
+			},
+			{
+				type: "奇点魔法",
+				name: "W公司·空间闪烁",
+				desc: "消耗10MP与2SP。瞬间移动至视线内任意位置，下一次攻击必定暴击。若大失败则肢体错位。",
+				cost: 3e3,
+				minQ: 51
+			},
+			{
+				type: "失落战技",
+				name: "色彩秘传·殷红一闪",
+				desc: "消耗20MP与5HP。对单体造成毁灭性的5d10物理伤害，无视护甲。使用后陷入一回合虚弱。",
+				cost: 7e3,
+				minQ: 86
+			}
+		], De = (e, t, n) => [...e.filter((e) => !e.minQ || n >= e.minQ)].sort(() => .5 - Math.random()).slice(0, t), Oe = () => {
+			D.value = !0, setTimeout(() => {
+				ce.value = Math.floor(Math.random() * 8999) + 1e3, le.value = Math.floor(Math.random() * 100) + 1, N.backgrounds = De(Ce, 3, le.value), N.egos = De(we, 3, le.value), N.karmas = De(Te, 3, le.value), N.skills = De(Ee, 2, le.value), D.value = !1, se.value = "shopping";
 			}, 1500);
-		}, De = Ta(() => {
-			let e = ce.value;
+		}, ke = Ta(() => {
+			let e = le.value;
 			return e <= 50 ? "普通 (最高HE级)" : e <= 85 ? "好运 (必出WAW级或强力奇点)" : e <= 95 ? "极运 (必出ALEPH级残片或色彩级背景)" : "深渊注视 (出现完整ALEPH级神装)";
-		}), Oe = (e, t) => {
+		}), Ae = (e, t) => {
 			let n = 0;
 			for (let r = e + 1; r <= t; r++) n += r <= 15 ? 50 : 150;
 			return n;
-		}, ke = Ta(() => {
-			let e = se.value;
-			return e -= (k.level - ue.level) * 100, e -= (k.hp - ue.hp) / 10 * 20, e -= (k.mp - ue.mp) / 10 * 20, e -= (k.sp - ue.sp) * 50, e -= (k.stability - ue.stability) / 5 * 30, [
+		}, je = Ta(() => {
+			let e = ce.value;
+			return e -= (O.level - de.level) * 100, e -= (O.hp - de.hp) / 10 * 20, e -= (O.mp - de.mp) / 10 * 20, e -= (O.sp - de.sp) * 50, e -= (O.stability - de.stability) / 5 * 30, [
 				"str",
 				"dex",
 				"con",
@@ -4335,43 +4375,43 @@ var $ = /* @__PURE__ */ Ot({
 				"wis",
 				"cha"
 			].forEach((t) => {
-				e -= Oe(ue[t], k[t]);
-			}), F.backgrounds.forEach((t) => e -= t.cost), F.egos.forEach((t) => e -= t.cost), F.karmas.forEach((t) => e += t.refund), N.traits.forEach((t) => {
+				e -= Ae(de[t], O[t]);
+			}), P.backgrounds.forEach((t) => e -= t.cost), P.egos.forEach((t) => e -= t.cost), P.karmas.forEach((t) => e += t.refund), P.skills.forEach((t) => e -= t.cost), M.traits.forEach((t) => {
 				t.rolled && (e -= t.cost);
-			}), N.weapons.forEach((t) => {
+			}), M.weapons.forEach((t) => {
 				t.rolled && (e -= t.cost);
-			}), N.armors.forEach((t) => {
+			}), M.armors.forEach((t) => {
 				t.rolled && (e -= t.cost);
-			}), N.items.forEach((t) => {
+			}), M.items.forEach((t) => {
 				t.rolled && (e -= t.cost);
-			}), N.karmas.forEach((t) => {
+			}), M.karmas.forEach((t) => {
 				t.rolled && (e += t.refund);
-			}), N.skills.forEach((t) => {
+			}), M.skills.forEach((t) => {
 				t.rolled && (e -= t.cost);
-			}), j.enabled && (e -= 2e3), e;
-		}), Ae = (e, t) => {
-			let n = F[e].findIndex((e) => e.name === t.name);
-			n > -1 ? F[e].splice(n, 1) : F[e].push(t);
-		}, je = (e, t) => F[e].some((e) => e.name === t.name), Me = Ta(() => F.karmas.length > 0 || N.karmas.some((e) => e.name && e.rolled)), Ne = () => {
+			}), A.enabled && (e -= 2e3), e;
+		}), Me = (e, t) => {
+			let n = P[e].findIndex((e) => e.name === t.name);
+			n > -1 ? P[e].splice(n, 1) : P[e].push(t);
+		}, Ne = (e, t) => P[e].some((e) => e.name === t.name), Pe = Ta(() => P.karmas.length > 0 || M.karmas.some((e) => e.name && e.rolled)), Fe = () => {
 			let e = (e) => e.some((e) => e.name && !e.rolled);
-			if (e(N.traits) || e(N.weapons) || e(N.armors) || e(N.items) || e(N.karmas) || e(N.skills)) {
+			if (e(M.traits) || e(M.weapons) || e(M.armors) || e(M.items) || e(M.karmas) || e(M.skills)) {
 				alert("您有自定义的 DIY 项目尚未点击【评估代价 (Roll)】，请先 Roll 点获取命运的标价！");
 				return;
 			}
 			n.value = "settings";
-		}, z = /* @__PURE__ */ Ot({
+		}, R = /* @__PURE__ */ Ot({
 			ei: "I",
 			sn: "N",
 			tf: "T",
 			jp: "J"
-		}), Pe = Ta(() => `${z.ei}${z.sn}${z.tf}${z.jp}`), Fe = /* @__PURE__ */ H("硬核 (Hardcore)"), Ie = () => {
+		}), Ie = Ta(() => `${R.ei}${R.sn}${R.tf}${R.jp}`), z = /* @__PURE__ */ H("硬核 (Hardcore)"), Le = () => {
 			navigator.clipboard.writeText(s.value).catch(() => {}), o.value = !1, C();
-		}, Le = async () => {
+		}, Re = async () => {
 			if (r.value) return;
 			r.value = !0;
 			let e = "";
 			try {
-				let t = Object.entries(E.sensitiveToggles).filter(([e, t]) => t).map(([e]) => e).join(", ") || "完全纯净无敏感内容", i = String(ie.value).replace(/[\r\n]+/g, " "), a = String(E.dmPersonality).replace(/[\r\n]+/g, " "), c = [
+				let t = Object.entries(E.sensitiveToggles).filter(([e, t]) => t).map(([e]) => e).join(", ") || "完全纯净无敏感内容", i = String(ae.value).replace(/[\r\n]+/g, " "), a = String(E.dmPersonality).replace(/[\r\n]+/g, " "), c = [
 					"L巢地表废墟",
 					"崩塌商业街",
 					"废弃工业区",
@@ -4525,16 +4565,16 @@ var $ = /* @__PURE__ */ Ot({
 						当前HP: 100,
 						最大MP: 50,
 						当前MP: 50,
-						理智值: 10,
+						理智值: 20,
 						理智稳定性: 50,
-						肢体状态: "完好",
-						武器: "无",
-						服装: "无",
-						饰品: "无",
-						能力: "无",
-						心里话: "...",
-						核心记忆: "无",
-						战斗状态: "正常",
+						肢体状态: "\"完好\"",
+						武器: "\"无\"",
+						服装: "\"无\"",
+						饰品: "\"无\"",
+						能力: "\"无\"",
+						心里话: "\"...\"",
+						核心记忆: "\"无\"",
+						战斗状态: "\"正常\"",
 						好感度: 0,
 						恐惧度: 0,
 						信任度: 0,
@@ -4544,49 +4584,53 @@ var $ = /* @__PURE__ */ Ot({
 					系统设置: { BGM配置: { 状态: "开启" } }
 				};
 				if (E.character === "custom") {
-					f.玩家角色.基础属性.等级 = k.level || 1, f.玩家角色.基础属性.最大HP = k.hp || 100, f.玩家角色.基础属性.当前HP = k.hp || 100, f.玩家角色.基础属性.最大MP = k.mp || 50, f.玩家角色.基础属性.当前MP = k.mp || 50, f.玩家角色.基础属性.理智值 = k.sp || 20, f.玩家角色.基础属性.理智稳定性 = k.stability || 50, f.玩家角色.基础属性.骰子点数 = ke.value || 0, Object.assign(f.玩家角色.基础属性.六维, {
-						力量: k.str || 10,
-						敏捷: k.dex || 10,
-						体质: k.con || 10,
-						智力: k.int || 10,
-						感知: k.wis || 10,
-						魅力: k.cha || 10
-					}), f.玩家角色.基础属性.称号 = A.name || "自定义异端";
+					f.玩家角色.基础属性.等级 = O.level || 1, f.玩家角色.基础属性.最大HP = O.hp || 100, f.玩家角色.基础属性.当前HP = O.hp || 100, f.玩家角色.基础属性.最大MP = O.mp || 50, f.玩家角色.基础属性.当前MP = O.mp || 50, f.玩家角色.基础属性.理智值 = O.sp || 20, f.玩家角色.基础属性.理智稳定性 = O.stability || 50, f.玩家角色.基础属性.骰子点数 = je.value || 0, Object.assign(f.玩家角色.基础属性.六维, {
+						力量: O.str || 10,
+						敏捷: O.dex || 10,
+						体质: O.con || 10,
+						智力: O.int || 10,
+						感知: O.wis || 10,
+						魅力: O.cha || 10
+					}), f.玩家角色.基础属性.称号 = k.name || "自定义异端";
 					let e = {};
-					(F.karmas || []).forEach((t) => {
+					(P.karmas || []).forEach((t) => {
 						t && t.name && (e[d(t.name)] = t.desc);
-					}), N.karmas.forEach((t) => {
+					}), M.karmas.forEach((t) => {
 						t.rolled && t.name && (e[d(t.name)] = t.desc);
 					}), Object.keys(e).length > 0 && (f.玩家角色.基础属性.专属业障 = e);
 					let t = [];
-					F.egos && t.push(...F.egos), N.weapons.forEach((e) => {
+					P.egos && t.push(...P.egos), M.weapons.forEach((e) => {
 						e.rolled && e.name && t.push(e);
-					}), t.length > 0 && (f.玩家角色.武装战力.主武器 = `"${Re(t[0].name)} [${Re(t[0].tier || "未知评级")}]"`, t.slice(1).forEach((e) => {
+					}), t.length > 0 && (f.玩家角色.武装战力.主武器 = `"${B(t[0].name)} [${B(t[0].tier || "未知评级")}]"`, t.slice(1).forEach((e) => {
 						f.玩家角色.武装战力.背包道具[d(e.name)] = {
 							数量: 1,
-							描述: `"[${Re(e.tier || "未知评级")}] ${Re(e.desc || "未知")}"`
+							描述: `"[${B(e.tier || "未知评级")}] ${B(e.desc || "未知")}"`
 						};
 					}));
 					let n = [];
-					N.armors.forEach((e) => {
+					M.armors.forEach((e) => {
 						e.rolled && e.name && n.push(e);
-					}), n.length > 0 && (f.玩家角色.武装战力.防具 = `"${Re(n[0].name)} [${Re(n[0].tier || "未知评级")}]"`, n.slice(1).forEach((e) => {
+					}), n.length > 0 && (f.玩家角色.武装战力.防具 = `"${B(n[0].name)} [${B(n[0].tier || "未知评级")}]"`, n.slice(1).forEach((e) => {
 						f.玩家角色.武装战力.背包道具[d(e.name)] = {
 							数量: 1,
-							描述: `"[${Re(e.tier || "未知评级")}] ${Re(e.desc || "未知")}"`
+							描述: `"[${B(e.tier || "未知评级")}] ${B(e.desc || "未知")}"`
 						};
-					})), N.items.forEach((e) => {
+					})), M.items.forEach((e) => {
 						e.rolled && e.name && (f.玩家角色.武装战力.背包道具[d(e.name)] = {
 							数量: 1,
-							描述: `"[${Re(e.tier || "未知评级")}] ${Re(e.desc || "未知")}"`
+							描述: `"[${B(e.tier || "未知评级")}] ${B(e.desc || "未知")}"`
 						});
-					}), N.skills.length > 0 && (delete f.玩家角色.武装战力.技能列表.无, N.skills.forEach((e) => {
-						e.rolled && e.name && (f.玩家角色.武装战力.技能列表[d(e.name)] = `"[${Re(e.tier || "未知评级")}] ${Re(e.desc || "未知")}"`);
-					}));
+					});
 					let r = [];
-					F.backgrounds && F.backgrounds.forEach((e) => r.push(`【${e.name}】: ${e.desc}`)), N.traits.forEach((e) => {
-						e.rolled && e.name && r.push(`【${e.name}】(${e.tier}): ${e.desc}`);
-					}), j.enabled && j.name && (delete f.核心同伴.无, f.核心同伴[d(j.name)] = {
+					P.skills && r.push(...P.skills), M.skills.forEach((e) => {
+						e.rolled && e.name && r.push(e);
+					}), r.length > 0 && (delete f.玩家角色.武装战力.技能列表.无, r.forEach((e) => {
+						f.玩家角色.武装战力.技能列表[d(e.name)] = `"[${B(e.tier || "未知评级")}] ${B(e.desc || "未知")}"`;
+					}));
+					let i = [];
+					P.backgrounds && P.backgrounds.forEach((e) => i.push(`【${e.name}】: ${e.desc}`)), M.traits.forEach((e) => {
+						e.rolled && e.name && i.push(`【${e.name}】(${e.tier}): ${e.desc}`);
+					}), A.enabled && A.name && (delete f.核心同伴.无, f.核心同伴[d(A.name)] = {
 						类型: "\"自定义\"",
 						等级: 1,
 						最大HP: 100,
@@ -4608,13 +4652,11 @@ var $ = /* @__PURE__ */ Ot({
 						信任度: 50,
 						欲望度: 20,
 						复合状态: "\"无\""
-					}, u += `\n📌 **同行伙伴：** 【${j.name}】 - ${j.desc}`), t.length > 0 && (u += "\n📌 **携带武器：** " + t.map((e) => `【${e.name}】(${e.tier}): ${e.desc}`).join(" | ")), n.length > 0 && (u += "\n📌 **防具装备：** " + n.map((e) => `【${e.name}】(${e.tier}): ${e.desc}`).join(" | "));
-					let i = N.items.filter((e) => e.rolled && e.name).map((e) => `【${e.name}】: ${e.desc}`);
-					i.length > 0 && (u += "\n📌 **背包道具：** " + i.join(" | "));
-					let a = N.skills.filter((e) => e.rolled && e.name).map((e) => `【${e.name}】: ${e.desc}`);
-					a.length > 0 && (u += "\n📌 **掌握技能：** " + a.join(" | ")), u += `\n📌 **种族/职业：** ${A.race || "未知"} / ${A.profession || "未知"}`, u += `\n📌 **外貌与性格：** ${A.desc || "无"}`, r.length > 0 && (u += "\n📌 **专属特质/背景：**\n  - " + r.join("\n  - ")), ge.value && (u += `\n📌 **自定义脑洞：** ${ge.value}`), p.value && (p.value.startsWith("data:image") ? u += "\n📌 **玩家角色立绘参考：** [玩家已上传本地立绘，请根据外貌特征描述进行合理想象]" : u += `\n📌 **玩家角色立绘参考：** ${p.value}`);
+					}, u += `\n📌 **同行伙伴：** 【${A.name}】 - ${A.desc}`), t.length > 0 && (u += "\n📌 **携带武器：** " + t.map((e) => `【${e.name}】(${e.tier}): ${e.desc}`).join(" | ")), n.length > 0 && (u += "\n📌 **防具装备：** " + n.map((e) => `【${e.name}】(${e.tier}): ${e.desc}`).join(" | "));
+					let a = M.items.filter((e) => e.rolled && e.name).map((e) => `【${e.name}】: ${e.desc}`);
+					a.length > 0 && (u += "\n📌 **背包道具：** " + a.join(" | ")), r.length > 0 && (u += "\n📌 **掌握技能：** " + r.map((e) => `【${e.name}】: ${e.desc}`).join(" | ")), u += `\n📌 **种族/职业：** ${k.race || "未知"} / ${k.profession || "未知"}`, u += `\n📌 **外貌与性格：** ${k.desc || "无"}`, i.length > 0 && (u += "\n📌 **专属特质/背景：**\n  - " + i.join("\n  - ")), _e.value && (u += `\n📌 **自定义脑洞：** ${_e.value}`), p.value && (p.value.startsWith("data:image") ? u += "\n📌 **玩家角色立绘参考：** [玩家已上传本地立绘，请根据外貌特征描述进行合理想象]" : u += `\n📌 **玩家角色立绘参考：** ${p.value}`);
 					let o = "\n\n🔥 **【DM核心裁定法则（AI必读）】** 🔥\n";
-					o += "1. **数值自动补全：** 若玩家在自定义的武器/防具/道具/特质中未明确写出具体的骰子数值（如1d8、1d10+2、护甲减免%等），请DM务必根据其选择的【评级】和世界书规则，在开局描述时自动为其赋予合理的具体数值！\n", o += "2. **合理性惩罚（等价交换）：** DM拥有绝对的解释与修改权！若玩家填写的物品强度与所选【评级】严重不符（例如：选了普通级却写着秒杀全场），或者高评级神装未写明致命代价，DM必须在开局时强行修改其效果，或为其附加极其惨烈的隐藏代价（如：每次使用扣除半管血、引来首脑注视等）。\n", ke.value < 0 && (o += `3. **命运负债清算：** 玩家当前透支了 ${Math.abs(ke.value)} 点数。透支越多，开局遭遇的厄运越致命。请DM在开局或后续流程中，安排高维存在、黑市商人或极端环境来强行索要这笔债务！\n`), u += o;
+					o += "1. **数值自动补全：** 若玩家在自定义的武器/防具/道具/特质中未明确写出具体的骰子数值（如1d8、1d10+2、护甲减免%等），请DM务必根据其选择的【评级】和世界书规则，在开局描述时自动为其赋予合理的具体数值！\n", o += "2. **合理性惩罚（等价交换）：** DM拥有绝对的解释与修改权！若玩家填写的物品强度与所选【评级】严重不符（例如：选了普通级却写着秒杀全场），或者高评级神装未写明致命代价，DM必须在开局时强行修改其效果，或为其附加极其惨烈的隐藏代价（如：每次使用扣除半管血、引来首脑注视等）。\n", je.value < 0 && (o += `3. **命运负债清算：** 玩家当前透支了 ${Math.abs(je.value)} 点数。透支越多，开局遭遇的厄运越致命。请DM在开局或后续流程中，安排高维存在、黑市商人或极端环境来强行索要这笔债务！\n`), u += o;
 				} else {
 					let e = {
 						xingluo: {
@@ -4717,7 +4759,7 @@ var $ = /* @__PURE__ */ Ot({
 						魅力: e.cha
 					}, f.玩家角色.武装战力.主武器 = e.weapon, f.玩家角色.武装战力.防具 = e.armor, f.玩家角色.基础属性.专属业障 = e.karma);
 				}
-				u += `\n📌 **心理锚点(MBTI)：** ${Pe.value}\n📌 **世界难度：** ${Fe.value}`;
+				u += `\n📌 **心理锚点(MBTI)：** ${Ie.value}\n📌 **世界难度：** ${z.value}`;
 				let m = "", h = (e, t = "") => {
 					for (let n in e) if (Object.prototype.hasOwnProperty.call(e, n)) {
 						if (n === "$$meta") continue;
@@ -4744,10 +4786,10 @@ var $ = /* @__PURE__ */ Ot({
 					r.value = !1;
 				}, 500);
 			}
-		}, Re = (e) => typeof e == "string" ? e.replace(/"/g, "\\\"").replace(/\n/g, " ") : e;
+		}, B = (e) => typeof e == "string" ? e.replace(/"/g, "\\\"").replace(/\n/g, " ") : e;
 		return (e, w) => t.value ? (K(), q("div", eu, [
 			J("div", {
-				class: M(["bgm-player", { "is-visible": a.value }]),
+				class: j(["bgm-player", { "is-visible": a.value }]),
 				innerHTML: c.value
 			}, null, 10, tu),
 			o.value ? (K(), q("div", nu, [J("div", ru, [
@@ -4765,22 +4807,9 @@ var $ = /* @__PURE__ */ Ot({
 				}, null, 40, iu),
 				J("button", {
 					class: "modal-btn",
-					onClick: Ie
+					onClick: Le
 				}, "一键复制并关闭")
 			])])) : X("", !0),
-			n.value !== "check" && n.value !== "already_started" && n.value !== "transition" ? (K(), q("button", {
-				key: 1,
-				class: "pm-btn-small",
-				style: {
-					position: "absolute",
-					top: "20px",
-					left: "20px",
-					"z-index": "300",
-					background: "rgba(255,255,255,0.9)",
-					"box-shadow": "0 2px 10px rgba(0,0,0,0.2)"
-				},
-				onClick: _
-			}, " ◀ 返回上一步 ")) : X("", !0),
 			Ji(Va, {
 				name: "fade",
 				mode: "out-in"
@@ -4810,10 +4839,10 @@ var $ = /* @__PURE__ */ Ot({
 					J("div", su, [(K(!0), q(G, null, W(v, (e) => (K(), q("div", {
 						key: e.id,
 						class: "sys-row"
-					}, [J("span", null, I(e.label), 1), J("span", null, [e.status === "loading" ? (K(), q("span", cu, "Checking...")) : (K(), q("span", {
+					}, [J("span", null, F(e.label), 1), J("span", null, [e.status === "loading" ? (K(), q("span", cu, "Checking...")) : (K(), q("span", {
 						key: 1,
-						class: M(e.status === "ok" ? "status-ok" : "status-warn")
-					}, I(e.statusText), 3))])]))), 128))]),
+						class: j(e.status === "ok" ? "status-ok" : "status-warn")
+					}, F(e.statusText), 3))])]))), 128))]),
 					J("div", lu, [J("button", {
 						disabled: i.value,
 						class: "sys-btn",
@@ -4822,7 +4851,7 @@ var $ = /* @__PURE__ */ Ot({
 						disabled: !S.value || i.value,
 						class: "sys-btn sys-btn-primary",
 						onClick: ne
-					}, I(S.value ? "开始游戏" : "环境异常或校验中..."), 9, du)])
+					}, F(S.value ? "开始游戏" : "环境异常或校验中..."), 9, du)])
 				])) : n.value === "transition" ? (K(), q("div", fu, [...w[56] ||= [J("div", { class: "note-title" }, "【系统提示：来自梓墨的笔记簿】", -1), J("ul", { class: "note-content" }, [
 					J("li", null, [J("strong", null, "RP（玩家输入）："), Y("在很大程度上决定了逆转生死的关键，只小小输入几句话的话旅人sama是不会成为真正的英雄的哦~")]),
 					J("li", null, [
@@ -4845,7 +4874,7 @@ var $ = /* @__PURE__ */ Ot({
 						J("p", null, [
 							J("q", null, [
 								w[60] ||= Y("“死亡并未宽恕你，", -1),
-								J("span", hu, I(b.value ? b.value : "伤痕累累的轮回者"), 1),
+								J("span", hu, F(b.value ? b.value : "伤痕累累的轮回者"), 1),
 								w[61] ||= Y("。”", -1)
 							]),
 							w[62] ||= Y("她微微欠身，目光扫过你灵魂上烙印的扭曲伤痕，", -1),
@@ -4854,7 +4883,7 @@ var $ = /* @__PURE__ */ Ot({
 						(K(!0), q(G, null, W(y.value, (e, t) => (K(), q("div", {
 							key: t,
 							class: "trauma-text"
-						}, "⚠️ 永久精神创伤 [" + I(t) + "]: " + I(e), 1))), 128))
+						}, "⚠️ 永久精神创伤 [" + F(t) + "]: " + F(e), 1))), 128))
 					], 64)) : (K(), q(G, { key: 0 }, [
 						w[57] ||= J("p", null, "当眼前的黑暗如潮水般褪去，刺鼻的机油味与血腥味并未如期而至。取而代之的，是纸张的醇香与壁炉中木柴燃烧的噼啪声。你发现自己站在一间古旧而温暖的图书室内，高耸入云的书架上摆满了散发着微光的典籍。", -1),
 						w[58] ||= J("p", null, "在房间中央的红木长桌后，坐着一位戴着单片眼镜的少女。她合上手中那本厚重的《至理之书》，抬起头，用一种仿佛能看穿灵魂的目光注视着你。", -1),
@@ -4887,20 +4916,20 @@ var $ = /* @__PURE__ */ Ot({
 					name: "char-accordion",
 					class: "dossier-folder"
 				}, [J("summary", yu, [
-					J("span", bu, I(e.type), 1),
-					J("span", xu, I(e.name), 1),
-					J("span", Su, I(e.desc), 1)
+					J("span", bu, F(e.type), 1),
+					J("span", xu, F(e.name), 1),
+					J("span", Su, F(e.desc), 1)
 				]), J("div", Cu, [
-					e.quote ? (K(), q("div", wu, [J("q", null, I(e.quote), 1)])) : X("", !0),
-					J("div", Tu, [J("div", Eu, [w[69] ||= J("div", { class: "cp-box-title" }, "核心概念", -1), J("div", Du, I(e.concept), 1)]), J("div", Ou, [w[70] ||= J("div", { class: "cp-box-title" }, "生存难度", -1), J("div", ku, I(e.diff), 1)])]),
+					e.quote ? (K(), q("div", wu, [J("q", null, F(e.quote), 1)])) : X("", !0),
+					J("div", Tu, [J("div", Eu, [w[69] ||= J("div", { class: "cp-box-title" }, "核心概念", -1), J("div", Du, F(e.concept), 1)]), J("div", Ou, [w[70] ||= J("div", { class: "cp-box-title" }, "生存难度", -1), J("div", ku, F(e.diff), 1)])]),
 					J("div", Au, [J("div", {
 						class: "cp-btn-confirm",
-						onClick: (t) => ae(e.id)
+						onClick: (t) => oe(e.id)
 					}, "确认降临", 8, ju)])
 				])])), 64)), J("div", {
 					class: "dossier-custom",
-					onClick: xe
-				}, [...w[71] ||= [J("span", { class: "ds-type" }, "CUSTOM", -1), J("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (K(), q("div", Mu, [oe.value === "pre-roll" ? (K(), q("div", Nu, [
+					onClick: Se
+				}, [...w[71] ||= [J("span", { class: "ds-type" }, "CUSTOM", -1), J("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (K(), q("div", Mu, [se.value === "pre-roll" ? (K(), q("div", Nu, [
 					w[72] ||= J("h2", {
 						class: "settings-title",
 						style: { border: "none" }
@@ -4910,40 +4939,40 @@ var $ = /* @__PURE__ */ Ot({
 						"margin-bottom": "40px"
 					} }, "“在都市中，出生便决定了大部分的命运。来吧，看看你的底牌。”", -1),
 					J("div", {
-						class: M([{ rolling: O.value }, "roll-btn"]),
-						onClick: Ee
-					}, [O.value ? (K(), q("span", Fu, "...")) : (K(), q("span", Pu, "ROLL"))], 2)
-				])) : X("", !0), oe.value === "shopping" ? (K(), q("div", Iu, [
-					J("div", Lu, [J("div", null, [w[75] ||= J("h2", null, "黑市终端", -1), J("div", Ru, [w[74] ||= Y("商店品质评级: ", -1), J("span", zu, I(De.value) + " (Roll: " + I(ce.value) + ")", 1)])]), J("div", Bu, [w[76] ||= J("div", { style: {
+						class: j([{ rolling: D.value }, "roll-btn"]),
+						onClick: Oe
+					}, [D.value ? (K(), q("span", Fu, "...")) : (K(), q("span", Pu, "ROLL"))], 2)
+				])) : X("", !0), se.value === "shopping" ? (K(), q("div", Iu, [
+					J("div", Lu, [J("div", null, [w[75] ||= J("h2", null, "黑市终端", -1), J("div", Ru, [w[74] ||= Y("商店品质评级: ", -1), J("span", zu, F(ke.value) + " (Roll: " + F(le.value) + ")", 1)])]), J("div", Bu, [w[76] ||= J("div", { style: {
 						"font-size": "0.8em",
 						opacity: "0.8"
-					} }, "剩余可用点数", -1), J("div", { class: M([{ negative: ke.value < 0 }, "points-display"]) }, I(ke.value), 3)])]),
+					} }, "剩余可用点数", -1), J("div", { class: j([{ negative: je.value < 0 }, "points-display"]) }, F(je.value), 3)])]),
 					J("div", Vu, [J("div", Hu, [
 						w[78] ||= J("span", { style: {
 							"font-weight": "bold",
 							color: "var(--pm-dark-red)"
 						} }, "本地预设:", -1),
 						U(J("select", {
-							"onUpdate:modelValue": w[2] ||= (e) => ve.value = e,
+							"onUpdate:modelValue": w[2] ||= (e) => ye.value = e,
 							class: "preset-select"
-						}, [w[77] ||= J("option", { value: -1 }, "-- 选择预设 --", -1), (K(!0), q(G, null, W(_e.value, (e, t) => (K(), q("option", {
+						}, [w[77] ||= J("option", { value: -1 }, "-- 选择预设 --", -1), (K(!0), q(G, null, W(ve.value, (e, t) => (K(), q("option", {
 							key: t,
 							value: t
-						}, I(e.name), 9, Uu))), 128))], 512), [[Ho, ve.value]]),
+						}, F(e.name), 9, Uu))), 128))], 512), [[Ho, ye.value]]),
 						J("button", {
-							disabled: ve.value === -1,
+							disabled: ye.value === -1,
 							class: "preset-btn",
-							onClick: R
+							onClick: L
 						}, "读取", 8, Wu)
 					]), J("div", Gu, [U(J("input", {
-						"onUpdate:modelValue": w[3] ||= (e) => L.value = e,
+						"onUpdate:modelValue": w[3] ||= (e) => I.value = e,
 						type: "text",
 						class: "preset-input",
 						placeholder: "输入预设名称..."
-					}, null, 512), [[Z, L.value]]), J("button", {
-						disabled: !L.value,
+					}, null, 512), [[Z, I.value]]), J("button", {
+						disabled: !I.value,
 						class: "preset-btn",
-						onClick: be
+						onClick: xe
 					}, "保存当前配置", 8, Ku)])]),
 					J("div", qu, [
 						J("div", Ju, [
@@ -5007,29 +5036,29 @@ var $ = /* @__PURE__ */ Ot({
 							])]),
 							J("div", id, [
 								U(J("input", {
-									"onUpdate:modelValue": w[8] ||= (e) => A.name = e,
+									"onUpdate:modelValue": w[8] ||= (e) => k.name = e,
 									type: "text",
 									class: "pm-input",
 									placeholder: "姓名 (如: 罗兰)"
-								}, null, 512), [[Z, A.name]]),
+								}, null, 512), [[Z, k.name]]),
 								U(J("input", {
-									"onUpdate:modelValue": w[9] ||= (e) => A.race = e,
+									"onUpdate:modelValue": w[9] ||= (e) => k.race = e,
 									type: "text",
 									class: "pm-input",
 									placeholder: "种族 (如: 人类/改造人)"
-								}, null, 512), [[Z, A.race]]),
+								}, null, 512), [[Z, k.race]]),
 								U(J("input", {
-									"onUpdate:modelValue": w[10] ||= (e) => A.profession = e,
+									"onUpdate:modelValue": w[10] ||= (e) => k.profession = e,
 									type: "text",
 									class: "pm-input",
 									placeholder: "职业 (如: 九阶收尾人)"
-								}, null, 512), [[Z, A.profession]])
+								}, null, 512), [[Z, k.profession]])
 							]),
 							U(J("textarea", {
-								"onUpdate:modelValue": w[11] ||= (e) => A.desc = e,
+								"onUpdate:modelValue": w[11] ||= (e) => k.desc = e,
 								class: "pm-textarea",
 								placeholder: "外貌特征与性格描述... (如: 穿着黑色西装，总是带着疲惫的笑容，极度厌恶背叛)"
-							}, null, 512), [[Z, A.desc]]),
+							}, null, 512), [[Z, k.desc]]),
 							w[80] ||= J("p", { style: {
 								color: "#888",
 								"font-size": "0.85em",
@@ -5043,15 +5072,15 @@ var $ = /* @__PURE__ */ Ot({
 									w[81] ||= J("span", { class: "stat-name" }, "等级 (Max 30)", -1),
 									J("div", cd, [
 										J("button", {
-											disabled: k.level <= 1,
+											disabled: O.level <= 1,
 											class: "stat-btn",
-											onClick: w[12] ||= (e) => k.level--
+											onClick: w[12] ||= (e) => O.level--
 										}, "-", 8, ld),
-										J("span", ud, I(k.level), 1),
+										J("span", ud, F(O.level), 1),
 										J("button", {
-											disabled: k.level >= 30,
+											disabled: O.level >= 30,
 											class: "stat-btn",
-											onClick: w[13] ||= (e) => k.level++
+											onClick: w[13] ||= (e) => O.level++
 										}, "+", 8, dd)
 									]),
 									w[82] ||= J("span", { class: "stat-cost" }, "100/级", -1)
@@ -5060,14 +5089,14 @@ var $ = /* @__PURE__ */ Ot({
 									w[83] ||= J("span", { class: "stat-name" }, "最大 HP", -1),
 									J("div", pd, [
 										J("button", {
-											disabled: k.hp <= 10,
+											disabled: O.hp <= 10,
 											class: "stat-btn",
-											onClick: w[14] ||= (e) => k.hp -= 10
+											onClick: w[14] ||= (e) => O.hp -= 10
 										}, "-", 8, md),
-										J("span", hd, I(k.hp), 1),
+										J("span", hd, F(O.hp), 1),
 										J("button", {
 											class: "stat-btn",
-											onClick: w[15] ||= (e) => k.hp += 10
+											onClick: w[15] ||= (e) => O.hp += 10
 										}, "+")
 									]),
 									w[84] ||= J("span", { class: "stat-cost" }, "20/点", -1)
@@ -5076,14 +5105,14 @@ var $ = /* @__PURE__ */ Ot({
 									w[85] ||= J("span", { class: "stat-name" }, "最大 MP", -1),
 									J("div", _d, [
 										J("button", {
-											disabled: k.mp <= 10,
+											disabled: O.mp <= 10,
 											class: "stat-btn",
-											onClick: w[16] ||= (e) => k.mp -= 10
+											onClick: w[16] ||= (e) => O.mp -= 10
 										}, "-", 8, vd),
-										J("span", yd, I(k.mp), 1),
+										J("span", yd, F(O.mp), 1),
 										J("button", {
 											class: "stat-btn",
-											onClick: w[17] ||= (e) => k.mp += 10
+											onClick: w[17] ||= (e) => O.mp += 10
 										}, "+")
 									]),
 									w[86] ||= J("span", { class: "stat-cost" }, "20/点", -1)
@@ -5092,15 +5121,15 @@ var $ = /* @__PURE__ */ Ot({
 									w[87] ||= J("span", { class: "stat-name" }, "理智值 (SP)", -1),
 									J("div", xd, [
 										J("button", {
-											disabled: k.sp <= 10,
+											disabled: O.sp <= 10,
 											class: "stat-btn",
-											onClick: w[18] ||= (e) => k.sp--
+											onClick: w[18] ||= (e) => O.sp--
 										}, "-", 8, Sd),
-										J("span", Cd, I(k.sp), 1),
+										J("span", Cd, F(O.sp), 1),
 										J("button", {
-											disabled: k.sp >= 50,
+											disabled: O.sp >= 50,
 											class: "stat-btn",
-											onClick: w[19] ||= (e) => k.sp++
+											onClick: w[19] ||= (e) => O.sp++
 										}, "+", 8, wd)
 									]),
 									w[88] ||= J("span", { class: "stat-cost" }, "50/点", -1)
@@ -5109,15 +5138,15 @@ var $ = /* @__PURE__ */ Ot({
 									w[89] ||= J("span", { class: "stat-name" }, "理智稳定性", -1),
 									J("div", Ed, [
 										J("button", {
-											disabled: k.stability <= 10,
+											disabled: O.stability <= 10,
 											class: "stat-btn",
-											onClick: w[20] ||= (e) => k.stability -= 5
+											onClick: w[20] ||= (e) => O.stability -= 5
 										}, "-", 8, Dd),
-										J("span", Od, I(k.stability), 1),
+										J("span", Od, F(O.stability), 1),
 										J("button", {
-											disabled: k.stability >= 100,
+											disabled: O.stability >= 100,
 											class: "stat-btn",
-											onClick: w[21] ||= (e) => k.stability += 5
+											onClick: w[21] ||= (e) => O.stability += 5
 										}, "+", 8, kd)
 									]),
 									w[90] ||= J("span", { class: "stat-cost" }, "30/点", -1)
@@ -5140,17 +5169,17 @@ var $ = /* @__PURE__ */ Ot({
 							], (e) => J("div", {
 								key: e,
 								class: "stat-row"
-							}, [J("span", jd, I(le[e]), 1), J("div", Md, [
+							}, [J("span", jd, F(ue[e]), 1), J("div", Md, [
 								J("button", {
-									disabled: k[e] <= 10,
+									disabled: O[e] <= 10,
 									class: "stat-btn",
-									onClick: (t) => k[e]--
+									onClick: (t) => O[e]--
 								}, "-", 8, Nd),
-								J("span", Pd, I(k[e]), 1),
+								J("span", Pd, F(O[e]), 1),
 								J("button", {
-									disabled: k[e] >= 20,
+									disabled: O[e] >= 20,
 									class: "stat-btn",
-									onClick: (t) => k[e]++
+									onClick: (t) => O[e]++
 								}, "+", 8, Fd)
 							])])), 64))])
 						]),
@@ -5172,21 +5201,21 @@ var $ = /* @__PURE__ */ Ot({
 										"margin-top": "20px"
 									}
 								}, "自定义技能 / 战技", -1),
-								(K(!0), q(G, null, W(N.skills, (e, t) => (K(), q("div", {
+								(K(!0), q(G, null, W(M.skills, (e, t) => (K(), q("div", {
 									key: "skill" + t,
 									class: "diy-box"
 								}, [
-									J("div", Rd, [J("span", zd, "技能 #" + I(t + 1), 1), J("div", Bd, [
-										e.rolled ? (K(), q("span", Vd, "-" + I(e.cost) + " 点", 1)) : X("", !0),
+									J("div", Rd, [J("span", zd, "技能 #" + F(t + 1), 1), J("div", Bd, [
+										e.rolled ? (K(), q("span", Vd, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
-											onClick: (e) => he("skills", t)
+											onClick: (e) => ge("skills", t)
 										}, "评估代价 (Roll)", 8, Hd),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
-											onClick: (e) => me("skills", t)
+											onClick: (e) => he("skills", t)
 										}, "×", 8, Ud)
 									])]),
 									U(J("input", {
@@ -5206,14 +5235,14 @@ var $ = /* @__PURE__ */ Ot({
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
 										onChange: (t) => e.rolled = !1
-									}, [w[93] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(de, (e) => J("option", {
+									}, [w[93] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, qd)), 64))], 40, Kd), [[Ho, e.tier]])
+									}, F(e.label), 9, qd)), 64))], 40, Kd), [[Ho, e.tier]])
 								]))), 128)),
 								J("button", {
 									class: "btn-add-diy",
-									onClick: w[22] ||= (e) => pe("skills")
+									onClick: w[22] ||= (e) => me("skills")
 								}, "➕ 添加自定义技能")
 							]),
 							J("div", Jd, [
@@ -5226,21 +5255,21 @@ var $ = /* @__PURE__ */ Ot({
 										"margin-top": "20px"
 									}
 								}, "自定义背景 / 特质", -1),
-								(K(!0), q(G, null, W(N.traits, (e, t) => (K(), q("div", {
+								(K(!0), q(G, null, W(M.traits, (e, t) => (K(), q("div", {
 									key: "trait" + t,
 									class: "diy-box"
 								}, [
-									J("div", Yd, [J("span", Xd, "特质 #" + I(t + 1), 1), J("div", Zd, [
-										e.rolled ? (K(), q("span", Qd, "-" + I(e.cost) + " 点", 1)) : X("", !0),
+									J("div", Yd, [J("span", Xd, "特质 #" + F(t + 1), 1), J("div", Zd, [
+										e.rolled ? (K(), q("span", Qd, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
-											onClick: (e) => he("traits", t)
+											onClick: (e) => ge("traits", t)
 										}, "评估代价 (Roll)", 8, $d),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
-											onClick: (e) => me("traits", t)
+											onClick: (e) => he("traits", t)
 										}, "×", 8, ef)
 									])]),
 									U(J("input", {
@@ -5260,14 +5289,14 @@ var $ = /* @__PURE__ */ Ot({
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
 										onChange: (t) => e.rolled = !1
-									}, [w[95] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(de, (e) => J("option", {
+									}, [w[95] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, af)), 64))], 40, rf), [[Ho, e.tier]])
+									}, F(e.label), 9, af)), 64))], 40, rf), [[Ho, e.tier]])
 								]))), 128)),
 								J("button", {
 									class: "btn-add-diy",
-									onClick: w[23] ||= (e) => pe("traits")
+									onClick: w[23] ||= (e) => me("traits")
 								}, "➕ 添加自定义特质")
 							]),
 							J("div", of, [
@@ -5280,21 +5309,21 @@ var $ = /* @__PURE__ */ Ot({
 										"margin-top": "20px"
 									}
 								}, "自定义武器 / E.G.O", -1),
-								(K(!0), q(G, null, W(N.weapons, (e, t) => (K(), q("div", {
+								(K(!0), q(G, null, W(M.weapons, (e, t) => (K(), q("div", {
 									key: "weapon" + t,
 									class: "diy-box"
 								}, [
-									J("div", sf, [J("span", cf, "武器 #" + I(t + 1), 1), J("div", lf, [
-										e.rolled ? (K(), q("span", uf, "-" + I(e.cost) + " 点", 1)) : X("", !0),
+									J("div", sf, [J("span", cf, "武器 #" + F(t + 1), 1), J("div", lf, [
+										e.rolled ? (K(), q("span", uf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
-											onClick: (e) => he("weapons", t)
+											onClick: (e) => ge("weapons", t)
 										}, "评估代价 (Roll)", 8, df),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
-											onClick: (e) => me("weapons", t)
+											onClick: (e) => he("weapons", t)
 										}, "×", 8, ff)
 									])]),
 									U(J("input", {
@@ -5314,14 +5343,14 @@ var $ = /* @__PURE__ */ Ot({
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
 										onChange: (t) => e.rolled = !1
-									}, [w[97] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(de, (e) => J("option", {
+									}, [w[97] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, gf)), 64))], 40, hf), [[Ho, e.tier]])
+									}, F(e.label), 9, gf)), 64))], 40, hf), [[Ho, e.tier]])
 								]))), 128)),
 								J("button", {
 									class: "btn-add-diy",
-									onClick: w[24] ||= (e) => pe("weapons")
+									onClick: w[24] ||= (e) => me("weapons")
 								}, "➕ 添加自定义武器")
 							]),
 							J("div", _f, [
@@ -5334,21 +5363,21 @@ var $ = /* @__PURE__ */ Ot({
 										"margin-top": "20px"
 									}
 								}, "自定义防具 / 服饰", -1),
-								(K(!0), q(G, null, W(N.armors, (e, t) => (K(), q("div", {
+								(K(!0), q(G, null, W(M.armors, (e, t) => (K(), q("div", {
 									key: "armor" + t,
 									class: "diy-box"
 								}, [
-									J("div", vf, [J("span", yf, "防具 #" + I(t + 1), 1), J("div", bf, [
-										e.rolled ? (K(), q("span", xf, "-" + I(e.cost) + " 点", 1)) : X("", !0),
+									J("div", vf, [J("span", yf, "防具 #" + F(t + 1), 1), J("div", bf, [
+										e.rolled ? (K(), q("span", xf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
-											onClick: (e) => he("armors", t)
+											onClick: (e) => ge("armors", t)
 										}, "评估代价 (Roll)", 8, Sf),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
-											onClick: (e) => me("armors", t)
+											onClick: (e) => he("armors", t)
 										}, "×", 8, Cf)
 									])]),
 									U(J("input", {
@@ -5368,14 +5397,14 @@ var $ = /* @__PURE__ */ Ot({
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
 										onChange: (t) => e.rolled = !1
-									}, [w[99] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(de, (e) => J("option", {
+									}, [w[99] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, Df)), 64))], 40, Ef), [[Ho, e.tier]])
+									}, F(e.label), 9, Df)), 64))], 40, Ef), [[Ho, e.tier]])
 								]))), 128)),
 								J("button", {
 									class: "btn-add-diy",
-									onClick: w[25] ||= (e) => pe("armors")
+									onClick: w[25] ||= (e) => me("armors")
 								}, "➕ 添加自定义防具")
 							]),
 							J("div", Of, [
@@ -5388,21 +5417,21 @@ var $ = /* @__PURE__ */ Ot({
 										"margin-top": "20px"
 									}
 								}, "自定义道具 / 消耗品", -1),
-								(K(!0), q(G, null, W(N.items, (e, t) => (K(), q("div", {
+								(K(!0), q(G, null, W(M.items, (e, t) => (K(), q("div", {
 									key: "item" + t,
 									class: "diy-box"
 								}, [
-									J("div", kf, [J("span", Af, "道具 #" + I(t + 1), 1), J("div", jf, [
-										e.rolled ? (K(), q("span", Mf, "-" + I(e.cost) + " 点", 1)) : X("", !0),
+									J("div", kf, [J("span", Af, "道具 #" + F(t + 1), 1), J("div", jf, [
+										e.rolled ? (K(), q("span", Mf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
-											onClick: (e) => he("items", t)
+											onClick: (e) => ge("items", t)
 										}, "评估代价 (Roll)", 8, Nf),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
-											onClick: (e) => me("items", t)
+											onClick: (e) => he("items", t)
 										}, "×", 8, Pf)
 									])]),
 									U(J("input", {
@@ -5422,14 +5451,14 @@ var $ = /* @__PURE__ */ Ot({
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
 										onChange: (t) => e.rolled = !1
-									}, [w[101] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(de, (e) => J("option", {
+									}, [w[101] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, Rf)), 64))], 40, Lf), [[Ho, e.tier]])
+									}, F(e.label), 9, Rf)), 64))], 40, Lf), [[Ho, e.tier]])
 								]))), 128)),
 								J("button", {
 									class: "btn-add-diy",
-									onClick: w[26] ||= (e) => pe("items")
+									onClick: w[26] ||= (e) => me("items")
 								}, "➕ 添加自定义道具")
 							]),
 							J("div", zf, [
@@ -5443,7 +5472,7 @@ var $ = /* @__PURE__ */ Ot({
 										color: "var(--pm-dark-red)"
 									}
 								}, "自定义专属业障 (返还点数)", -1),
-								(K(!0), q(G, null, W(N.karmas, (e, t) => (K(), q("div", {
+								(K(!0), q(G, null, W(M.karmas, (e, t) => (K(), q("div", {
 									key: "karma" + t,
 									class: "diy-box",
 									style: {
@@ -5451,18 +5480,18 @@ var $ = /* @__PURE__ */ Ot({
 										background: "rgba(139, 0, 0, 0.02)"
 									}
 								}, [
-									J("div", Bf, [J("span", Vf, "业障 #" + I(t + 1), 1), J("div", Hf, [
-										e.rolled ? (K(), q("span", Uf, "+" + I(e.refund) + " 点", 1)) : X("", !0),
+									J("div", Bf, [J("span", Vf, "业障 #" + F(t + 1), 1), J("div", Hf, [
+										e.rolled ? (K(), q("span", Uf, "+" + F(e.refund) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											style: { background: "var(--pm-dark-red)" },
-											onClick: (e) => he("karmas", t)
+											onClick: (e) => ge("karmas", t)
 										}, "评估返还 (Roll)", 8, Wf),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
-											onClick: (e) => me("karmas", t)
+											onClick: (e) => he("karmas", t)
 										}, "×", 8, Gf)
 									])]),
 									U(J("input", {
@@ -5482,10 +5511,10 @@ var $ = /* @__PURE__ */ Ot({
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
 										onChange: (t) => e.rolled = !1
-									}, [w[103] ||= J("option", { value: "" }, "-- 选择痛苦评级 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
+									}, [w[103] ||= J("option", { value: "" }, "-- 选择痛苦评级 --", -1), (K(), q(G, null, W(pe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, I(e.label), 9, Yf)), 64))], 40, Jf), [[Ho, e.tier]])
+									}, F(e.label), 9, Yf)), 64))], 40, Jf), [[Ho, e.tier]])
 								]))), 128)),
 								J("button", {
 									class: "btn-add-diy",
@@ -5493,7 +5522,7 @@ var $ = /* @__PURE__ */ Ot({
 										"border-color": "var(--pm-dark-red)",
 										color: "var(--pm-dark-red)"
 									},
-									onClick: w[27] ||= (e) => pe("karmas")
+									onClick: w[27] ||= (e) => me("karmas")
 								}, "➕ 添加自定义业障")
 							])
 						]),
@@ -5508,73 +5537,88 @@ var $ = /* @__PURE__ */ Ot({
 								color: "var(--pm-text)",
 								"margin-bottom": "10px"
 							} }, "特殊背景 / 特质", -1),
-							J("div", Zf, [(K(!0), q(G, null, W(P.backgrounds, (e) => (K(), q("div", {
+							J("div", Zf, [(K(!0), q(G, null, W(N.backgrounds, (e) => (K(), q("div", {
 								key: e.name,
-								class: M([{ selected: je("backgrounds", e) }, "rl-card"]),
-								onClick: (t) => Ae("backgrounds", e)
+								class: j([{ selected: Ne("backgrounds", e) }, "rl-card"]),
+								onClick: (t) => Me("backgrounds", e)
 							}, [
-								J("div", $f, I(e.type), 1),
-								J("div", ep, I(e.name), 1),
-								J("div", tp, I(e.desc), 1),
-								J("div", np, "-" + I(e.cost) + " 点", 1)
+								J("div", $f, F(e.type), 1),
+								J("div", ep, F(e.name), 1),
+								J("div", tp, F(e.desc), 1),
+								J("div", np, "-" + F(e.cost) + " 点", 1)
 							], 10, Qf))), 128))]),
 							w[110] ||= J("h4", { style: {
 								color: "var(--pm-text)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "稀有遗物 / E.G.O", -1),
-							J("div", rp, [(K(!0), q(G, null, W(P.egos, (e) => (K(), q("div", {
+							J("div", rp, [(K(!0), q(G, null, W(N.egos, (e) => (K(), q("div", {
 								key: e.name,
-								class: M([{ selected: je("egos", e) }, "rl-card"]),
-								onClick: (t) => Ae("egos", e)
+								class: j([{ selected: Ne("egos", e) }, "rl-card"]),
+								onClick: (t) => Me("egos", e)
 							}, [
-								J("div", ap, I(e.type), 1),
-								J("div", op, I(e.name), 1),
-								J("div", sp, I(e.desc), 1),
-								J("div", cp, "-" + I(e.cost) + " 点", 1)
+								J("div", ap, F(e.type), 1),
+								J("div", op, F(e.name), 1),
+								J("div", sp, F(e.desc), 1),
+								J("div", cp, "-" + F(e.cost) + " 点", 1)
 							], 10, ip))), 128))]),
 							w[111] ||= J("h4", { style: {
+								color: "var(--pm-text)",
+								"margin-top": "25px",
+								"margin-bottom": "10px"
+							} }, "失落战技 / 奇点魔法", -1),
+							J("div", lp, [(K(!0), q(G, null, W(N.skills, (e) => (K(), q("div", {
+								key: e.name,
+								class: j([{ selected: Ne("skills", e) }, "rl-card"]),
+								onClick: (t) => Me("skills", e)
+							}, [
+								J("div", dp, F(e.type), 1),
+								J("div", fp, F(e.name), 1),
+								J("div", pp, F(e.desc), 1),
+								J("div", mp, "-" + F(e.cost) + " 点", 1)
+							], 10, up))), 128))]),
+							w[112] ||= J("h4", { style: {
 								color: "var(--pm-dark-red)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "专属业障 (必须至少选择一项，可返还点数)", -1),
-							J("div", lp, [(K(!0), q(G, null, W(P.karmas, (e) => (K(), q("div", {
+							J("div", hp, [(K(!0), q(G, null, W(N.karmas, (e) => (K(), q("div", {
 								key: e.name,
-								class: M([{ selected: je("karmas", e) }, "rl-card"]),
-								onClick: (t) => Ae("karmas", e)
+								class: j([{ selected: Ne("karmas", e) }, "rl-card"]),
+								onClick: (t) => Me("karmas", e)
 							}, [
-								J("div", dp, I(e.type), 1),
-								J("div", fp, I(e.name), 1),
-								J("div", pp, I(e.desc), 1),
-								J("div", mp, "+" + I(e.refund) + " 点", 1)
-							], 10, up))), 128))])
+								J("div", _p, F(e.type), 1),
+								J("div", vp, F(e.name), 1),
+								J("div", yp, F(e.desc), 1),
+								J("div", bp, "+" + F(e.refund) + " 点", 1)
+							], 10, gp))), 128))])
 						]),
-						J("div", hp, [
-							w[113] ||= J("div", { class: "shop-title" }, "同行伙伴 (Companion) - 消耗 2000 点", -1),
-							J("label", gp, [U(J("input", {
-								"onUpdate:modelValue": w[28] ||= (e) => j.enabled = e,
+						J("div", xp, [
+							w[114] ||= J("div", { class: "shop-title" }, "同行伙伴 (Companion) - 消耗 2000 点", -1),
+							J("label", Sp, [U(J("input", {
+								"onUpdate:modelValue": w[28] ||= (e) => A.enabled = e,
 								type: "checkbox",
 								style: {
 									width: "20px",
 									height: "20px"
 								}
-							}, null, 512), [[zo, j.enabled]]), w[112] ||= Y(" 携带一名自定义伙伴降临废土 ", -1)]),
-							j.enabled ? (K(), q("div", _p, [U(J("input", {
-								"onUpdate:modelValue": w[29] ||= (e) => j.name = e,
+							}, null, 512), [[zo, A.enabled]]), w[113] ||= Y(" 携带一名自定义伙伴降临废土 ", -1)]),
+							A.enabled ? (K(), q("div", Cp, [U(J("input", {
+								"onUpdate:modelValue": w[29] ||= (e) => A.name = e,
 								type: "text",
 								class: "pm-input",
 								style: { margin: "0" },
 								placeholder: "伙伴姓名 (如: 安吉拉)"
-							}, null, 512), [[Z, j.name]]), U(J("textarea", {
-								"onUpdate:modelValue": w[30] ||= (e) => j.desc = e,
+							}, null, 512), [[Z, A.name]]), U(J("textarea", {
+								"onUpdate:modelValue": w[30] ||= (e) => A.desc = e,
 								class: "pm-textarea",
 								style: { margin: "0" },
 								placeholder: "伙伴的身份、能力与性格设定..."
-							}, null, 512), [[Z, j.desc]])])) : X("", !0)
+							}, null, 512), [[Z, A.desc]])])) : X("", !0)
 						]),
-						J("div", vp, [
-							w[114] ||= J("div", { class: "shop-title" }, "完全自定义议约", -1),
-							w[115] ||= J("p", { style: {
+						J("div", wp, [
+							w[115] ||= J("div", { class: "shop-title" }, "完全自定义议约", -1),
+							w[116] ||= J("p", { style: {
 								color: "#555",
 								"font-size": "0.9em"
 							} }, [
@@ -5582,134 +5626,134 @@ var $ = /* @__PURE__ */ Ot({
 								J("br"),
 								Y("注意：DM 会在游戏开始后为你进行点数估价，并强行缝合一个恶毒的专属业障。")
 							], -1),
-							J("div", yp, [U(J("textarea", {
-								"onUpdate:modelValue": w[31] ||= (e) => ge.value = e,
+							J("div", Tp, [U(J("textarea", {
+								"onUpdate:modelValue": w[31] ||= (e) => _e.value = e,
 								placeholder: "在此输入你的自定义设定..."
-							}, null, 512), [[Z, ge.value]])])
+							}, null, 512), [[Z, _e.value]])])
 						])
 					]),
-					J("div", bp, [
-						ke.value < 0 ? (K(), q("div", xp, [...w[116] ||= [
+					J("div", Ep, [
+						je.value < 0 ? (K(), q("div", Dp, [...w[117] ||= [
 							Y(" 【跑团娘的嘲弄】哎呀呀，点数透支了呢？没关系，你可以带着这身华丽的负债降临。", -1),
 							J("br", null, null, -1),
 							Y(" 只不过……开局负数骰子意味着你已经被都市的厄运标记。准备好在『心灵镜牢』里打一辈子黑工还债了吗，可怜的耗子？ ", -1)
 						]])) : X("", !0),
-						!Me.value && !ge.value ? (K(), q("p", Sp, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : X("", !0),
+						!Pe.value && !_e.value ? (K(), q("p", Op, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : X("", !0),
 						J("button", {
-							disabled: !Me.value && !ge.value,
+							disabled: !Pe.value && !_e.value,
 							class: "pm-btn-embark",
-							onClick: Ne
-						}, "确认降临姿态", 8, Cp)
+							onClick: Fe
+						}, "确认降临姿态", 8, kp)
 					])
-				])) : X("", !0)])) : n.value === "settings" ? (K(), q("div", wp, [
-					w[124] ||= J("div", { class: "settings-title" }, "契约与法则", -1),
-					w[125] ||= J("div", { class: "settings-warning" }, "“深渊的边界由你划定。一旦铭刻，不可反悔。”", -1),
-					J("div", Tp, [w[117] ||= Y("已选定降临姿态：", -1), J("span", Ep, I(ie.value), 1)]),
-					J("div", Dp, [J("div", Op, [
-						w[118] ||= J("div", {
+				])) : X("", !0)])) : n.value === "settings" ? (K(), q("div", Ap, [
+					w[125] ||= J("div", { class: "settings-title" }, "契约与法则", -1),
+					w[126] ||= J("div", { class: "settings-warning" }, "“深渊的边界由你划定。一旦铭刻，不可反悔。”", -1),
+					J("div", jp, [w[118] ||= Y("已选定降临姿态：", -1), J("span", Mp, F(ae.value), 1)]),
+					J("div", Np, [J("div", Pp, [
+						w[119] ||= J("div", {
 							class: "dm-title",
 							style: {
 								"font-size": "1.2em",
 								"margin-bottom": "10px"
 							}
 						}, "心理锚点 (MBTI)", -1),
-						w[119] ||= J("p", { style: {
+						w[120] ||= J("p", { style: {
 							"font-size": "0.85em",
 							color: "#666",
 							"margin-bottom": "15px"
 						} }, "决定你的理智恢复机制与卡门破防逻辑。", -1),
-						J("div", kp, [J("button", {
-							class: M([{ active: z.ei === "E" }, "mbti-btn"]),
-							onClick: w[32] ||= (e) => z.ei = "E"
+						J("div", Fp, [J("button", {
+							class: j([{ active: R.ei === "E" }, "mbti-btn"]),
+							onClick: w[32] ||= (e) => R.ei = "E"
 						}, "E (外向)", 2), J("button", {
-							class: M([{ active: z.ei === "I" }, "mbti-btn"]),
-							onClick: w[33] ||= (e) => z.ei = "I"
+							class: j([{ active: R.ei === "I" }, "mbti-btn"]),
+							onClick: w[33] ||= (e) => R.ei = "I"
 						}, "I (内向)", 2)]),
-						J("div", Ap, [J("button", {
-							class: M([{ active: z.sn === "S" }, "mbti-btn"]),
-							onClick: w[34] ||= (e) => z.sn = "S"
+						J("div", Ip, [J("button", {
+							class: j([{ active: R.sn === "S" }, "mbti-btn"]),
+							onClick: w[34] ||= (e) => R.sn = "S"
 						}, "S (感觉)", 2), J("button", {
-							class: M([{ active: z.sn === "N" }, "mbti-btn"]),
-							onClick: w[35] ||= (e) => z.sn = "N"
+							class: j([{ active: R.sn === "N" }, "mbti-btn"]),
+							onClick: w[35] ||= (e) => R.sn = "N"
 						}, "N (直觉)", 2)]),
-						J("div", jp, [J("button", {
-							class: M([{ active: z.tf === "T" }, "mbti-btn"]),
-							onClick: w[36] ||= (e) => z.tf = "T"
+						J("div", Lp, [J("button", {
+							class: j([{ active: R.tf === "T" }, "mbti-btn"]),
+							onClick: w[36] ||= (e) => R.tf = "T"
 						}, "T (思考)", 2), J("button", {
-							class: M([{ active: z.tf === "F" }, "mbti-btn"]),
-							onClick: w[37] ||= (e) => z.tf = "F"
+							class: j([{ active: R.tf === "F" }, "mbti-btn"]),
+							onClick: w[37] ||= (e) => R.tf = "F"
 						}, "F (情感)", 2)]),
-						J("div", Mp, [J("button", {
-							class: M([{ active: z.jp === "J" }, "mbti-btn"]),
-							onClick: w[38] ||= (e) => z.jp = "J"
+						J("div", Rp, [J("button", {
+							class: j([{ active: R.jp === "J" }, "mbti-btn"]),
+							onClick: w[38] ||= (e) => R.jp = "J"
 						}, "J (判断)", 2), J("button", {
-							class: M([{ active: z.jp === "P" }, "mbti-btn"]),
-							onClick: w[39] ||= (e) => z.jp = "P"
+							class: j([{ active: R.jp === "P" }, "mbti-btn"]),
+							onClick: w[39] ||= (e) => R.jp = "P"
 						}, "P (知觉)", 2)]),
-						J("div", Np, I(Pe.value), 1)
-					]), J("div", Pp, [
-						w[120] ||= J("div", {
+						J("div", zp, F(Ie.value), 1)
+					]), J("div", Bp, [
+						w[121] ||= J("div", {
 							class: "dm-title",
 							style: {
 								"font-size": "1.2em",
 								"margin-bottom": "10px"
 							}
 						}, "世界难度选择", -1),
-						w[121] ||= J("p", { style: {
+						w[122] ||= J("p", { style: {
 							"font-size": "0.85em",
 							color: "#666",
 							"margin-bottom": "15px"
 						} }, "决定废土对你的残酷程度。", -1),
 						J("button", {
-							class: M([{ active: Fe.value === "剧情 (Story)" }, "diff-btn"]),
-							onClick: w[40] ||= (e) => Fe.value = "剧情 (Story)"
+							class: j([{ active: z.value === "剧情 (Story)" }, "diff-btn"]),
+							onClick: w[40] ||= (e) => z.value = "剧情 (Story)"
 						}, "剧情 (Story) - 侧重体验，资源较多", 2),
 						J("button", {
-							class: M([{ active: Fe.value === "普通 (Normal)" }, "diff-btn"]),
-							onClick: w[41] ||= (e) => Fe.value = "普通 (Normal)"
+							class: j([{ active: z.value === "普通 (Normal)" }, "diff-btn"]),
+							onClick: w[41] ||= (e) => z.value = "普通 (Normal)"
 						}, "普通 (Normal) - 标准的废土生存", 2),
 						J("button", {
-							class: M([{ active: Fe.value === "硬核 (Hardcore)" }, "diff-btn"]),
-							onClick: w[42] ||= (e) => Fe.value = "硬核 (Hardcore)"
+							class: j([{ active: z.value === "硬核 (Hardcore)" }, "diff-btn"]),
+							onClick: w[42] ||= (e) => z.value = "硬核 (Hardcore)"
 						}, "硬核 (Hardcore) - 极易断肢，资源匮乏", 2),
 						J("button", {
-							class: M([{ active: Fe.value === "地狱 (Hell)" }, "diff-btn"]),
-							onClick: w[43] ||= (e) => Fe.value = "地狱 (Hell)"
+							class: j([{ active: z.value === "地狱 (Hell)" }, "diff-btn"]),
+							onClick: w[43] ||= (e) => z.value = "地狱 (Hell)"
 						}, "地狱 (Hell) - 机制杀频发，卡门时刻注视", 2)
 					])]),
-					J("div", Fp, [(K(!0), q(G, null, W(E.sensitiveToggles, (e, t) => (K(), q("div", {
+					J("div", Vp, [(K(!0), q(G, null, W(E.sensitiveToggles, (e, t) => (K(), q("div", {
 						key: t,
-						class: M(["toggle-btn", { active: e }]),
+						class: j(["toggle-btn", { active: e }]),
 						onClick: (n) => E.sensitiveToggles[t] = !e
-					}, I(String(t).replace(/_/g, " / ")), 11, Ip))), 128))]),
-					J("div", Lp, [
-						w[122] ||= J("div", { class: "dm-title" }, "观测者化身设定", -1),
-						w[123] ||= J("div", { class: "dm-desc" }, "“接下来，我的化身将与你同行，但她只会作为无情的DM存在。你希望她用什么态度来见证你的挣扎？”", -1),
-						J("div", Rp, [
+					}, F(String(t).replace(/_/g, " / ")), 11, Hp))), 128))]),
+					J("div", Up, [
+						w[123] ||= J("div", { class: "dm-title" }, "观测者化身设定", -1),
+						w[124] ||= J("div", { class: "dm-desc" }, "“接下来，我的化身将与你同行，但她只会作为无情的DM存在。你希望她用什么态度来见证你的挣扎？”", -1),
+						J("div", Wp, [
 							J("button", {
-								class: M([{ active: E.dmPersonality === "三无机娘，冷酷客观，毫无感情波动" }, "pm-preset-btn"]),
+								class: j([{ active: E.dmPersonality === "三无机娘，冷酷客观，毫无感情波动" }, "pm-preset-btn"]),
 								onClick: w[44] ||= (e) => E.dmPersonality = "三无机娘，冷酷客观，毫无感情波动"
 							}, "三无机娘", 2),
 							J("button", {
-								class: M([{ active: E.dmPersonality === "腹黑乐子人，喜欢看玩家挣扎，语气带有优雅的嘲讽" }, "pm-preset-btn"]),
+								class: j([{ active: E.dmPersonality === "腹黑乐子人，喜欢看玩家挣扎，语气带有优雅的嘲讽" }, "pm-preset-btn"]),
 								onClick: w[45] ||= (e) => E.dmPersonality = "腹黑乐子人，喜欢看玩家挣扎，语气带有优雅的嘲讽"
 							}, "腹黑乐子人", 2),
 							J("button", {
-								class: M([{ active: E.dmPersonality === "温柔病娇，一边哭泣一边宣告你的断头，极度排外" }, "pm-preset-btn"]),
+								class: j([{ active: E.dmPersonality === "温柔病娇，一边哭泣一边宣告你的断头，极度排外" }, "pm-preset-btn"]),
 								onClick: w[46] ||= (e) => E.dmPersonality = "温柔病娇，一边哭泣一边宣告你的断头，极度排外"
 							}, "温柔病娇", 2),
 							J("button", {
-								class: M([{ active: E.dmPersonality === "暴躁老姐，满口粗话，大骂着把你的内脏扯出来" }, "pm-preset-btn"]),
+								class: j([{ active: E.dmPersonality === "暴躁老姐，满口粗话，大骂着把你的内脏扯出来" }, "pm-preset-btn"]),
 								onClick: w[47] ||= (e) => E.dmPersonality = "暴躁老姐，满口粗话，大骂着把你的内脏扯出来"
 							}, "暴躁老姐", 2),
 							J("button", {
 								class: "pm-preset-btn custom-btn",
-								onClick: re
+								onClick: ie
 							}, "✍️ 自定义(手动输入)")
 						]),
 						U(J("input", {
 							ref_key: "dmInputRef",
-							ref: D,
+							ref: re,
 							"onUpdate:modelValue": w[48] ||= (e) => E.dmPersonality = e,
 							type: "text",
 							class: "pm-input",
@@ -5719,11 +5763,15 @@ var $ = /* @__PURE__ */ Ot({
 					J("button", {
 						disabled: r.value,
 						class: "pm-btn-embark",
-						onClick: Le
-					}, I(r.value ? "引擎连接中..." : "踏上旅程"), 9, zp)
+						onClick: Re
+					}, F(r.value ? "引擎连接中..." : "踏上旅程"), 9, Gp)
 				])) : X("", !0)]),
 				_: 1
-			})
+			}),
+			n.value !== "check" && n.value !== "already_started" && n.value !== "transition" ? (K(), q("div", Kp, [J("button", {
+				class: "pm-btn-back-stealth",
+				onClick: _
+			}, " [ ◀ 重新选择命运轨迹 ] ")])) : X("", !0)
 		])) : X("", !0);
 	}
 });
@@ -5739,7 +5787,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 		return e;
 	}, r = () => {
 		let e = n(), t = e.getElementById("pm-global-styles");
-		t || (t = e.createElement("style"), t.id = "pm-global-styles", e.head.appendChild(t)), t.innerHTML = "\n      /* 隐藏原生标签 */\n      .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n      .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n          display: none !important;\n      }\n      .mes_text narrative { display: block !important; }\n\n      /* =========================================\n         全局与羊皮纸基底 (废墟图书馆美学)\n         ========================================= */\n      :root {\n        --pm-gold: #d4af37;\n        --pm-dark-red: #8b0000;\n        --pm-black: #1a1105;\n        --pm-text: #2c241b;\n        --pm-bg-light: #ffffff;\n        --pm-bg-mid: #fcfaf5;\n        --pm-bg-dark: #f4ebd8;\n      }\n\n      .pm-master-container {\n        position: relative;\n        width: 100%;\n        min-height: 100vh;\n        border-radius: 12px;\n        border: 2px solid var(--pm-gold);\n        z-index: 10;\n        background: radial-gradient(circle at center, var(--pm-bg-light) 0%, var(--pm-bg-mid) 50%, var(--pm-bg-dark) 100%);\n        padding: 20px;\n        box-sizing: border-box;\n        color: var(--pm-text);\n        overflow-x: hidden;\n        box-shadow: inset 0 0 40px rgba(255, 255, 255, 1);\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        font-family: 'Noto Serif SC', 'Songti SC', serif;\n        margin-top: 15px;\n        margin-bottom: 15px;\n      }\n      .pm-master-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 3px solid rgba(212, 175, 55, 0.8); border-radius: 12px; animation: pm-border-glow 4s infinite alternate ease-in-out; pointer-events: none; z-index: 2; }\n      .pm-master-container::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noiseFilter\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noiseFilter)\" opacity=\"0.05\"/></svg>'); pointer-events: none; z-index: 1; }\n      @keyframes pm-border-glow { 0% { box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1), 0 0 15px rgba(212, 175, 55, 0.2); border-color: rgba(212, 175, 55, 0.4); } 100% { box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.5); border-color: rgba(212, 175, 55, 1); } }\n\n      @media (max-width: 768px) {\n        .pm-master-container { padding: 10px; }\n      }\n\n      /* 状态栏主容器 */\n      @keyframes stb-pm-terminal-breathe { 0% { border-color: #222; } 50% { border-color: #444; } 100% { border-color: #222; } }\n      .stb-pm-wrapper { width: 100%; max-width: 100%; overflow-x: hidden; overflow-wrap: anywhere; box-sizing: border-box; background: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); background-size: 24px 24px; border: 1px solid #333; border-top: 4px solid #8a0303; border-bottom: 4px solid #d4af37; border-radius: 12px; font-family: 'Nunito', 'Quicksand', 'Segoe UI Rounded', 'Helvetica Rounded', Arial, sans-serif; color: #d0d0d0; padding: 16px; animation: stb-pm-terminal-breathe 8s infinite ease-in-out; position: relative; margin-top: 15px; margin-bottom: 10px; }\n\n      /* 🚨 字体优化：将原本丑陋的等宽字体替换为更平滑的无衬线字体 */\n      .stb-pm-terminal-data { font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 13.5px; color: #81d4fa; white-space: pre-wrap; word-break: break-all; line-height: 1.6; letter-spacing: 0.5px; }\n      .stb-pm-terminal-data-gold { color: #f4e7c1; }\n      .stb-pm-terminal-data-red { color: #ff6b6b; }\n\n      .stb-pm-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 12px; margin-bottom: 12px; position: relative; }\n      .stb-pm-header::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 30%; height: 2px; background: #d4af37; box-shadow: 0 0 10px #d4af37; border-radius: 2px; }\n      .stb-pm-location { font-family: 'Quicksand', 'Georgia', serif; font-size: clamp(16px, 4vw, 18px); font-weight: bold; color: #d4af37; letter-spacing: 1px; text-shadow: 0 0 12px rgba(212, 175, 55, 0.6); word-break: break-word; display: flex; align-items: center; gap: 8px; flex: 1; }\n      .stb-pm-location::before { content: '◆'; font-size: 12px; color: #8a0303; text-shadow: 0 0 6px #8a0303; }\n      .stb-pm-env-col { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }\n      .stb-pm-tag { background: rgba(0, 0, 0, 0.8); border: 1px solid #444; padding: 4px 10px; border-radius: 12px; white-space: nowrap; font-size: 12px; box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05); letter-spacing: 0.5px; }\n      .stb-pm-tag-time { color: #aaa; border-color: #555; }\n      .stb-pm-tag-weather { color: #ff6b6b; border-color: #8a0303; text-shadow: 0 0 5px rgba(138, 3, 3, 0.8); }\n\n      /* DM 头像 */\n      .stb-pm-dm-avatar-box { position: absolute; top: -10px; right: -10px; width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--pm-gold); overflow: hidden; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); z-index: 10; background: #000; }\n      .stb-pm-dm-avatar { width: 100%; height: 100%; object-fit: cover; }\n      .stb-pm-dm-label { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(138, 3, 3, 0.8); color: #fff; font-size: 10px; text-align: center; font-weight: bold; letter-spacing: 1px; }\n\n      /* BGM 播放器 */\n      .stb-pm-bgm-container { margin-bottom: 16px; }\n      .stb-pm-bgm-container details { background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #81d4fa; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }\n      .stb-pm-bgm-container summary { padding: 12px 16px; font-size: 14px; color: #81d4fa; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }\n      .stb-pm-bgm-container summary::-webkit-details-marker { display: none; }\n      .stb-pm-bgm-container summary:hover { background: rgba(129, 212, 250, 0.1); }\n      .stb-pm-bgm-arrow { transition: transform 0.3s ease; }\n      .stb-pm-bgm-container details[open] .stb-pm-bgm-arrow { transform: rotate(180deg); }\n      .stb-pm-bgm-content { padding: 12px; border-top: 1px solid #333; display: flex; justify-content: center; background: #000; overflow: hidden; }\n      .stb-pm-bgm-content > iframe, .stb-pm-bgm-content > audio { width: 100% !important; max-width: 330px; height: 86px; border-radius: 6px; outline: none; border: none; }\n\n      /* 按钮与徽章 */\n      @keyframes stb-btn-breathe-gold { 0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } 50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); } 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } }\n      @keyframes stb-btn-breathe-blue { 0% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } 50% { box-shadow: 0 0 15px rgba(129, 212, 250, 0.6); } 100% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } }\n      .stb-pm-actions { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }\n      .stb-pm-btn { flex: 1; min-width: 140px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 14px; font-weight: bold; letter-spacing: 1px; border-radius: 20px; transition: all 0.2s ease; cursor: pointer; touch-action: manipulation; }\n      .stb-pm-btn:active { transform: scale(0.96); }\n      .stb-pm-btn-guide { background: linear-gradient(180deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #d4af37; color: #f4e7c1; animation: stb-btn-breathe-gold 3s infinite ease-in-out; }\n      .stb-pm-btn-mirror { background: linear-gradient(180deg, rgba(129, 212, 250, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #81d4fa; color: #e1f5fe; animation: stb-btn-breathe-blue 3s infinite ease-in-out; }\n      .stb-pm-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }\n      .stb-pm-badge { background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #d4af37; padding: 8px 14px; border-radius: 8px; font-size: 14px; color: #e0e0e0; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); }\n      .stb-pm-badge strong { color: #d4af37; font-weight: bold; }\n      .stb-pm-badge-title { flex: 1 1 100%; border-left-color: #81d4fa; }\n      .stb-pm-badge-title strong { color: #81d4fa; }\n\n      /* 🚨 Tabs 切换 (修复黑块与高度塌陷) */\n      .stb-pm-tabs-container { display: flex; flex-wrap: wrap; gap: 4px; position: relative; width: 100%; }\n      .stb-pm-tab-label { display: contents; }\n      .stb-pm-tab-radio { display: none; }\n      .stb-tab-btn { order: 1; padding: 10px 16px; font-size: 14px; color: #777; background: linear-gradient(to bottom, #0a0a0a, #111); border: 1px solid #222; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; position: relative; letter-spacing: 1px; user-select: none; flex-grow: 1; text-align: center; }\n      @media (max-width: 768px) { .stb-tab-btn { font-size: 12px; padding: 8px 6px; letter-spacing: 0; } }\n      .stb-pm-tab-content { order: 2; width: 100%; display: none; flex-direction: column; gap: 16px; max-height: 65vh; overflow-y: auto; padding-right: 8px; padding-top: 16px; border-top: 1px solid #222; scrollbar-width: thin; scrollbar-color: #555 #0a0a0a; -webkit-overflow-scrolling: touch; }\n      .stb-pm-tab-content::-webkit-scrollbar { width: 6px; }\n      .stb-pm-tab-content::-webkit-scrollbar-track { background: #0a0a0a; border-radius: 3px; }\n      .stb-pm-tab-content::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }\n      .stb-pm-tab-radio:checked ~ .stb-tab-btn { color: #fff; background: linear-gradient(to bottom, rgba(138, 3, 3, 0.25), #0a0a0a); border-color: #555; text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); font-weight: bold; }\n      .stb-pm-tab-radio:checked ~ .stb-tab-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: #d4af37; box-shadow: 0 -2px 12px #d4af37, 0 0 6px #fff; border-radius: 2px; z-index: 2; }\n      .stb-pm-tab-radio:checked ~ .stb-pm-tab-content { display: flex; }\n\n      /* 面板与进度条 */\n      .stb-pm-panel { background: rgba(15, 15, 18, 0.8); border: 1px solid #222; border-left: 4px solid #555; border-radius: 8px; padding: 16px; min-width: 0; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8); transition: border-color 0.3s ease, box-shadow 0.3s ease; position: relative; }\n      .stb-pm-panel:hover { border-left-color: #d4af37; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), -3px 0 12px rgba(212, 175, 55, 0.25); }\n      .stb-pm-panel-title { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); padding-bottom: 6px; display: flex; align-items: center; font-weight: bold; }\n      .stb-pm-panel-title::before { content: '■'; font-size: 10px; margin-right: 8px; color: #555; }\n      .stb-pm-bar-container { margin-bottom: 14px; }\n      .stb-pm-bar-header { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }\n      .stb-pm-bar-label { font-weight: bold; text-shadow: 0 0 5px currentColor; letter-spacing: 1px; }\n      .stb-pm-bar-value { font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #ccc; }\n      .stb-pm-bar-track { width: 100%; height: 14px; background: #0a0a0a; border: 1px solid #333; border-radius: 7px; overflow: hidden; box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.9), 0 1px 0 rgba(255, 255, 255, 0.05); position: relative; }\n      .stb-pm-bar-fill { height: 100%; transition: width 0.5s ease; border-radius: 7px; }\n      .stb-pm-bar-hp { background: linear-gradient(90deg, #ff6b6b, #8a0303); box-shadow: 0 0 8px rgba(255, 107, 107, 0.6); }\n      .stb-pm-bar-mp { background: linear-gradient(90deg, #81d4fa, #0277bd); box-shadow: 0 0 8px rgba(129, 212, 250, 0.6); }\n      .stb-pm-bar-sp { background: linear-gradient(90deg, #81c784, #2e7d32); box-shadow: 0 0 8px rgba(129, 199, 132, 0.6); }\n      .stb-pm-bar-xp { background: linear-gradient(90deg, #fff59d, #fbc02d); box-shadow: 0 0 8px rgba(255, 245, 157, 0.6); }\n\n      /* 肢体状态 */\n      .stb-pm-limbs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }\n      @keyframes stb-critical-flash { 0% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } 50% { border-color: #550000; box-shadow: none; background: rgba(255, 68, 68, 0.05); } 100% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } }\n      .stb-pm-limb-card { background: linear-gradient(180deg, #1a1a1a, #0d0d0d); border: 1px solid #333; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.2s ease, border-color 0.2s ease; position: relative; overflow: hidden; }\n      .stb-pm-limb-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #333; }\n      .stb-pm-limb-name { font-size: 12px; color: #888; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }\n      .stb-pm-limb-stat { font-size: 14px; font-weight: bold; text-align: center; word-break: break-word; white-space: normal; }\n      .stb-pm-limb-card[data-status*='完好']::before { background: #555; }\n      .stb-pm-limb-card[data-status*='完好'] .stb-pm-limb-stat { color: #999; }\n      .stb-pm-limb-card[data-status*='轻度']::before { background: #aaa; }\n      .stb-pm-limb-card[data-status*='轻度'] .stb-pm-limb-stat { color: #ddd; text-shadow: 0 0 4px rgba(255, 255, 255, 0.3); }\n      .stb-pm-limb-card[data-status*='重伤'] { border-color: #ffb74d; }\n      .stb-pm-limb-card[data-status*='重伤']::before { background: #ffb74d; box-shadow: 0 0 6px #ffb74d; }\n      .stb-pm-limb-card[data-status*='重伤'] .stb-pm-limb-stat { color: #ffcc80; text-shadow: 0 0 6px rgba(255, 204, 128, 0.6); }\n      .stb-pm-limb-card[data-status*='残废'], .stb-pm-limb-card[data-status*='断裂'] { animation: stb-critical-flash 1s infinite; }\n      .stb-pm-limb-card[data-status*='残废']::before, .stb-pm-limb-card[data-status*='断裂']::before { background: #ff4444; }\n      .stb-pm-limb-card[data-status*='残废'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='断裂'] .stb-pm-limb-stat { color: #ff6b6b; text-decoration: line-through; }\n      .stb-pm-limb-card[data-status*='义体'], .stb-pm-limb-card[data-status*='同化'], .stb-pm-limb-card[data-status*='再生'] { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); }\n      .stb-pm-limb-card[data-status*='义体']::before, .stb-pm-limb-card[data-status*='同化']::before, .stb-pm-limb-card[data-status*='再生']::before { background: #d4af37; box-shadow: 0 0 6px #d4af37; }\n      .stb-pm-limb-card[data-status*='义体'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='同化'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='再生'] .stb-pm-limb-stat { color: #f4e7c1; text-shadow: 0 0 6px rgba(212, 175, 55, 0.5); }\n\n      /* 属性与折叠夹 */\n      .stb-pm-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }\n      .stb-pm-stat-box { background: rgba(255, 255, 255, 0.02); border: 1px solid #333; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); }\n      .stb-pm-stat-label { font-size: 13px; color: #888; text-transform: uppercase; font-weight: bold; }\n      .stb-pm-stat-value { font-size: 16px; font-weight: bold; color: #d4af37; font-family: monospace; text-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }\n      .stb-pm-folder { background: rgba(255, 255, 255, 0.03); border: 1px solid #333; border-radius: 6px; margin-bottom: 10px; overflow: hidden; transition: all 0.3s ease; }\n      .stb-pm-folder summary { padding: 12px 14px; font-size: 14px; color: #eee; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; background: rgba(0, 0, 0, 0.4); }\n      .stb-pm-folder summary::-webkit-details-marker { display: none; }\n      .stb-pm-folder summary:hover { background: rgba(255, 255, 255, 0.05); }\n      .stb-pm-folder-arrow { transition: transform 0.3s ease; color: #888; font-size: 12px; }\n      .stb-pm-folder[open] > summary > .stb-pm-folder-arrow { transform: rotate(180deg); }\n      .stb-pm-folder-content { padding: 12px; border-top: 1px solid #333; }\n      .stb-pm-folder-actions { display: flex; justify-content: flex-end; padding: 8px 12px; background: rgba(0, 0, 0, 0.6); border-top: 1px dashed #444; }\n      .stb-pm-btn-small { background: #222; border: 1px solid #555; color: #ccc; padding: 4px 12px; border-radius: 4px; font-size: 12px; text-decoration: none; transition: all 0.2s; cursor: pointer; }\n      .stb-pm-btn-small:hover { background: #8a0303; border-color: #ff6b6b; color: #fff; }\n\n      /* 文本与传闻卡片 */\n      .stb-pm-text-block { font-size: 15px; color: #ccc; line-height: 1.6; word-wrap: break-word; white-space: normal; }\n      .stb-pm-rumor-card { background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), rgba(0, 0, 0, 0.6)); border: 1px solid #222; border-left: 4px solid #d4af37; padding: 12px 16px; margin-bottom: 12px; border-radius: 4px 8px 8px 4px; transition: all 0.3s ease; position: relative; }\n      .stb-pm-rumor-card::after { content: ''; position: absolute; top: 0; right: 0; width: 30px; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.9)); }\n      .stb-pm-rumor-card:hover { background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.6)); border-left-width: 6px; transform: translateX(4px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); }\n      .stb-pm-rumor-title { color: #d4af37; font-size: 14px; margin-bottom: 8px; font-weight: bold; letter-spacing: 1.5px; }\n      .stb-pm-rumor-text { color: #ddd; font-size: 15px; line-height: 1.6; position: relative; z-index: 1; }\n      .stb-pm-info-row { display: flex; flex-direction: row; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #333; padding-bottom: 4px; }\n      .stb-pm-info-label { font-size: 14px; color: #999; }\n      .stb-pm-info-value { font-size: 14px; font-weight: bold; color: #ccc; }\n\n      /* =========================================\n         🚨 全新动态面板特效 (正文内输出)\n         ========================================= */\n      @keyframes pm-rotate-glow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }\n      @keyframes pm-pulse-border { 0% { box-shadow: 0 0 5px var(--theme-color); } 50% { box-shadow: 0 0 20px var(--theme-color); } 100% { box-shadow: 0 0 5px var(--theme-color); } }\n\n      /* 实体遭遇面板 */\n      .pm-entity-panel {\n        position: relative;\n        width: 100%;\n        max-width: 500px;\n        margin: 20px auto;\n        background: rgba(15, 15, 18, 0.95);\n        border: 2px solid var(--theme-color, #8b0000);\n        border-radius: 12px;\n        overflow: hidden;\n        color: #e0e0e0;\n        font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;\n        animation: pm-pulse-border 3s infinite ease-in-out;\n      }\n      .pm-entity-panel::before {\n        content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;\n        background: conic-gradient(transparent, var(--theme-color, rgba(139,0,0,0.2)), transparent 30%);\n        animation: pm-rotate-glow 6s linear infinite; z-index: 0; pointer-events: none;\n      }\n      .pm-ep-header {\n        position: relative; z-index: 1; display: flex; align-items: center; gap: 15px;\n        padding: 15px; background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);\n        border-bottom: 1px solid rgba(255,255,255,0.1);\n      }\n      .pm-ep-avatar-placeholder {\n        width: 50px; height: 50px; border-radius: 8px; border: 2px solid var(--theme-color);\n        background: #000; display: flex; align-items: center; justify-content: center;\n        font-size: 24px; box-shadow: inset 0 0 10px var(--theme-color);\n      }\n      .pm-ep-title { display: flex; flex-direction: column; }\n      .pm-ep-name { font-size: 18px; font-weight: 900; color: var(--theme-color); text-shadow: 0 0 8px var(--theme-color); }\n      .pm-ep-level { font-size: 12px; color: #aaa; font-family: monospace; }\n      .pm-ep-body { position: relative; z-index: 1; padding: 15px; }\n      .pm-ep-stats { display: flex; justify-content: space-between; margin-bottom: 15px; font-family: monospace; font-weight: bold; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 6px; }\n      .stat-hp { color: #ff6b6b; } .stat-sp { color: #81c784; } .stat-threat { color: #d4af37; }\n      .pm-ep-details .detail-row { margin-bottom: 8px; font-size: 14px; line-height: 1.6; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px; }\n      .pm-ep-details strong { color: var(--theme-color); }\n\n      /* 战斗/检定结算面板 */\n      .pm-combat-panel {\n        position: relative; width: 100%; max-width: 500px; margin: 20px auto;\n        background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(5,5,5,0.95));\n        border-left: 5px solid var(--combat-color, #d4af37);\n        border-radius: 6px; padding: 15px; box-shadow: -5px 0 20px var(--combat-color, rgba(212,175,55,0.3));\n        font-family: 'Noto Sans SC', 'PingFang SC', sans-serif; color: #ddd;\n      }\n      .pm-cp-title { font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }\n      .pm-cp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; text-align: center; }\n      .pm-cp-item { background: rgba(0,0,0,0.6); border: 1px solid #333; border-radius: 4px; padding: 8px 4px; display: flex; flex-direction: column; gap: 5px; }\n      .pm-cp-item span:first-child { font-size: 11px; color: #888; text-transform: uppercase; }\n      .pm-cp-val { font-family: monospace; font-size: 16px; font-weight: bold; color: #81d4fa; }\n      .pm-cp-result.success { color: #d4af37; font-weight: 900; text-shadow: 0 0 8px #d4af37; }\n      .pm-cp-result.fail { color: #ff4444; font-weight: 900; text-shadow: 0 0 8px #ff4444; }\n      .pm-cp-log { background: rgba(0,0,0,0.4); padding: 10px; border-radius: 4px; font-size: 14px; line-height: 1.6; border-left: 2px solid #555; }\n\n      /* 🚨 骰子特效 CSS */\n      @keyframes pm-glitch-anim {\n        0% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 2px); }\n        20% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }\n        40% { clip-path: inset(40% 0 40% 0); transform: translate(2px, 2px); }\n        60% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, -2px); }\n        80% { clip-path: inset(60% 0 20% 0); transform: translate(2px, 2px); }\n        100% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, -2px); }\n      }\n      .pm-dice-roll {\n        display: inline-block; font-family: 'Courier New', monospace; font-weight: bold; color: #d4af37;\n        background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; padding: 2px 6px; border-radius: 4px;\n        text-shadow: 0 0 5px rgba(212, 175, 55, 0.8); margin: 0 4px;\n      }\n      .pm-crit-success {\n        display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #d4af37, #ffeb3b);\n        padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);\n        animation: pulse 1.5s infinite;\n      }\n      .pm-crit-fail {\n        display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #8b0000, #ff4444);\n        padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(139, 0, 0, 0.8);\n        position: relative;\n      }\n      .pm-crit-fail::before {\n        content: attr(data-text); position: absolute; left: -2px; text-shadow: 2px 0 red; top: 0; color: white;\n        background: transparent; overflow: hidden; animation: pm-glitch-anim 2s infinite linear alternate-reverse;\n      }\n\n      /* =========================================\n         车卡界面专属样式\n         ========================================= */\n      .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease, transform 0.5s ease; }\n      .fade-enter-from { opacity: 0; transform: translateY(20px); }\n      .fade-leave-to { opacity: 0; transform: translateY(-20px); }\n\n      .page-check, .library-scene, .custom-char-page, .page-settings { width: 100%; max-width: 1000px; flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }\n      .page-check { justify-content: center; }\n      .sys-title { font-size: clamp(2em, 5vw, 3.5em); font-weight: 900; color: var(--pm-black); letter-spacing: 10px; margin-bottom: 5px; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); text-align: center; }\n      .sys-subtitle { font-family: 'Brush Script MT', 'Great Vibes', cursive; font-size: clamp(1.2em, 3vw, 1.8em); color: var(--pm-dark-red); margin-bottom: 50px; letter-spacing: 3px; text-align: center; }\n      .sys-check-box { width: 100%; max-width: 500px; margin: 0 auto 50px; border-top: 2px solid var(--pm-gold); border-bottom: 2px solid var(--pm-gold); padding: 30px 0; }\n      .sys-row { display: flex; justify-content: space-between; margin: 15px 0; font-size: 1.2em; font-weight: bold; color: #333; }\n      .status-ok { font-family: monospace; color: var(--pm-dark-red); text-shadow: 0 0 10px rgba(139, 0, 0, 0.2); }\n      .status-warn { font-family: monospace; color: #d4af37; }\n      .status-loading { font-family: monospace; color: #aaa; animation: pulse 1.5s infinite; }\n      .sys-actions { display: flex; gap: 30px; width: 100%; max-width: 500px; justify-content: center; }\n      .sys-btn { flex: 1; padding: 15px 0; text-align: center; border: 1px solid var(--pm-text); background: transparent; color: var(--pm-text); cursor: pointer; font-family: inherit; font-size: 1.2em; font-weight: bold; letter-spacing: 4px; transition: all 0.3s; border-radius: 4px; }\n      .sys-btn:hover { background: var(--pm-text); color: var(--pm-bg-mid); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }\n      .sys-btn-primary { border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n      .sys-btn-primary:hover:not(:disabled) { background: var(--pm-dark-red); color: white; box-shadow: 0 8px 20px rgba(139, 0, 0, 0.25); }\n      .sys-btn-primary:disabled { opacity: 0.5; border-color: #666; color: #666; cursor: not-allowed; background: transparent; box-shadow: none; }\n\n      .transition-note { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10%; background: radial-gradient(circle at center, #ffffff 0%, #fcfaf5 50%, #f4ebd8 100%); z-index: 210; animation: noteSequence 5.5s forwards ease-in-out; }\n      .note-title { font-size: clamp(1.5em, 3vw, 2em); color: var(--pm-dark-red); margin-bottom: 30px; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; letter-spacing: 3px; font-weight: bold; }\n      .note-content { font-size: clamp(1em, 2vw, 1.2em); line-height: 2; max-width: 800px; color: var(--pm-text); }\n      .note-content li { margin-bottom: 15px; list-style-type: square; }\n      .note-content li strong { color: var(--pm-dark-red); font-weight: 900; }\n\n      .library-scene { width: 100%; padding: 20px 0; box-sizing: border-box; position: relative; z-index: 200; }\n\n      .bgm-player { position: absolute; top: 0px; left: 0px; width: 280px; opacity: 0; pointer-events: none; transition: opacity 0.4s; z-index: 220; }\n      .bgm-player.is-visible { opacity: 0.3; pointer-events: auto; }\n      .bgm-player.is-visible:hover { opacity: 1; }\n      .bgm-player audio, .bgm-player iframe { width: 100%; height: 40px; outline: none; border: none; }\n\n      .scene-text { font-size: clamp(1.1em, 2.5vw, 1.3em); line-height: 2.2; text-align: justify; margin-top: 60px; margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto; text-indent: 2em; color: var(--pm-black); }\n      .scene-text p { margin-bottom: 20px; }\n      .highlight-red { color: var(--pm-dark-red); font-weight: 900; text-shadow: 0 0 5px rgba(139, 0, 0, 0.2); }\n      .highlight-gold { color: var(--pm-gold); font-weight: 900; text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }\n      .trauma-text { color: var(--pm-dark-red); font-weight: bold; font-style: italic; font-size: 0.9em; background: rgba(139, 0, 0, 0.05); padding: 8px 15px; border-left: 3px solid var(--pm-dark-red); border-radius: 4px; display: block; margin: 15px 0; text-indent: 0; }\n\n      .dm-portrait-box { display: flex; justify-content: center; margin: 30px auto 50px auto; width: 100%; }\n      .dm-portrait-img { max-width: 220px; border: 4px solid var(--pm-gold); border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3), inset 0 0 15px rgba(0,0,0,0.5); background: radial-gradient(circle, #2c1810 0%, #1a1105 100%); padding: 5px; object-fit: cover; transition: transform 0.3s ease, box-shadow 0.3s ease; }\n      .dm-portrait-img:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(0,0,0,0.6); }\n\n      .dossier-container { max-width: 900px; width: 100%; display: flex; flex-direction: column; gap: 15px; margin: 0 auto 40px auto; }\n      .dossier-folder { background: rgba(255, 255, 255, 0.7); border: 1px solid var(--pm-gold); border-radius: 6px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); overflow: hidden; transition: all 0.3s ease; }\n      .dossier-folder[open] { background: rgba(255, 255, 255, 0.95); box-shadow: 0 10px 25px rgba(139, 0, 0, 0.15); border-color: var(--pm-dark-red); }\n      .dossier-summary { padding: 15px 20px; display: flex; align-items: center; cursor: pointer; list-style: none; border-left: 4px solid var(--pm-gold); transition: all 0.3s; }\n      .dossier-summary::-webkit-details-marker { display: none; }\n      .dossier-summary:hover { background: rgba(212, 175, 55, 0.1); }\n      .dossier-folder[open] .dossier-summary { border-left-color: var(--pm-dark-red); border-bottom: 1px dashed rgba(139, 0, 0, 0.2); background: rgba(139, 0, 0, 0.05); }\n      .ds-type { font-family: monospace; color: #888; font-size: 0.9em; width: 80px; letter-spacing: 1px; }\n      .ds-name { font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 3px; flex: 1; }\n      .ds-desc { color: #555; font-style: italic; font-size: 0.95em; }\n      .dossier-content { padding: 30px; animation: slideDown 0.4s ease-out; }\n      .cp-quote { font-family: 'Georgia', serif; font-size: 1.1em; font-style: italic; color: #555; border-left: 4px solid var(--pm-gold); padding-left: 20px; margin-bottom: 30px; background: rgba(212, 175, 55, 0.05); padding: 15px 20px; }\n      .cp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }\n      @media (max-width: 768px) { .cp-grid { grid-template-columns: 1fr; } }\n      .cp-box { border: 1px dashed #b89f7d; padding: 20px; background: rgba(255, 255, 255, 0.6); }\n      .cp-box-title { font-weight: 900; color: var(--pm-dark-red); margin-bottom: 10px; font-size: 1.1em; border-bottom: 1px solid rgba(139, 0, 0, 0.2); padding-bottom: 5px; letter-spacing: 1px; }\n      .cp-box-content { font-size: 1.05em; line-height: 1.8; color: #333; }\n      .cp-actions { display: flex; justify-content: center; margin-top: 20px; }\n      .cp-btn-confirm { padding: 15px 50px; font-size: 1.2em; font-weight: bold; cursor: pointer; border: 2px solid var(--pm-dark-red); background: var(--pm-dark-red); color: #fff; text-decoration: none; letter-spacing: 2px; transition: all 0.3s; border-radius: 4px; display: block; text-align: center; }\n      .cp-btn-confirm:hover { background: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n      .dossier-custom { display: flex; align-items: center; padding: 15px 20px; background: var(--pm-black); border: 1px solid var(--pm-dark-red); border-left: 4px solid var(--pm-dark-red); border-radius: 6px; cursor: pointer; margin-top: 10px; transition: all 0.3s; text-decoration: none; }\n      .dossier-custom:hover { background: #2c1810; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateX(5px); }\n      .dossier-custom .ds-type { color: #aaa; }\n      .dossier-custom .ds-name { color: var(--pm-gold); }\n\n      .custom-char-page { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 20px 0; position: relative; z-index: 200; }\n      .points-header { position: sticky; top: 0; width: 100%; background: rgba(26, 17, 5, 0.95); color: var(--pm-gold); padding: 15px 30px; border-radius: 8px; border: 1px solid var(--pm-gold); display: flex; justify-content: space-between; align-items: center; z-index: 300; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); box-sizing: border-box; margin-bottom: 30px; }\n      .points-header h2 { margin: 0; font-size: 1.5em; letter-spacing: 2px; }\n      .points-display { font-size: 2em; font-weight: 900; font-family: monospace; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); transition: color 0.3s; }\n      .points-display.negative { color: #ff4444; text-shadow: 0 0 15px rgba(255, 0, 0, 0.8); animation: pulse-red 2s infinite; }\n      .preset-bar { width: 100%; background: rgba(255, 255, 255, 0.6); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }\n\n      /* 🚨 强制白底黑字输入框 */\n      .preset-select, .preset-input, .pm-input, .pm-textarea, .pm-select {\n          background-color: #ffffff !important; color: #000000 !important; border: 1px solid #b89f7d !important;\n          padding: 12px; border-radius: 4px; font-family: inherit; font-size: 1em; box-sizing: border-box; outline: none; transition: border-color 0.3s;\n      }\n      .preset-select::placeholder, .preset-input::placeholder, .pm-input::placeholder, .pm-textarea::placeholder, .pm-select::placeholder { color: #888888 !important; }\n      .preset-select, .preset-input { padding: 8px; }\n      .pm-input { width: 100%; margin-bottom: 15px; }\n      .pm-textarea { width: 100%; height: 80px; resize: vertical; }\n      .pm-input:focus, .pm-textarea:focus, .pm-select:focus, .preset-input:focus, .preset-select:focus { border-color: var(--pm-dark-red) !important; box-shadow: 0 0 8px rgba(139, 0, 0, 0.3) !important; background-color: #ffffff !important; }\n\n      .pm-btn-small { padding: 8px 15px; background: #ffffff; color: var(--pm-dark-red); border: 1px solid var(--pm-dark-red); border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; font-family: inherit; }\n      .pm-btn-small:hover { background: var(--pm-dark-red); color: #ffffff; }\n\n      /* 玩家立绘自适应画框样式 */\n      .image-upload-row { display: flex; gap: 25px; align-items: stretch; margin-bottom: 25px; width: 100%; flex-wrap: wrap; }\n      .player-portrait-box { flex-shrink: 0; display: flex; justify-content: center; align-items: center; }\n      .player-portrait-img, .player-portrait-placeholder { max-width: 140px; max-height: 180px; width: auto; height: auto; border: 3px solid var(--pm-gold); border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.5); background: radial-gradient(circle, #2c1810 0%, #1a1105 100%); padding: 4px; object-fit: contain; transition: transform 0.3s ease, box-shadow 0.3s ease; }\n      .player-portrait-img:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(0,0,0,0.6); }\n      .player-portrait-placeholder { width: 100px; height: 120px; color: #888; font-size: 1em; font-weight: bold; letter-spacing: 2px; display: flex; align-items: center; justify-content: center; }\n\n      .preset-btn { padding: 8px 15px; background: var(--pm-black); color: var(--pm-gold); border: 1px solid var(--pm-gold); border-radius: 4px; cursor: pointer; transition: all 0.2s; }\n      .preset-btn:hover { background: var(--pm-dark-red); color: #fff; }\n      .roll-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; text-align: center; }\n      .roll-btn { width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, var(--pm-dark-red) 0%, var(--pm-black) 100%); border: 4px solid var(--pm-gold); color: var(--pm-gold); font-size: 2em; font-weight: 900; cursor: pointer; transition: all 0.2s; box-shadow: 0 0 30px rgba(139, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; flex-direction: column; }\n      .roll-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); }\n      .roll-btn:active { transform: scale(0.95); }\n      .roll-btn.rolling { animation: shake 0.5s infinite; pointer-events: none; filter: brightness(1.5); }\n      .shop-container { width: 100%; display: grid; grid-template-columns: 1fr; gap: 30px; }\n      .shop-section { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); border-radius: 8px; padding: 25px; }\n      .shop-title { font-size: 1.5em; color: var(--pm-dark-red); border-bottom: 2px solid var(--pm-gold); padding-bottom: 10px; margin-bottom: 20px; font-weight: 900; letter-spacing: 2px; display: flex; justify-content: space-between; align-items: center; }\n      .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }\n      .stat-row { display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.05); padding: 10px 15px; border-radius: 4px; border-left: 3px solid var(--pm-gold); }\n      .stat-name { font-weight: bold; color: var(--pm-text); width: 100px; }\n      .stat-controls { display: flex; align-items: center; gap: 10px; }\n      .stat-btn { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); font-weight: bold; cursor: pointer; transition: all 0.2s; display: flex; justify-content: center; align-items: center; padding: 0; line-height: 1; }\n      .stat-btn:hover:not(:disabled) { background: var(--pm-dark-red); color: white; }\n      .stat-btn:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }\n      .stat-val { font-family: monospace; font-size: 1.2em; font-weight: bold; width: 40px; text-align: center; }\n      .stat-cost { font-size: 0.8em; color: #888; width: 60px; text-align: right; }\n      .rl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }\n      .rl-card { border: 1px solid #b89f7d; background: #fcfaf5; border-radius: 6px; padding: 15px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }\n      .rl-card:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transform: translateY(-2px); border-color: var(--pm-gold); }\n      .rl-card.selected { border-color: var(--pm-dark-red); background: rgba(139, 0, 0, 0.05); box-shadow: inset 0 0 0 2px var(--pm-dark-red); }\n      .rl-card.selected::after { content: '✓'; position: absolute; top: 10px; right: 15px; color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; }\n      .rl-type { font-size: 0.8em; color: #888; margin-bottom: 5px; font-family: monospace; }\n      .rl-name { font-size: 1.2em; font-weight: bold; color: var(--pm-black); margin-bottom: 10px; }\n      .rl-desc { font-size: 0.9em; color: #555; line-height: 1.5; margin-bottom: 15px; }\n      .rl-cost { font-weight: bold; color: var(--pm-dark-red); text-align: right; font-family: monospace; }\n      .rl-cost.refund { color: #2e7d32; }\n\n      .diy-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }\n      .diy-box { background: rgba(0, 0, 0, 0.03); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; position: relative; }\n      .diy-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }\n      .diy-title { font-weight: bold; color: var(--pm-dark-red); font-size: 1.1em; }\n      .diy-roll-btn { padding: 8px 15px; background: var(--pm-gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; }\n      .diy-roll-btn:hover:not(:disabled) { background: var(--pm-dark-red); }\n      .diy-roll-btn:disabled { background: #ccc; cursor: not-allowed; }\n      .diy-cost-display { font-family: monospace; font-size: 1.2em; font-weight: bold; color: var(--pm-dark-red); }\n      .diy-cost-display.refund { color: #2e7d32; }\n      .btn-add-diy { width: 100%; padding: 10px; background: transparent; border: 1px dashed var(--pm-text); color: var(--pm-text); font-weight: bold; cursor: pointer; border-radius: 4px; transition: all 0.2s; }\n      .btn-add-diy:hover { background: rgba(0,0,0,0.05); border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n      .btn-remove-diy { background: transparent; border: none; color: #ff4444; cursor: pointer; font-size: 1.5em; font-weight: bold; display: flex; align-items: center; justify-content: center; padding: 0 5px; transition: transform 0.2s; line-height: 1; }\n      .btn-remove-diy:hover { transform: scale(1.2); }\n\n      .dm-warning { background: rgba(139, 0, 0, 0.05); border-left: 4px solid var(--pm-dark-red); padding: 15px; margin-bottom: 20px; font-size: 0.95em; color: #555; line-height: 1.6; }\n      .dm-warning strong { color: var(--pm-dark-red); }\n      .negative-warning { background: rgba(139, 0, 0, 0.1); border: 2px solid #ff4444; color: #8b0000; padding: 20px; border-radius: 8px; margin-top: 20px; font-weight: bold; text-align: center; animation: pulse-border 2s infinite; line-height: 1.6; }\n\n      .custom-idea-box { width: 100%; margin-top: 20px; }\n      .custom-idea-box textarea { width: 100%; min-height: 150px; padding: 15px; border: 2px dashed var(--pm-gold); border-radius: 6px; background-color: #ffffff !important; color: #000000 !important; font-family: inherit; font-size: 1.05em; resize: vertical; box-sizing: border-box; outline: none; transition: all 0.3s; line-height: 1.6; }\n      .custom-idea-box textarea::placeholder { color: #888888 !important; }\n      .custom-idea-box textarea:focus { border-color: var(--pm-dark-red); border-style: solid; box-shadow: 0 0 10px rgba(139, 0, 0, 0.1); }\n\n      .page-settings { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 40px 0; animation: slideDown 0.5s ease-out; }\n      .settings-title { font-size: 2.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 8px; margin-bottom: 10px; text-align: center; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; width: 100%; max-width: 800px; }\n      .settings-warning { color: #555; font-style: italic; margin-bottom: 40px; letter-spacing: 2px; text-align: center; }\n      .toggles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n      .toggle-btn { padding: 15px; border: 1px solid var(--pm-gold); background: rgba(255, 255, 255, 0.5); border-radius: 8px; text-align: center; cursor: pointer; font-weight: bold; color: #555; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); user-select: none; }\n      .toggle-btn.active { background: var(--pm-dark-red); color: #fff; border-color: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n      .toggle-btn.active::after { content: ' [已开启]'; font-size: 0.8em; opacity: 0.8; }\n      .toggle-btn:not(.active)::after { content: ' [已关闭]'; font-size: 0.8em; opacity: 0.8; }\n      .dm-section { width: 100%; max-width: 800px; background: rgba(212, 175, 55, 0.05); border: 1px dashed var(--pm-gold); padding: 30px; border-radius: 8px; margin-bottom: 30px; box-sizing: border-box; }\n      .dm-title { font-size: 1.5em; color: var(--pm-black); font-weight: bold; margin-bottom: 15px; }\n      .dm-desc { color: #555; line-height: 1.8; margin-bottom: 20px; }\n      .dm-presets { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }\n      .pm-preset-btn { padding: 10px 20px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; transition: all 0.2s; font-family: inherit; font-size: 1em; }\n      .pm-preset-btn:hover, .pm-preset-btn.active { background: var(--pm-dark-red); color: white; }\n      .pm-preset-btn.custom-btn { border-style: dashed; font-weight: bold; }\n      .mbti-diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n      @media (max-width: 768px) { .mbti-diff-grid { grid-template-columns: 1fr; } }\n      .mbti-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; }\n      .mbti-row { display: flex; justify-content: space-between; margin-bottom: 10px; background: rgba(0, 0, 0, 0.05); border-radius: 4px; overflow: hidden; }\n      .mbti-btn { flex: 1; padding: 10px; border: none; background: transparent; cursor: pointer; font-weight: bold; color: #555; transition: all 0.2s; }\n      .mbti-btn.active { background: var(--pm-dark-red); color: white; }\n      .mbti-result { text-align: center; font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); margin-top: 15px; letter-spacing: 2px; }\n      .diff-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 10px; }\n      .diff-btn { padding: 12px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; font-weight: bold; transition: all 0.2s; text-align: left; }\n      .diff-btn:hover, .diff-btn.active { background: var(--pm-dark-red); color: white; }\n      .pm-btn-embark { padding: 20px 60px; font-size: 1.5em; font-weight: 900; background: var(--pm-black); color: var(--pm-gold); border: 2px solid var(--pm-gold); border-radius: 8px; cursor: pointer; letter-spacing: 8px; transition: all 0.4s; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); text-align: center; display: inline-block; margin-top: 20px; }\n      .pm-btn-embark:hover:not(:disabled) { background: var(--pm-dark-red); color: #fff; border-color: #ff4444; box-shadow: 0 15px 30px rgba(139, 0, 0, 0.5); transform: translateY(-3px); }\n      .pm-btn-embark:disabled { opacity: 0.6; cursor: not-allowed; }\n\n      .modal-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background: rgba(0,0,0,0.8); z-index: 999999; display: flex; justify-content: center; align-items: center; padding: 20px; }\n      .modal-content { background: var(--pm-bg-light); border: 2px solid var(--pm-gold); border-radius: 8px; width: 100%; max-width: 800px; max-height: 90vh; display: flex; flex-direction: column; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }\n      .modal-title { color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; margin-bottom: 15px; text-align: center; }\n      .modal-textarea { flex: 1; width: 100%; min-height: 300px; padding: 15px; font-family: monospace; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; resize: none; outline: none; background-color: #ffffff !important; color: #000000 !important; margin-bottom: 15px; }\n      .modal-btn { padding: 12px 30px; background: var(--pm-dark-red); color: white; border: none; border-radius: 4px; font-size: 1.2em; cursor: pointer; font-weight: bold; align-self: center; }\n      .modal-btn:hover { background: #5a0000; }\n    ";
+		t || (t = e.createElement("style"), t.id = "pm-global-styles", e.head.appendChild(t)), t.innerHTML = "\n      /* 隐藏原生标签 */\n      .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n      .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n          display: none !important;\n      }\n      .mes_text narrative { display: block !important; }\n\n      /* =========================================\n         全局与羊皮纸基底 (废墟图书馆美学)\n         ========================================= */\n      :root {\n        --pm-gold: #d4af37;\n        --pm-dark-red: #8b0000;\n        --pm-black: #1a1105;\n        --pm-text: #2c241b;\n        --pm-bg-light: #ffffff;\n        --pm-bg-mid: #fcfaf5;\n        --pm-bg-dark: #f4ebd8;\n      }\n\n      .pm-master-container {\n        position: relative;\n        width: 100%;\n        min-height: 100vh;\n        border-radius: 12px;\n        border: 2px solid var(--pm-gold);\n        z-index: 10;\n        background: radial-gradient(circle at center, var(--pm-bg-light) 0%, var(--pm-bg-mid) 50%, var(--pm-bg-dark) 100%);\n        padding: 20px;\n        box-sizing: border-box;\n        color: var(--pm-text);\n        overflow-x: hidden;\n        box-shadow: inset 0 0 40px rgba(255, 255, 255, 1);\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        font-family: 'Noto Serif SC', 'Songti SC', serif;\n        margin-top: 15px;\n        margin-bottom: 15px;\n      }\n      .pm-master-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 3px solid rgba(212, 175, 55, 0.8); border-radius: 12px; animation: pm-border-glow 4s infinite alternate ease-in-out; pointer-events: none; z-index: 2; }\n      .pm-master-container::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noiseFilter\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noiseFilter)\" opacity=\"0.05\"/></svg>'); pointer-events: none; z-index: 1; }\n      @keyframes pm-border-glow { 0% { box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1), 0 0 15px rgba(212, 175, 55, 0.2); border-color: rgba(212, 175, 55, 0.4); } 100% { box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.5); border-color: rgba(212, 175, 55, 1); } }\n\n      @media (max-width: 768px) {\n        .pm-master-container { padding: 10px; }\n      }\n\n      /* 状态栏主容器 */\n      @keyframes stb-pm-terminal-breathe { 0% { border-color: #222; } 50% { border-color: #444; } 100% { border-color: #222; } }\n      .stb-pm-wrapper { width: 100%; max-width: 100%; overflow-x: hidden; overflow-wrap: anywhere; box-sizing: border-box; background: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); background-size: 24px 24px; border: 1px solid #333; border-top: 4px solid #8a0303; border-bottom: 4px solid #d4af37; border-radius: 12px; font-family: 'Nunito', 'Quicksand', 'Segoe UI Rounded', 'Helvetica Rounded', Arial, sans-serif; color: #d0d0d0; padding: 16px; animation: stb-pm-terminal-breathe 8s infinite ease-in-out; position: relative; margin-top: 15px; margin-bottom: 10px; }\n\n      /* 🚨 字体优化：将原本丑陋的等宽字体替换为更平滑的无衬线字体 */\n      .stb-pm-terminal-data { font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 13.5px; color: #81d4fa; white-space: pre-wrap; word-break: break-all; line-height: 1.6; letter-spacing: 0.5px; }\n      .stb-pm-terminal-data-gold { color: #f4e7c1; }\n      .stb-pm-terminal-data-red { color: #ff6b6b; }\n\n      .stb-pm-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 12px; margin-bottom: 12px; position: relative; }\n      .stb-pm-header::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 30%; height: 2px; background: #d4af37; box-shadow: 0 0 10px #d4af37; border-radius: 2px; }\n      .stb-pm-location { font-family: 'Quicksand', 'Georgia', serif; font-size: clamp(16px, 4vw, 18px); font-weight: bold; color: #d4af37; letter-spacing: 1px; text-shadow: 0 0 12px rgba(212, 175, 55, 0.6); word-break: break-word; display: flex; align-items: center; gap: 8px; flex: 1; }\n      .stb-pm-location::before { content: '◆'; font-size: 12px; color: #8a0303; text-shadow: 0 0 6px #8a0303; }\n      .stb-pm-env-col { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }\n      .stb-pm-tag { background: rgba(0, 0, 0, 0.8); border: 1px solid #444; padding: 4px 10px; border-radius: 12px; white-space: nowrap; font-size: 12px; box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05); letter-spacing: 0.5px; }\n      .stb-pm-tag-time { color: #aaa; border-color: #555; }\n      .stb-pm-tag-weather { color: #ff6b6b; border-color: #8a0303; text-shadow: 0 0 5px rgba(138, 3, 3, 0.8); }\n\n      /* DM 头像 */\n      .stb-pm-dm-avatar-box { position: absolute; top: -10px; right: -10px; width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--pm-gold); overflow: hidden; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); z-index: 10; background: #000; }\n      .stb-pm-dm-avatar { width: 100%; height: 100%; object-fit: cover; }\n      .stb-pm-dm-label { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(138, 3, 3, 0.8); color: #fff; font-size: 10px; text-align: center; font-weight: bold; letter-spacing: 1px; }\n\n      /* BGM 播放器 */\n      .stb-pm-bgm-container { margin-bottom: 16px; }\n      .stb-pm-bgm-container details { background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #81d4fa; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }\n      .stb-pm-bgm-container summary { padding: 12px 16px; font-size: 14px; color: #81d4fa; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }\n      .stb-pm-bgm-container summary::-webkit-details-marker { display: none; }\n      .stb-pm-bgm-container summary:hover { background: rgba(129, 212, 250, 0.1); }\n      .stb-pm-bgm-arrow { transition: transform 0.3s ease; }\n      .stb-pm-bgm-container details[open] .stb-pm-bgm-arrow { transform: rotate(180deg); }\n      .stb-pm-bgm-content { padding: 12px; border-top: 1px solid #333; display: flex; justify-content: center; background: #000; overflow: hidden; }\n      .stb-pm-bgm-content > iframe, .stb-pm-bgm-content > audio { width: 100% !important; max-width: 330px; height: 86px; border-radius: 6px; outline: none; border: none; }\n\n      /* 按钮与徽章 */\n      @keyframes stb-btn-breathe-gold { 0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } 50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); } 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); } }\n      @keyframes stb-btn-breathe-blue { 0% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } 50% { box-shadow: 0 0 15px rgba(129, 212, 250, 0.6); } 100% { box-shadow: 0 0 5px rgba(129, 212, 250, 0.2); } }\n      .stb-pm-actions { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }\n      .stb-pm-btn { flex: 1; min-width: 140px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 14px; font-weight: bold; letter-spacing: 1px; border-radius: 20px; transition: all 0.2s ease; cursor: pointer; touch-action: manipulation; }\n      .stb-pm-btn:active { transform: scale(0.96); }\n      .stb-pm-btn-guide { background: linear-gradient(180deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #d4af37; color: #f4e7c1; animation: stb-btn-breathe-gold 3s infinite ease-in-out; }\n      .stb-pm-btn-mirror { background: linear-gradient(180deg, rgba(129, 212, 250, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #81d4fa; color: #e1f5fe; animation: stb-btn-breathe-blue 3s infinite ease-in-out; }\n      .stb-pm-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }\n      .stb-pm-badge { background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.5)); border: 1px solid #333; border-left: 3px solid #d4af37; padding: 8px 14px; border-radius: 8px; font-size: 14px; color: #e0e0e0; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); }\n      .stb-pm-badge strong { color: #d4af37; font-weight: bold; }\n      .stb-pm-badge-title { flex: 1 1 100%; border-left-color: #81d4fa; }\n      .stb-pm-badge-title strong { color: #81d4fa; }\n\n      /* Tabs 切换 */\n      .stb-pm-tabs-container { display: flex; flex-wrap: wrap; gap: 4px; position: relative; width: 100%; }\n      .stb-pm-tab-label { display: contents; }\n      .stb-pm-tab-radio { display: none; }\n      .stb-tab-btn { order: 1; padding: 10px 16px; font-size: 14px; color: #777; background: linear-gradient(to bottom, #0a0a0a, #111); border: 1px solid #222; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; position: relative; letter-spacing: 1px; user-select: none; flex-grow: 1; text-align: center; }\n      @media (max-width: 768px) { .stb-tab-btn { font-size: 12px; padding: 8px 6px; letter-spacing: 0; } }\n      .stb-pm-tab-content { order: 2; width: 100%; display: none; flex-direction: column; gap: 16px; max-height: 65vh; overflow-y: auto; padding-right: 8px; padding-top: 16px; border-top: 1px solid #222; scrollbar-width: thin; scrollbar-color: #555 #0a0a0a; -webkit-overflow-scrolling: touch; }\n      .stb-pm-tab-content::-webkit-scrollbar { width: 6px; }\n      .stb-pm-tab-content::-webkit-scrollbar-track { background: #0a0a0a; border-radius: 3px; }\n      .stb-pm-tab-content::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }\n      .stb-pm-tab-radio:checked ~ .stb-tab-btn { color: #fff; background: linear-gradient(to bottom, rgba(138, 3, 3, 0.25), #0a0a0a); border-color: #555; text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); font-weight: bold; }\n      .stb-pm-tab-radio:checked ~ .stb-tab-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: #d4af37; box-shadow: 0 -2px 12px #d4af37, 0 0 6px #fff; border-radius: 2px; z-index: 2; }\n      .stb-pm-tab-radio:checked ~ .stb-pm-tab-content { display: flex; }\n\n      /* 面板与进度条 */\n      .stb-pm-panel { background: rgba(15, 15, 18, 0.8); border: 1px solid #222; border-left: 4px solid #555; border-radius: 8px; padding: 16px; min-width: 0; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8); transition: border-color 0.3s ease, box-shadow 0.3s ease; position: relative; }\n      .stb-pm-panel:hover { border-left-color: #d4af37; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), -3px 0 12px rgba(212, 175, 55, 0.25); }\n      .stb-pm-panel-title { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); padding-bottom: 6px; display: flex; align-items: center; font-weight: bold; }\n      .stb-pm-panel-title::before { content: '■'; font-size: 10px; margin-right: 8px; color: #555; }\n      .stb-pm-bar-container { margin-bottom: 14px; }\n      .stb-pm-bar-header { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }\n      .stb-pm-bar-label { font-weight: bold; text-shadow: 0 0 5px currentColor; letter-spacing: 1px; }\n      .stb-pm-bar-value { font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #ccc; }\n      .stb-pm-bar-track { width: 100%; height: 14px; background: #0a0a0a; border: 1px solid #333; border-radius: 7px; overflow: hidden; box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.9), 0 1px 0 rgba(255, 255, 255, 0.05); position: relative; }\n      .stb-pm-bar-fill { height: 100%; transition: width 0.5s ease; border-radius: 7px; }\n      .stb-pm-bar-hp { background: linear-gradient(90deg, #ff6b6b, #8a0303); box-shadow: 0 0 8px rgba(255, 107, 107, 0.6); }\n      .stb-pm-bar-mp { background: linear-gradient(90deg, #81d4fa, #0277bd); box-shadow: 0 0 8px rgba(129, 212, 250, 0.6); }\n      .stb-pm-bar-sp { background: linear-gradient(90deg, #81c784, #2e7d32); box-shadow: 0 0 8px rgba(129, 199, 132, 0.6); }\n      .stb-pm-bar-xp { background: linear-gradient(90deg, #fff59d, #fbc02d); box-shadow: 0 0 8px rgba(255, 245, 157, 0.6); }\n\n      /* 肢体状态 */\n      .stb-pm-limbs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }\n      @keyframes stb-critical-flash { 0% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } 50% { border-color: #550000; box-shadow: none; background: rgba(255, 68, 68, 0.05); } 100% { border-color: #ff4444; box-shadow: 0 0 10px rgba(255, 68, 68, 0.7); background: rgba(255, 68, 68, 0.15); } }\n      .stb-pm-limb-card { background: linear-gradient(180deg, #1a1a1a, #0d0d0d); border: 1px solid #333; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.2s ease, border-color 0.2s ease; position: relative; overflow: hidden; }\n      .stb-pm-limb-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #333; }\n      .stb-pm-limb-name { font-size: 12px; color: #888; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }\n      .stb-pm-limb-stat { font-size: 14px; font-weight: bold; text-align: center; word-break: break-word; white-space: normal; }\n      .stb-pm-limb-card[data-status*='完好']::before { background: #555; }\n      .stb-pm-limb-card[data-status*='完好'] .stb-pm-limb-stat { color: #999; }\n      .stb-pm-limb-card[data-status*='轻度']::before { background: #aaa; }\n      .stb-pm-limb-card[data-status*='轻度'] .stb-pm-limb-stat { color: #ddd; text-shadow: 0 0 4px rgba(255, 255, 255, 0.3); }\n      .stb-pm-limb-card[data-status*='重伤'] { border-color: #ffb74d; }\n      .stb-pm-limb-card[data-status*='重伤']::before { background: #ffb74d; box-shadow: 0 0 6px #ffb74d; }\n      .stb-pm-limb-card[data-status*='重伤'] .stb-pm-limb-stat { color: #ffcc80; text-shadow: 0 0 6px rgba(255, 204, 128, 0.6); }\n      .stb-pm-limb-card[data-status*='残废'], .stb-pm-limb-card[data-status*='断裂'] { animation: stb-critical-flash 1s infinite; }\n      .stb-pm-limb-card[data-status*='残废']::before, .stb-pm-limb-card[data-status*='断裂']::before { background: #ff4444; }\n      .stb-pm-limb-card[data-status*='残废'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='断裂'] .stb-pm-limb-stat { color: #ff6b6b; text-decoration: line-through; }\n      .stb-pm-limb-card[data-status*='义体'], .stb-pm-limb-card[data-status*='同化'], .stb-pm-limb-card[data-status*='再生'] { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); }\n      .stb-pm-limb-card[data-status*='义体']::before, .stb-pm-limb-card[data-status*='同化']::before, .stb-pm-limb-card[data-status*='再生']::before { background: #d4af37; box-shadow: 0 0 6px #d4af37; }\n      .stb-pm-limb-card[data-status*='义体'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='同化'] .stb-pm-limb-stat, .stb-pm-limb-card[data-status*='再生'] .stb-pm-limb-stat { color: #f4e7c1; text-shadow: 0 0 6px rgba(212, 175, 55, 0.5); }\n\n      /* 属性与折叠夹 */\n      .stb-pm-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }\n      .stb-pm-stat-box { background: rgba(255, 255, 255, 0.02); border: 1px solid #333; border-radius: 6px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); }\n      .stb-pm-stat-label { font-size: 13px; color: #888; text-transform: uppercase; font-weight: bold; }\n      .stb-pm-stat-value { font-size: 16px; font-weight: bold; color: #d4af37; font-family: monospace; text-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }\n      .stb-pm-folder { background: rgba(255, 255, 255, 0.03); border: 1px solid #333; border-radius: 6px; margin-bottom: 10px; overflow: hidden; transition: all 0.3s ease; }\n      .stb-pm-folder summary { padding: 12px 14px; font-size: 14px; color: #eee; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; background: rgba(0, 0, 0, 0.4); }\n      .stb-pm-folder summary::-webkit-details-marker { display: none; }\n      .stb-pm-folder summary:hover { background: rgba(255, 255, 255, 0.05); }\n      .stb-pm-folder-arrow { transition: transform 0.3s ease; color: #888; font-size: 12px; }\n      .stb-pm-folder[open] > summary > .stb-pm-folder-arrow { transform: rotate(180deg); }\n      .stb-pm-folder-content { padding: 12px; border-top: 1px solid #333; }\n      .stb-pm-folder-actions { display: flex; justify-content: flex-end; padding: 8px 12px; background: rgba(0, 0, 0, 0.6); border-top: 1px dashed #444; }\n      .stb-pm-btn-small { background: #222; border: 1px solid #555; color: #ccc; padding: 4px 12px; border-radius: 4px; font-size: 12px; text-decoration: none; transition: all 0.2s; cursor: pointer; }\n      .stb-pm-btn-small:hover { background: #8a0303; border-color: #ff6b6b; color: #fff; }\n\n      /* 文本与传闻卡片 */\n      .stb-pm-text-block { font-size: 15px; color: #ccc; line-height: 1.6; word-wrap: break-word; white-space: normal; }\n      .stb-pm-rumor-card { background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), rgba(0, 0, 0, 0.6)); border: 1px solid #222; border-left: 4px solid #d4af37; padding: 12px 16px; margin-bottom: 12px; border-radius: 4px 8px 8px 4px; transition: all 0.3s ease; position: relative; }\n      .stb-pm-rumor-card::after { content: ''; position: absolute; top: 0; right: 0; width: 30px; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.9)); }\n      .stb-pm-rumor-card:hover { background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.6)); border-left-width: 6px; transform: translateX(4px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); }\n      .stb-pm-rumor-title { color: #d4af37; font-size: 14px; margin-bottom: 8px; font-weight: bold; letter-spacing: 1.5px; }\n      .stb-pm-rumor-text { color: #ddd; font-size: 15px; line-height: 1.6; position: relative; z-index: 1; }\n      .stb-pm-info-row { display: flex; flex-direction: row; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #333; padding-bottom: 4px; }\n      .stb-pm-info-label { font-size: 14px; color: #999; }\n      .stb-pm-info-value { font-size: 14px; font-weight: bold; color: #ccc; }\n\n      /* =========================================\n         🚨 全新动态面板特效 (正文内输出)\n         ========================================= */\n      @keyframes pm-rotate-glow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }\n      @keyframes pm-pulse-border { 0% { box-shadow: 0 0 5px var(--theme-color); } 50% { box-shadow: 0 0 20px var(--theme-color); } 100% { box-shadow: 0 0 5px var(--theme-color); } }\n\n      /* 实体遭遇面板 */\n      .pm-entity-panel {\n        position: relative;\n        width: 100%;\n        max-width: 500px;\n        margin: 20px auto;\n        background: rgba(15, 15, 18, 0.95);\n        border: 2px solid var(--theme-color, #8b0000);\n        border-radius: 12px;\n        overflow: hidden;\n        color: #e0e0e0;\n        font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;\n        animation: pm-pulse-border 3s infinite ease-in-out;\n      }\n      .pm-entity-panel::before {\n        content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;\n        background: conic-gradient(transparent, var(--theme-color, rgba(139,0,0,0.2)), transparent 30%);\n        animation: pm-rotate-glow 6s linear infinite; z-index: 0; pointer-events: none;\n      }\n      .pm-ep-header {\n        position: relative; z-index: 1; display: flex; align-items: center; gap: 15px;\n        padding: 15px; background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);\n        border-bottom: 1px solid rgba(255,255,255,0.1);\n      }\n      .pm-ep-avatar-placeholder {\n        width: 50px; height: 50px; border-radius: 8px; border: 2px solid var(--theme-color);\n        background: #000; display: flex; align-items: center; justify-content: center;\n        font-size: 24px; box-shadow: inset 0 0 10px var(--theme-color);\n      }\n      .pm-ep-title { display: flex; flex-direction: column; }\n      .pm-ep-name { font-size: 18px; font-weight: 900; color: var(--theme-color); text-shadow: 0 0 8px var(--theme-color); }\n      .pm-ep-level { font-size: 12px; color: #aaa; font-family: monospace; }\n      .pm-ep-body { position: relative; z-index: 1; padding: 15px; }\n      .pm-ep-stats { display: flex; justify-content: space-between; margin-bottom: 15px; font-family: monospace; font-weight: bold; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 6px; }\n      .stat-hp { color: #ff6b6b; } .stat-sp { color: #81c784; } .stat-threat { color: #d4af37; }\n      .pm-ep-details .detail-row { margin-bottom: 8px; font-size: 14px; line-height: 1.6; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px; }\n      .pm-ep-details strong { color: var(--theme-color); }\n\n      /* 战斗/检定结算面板 */\n      .pm-combat-panel {\n        position: relative; width: 100%; max-width: 500px; margin: 20px auto;\n        background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(5,5,5,0.95));\n        border-left: 5px solid var(--combat-color, #d4af37);\n        border-radius: 6px; padding: 15px; box-shadow: -5px 0 20px var(--combat-color, rgba(212,175,55,0.3));\n        font-family: 'Noto Sans SC', 'PingFang SC', sans-serif; color: #ddd;\n      }\n      .pm-cp-title { font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }\n      .pm-cp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; text-align: center; }\n      .pm-cp-item { background: rgba(0,0,0,0.6); border: 1px solid #333; border-radius: 4px; padding: 8px 4px; display: flex; flex-direction: column; gap: 5px; }\n      .pm-cp-item span:first-child { font-size: 11px; color: #888; text-transform: uppercase; }\n      .pm-cp-val { font-family: monospace; font-size: 16px; font-weight: bold; color: #81d4fa; }\n      .pm-cp-result.success { color: #d4af37; font-weight: 900; text-shadow: 0 0 8px #d4af37; }\n      .pm-cp-result.fail { color: #ff4444; font-weight: 900; text-shadow: 0 0 8px #ff4444; }\n      .pm-cp-log { background: rgba(0,0,0,0.4); padding: 10px; border-radius: 4px; font-size: 14px; line-height: 1.6; border-left: 2px solid #555; }\n\n      /* 🚨 骰子特效 CSS */\n      @keyframes pm-glitch-anim {\n        0% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 2px); }\n        20% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }\n        40% { clip-path: inset(40% 0 40% 0); transform: translate(2px, 2px); }\n        60% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, -2px); }\n        80% { clip-path: inset(60% 0 20% 0); transform: translate(2px, 2px); }\n        100% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, -2px); }\n      }\n      .pm-dice-roll {\n        display: inline-block; font-family: 'Courier New', monospace; font-weight: bold; color: #d4af37;\n        background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; padding: 2px 6px; border-radius: 4px;\n        text-shadow: 0 0 5px rgba(212, 175, 55, 0.8); margin: 0 4px;\n      }\n      .pm-crit-success {\n        display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #d4af37, #ffeb3b);\n        padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);\n        animation: pulse 1.5s infinite;\n      }\n      .pm-crit-fail {\n        display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #8b0000, #ff4444);\n        padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(139, 0, 0, 0.8);\n        position: relative;\n      }\n      .pm-crit-fail::before {\n        content: attr(data-text); position: absolute; left: -2px; text-shadow: 2px 0 red; top: 0; color: white;\n        background: transparent; overflow: hidden; animation: pm-glitch-anim 2s infinite linear alternate-reverse;\n      }\n\n      /* =========================================\n         车卡界面专属样式\n         ========================================= */\n      .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease, transform 0.5s ease; }\n      .fade-enter-from { opacity: 0; transform: translateY(20px); }\n      .fade-leave-to { opacity: 0; transform: translateY(-20px); }\n\n      .page-check, .library-scene, .custom-char-page, .page-settings { width: 100%; max-width: 1000px; flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }\n      .page-check { justify-content: center; }\n      .sys-title { font-size: clamp(2em, 5vw, 3.5em); font-weight: 900; color: var(--pm-black); letter-spacing: 10px; margin-bottom: 5px; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); text-align: center; }\n      .sys-subtitle { font-family: 'Brush Script MT', 'Great Vibes', cursive; font-size: clamp(1.2em, 3vw, 1.8em); color: var(--pm-dark-red); margin-bottom: 50px; letter-spacing: 3px; text-align: center; }\n      .sys-check-box { width: 100%; max-width: 500px; margin: 0 auto 50px; border-top: 2px solid var(--pm-gold); border-bottom: 2px solid var(--pm-gold); padding: 30px 0; }\n      .sys-row { display: flex; justify-content: space-between; margin: 15px 0; font-size: 1.2em; font-weight: bold; color: #333; }\n      .status-ok { font-family: monospace; color: var(--pm-dark-red); text-shadow: 0 0 10px rgba(139, 0, 0, 0.2); }\n      .status-warn { font-family: monospace; color: #d4af37; }\n      .status-loading { font-family: monospace; color: #aaa; animation: pulse 1.5s infinite; }\n      .sys-actions { display: flex; gap: 30px; width: 100%; max-width: 500px; justify-content: center; }\n      .sys-btn { flex: 1; padding: 15px 0; text-align: center; border: 1px solid var(--pm-text); background: transparent; color: var(--pm-text); cursor: pointer; font-family: inherit; font-size: 1.2em; font-weight: bold; letter-spacing: 4px; transition: all 0.3s; border-radius: 4px; }\n      .sys-btn:hover { background: var(--pm-text); color: var(--pm-bg-mid); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }\n      .sys-btn-primary { border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n      .sys-btn-primary:hover:not(:disabled) { background: var(--pm-dark-red); color: white; box-shadow: 0 8px 20px rgba(139, 0, 0, 0.25); }\n      .sys-btn-primary:disabled { opacity: 0.5; border-color: #666; color: #666; cursor: not-allowed; background: transparent; box-shadow: none; }\n\n      .transition-note { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10%; background: radial-gradient(circle at center, #ffffff 0%, #fcfaf5 50%, #f4ebd8 100%); z-index: 210; animation: noteSequence 5.5s forwards ease-in-out; }\n      .note-title { font-size: clamp(1.5em, 3vw, 2em); color: var(--pm-dark-red); margin-bottom: 30px; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; letter-spacing: 3px; font-weight: bold; }\n      .note-content { font-size: clamp(1em, 2vw, 1.2em); line-height: 2; max-width: 800px; color: var(--pm-text); }\n      .note-content li { margin-bottom: 15px; list-style-type: square; }\n      .note-content li strong { color: var(--pm-dark-red); font-weight: 900; }\n\n      .library-scene { width: 100%; padding: 20px 0; box-sizing: border-box; position: relative; z-index: 200; }\n\n      .bgm-player { position: absolute; top: 0px; left: 0px; width: 280px; opacity: 0; pointer-events: none; transition: opacity 0.4s; z-index: 220; }\n      .bgm-player.is-visible { opacity: 0.3; pointer-events: auto; }\n      .bgm-player.is-visible:hover { opacity: 1; }\n      .bgm-player audio, .bgm-player iframe { width: 100%; height: 40px; outline: none; border: none; }\n\n      .scene-text { font-size: clamp(1.1em, 2.5vw, 1.3em); line-height: 2.2; text-align: justify; margin-top: 60px; margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto; text-indent: 2em; color: var(--pm-black); }\n      .scene-text p { margin-bottom: 20px; }\n      .highlight-red { color: var(--pm-dark-red); font-weight: 900; text-shadow: 0 0 5px rgba(139, 0, 0, 0.2); }\n      .highlight-gold { color: var(--pm-gold); font-weight: 900; text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }\n      .trauma-text { color: var(--pm-dark-red); font-weight: bold; font-style: italic; font-size: 0.9em; background: rgba(139, 0, 0, 0.05); padding: 8px 15px; border-left: 3px solid var(--pm-dark-red); border-radius: 4px; display: block; margin: 15px 0; text-indent: 0; }\n\n      .dm-portrait-box { display: flex; justify-content: center; margin: 30px auto 50px auto; width: 100%; }\n      .dm-portrait-img { max-width: 220px; border: 4px solid var(--pm-gold); border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3), inset 0 0 15px rgba(0,0,0,0.5); background: radial-gradient(circle, #2c1810 0%, #1a1105 100%); padding: 5px; object-fit: cover; transition: transform 0.3s ease, box-shadow 0.3s ease; }\n      .dm-portrait-img:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(0,0,0,0.6); }\n\n      .dossier-container { max-width: 900px; width: 100%; display: flex; flex-direction: column; gap: 15px; margin: 0 auto 40px auto; }\n      .dossier-folder { background: rgba(255, 255, 255, 0.7); border: 1px solid var(--pm-gold); border-radius: 6px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); overflow: hidden; transition: all 0.3s ease; }\n      .dossier-folder[open] { background: rgba(255, 255, 255, 0.95); box-shadow: 0 10px 25px rgba(139, 0, 0, 0.15); border-color: var(--pm-dark-red); }\n      .dossier-summary { padding: 15px 20px; display: flex; align-items: center; cursor: pointer; list-style: none; border-left: 4px solid var(--pm-gold); transition: all 0.3s; }\n      .dossier-summary::-webkit-details-marker { display: none; }\n      .dossier-summary:hover { background: rgba(212, 175, 55, 0.1); }\n      .dossier-folder[open] .dossier-summary { border-left-color: var(--pm-dark-red); border-bottom: 1px dashed rgba(139, 0, 0, 0.2); background: rgba(139, 0, 0, 0.05); }\n      .ds-type { font-family: monospace; color: #888; font-size: 0.9em; width: 80px; letter-spacing: 1px; }\n      .ds-name { font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 3px; flex: 1; }\n      .ds-desc { color: #555; font-style: italic; font-size: 0.95em; }\n      .dossier-content { padding: 30px; animation: slideDown 0.4s ease-out; }\n      .cp-quote { font-family: 'Georgia', serif; font-size: 1.1em; font-style: italic; color: #555; border-left: 4px solid var(--pm-gold); padding-left: 20px; margin-bottom: 30px; background: rgba(212, 175, 55, 0.05); padding: 15px 20px; }\n      .cp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }\n      @media (max-width: 768px) { .cp-grid { grid-template-columns: 1fr; } }\n      .cp-box { border: 1px dashed #b89f7d; padding: 20px; background: rgba(255, 255, 255, 0.6); }\n      .cp-box-title { font-weight: 900; color: var(--pm-dark-red); margin-bottom: 10px; font-size: 1.1em; border-bottom: 1px solid rgba(139, 0, 0, 0.2); padding-bottom: 5px; letter-spacing: 1px; }\n      .cp-box-content { font-size: 1.05em; line-height: 1.8; color: #333; }\n      .cp-actions { display: flex; justify-content: center; margin-top: 20px; }\n      .cp-btn-confirm { padding: 15px 50px; font-size: 1.2em; font-weight: bold; cursor: pointer; border: 2px solid var(--pm-dark-red); background: var(--pm-dark-red); color: #fff; text-decoration: none; letter-spacing: 2px; transition: all 0.3s; border-radius: 4px; display: block; text-align: center; }\n      .cp-btn-confirm:hover { background: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n      .dossier-custom { display: flex; align-items: center; padding: 15px 20px; background: var(--pm-black); border: 1px solid var(--pm-dark-red); border-left: 4px solid var(--pm-dark-red); border-radius: 6px; cursor: pointer; margin-top: 10px; transition: all 0.3s; text-decoration: none; }\n      .dossier-custom:hover { background: #2c1810; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateX(5px); }\n      .dossier-custom .ds-type { color: #aaa; }\n      .dossier-custom .ds-name { color: var(--pm-gold); }\n\n      .custom-char-page { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 20px 0; position: relative; z-index: 200; }\n      .points-header { position: sticky; top: 0; width: 100%; background: rgba(26, 17, 5, 0.95); color: var(--pm-gold); padding: 15px 30px; border-radius: 8px; border: 1px solid var(--pm-gold); display: flex; justify-content: space-between; align-items: center; z-index: 300; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); box-sizing: border-box; margin-bottom: 30px; }\n      .points-header h2 { margin: 0; font-size: 1.5em; letter-spacing: 2px; }\n      .points-display { font-size: 2em; font-weight: 900; font-family: monospace; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); transition: color 0.3s; }\n      .points-display.negative { color: #ff4444; text-shadow: 0 0 15px rgba(255, 0, 0, 0.8); animation: pulse-red 2s infinite; }\n      .preset-bar { width: 100%; background: rgba(255, 255, 255, 0.6); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }\n\n      /* 🚨 强制白底黑字输入框 */\n      .preset-select, .preset-input, .pm-input, .pm-textarea, .pm-select {\n          background-color: #ffffff !important; color: #000000 !important; border: 1px solid #b89f7d !important;\n          padding: 12px; border-radius: 4px; font-family: inherit; font-size: 1em; box-sizing: border-box; outline: none; transition: border-color 0.3s;\n      }\n      .preset-select::placeholder, .preset-input::placeholder, .pm-input::placeholder, .pm-textarea::placeholder, .pm-select::placeholder { color: #888888 !important; }\n      .preset-select, .preset-input { padding: 8px; }\n      .pm-input { width: 100%; margin-bottom: 15px; }\n      .pm-textarea { width: 100%; height: 80px; resize: vertical; }\n      .pm-input:focus, .pm-textarea:focus, .pm-select:focus, .preset-input:focus, .preset-select:focus { border-color: var(--pm-dark-red) !important; box-shadow: 0 0 8px rgba(139, 0, 0, 0.3) !important; background-color: #ffffff !important; }\n\n      .pm-btn-small { padding: 8px 15px; background: #ffffff; color: var(--pm-dark-red); border: 1px solid var(--pm-dark-red); border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; font-family: inherit; }\n      .pm-btn-small:hover { background: var(--pm-dark-red); color: #ffffff; }\n\n      /* 🚨 隐藏式返回按钮 */\n      .pm-btn-back-stealth { background: transparent; border: none; color: #666; font-size: 0.9em; text-decoration: underline; cursor: pointer; transition: color 0.3s; letter-spacing: 1px; padding: 10px; }\n      .pm-btn-back-stealth:hover { color: var(--pm-dark-red); }\n\n      /* 玩家立绘自适应画框样式 */\n      .image-upload-row { display: flex; gap: 25px; align-items: stretch; margin-bottom: 25px; width: 100%; flex-wrap: wrap; }\n      .player-portrait-box { flex-shrink: 0; display: flex; justify-content: center; align-items: center; }\n      .player-portrait-img, .player-portrait-placeholder { max-width: 140px; max-height: 180px; width: auto; height: auto; border: 3px solid var(--pm-gold); border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.5); background: radial-gradient(circle, #2c1810 0%, #1a1105 100%); padding: 4px; object-fit: contain; transition: transform 0.3s ease, box-shadow 0.3s ease; }\n      .player-portrait-img:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(0,0,0,0.6); }\n      .player-portrait-placeholder { width: 100px; height: 120px; color: #888; font-size: 1em; font-weight: bold; letter-spacing: 2px; display: flex; align-items: center; justify-content: center; }\n\n      .preset-btn { padding: 8px 15px; background: var(--pm-black); color: var(--pm-gold); border: 1px solid var(--pm-gold); border-radius: 4px; cursor: pointer; transition: all 0.2s; }\n      .preset-btn:hover { background: var(--pm-dark-red); color: #fff; }\n      .roll-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; text-align: center; }\n      .roll-btn { width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, var(--pm-dark-red) 0%, var(--pm-black) 100%); border: 4px solid var(--pm-gold); color: var(--pm-gold); font-size: 2em; font-weight: 900; cursor: pointer; transition: all 0.2s; box-shadow: 0 0 30px rgba(139, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; flex-direction: column; }\n      .roll-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); }\n      .roll-btn:active { transform: scale(0.95); }\n      .roll-btn.rolling { animation: shake 0.5s infinite; pointer-events: none; filter: brightness(1.5); }\n      .shop-container { width: 100%; display: grid; grid-template-columns: 1fr; gap: 30px; }\n      .shop-section { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); border-radius: 8px; padding: 25px; }\n      .shop-title { font-size: 1.5em; color: var(--pm-dark-red); border-bottom: 2px solid var(--pm-gold); padding-bottom: 10px; margin-bottom: 20px; font-weight: 900; letter-spacing: 2px; display: flex; justify-content: space-between; align-items: center; }\n      .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }\n      .stat-row { display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.05); padding: 10px 15px; border-radius: 4px; border-left: 3px solid var(--pm-gold); }\n      .stat-name { font-weight: bold; color: var(--pm-text); width: 100px; }\n      .stat-controls { display: flex; align-items: center; gap: 10px; }\n      .stat-btn { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); font-weight: bold; cursor: pointer; transition: all 0.2s; display: flex; justify-content: center; align-items: center; padding: 0; line-height: 1; }\n      .stat-btn:hover:not(:disabled) { background: var(--pm-dark-red); color: white; }\n      .stat-btn:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }\n      .stat-val { font-family: monospace; font-size: 1.2em; font-weight: bold; width: 40px; text-align: center; }\n      .stat-cost { font-size: 0.8em; color: #888; width: 60px; text-align: right; }\n      .rl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }\n      .rl-card { border: 1px solid #b89f7d; background: #fcfaf5; border-radius: 6px; padding: 15px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }\n      .rl-card:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transform: translateY(-2px); border-color: var(--pm-gold); }\n      .rl-card.selected { border-color: var(--pm-dark-red); background: rgba(139, 0, 0, 0.05); box-shadow: inset 0 0 0 2px var(--pm-dark-red); }\n      .rl-card.selected::after { content: '✓'; position: absolute; top: 10px; right: 15px; color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; }\n      .rl-type { font-size: 0.8em; color: #888; margin-bottom: 5px; font-family: monospace; }\n      .rl-name { font-size: 1.2em; font-weight: bold; color: var(--pm-black); margin-bottom: 10px; }\n      .rl-desc { font-size: 0.9em; color: #555; line-height: 1.5; margin-bottom: 15px; }\n      .rl-cost { font-weight: bold; color: var(--pm-dark-red); text-align: right; font-family: monospace; }\n      .rl-cost.refund { color: #2e7d32; }\n\n      .diy-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }\n      .diy-box { background: rgba(0, 0, 0, 0.03); border: 1px dashed var(--pm-gold); padding: 15px; border-radius: 6px; position: relative; }\n      .diy-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }\n      .diy-title { font-weight: bold; color: var(--pm-dark-red); font-size: 1.1em; }\n      .diy-roll-btn { padding: 8px 15px; background: var(--pm-gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; }\n      .diy-roll-btn:hover:not(:disabled) { background: var(--pm-dark-red); }\n      .diy-roll-btn:disabled { background: #ccc; cursor: not-allowed; }\n      .diy-cost-display { font-family: monospace; font-size: 1.2em; font-weight: bold; color: var(--pm-dark-red); }\n      .diy-cost-display.refund { color: #2e7d32; }\n      .btn-add-diy { width: 100%; padding: 10px; background: transparent; border: 1px dashed var(--pm-text); color: var(--pm-text); font-weight: bold; cursor: pointer; border-radius: 4px; transition: all 0.2s; }\n      .btn-add-diy:hover { background: rgba(0,0,0,0.05); border-color: var(--pm-dark-red); color: var(--pm-dark-red); }\n      .btn-remove-diy { background: transparent; border: none; color: #ff4444; cursor: pointer; font-size: 1.5em; font-weight: bold; display: flex; align-items: center; justify-content: center; padding: 0 5px; transition: transform 0.2s; line-height: 1; }\n      .btn-remove-diy:hover { transform: scale(1.2); }\n\n      .dm-warning { background: rgba(139, 0, 0, 0.05); border-left: 4px solid var(--pm-dark-red); padding: 15px; margin-bottom: 20px; font-size: 0.95em; color: #555; line-height: 1.6; }\n      .dm-warning strong { color: var(--pm-dark-red); }\n      .negative-warning { background: rgba(139, 0, 0, 0.1); border: 2px solid #ff4444; color: #8b0000; padding: 20px; border-radius: 8px; margin-top: 20px; font-weight: bold; text-align: center; animation: pulse-border 2s infinite; line-height: 1.6; }\n\n      .custom-idea-box { width: 100%; margin-top: 20px; }\n      .custom-idea-box textarea { width: 100%; min-height: 150px; padding: 15px; border: 2px dashed var(--pm-gold); border-radius: 6px; background-color: #ffffff !important; color: #000000 !important; font-family: inherit; font-size: 1.05em; resize: vertical; box-sizing: border-box; outline: none; transition: all 0.3s; line-height: 1.6; }\n      .custom-idea-box textarea::placeholder { color: #888888 !important; }\n      .custom-idea-box textarea:focus { border-color: var(--pm-dark-red); border-style: solid; box-shadow: 0 0 10px rgba(139, 0, 0, 0.1); }\n\n      .page-settings { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 40px 0; animation: slideDown 0.5s ease-out; }\n      .settings-title { font-size: 2.5em; font-weight: 900; color: var(--pm-dark-red); letter-spacing: 8px; margin-bottom: 10px; text-align: center; border-bottom: 2px solid var(--pm-gold); padding-bottom: 15px; width: 100%; max-width: 800px; }\n      .settings-warning { color: #555; font-style: italic; margin-bottom: 40px; letter-spacing: 2px; text-align: center; }\n      .toggles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n      .toggle-btn { padding: 15px; border: 1px solid var(--pm-gold); background: rgba(255, 255, 255, 0.5); border-radius: 8px; text-align: center; cursor: pointer; font-weight: bold; color: #555; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); user-select: none; }\n      .toggle-btn.active { background: var(--pm-dark-red); color: #fff; border-color: #5a0000; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3); transform: translateY(-2px); }\n      .toggle-btn.active::after { content: ' [已开启]'; font-size: 0.8em; opacity: 0.8; }\n      .toggle-btn:not(.active)::after { content: ' [已关闭]'; font-size: 0.8em; opacity: 0.8; }\n      .dm-section { width: 100%; max-width: 800px; background: rgba(212, 175, 55, 0.05); border: 1px dashed var(--pm-gold); padding: 30px; border-radius: 8px; margin-bottom: 30px; box-sizing: border-box; }\n      .dm-title { font-size: 1.5em; color: var(--pm-black); font-weight: bold; margin-bottom: 15px; }\n      .dm-desc { color: #555; line-height: 1.8; margin-bottom: 20px; }\n      .dm-presets { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }\n      .pm-preset-btn { padding: 10px 20px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; transition: all 0.2s; font-family: inherit; font-size: 1em; }\n      .pm-preset-btn:hover, .pm-preset-btn.active { background: var(--pm-dark-red); color: white; }\n      .pm-preset-btn.custom-btn { border-style: dashed; font-weight: bold; }\n      .mbti-diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; max-width: 800px; margin-bottom: 50px; }\n      @media (max-width: 768px) { .mbti-diff-grid { grid-template-columns: 1fr; } }\n      .mbti-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; }\n      .mbti-row { display: flex; justify-content: space-between; margin-bottom: 10px; background: rgba(0, 0, 0, 0.05); border-radius: 4px; overflow: hidden; }\n      .mbti-btn { flex: 1; padding: 10px; border: none; background: transparent; cursor: pointer; font-weight: bold; color: #555; transition: all 0.2s; }\n      .mbti-btn.active { background: var(--pm-dark-red); color: white; }\n      .mbti-result { text-align: center; font-size: 1.5em; font-weight: 900; color: var(--pm-dark-red); margin-top: 15px; letter-spacing: 2px; }\n      .diff-box { background: rgba(255, 255, 255, 0.6); border: 1px solid var(--pm-gold); padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 10px; }\n      .diff-btn { padding: 12px; border: 1px solid var(--pm-dark-red); background: transparent; color: var(--pm-dark-red); cursor: pointer; border-radius: 4px; font-weight: bold; transition: all 0.2s; text-align: left; }\n      .diff-btn:hover, .diff-btn.active { background: var(--pm-dark-red); color: white; }\n      .pm-btn-embark { padding: 20px 60px; font-size: 1.5em; font-weight: 900; background: var(--pm-black); color: var(--pm-gold); border: 2px solid var(--pm-gold); border-radius: 8px; cursor: pointer; letter-spacing: 8px; transition: all 0.4s; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); text-align: center; display: inline-block; margin-top: 20px; }\n      .pm-btn-embark:hover:not(:disabled) { background: var(--pm-dark-red); color: #fff; border-color: #ff4444; box-shadow: 0 15px 30px rgba(139, 0, 0, 0.5); transform: translateY(-3px); }\n      .pm-btn-embark:disabled { opacity: 0.6; cursor: not-allowed; }\n\n      .modal-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; background: rgba(0,0,0,0.8); z-index: 999999; display: flex; justify-content: center; align-items: center; padding: 20px; }\n      .modal-content { background: var(--pm-bg-light); border: 2px solid var(--pm-gold); border-radius: 8px; width: 100%; max-width: 800px; max-height: 90vh; display: flex; flex-direction: column; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }\n      .modal-title { color: var(--pm-dark-red); font-size: 1.5em; font-weight: bold; margin-bottom: 15px; text-align: center; }\n      .modal-textarea { flex: 1; width: 100%; min-height: 300px; padding: 15px; font-family: monospace; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; resize: none; outline: none; background-color: #ffffff !important; color: #000000 !important; margin-bottom: 15px; }\n      .modal-btn { padding: 12px 30px; background: var(--pm-dark-red); color: white; border: none; border-radius: 4px; font-size: 1.2em; cursor: pointer; font-weight: bold; align-self: center; }\n      .modal-btn:hover { background: #5a0000; }\n    ";
 	}, i = () => {
 		let r = n();
 		for (let [t, n] of e.entries()) {
@@ -5785,7 +5833,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 				e.setAttribute("data-pm-parsed", "true");
 			}), s.includes("pm-custom-char-mount-point")) {
 				let n = `pm-setup-root-${i}`, a = r.getElementById(n);
-				a || (a = r.createElement("div"), a.id = n, a.style.cssText = "margin-top: 15px; width: 100%; position: relative; clear: both;", u.appendChild(a), t = Zo(Bp), t.mount(a), e.set(`setup_${i}`, t));
+				a || (a = r.createElement("div"), a.id = n, a.style.cssText = "margin-top: 15px; width: 100%; position: relative; clear: both;", u.appendChild(a), t = Zo(qp), t.mount(a), e.set(`setup_${i}`, t));
 			}
 			if (!c && !l) {
 				let t = `pm-app-${i}`, n = r.getElementById(t);
