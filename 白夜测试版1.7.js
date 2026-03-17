@@ -3,7 +3,7 @@
                 if (typeof document !== 'undefined' && !document.getElementById('seven-days-injected-styles')) {
                   var style = document.createElement('style');
                   style.id = 'seven-days-injected-styles';
-                  style.textContent = ".pm-glass-panel[data-v-ab5c7fd8]{backdrop-filter:blur(8px)!important;color:#e2e8f0!important;background:#1a1a1e66!important;border:1px solid #d4af374d!important;box-shadow:0 8px 32px #0000004d!important}.pm-glass-btn[data-v-ab5c7fd8]{backdrop-filter:blur(4px)!important;color:#d4af37!important;background:#1a1a1e99!important;border:1px solid #d4af3780!important;transition:all .3s!important}.pm-glass-btn[data-v-ab5c7fd8]:hover:not(:disabled){color:#fff!important;background:#8b000099!important;border-color:#f44!important;transform:translateY(-2px)!important;box-shadow:0 0 15px #8b0000cc!important}.pm-glass-input[data-v-ab5c7fd8]{color:#d4af37!important;background:#00000080!important;border:none!important;border-bottom:2px solid #d4af3780!important;transition:all .3s!important}.pm-glass-input[data-v-ab5c7fd8]:focus{border-bottom-color:#f44!important;outline:none!important;box-shadow:0 5px 10px #8b00004d!important}\n/*$vite$:1*/";
+                  style.textContent = ".stb-pm-dossier-wrapper[data-v-fd4be2d3]{box-sizing:border-box;color:#2c241b;background:#f4ebd8d9;border:1px solid #b89f7d;border-top:4px solid #8b0000;border-bottom-width:4px;border-radius:4px;width:100%;max-width:100%;margin-top:15px;margin-bottom:10px;padding:16px;font-family:Noto Serif SC,Songti SC,serif;position:relative;box-shadow:0 4px 15px #0000001a,inset 0 0 20px #b89f7d33}.stb-pm-dossier-header[data-v-fd4be2d3]{border-bottom:2px dashed #8b0000;justify-content:space-between;align-items:flex-start;margin-bottom:12px;padding-bottom:12px;display:flex}.stb-pm-dossier-location[data-v-fd4be2d3]{color:#8b0000;letter-spacing:1px;font-size:18px;font-weight:700}.stb-pm-dossier-env-col[data-v-fd4be2d3]{gap:6px;margin-top:5px;display:flex}.stb-pm-dossier-tag[data-v-fd4be2d3]{color:#8b0000;background:#8b00001a;border:1px solid #8b0000;border-radius:2px;padding:2px 8px;font-family:Courier New,monospace;font-size:12px;font-weight:700}.stb-pm-dossier-dm-box[data-v-fd4be2d3]{background:#fff;border:2px solid #8b0000;border-radius:4px;width:50px;height:50px;position:relative;overflow:hidden;transform:rotate(5deg);box-shadow:2px 2px 5px #0003}.stb-pm-dossier-dm-avatar[data-v-fd4be2d3]{object-fit:cover;filter:sepia(.5)contrast(1.2);width:100%;height:100%}.stb-pm-dossier-dm-label[data-v-fd4be2d3]{color:#fff;text-align:center;background:#8b0000;width:100%;font-family:Courier New,monospace;font-size:9px;font-weight:700;position:absolute;bottom:0;left:0}.stb-pm-dossier-bgm details[data-v-fd4be2d3]{background:#ffffff80;border:1px solid #b89f7d;border-left:3px solid #8b0000;border-radius:2px;margin-bottom:16px}.stb-pm-dossier-bgm summary[data-v-fd4be2d3]{color:#8b0000;cursor:pointer;justify-content:space-between;padding:10px;font-size:14px;font-weight:700;list-style:none;display:flex}.stb-pm-dossier-bgm-content[data-v-fd4be2d3]{border-top:1px dashed #b89f7d;padding:10px}.stb-pm-dossier-actions[data-v-fd4be2d3]{gap:10px;margin-bottom:16px;display:flex}.stb-pm-dossier-btn[data-v-fd4be2d3]{text-align:center;color:#555;background:#e8dcc4;border:1px solid #b89f7d;border-radius:2px;flex:1;padding:8px;font-weight:700;text-decoration:none;transition:all .1s;box-shadow:2px 2px #b89f7d}.stb-pm-dossier-btn[data-v-fd4be2d3]:active{transform:translate(2px,2px);box-shadow:0 0 #b89f7d}.stb-pm-dossier-tabs-container[data-v-fd4be2d3]{flex-wrap:wrap;gap:2px;display:flex}.stb-pm-dossier-tab-label[data-v-fd4be2d3]{display:contents}.stb-pm-dossier-tab-radio[data-v-fd4be2d3]{display:none}.stb-dossier-tab-btn[data-v-fd4be2d3]{color:#555;cursor:pointer;text-align:center;background:#e8dcc4;border:1px solid #b89f7d;border-bottom:none;border-radius:4px 4px 0 0;flex-grow:1;order:1;padding:8px 12px;font-size:13px}.stb-pm-dossier-tab-content[data-v-fd4be2d3]{border-top:2px solid #8b0000;flex-direction:column;order:2;gap:12px;width:100%;padding:16px 8px;display:none}.stb-pm-dossier-tab-radio:checked~.stb-dossier-tab-btn[data-v-fd4be2d3]{color:#fff;background:#8b0000;border-color:#8b0000;font-weight:700}.stb-pm-dossier-tab-radio:checked~.stb-pm-dossier-tab-content[data-v-fd4be2d3]{display:flex}.stb-pm-dossier-badges[data-v-fd4be2d3]{flex-wrap:wrap;gap:8px;display:flex}.stb-pm-dossier-badge[data-v-fd4be2d3]{background:#fff9;border:1px solid #b89f7d;border-radius:2px;padding:4px 10px;font-size:13px}.stb-pm-dossier-panel[data-v-fd4be2d3]{background:#ffffff80;border:1px solid #b89f7d;border-left:4px solid #8b0000;border-radius:2px;padding:12px}.stb-pm-dossier-panel-title[data-v-fd4be2d3]{color:#8b0000;border-bottom:1px solid #b89f7d;margin-bottom:10px;padding-bottom:4px;font-size:14px;font-weight:700}.stb-pm-dossier-typewriter[data-v-fd4be2d3]{color:#1a1105;white-space:pre-wrap;word-break:break-all;font-family:Courier New,monospace;font-weight:700}.stb-pm-dossier-bar-container[data-v-fd4be2d3]{margin-bottom:10px}.stb-pm-dossier-bar-header[data-v-fd4be2d3]{justify-content:space-between;margin-bottom:4px;font-size:13px;display:flex}.stb-pm-dossier-bar-track[data-v-fd4be2d3]{background:#e8dcc4;border:1px solid #b89f7d;width:100%;height:10px}.stb-pm-dossier-bar-fill[data-v-fd4be2d3]{height:100%;transition:width .3s}.stb-pm-dossier-limbs-grid[data-v-fd4be2d3]{grid-template-columns:repeat(2,1fr);gap:8px;display:grid}.stb-pm-dossier-limb-card[data-v-fd4be2d3]{text-align:center;background:#ffffff4d;border:1px dashed #b89f7d;padding:8px}.stb-pm-dossier-limb-name[data-v-fd4be2d3]{color:#555;font-size:12px}.stb-pm-dossier-limb-stat[data-v-fd4be2d3]{color:#1a1105;font-size:13px;font-weight:700}.stb-pm-dossier-limb-card[data-status*=重伤][data-v-fd4be2d3]{background:#d4af371a;border-color:#d4af37}.stb-pm-dossier-limb-card[data-status*=残废][data-v-fd4be2d3],.stb-pm-dossier-limb-card[data-status*=断裂][data-v-fd4be2d3]{color:#8b0000;background:#8b00001a;border-color:#8b0000;text-decoration:line-through}.stb-pm-dossier-stats-grid[data-v-fd4be2d3]{grid-template-columns:repeat(3,1fr);gap:8px;display:grid}.stb-pm-dossier-stat-box[data-v-fd4be2d3]{text-align:center;background:#fff;border:1px solid #b89f7d;flex-direction:column;padding:6px;display:flex}.stb-pm-dossier-folder[data-v-fd4be2d3]{background:#fff;border:1px solid #b89f7d;margin-bottom:8px}.stb-pm-dossier-folder summary[data-v-fd4be2d3]{cursor:pointer;justify-content:space-between;padding:8px;font-weight:700;display:flex}.stb-pm-dossier-folder-content[data-v-fd4be2d3]{background:#f4ebd84d;border-top:1px dashed #b89f7d;padding:8px}.stb-pm-dossier-info-row[data-v-fd4be2d3]{border-bottom:1px dashed #b89f7d;justify-content:space-between;padding:4px 0;font-size:13px;display:flex}.stb-pm-dossier-rumor-card[data-v-fd4be2d3]{border-left:3px solid #b89f7d;margin-bottom:10px;padding-left:8px}.stb-pm-dossier-rumor-title[data-v-fd4be2d3]{color:#b89f7d;font-size:13px;font-weight:700}.stb-pm-dossier-text-block[data-v-fd4be2d3]{font-size:14px;line-height:1.6}\n/*$vite$:1*/";
                   document.head.appendChild(style);
                 }
               })();
@@ -3172,172 +3172,153 @@ var $ = /* @__PURE__ */ Ot({
 		}) || {};
 	} catch {}
 	return {};
-}, ns = { class: "stb-pm-wrapper" }, rs = { class: "stb-pm-header" }, is = { style: {
+}, ns = { class: "stb-pm-dossier-wrapper" }, rs = { class: "stb-pm-dossier-header" }, is = { style: {
 	display: "flex",
 	"flex-direction": "column",
 	gap: "5px",
 	flex: "1"
-} }, as = { class: "stb-pm-location" }, os = {
-	class: "stb-pm-env-col",
-	style: {
-		"align-items": "flex-start",
-		"flex-direction": "row"
-	}
-}, ss = { class: "stb-pm-tag stb-pm-tag-time" }, cs = { class: "stb-pm-tag stb-pm-tag-weather" }, ls = {
-	class: "stb-pm-dm-avatar-box",
+} }, as = { class: "stb-pm-dossier-location" }, os = { class: "stb-pm-dossier-env-col" }, ss = { class: "stb-pm-dossier-tag" }, cs = { class: "stb-pm-dossier-tag stb-pm-dossier-tag-weather" }, ls = {
+	class: "stb-pm-dossier-dm-box",
 	title: "观测者正在注视着你..."
-}, us = ["src"], ds = { class: "stb-pm-bgm-container" }, fs = { class: "stb-pm-actions" }, ps = { class: "stb-pm-tabs-container" }, ms = { class: "stb-pm-tab-label" }, hs = ["name"], gs = { class: "stb-pm-tab-content" }, _s = { class: "stb-pm-badges" }, vs = { class: "stb-pm-badge stb-pm-badge-title" }, ys = { class: "stb-pm-badge" }, bs = { class: "stb-pm-badge" }, xs = { class: "stb-pm-panel" }, Ss = { class: "stb-pm-bar-container" }, Cs = { class: "stb-pm-bar-header" }, ws = { class: "stb-pm-terminal-data" }, Ts = { class: "stb-pm-bar-track" }, Es = { class: "stb-pm-bar-container" }, Ds = { class: "stb-pm-bar-header" }, Os = { class: "stb-pm-terminal-data" }, ks = { class: "stb-pm-bar-track" }, As = { class: "stb-pm-bar-container" }, js = { class: "stb-pm-bar-header" }, Ms = { class: "stb-pm-terminal-data" }, Ns = { class: "stb-pm-bar-track" }, Ps = {
-	class: "stb-pm-info-row",
+}, us = ["src"], ds = { class: "stb-pm-dossier-bgm" }, fs = { class: "stb-pm-dossier-actions" }, ps = { class: "stb-pm-dossier-tabs-container" }, ms = { class: "stb-pm-dossier-tab-label" }, hs = ["name"], gs = { class: "stb-pm-dossier-tab-content" }, _s = { class: "stb-pm-dossier-badges" }, vs = {
+	class: "stb-pm-dossier-badge",
+	style: { flex: "1 1 100%" }
+}, ys = { class: "stb-pm-dossier-badge" }, bs = { class: "stb-pm-dossier-badge" }, xs = { class: "stb-pm-dossier-panel" }, Ss = { class: "stb-pm-dossier-bar-container" }, Cs = { class: "stb-pm-dossier-bar-header" }, ws = { class: "stb-pm-dossier-typewriter" }, Ts = { class: "stb-pm-dossier-bar-track" }, Es = { class: "stb-pm-dossier-bar-container" }, Ds = { class: "stb-pm-dossier-bar-header" }, Os = { class: "stb-pm-dossier-typewriter" }, ks = { class: "stb-pm-dossier-bar-track" }, As = { class: "stb-pm-dossier-bar-container" }, js = { class: "stb-pm-dossier-bar-header" }, Ms = { class: "stb-pm-dossier-typewriter" }, Ns = { class: "stb-pm-dossier-bar-track" }, Ps = {
+	class: "stb-pm-dossier-info-row",
 	style: {
 		"margin-top": "10px",
 		border: "none"
 	}
 }, Fs = {
-	class: "stb-pm-terminal-data",
-	style: {
-		color: "#fff59d",
-		"font-size": "16px"
-	}
-}, Is = {
-	class: "stb-pm-panel",
-	style: { "border-left-color": "#ce93d8" }
-}, Ls = ["innerHTML"], Rs = { class: "stb-pm-panel" }, zs = { class: "stb-pm-limbs-grid" }, Bs = ["data-status"], Vs = { class: "stb-pm-limb-name" }, Hs = { class: "stb-pm-limb-stat" }, Us = { class: "stb-pm-panel" }, Ws = ["innerHTML"], Gs = { class: "stb-pm-tab-label" }, Ks = ["name"], qs = { class: "stb-pm-tab-content" }, Js = { class: "stb-pm-panel" }, Ys = { class: "stb-pm-stats-grid" }, Xs = { class: "stb-pm-stat-box" }, Zs = { class: "stb-pm-stat-value" }, Qs = { class: "stb-pm-stat-box" }, $s = { class: "stb-pm-stat-value" }, ec = { class: "stb-pm-stat-box" }, tc = { class: "stb-pm-stat-value" }, nc = { class: "stb-pm-stat-box" }, rc = { class: "stb-pm-stat-value" }, ic = { class: "stb-pm-stat-box" }, ac = { class: "stb-pm-stat-value" }, oc = { class: "stb-pm-stat-box" }, sc = { class: "stb-pm-stat-value" }, cc = { class: "stb-pm-panel" }, lc = { class: "stb-pm-folder-content stb-pm-terminal-data" }, uc = { class: "stb-pm-folder-content stb-pm-terminal-data" }, dc = { class: "stb-pm-folder-content stb-pm-terminal-data" }, fc = { key: 1 }, pc = { class: "stb-pm-folder-content stb-pm-terminal-data" }, mc = { style: { color: "#ce93d8" } }, hc = { key: 1 }, gc = { class: "stb-pm-panel" }, _c = { class: "stb-pm-folder-content stb-pm-terminal-data" }, vc = { key: 1 }, yc = { class: "stb-pm-tab-label" }, bc = ["name"], xc = { class: "stb-pm-tab-content" }, Sc = { class: "stb-pm-panel" }, Cc = { class: "stb-pm-info-row" }, wc = { class: "stb-pm-info-value stb-pm-evolution" }, Tc = {
-	class: "stb-pm-info-row",
-	style: {
-		"border-bottom": "none",
-		"margin-bottom": "0"
-	}
-}, Ec = { class: "stb-pm-info-value" }, Dc = { class: "stb-pm-panel" }, Oc = { class: "stb-pm-terminal-data stb-pm-terminal-data-red" }, kc = { key: 1 }, Ac = { class: "stb-pm-panel stb-panel-echo" }, jc = { class: "stb-pm-echo-container" }, Mc = ["innerHTML"], Nc = { class: "stb-pm-tab-label" }, Pc = ["name"], Fc = { class: "stb-pm-tab-content" }, Ic = { class: "stb-pm-panel" }, Lc = { class: "stb-pm-folder-content stb-pm-terminal-data" }, Rc = { key: 1 }, zc = { class: "stb-pm-folder-content" }, Bc = {
-	key: 0,
-	style: { background: "rgba(129, 212, 250, 0.1)" }
-}, Vc = { style: { color: "#81d4fa" } }, Hc = {
-	key: 1,
-	class: "stb-pm-folder-content stb-pm-terminal-data"
-}, Uc = { style: {
-	color: "#ff6b6b",
+	class: "stb-pm-dossier-typewriter",
+	style: { "font-size": "16px" }
+}, Is = { class: "stb-pm-dossier-panel" }, Ls = ["innerHTML"], Rs = { class: "stb-pm-dossier-panel" }, zs = { class: "stb-pm-dossier-limbs-grid" }, Bs = ["data-status"], Vs = { class: "stb-pm-dossier-limb-name" }, Hs = { class: "stb-pm-dossier-limb-stat" }, Us = { class: "stb-pm-dossier-panel" }, Ws = ["innerHTML"], Gs = { class: "stb-pm-dossier-tab-label" }, Ks = ["name"], qs = { class: "stb-pm-dossier-tab-content" }, Js = { class: "stb-pm-dossier-panel" }, Ys = { class: "stb-pm-dossier-stats-grid" }, Xs = { class: "stb-pm-dossier-stat-box" }, Zs = { class: "stb-pm-dossier-typewriter" }, Qs = { class: "stb-pm-dossier-stat-box" }, $s = { class: "stb-pm-dossier-typewriter" }, ec = { class: "stb-pm-dossier-stat-box" }, tc = { class: "stb-pm-dossier-typewriter" }, nc = { class: "stb-pm-dossier-stat-box" }, rc = { class: "stb-pm-dossier-typewriter" }, ic = { class: "stb-pm-dossier-stat-box" }, ac = { class: "stb-pm-dossier-typewriter" }, oc = { class: "stb-pm-dossier-stat-box" }, sc = { class: "stb-pm-dossier-typewriter" }, cc = { class: "stb-pm-dossier-panel" }, lc = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, uc = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, dc = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, fc = { key: 1 }, pc = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, mc = { key: 1 }, hc = { class: "stb-pm-dossier-panel" }, gc = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, _c = { key: 1 }, vc = { class: "stb-pm-dossier-tab-label" }, yc = ["name"], bc = { class: "stb-pm-dossier-tab-content" }, xc = { class: "stb-pm-dossier-panel" }, Sc = { class: "stb-pm-dossier-info-row" }, Cc = { style: {
+	color: "#8b0000",
 	"font-weight": "bold"
-} }, Wc = { style: {
-	color: "#aaa",
+} }, wc = {
+	class: "stb-pm-dossier-info-row",
+	style: { "border-bottom": "none" }
+}, Tc = { class: "stb-pm-dossier-typewriter" }, Ec = { class: "stb-pm-dossier-panel" }, Dc = {
+	class: "stb-pm-dossier-typewriter",
+	style: { color: "#8b0000" }
+}, Oc = { key: 1 }, kc = {
+	class: "stb-pm-dossier-panel",
+	style: { background: "rgba(139,0,0,0.05)" }
+}, Ac = ["innerHTML"], jc = { class: "stb-pm-dossier-tab-label" }, Mc = ["name"], Nc = { class: "stb-pm-dossier-tab-content" }, Pc = { class: "stb-pm-dossier-panel" }, Fc = { class: "stb-pm-dossier-info-row" }, Ic = { class: "stb-pm-dossier-typewriter" }, Lc = {
+	class: "stb-pm-dossier-info-row",
+	style: { "border-bottom": "none" }
+}, Rc = { class: "stb-pm-dossier-typewriter" }, zc = { class: "stb-pm-dossier-panel" }, Bc = { class: "stb-pm-dossier-info-row" }, Vc = { style: { "font-weight": "bold" } }, Hc = {
+	class: "stb-pm-dossier-info-row",
+	style: { "border-bottom": "none" }
+}, Uc = { class: "stb-pm-dossier-typewriter" }, Wc = { class: "stb-pm-dossier-panel" }, Gc = { class: "stb-pm-dossier-typewriter" }, Kc = { key: 1 }, qc = { class: "stb-pm-dossier-tab-label" }, Jc = ["name"], Yc = { class: "stb-pm-dossier-tab-content" }, Xc = { class: "stb-pm-dossier-panel" }, Zc = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, Qc = { key: 1 }, $c = { class: "stb-pm-dossier-folder-content" }, el = { key: 0 }, tl = {
+	key: 1,
+	class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter"
+}, nl = { style: {
+	color: "#8b0000",
+	"font-weight": "bold"
+} }, rl = { style: {
+	color: "#555",
 	"font-style": "italic",
 	margin: "8px 0",
-	"border-left": "3px solid #81d4fa",
-	"padding-left": "8px",
-	background: "rgba(0,0,0,0.3)",
-	"padding-top": "4px",
-	"padding-bottom": "4px"
-} }, Gc = { style: { color: "#d4af37" } }, Kc = { style: {
+	"border-left": "2px solid #8b0000",
+	"padding-left": "8px"
+} }, il = { style: {
 	"margin-top": "8px",
-	"border-top": "1px dashed #444",
+	"border-top": "1px dashed #b89f7d",
 	"padding-top": "8px",
 	display: "flex",
-	"justify-content": "space-between",
-	color: "#ccc"
-} }, qc = {
+	"justify-content": "space-between"
+} }, al = {
 	key: 1,
-	class: "stb-pm-terminal-data"
-}, Jc = { class: "stb-pm-folder-content" }, Yc = {
-	key: 0,
-	style: { background: "rgba(212, 175, 55, 0.1)" }
-}, Xc = { style: { color: "#d4af37" } }, Zc = {
+	class: "stb-pm-dossier-typewriter"
+}, ol = { class: "stb-pm-dossier-folder-content" }, sl = { key: 0 }, cl = {
 	key: 1,
-	class: "stb-pm-folder-content stb-pm-terminal-data"
-}, Qc = { style: {
-	color: "#ff6b6b",
+	class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter"
+}, ll = { style: {
+	color: "#8b0000",
 	"font-weight": "bold"
-} }, $c = { style: {
-	color: "#aaa",
+} }, ul = { style: {
+	color: "#555",
 	"font-style": "italic",
 	margin: "8px 0",
-	"border-left": "3px solid #d4af37",
-	"padding-left": "8px",
-	background: "rgba(0,0,0,0.3)",
-	"padding-top": "4px",
-	"padding-bottom": "4px"
-} }, el = { style: { color: "#d4af37" } }, tl = { style: {
+	"border-left": "2px solid #8b0000",
+	"padding-left": "8px"
+} }, dl = { style: {
 	"margin-top": "8px",
-	"border-top": "1px dashed #444",
+	"border-top": "1px dashed #b89f7d",
 	"padding-top": "8px",
 	display: "flex",
-	"justify-content": "space-between",
-	color: "#ccc"
-} }, nl = {
+	"justify-content": "space-between"
+} }, fl = {
 	key: 1,
-	class: "stb-pm-terminal-data"
-}, rl = { class: "stb-pm-tab-label" }, il = ["name"], al = { class: "stb-pm-tab-content" }, ol = {
-	class: "stb-pm-panel",
-	style: { "border-left-color": "#ce93d8" }
-}, sl = { class: "stb-pm-folder-content stb-pm-terminal-data" }, cl = { style: { color: "#ce93d8" } }, ll = { key: 1 }, ul = {
-	class: "stb-pm-panel",
-	style: { "border-left-color": "#d4af37" }
-}, dl = { style: {
+	class: "stb-pm-dossier-typewriter"
+}, pl = { class: "stb-pm-dossier-tab-label" }, ml = ["name"], hl = { class: "stb-pm-dossier-tab-content" }, gl = { class: "stb-pm-dossier-panel" }, _l = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, vl = { style: { color: "#004d40" } }, yl = { key: 1 }, bl = { class: "stb-pm-dossier-panel" }, xl = { style: {
 	"font-weight": "bold",
-	color: "#d4af37",
+	color: "#004d40",
 	"margin-bottom": "5px"
-} }, fl = { style: {
+} }, Sl = { style: {
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, pl = ["src"], ml = {
+} }, Cl = ["src"], wl = {
 	key: 1,
 	style: {
 		width: "60px",
 		height: "60px",
-		background: "#111",
-		border: "1px dashed #555",
+		background: "#e8dcc4",
+		border: "1px dashed #b89f7d",
 		"border-radius": "4px",
 		display: "flex",
 		"align-items": "center",
 		"justify-content": "center",
 		"font-size": "10px",
-		color: "#555"
+		color: "#888"
 	}
-}, hl = { style: {
+}, Tl = { style: {
 	display: "flex",
 	"flex-direction": "column",
 	gap: "5px"
-} }, gl = ["id", "onChange"], _l = ["onClick"], vl = ["onClick"], yl = { class: "stb-pm-tab-label" }, bl = ["name"], xl = { class: "stb-pm-tab-content" }, Sl = { class: "stb-pm-panel" }, Cl = { class: "stb-pm-info-row" }, wl = { class: "stb-pm-info-value" }, Tl = { class: "stb-pm-info-row" }, El = { class: "stb-pm-info-value" }, Dl = {
-	class: "stb-pm-info-row",
-	style: {
-		"border-bottom": "none",
-		"margin-bottom": "0"
-	}
-}, Ol = {
-	class: "stb-pm-info-value",
-	style: { color: "#81d4fa" }
-}, kl = { class: "stb-pm-panel" }, Al = { class: "stb-pm-folder-content stb-pm-terminal-data stb-pm-terminal-data-red" }, jl = { key: 1 }, Ml = { class: "stb-pm-tab-label" }, Nl = ["name"], Pl = { class: "stb-pm-tab-content" }, Fl = { class: "stb-pm-panel" }, Il = { class: "stb-pm-info-row" }, Ll = {
-	class: "stb-pm-info-value",
-	style: { color: "#ff6b6b" }
+} }, El = ["id", "onChange"], Dl = ["onClick"], Ol = ["onClick"], kl = { class: "stb-pm-dossier-tab-label" }, Al = ["name"], jl = { class: "stb-pm-dossier-tab-content" }, Ml = { class: "stb-pm-dossier-panel" }, Nl = { class: "stb-pm-dossier-info-row" }, Pl = { class: "stb-pm-dossier-typewriter" }, Fl = { class: "stb-pm-dossier-info-row" }, Il = { class: "stb-pm-dossier-typewriter" }, Ll = {
+	class: "stb-pm-dossier-info-row",
+	style: { "border-bottom": "none" }
 }, Rl = {
-	class: "stb-pm-info-row",
-	style: {
-		"border-bottom": "none",
-		"margin-bottom": "0"
-	}
-}, zl = { class: "stb-pm-info-value" }, Bl = { class: "stb-pm-panel" }, Vl = { class: "stb-pm-folder-content stb-pm-terminal-data" }, Hl = { key: 1 }, Ul = {
-	class: "stb-pm-panel",
-	style: { "border-left-color": "#d4af37" }
-}, Wl = { class: "stb-pm-rumor-card" }, Gl = ["innerHTML"], Kl = { class: "stb-pm-rumor-card" }, ql = ["innerHTML"], Jl = {
-	class: "stb-pm-rumor-card",
+	class: "stb-pm-dossier-typewriter",
+	style: { color: "#004d40" }
+}, zl = { class: "stb-pm-dossier-panel" }, Bl = {
+	class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter",
+	style: { color: "#8b0000" }
+}, Vl = { key: 1 }, Hl = { class: "stb-pm-dossier-tab-label" }, Ul = ["name"], Wl = { class: "stb-pm-dossier-tab-content" }, Gl = { class: "stb-pm-dossier-panel" }, Kl = { class: "stb-pm-dossier-info-row" }, ql = { style: {
+	color: "#8b0000",
+	"font-weight": "bold"
+} }, Jl = {
+	class: "stb-pm-dossier-info-row",
+	style: { "border-bottom": "none" }
+}, Yl = { class: "stb-pm-dossier-typewriter" }, Xl = { class: "stb-pm-dossier-panel" }, Zl = { class: "stb-pm-dossier-folder-content stb-pm-dossier-typewriter" }, Ql = { key: 1 }, $l = { class: "stb-pm-dossier-panel" }, eu = { class: "stb-pm-dossier-rumor-card" }, tu = ["innerHTML"], nu = { class: "stb-pm-dossier-rumor-card" }, ru = ["innerHTML"], iu = {
+	class: "stb-pm-dossier-rumor-card",
 	style: { "margin-bottom": "0" }
-}, Yl = ["innerHTML"], Xl = { class: "stb-pm-tab-label" }, Zl = ["name"], Ql = { class: "stb-pm-tab-content" }, $l = {
+}, au = ["innerHTML"], ou = { class: "stb-pm-dossier-tab-label" }, su = ["name"], cu = { class: "stb-pm-dossier-tab-content" }, lu = {
 	key: 0,
-	class: "stb-pm-panel",
-	style: { "border-left-color": "#d4af37" }
-}, eu = { class: "stb-pm-info-row" }, tu = {
-	class: "stb-pm-info-value",
-	style: { color: "#d4af37" }
-}, nu = { style: {
+	class: "stb-pm-dossier-panel",
+	style: { "border-left-color": "#8b0000" }
+}, uu = { class: "stb-pm-dossier-info-row" }, du = {
+	class: "stb-pm-dossier-typewriter",
+	style: { color: "#8b0000" }
+}, fu = { style: {
 	"margin-top": "15px",
 	"text-align": "center"
-} }, ru = {
+} }, pu = {
 	key: 1,
-	class: "stb-pm-panel",
+	class: "stb-pm-dossier-panel",
 	style: {
 		"border-left-color": "#555",
 		"text-align": "center",
 		padding: "40px 20px"
 	}
-}, iu = /* @__PURE__ */ Xn({
+}, mu = /* @__PURE__ */ ((e, t) => {
+	let n = e.__vccOpts || e;
+	for (let [e, r] of t) n[e] = r;
+	return n;
+})(/* @__PURE__ */ Xn({
 	__name: "App",
 	props: { mesId: {
 		type: Number,
@@ -3429,7 +3410,7 @@ var $ = /* @__PURE__ */ Ot({
 			} else r.value.innerHTML = "";
 		}, x = () => {
 			try {
-				let e = (window.top?.document || document).querySelectorAll(".stb-pm-bgm-content");
+				let e = (window.top?.document || document).querySelectorAll(".stb-pm-dossier-bgm-content");
 				e.length > 1 && e.forEach((e) => {
 					let n = e.closest(".mes");
 					(n ? parseInt(n.getAttribute("mesid") || "-1", 10) : -1) !== t.mesId && (e.querySelectorAll("iframe").forEach((e) => {
@@ -3453,26 +3434,26 @@ var $ = /* @__PURE__ */ Ot({
 		}, { immediate: !0 }), dr(() => {
 			_(), o.value && dn(() => x());
 		}), (e, t) => U((K(), q("div", ns, [
-			J("div", rs, [J("div", is, [J("div", as, F(a.value.当前处境?.当前地点 || "未知"), 1), J("div", os, [J("div", ss, "T+" + F(a.value.当前处境?.累计小时数 || 0) + "H", 1), J("div", cs, F(a.value.当前处境?.当前天象 || "未知"), 1)])]), J("div", ls, [J("img", {
+			J("div", rs, [J("div", is, [J("div", as, "【坐标记录】 " + F(a.value.当前处境?.当前地点 || "未知"), 1), J("div", os, [J("div", ss, "T+" + F(a.value.当前处境?.累计小时数 || 0) + "H", 1), J("div", cs, F(a.value.当前处境?.当前天象 || "未知"), 1)])]), J("div", ls, [J("img", {
 				src: i.value,
-				class: "stb-pm-dm-avatar",
+				class: "stb-pm-dossier-dm-avatar",
 				onError: t[0] ||= (e) => i.value = "https://files.catbox.moe/wfjl6u.png"
-			}, null, 40, us), t[26] ||= J("div", { class: "stb-pm-dm-label" }, "DM", -1)])]),
+			}, null, 40, us), t[27] ||= J("div", { class: "stb-pm-dossier-dm-label" }, "OBSERVER", -1)])]),
 			U(J("div", ds, [J("details", {
 				open: "",
 				onClick: t[1] ||= Q(() => {}, ["stop"])
-			}, [t[27] ||= J("summary", null, [J("span", null, "🎵 环境音轨 (BGM)"), J("span", { class: "stb-pm-bgm-arrow" }, "▼")], -1), J("div", {
+			}, [t[28] ||= J("summary", null, [J("span", null, "🎵 现场留声记录 (BGM)"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", {
 				ref_key: "bgmContainerRef",
 				ref: r,
-				class: "stb-pm-bgm-content"
+				class: "stb-pm-dossier-bgm-content"
 			}, null, 512)])], 512), [[io, g.value.bgm]]),
 			J("div", fs, [J("a", {
 				href: "#",
-				class: "stb-pm-btn stb-pm-btn-guide",
+				class: "stb-pm-dossier-btn",
 				onClick: t[2] ||= Q((e) => y("【系统指令：呼唤骰娘】请求向导指引"), ["prevent", "stop"])
 			}, "◆ 呼唤观测者"), J("a", {
 				href: "#",
-				class: "stb-pm-btn stb-pm-btn-mirror",
+				class: "stb-pm-dossier-btn",
 				onClick: t[3] ||= Q((e) => y("【系统指令：使用镜面发生器】进入心灵镜牢"), ["prevent", "stop"])
 			}, "◇ 潜入心灵镜牢")]),
 			J("div", ps, [
@@ -3482,57 +3463,49 @@ var $ = /* @__PURE__ */ Ot({
 						type: "radio",
 						name: "pm-tabs_" + c.value,
 						value: "tab1",
-						class: "stb-pm-tab-radio"
+						class: "stb-pm-dossier-tab-radio"
 					}, null, 8, hs), [[Bo, n.value]]),
-					t[39] ||= J("div", { class: "stb-tab-btn" }, "观测主屏", -1),
+					t[40] ||= J("div", { class: "stb-dossier-tab-btn" }, "观测主屏", -1),
 					J("div", gs, [
 						J("div", _s, [
-							J("div", vs, [t[28] ||= J("strong", null, "Title:", -1), Y(" " + F(a.value.玩家角色?.基础属性?.称号 || "未知"), 1)]),
-							J("div", ys, [t[29] ||= J("strong", null, "Lv.", -1), Y(" " + F(a.value.玩家角色?.基础属性?.等级 || 1), 1)]),
-							J("div", bs, [t[30] ||= J("strong", null, "Dice:", -1), Y(" " + F(a.value.玩家角色?.基础属性?.骰子点数 || 0), 1)])
+							J("div", vs, [t[29] ||= J("strong", null, "代号:", -1), Y(" " + F(a.value.玩家角色?.基础属性?.称号 || "未知"), 1)]),
+							J("div", ys, [t[30] ||= J("strong", null, "Lv.", -1), Y(" " + F(a.value.玩家角色?.基础属性?.等级 || 1), 1)]),
+							J("div", bs, [t[31] ||= J("strong", null, "Dice:", -1), Y(" " + F(a.value.玩家角色?.基础属性?.骰子点数 || 0), 1)])
 						]),
 						J("div", xs, [
-							t[35] ||= J("div", { class: "stb-pm-panel-title" }, "Vital Signs", -1),
-							J("div", Ss, [J("div", Cs, [t[31] ||= J("span", {
-								class: "stb-pm-bar-label",
-								style: { color: "#ff6b6b" }
-							}, "HP", -1), J("span", ws, F(a.value.玩家角色?.基础属性?.当前HP ?? 0) + " / " + F(a.value.玩家角色?.基础属性?.最大HP ?? 0), 1)]), J("div", Ts, [J("div", {
-								class: "stb-pm-bar-fill stb-pm-bar-hp",
-								style: O({ width: v(a.value.玩家角色?.基础属性?.当前HP, a.value.玩家角色?.基础属性?.最大HP) })
+							t[36] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "生命体征 (Vitals)", -1),
+							J("div", Ss, [J("div", Cs, [t[32] ||= J("span", { style: {
+								color: "#8b0000",
+								"font-weight": "bold"
+							} }, "HP", -1), J("span", ws, F(a.value.玩家角色?.基础属性?.当前HP ?? 0) + " / " + F(a.value.玩家角色?.基础属性?.最大HP ?? 0), 1)]), J("div", Ts, [J("div", {
+								class: "stb-pm-dossier-bar-fill",
+								style: O([{ background: "#8b0000" }, { width: v(a.value.玩家角色?.基础属性?.当前HP, a.value.玩家角色?.基础属性?.最大HP) }])
 							}, null, 4)])]),
-							J("div", Es, [J("div", Ds, [t[32] ||= J("span", {
-								class: "stb-pm-bar-label",
-								style: { color: "#81d4fa" }
-							}, "MP", -1), J("span", Os, F(a.value.玩家角色?.基础属性?.当前MP ?? 0) + " / " + F(a.value.玩家角色?.基础属性?.最大MP ?? 0), 1)]), J("div", ks, [J("div", {
-								class: "stb-pm-bar-fill stb-pm-bar-mp",
-								style: O({ width: v(a.value.玩家角色?.基础属性?.当前MP, a.value.玩家角色?.基础属性?.最大MP) })
+							J("div", Es, [J("div", Ds, [t[33] ||= J("span", { style: {
+								color: "#004d40",
+								"font-weight": "bold"
+							} }, "MP", -1), J("span", Os, F(a.value.玩家角色?.基础属性?.当前MP ?? 0) + " / " + F(a.value.玩家角色?.基础属性?.最大MP ?? 0), 1)]), J("div", ks, [J("div", {
+								class: "stb-pm-dossier-bar-fill",
+								style: O([{ background: "#004d40" }, { width: v(a.value.玩家角色?.基础属性?.当前MP, a.value.玩家角色?.基础属性?.最大MP) }])
 							}, null, 4)])]),
-							J("div", As, [J("div", js, [t[33] ||= J("span", {
-								class: "stb-pm-bar-label",
-								style: { color: "#81c784" }
-							}, "SP", -1), J("span", Ms, F(a.value.玩家角色?.基础属性?.理智值 ?? 0) + " / 20", 1)]), J("div", Ns, [J("div", {
-								class: "stb-pm-bar-fill stb-pm-bar-sp",
-								style: O({ width: v(a.value.玩家角色?.基础属性?.理智值, 20) })
+							J("div", As, [J("div", js, [t[34] ||= J("span", { style: {
+								color: "#1b5e20",
+								"font-weight": "bold"
+							} }, "SP", -1), J("span", Ms, F(a.value.玩家角色?.基础属性?.理智值 ?? 0) + " / 20", 1)]), J("div", Ns, [J("div", {
+								class: "stb-pm-dossier-bar-fill",
+								style: O([{ background: "#1b5e20" }, { width: v(a.value.玩家角色?.基础属性?.理智值, 20) }])
 							}, null, 4)])]),
-							J("div", Ps, [t[34] ||= J("span", {
-								class: "stb-pm-info-label",
-								style: {
-									color: "#fbc02d",
-									"font-weight": "bold"
-								}
-							}, "XP (经验值)", -1), J("span", Fs, F(a.value.玩家角色?.基础属性?.经验值 ?? 0), 1)])
+							J("div", Ps, [t[35] ||= J("span", { style: {
+								color: "#b89f7d",
+								"font-weight": "bold"
+							} }, "XP (经验值)", -1), J("span", Fs, F(a.value.玩家角色?.基础属性?.经验值 ?? 0), 1)])
 						]),
-						U(J("div", Is, [t[36] ||= J("div", {
-							class: "stb-pm-panel-title",
-							style: {
-								color: "#ce93d8",
-								"border-bottom-color": "rgba(206, 147, 216, 0.3)"
-							}
-						}, "Special Status", -1), J("div", {
-							class: "stb-pm-status-list",
+						U(J("div", Is, [t[37] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "异常状态 (Status)", -1), J("div", {
+							class: "stb-pm-dossier-typewriter",
+							style: { color: "#8b0000" },
 							innerHTML: g.value.status
 						}, null, 8, Ls)], 512), [[io, g.value.status]]),
-						J("div", Rs, [t[37] ||= J("div", { class: "stb-pm-panel-title" }, "Biometric Scan", -1), J("div", zs, [(K(), q(G, null, W([
+						J("div", Rs, [t[38] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "肢体损毁报告 (Limbs)", -1), J("div", zs, [(K(), q(G, null, W([
 							"头部",
 							"胸部",
 							"左臂",
@@ -3542,10 +3515,10 @@ var $ = /* @__PURE__ */ Ot({
 						], (e) => J("div", {
 							key: e,
 							"data-status": a.value.玩家角色?.肢体伤病?.[e] || "完好",
-							class: "stb-pm-limb-card"
+							class: "stb-pm-dossier-limb-card"
 						}, [J("div", Vs, F(e), 1), J("div", Hs, F(a.value.玩家角色?.肢体伤病?.[e] || "完好"), 1)], 8, Bs)), 64))])]),
-						U(J("div", Us, [t[38] ||= J("div", { class: "stb-pm-panel-title" }, "Tactical Focus", -1), J("div", {
-							class: "stb-pm-text-block",
+						U(J("div", Us, [t[39] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "战术聚焦 (Focus)", -1), J("div", {
+							class: "stb-pm-dossier-text-block",
 							innerHTML: g.value.focus
 						}, null, 8, Ws)], 512), [[io, g.value.focus]])
 					])
@@ -3556,191 +3529,211 @@ var $ = /* @__PURE__ */ Ot({
 						type: "radio",
 						name: "pm-tabs_" + c.value,
 						value: "tab2",
-						class: "stb-pm-tab-radio"
+						class: "stb-pm-dossier-tab-radio"
 					}, null, 8, Ks), [[Bo, n.value]]),
-					t[54] ||= J("div", { class: "stb-tab-btn" }, "武装档案", -1),
+					t[55] ||= J("div", { class: "stb-dossier-tab-btn" }, "武装档案", -1),
 					J("div", qs, [
-						J("div", Js, [t[46] ||= J("div", { class: "stb-pm-panel-title" }, "Core Attributes", -1), J("div", Ys, [
-							J("div", Xs, [t[40] ||= J("span", { class: "stb-pm-stat-label" }, "STR", -1), J("span", Zs, F(a.value.玩家角色?.基础属性?.六维?.力量 || 10), 1)]),
-							J("div", Qs, [t[41] ||= J("span", { class: "stb-pm-stat-label" }, "DEX", -1), J("span", $s, F(a.value.玩家角色?.基础属性?.六维?.敏捷 || 10), 1)]),
-							J("div", ec, [t[42] ||= J("span", { class: "stb-pm-stat-label" }, "CON", -1), J("span", tc, F(a.value.玩家角色?.基础属性?.六维?.体质 || 10), 1)]),
-							J("div", nc, [t[43] ||= J("span", { class: "stb-pm-stat-label" }, "INT", -1), J("span", rc, F(a.value.玩家角色?.基础属性?.六维?.智力 || 10), 1)]),
-							J("div", ic, [t[44] ||= J("span", { class: "stb-pm-stat-label" }, "WIS", -1), J("span", ac, F(a.value.玩家角色?.基础属性?.六维?.感知 || 10), 1)]),
-							J("div", oc, [t[45] ||= J("span", { class: "stb-pm-stat-label" }, "CHA", -1), J("span", sc, F(a.value.玩家角色?.基础属性?.六维?.魅力 || 10), 1)])
+						J("div", Js, [t[47] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "核心属性 (Attributes)", -1), J("div", Ys, [
+							J("div", Xs, [t[41] ||= J("span", null, "STR", -1), J("span", Zs, F(a.value.玩家角色?.基础属性?.六维?.力量 || 10), 1)]),
+							J("div", Qs, [t[42] ||= J("span", null, "DEX", -1), J("span", $s, F(a.value.玩家角色?.基础属性?.六维?.敏捷 || 10), 1)]),
+							J("div", ec, [t[43] ||= J("span", null, "CON", -1), J("span", tc, F(a.value.玩家角色?.基础属性?.六维?.体质 || 10), 1)]),
+							J("div", nc, [t[44] ||= J("span", null, "INT", -1), J("span", rc, F(a.value.玩家角色?.基础属性?.六维?.智力 || 10), 1)]),
+							J("div", ic, [t[45] ||= J("span", null, "WIS", -1), J("span", ac, F(a.value.玩家角色?.基础属性?.六维?.感知 || 10), 1)]),
+							J("div", oc, [t[46] ||= J("span", null, "CHA", -1), J("span", sc, F(a.value.玩家角色?.基础属性?.六维?.魅力 || 10), 1)])
 						])]),
 						J("div", cc, [
-							t[51] ||= J("div", { class: "stb-pm-panel-title" }, "Equipped Gear", -1),
+							t[52] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "装备清单 (Gear)", -1),
 							J("details", {
-								class: "stb-pm-folder",
+								class: "stb-pm-dossier-folder",
 								open: "",
 								onClick: t[6] ||= Q(() => {}, ["stop"])
-							}, [t[47] ||= J("summary", null, [J("span", null, "⚔️ 主武器"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", lc, F(a.value.玩家角色?.武装战力?.主武器 || "空"), 1)]),
+							}, [t[48] ||= J("summary", null, [J("span", null, "⚔️ 主武器"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", lc, F(a.value.玩家角色?.武装战力?.主武器 || "空"), 1)]),
 							J("details", {
-								class: "stb-pm-folder",
+								class: "stb-pm-dossier-folder",
 								open: "",
 								onClick: t[7] ||= Q(() => {}, ["stop"])
-							}, [t[48] ||= J("summary", null, [J("span", null, "🛡️ 防具"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", uc, F(a.value.玩家角色?.武装战力?.防具 || "空"), 1)]),
+							}, [t[49] ||= J("summary", null, [J("span", null, "🛡️ 防具"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", uc, F(a.value.玩家角色?.武装战力?.防具 || "空"), 1)]),
 							J("details", {
-								class: "stb-pm-folder",
+								class: "stb-pm-dossier-folder",
 								open: "",
 								onClick: t[8] ||= Q(() => {}, ["stop"])
-							}, [t[49] ||= J("summary", null, [J("span", null, "💍 饰品"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", dc, [Object.keys(a.value.玩家角色?.武装战力?.饰品 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.饰品, (e, t) => (K(), q("div", { key: t }, "👉 " + F(t) + ": " + F(e), 1))), 128)) : (K(), q("div", fc, "空"))])]),
+							}, [t[50] ||= J("summary", null, [J("span", null, "💍 饰品"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", dc, [Object.keys(a.value.玩家角色?.武装战力?.饰品 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.饰品, (e, t) => (K(), q("div", { key: t }, "👉 " + F(t) + ": " + F(e), 1))), 128)) : (K(), q("div", fc, "空"))])]),
 							J("details", {
-								class: "stb-pm-folder",
+								class: "stb-pm-dossier-folder",
 								open: "",
 								onClick: t[9] ||= Q(() => {}, ["stop"])
-							}, [t[50] ||= J("summary", null, [J("span", { style: { color: "#ce93d8" } }, "✨ 技能/战技"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", pc, [Object.keys(a.value.玩家角色?.武装战力?.技能列表 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.技能列表, (e, t) => (K(), q("div", {
+							}, [t[51] ||= J("summary", null, [J("span", null, "✨ 技能/战技"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", pc, [Object.keys(a.value.玩家角色?.武装战力?.技能列表 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.技能列表, (e, t) => (K(), q("div", {
 								key: t,
 								style: { "margin-bottom": "5px" }
-							}, [J("strong", mc, "[" + F(t) + "]", 1), Y(": " + F(e), 1)]))), 128)) : (K(), q("div", hc, "无"))])])
+							}, [J("strong", null, "[" + F(t) + "]", 1), Y(": " + F(e), 1)]))), 128)) : (K(), q("div", mc, "无"))])])
 						]),
-						J("div", gc, [t[53] ||= J("div", { class: "stb-pm-panel-title" }, "Inventory", -1), J("details", {
-							class: "stb-pm-folder",
+						J("div", hc, [t[54] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "背包物资 (Inventory)", -1), J("details", {
+							class: "stb-pm-dossier-folder",
 							open: "",
 							onClick: t[10] ||= Q(() => {}, ["stop"])
-						}, [t[52] ||= J("summary", null, [J("span", null, "🎒 背包道具"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", _c, [Object.keys(a.value.玩家角色?.武装战力?.背包道具 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.背包道具, (e, t) => (K(), q("div", { key: t }, " 🍱 " + F(t) + " (" + F(e?.数量 || 1) + ") - " + F(e?.描述 || "无"), 1))), 128)) : (K(), q("div", vc, "无"))])])])
+						}, [t[53] ||= J("summary", null, [J("span", null, "🎒 道具列表"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", gc, [Object.keys(a.value.玩家角色?.武装战力?.背包道具 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.武装战力?.背包道具, (e, t) => (K(), q("div", { key: t }, " 📦 " + F(t) + " (" + F(e?.数量 || 1) + ") - " + F(e?.描述 || "无"), 1))), 128)) : (K(), q("div", _c, "无"))])])])
 					])
 				]),
-				J("label", yc, [
+				J("label", vc, [
 					U(J("input", {
 						"onUpdate:modelValue": t[11] ||= (e) => n.value = e,
 						type: "radio",
 						name: "pm-tabs_" + c.value,
 						value: "tab3",
-						class: "stb-pm-tab-radio"
-					}, null, 8, bc), [[Bo, n.value]]),
-					t[60] ||= J("div", { class: "stb-tab-btn" }, "深层意识", -1),
-					J("div", xc, [
-						J("div", Sc, [
-							t[57] ||= J("div", { class: "stb-pm-panel-title" }, "Sanity Evolution", -1),
-							J("div", Cc, [t[55] ||= J("span", { class: "stb-pm-info-label" }, "当前阶段", -1), J("span", wc, F(a.value.玩家角色?.理智演化?.当前阶段 || "正常"), 1)]),
-							J("div", Tc, [t[56] ||= J("span", { class: "stb-pm-info-label" }, "理智稳定性", -1), J("span", Ec, F(a.value.玩家角色?.基础属性?.理智稳定性 || 100) + " / 100", 1)])
+						class: "stb-pm-dossier-tab-radio"
+					}, null, 8, yc), [[Bo, n.value]]),
+					t[61] ||= J("div", { class: "stb-dossier-tab-btn" }, "深层意识", -1),
+					J("div", bc, [
+						J("div", xc, [
+							t[58] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "理智演化 (Sanity)", -1),
+							J("div", Sc, [t[56] ||= J("span", null, "当前阶段", -1), J("span", Cc, F(a.value.玩家角色?.理智演化?.当前阶段 || "正常"), 1)]),
+							J("div", wc, [t[57] ||= J("span", null, "理智稳定性", -1), J("span", Tc, F(a.value.玩家角色?.基础属性?.理智稳定性 || 100) + " / 100", 1)])
 						]),
-						J("div", Dc, [t[58] ||= J("div", { class: "stb-pm-panel-title" }, "Karma (专属业障)", -1), J("div", Oc, [Object.keys(a.value.玩家角色?.基础属性?.专属业障 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.基础属性?.专属业障, (e, t) => (K(), q("div", { key: t }, "⚡ [" + F(t) + "] " + F(e), 1))), 128)) : (K(), q("div", kc, "无"))])]),
-						U(J("div", Ac, [t[59] ||= J("div", {
-							class: "stb-pm-panel-title",
-							style: {
-								color: "#ff6b6b",
-								"border-bottom-color": "rgba(255, 107, 107, 0.3)"
-							}
-						}, "Mental Echo (精神回响)", -1), J("div", jc, [J("div", {
-							class: "stb-pm-echo-text",
+						J("div", Ec, [t[59] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "专属业障 (Karma)", -1), J("div", Dc, [Object.keys(a.value.玩家角色?.基础属性?.专属业障 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.基础属性?.专属业障, (e, t) => (K(), q("div", { key: t }, "⚡ [" + F(t) + "] " + F(e), 1))), 128)) : (K(), q("div", Oc, "无"))])]),
+						U(J("div", kc, [t[60] ||= J("div", {
+							class: "stb-pm-dossier-panel-title",
+							style: { color: "#8b0000" }
+						}, "精神回响 (Echo)", -1), J("div", {
+							class: "stb-pm-dossier-text-block",
+							style: { "font-style": "italic" },
 							innerHTML: g.value.echo
-						}, null, 8, Mc)])], 512), [[io, g.value.echo]])
+						}, null, 8, Ac)], 512), [[io, g.value.echo]])
 					])
 				]),
-				J("label", Nc, [
+				J("label", jc, [
 					U(J("input", {
 						"onUpdate:modelValue": t[12] ||= (e) => n.value = e,
 						type: "radio",
 						name: "pm-tabs_" + c.value,
 						value: "tab4",
-						class: "stb-pm-tab-radio"
-					}, null, 8, Pc), [[Bo, n.value]]),
-					t[73] ||= J("div", { class: "stb-tab-btn" }, "社交网络", -1),
-					J("div", Fc, [J("div", Ic, [
-						t[72] ||= J("div", { class: "stb-pm-panel-title" }, "Social Network", -1),
+						class: "stb-pm-dossier-tab-radio"
+					}, null, 8, Mc), [[Bo, n.value]]),
+					t[75] ||= J("div", { class: "stb-dossier-tab-btn" }, "轮回异化", -1),
+					J("div", Nc, [
+						J("div", Pc, [
+							t[64] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "心灵镜牢 (Mirror)", -1),
+							J("div", Fc, [t[62] ||= J("span", null, "当前层数", -1), J("span", Ic, F(a.value.玩家角色?.特殊机制?.心灵镜牢?.当前层数 || 0) + " / 15", 1)]),
+							J("div", Lc, [t[63] ||= J("span", null, "星光余额", -1), J("span", Rc, F(a.value.玩家角色?.特殊机制?.心灵镜牢?.星光余额 || 0), 1)])
+						]),
+						J("div", zc, [
+							t[67] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "人格覆盖 (Override)", -1),
+							J("div", Bc, [t[65] ||= J("span", null, "当前人格", -1), J("span", Vc, F(a.value.玩家角色?.特殊机制?.人格覆盖?.当前人格 || "无"), 1)]),
+							J("div", Hc, [t[66] ||= J("span", null, "记忆混淆度", -1), J("span", Uc, F(a.value.玩家角色?.特殊机制?.人格覆盖?.记忆混淆度 || 0) + " / 100", 1)])
+						]),
+						J("div", Wc, [t[74] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "轮回线索 (Clues)", -1), J("div", Gc, [
+							t[68] ||= J("strong", null, "真相碎片:", -1),
+							t[69] ||= J("br", null, null, -1),
+							Y(" " + F(Array.isArray(a.value.玩家角色?.轮回线索?.世界真相碎片) && a.value.玩家角色.轮回线索.世界真相碎片.length > 0 ? a.value.玩家角色.轮回线索.世界真相碎片.join(" / ") : "无"), 1),
+							t[70] ||= J("br", null, null, -1),
+							t[71] ||= J("br", null, null, -1),
+							t[72] ||= J("strong", null, "永久创伤:", -1),
+							t[73] ||= J("br", null, null, -1),
+							Object.keys(a.value.玩家角色?.轮回线索?.永久精神创伤 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.玩家角色?.轮回线索?.永久精神创伤, (e, t) => (K(), q("div", {
+								key: t,
+								style: { color: "#8b0000" }
+							}, "⚠️ [" + F(t) + "]: " + F(e), 1))), 128)) : (K(), q("div", Kc, "无"))
+						])])
+					])
+				]),
+				J("label", qc, [
+					U(J("input", {
+						"onUpdate:modelValue": t[13] ||= (e) => n.value = e,
+						type: "radio",
+						name: "pm-tabs_" + c.value,
+						value: "tab5",
+						class: "stb-pm-dossier-tab-radio"
+					}, null, 8, Jc), [[Bo, n.value]]),
+					t[83] ||= J("div", { class: "stb-dossier-tab-btn" }, "社交网络", -1),
+					J("div", Yc, [J("div", Xc, [
+						t[82] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "势力与羁绊 (Social)", -1),
 						J("details", {
-							class: "stb-pm-folder",
+							class: "stb-pm-dossier-folder",
 							open: "",
-							onClick: t[13] ||= Q(() => {}, ["stop"])
-						}, [t[61] ||= J("summary", null, [J("span", null, "🏛️ 势力声望"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", Lc, [Object.keys(a.value.社交网络?.势力声望 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.势力声望, (e, t) => (K(), q("div", { key: t }, "🏛️ " + F(t) + ": " + F(e ?? 0), 1))), 128)) : (K(), q("div", Rc, "无"))])]),
-						J("details", {
-							class: "stb-pm-folder",
-							open: "",
-							onClick: t[15] ||= Q(() => {}, ["stop"])
-						}, [t[66] ||= J("summary", null, [J("span", null, "👥 核心同伴"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", zc, [Object.keys(a.value.核心同伴 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.核心同伴, (e, n) => (K(), q("details", {
-							key: n,
-							class: "stb-pm-folder",
-							style: {
-								"border-color": "#81d4fa",
-								"margin-top": "5px"
-							},
 							onClick: t[14] ||= Q(() => {}, ["stop"])
-						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", Bc, [J("span", Vc, "👥 " + F(n) + " (Lv." + F(e?.等级 ?? 1) + ")", 1), t[62] ||= J("span", { class: "stb-pm-folder-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", Hc, [
-							J("div", Uc, "🩸 HP: " + F(e?.当前HP ?? "?") + "/" + F(e?.最大HP ?? "?") + " | 🧠 SP: " + F(e?.理智值 ?? "?"), 1),
-							J("div", null, [t[63] ||= J("strong", null, "⚔️ 武器:", -1), Y(" " + F(e?.武器 || "未知"), 1)]),
-							J("div", null, [t[64] ||= J("strong", null, "👗 服装:", -1), Y(" " + F(e?.服装 || "未知"), 1)]),
-							J("div", null, [t[65] ||= J("strong", null, "✨ 能力:", -1), Y(" " + F(e?.能力 || "未知"), 1)]),
-							J("div", Wc, "💭 心里话: \"" + F(e?.心里话 || "...") + "\"", 1),
-							J("div", Gc, "🔒 核心记忆: " + F(e?.核心记忆 || "未知"), 1),
-							J("div", Kc, [
-								J("span", null, "好感: " + F(e?.好感度 ?? 0), 1),
-								J("span", null, "恐惧: " + F(e?.恐惧度 ?? 0), 1),
-								J("span", null, "信任: " + F(e?.信任度 ?? 0), 1),
-								J("span", null, "欲望: " + F(e?.欲望度 ?? 0), 1)
-							])
-						])) : X("", !0)]))), 128)) : (K(), q("div", qc, "无"))])]),
+						}, [t[76] ||= J("summary", null, [J("span", null, "🏛️ 势力声望"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", Zc, [Object.keys(a.value.社交网络?.势力声望 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.势力声望, (e, t) => (K(), q("div", { key: t }, "🏛️ " + F(t) + ": " + F(e ?? 0), 1))), 128)) : (K(), q("div", Qc, "无"))])]),
 						J("details", {
-							class: "stb-pm-folder",
+							class: "stb-pm-dossier-folder",
 							open: "",
-							onClick: t[17] ||= Q(() => {}, ["stop"])
-						}, [t[71] ||= J("summary", null, [J("span", null, "🔗 NPC羁绊"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", Jc, [Object.keys(a.value.社交网络?.NPC羁绊 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.NPC羁绊, (e, n) => (K(), q("details", {
-							key: n,
-							class: "stb-pm-folder",
-							style: {
-								"border-color": "#d4af37",
-								"margin-top": "5px"
-							},
 							onClick: t[16] ||= Q(() => {}, ["stop"])
-						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", Yc, [J("span", Xc, "🔗 " + F(n) + " (Lv." + F(e?.等级 ?? "?") + ")", 1), t[67] ||= J("span", { class: "stb-pm-folder-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", Zc, [
-							J("div", Qc, "🩸 HP: " + F(e?.当前HP ?? "?") + "/" + F(e?.最大HP ?? "?"), 1),
-							J("div", null, [t[68] ||= J("strong", null, "⚔️ 武器:", -1), Y(" " + F(e?.武器 || "未知"), 1)]),
-							J("div", null, [t[69] ||= J("strong", null, "👗 服装:", -1), Y(" " + F(e?.服装 || "未知"), 1)]),
-							J("div", null, [t[70] ||= J("strong", null, "✨ 能力:", -1), Y(" " + F(e?.能力 || "未知"), 1)]),
-							J("div", $c, "💭 心里话: \"" + F(e?.心里话 || "...") + "\"", 1),
-							J("div", el, "🔒 核心记忆: " + F(e?.核心记忆 || "未知"), 1),
-							J("div", tl, [
+						}, [t[79] ||= J("summary", null, [J("span", null, "👥 核心同伴"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", $c, [Object.keys(a.value.核心同伴 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.核心同伴, (e, n) => (K(), q("details", {
+							key: n,
+							class: "stb-pm-dossier-folder",
+							style: { "margin-top": "5px" },
+							onClick: t[15] ||= Q(() => {}, ["stop"])
+						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", el, [J("span", null, "👥 " + F(n) + " (Lv." + F(e?.等级 ?? 1) + ")", 1), t[77] ||= J("span", { class: "stb-pm-dossier-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", tl, [
+							J("div", nl, "HP: " + F(e?.当前HP ?? "?") + "/" + F(e?.最大HP ?? "?") + " | SP: " + F(e?.理智值 ?? "?"), 1),
+							J("div", null, [t[78] ||= J("strong", null, "武器:", -1), Y(" " + F(e?.武器 || "未知"), 1)]),
+							J("div", rl, "💭 心里话: \"" + F(e?.心里话 || "...") + "\"", 1),
+							J("div", il, [
 								J("span", null, "好感: " + F(e?.好感度 ?? 0), 1),
 								J("span", null, "恐惧: " + F(e?.恐惧度 ?? 0), 1),
 								J("span", null, "信任: " + F(e?.信任度 ?? 0), 1),
 								J("span", null, "欲望: " + F(e?.欲望度 ?? 0), 1)
 							])
-						])) : X("", !0)]))), 128)) : (K(), q("div", nl, "无"))])])
+						])) : X("", !0)]))), 128)) : (K(), q("div", al, "无"))])]),
+						J("details", {
+							class: "stb-pm-dossier-folder",
+							open: "",
+							onClick: t[18] ||= Q(() => {}, ["stop"])
+						}, [t[81] ||= J("summary", null, [J("span", null, "🔗 NPC羁绊"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", ol, [Object.keys(a.value.社交网络?.NPC羁绊 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.NPC羁绊, (e, n) => (K(), q("details", {
+							key: n,
+							class: "stb-pm-dossier-folder",
+							style: { "margin-top": "5px" },
+							onClick: t[17] ||= Q(() => {}, ["stop"])
+						}, [n !== "$meta" && n !== "无" ? (K(), q("summary", sl, [J("span", null, "🔗 " + F(n) + " (Lv." + F(e?.等级 ?? "?") + ")", 1), t[80] ||= J("span", { class: "stb-pm-dossier-arrow" }, "▼", -1)])) : X("", !0), n !== "$meta" && n !== "无" ? (K(), q("div", cl, [
+							J("div", ll, "HP: " + F(e?.当前HP ?? "?") + "/" + F(e?.最大HP ?? "?"), 1),
+							J("div", ul, "💭 心里话: \"" + F(e?.心里话 || "...") + "\"", 1),
+							J("div", dl, [
+								J("span", null, "好感: " + F(e?.好感度 ?? 0), 1),
+								J("span", null, "恐惧: " + F(e?.恐惧度 ?? 0), 1),
+								J("span", null, "信任: " + F(e?.信任度 ?? 0), 1),
+								J("span", null, "欲望: " + F(e?.欲望度 ?? 0), 1)
+							])
+						])) : X("", !0)]))), 128)) : (K(), q("div", fl, "无"))])])
 					])])
 				]),
-				J("label", rl, [
+				J("label", pl, [
 					U(J("input", {
-						"onUpdate:modelValue": t[18] ||= (e) => n.value = e,
+						"onUpdate:modelValue": t[19] ||= (e) => n.value = e,
 						type: "radio",
 						name: "pm-tabs_" + c.value,
 						value: "tab_comm",
-						class: "stb-pm-tab-radio"
-					}, null, 8, il), [[Bo, n.value]]),
-					t[79] ||= J("div", {
-						class: "stb-tab-btn",
-						style: { color: "#ce93d8" }
+						class: "stb-pm-dossier-tab-radio"
+					}, null, 8, ml), [[Bo, n.value]]),
+					t[89] ||= J("div", {
+						class: "stb-dossier-tab-btn",
+						style: { color: "#004d40" }
 					}, "通讯与画廊", -1),
-					J("div", al, [J("div", ol, [t[76] ||= J("div", {
-						class: "stb-pm-panel-title",
-						style: { color: "#ce93d8" }
-					}, "Messenger (通讯录)", -1), J("details", {
-						class: "stb-pm-folder",
+					J("div", hl, [J("div", gl, [t[86] ||= J("div", {
+						class: "stb-pm-dossier-panel-title",
+						style: { color: "#004d40" }
+					}, "通讯录 (Messenger)", -1), J("details", {
+						class: "stb-pm-dossier-folder",
 						open: "",
-						onClick: t[19] ||= Q(() => {}, ["stop"])
-					}, [t[75] ||= J("summary", null, [J("span", null, "💬 消息记录"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", sl, [Object.keys(a.value.社交网络?.通讯录与群聊 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.通讯录与群聊, (e, n) => (K(), q("div", {
+						onClick: t[20] ||= Q(() => {}, ["stop"])
+					}, [t[85] ||= J("summary", null, [J("span", null, "💬 消息记录"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", _l, [Object.keys(a.value.社交网络?.通讯录与群聊 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.社交网络?.通讯录与群聊, (e, n) => (K(), q("div", {
 						key: n,
 						style: {
 							"margin-bottom": "10px",
-							"border-bottom": "1px dashed #444",
+							"border-bottom": "1px dashed #b89f7d",
 							"padding-bottom": "5px"
 						}
 					}, [
-						J("strong", cl, "[" + F(n) + "]", 1),
-						t[74] ||= J("br", null, null, -1),
+						J("strong", vl, "[" + F(n) + "]", 1),
+						t[84] ||= J("br", null, null, -1),
 						(K(!0), q(G, null, W(e, (e, t) => (K(), q("div", {
 							key: t,
 							style: {
-								color: "#ccc",
+								color: "#555",
 								"margin-left": "10px"
 							}
 						}, F(e), 1))), 128))
-					]))), 128)) : (K(), q("div", ll, "暂无消息"))])])]), J("div", ul, [
-						t[77] ||= J("div", {
-							class: "stb-pm-panel-title",
-							style: { color: "#d4af37" }
-						}, "Gallery (羁绊画廊)", -1),
-						t[78] ||= J("div", { style: {
+					]))), 128)) : (K(), q("div", yl, "暂无消息"))])])]), J("div", bl, [
+						t[87] ||= J("div", {
+							class: "stb-pm-dossier-panel-title",
+							style: { color: "#004d40" }
+						}, "羁绊画廊 (Gallery)", -1),
+						t[88] ||= J("div", { style: {
 							color: "#888",
 							"font-size": "12px",
 							"margin-bottom": "10px"
@@ -3749,12 +3742,12 @@ var $ = /* @__PURE__ */ Ot({
 							key: e,
 							style: {
 								"margin-bottom": "15px",
-								background: "rgba(0,0,0,0.3)",
+								background: "rgba(255,255,255,0.5)",
 								padding: "10px",
-								"border-radius": "6px",
-								border: "1px solid #333"
+								"border-radius": "4px",
+								border: "1px solid #b89f7d"
 							}
-						}, [J("div", dl, F(e), 1), J("div", fl, [d.value[e] ? (K(), q("img", {
+						}, [J("div", xl, F(e), 1), J("div", Sl, [d.value[e] ? (K(), q("img", {
 							key: 0,
 							src: d.value[e],
 							style: {
@@ -3762,138 +3755,133 @@ var $ = /* @__PURE__ */ Ot({
 								height: "60px",
 								"object-fit": "cover",
 								"border-radius": "4px",
-								border: "1px solid #d4af37"
+								border: "1px solid #004d40"
 							}
-						}, null, 8, pl)) : (K(), q("div", ml, "无图")), J("div", hl, [
+						}, null, 8, Cl)) : (K(), q("div", wl, "无图")), J("div", Tl, [
 							J("input", {
 								id: "upload-" + e,
 								type: "file",
 								accept: "image/*",
 								style: { display: "none" },
 								onChange: (t) => m(t, e)
-							}, null, 40, gl),
+							}, null, 40, El),
 							J("button", {
-								class: "stb-pm-btn-small",
+								class: "stb-pm-dossier-btn",
+								style: {
+									padding: "4px",
+									"font-size": "12px"
+								},
 								onClick: (t) => p(e)
-							}, "上传立绘", 8, _l),
+							}, "上传立绘", 8, Dl),
 							d.value[e] ? (K(), q("button", {
 								key: 0,
-								class: "stb-pm-btn-small",
+								class: "stb-pm-dossier-btn",
 								style: {
-									"border-color": "#ff4444",
-									color: "#ff4444"
+									padding: "4px",
+									"font-size": "12px",
+									color: "#8b0000"
 								},
 								onClick: (t) => h(e)
-							}, "清除", 8, vl)) : X("", !0)
+							}, "清除", 8, Ol)) : X("", !0)
 						])])]))), 128))
 					])])
 				]),
-				J("label", yl, [
+				J("label", kl, [
 					U(J("input", {
-						"onUpdate:modelValue": t[20] ||= (e) => n.value = e,
-						type: "radio",
-						name: "pm-tabs_" + c.value,
-						value: "tab6",
-						class: "stb-pm-tab-radio"
-					}, null, 8, bl), [[Bo, n.value]]),
-					t[86] ||= J("div", { class: "stb-tab-btn" }, "据点收容", -1),
-					J("div", xl, [J("div", Sl, [
-						t[83] ||= J("div", { class: "stb-pm-panel-title" }, "Facility Status", -1),
-						J("div", Cl, [t[80] ||= J("span", { class: "stb-pm-info-label" }, "供电等级", -1), J("span", wl, F(a.value.据点收容?.设施状态?.供电等级 || "未知"), 1)]),
-						J("div", Tl, [t[81] ||= J("span", { class: "stb-pm-info-label" }, "防御等级", -1), J("span", El, "Lv." + F(a.value.据点收容?.设施状态?.防御等级 || 0), 1)]),
-						J("div", Dl, [t[82] ||= J("span", { class: "stb-pm-info-label" }, "脑啡肽储量", -1), J("span", Ol, F(a.value.据点收容?.资源储备?.脑啡肽储量 || 0), 1)])
-					]), J("div", kl, [t[85] ||= J("div", { class: "stb-pm-panel-title" }, "Containment Units", -1), J("details", {
-						class: "stb-pm-folder",
-						open: "",
-						onClick: t[21] ||= Q(() => {}, ["stop"])
-					}, [t[84] ||= J("summary", null, [J("span", null, "📦 收容单元列表"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", Al, [Object.keys(a.value.据点收容?.收容单元 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.据点收容?.收容单元, (e, t) => (K(), q("div", { key: t }, " ⚠️ [" + F(t) + "] 危险:" + F(e?.危险等级 || "未知") + " | 状态:" + F(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", jl, "无"))])])])])
-				]),
-				J("label", Ml, [
-					U(J("input", {
-						"onUpdate:modelValue": t[22] ||= (e) => n.value = e,
+						"onUpdate:modelValue": t[21] ||= (e) => n.value = e,
 						type: "radio",
 						name: "pm-tabs_" + c.value,
 						value: "tab7",
-						class: "stb-pm-tab-radio"
-					}, null, 8, Nl), [[Bo, n.value]]),
-					t[96] ||= J("div", { class: "stb-tab-btn" }, "任务异闻", -1),
-					J("div", Pl, [
-						J("div", Fl, [
-							t[89] ||= J("div", { class: "stb-pm-panel-title" }, "Current Encounter", -1),
-							J("div", Il, [t[87] ||= J("span", { class: "stb-pm-info-label" }, "状态", -1), J("span", Ll, F(a.value.当前处境?.当前遭遇?.状态 || "未知"), 1)]),
-							J("div", Rl, [t[88] ||= J("span", { class: "stb-pm-info-label" }, "危险度", -1), J("span", zl, F(a.value.当前处境?.当前遭遇?.危险度 || "未知"), 1)])
-						]),
-						J("div", Bl, [t[91] ||= J("div", { class: "stb-pm-panel-title" }, "Active Quests", -1), J("details", {
-							class: "stb-pm-folder",
-							open: "",
-							onClick: t[23] ||= Q(() => {}, ["stop"])
-						}, [t[90] ||= J("summary", null, [J("span", null, "📜 任务列表"), J("span", { class: "stb-pm-folder-arrow" }, "▼")], -1), J("div", Vl, [Object.keys(a.value.当前处境?.任务列表 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.当前处境?.任务列表, (e, t) => (K(), q("div", { key: t }, " 📌 [" + F(t) + "] 评级:" + F(e?.评级 || "未知") + " | 状态:" + F(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", Hl, "无"))])])]),
-						U(J("div", Ul, [
-							t[95] ||= J("div", {
-								class: "stb-pm-panel-title",
-								style: {
-									color: "#d4af37",
-									"border-bottom-color": "rgba(212, 175, 55, 0.3)"
-								}
-							}, "Urban Rumors (都市截获)", -1),
-							U(J("div", Wl, [t[92] ||= J("div", { class: "stb-pm-rumor-title" }, "旧巷余声", -1), J("div", {
-								class: "stb-pm-rumor-text",
-								innerHTML: g.value.rumor1
-							}, null, 8, Gl)], 512), [[io, g.value.rumor1]]),
-							U(J("div", Kl, [t[93] ||= J("div", { class: "stb-pm-rumor-title" }, "暗箱微光", -1), J("div", {
-								class: "stb-pm-rumor-text",
-								innerHTML: g.value.rumor2
-							}, null, 8, ql)], 512), [[io, g.value.rumor2]]),
-							U(J("div", Jl, [t[94] ||= J("div", { class: "stb-pm-rumor-title" }, "远钟残响", -1), J("div", {
-								class: "stb-pm-rumor-text",
-								innerHTML: g.value.rumor3
-							}, null, 8, Yl)], 512), [[io, g.value.rumor3]])
-						], 512), [[io, g.value.rumor1 || g.value.rumor2 || g.value.rumor3]])
-					])
+						class: "stb-pm-dossier-tab-radio"
+					}, null, 8, Al), [[Bo, n.value]]),
+					t[96] ||= J("div", { class: "stb-dossier-tab-btn" }, "据点收容", -1),
+					J("div", jl, [J("div", Ml, [
+						t[93] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "设施状态 (Facility)", -1),
+						J("div", Nl, [t[90] ||= J("span", null, "供电等级", -1), J("span", Pl, F(a.value.据点收容?.设施状态?.供电等级 || "未知"), 1)]),
+						J("div", Fl, [t[91] ||= J("span", null, "防御等级", -1), J("span", Il, "Lv." + F(a.value.据点收容?.设施状态?.防御等级 || 0), 1)]),
+						J("div", Ll, [t[92] ||= J("span", null, "脑啡肽储量", -1), J("span", Rl, F(a.value.据点收容?.资源储备?.脑啡肽储量 || 0), 1)])
+					]), J("div", zl, [t[95] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "收容单元 (Containment)", -1), J("details", {
+						class: "stb-pm-dossier-folder",
+						open: "",
+						onClick: t[22] ||= Q(() => {}, ["stop"])
+					}, [t[94] ||= J("summary", null, [J("span", null, "📦 实体列表"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", Bl, [Object.keys(a.value.据点收容?.收容单元 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.据点收容?.收容单元, (e, t) => (K(), q("div", { key: t }, " ⚠️ [" + F(t) + "] 危险:" + F(e?.危险等级 || "未知") + " | 状态:" + F(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", Vl, "无"))])])])])
 				]),
-				J("label", Xl, [
+				J("label", Hl, [
 					U(J("input", {
-						"onUpdate:modelValue": t[24] ||= (e) => n.value = e,
+						"onUpdate:modelValue": t[23] ||= (e) => n.value = e,
 						type: "radio",
 						name: "pm-tabs_" + c.value,
 						value: "tab8",
-						class: "stb-pm-tab-radio"
-					}, null, 8, Zl), [[Bo, n.value]]),
-					t[100] ||= J("div", {
-						class: "stb-tab-btn",
-						style: { color: "#d4af37" }
+						class: "stb-pm-dossier-tab-radio"
+					}, null, 8, Ul), [[Bo, n.value]]),
+					t[106] ||= J("div", { class: "stb-dossier-tab-btn" }, "任务异闻", -1),
+					J("div", Wl, [
+						J("div", Gl, [
+							t[99] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "当前遭遇 (Encounter)", -1),
+							J("div", Kl, [t[97] ||= J("span", null, "状态", -1), J("span", ql, F(a.value.当前处境?.当前遭遇?.状态 || "未知"), 1)]),
+							J("div", Jl, [t[98] ||= J("span", null, "危险度", -1), J("span", Yl, F(a.value.当前处境?.当前遭遇?.危险度 || "未知"), 1)])
+						]),
+						J("div", Xl, [t[101] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "任务列表 (Quests)", -1), J("details", {
+							class: "stb-pm-dossier-folder",
+							open: "",
+							onClick: t[24] ||= Q(() => {}, ["stop"])
+						}, [t[100] ||= J("summary", null, [J("span", null, "📜 委托档案"), J("span", { class: "stb-pm-dossier-arrow" }, "▼")], -1), J("div", Zl, [Object.keys(a.value.当前处境?.任务列表 || {}).length > 0 ? (K(!0), q(G, { key: 0 }, W(a.value.当前处境?.任务列表, (e, t) => (K(), q("div", { key: t }, " 📌 [" + F(t) + "] 评级:" + F(e?.评级 || "未知") + " | 状态:" + F(e?.状态 || "未知"), 1))), 128)) : (K(), q("div", Ql, "无"))])])]),
+						U(J("div", $l, [
+							t[105] ||= J("div", { class: "stb-pm-dossier-panel-title" }, "都市截获 (Rumors)", -1),
+							U(J("div", eu, [t[102] ||= J("div", { class: "stb-pm-dossier-rumor-title" }, "旧巷余声", -1), J("div", {
+								class: "stb-pm-dossier-text-block",
+								innerHTML: g.value.rumor1
+							}, null, 8, tu)], 512), [[io, g.value.rumor1]]),
+							U(J("div", nu, [t[103] ||= J("div", { class: "stb-pm-dossier-rumor-title" }, "暗箱微光", -1), J("div", {
+								class: "stb-pm-dossier-text-block",
+								innerHTML: g.value.rumor2
+							}, null, 8, ru)], 512), [[io, g.value.rumor2]]),
+							U(J("div", iu, [t[104] ||= J("div", { class: "stb-pm-dossier-rumor-title" }, "远钟残响", -1), J("div", {
+								class: "stb-pm-dossier-text-block",
+								innerHTML: g.value.rumor3
+							}, null, 8, au)], 512), [[io, g.value.rumor3]])
+						], 512), [[io, g.value.rumor1 || g.value.rumor2 || g.value.rumor3]])
+					])
+				]),
+				J("label", ou, [
+					U(J("input", {
+						"onUpdate:modelValue": t[25] ||= (e) => n.value = e,
+						type: "radio",
+						name: "pm-tabs_" + c.value,
+						value: "tab9",
+						class: "stb-pm-dossier-tab-radio"
+					}, null, 8, su), [[Bo, n.value]]),
+					t[110] ||= J("div", {
+						class: "stb-dossier-tab-btn",
+						style: { color: "#8b0000" }
 					}, "时空枢纽", -1),
-					J("div", Ql, [(a.value.玩家角色?.轮回线索?.回溯次数 || 0) > 0 ? (K(), q("div", $l, [
-						t[98] ||= J("div", {
-							class: "stb-pm-panel-title",
-							style: { color: "#d4af37" }
+					J("div", cu, [(a.value.玩家角色?.轮回线索?.回溯次数 || 0) > 0 ? (K(), q("div", lu, [
+						t[108] ||= J("div", {
+							class: "stb-pm-dossier-panel-title",
+							style: { color: "#8b0000" }
 						}, "The Hub (光之种庇护所)", -1),
-						J("div", eu, [t[97] ||= J("span", { class: "stb-pm-info-label" }, "回溯次数", -1), J("span", tu, F(a.value.玩家角色?.轮回线索?.回溯次数), 1)]),
-						J("div", nu, [J("button", {
-							class: "stb-pm-btn-small",
-							style: {
-								padding: "8px 15px",
-								"border-color": "#d4af37",
-								color: "#d4af37"
-							},
-							onClick: t[25] ||= (e) => y("【系统指令：进入时空枢纽】我要与跑团娘进行Meta互动，或进行灵魂锚定。")
+						J("div", uu, [t[107] ||= J("span", null, "回溯次数", -1), J("span", du, F(a.value.玩家角色?.轮回线索?.回溯次数), 1)]),
+						J("div", fu, [J("button", {
+							class: "stb-pm-dossier-btn",
+							style: { width: "100%" },
+							onClick: t[26] ||= (e) => y("【系统指令：进入时空枢纽】我要与跑团娘进行Meta互动，或进行灵魂锚定。")
 						}, " 进入基地互动 ")])
-					])) : (K(), q("div", ru, [...t[99] ||= [
+					])) : (K(), q("div", pu, [...t[109] ||= [
 						J("div", { style: {
 							"font-size": "40px",
 							"margin-bottom": "15px",
 							filter: "grayscale(1)"
 						} }, "🗺️", -1),
 						J("div", { style: {
-							color: "#888",
-							"font-size": "18px",
+							color: "#555",
+							"font-size": "16px",
 							"font-weight": "bold",
 							"margin-bottom": "10px",
 							"letter-spacing": "2px"
 						} }, "时空枢纽未解锁", -1),
 						J("div", { style: {
-							color: "#555",
-							"font-size": "14px",
+							color: "#888",
+							"font-size": "13px",
 							"line-height": "1.6"
 						} }, [
 							Y(" 只有经历过死亡回溯的灵魂，"),
@@ -3907,179 +3895,165 @@ var $ = /* @__PURE__ */ Ot({
 			])
 		], 512)), [[io, o.value && (u.value || s.value)]]);
 	}
-}), au = {
+}), [["__scopeId", "data-v-fd4be2d3"]]), hu = {
 	key: 0,
 	class: "pm-master-container"
-}, ou = ["innerHTML"], su = {
+}, gu = ["innerHTML"], _u = {
 	key: 0,
 	class: "modal-overlay"
-}, cu = { class: "modal-content pm-glass-panel" }, lu = ["value"], uu = {
+}, vu = { class: "modal-content" }, yu = ["value"], bu = {
 	key: "already_started",
 	class: "page-check"
-}, du = {
+}, xu = {
 	key: "check",
 	class: "page-check"
-}, fu = { class: "sys-check-box" }, pu = {
+}, Su = { class: "sys-check-box" }, Cu = {
 	key: 0,
 	class: "status-loading"
-}, mu = { class: "sys-actions" }, hu = ["disabled"], gu = ["disabled"], _u = {
+}, wu = { class: "sys-actions" }, Tu = ["disabled"], Eu = ["disabled"], Du = {
 	key: "transition",
 	class: "transition-note"
-}, vu = {
+}, Ou = {
 	key: "library",
 	class: "library-scene"
-}, yu = {
+}, ku = {
 	class: "scene-text",
 	style: {
 		position: "relative",
 		"z-index": "1"
 	}
-}, bu = { class: "highlight-gold" }, xu = {
+}, Au = { class: "highlight-gold" }, ju = {
 	key: 2,
 	class: "dm-portrait-box"
-}, Su = ["src"], Cu = {
+}, Mu = ["src"], Nu = {
 	class: "dossier-container",
 	style: {
 		position: "relative",
 		"z-index": "1"
 	}
-}, wu = { class: "dossier-summary" }, Tu = { class: "ds-type" }, Eu = { class: "ds-name" }, Du = { class: "ds-desc" }, Ou = { class: "dossier-content" }, ku = {
+}, Pu = { class: "dossier-summary" }, Fu = { class: "ds-type" }, Iu = { class: "ds-name" }, Lu = { class: "ds-desc" }, Ru = { class: "dossier-content" }, zu = {
 	key: 0,
 	class: "cp-quote"
-}, Au = { class: "cp-grid" }, ju = { class: "cp-box" }, Mu = { class: "cp-box-content" }, Nu = { class: "cp-box" }, Pu = { class: "cp-box-content" }, Fu = { class: "cp-actions" }, Iu = ["onClick"], Lu = {
+}, Bu = { class: "cp-grid" }, Vu = { class: "cp-box" }, Hu = { class: "cp-box-content" }, Uu = { class: "cp-box" }, Wu = { class: "cp-box-content" }, Gu = { class: "cp-actions" }, Ku = ["onClick"], qu = {
 	key: "custom_char",
 	class: "custom-char-page"
-}, Ru = {
+}, Ju = {
 	key: 0,
 	class: "roll-screen"
-}, zu = { key: 0 }, Bu = { key: 1 }, Vu = {
+}, Yu = { key: 0 }, Xu = { key: 1 }, Zu = {
 	key: 1,
 	style: { width: "100%" }
-}, Hu = { class: "points-header pm-glass-panel" }, Uu = { style: {
+}, Qu = { class: "points-header" }, $u = { style: {
 	"font-size": "0.8em",
 	opacity: "0.8"
-} }, Wu = { style: { color: "white" } }, Gu = { style: { "text-align": "right" } }, Ku = { class: "preset-bar pm-glass-panel" }, qu = { style: {
+} }, ed = { style: { color: "white" } }, td = { style: { "text-align": "right" } }, nd = { class: "preset-bar" }, rd = { style: {
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, Ju = ["value"], Yu = ["disabled"], Xu = { style: {
+} }, id = ["value"], ad = ["disabled"], od = { style: {
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, Zu = ["disabled"], Qu = { class: "shop-container" }, $u = { class: "shop-section pm-glass-panel" }, ed = { class: "image-upload-row" }, td = { style: {
+} }, sd = ["disabled"], cd = { class: "shop-container" }, ld = { class: "shop-section" }, ud = { class: "image-upload-row" }, dd = { style: {
 	display: "flex",
 	"flex-direction": "column",
 	"align-items": "center",
 	gap: "10px"
-} }, nd = { class: "player-portrait-box" }, rd = ["src"], id = {
+} }, fd = { class: "player-portrait-box" }, pd = ["src"], md = {
 	key: 1,
 	class: "player-portrait-placeholder"
-}, ad = { style: {
+}, hd = { style: {
 	display: "flex",
 	"flex-direction": "column",
 	"align-items": "center",
 	gap: "10px"
-} }, od = {
+} }, gd = {
 	class: "player-portrait-box",
 	style: { "border-color": "#8a0303" }
-}, sd = ["src"], cd = {
+}, _d = ["src"], vd = {
 	key: 1,
 	class: "player-portrait-placeholder",
 	style: { color: "#8a0303" }
-}, ld = { class: "persona-grid" }, ud = { class: "shop-section pm-glass-panel" }, dd = { class: "stat-grid" }, fd = { class: "stat-row" }, pd = { class: "stat-controls" }, md = ["disabled"], hd = { class: "stat-val" }, gd = ["disabled"], _d = { class: "stat-row" }, vd = { class: "stat-controls" }, yd = ["disabled"], bd = { class: "stat-val" }, xd = { class: "stat-row" }, Sd = { class: "stat-controls" }, Cd = ["disabled"], wd = { class: "stat-val" }, Td = { class: "stat-row" }, Ed = { class: "stat-controls" }, Dd = ["disabled"], Od = { class: "stat-val" }, kd = ["disabled"], Ad = { class: "stat-row" }, jd = { class: "stat-controls" }, Md = ["disabled"], Nd = { class: "stat-val" }, Pd = ["disabled"], Fd = { class: "stat-grid" }, Id = { class: "stat-name" }, Ld = { class: "stat-controls" }, Rd = ["disabled", "onClick"], zd = { class: "stat-val" }, Bd = ["disabled", "onClick"], Vd = { class: "shop-section pm-glass-panel" }, Hd = { class: "diy-list" }, Ud = { class: "diy-header" }, Wd = { class: "diy-title" }, Gd = { style: {
+}, yd = { class: "persona-grid" }, bd = { class: "shop-section" }, xd = { class: "stat-grid" }, Sd = { class: "stat-row" }, Cd = { class: "stat-controls" }, wd = ["disabled"], Td = { class: "stat-val" }, Ed = ["disabled"], Dd = { class: "stat-row" }, Od = { class: "stat-controls" }, kd = ["disabled"], Ad = { class: "stat-val" }, jd = { class: "stat-row" }, Md = { class: "stat-controls" }, Nd = ["disabled"], Pd = { class: "stat-val" }, Fd = { class: "stat-row" }, Id = { class: "stat-controls" }, Ld = ["disabled"], Rd = { class: "stat-val" }, zd = ["disabled"], Bd = { class: "stat-row" }, Vd = { class: "stat-controls" }, Hd = ["disabled"], Ud = { class: "stat-val" }, Wd = ["disabled"], Gd = { class: "stat-grid" }, Kd = { class: "stat-name" }, qd = { class: "stat-controls" }, Jd = ["disabled", "onClick"], Yd = { class: "stat-val" }, Xd = ["disabled", "onClick"], Zd = { class: "shop-section" }, Qd = { class: "diy-list" }, $d = { class: "diy-header" }, ef = { class: "diy-title" }, tf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Kd = {
+} }, nf = {
 	key: 0,
 	class: "diy-cost-display"
-}, qd = ["disabled", "onClick"], Jd = ["onClick"], Yd = ["onUpdate:modelValue", "onInput"], Xd = ["onUpdate:modelValue", "onInput"], Zd = ["onUpdate:modelValue", "onChange"], Qd = ["value"], $d = { class: "diy-list" }, ef = { class: "diy-header" }, tf = { class: "diy-title" }, nf = { style: {
+}, rf = ["disabled", "onClick"], af = ["onClick"], of = ["onUpdate:modelValue", "onInput"], sf = ["onUpdate:modelValue", "onInput"], cf = ["onUpdate:modelValue", "onChange"], lf = ["value"], uf = { class: "diy-list" }, df = { class: "diy-header" }, ff = { class: "diy-title" }, pf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, rf = {
+} }, mf = {
 	key: 0,
 	class: "diy-cost-display"
-}, af = ["disabled", "onClick"], of = ["onClick"], sf = ["onUpdate:modelValue", "onInput"], cf = ["onUpdate:modelValue", "onInput"], lf = ["onUpdate:modelValue", "onChange"], uf = ["value"], df = { class: "diy-list" }, ff = { class: "diy-header" }, pf = { class: "diy-title" }, mf = { style: {
+}, hf = ["disabled", "onClick"], gf = ["onClick"], _f = ["onUpdate:modelValue", "onInput"], vf = ["onUpdate:modelValue", "onInput"], yf = ["onUpdate:modelValue", "onChange"], bf = ["value"], xf = { class: "diy-list" }, Sf = { class: "diy-header" }, Cf = { class: "diy-title" }, wf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, hf = {
+} }, Tf = {
 	key: 0,
 	class: "diy-cost-display"
-}, gf = ["disabled", "onClick"], _f = ["onClick"], vf = ["onUpdate:modelValue", "onInput"], yf = ["onUpdate:modelValue", "onInput"], bf = ["onUpdate:modelValue", "onChange"], xf = ["value"], Sf = { class: "diy-list" }, Cf = { class: "diy-header" }, wf = { class: "diy-title" }, Tf = { style: {
+}, Ef = ["disabled", "onClick"], Df = ["onClick"], Of = ["onUpdate:modelValue", "onInput"], kf = ["onUpdate:modelValue", "onInput"], Af = ["onUpdate:modelValue", "onChange"], jf = ["value"], Mf = { class: "diy-list" }, Nf = { class: "diy-header" }, Pf = { class: "diy-title" }, Ff = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Ef = {
+} }, If = {
 	key: 0,
 	class: "diy-cost-display"
-}, Df = ["disabled", "onClick"], Of = ["onClick"], kf = ["onUpdate:modelValue", "onInput"], Af = ["onUpdate:modelValue", "onInput"], jf = ["onUpdate:modelValue", "onChange"], Mf = ["value"], Nf = { class: "diy-list" }, Pf = { class: "diy-header" }, Ff = { class: "diy-title" }, If = { style: {
+}, Lf = ["disabled", "onClick"], Rf = ["onClick"], zf = ["onUpdate:modelValue", "onInput"], Bf = ["onUpdate:modelValue", "onInput"], Vf = ["onUpdate:modelValue", "onChange"], Hf = ["value"], Uf = { class: "diy-list" }, Wf = { class: "diy-header" }, Gf = { class: "diy-title" }, Kf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Lf = {
+} }, qf = {
 	key: 0,
 	class: "diy-cost-display"
-}, Rf = ["disabled", "onClick"], zf = ["onClick"], Bf = ["onUpdate:modelValue", "onInput"], Vf = ["onUpdate:modelValue", "onInput"], Hf = ["onUpdate:modelValue", "onChange"], Uf = ["value"], Wf = { class: "diy-list" }, Gf = { class: "diy-header" }, Kf = {
+}, Jf = ["disabled", "onClick"], Yf = ["onClick"], Xf = ["onUpdate:modelValue", "onInput"], Zf = ["onUpdate:modelValue", "onInput"], Qf = ["onUpdate:modelValue", "onChange"], $f = ["value"], ep = { class: "diy-list" }, tp = { class: "diy-header" }, np = {
 	class: "diy-title",
 	style: { color: "var(--pm-dark-red)" }
-}, qf = { style: {
+}, rp = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Jf = {
+} }, ip = {
 	key: 0,
 	class: "diy-cost-display refund"
-}, Yf = ["disabled", "onClick"], Xf = ["onClick"], Zf = ["onUpdate:modelValue", "onInput"], Qf = ["onUpdate:modelValue", "onInput"], $f = ["onUpdate:modelValue", "onChange"], ep = ["value"], tp = { class: "shop-section pm-glass-panel" }, np = { class: "rl-grid" }, rp = ["onClick"], ip = { class: "rl-type" }, ap = { class: "rl-name" }, op = { class: "rl-desc" }, sp = { class: "rl-cost" }, cp = { class: "rl-grid" }, lp = ["onClick"], up = { class: "rl-type" }, dp = { class: "rl-name" }, fp = { class: "rl-desc" }, pp = { class: "rl-cost" }, mp = { class: "rl-grid" }, hp = ["onClick"], gp = { class: "rl-type" }, _p = { class: "rl-name" }, vp = { class: "rl-desc" }, yp = { class: "rl-cost" }, bp = { class: "rl-grid" }, xp = ["onClick"], Sp = { class: "rl-type" }, Cp = { class: "rl-name" }, wp = { class: "rl-desc" }, Tp = { class: "rl-cost refund" }, Ep = { class: "shop-section pm-glass-panel" }, Dp = { style: {
+}, ap = ["disabled", "onClick"], op = ["onClick"], sp = ["onUpdate:modelValue", "onInput"], cp = ["onUpdate:modelValue", "onInput"], lp = ["onUpdate:modelValue", "onChange"], up = ["value"], dp = { class: "shop-section" }, fp = { class: "rl-grid" }, pp = ["onClick"], mp = { class: "rl-type" }, hp = { class: "rl-name" }, gp = { class: "rl-desc" }, _p = { class: "rl-cost" }, vp = { class: "rl-grid" }, yp = ["onClick"], bp = { class: "rl-type" }, xp = { class: "rl-name" }, Sp = { class: "rl-desc" }, Cp = { class: "rl-cost" }, wp = { class: "rl-grid" }, Tp = ["onClick"], Ep = { class: "rl-type" }, Dp = { class: "rl-name" }, Op = { class: "rl-desc" }, kp = { class: "rl-cost" }, Ap = { class: "rl-grid" }, jp = ["onClick"], Mp = { class: "rl-type" }, Np = { class: "rl-name" }, Pp = { class: "rl-desc" }, Fp = { class: "rl-cost refund" }, Ip = { class: "shop-section" }, Lp = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px",
 	cursor: "pointer",
 	"font-weight": "bold",
 	"margin-bottom": "15px"
-} }, Op = {
+} }, Rp = {
 	key: 0,
 	style: {
 		display: "grid",
 		gap: "15px"
 	}
-}, kp = { class: "shop-section pm-glass-panel" }, Ap = { class: "custom-idea-box" }, jp = { style: {
+}, zp = { class: "shop-section" }, Bp = { class: "custom-idea-box" }, Vp = { style: {
 	"text-align": "center",
 	"margin-top": "40px"
-} }, Mp = {
+} }, Hp = {
 	key: 0,
 	class: "negative-warning"
-}, Np = {
+}, Up = {
 	key: 1,
 	style: {
 		color: "red",
 		"font-weight": "bold",
 		"margin-top": "15px"
 	}
-}, Pp = ["disabled"], Fp = {
+}, Wp = ["disabled"], Gp = {
 	key: "settings",
 	class: "page-settings"
-}, Ip = { style: {
+}, Kp = { style: {
 	"font-size": "1.2em",
 	color: "var(--pm-dark-red)",
 	"font-weight": "bold",
 	"margin-bottom": "30px"
-} }, Lp = { style: { "text-decoration": "underline" } }, Rp = { class: "mbti-diff-grid" }, zp = { class: "mbti-box pm-glass-panel" }, Bp = { class: "mbti-row" }, Vp = { class: "mbti-row" }, Hp = { class: "mbti-row" }, Up = { class: "mbti-row" }, Wp = { class: "mbti-result" }, Gp = { class: "diff-box pm-glass-panel" }, Kp = { class: "toggles-grid" }, qp = ["onClick"], Jp = { class: "dm-section pm-glass-panel" }, Yp = { class: "dm-presets" }, Xp = ["disabled"], Zp = {
-	key: 1,
-	style: {
-		width: "100%",
-		"text-align": "center",
-		"margin-top": "40px",
-		"padding-bottom": "20px",
-		position: "relative",
-		"z-index": "10"
-	}
-}, Qp = /* @__PURE__ */ ((e, t) => {
-	let n = e.__vccOpts || e;
-	for (let [e, r] of t) n[e] = r;
-	return n;
-})(/* @__PURE__ */ Xn({
+} }, qp = { style: { "text-decoration": "underline" } }, Jp = { class: "mbti-diff-grid" }, Yp = { class: "mbti-box" }, Xp = { class: "mbti-row" }, Zp = { class: "mbti-row" }, Qp = { class: "mbti-row" }, $p = { class: "mbti-row" }, em = { class: "mbti-result" }, tm = { class: "diff-box" }, nm = { class: "toggles-grid" }, rm = ["onClick"], im = { class: "dm-section" }, am = { class: "dm-presets" }, om = ["disabled"], sm = /* @__PURE__ */ Xn({
 	__name: "SetupModal",
 	setup(e) {
 		let t = /* @__PURE__ */ H(!0), n = /* @__PURE__ */ H("check"), r = /* @__PURE__ */ H(!1), i = /* @__PURE__ */ H(!1), a = /* @__PURE__ */ H(!1), o = /* @__PURE__ */ H(!1), s = /* @__PURE__ */ H(""), c = /* @__PURE__ */ H(""), l = /* @__PURE__ */ H(localStorage.getItem("pm_dm_avatar_v1") || "https://files.catbox.moe/wfjl6u.png"), u = /* @__PURE__ */ H(null), d = () => {
@@ -4557,6 +4531,7 @@ var $ = /* @__PURE__ */ Ot({
 						累计小时数: 0,
 						当前天象: "极昼",
 						当前地点: l,
+						环境氛围: "极昼暴晒",
 						战术聚焦: "命运的齿轮开始转动...",
 						精神回响: "未知的低语在废墟深处回荡...",
 						特殊状态: "【初入废土】",
@@ -4624,6 +4599,7 @@ var $ = /* @__PURE__ */ Ot({
 							}
 						},
 						轮回线索: {
+							回溯次数: 0,
 							世界真相碎片: [],
 							永久精神创伤: { 无: "无" },
 							回溯暂存: {
@@ -4632,6 +4608,8 @@ var $ = /* @__PURE__ */ Ot({
 							}
 						},
 						特殊机制: {
+							全屏特效开关: !0,
+							领域展开状态: "无",
 							敏感开关: {
 								BL_GL_BG: !!E.sensitiveToggles.BL_GL_BG,
 								异种_Furry: !!E.sensitiveToggles.异种_Furry,
@@ -4652,6 +4630,7 @@ var $ = /* @__PURE__ */ Ot({
 					},
 					社交网络: {
 						势力声望: { 都市流浪者: 0 },
+						通讯录与群聊: { 无: ["无"] },
 						NPC羁绊: { 无: {
 							当前HP: 100,
 							最大HP: 100,
@@ -4916,15 +4895,15 @@ var $ = /* @__PURE__ */ Ot({
 				}, 500);
 			}
 		}, B = (e) => typeof e == "string" ? e.replace(/"/g, "\\\"").replace(/\n/g, " ") : e;
-		return (e, w) => t.value ? (K(), q("div", au, [
+		return (e, w) => t.value ? (K(), q("div", hu, [
 			J("div", {
 				class: j(["bgm-player", { "is-visible": a.value }]),
 				innerHTML: c.value
-			}, null, 10, ou),
-			o.value ? (K(), q("div", su, [J("div", cu, [
+			}, null, 10, gu),
+			o.value ? (K(), q("div", _u, [J("div", vu, [
 				w[49] ||= J("div", { class: "modal-title" }, "⚠️ 沙盒环境限制：请手动复制指令", -1),
 				w[50] ||= J("p", { style: {
-					color: "#ccc",
+					color: "#555",
 					"margin-bottom": "10px",
 					"text-align": "center"
 				} }, "由于当前环境的安全策略，无法自动发送。请全选下方文本框内容，复制后粘贴到酒馆聊天框发送。", -1),
@@ -4933,17 +4912,30 @@ var $ = /* @__PURE__ */ Ot({
 					value: s.value,
 					class: "modal-textarea",
 					onFocus: w[0] ||= (e) => e.target?.select()
-				}, null, 40, lu),
+				}, null, 40, yu),
 				J("button", {
-					class: "pm-glass-btn",
+					class: "modal-btn",
 					onClick: Le
 				}, "一键复制并关闭")
 			])])) : X("", !0),
+			n.value !== "check" && n.value !== "already_started" && n.value !== "transition" ? (K(), q("button", {
+				key: 1,
+				class: "pm-btn-small",
+				style: {
+					position: "absolute",
+					top: "20px",
+					left: "20px",
+					"z-index": "300",
+					background: "rgba(255,255,255,0.9)",
+					"box-shadow": "0 2px 10px rgba(0,0,0,0.2)"
+				},
+				onClick: _
+			}, " ◀ 返回上一步 ")) : X("", !0),
 			Ji(Ba, {
 				name: "fade",
 				mode: "out-in"
 			}, {
-				default: Cn(() => [n.value === "already_started" ? (K(), q("div", uu, [
+				default: Cn(() => [n.value === "already_started" ? (K(), q("div", bu, [
 					w[51] ||= J("div", { class: "sys-title" }, "旅程已在进行中", -1),
 					w[52] ||= J("div", { class: "sys-subtitle" }, "The Journey Has Already Begun", -1),
 					w[53] ||= J("p", { style: {
@@ -4958,30 +4950,30 @@ var $ = /* @__PURE__ */ Ot({
 						Y(" 请在下方的聊天框中继续你的废土生存，或者使用【系统指令】呼出面板。 ")
 					], -1),
 					J("button", {
-						class: "pm-glass-btn",
+						class: "sys-btn sys-btn-primary",
 						style: { "margin-top": "30px" },
 						onClick: C
 					}, "关闭界面")
-				])) : n.value === "check" ? (K(), q("div", du, [
+				])) : n.value === "check" ? (K(), q("div", xu, [
 					w[54] ||= J("div", { class: "sys-title" }, "白夜黑昼七日谈", -1),
 					w[55] ||= J("div", { class: "sys-subtitle" }, "The Seven Days of White Night and Dark Day", -1),
-					J("div", fu, [(K(!0), q(G, null, W(v, (e) => (K(), q("div", {
+					J("div", Su, [(K(!0), q(G, null, W(v, (e) => (K(), q("div", {
 						key: e.id,
 						class: "sys-row"
-					}, [J("span", null, F(e.label), 1), J("span", null, [e.status === "loading" ? (K(), q("span", pu, "Checking...")) : (K(), q("span", {
+					}, [J("span", null, F(e.label), 1), J("span", null, [e.status === "loading" ? (K(), q("span", Cu, "Checking...")) : (K(), q("span", {
 						key: 1,
 						class: j(e.status === "ok" ? "status-ok" : "status-warn")
 					}, F(e.statusText), 3))])]))), 128))]),
-					J("div", mu, [J("button", {
+					J("div", wu, [J("button", {
 						disabled: i.value,
-						class: "pm-glass-btn",
+						class: "sys-btn",
 						onClick: Q(te, ["prevent"])
-					}, "重新检查", 8, hu), J("button", {
+					}, "重新检查", 8, Tu), J("button", {
 						disabled: !S.value || i.value,
-						class: "pm-glass-btn",
+						class: "sys-btn sys-btn-primary",
 						onClick: ne
-					}, F(S.value ? "开始游戏" : "环境异常或校验中..."), 9, gu)])
-				])) : n.value === "transition" ? (K(), q("div", _u, [...w[56] ||= [J("div", { class: "note-title" }, "【系统提示：来自梓墨的笔记簿】", -1), J("ul", { class: "note-content" }, [
+					}, F(S.value ? "开始游戏" : "环境异常或校验中..."), 9, Eu)])
+				])) : n.value === "transition" ? (K(), q("div", Du, [...w[56] ||= [J("div", { class: "note-title" }, "【系统提示：来自梓墨的笔记簿】", -1), J("ul", { class: "note-content" }, [
 					J("li", null, [J("strong", null, "RP（玩家输入）："), Y("在很大程度上决定了逆转生死的关键，只小小输入几句话的话旅人sama是不会成为真正的英雄的哦~")]),
 					J("li", null, [
 						J("strong", null, "BGM自定义："),
@@ -4997,13 +4989,13 @@ var $ = /* @__PURE__ */ Ot({
 						Y("按钮，可一键脱下装备或使用背包道具。")
 					]),
 					J("li", null, [J("strong", null, "极端复杂的世界模拟与情感管理系统："), Y("你所遇见的，都是一个个鲜活的个体，请好好善待她/他/它们吧~")])
-				], -1)]])) : n.value === "library" ? (K(), q("div", vu, [J("div", yu, [
+				], -1)]])) : n.value === "library" ? (K(), q("div", Ou, [J("div", ku, [
 					x.value ? (K(), q(G, { key: 1 }, [
 						w[64] ||= J("p", null, "骨骼断裂的回音与神经烧焦的幻痛依然在脑海深处轰鸣。但此刻，你只是静静地站在温暖的图书室内，面前是那位戴着单片眼镜的少女。", -1),
 						J("p", null, [
 							J("q", null, [
 								w[60] ||= Y("“死亡并未宽恕你，", -1),
-								J("span", bu, F(b.value ? b.value : "伤痕累累的轮回者"), 1),
+								J("span", Au, F(b.value ? b.value : "伤痕累累的轮回者"), 1),
 								w[61] ||= Y("。”", -1)
 							]),
 							w[62] ||= Y("她微微欠身，目光扫过你灵魂上烙印的扭曲伤痕，", -1),
@@ -5034,60 +5026,31 @@ var $ = /* @__PURE__ */ Ot({
 					w[66] ||= J("p", null, [J("q", null, "在这里，每一次挥剑都可能伴随着肢体的断裂，每一次绝望都可能引来卡门的低语。但请记住，你遇到的每一个灵魂，都有着自己的恐惧与渴望。你的选择，将决定他们是成为你的利刃，还是刺入你后背的毒牙。")], -1),
 					w[67] ||= J("p", null, "幻影散去，她重新坐回桌后，从抽屉里取出了五枚质地各异的档案夹，在桌面上依次排开。", -1),
 					w[68] ||= J("p", null, [J("q", null, "那么，演出即将开始。请翻开你的‘档案’，决定你将以何种姿态，降临这片绝望的焦土。")], -1),
-					l.value ? (K(), q("div", xu, [J("img", {
+					l.value ? (K(), q("div", ju, [J("img", {
 						src: l.value,
 						class: "dm-portrait-img",
 						alt: "DM Sprite",
 						onError: w[1] ||= (e) => l.value = ""
-					}, null, 40, Su)])) : X("", !0)
-				]), J("div", Cu, [(K(), q(G, null, W(T, (e) => J("details", {
+					}, null, 40, Mu)])) : X("", !0)
+				]), J("div", Nu, [(K(), q(G, null, W(T, (e) => J("details", {
 					key: e.id,
 					name: "char-accordion",
-					class: "dossier-folder pm-glass-panel"
-				}, [J("summary", wu, [
-					J("span", Tu, F(e.type), 1),
-					J("span", Eu, F(e.name), 1),
-					J("span", Du, F(e.desc), 1)
-				]), J("div", Ou, [
-					e.quote ? (K(), q("div", ku, [J("q", null, F(e.quote), 1)])) : X("", !0),
-					J("div", Au, [J("div", ju, [w[69] ||= J("div", { class: "cp-box-title" }, "核心概念", -1), J("div", Mu, F(e.concept), 1)]), J("div", Nu, [w[70] ||= J("div", { class: "cp-box-title" }, "生存难度", -1), J("div", Pu, F(e.diff), 1)])]),
-					J("div", Fu, [J("div", {
-						class: "pm-glass-btn",
-						style: {
-							padding: "15px 50px",
-							"font-size": "1.2em",
-							"font-weight": "bold",
-							cursor: "pointer",
-							"border-radius": "4px"
-						},
+					class: "dossier-folder"
+				}, [J("summary", Pu, [
+					J("span", Fu, F(e.type), 1),
+					J("span", Iu, F(e.name), 1),
+					J("span", Lu, F(e.desc), 1)
+				]), J("div", Ru, [
+					e.quote ? (K(), q("div", zu, [J("q", null, F(e.quote), 1)])) : X("", !0),
+					J("div", Bu, [J("div", Vu, [w[69] ||= J("div", { class: "cp-box-title" }, "核心概念", -1), J("div", Hu, F(e.concept), 1)]), J("div", Uu, [w[70] ||= J("div", { class: "cp-box-title" }, "生存难度", -1), J("div", Wu, F(e.diff), 1)])]),
+					J("div", Gu, [J("div", {
+						class: "cp-btn-confirm",
 						onClick: (t) => oe(e.id)
-					}, "确认降临", 8, Iu)])
+					}, "确认降临", 8, Ku)])
 				])])), 64)), J("div", {
-					class: "dossier-custom pm-glass-panel",
-					style: {
-						display: "flex",
-						"align-items": "center",
-						padding: "15px 20px",
-						cursor: "pointer",
-						"margin-top": "10px"
-					},
+					class: "dossier-custom",
 					onClick: Se
-				}, [...w[71] ||= [J("span", {
-					class: "ds-type",
-					style: {
-						color: "#aaa",
-						width: "80px",
-						"font-family": "monospace"
-					}
-				}, "CUSTOM", -1), J("span", {
-					class: "ds-name",
-					style: {
-						color: "#d4af37",
-						"font-size": "1.5em",
-						"font-weight": "900",
-						"letter-spacing": "3px"
-					}
-				}, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (K(), q("div", Lu, [se.value === "pre-roll" ? (K(), q("div", Ru, [
+				}, [...w[71] ||= [J("span", { class: "ds-type" }, "CUSTOM", -1), J("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (K(), q("div", qu, [se.value === "pre-roll" ? (K(), q("div", Ju, [
 					w[72] ||= J("h2", {
 						class: "settings-title",
 						style: { border: "none" }
@@ -5097,54 +5060,51 @@ var $ = /* @__PURE__ */ Ot({
 						"margin-bottom": "40px"
 					} }, "“在都市中，出生便决定了大部分的命运。来吧，看看你的底牌。”", -1),
 					J("div", {
-						class: j([{ rolling: D.value }, "roll-btn pm-glass-btn"]),
-						style: { "border-radius": "50%" },
+						class: j([{ rolling: D.value }, "roll-btn"]),
 						onClick: Oe
-					}, [D.value ? (K(), q("span", Bu, "...")) : (K(), q("span", zu, "ROLL"))], 2)
-				])) : X("", !0), se.value === "shopping" ? (K(), q("div", Vu, [
-					J("div", Hu, [J("div", null, [w[75] ||= J("h2", null, "黑市终端", -1), J("div", Uu, [w[74] ||= Y("商店品质评级: ", -1), J("span", Wu, F(ke.value) + " (Roll: " + F(le.value) + ")", 1)])]), J("div", Gu, [w[76] ||= J("div", { style: {
+					}, [D.value ? (K(), q("span", Xu, "...")) : (K(), q("span", Yu, "ROLL"))], 2)
+				])) : X("", !0), se.value === "shopping" ? (K(), q("div", Zu, [
+					J("div", Qu, [J("div", null, [w[75] ||= J("h2", null, "黑市终端", -1), J("div", $u, [w[74] ||= Y("商店品质评级: ", -1), J("span", ed, F(ke.value) + " (Roll: " + F(le.value) + ")", 1)])]), J("div", td, [w[76] ||= J("div", { style: {
 						"font-size": "0.8em",
 						opacity: "0.8"
 					} }, "剩余可用点数", -1), J("div", { class: j([{ negative: je.value < 0 }, "points-display"]) }, F(je.value), 3)])]),
-					J("div", Ku, [J("div", qu, [
+					J("div", nd, [J("div", rd, [
 						w[78] ||= J("span", { style: {
 							"font-weight": "bold",
 							color: "var(--pm-dark-red)"
 						} }, "本地预设:", -1),
 						U(J("select", {
 							"onUpdate:modelValue": w[2] ||= (e) => ye.value = e,
-							class: "pm-glass-input"
+							class: "preset-select"
 						}, [w[77] ||= J("option", { value: -1 }, "-- 选择预设 --", -1), (K(!0), q(G, null, W(ve.value, (e, t) => (K(), q("option", {
 							key: t,
 							value: t
-						}, F(e.name), 9, Ju))), 128))], 512), [[Vo, ye.value]]),
+						}, F(e.name), 9, id))), 128))], 512), [[Vo, ye.value]]),
 						J("button", {
 							disabled: ye.value === -1,
-							class: "pm-glass-btn",
-							style: { padding: "5px 10px" },
+							class: "preset-btn",
 							onClick: L
-						}, "读取", 8, Yu)
-					]), J("div", Xu, [U(J("input", {
+						}, "读取", 8, ad)
+					]), J("div", od, [U(J("input", {
 						"onUpdate:modelValue": w[3] ||= (e) => I.value = e,
 						type: "text",
-						class: "pm-glass-input",
+						class: "preset-input",
 						placeholder: "输入预设名称..."
 					}, null, 512), [[Z, I.value]]), J("button", {
 						disabled: !I.value,
-						class: "pm-glass-btn",
-						style: { padding: "5px 10px" },
+						class: "preset-btn",
 						onClick: xe
-					}, "保存当前配置", 8, Zu)])]),
-					J("div", Qu, [
-						J("div", $u, [
+					}, "保存当前配置", 8, sd)])]),
+					J("div", cd, [
+						J("div", ld, [
 							w[79] ||= J("div", { class: "shop-title" }, "身份档案 (Profile)", -1),
-							J("div", ed, [J("div", td, [
-								J("div", nd, [p.value ? (K(), q("img", {
+							J("div", ud, [J("div", dd, [
+								J("div", fd, [p.value ? (K(), q("img", {
 									key: 0,
 									src: p.value,
 									class: "player-portrait-img",
 									onError: w[4] ||= (e) => p.value = ""
-								}, null, 40, rd)) : (K(), q("div", id, "玩家无图"))]),
+								}, null, 40, pd)) : (K(), q("div", md, "玩家无图"))]),
 								J("input", {
 									ref_key: "playerFileInput",
 									ref: m,
@@ -5154,23 +5114,21 @@ var $ = /* @__PURE__ */ Ot({
 									onChange: g
 								}, null, 544),
 								J("button", {
-									class: "pm-glass-btn",
-									style: { padding: "5px 10px" },
+									class: "pm-btn-small",
 									onClick: h
 								}, "📁 上传玩家立绘"),
 								p.value ? (K(), q("button", {
 									key: 0,
-									class: "pm-glass-btn",
-									style: { padding: "5px 10px" },
+									class: "pm-btn-small",
 									onClick: w[5] ||= (e) => p.value = ""
 								}, "🗑️ 清除")) : X("", !0)
-							]), J("div", ad, [
-								J("div", od, [l.value ? (K(), q("img", {
+							]), J("div", hd, [
+								J("div", gd, [l.value ? (K(), q("img", {
 									key: 0,
 									src: l.value,
 									class: "player-portrait-img",
 									onError: w[6] ||= (e) => l.value = ""
-								}, null, 40, sd)) : (K(), q("div", cd, "DM无图"))]),
+								}, null, 40, _d)) : (K(), q("div", vd, "DM无图"))]),
 								J("input", {
 									ref_key: "dmFileInput",
 									ref: u,
@@ -5180,9 +5138,8 @@ var $ = /* @__PURE__ */ Ot({
 									onChange: f
 								}, null, 544),
 								J("button", {
-									class: "pm-glass-btn",
+									class: "pm-btn-small",
 									style: {
-										padding: "5px 10px",
 										"border-color": "#8a0303",
 										color: "#8a0303"
 									},
@@ -5190,42 +5147,37 @@ var $ = /* @__PURE__ */ Ot({
 								}, "📁 上传DM立绘"),
 								l.value ? (K(), q("button", {
 									key: 0,
-									class: "pm-glass-btn",
+									class: "pm-btn-small",
 									style: {
-										padding: "5px 10px",
 										"border-color": "#8a0303",
 										color: "#8a0303"
 									},
 									onClick: w[7] ||= (e) => l.value = ""
 								}, "🗑️ 清除")) : X("", !0)
 							])]),
-							J("div", ld, [
+							J("div", yd, [
 								U(J("input", {
 									"onUpdate:modelValue": w[8] ||= (e) => k.name = e,
 									type: "text",
-									class: "pm-glass-input",
+									class: "pm-input",
 									placeholder: "姓名 (如: 罗兰)"
 								}, null, 512), [[Z, k.name]]),
 								U(J("input", {
 									"onUpdate:modelValue": w[9] ||= (e) => k.race = e,
 									type: "text",
-									class: "pm-glass-input",
+									class: "pm-input",
 									placeholder: "种族 (如: 人类/改造人)"
 								}, null, 512), [[Z, k.race]]),
 								U(J("input", {
 									"onUpdate:modelValue": w[10] ||= (e) => k.profession = e,
 									type: "text",
-									class: "pm-glass-input",
+									class: "pm-input",
 									placeholder: "职业 (如: 九阶收尾人)"
 								}, null, 512), [[Z, k.profession]])
 							]),
 							U(J("textarea", {
 								"onUpdate:modelValue": w[11] ||= (e) => k.desc = e,
-								class: "pm-glass-input",
-								style: {
-									height: "80px",
-									resize: "vertical"
-								},
+								class: "pm-textarea",
 								placeholder: "外貌特征与性格描述... (如: 穿着黑色西装，总是带着疲惫的笑容，极度厌恶背叛)"
 							}, null, 512), [[Z, k.desc]]),
 							w[80] ||= J("p", { style: {
@@ -5234,139 +5186,89 @@ var $ = /* @__PURE__ */ Ot({
 								"margin-top": "5px"
 							} }, "* 开局降临坐标将由命运（系统）在L巢废墟及周边区域中随机空投。", -1)
 						]),
-						J("div", ud, [
+						J("div", bd, [
 							w[91] ||= J("div", { class: "shop-title" }, "常驻市价表 (基础属性)", -1),
-							J("div", dd, [
-								J("div", fd, [
+							J("div", xd, [
+								J("div", Sd, [
 									w[81] ||= J("span", { class: "stat-name" }, "等级 (Max 30)", -1),
-									J("div", pd, [
+									J("div", Cd, [
 										J("button", {
 											disabled: O.level <= 1,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[12] ||= (e) => O.level--
-										}, "-", 8, md),
-										J("span", hd, F(O.level), 1),
+										}, "-", 8, wd),
+										J("span", Td, F(O.level), 1),
 										J("button", {
 											disabled: O.level >= 30,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[13] ||= (e) => O.level++
-										}, "+", 8, gd)
+										}, "+", 8, Ed)
 									]),
 									w[82] ||= J("span", { class: "stat-cost" }, "100/级", -1)
 								]),
-								J("div", _d, [
+								J("div", Dd, [
 									w[83] ||= J("span", { class: "stat-name" }, "最大 HP", -1),
-									J("div", vd, [
+									J("div", Od, [
 										J("button", {
 											disabled: O.hp <= 10,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[14] ||= (e) => O.hp -= 10
-										}, "-", 8, yd),
-										J("span", bd, F(O.hp), 1),
+										}, "-", 8, kd),
+										J("span", Ad, F(O.hp), 1),
 										J("button", {
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[15] ||= (e) => O.hp += 10
 										}, "+")
 									]),
 									w[84] ||= J("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								J("div", xd, [
+								J("div", jd, [
 									w[85] ||= J("span", { class: "stat-name" }, "最大 MP", -1),
-									J("div", Sd, [
+									J("div", Md, [
 										J("button", {
 											disabled: O.mp <= 10,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[16] ||= (e) => O.mp -= 10
-										}, "-", 8, Cd),
-										J("span", wd, F(O.mp), 1),
+										}, "-", 8, Nd),
+										J("span", Pd, F(O.mp), 1),
 										J("button", {
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[17] ||= (e) => O.mp += 10
 										}, "+")
 									]),
 									w[86] ||= J("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								J("div", Td, [
+								J("div", Fd, [
 									w[87] ||= J("span", { class: "stat-name" }, "理智值 (SP)", -1),
-									J("div", Ed, [
+									J("div", Id, [
 										J("button", {
 											disabled: O.sp <= 10,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[18] ||= (e) => O.sp--
-										}, "-", 8, Dd),
-										J("span", Od, F(O.sp), 1),
+										}, "-", 8, Ld),
+										J("span", Rd, F(O.sp), 1),
 										J("button", {
 											disabled: O.sp >= 50,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[19] ||= (e) => O.sp++
-										}, "+", 8, kd)
+										}, "+", 8, zd)
 									]),
 									w[88] ||= J("span", { class: "stat-cost" }, "50/点", -1)
 								]),
-								J("div", Ad, [
+								J("div", Bd, [
 									w[89] ||= J("span", { class: "stat-name" }, "理智稳定性", -1),
-									J("div", jd, [
+									J("div", Vd, [
 										J("button", {
 											disabled: O.stability <= 10,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[20] ||= (e) => O.stability -= 5
-										}, "-", 8, Md),
-										J("span", Nd, F(O.stability), 1),
+										}, "-", 8, Hd),
+										J("span", Ud, F(O.stability), 1),
 										J("button", {
 											disabled: O.stability >= 100,
-											class: "stat-btn pm-glass-btn",
-											style: {
-												padding: "0",
-												width: "30px",
-												height: "30px"
-											},
+											class: "stat-btn",
 											onClick: w[21] ||= (e) => O.stability += 5
-										}, "+", 8, Pd)
+										}, "+", 8, Wd)
 									]),
 									w[90] ||= J("span", { class: "stat-cost" }, "30/点", -1)
 								])
@@ -5378,7 +5280,7 @@ var $ = /* @__PURE__ */ Ot({
 									"font-size": "1.2em"
 								}
 							}, "六维属性 (10-15: 50点/级 | 16-20: 150点/级)", -1),
-							J("div", Fd, [(K(), q(G, null, W([
+							J("div", Gd, [(K(), q(G, null, W([
 								"str",
 								"dex",
 								"con",
@@ -5388,31 +5290,21 @@ var $ = /* @__PURE__ */ Ot({
 							], (e) => J("div", {
 								key: e,
 								class: "stat-row"
-							}, [J("span", Id, F(ue[e]), 1), J("div", Ld, [
+							}, [J("span", Kd, F(ue[e]), 1), J("div", qd, [
 								J("button", {
 									disabled: O[e] <= 10,
-									class: "stat-btn pm-glass-btn",
-									style: {
-										padding: "0",
-										width: "30px",
-										height: "30px"
-									},
+									class: "stat-btn",
 									onClick: (t) => O[e]--
-								}, "-", 8, Rd),
-								J("span", zd, F(O[e]), 1),
+								}, "-", 8, Jd),
+								J("span", Yd, F(O[e]), 1),
 								J("button", {
 									disabled: O[e] >= 20,
-									class: "stat-btn pm-glass-btn",
-									style: {
-										padding: "0",
-										width: "30px",
-										height: "30px"
-									},
+									class: "stat-btn",
 									onClick: (t) => O[e]++
-								}, "+", 8, Bd)
+								}, "+", 8, Xd)
 							])])), 64))])
 						]),
-						J("div", Vd, [
+						J("div", Zd, [
 							w[105] ||= J("div", { class: "shop-title" }, "DIY 锻造与深渊契约端口", -1),
 							w[106] ||= J("div", { class: "dm-warning" }, [
 								J("strong", null, "【跑团娘的善意提醒】"),
@@ -5420,7 +5312,7 @@ var $ = /* @__PURE__ */ Ot({
 								J("br"),
 								J("span", { style: { color: "var(--pm-dark-red)" } }, "* 提示：如果你不知道具体的伤害数值（如1d8），可以只写效果，AI 会根据你选择的评级自动为你补全合理的数值。")
 							], -1),
-							J("div", Hd, [
+							J("div", Qd, [
 								w[94] ||= J("div", {
 									class: "shop-title",
 									style: {
@@ -5434,53 +5326,47 @@ var $ = /* @__PURE__ */ Ot({
 									key: "skill" + t,
 									class: "diy-box"
 								}, [
-									J("div", Ud, [J("span", Wd, "技能 #" + F(t + 1), 1), J("div", Gd, [
-										e.rolled ? (K(), q("span", Kd, "-" + F(e.cost) + " 点", 1)) : X("", !0),
+									J("div", $d, [J("span", ef, "技能 #" + F(t + 1), 1), J("div", tf, [
+										e.rolled ? (K(), q("span", nf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
-											class: "pm-glass-btn",
-											style: { padding: "5px 10px" },
+											class: "diy-roll-btn",
 											onClick: (e) => ge("skills", t)
-										}, "评估代价 (Roll)", 8, qd),
+										}, "评估代价 (Roll)", 8, rf),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => he("skills", t)
-										}, "×", 8, Jd)
+										}, "×", 8, af)
 									])]),
 									U(J("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
-										class: "pm-glass-input",
+										class: "pm-input",
 										placeholder: "技能名称 (如: 拔刀斩)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Yd), [[Z, e.name]]),
+									}, null, 40, of), [[Z, e.name]]),
 									U(J("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
-										class: "pm-glass-input",
-										style: { height: "60px" },
+										class: "pm-textarea",
 										placeholder: "技能效果与消耗描述... (如: 消耗5MP，造成1d10伤害)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Xd), [[Z, e.desc]]),
+									}, null, 40, sf), [[Z, e.desc]]),
 									U(J("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
-										class: "pm-glass-input",
+										class: "pm-select",
 										onChange: (t) => e.rolled = !1
 									}, [w[93] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, Qd)), 64))], 40, Zd), [[Vo, e.tier]])
+									}, F(e.label), 9, lf)), 64))], 40, cf), [[Vo, e.tier]])
 								]))), 128)),
 								J("button", {
-									class: "pm-glass-btn",
-									style: {
-										width: "100%",
-										padding: "10px"
-									},
+									class: "btn-add-diy",
 									onClick: w[22] ||= (e) => me("skills")
 								}, "➕ 添加自定义技能")
 							]),
-							J("div", $d, [
+							J("div", uf, [
 								w[96] ||= J("div", {
 									class: "shop-title",
 									style: {
@@ -5494,53 +5380,47 @@ var $ = /* @__PURE__ */ Ot({
 									key: "trait" + t,
 									class: "diy-box"
 								}, [
-									J("div", ef, [J("span", tf, "特质 #" + F(t + 1), 1), J("div", nf, [
-										e.rolled ? (K(), q("span", rf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
+									J("div", df, [J("span", ff, "特质 #" + F(t + 1), 1), J("div", pf, [
+										e.rolled ? (K(), q("span", mf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
-											class: "pm-glass-btn",
-											style: { padding: "5px 10px" },
+											class: "diy-roll-btn",
 											onClick: (e) => ge("traits", t)
-										}, "评估代价 (Roll)", 8, af),
+										}, "评估代价 (Roll)", 8, hf),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => he("traits", t)
-										}, "×", 8, of)
+										}, "×", 8, gf)
 									])]),
 									U(J("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
-										class: "pm-glass-input",
+										class: "pm-input",
 										placeholder: "特质名称 (如: 异想体血肉共生)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, sf), [[Z, e.name]]),
+									}, null, 40, _f), [[Z, e.name]]),
 									U(J("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
-										class: "pm-glass-input",
-										style: { height: "60px" },
+										class: "pm-textarea",
 										placeholder: "特质效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, cf), [[Z, e.desc]]),
+									}, null, 40, vf), [[Z, e.desc]]),
 									U(J("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
-										class: "pm-glass-input",
+										class: "pm-select",
 										onChange: (t) => e.rolled = !1
 									}, [w[95] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, uf)), 64))], 40, lf), [[Vo, e.tier]])
+									}, F(e.label), 9, bf)), 64))], 40, yf), [[Vo, e.tier]])
 								]))), 128)),
 								J("button", {
-									class: "pm-glass-btn",
-									style: {
-										width: "100%",
-										padding: "10px"
-									},
+									class: "btn-add-diy",
 									onClick: w[23] ||= (e) => me("traits")
 								}, "➕ 添加自定义特质")
 							]),
-							J("div", df, [
+							J("div", xf, [
 								w[98] ||= J("div", {
 									class: "shop-title",
 									style: {
@@ -5554,53 +5434,47 @@ var $ = /* @__PURE__ */ Ot({
 									key: "weapon" + t,
 									class: "diy-box"
 								}, [
-									J("div", ff, [J("span", pf, "武器 #" + F(t + 1), 1), J("div", mf, [
-										e.rolled ? (K(), q("span", hf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
+									J("div", Sf, [J("span", Cf, "武器 #" + F(t + 1), 1), J("div", wf, [
+										e.rolled ? (K(), q("span", Tf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
-											class: "pm-glass-btn",
-											style: { padding: "5px 10px" },
+											class: "diy-roll-btn",
 											onClick: (e) => ge("weapons", t)
-										}, "评估代价 (Roll)", 8, gf),
+										}, "评估代价 (Roll)", 8, Ef),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => he("weapons", t)
-										}, "×", 8, _f)
+										}, "×", 8, Df)
 									])]),
 									U(J("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
-										class: "pm-glass-input",
+										class: "pm-input",
 										placeholder: "武器名称 (如: ALEPH级·拟态幼体)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, vf), [[Z, e.name]]),
+									}, null, 40, Of), [[Z, e.name]]),
 									U(J("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
-										class: "pm-glass-input",
-										style: { height: "60px" },
+										class: "pm-textarea",
 										placeholder: "武器效果与【副作用代价】描述... (未写明伤害骰子AI将自动补全)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, yf), [[Z, e.desc]]),
+									}, null, 40, kf), [[Z, e.desc]]),
 									U(J("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
-										class: "pm-glass-input",
+										class: "pm-select",
 										onChange: (t) => e.rolled = !1
 									}, [w[97] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, xf)), 64))], 40, bf), [[Vo, e.tier]])
+									}, F(e.label), 9, jf)), 64))], 40, Af), [[Vo, e.tier]])
 								]))), 128)),
 								J("button", {
-									class: "pm-glass-btn",
-									style: {
-										width: "100%",
-										padding: "10px"
-									},
+									class: "btn-add-diy",
 									onClick: w[24] ||= (e) => me("weapons")
 								}, "➕ 添加自定义武器")
 							]),
-							J("div", Sf, [
+							J("div", Mf, [
 								w[100] ||= J("div", {
 									class: "shop-title",
 									style: {
@@ -5614,53 +5488,47 @@ var $ = /* @__PURE__ */ Ot({
 									key: "armor" + t,
 									class: "diy-box"
 								}, [
-									J("div", Cf, [J("span", wf, "防具 #" + F(t + 1), 1), J("div", Tf, [
-										e.rolled ? (K(), q("span", Ef, "-" + F(e.cost) + " 点", 1)) : X("", !0),
+									J("div", Nf, [J("span", Pf, "防具 #" + F(t + 1), 1), J("div", Ff, [
+										e.rolled ? (K(), q("span", If, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
-											class: "pm-glass-btn",
-											style: { padding: "5px 10px" },
+											class: "diy-roll-btn",
 											onClick: (e) => ge("armors", t)
-										}, "评估代价 (Roll)", 8, Df),
+										}, "评估代价 (Roll)", 8, Lf),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => he("armors", t)
-										}, "×", 8, Of)
+										}, "×", 8, Rf)
 									])]),
 									U(J("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
-										class: "pm-glass-input",
+										class: "pm-input",
 										placeholder: "防具名称 (如: W公司清剿服)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, kf), [[Z, e.name]]),
+									}, null, 40, zf), [[Z, e.name]]),
 									U(J("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
-										class: "pm-glass-input",
-										style: { height: "60px" },
+										class: "pm-textarea",
 										placeholder: "防具效果与代价描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Af), [[Z, e.desc]]),
+									}, null, 40, Bf), [[Z, e.desc]]),
 									U(J("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
-										class: "pm-glass-input",
+										class: "pm-select",
 										onChange: (t) => e.rolled = !1
 									}, [w[99] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, Mf)), 64))], 40, jf), [[Vo, e.tier]])
+									}, F(e.label), 9, Hf)), 64))], 40, Vf), [[Vo, e.tier]])
 								]))), 128)),
 								J("button", {
-									class: "pm-glass-btn",
-									style: {
-										width: "100%",
-										padding: "10px"
-									},
+									class: "btn-add-diy",
 									onClick: w[25] ||= (e) => me("armors")
 								}, "➕ 添加自定义防具")
 							]),
-							J("div", Nf, [
+							J("div", Uf, [
 								w[102] ||= J("div", {
 									class: "shop-title",
 									style: {
@@ -5674,53 +5542,47 @@ var $ = /* @__PURE__ */ Ot({
 									key: "item" + t,
 									class: "diy-box"
 								}, [
-									J("div", Pf, [J("span", Ff, "道具 #" + F(t + 1), 1), J("div", If, [
-										e.rolled ? (K(), q("span", Lf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
+									J("div", Wf, [J("span", Gf, "道具 #" + F(t + 1), 1), J("div", Kf, [
+										e.rolled ? (K(), q("span", qf, "-" + F(e.cost) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
-											class: "pm-glass-btn",
-											style: { padding: "5px 10px" },
+											class: "diy-roll-btn",
 											onClick: (e) => ge("items", t)
-										}, "评估代价 (Roll)", 8, Rf),
+										}, "评估代价 (Roll)", 8, Jf),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => he("items", t)
-										}, "×", 8, zf)
+										}, "×", 8, Yf)
 									])]),
 									U(J("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
-										class: "pm-glass-input",
+										class: "pm-input",
 										placeholder: "道具名称 (如: K公司高浓度安瓿)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Bf), [[Z, e.name]]),
+									}, null, 40, Xf), [[Z, e.name]]),
 									U(J("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
-										class: "pm-glass-input",
-										style: { height: "60px" },
+										class: "pm-textarea",
 										placeholder: "道具效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Vf), [[Z, e.desc]]),
+									}, null, 40, Zf), [[Z, e.desc]]),
 									U(J("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
-										class: "pm-glass-input",
+										class: "pm-select",
 										onChange: (t) => e.rolled = !1
 									}, [w[101] ||= J("option", { value: "" }, "-- 选择评级区间 --", -1), (K(), q(G, null, W(fe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, Uf)), 64))], 40, Hf), [[Vo, e.tier]])
+									}, F(e.label), 9, $f)), 64))], 40, Qf), [[Vo, e.tier]])
 								]))), 128)),
 								J("button", {
-									class: "pm-glass-btn",
-									style: {
-										width: "100%",
-										padding: "10px"
-									},
+									class: "btn-add-diy",
 									onClick: w[26] ||= (e) => me("items")
 								}, "➕ 添加自定义道具")
 							]),
-							J("div", Wf, [
+							J("div", ep, [
 								w[104] ||= J("div", {
 									class: "shop-title",
 									style: {
@@ -5739,52 +5601,45 @@ var $ = /* @__PURE__ */ Ot({
 										background: "rgba(139, 0, 0, 0.02)"
 									}
 								}, [
-									J("div", Gf, [J("span", Kf, "业障 #" + F(t + 1), 1), J("div", qf, [
-										e.rolled ? (K(), q("span", Jf, "+" + F(e.refund) + " 点", 1)) : X("", !0),
+									J("div", tp, [J("span", np, "业障 #" + F(t + 1), 1), J("div", rp, [
+										e.rolled ? (K(), q("span", ip, "+" + F(e.refund) + " 点", 1)) : X("", !0),
 										J("button", {
 											disabled: !e.tier,
-											class: "pm-glass-btn",
-											style: {
-												padding: "5px 10px",
-												"border-color": "var(--pm-dark-red)",
-												color: "var(--pm-dark-red)"
-											},
+											class: "diy-roll-btn",
+											style: { background: "var(--pm-dark-red)" },
 											onClick: (e) => ge("karmas", t)
-										}, "评估返还 (Roll)", 8, Yf),
+										}, "评估返还 (Roll)", 8, ap),
 										J("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => he("karmas", t)
-										}, "×", 8, Xf)
+										}, "×", 8, op)
 									])]),
 									U(J("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
 										type: "text",
-										class: "pm-glass-input",
+										class: "pm-input",
 										placeholder: "业障名称 (如: 注定的扭曲)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Zf), [[Z, e.name]]),
+									}, null, 40, sp), [[Z, e.name]]),
 									U(J("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
-										class: "pm-glass-input",
-										style: { height: "60px" },
+										class: "pm-textarea",
 										placeholder: "业障的负面效果与触发条件描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Qf), [[Z, e.desc]]),
+									}, null, 40, cp), [[Z, e.desc]]),
 									U(J("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
-										class: "pm-glass-input",
+										class: "pm-select",
 										onChange: (t) => e.rolled = !1
 									}, [w[103] ||= J("option", { value: "" }, "-- 选择痛苦评级 --", -1), (K(), q(G, null, W(pe, (e) => J("option", {
 										key: e.label,
 										value: e.label
-									}, F(e.label), 9, ep)), 64))], 40, $f), [[Vo, e.tier]])
+									}, F(e.label), 9, up)), 64))], 40, lp), [[Vo, e.tier]])
 								]))), 128)),
 								J("button", {
-									class: "pm-glass-btn",
+									class: "btn-add-diy",
 									style: {
-										width: "100%",
-										padding: "10px",
 										"border-color": "var(--pm-dark-red)",
 										color: "var(--pm-dark-red)"
 									},
@@ -5792,7 +5647,7 @@ var $ = /* @__PURE__ */ Ot({
 								}, "➕ 添加自定义业障")
 							])
 						]),
-						J("div", tp, [
+						J("div", dp, [
 							w[107] ||= J("div", { class: "shop-title" }, "本局限定商品 (Roguelike 刷新池)", -1),
 							w[108] ||= J("p", { style: {
 								color: "#555",
@@ -5803,65 +5658,65 @@ var $ = /* @__PURE__ */ Ot({
 								color: "var(--pm-text)",
 								"margin-bottom": "10px"
 							} }, "特殊背景 / 特质", -1),
-							J("div", np, [(K(!0), q(G, null, W(N.backgrounds, (e) => (K(), q("div", {
+							J("div", fp, [(K(!0), q(G, null, W(N.backgrounds, (e) => (K(), q("div", {
 								key: e.name,
-								class: j([{ selected: Ne("backgrounds", e) }, "rl-card pm-glass-panel"]),
+								class: j([{ selected: Ne("backgrounds", e) }, "rl-card"]),
 								onClick: (t) => Me("backgrounds", e)
 							}, [
-								J("div", ip, F(e.type), 1),
-								J("div", ap, F(e.name), 1),
-								J("div", op, F(e.desc), 1),
-								J("div", sp, "-" + F(e.cost) + " 点", 1)
-							], 10, rp))), 128))]),
+								J("div", mp, F(e.type), 1),
+								J("div", hp, F(e.name), 1),
+								J("div", gp, F(e.desc), 1),
+								J("div", _p, "-" + F(e.cost) + " 点", 1)
+							], 10, pp))), 128))]),
 							w[110] ||= J("h4", { style: {
 								color: "var(--pm-text)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "稀有遗物 / E.G.O", -1),
-							J("div", cp, [(K(!0), q(G, null, W(N.egos, (e) => (K(), q("div", {
+							J("div", vp, [(K(!0), q(G, null, W(N.egos, (e) => (K(), q("div", {
 								key: e.name,
-								class: j([{ selected: Ne("egos", e) }, "rl-card pm-glass-panel"]),
+								class: j([{ selected: Ne("egos", e) }, "rl-card"]),
 								onClick: (t) => Me("egos", e)
 							}, [
-								J("div", up, F(e.type), 1),
-								J("div", dp, F(e.name), 1),
-								J("div", fp, F(e.desc), 1),
-								J("div", pp, "-" + F(e.cost) + " 点", 1)
-							], 10, lp))), 128))]),
+								J("div", bp, F(e.type), 1),
+								J("div", xp, F(e.name), 1),
+								J("div", Sp, F(e.desc), 1),
+								J("div", Cp, "-" + F(e.cost) + " 点", 1)
+							], 10, yp))), 128))]),
 							w[111] ||= J("h4", { style: {
 								color: "var(--pm-text)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "失落战技 / 奇点魔法", -1),
-							J("div", mp, [(K(!0), q(G, null, W(N.skills, (e) => (K(), q("div", {
+							J("div", wp, [(K(!0), q(G, null, W(N.skills, (e) => (K(), q("div", {
 								key: e.name,
-								class: j([{ selected: Ne("skills", e) }, "rl-card pm-glass-panel"]),
+								class: j([{ selected: Ne("skills", e) }, "rl-card"]),
 								onClick: (t) => Me("skills", e)
 							}, [
-								J("div", gp, F(e.type), 1),
-								J("div", _p, F(e.name), 1),
-								J("div", vp, F(e.desc), 1),
-								J("div", yp, "-" + F(e.cost) + " 点", 1)
-							], 10, hp))), 128))]),
+								J("div", Ep, F(e.type), 1),
+								J("div", Dp, F(e.name), 1),
+								J("div", Op, F(e.desc), 1),
+								J("div", kp, "-" + F(e.cost) + " 点", 1)
+							], 10, Tp))), 128))]),
 							w[112] ||= J("h4", { style: {
 								color: "var(--pm-dark-red)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "专属业障 (必须至少选择一项，可返还点数)", -1),
-							J("div", bp, [(K(!0), q(G, null, W(N.karmas, (e) => (K(), q("div", {
+							J("div", Ap, [(K(!0), q(G, null, W(N.karmas, (e) => (K(), q("div", {
 								key: e.name,
-								class: j([{ selected: Ne("karmas", e) }, "rl-card pm-glass-panel"]),
+								class: j([{ selected: Ne("karmas", e) }, "rl-card"]),
 								onClick: (t) => Me("karmas", e)
 							}, [
-								J("div", Sp, F(e.type), 1),
-								J("div", Cp, F(e.name), 1),
-								J("div", wp, F(e.desc), 1),
-								J("div", Tp, "+" + F(e.refund) + " 点", 1)
-							], 10, xp))), 128))])
+								J("div", Mp, F(e.type), 1),
+								J("div", Np, F(e.name), 1),
+								J("div", Pp, F(e.desc), 1),
+								J("div", Fp, "+" + F(e.refund) + " 点", 1)
+							], 10, jp))), 128))])
 						]),
-						J("div", Ep, [
+						J("div", Ip, [
 							w[114] ||= J("div", { class: "shop-title" }, "同行伙伴 (Companion) - 消耗 2000 点", -1),
-							J("label", Dp, [U(J("input", {
+							J("label", Lp, [U(J("input", {
 								"onUpdate:modelValue": w[28] ||= (e) => A.enabled = e,
 								type: "checkbox",
 								style: {
@@ -5869,23 +5724,20 @@ var $ = /* @__PURE__ */ Ot({
 									height: "20px"
 								}
 							}, null, 512), [[Ro, A.enabled]]), w[113] ||= Y(" 携带一名自定义伙伴降临废土 ", -1)]),
-							A.enabled ? (K(), q("div", Op, [U(J("input", {
+							A.enabled ? (K(), q("div", Rp, [U(J("input", {
 								"onUpdate:modelValue": w[29] ||= (e) => A.name = e,
 								type: "text",
-								class: "pm-glass-input",
+								class: "pm-input",
 								style: { margin: "0" },
 								placeholder: "伙伴姓名 (如: 安吉拉)"
 							}, null, 512), [[Z, A.name]]), U(J("textarea", {
 								"onUpdate:modelValue": w[30] ||= (e) => A.desc = e,
-								class: "pm-glass-input",
-								style: {
-									margin: "0",
-									height: "60px"
-								},
+								class: "pm-textarea",
+								style: { margin: "0" },
 								placeholder: "伙伴的身份、能力与性格设定..."
 							}, null, 512), [[Z, A.desc]])])) : X("", !0)
 						]),
-						J("div", kp, [
+						J("div", zp, [
 							w[115] ||= J("div", { class: "shop-title" }, "完全自定义议约", -1),
 							w[116] ||= J("p", { style: {
 								color: "#555",
@@ -5895,37 +5747,30 @@ var $ = /* @__PURE__ */ Ot({
 								J("br"),
 								Y("注意：DM 会在游戏开始后为你进行点数估价，并强行缝合一个恶毒的专属业障。")
 							], -1),
-							J("div", Ap, [U(J("textarea", {
+							J("div", Bp, [U(J("textarea", {
 								"onUpdate:modelValue": w[31] ||= (e) => _e.value = e,
-								class: "pm-glass-input",
-								style: { height: "150px" },
 								placeholder: "在此输入你的自定义设定..."
 							}, null, 512), [[Z, _e.value]])])
 						])
 					]),
-					J("div", jp, [
-						je.value < 0 ? (K(), q("div", Mp, [...w[117] ||= [
+					J("div", Vp, [
+						je.value < 0 ? (K(), q("div", Hp, [...w[117] ||= [
 							Y(" 【跑团娘的嘲弄】哎呀呀，点数透支了呢？没关系，你可以带着这身华丽的负债降临。", -1),
 							J("br", null, null, -1),
 							Y(" 只不过……开局负数骰子意味着你已经被都市的厄运标记。准备好在『心灵镜牢』里打一辈子黑工还债了吗，可怜的耗子？ ", -1)
 						]])) : X("", !0),
-						!Pe.value && !_e.value ? (K(), q("p", Np, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : X("", !0),
+						!Pe.value && !_e.value ? (K(), q("p", Up, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : X("", !0),
 						J("button", {
 							disabled: !Pe.value && !_e.value,
-							class: "pm-glass-btn",
-							style: {
-								padding: "20px 60px",
-								"font-size": "1.5em",
-								"margin-top": "20px"
-							},
+							class: "pm-btn-embark",
 							onClick: Fe
-						}, "确认降临姿态", 8, Pp)
+						}, "确认降临姿态", 8, Wp)
 					])
-				])) : X("", !0)])) : n.value === "settings" ? (K(), q("div", Fp, [
+				])) : X("", !0)])) : n.value === "settings" ? (K(), q("div", Gp, [
 					w[125] ||= J("div", { class: "settings-title" }, "契约与法则", -1),
 					w[126] ||= J("div", { class: "settings-warning" }, "“深渊的边界由你划定。一旦铭刻，不可反悔。”", -1),
-					J("div", Ip, [w[118] ||= Y("已选定降临姿态：", -1), J("span", Lp, F(ae.value), 1)]),
-					J("div", Rp, [J("div", zp, [
+					J("div", Kp, [w[118] ||= Y("已选定降临姿态：", -1), J("span", qp, F(ae.value), 1)]),
+					J("div", Jp, [J("div", Yp, [
 						w[119] ||= J("div", {
 							class: "dm-title",
 							style: {
@@ -5938,36 +5783,36 @@ var $ = /* @__PURE__ */ Ot({
 							color: "#666",
 							"margin-bottom": "15px"
 						} }, "决定你的理智恢复机制与卡门破防逻辑。", -1),
-						J("div", Bp, [J("button", {
-							class: j([{ active: R.ei === "E" }, "mbti-btn pm-glass-btn"]),
+						J("div", Xp, [J("button", {
+							class: j([{ active: R.ei === "E" }, "mbti-btn"]),
 							onClick: w[32] ||= (e) => R.ei = "E"
 						}, "E (外向)", 2), J("button", {
-							class: j([{ active: R.ei === "I" }, "mbti-btn pm-glass-btn"]),
+							class: j([{ active: R.ei === "I" }, "mbti-btn"]),
 							onClick: w[33] ||= (e) => R.ei = "I"
 						}, "I (内向)", 2)]),
-						J("div", Vp, [J("button", {
-							class: j([{ active: R.sn === "S" }, "mbti-btn pm-glass-btn"]),
+						J("div", Zp, [J("button", {
+							class: j([{ active: R.sn === "S" }, "mbti-btn"]),
 							onClick: w[34] ||= (e) => R.sn = "S"
 						}, "S (感觉)", 2), J("button", {
-							class: j([{ active: R.sn === "N" }, "mbti-btn pm-glass-btn"]),
+							class: j([{ active: R.sn === "N" }, "mbti-btn"]),
 							onClick: w[35] ||= (e) => R.sn = "N"
 						}, "N (直觉)", 2)]),
-						J("div", Hp, [J("button", {
-							class: j([{ active: R.tf === "T" }, "mbti-btn pm-glass-btn"]),
+						J("div", Qp, [J("button", {
+							class: j([{ active: R.tf === "T" }, "mbti-btn"]),
 							onClick: w[36] ||= (e) => R.tf = "T"
 						}, "T (思考)", 2), J("button", {
-							class: j([{ active: R.tf === "F" }, "mbti-btn pm-glass-btn"]),
+							class: j([{ active: R.tf === "F" }, "mbti-btn"]),
 							onClick: w[37] ||= (e) => R.tf = "F"
 						}, "F (情感)", 2)]),
-						J("div", Up, [J("button", {
-							class: j([{ active: R.jp === "J" }, "mbti-btn pm-glass-btn"]),
+						J("div", $p, [J("button", {
+							class: j([{ active: R.jp === "J" }, "mbti-btn"]),
 							onClick: w[38] ||= (e) => R.jp = "J"
 						}, "J (判断)", 2), J("button", {
-							class: j([{ active: R.jp === "P" }, "mbti-btn pm-glass-btn"]),
+							class: j([{ active: R.jp === "P" }, "mbti-btn"]),
 							onClick: w[39] ||= (e) => R.jp = "P"
 						}, "P (知觉)", 2)]),
-						J("div", Wp, F(Ie.value), 1)
-					]), J("div", Gp, [
+						J("div", em, F(Ie.value), 1)
+					]), J("div", tm, [
 						w[121] ||= J("div", {
 							class: "dm-title",
 							style: {
@@ -5981,49 +5826,49 @@ var $ = /* @__PURE__ */ Ot({
 							"margin-bottom": "15px"
 						} }, "决定废土对你的残酷程度。", -1),
 						J("button", {
-							class: j([{ active: z.value === "剧情 (Story)" }, "diff-btn pm-glass-btn"]),
+							class: j([{ active: z.value === "剧情 (Story)" }, "diff-btn"]),
 							onClick: w[40] ||= (e) => z.value = "剧情 (Story)"
 						}, "剧情 (Story) - 侧重体验，资源较多", 2),
 						J("button", {
-							class: j([{ active: z.value === "普通 (Normal)" }, "diff-btn pm-glass-btn"]),
+							class: j([{ active: z.value === "普通 (Normal)" }, "diff-btn"]),
 							onClick: w[41] ||= (e) => z.value = "普通 (Normal)"
 						}, "普通 (Normal) - 标准的废土生存", 2),
 						J("button", {
-							class: j([{ active: z.value === "硬核 (Hardcore)" }, "diff-btn pm-glass-btn"]),
+							class: j([{ active: z.value === "硬核 (Hardcore)" }, "diff-btn"]),
 							onClick: w[42] ||= (e) => z.value = "硬核 (Hardcore)"
 						}, "硬核 (Hardcore) - 极易断肢，资源匮乏", 2),
 						J("button", {
-							class: j([{ active: z.value === "地狱 (Hell)" }, "diff-btn pm-glass-btn"]),
+							class: j([{ active: z.value === "地狱 (Hell)" }, "diff-btn"]),
 							onClick: w[43] ||= (e) => z.value = "地狱 (Hell)"
 						}, "地狱 (Hell) - 机制杀频发，卡门时刻注视", 2)
 					])]),
-					J("div", Kp, [(K(!0), q(G, null, W(E.sensitiveToggles, (e, t) => (K(), q("div", {
+					J("div", nm, [(K(!0), q(G, null, W(E.sensitiveToggles, (e, t) => (K(), q("div", {
 						key: t,
-						class: j(["toggle-btn pm-glass-btn", { active: e }]),
+						class: j(["toggle-btn", { active: e }]),
 						onClick: (n) => E.sensitiveToggles[t] = !e
-					}, F(String(t).replace(/_/g, " / ")), 11, qp))), 128))]),
-					J("div", Jp, [
+					}, F(String(t).replace(/_/g, " / ")), 11, rm))), 128))]),
+					J("div", im, [
 						w[123] ||= J("div", { class: "dm-title" }, "观测者化身设定", -1),
 						w[124] ||= J("div", { class: "dm-desc" }, "“接下来，我的化身将与你同行，但她只会作为无情的DM存在。你希望她用什么态度来见证你的挣扎？”", -1),
-						J("div", Yp, [
+						J("div", am, [
 							J("button", {
-								class: j([{ active: E.dmPersonality === "三无机娘，冷酷客观，毫无感情波动" }, "pm-preset-btn pm-glass-btn"]),
+								class: j([{ active: E.dmPersonality === "三无机娘，冷酷客观，毫无感情波动" }, "pm-preset-btn"]),
 								onClick: w[44] ||= (e) => E.dmPersonality = "三无机娘，冷酷客观，毫无感情波动"
 							}, "三无机娘", 2),
 							J("button", {
-								class: j([{ active: E.dmPersonality === "腹黑乐子人，喜欢看玩家挣扎，语气带有优雅的嘲讽" }, "pm-preset-btn pm-glass-btn"]),
+								class: j([{ active: E.dmPersonality === "腹黑乐子人，喜欢看玩家挣扎，语气带有优雅的嘲讽" }, "pm-preset-btn"]),
 								onClick: w[45] ||= (e) => E.dmPersonality = "腹黑乐子人，喜欢看玩家挣扎，语气带有优雅的嘲讽"
 							}, "腹黑乐子人", 2),
 							J("button", {
-								class: j([{ active: E.dmPersonality === "温柔病娇，一边哭泣一边宣告你的断头，极度排外" }, "pm-preset-btn pm-glass-btn"]),
+								class: j([{ active: E.dmPersonality === "温柔病娇，一边哭泣一边宣告你的断头，极度排外" }, "pm-preset-btn"]),
 								onClick: w[46] ||= (e) => E.dmPersonality = "温柔病娇，一边哭泣一边宣告你的断头，极度排外"
 							}, "温柔病娇", 2),
 							J("button", {
-								class: j([{ active: E.dmPersonality === "暴躁老姐，满口粗话，大骂着把你的内脏扯出来" }, "pm-preset-btn pm-glass-btn"]),
+								class: j([{ active: E.dmPersonality === "暴躁老姐，满口粗话，大骂着把你的内脏扯出来" }, "pm-preset-btn"]),
 								onClick: w[47] ||= (e) => E.dmPersonality = "暴躁老姐，满口粗话，大骂着把你的内脏扯出来"
 							}, "暴躁老姐", 2),
 							J("button", {
-								class: "pm-preset-btn custom-btn pm-glass-btn",
+								class: "pm-preset-btn custom-btn",
 								onClick: ie
 							}, "✍️ 自定义(手动输入)")
 						]),
@@ -6032,29 +5877,21 @@ var $ = /* @__PURE__ */ Ot({
 							ref: re,
 							"onUpdate:modelValue": w[48] ||= (e) => E.dmPersonality = e,
 							type: "text",
-							class: "pm-glass-input",
+							class: "pm-input",
 							placeholder: "或在此处写入你自定义的傲娇、病娇等设定..."
 						}, null, 512), [[Z, E.dmPersonality]])
 					]),
 					J("button", {
 						disabled: r.value,
-						class: "pm-glass-btn",
-						style: {
-							padding: "20px 60px",
-							"font-size": "1.5em"
-						},
+						class: "pm-btn-embark",
 						onClick: Re
-					}, F(r.value ? "引擎连接中..." : "踏上旅程"), 9, Xp)
+					}, F(r.value ? "引擎连接中..." : "踏上旅程"), 9, om)
 				])) : X("", !0)]),
 				_: 1
-			}),
-			n.value !== "check" && n.value !== "already_started" && n.value !== "transition" ? (K(), q("div", Zp, [J("button", {
-				class: "pm-btn-back-stealth",
-				onClick: _
-			}, " [ ◀ 重新选择命运轨迹 ] ")])) : X("", !0)
+			})
 		])) : X("", !0);
 	}
-}), [["__scopeId", "data-v-ab5c7fd8"]]);
+});
 //#endregion
 //#region src/seven-days1/index.ts
 if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
@@ -6067,7 +5904,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 		return e;
 	}, r = () => {
 		let e = n(), t = e.getElementById("pm-global-styles");
-		t || (t = e.createElement("style"), t.id = "pm-global-styles", e.head.appendChild(t)), t.innerHTML = "\n      /* 隐藏原生标签 */\n      .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n      .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n          display: none !important;\n      }\n      .mes_text narrative { display: block !important; }\n\n      /* 🚨 字体排版引擎：AI叙事文本使用优雅衬线体 */\n      .mes[is_user=\"false\"] .mes_text {\n          font-family: 'Noto Serif SC', 'Songti SC', serif !important;\n          font-size: 1.05em;\n          line-height: 1.8;\n          color: #dcdcdc;\n      }\n\n      /* =========================================\n         1. 动态面板 CSS (机密档案、战斗结算、证物标签)\n         ========================================= */\n      /* 机密档案袋 (正片叠底复古风) */\n      .pm-dossier-panel {\n        position: relative; width: 100%; max-width: 550px; margin: 20px auto;\n        background: #e8dcc4; /* 羊皮纸底色 */\n        background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noise\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"4\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noise)\" opacity=\"0.15\"/></svg>');\n        border: 1px solid #8b0000; border-radius: 4px; padding: 20px;\n        box-shadow: 0 5px 15px rgba(0,0,0,0.5);\n        color: #2c1810; font-family: 'Courier New', Courier, monospace !important;\n        mix-blend-mode: normal; /* 在暗色背景下如果用multiply会看不见，改为normal并加亮底色 */\n      }\n      .pm-dossier-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #8b0000; padding-bottom: 10px; margin-bottom: 15px; }\n      .pm-dossier-stamp { font-size: 24px; font-weight: 900; color: rgba(139,0,0,0.3); border: 3px solid rgba(139,0,0,0.3); padding: 2px 8px; transform: rotate(-15deg); letter-spacing: 2px; }\n      .pm-dossier-title { text-align: right; display: flex; flex-direction: column; }\n      .pm-dossier-name { font-size: 18px; font-weight: bold; color: #8b0000; }\n      .pm-dossier-level { font-size: 12px; color: #555; }\n      .pm-dossier-stats { display: flex; justify-content: space-between; background: rgba(0,0,0,0.05); padding: 8px; border: 1px dashed #8b0000; margin-bottom: 15px; font-weight: bold; }\n      .pm-dossier-row { margin-bottom: 8px; font-size: 14px; line-height: 1.5; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 4px; }\n      .pm-dossier-row strong { color: #8b0000; }\n\n      /* 战斗结算单 (打字机风格) */\n      .pm-combat-panel {\n        position: relative; width: 100%; max-width: 550px; margin: 20px auto;\n        background: #1a1a1a; border: 1px solid #444; border-left: 6px solid #d4af37;\n        border-radius: 4px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.6);\n        font-family: 'Courier New', Courier, monospace !important; color: #eee;\n      }\n      .pm-cp-title { font-size: 16px; font-weight: bold; color: #fff; border-bottom: 1px dashed #555; padding-bottom: 8px; margin-bottom: 12px; }\n      .pm-cp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; text-align: center; background: #0a0a0a; padding: 10px; border-radius: 4px; }\n      .pm-cp-item { display: flex; flex-direction: column; gap: 5px; }\n      .pm-cp-item span:first-child { font-size: 11px; color: #888; }\n      .pm-cp-val { font-size: 18px; font-weight: bold; color: #81d4fa; }\n      .pm-cp-result.success { color: #d4af37; font-weight: 900; text-shadow: 0 0 8px #d4af37; }\n      .pm-cp-result.fail { color: #ff4444; font-weight: 900; text-shadow: 0 0 8px #ff4444; }\n      .pm-cp-log { background: rgba(255,255,255,0.05); padding: 10px; border-left: 2px solid #888; font-size: 14px; line-height: 1.6; }\n\n      /* 🚨 悬念骰子 (打响指特效) */\n      @keyframes snap-pop { 0% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.5); filter: brightness(2); } 100% { transform: scale(1); filter: brightness(1); } }\n      .pm-snap-dice {\n        display: inline-block; font-size: 18px; font-weight: bold; color: transparent;\n        background: repeating-linear-gradient(45deg, #333, #333 5px, #222 5px, #222 10px);\n        border: 1px solid #555; border-radius: 4px; padding: 2px 15px; cursor: pointer;\n        text-shadow: none; transition: all 0.3s; user-select: none; position: relative;\n      }\n      .pm-snap-dice::after { content: 'CLICK'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #aaa; font-size: 10px; letter-spacing: 1px; }\n      .pm-snap-dice:hover { border-color: #d4af37; box-shadow: 0 0 10px rgba(212,175,55,0.5); }\n      .pm-snap-dice.revealed {\n        color: #d4af37; background: rgba(212,175,55,0.1); border-color: #d4af37;\n        text-shadow: 0 0 8px rgba(212,175,55,0.8); animation: snap-pop 0.4s ease-out; cursor: default;\n      }\n      .pm-snap-dice.revealed::after { display: none; }\n\n      /* 证物标签 */\n      .pm-evidence-tag {\n        position: relative; width: 100%; max-width: 350px; margin: 20px auto;\n        background: #c2a878; border: 1px solid #8b0000; border-radius: 2px; padding: 15px;\n        box-shadow: 2px 2px 10px rgba(0,0,0,0.5); text-align: center; color: #111;\n        font-family: 'Courier New', Courier, monospace !important; transform: rotate(-2deg);\n      }\n      .pm-et-barcode { font-family: 'Libre Barcode 39', monospace; font-size: 30px; letter-spacing: 2px; margin-bottom: 5px; opacity: 0.8; }\n      .pm-et-title { font-size: 10px; font-weight: bold; border-bottom: 1px solid #111; margin-bottom: 10px; padding-bottom: 2px; }\n      .pm-et-name { font-size: 20px; font-weight: 900; margin-bottom: 8px; }\n      .pm-et-desc { font-size: 13px; font-style: italic; margin-bottom: 10px; }\n      .pm-et-warning { color: #8b0000; font-weight: bold; font-size: 12px; border: 1px dashed #8b0000; padding: 4px; }\n\n      /* 技能释放特效 */\n      @keyframes skill-pulse { 0% { text-shadow: 0 0 5px currentColor; } 50% { text-shadow: 0 0 15px currentColor, 0 0 25px currentColor; } 100% { text-shadow: 0 0 5px currentColor; } }\n      .pm-skill-fx { font-weight: 900; font-style: italic; animation: skill-pulse 2s infinite; padding: 0 4px; }\n      .pm-skill-fx[data-type=\"physical\"] { color: #ff4444; }\n      .pm-skill-fx[data-type=\"mental\"] { color: #81d4fa; }\n      .pm-skill-fx[data-type=\"erosion\"] { color: #ce93d8; }\n\n      /* =========================================\n         2. 屏幕边缘动态氛围遮罩 (Atmospheric Edge)\n         ========================================= */\n      #pm-atmosphere-overlay {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;\n        pointer-events: none; z-index: 9998; transition: box-shadow 2s ease-in-out, background 2s ease-in-out;\n      }\n      /* 安全区 */\n      #pm-atmosphere-overlay.env-safe { box-shadow: inset 0 0 100px rgba(139, 69, 19, 0.3); }\n      /* 极昼暴晒 */\n      @keyframes heatwave { 0% { box-shadow: inset 0 0 150px rgba(255, 215, 0, 0.4); } 50% { box-shadow: inset 0 0 200px rgba(255, 215, 0, 0.6); } 100% { box-shadow: inset 0 0 150px rgba(255, 215, 0, 0.4); } }\n      #pm-atmosphere-overlay.env-day { animation: heatwave 4s infinite; }\n      /* 极夜降临 */\n      #pm-atmosphere-overlay.env-night { box-shadow: inset 0 0 250px rgba(0, 0, 0, 0.95); }\n      /* 高危/低理智 */\n      @keyframes sanity-glitch { 0% { box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.6); } 10% { box-shadow: inset 0 0 180px rgba(139, 0, 0, 0.8); } 20% { box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.6); } 100% { box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.6); } }\n      #pm-atmosphere-overlay.env-danger { animation: sanity-glitch 3s infinite; background: radial-gradient(circle, transparent 70%, rgba(139,0,0,0.1) 100%); }\n\n      /* =========================================\n         3. 电影级瞬间特效 (Cinematic Triggers)\n         ========================================= */\n      /* 屏幕震动 (物理痛觉) */\n      @keyframes screen-shake { 0% { transform: translate(1px, 1px) rotate(0deg); } 10% { transform: translate(-1px, -2px) rotate(-1deg); } 20% { transform: translate(-3px, 0px) rotate(1deg); } 30% { transform: translate(3px, 2px) rotate(0deg); } 40% { transform: translate(1px, -1px) rotate(1deg); } 50% { transform: translate(-1px, 2px) rotate(-1deg); } 60% { transform: translate(-3px, 1px) rotate(0deg); } 70% { transform: translate(3px, 1px) rotate(-1deg); } 80% { transform: translate(-1px, -1px) rotate(1deg); } 90% { transform: translate(1px, 2px) rotate(0deg); } 100% { transform: translate(1px, -2px) rotate(-1deg); } }\n      .fx-shake { animation: screen-shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }\n\n      /* 血迹遮罩 */\n      .fx-blood-splatter {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;\n        background: radial-gradient(circle, transparent 40%, rgba(139,0,0,0.8) 100%);\n        opacity: 0; transition: opacity 0.1s;\n      }\n      .fx-blood-splatter.active { opacity: 1; transition: opacity 2s ease-out; }\n\n      /* 卡门低语全屏 */\n      .fx-carmen-whisper {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10000;\n        background: rgba(50, 0, 0, 0.7); display: flex; align-items: center; justify-content: center;\n        opacity: 0; transition: opacity 0.5s; backdrop-filter: blur(5px);\n      }\n      .fx-carmen-whisper.active { opacity: 1; }\n      @keyframes carmen-text-float { 0% { transform: scale(0.9) translateY(20px); opacity: 0; } 20% { transform: scale(1) translateY(0); opacity: 1; } 80% { transform: scale(1.1) translateY(-10px); opacity: 1; } 100% { transform: scale(1.2) translateY(-30px); opacity: 0; } }\n      .fx-carmen-text {\n        font-size: 4vw; font-weight: 900; color: #ff4444; text-shadow: 0 0 20px #ff0000, 2px 2px 0px #000;\n        font-family: 'Noto Serif SC', serif; text-align: center; padding: 20px;\n        animation: carmen-text-float 4s forwards;\n      }\n\n      /* 镜牢抽卡碎裂 */\n      .fx-mirror-shatter {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10000;\n        display: flex; align-items: center; justify-content: center; opacity: 0;\n      }\n      .fx-mirror-shatter.active { opacity: 1; }\n      @keyframes shatter-flash { 0% { background: rgba(255,255,255,0); } 10% { background: rgba(255,255,255,0.9); } 100% { background: rgba(255,255,255,0); } }\n      .fx-mirror-bg { position: absolute; width: 100%; height: 100%; animation: shatter-flash 1.5s forwards; }\n      @keyframes card-reveal { 0% { transform: scale(0) rotate(10deg); opacity: 0; } 20% { transform: scale(1.2) rotate(-5deg); opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }\n      .fx-mirror-card {\n        position: relative; z-index: 1; background: #111; border: 2px solid #d4af37; border-radius: 10px;\n        padding: 30px; text-align: center; box-shadow: 0 0 50px rgba(212,175,55,0.8);\n        animation: card-reveal 2s forwards;\n      }\n      .fx-mirror-card h2 { color: #d4af37; margin: 0 0 10px 0; font-size: 24px; }\n      .fx-mirror-card p { color: #fff; font-size: 32px; font-weight: 900; margin: 0; }\n\n      /* =========================================\n         车卡界面专属样式 (保持原样)\n         ========================================= */\n      .pm-master-container { /* ... 保持原样 ... */ }\n      /* ... (省略 SetupModal 的 CSS，与之前完全一致，确保不破坏车卡界面) ... */\n    ";
+		t || (t = e.createElement("style"), t.id = "pm-global-styles", e.head.appendChild(t)), t.innerHTML = "\n      /* 隐藏原生标签 */\n      .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n      .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n          display: none !important;\n      }\n      .mes_text narrative { display: block !important; }\n\n      /* =========================================\n         1. 动态面板 CSS (机密档案、战斗结算、证物标签)\n         ========================================= */\n      .pm-dossier-panel {\n        position: relative; width: 100%; max-width: 550px; margin: 20px auto;\n        background: #e8dcc4;\n        background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noise\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"4\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noise)\" opacity=\"0.15\"/></svg>');\n        border: 1px solid #8b0000; border-radius: 4px; padding: 20px;\n        box-shadow: 0 5px 15px rgba(0,0,0,0.5);\n        color: #2c1810; font-family: 'Courier New', Courier, monospace !important;\n      }\n      .pm-dossier-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #8b0000; padding-bottom: 10px; margin-bottom: 15px; }\n      .pm-dossier-stamp { font-size: 24px; font-weight: 900; color: rgba(139,0,0,0.3); border: 3px solid rgba(139,0,0,0.3); padding: 2px 8px; transform: rotate(-15deg); letter-spacing: 2px; }\n      .pm-dossier-title { text-align: right; display: flex; flex-direction: column; }\n      .pm-dossier-name { font-size: 18px; font-weight: bold; color: #8b0000; }\n      .pm-dossier-level { font-size: 12px; color: #555; }\n      .pm-dossier-stats { display: flex; justify-content: space-between; background: rgba(0,0,0,0.05); padding: 8px; border: 1px dashed #8b0000; margin-bottom: 15px; font-weight: bold; }\n      .pm-dossier-row { margin-bottom: 8px; font-size: 14px; line-height: 1.5; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 4px; }\n      .pm-dossier-row strong { color: #8b0000; }\n\n      .pm-combat-panel {\n        position: relative; width: 100%; max-width: 550px; margin: 20px auto;\n        background: #1a1a1a; border: 1px solid #444; border-left: 6px solid #d4af37;\n        border-radius: 4px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.6);\n        font-family: 'Courier New', Courier, monospace !important; color: #eee;\n      }\n      .pm-cp-title { font-size: 16px; font-weight: bold; color: #fff; border-bottom: 1px dashed #555; padding-bottom: 8px; margin-bottom: 12px; }\n      .pm-cp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; text-align: center; background: #0a0a0a; padding: 10px; border-radius: 4px; }\n      .pm-cp-item { display: flex; flex-direction: column; gap: 5px; }\n      .pm-cp-item span:first-child { font-size: 11px; color: #888; }\n      .pm-cp-val { font-size: 18px; font-weight: bold; color: #81d4fa; }\n      .pm-cp-result.success { color: #d4af37; font-weight: 900; text-shadow: 0 0 8px #d4af37; }\n      .pm-cp-result.fail { color: #ff4444; font-weight: 900; text-shadow: 0 0 8px #ff4444; }\n      .pm-cp-log { background: rgba(255,255,255,0.05); padding: 10px; border-left: 2px solid #888; font-size: 14px; line-height: 1.6; }\n\n      /* 🚨 悬念骰子 (打响指特效) */\n      @keyframes snap-pop { 0% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.5); filter: brightness(2); } 100% { transform: scale(1); filter: brightness(1); } }\n      .pm-snap-dice {\n        display: inline-block; font-size: 18px; font-weight: bold; color: transparent;\n        background: repeating-linear-gradient(45deg, #333, #333 5px, #222 5px, #222 10px);\n        border: 1px solid #555; border-radius: 4px; padding: 2px 15px; cursor: pointer;\n        text-shadow: none; transition: all 0.3s; user-select: none; position: relative;\n      }\n      .pm-snap-dice::after { content: 'CLICK'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #aaa; font-size: 10px; letter-spacing: 1px; }\n      .pm-snap-dice:hover { border-color: #d4af37; box-shadow: 0 0 10px rgba(212,175,55,0.5); }\n      .pm-snap-dice.revealed {\n        color: #d4af37; background: rgba(212,175,55,0.1); border-color: #d4af37;\n        text-shadow: 0 0 8px rgba(212,175,55,0.8); animation: snap-pop 0.4s ease-out; cursor: default;\n      }\n      .pm-snap-dice.revealed::after { display: none; }\n\n      .pm-evidence-tag {\n        position: relative; width: 100%; max-width: 350px; margin: 20px auto;\n        background: #c2a878; border: 1px solid #8b0000; border-radius: 2px; padding: 15px;\n        box-shadow: 2px 2px 10px rgba(0,0,0,0.5); text-align: center; color: #111;\n        font-family: 'Courier New', Courier, monospace !important; transform: rotate(-2deg);\n      }\n      .pm-et-barcode { font-family: 'Libre Barcode 39', monospace; font-size: 30px; letter-spacing: 2px; margin-bottom: 5px; opacity: 0.8; }\n      .pm-et-title { font-size: 10px; font-weight: bold; border-bottom: 1px solid #111; margin-bottom: 10px; padding-bottom: 2px; }\n      .pm-et-name { font-size: 20px; font-weight: 900; margin-bottom: 8px; }\n      .pm-et-desc { font-size: 13px; font-style: italic; margin-bottom: 10px; }\n      .pm-et-warning { color: #8b0000; font-weight: bold; font-size: 12px; border: 1px dashed #8b0000; padding: 4px; }\n\n      @keyframes skill-pulse { 0% { text-shadow: 0 0 5px currentColor; } 50% { text-shadow: 0 0 15px currentColor, 0 0 25px currentColor; } 100% { text-shadow: 0 0 5px currentColor; } }\n      .pm-skill-fx { font-weight: 900; font-style: italic; animation: skill-pulse 2s infinite; padding: 0 4px; }\n      .pm-skill-fx[data-type=\"physical\"] { color: #ff4444; }\n      .pm-skill-fx[data-type=\"mental\"] { color: #81d4fa; }\n      .pm-skill-fx[data-type=\"erosion\"] { color: #ce93d8; }\n\n      /* =========================================\n         2. 屏幕边缘动态氛围遮罩 (Atmospheric Edge)\n         ========================================= */\n      #pm-atmosphere-overlay {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;\n        pointer-events: none; z-index: 9998; transition: box-shadow 2s ease-in-out, background 2s ease-in-out;\n      }\n      #pm-atmosphere-overlay.env-safe { box-shadow: inset 0 0 100px rgba(139, 69, 19, 0.3); }\n      @keyframes heatwave { 0% { box-shadow: inset 0 0 150px rgba(255, 215, 0, 0.4); } 50% { box-shadow: inset 0 0 200px rgba(255, 215, 0, 0.6); } 100% { box-shadow: inset 0 0 150px rgba(255, 215, 0, 0.4); } }\n      #pm-atmosphere-overlay.env-day { animation: heatwave 4s infinite; }\n      #pm-atmosphere-overlay.env-night { box-shadow: inset 0 0 250px rgba(0, 0, 0, 0.95); }\n      @keyframes sanity-glitch { 0% { box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.6); } 10% { box-shadow: inset 0 0 180px rgba(139, 0, 0, 0.8); } 20% { box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.6); } 100% { box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.6); } }\n      #pm-atmosphere-overlay.env-danger { animation: sanity-glitch 3s infinite; background: radial-gradient(circle, transparent 70%, rgba(139,0,0,0.1) 100%); }\n\n      /* =========================================\n         3. 电影级瞬间特效 (Cinematic Triggers)\n         ========================================= */\n      @keyframes screen-shake { 0% { transform: translate(1px, 1px) rotate(0deg); } 10% { transform: translate(-1px, -2px) rotate(-1deg); } 20% { transform: translate(-3px, 0px) rotate(1deg); } 30% { transform: translate(3px, 2px) rotate(0deg); } 40% { transform: translate(1px, -1px) rotate(1deg); } 50% { transform: translate(-1px, 2px) rotate(-1deg); } 60% { transform: translate(-3px, 1px) rotate(0deg); } 70% { transform: translate(3px, 1px) rotate(-1deg); } 80% { transform: translate(-1px, -1px) rotate(1deg); } 90% { transform: translate(1px, 2px) rotate(0deg); } 100% { transform: translate(1px, -2px) rotate(-1deg); } }\n      .fx-shake { animation: screen-shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }\n\n      .fx-blood-splatter {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;\n        background: radial-gradient(circle, transparent 40%, rgba(139,0,0,0.8) 100%);\n        opacity: 0; transition: opacity 0.1s;\n      }\n      .fx-blood-splatter.active { opacity: 1; transition: opacity 2s ease-out; }\n\n      .fx-carmen-whisper {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10000;\n        background: rgba(50, 0, 0, 0.7); display: flex; align-items: center; justify-content: center;\n        opacity: 0; transition: opacity 0.5s; backdrop-filter: blur(5px);\n      }\n      .fx-carmen-whisper.active { opacity: 1; }\n      @keyframes carmen-text-float { 0% { transform: scale(0.9) translateY(20px); opacity: 0; } 20% { transform: scale(1) translateY(0); opacity: 1; } 80% { transform: scale(1.1) translateY(-10px); opacity: 1; } 100% { transform: scale(1.2) translateY(-30px); opacity: 0; } }\n      .fx-carmen-text {\n        font-size: 4vw; font-weight: 900; color: #ff4444; text-shadow: 0 0 20px #ff0000, 2px 2px 0px #000;\n        font-family: 'Noto Serif SC', serif; text-align: center; padding: 20px;\n        animation: carmen-text-float 4s forwards;\n      }\n\n      .fx-mirror-shatter {\n        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10000;\n        display: flex; align-items: center; justify-content: center; opacity: 0;\n      }\n      .fx-mirror-shatter.active { opacity: 1; }\n      @keyframes shatter-flash { 0% { background: rgba(255,255,255,0); } 10% { background: rgba(255,255,255,0.9); } 100% { background: rgba(255,255,255,0); } }\n      .fx-mirror-bg { position: absolute; width: 100%; height: 100%; animation: shatter-flash 1.5s forwards; }\n      @keyframes card-reveal { 0% { transform: scale(0) rotate(10deg); opacity: 0; } 20% { transform: scale(1.2) rotate(-5deg); opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }\n      .fx-mirror-card {\n        position: relative; z-index: 1; background: #111; border: 2px solid #d4af37; border-radius: 10px;\n        padding: 30px; text-align: center; box-shadow: 0 0 50px rgba(212,175,55,0.8);\n        animation: card-reveal 2s forwards;\n      }\n      .fx-mirror-card h2 { color: #d4af37; margin: 0 0 10px 0; font-size: 24px; }\n      .fx-mirror-card p { color: #fff; font-size: 32px; font-weight: 900; margin: 0; }\n    ";
 	}, i = () => {
 		let e = n();
 		if (!e.getElementById("pm-atmosphere-overlay")) {
@@ -6116,7 +5953,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 		let r = n(), i = r.getElementById("pm-atmosphere-overlay");
 		if (i && $.mvuDataMap[$.latestMesId]) {
 			let e = $.mvuDataMap[$.latestMesId]?.当前处境?.环境氛围 || "";
-			i.className = "", e.includes("安全") || e.includes("休息") ? i.classList.add("env-safe") : e.includes("极昼") ? i.classList.add("env-day") : e.includes("极夜") ? i.classList.add("env-night") : (e.includes("高危") || e.includes("污染")) && i.classList.add("env-danger");
+			i.className = "", e.includes("安全") || e.includes("休息") ? i.classList.add("env-safe") : e.includes("极昼") ? i.classList.add("env-day") : e.includes("极夜") ? i.classList.add("env-night") : (e.includes("高危") || e.includes("污染") || e.includes("崩溃")) && i.classList.add("env-danger");
 		}
 		c(r);
 		for (let [t, n] of e.entries()) {
@@ -6164,13 +6001,13 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 				e.setAttribute("data-pm-parsed", "true");
 			}), u.includes("pm-custom-char-mount-point")) {
 				let n = `pm-setup-root-${i}`, a = r.getElementById(n);
-				a || (a = r.createElement("div"), a.id = n, a.style.cssText = "margin-top: 15px; width: 100%; position: relative; clear: both;", p.appendChild(a), t = Xo(Qp), t.mount(a), e.set(`setup_${i}`, t));
+				a || (a = r.createElement("div"), a.id = n, a.style.cssText = "margin-top: 15px; width: 100%; position: relative; clear: both;", p.appendChild(a), t = Xo(sm), t.mount(a), e.set(`setup_${i}`, t));
 			}
 			if (!d && !f) {
 				let t = `pm-app-${i}`, n = r.getElementById(t);
 				if (!n) {
 					n = r.createElement("div"), n.className = "pm-status-bar-container", n.id = t, n.style.cssText = "margin-top: 15px; width: 100%; clear: both;", p.appendChild(n);
-					let a = Xo(iu, { mesId: i });
+					let a = Xo(mu, { mesId: i });
 					a.mount(n), e.set(i, a);
 				}
 			}
