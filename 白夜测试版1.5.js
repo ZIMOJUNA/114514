@@ -3,7 +3,7 @@
                 if (typeof document !== 'undefined' && !document.getElementById('seven-days-injected-styles')) {
                   var style = document.createElement('style');
                   style.id = 'seven-days-injected-styles';
-                  style.textContent = ".stb-pm-dossier-wrapper[data-v-ef3e6a64]{box-sizing:border-box;color:#2c241b;background:#f4ebd8d9;border:1px solid #b89f7d;border-top:4px solid #8b0000;border-bottom-width:4px;border-radius:4px;width:100%;max-width:100%;margin-top:15px;margin-bottom:10px;padding:16px;font-family:Noto Serif SC,Songti SC,serif;position:relative;box-shadow:0 4px 15px #0000001a,inset 0 0 20px #b89f7d33}.stb-pm-dossier-header[data-v-ef3e6a64]{border-bottom:2px dashed #8b0000;justify-content:space-between;align-items:flex-start;margin-bottom:12px;padding-bottom:12px;display:flex}.stb-pm-dossier-location[data-v-ef3e6a64]{color:#8b0000;letter-spacing:1px;font-size:18px;font-weight:700}.stb-pm-dossier-env-col[data-v-ef3e6a64]{gap:6px;margin-top:5px;display:flex}.stb-pm-dossier-tag[data-v-ef3e6a64]{color:#8b0000;background:#8b00001a;border:1px solid #8b0000;border-radius:2px;padding:2px 8px;font-family:Courier New,monospace;font-size:12px;font-weight:700}.stb-pm-dossier-dm-box[data-v-ef3e6a64]{background:#fff;border:2px solid #8b0000;border-radius:4px;width:50px;height:50px;position:relative;overflow:hidden;transform:rotate(5deg);box-shadow:2px 2px 5px #0003}.stb-pm-dossier-dm-avatar[data-v-ef3e6a64]{object-fit:cover;filter:sepia(.5)contrast(1.2);width:100%;height:100%}.stb-pm-dossier-dm-label[data-v-ef3e6a64]{color:#fff;text-align:center;background:#8b0000;width:100%;font-family:Courier New,monospace;font-size:9px;font-weight:700;position:absolute;bottom:0;left:0}.stb-pm-dossier-bgm details[data-v-ef3e6a64]{background:#ffffff80;border:1px solid #b89f7d;border-left:3px solid #8b0000;border-radius:2px;margin-bottom:16px}.stb-pm-dossier-bgm summary[data-v-ef3e6a64]{color:#8b0000;cursor:pointer;justify-content:space-between;padding:10px;font-size:14px;font-weight:700;list-style:none;display:flex}.stb-pm-dossier-bgm-content[data-v-ef3e6a64]{border-top:1px dashed #b89f7d;padding:10px}.stb-pm-dossier-actions[data-v-ef3e6a64]{gap:10px;margin-bottom:16px;display:flex}.stb-pm-dossier-btn[data-v-ef3e6a64]{text-align:center;color:#555;background:#e8dcc4;border:1px solid #b89f7d;border-radius:2px;flex:1;padding:8px;font-weight:700;text-decoration:none;transition:all .1s;box-shadow:2px 2px #b89f7d}.stb-pm-dossier-btn[data-v-ef3e6a64]:active{transform:translate(2px,2px);box-shadow:0 0 #b89f7d}.stb-pm-dossier-tabs-container[data-v-ef3e6a64]{flex-wrap:wrap;gap:2px;display:flex}.stb-pm-dossier-tab-label[data-v-ef3e6a64]{display:contents}.stb-pm-dossier-tab-radio[data-v-ef3e6a64]{display:none}.stb-dossier-tab-btn[data-v-ef3e6a64]{color:#555;cursor:pointer;text-align:center;background:#e8dcc4;border:1px solid #b89f7d;border-bottom:none;border-radius:4px 4px 0 0;flex-grow:1;order:1;padding:8px 12px;font-size:13px}.stb-pm-dossier-tab-content[data-v-ef3e6a64]{border-top:2px solid #8b0000;flex-direction:column;order:2;gap:12px;width:100%;padding:16px 8px;display:none}.stb-pm-dossier-tab-radio:checked~.stb-dossier-tab-btn[data-v-ef3e6a64]{color:#fff;background:#8b0000;border-color:#8b0000;font-weight:700}.stb-pm-dossier-tab-radio:checked~.stb-pm-dossier-tab-content[data-v-ef3e6a64]{display:flex}.stb-pm-dossier-badges[data-v-ef3e6a64]{flex-wrap:wrap;gap:8px;display:flex}.stb-pm-dossier-badge[data-v-ef3e6a64]{background:#fff9;border:1px solid #b89f7d;border-radius:2px;padding:4px 10px;font-size:13px}.stb-pm-dossier-panel[data-v-ef3e6a64]{background:#ffffff80;border:1px solid #b89f7d;border-left:4px solid #8b0000;border-radius:2px;padding:12px}.stb-pm-dossier-panel-title[data-v-ef3e6a64]{color:#8b0000;border-bottom:1px solid #b89f7d;margin-bottom:10px;padding-bottom:4px;font-size:14px;font-weight:700}.stb-pm-dossier-typewriter[data-v-ef3e6a64]{color:#1a1105;white-space:pre-wrap;word-break:break-all;font-family:Courier New,monospace;font-weight:700}.stb-pm-dossier-bar-container[data-v-ef3e6a64]{margin-bottom:10px}.stb-pm-dossier-bar-header[data-v-ef3e6a64]{justify-content:space-between;margin-bottom:4px;font-size:13px;display:flex}.stb-pm-dossier-bar-track[data-v-ef3e6a64]{background:#e8dcc4;border:1px solid #b89f7d;width:100%;height:10px}.stb-pm-dossier-bar-fill[data-v-ef3e6a64]{height:100%;transition:width .3s}.stb-pm-dossier-limbs-grid[data-v-ef3e6a64]{grid-template-columns:repeat(2,1fr);gap:8px;display:grid}.stb-pm-dossier-limb-card[data-v-ef3e6a64]{text-align:center;background:#ffffff4d;border:1px dashed #b89f7d;padding:8px}.stb-pm-dossier-limb-name[data-v-ef3e6a64]{color:#555;font-size:12px}.stb-pm-dossier-limb-stat[data-v-ef3e6a64]{color:#1a1105;font-size:13px;font-weight:700}.stb-pm-dossier-limb-card[data-status*=重伤][data-v-ef3e6a64]{background:#d4af371a;border-color:#d4af37}.stb-pm-dossier-limb-card[data-status*=残废][data-v-ef3e6a64],.stb-pm-dossier-limb-card[data-status*=断裂][data-v-ef3e6a64]{color:#8b0000;background:#8b00001a;border-color:#8b0000;text-decoration:line-through}.stb-pm-dossier-stats-grid[data-v-ef3e6a64]{grid-template-columns:repeat(3,1fr);gap:8px;display:grid}.stb-pm-dossier-stat-box[data-v-ef3e6a64]{text-align:center;background:#fff;border:1px solid #b89f7d;flex-direction:column;padding:6px;display:flex}.stb-pm-dossier-folder[data-v-ef3e6a64]{background:#fff;border:1px solid #b89f7d;margin-bottom:8px}.stb-pm-dossier-folder summary[data-v-ef3e6a64]{cursor:pointer;justify-content:space-between;padding:8px;font-weight:700;display:flex}.stb-pm-dossier-folder-content[data-v-ef3e6a64]{background:#f4ebd84d;border-top:1px dashed #b89f7d;padding:8px}.stb-pm-dossier-info-row[data-v-ef3e6a64]{border-bottom:1px dashed #b89f7d;justify-content:space-between;padding:4px 0;font-size:13px;display:flex}.stb-pm-dossier-rumor-card[data-v-ef3e6a64]{border-left:3px solid #b89f7d;margin-bottom:10px;padding-left:8px}.stb-pm-dossier-rumor-title[data-v-ef3e6a64]{color:#b89f7d;font-size:13px;font-weight:700}.stb-pm-dossier-text-block[data-v-ef3e6a64]{font-size:14px;line-height:1.6}.pm-pda-trigger[data-v-ffb76d19]{cursor:grab;z-index:100000;background:#141419e6;border:2px solid #b89f7d;border-radius:50%;justify-content:center;align-items:center;width:50px;height:50px;transition:transform .2s;display:flex;position:fixed;box-shadow:0 0 15px #b89f7d4d,inset 0 0 10px #000}.pm-pda-trigger.dragging[data-v-ffb76d19]{cursor:grabbing;transition:none}.pm-pda-trigger[data-v-ffb76d19]:hover{transform:scale(1.1);box-shadow:0 0 20px #d4af37}.pm-pda-icon-glow[data-v-ffb76d19]{color:#d4af37;text-shadow:0 0 8px #d4af37;font-size:20px}.pm-pda-overlay[data-v-ffb76d19]{backdrop-filter:blur(5px);z-index:99999;background:#0009;justify-content:center;align-items:center;width:100vw;height:100vh;display:none;position:fixed;top:0;left:0}.pm-pda-overlay.active[data-v-ffb76d19]{display:flex}.pm-pda-overlay.pinned[data-v-ffb76d19]{backdrop-filter:none;pointer-events:none;background:0 0}.pm-pda-overlay.pinned .pm-pda-frame[data-v-ffb76d19]{pointer-events:auto}.pm-pda-frame[data-v-ffb76d19]{background:#111;border:1px solid #333;border-radius:35px;padding:8px;animation:.3s cubic-bezier(.175,.885,.32,1.275) pdaSlideUp-ffb76d19;position:relative;overflow:hidden;box-shadow:0 20px 50px #000c,inset 0 0 10px #ffffff1a}@keyframes pdaSlideUp-ffb76d19{0%{opacity:0;transform:translateY(50px)scale(.9)}to{opacity:1;transform:translateY(0)scale(1)}}.pm-pda-screen[data-v-ffb76d19]{background-color:#1a1a1a;background-position:50%;background-size:cover;border-radius:28px;flex-direction:column;width:100%;height:100%;display:flex;position:relative;overflow:hidden}.pm-pda-screen[data-v-ffb76d19]:before{content:\"\";pointer-events:none;z-index:0;background:#0f0f1266;position:absolute;inset:0}.pm-pda-statusbar[data-v-ffb76d19]{color:#fff;z-index:10;background:linear-gradient(#000c,#0000);justify-content:space-between;align-items:center;height:35px;padding:0 20px;font-size:12px;font-weight:700;display:flex}.dynamic-island[data-v-ffb76d19]{background:#000;border-radius:15px;align-items:center;gap:8px;padding:4px 15px;display:flex;box-shadow:0 0 10px #00000080}.island-dot[data-v-ffb76d19]{background:#10b981;border-radius:50%;width:6px;height:6px;animation:2s infinite pulse}.pin-btn[data-v-ffb76d19]{color:#888;cursor:pointer;background:0 0;border:none;transition:color .3s}.pin-btn.active[data-v-ffb76d19]{color:#d4af37;transform:rotate(45deg)}.pm-pda-home[data-v-ffb76d19]{z-index:1;flex-direction:column;flex:1;gap:25px;padding:20px;display:flex}.pm-glass-panel[data-v-ffb76d19]{backdrop-filter:blur(12px);color:#e2e8f0;background:#141419a6;border:1px solid #b89f7d4d;border-radius:16px;box-shadow:0 8px 32px #00000080}.pm-glass-panel-heavy[data-v-ffb76d19]{backdrop-filter:blur(20px);z-index:10;background:#0f0f12d9;flex-direction:column;width:100%;height:100%;display:flex}.pm-pda-widget-weather[data-v-ffb76d19]{text-align:center;padding:20px}.widget-time[data-v-ffb76d19]{color:#fff;text-shadow:0 2px 10px #000c;font-size:42px;font-weight:300}.widget-date[data-v-ffb76d19]{color:#b89f7d;margin-top:5px;font-size:14px}.widget-loc[data-v-ffb76d19]{color:#888;margin-top:10px;font-size:12px}.pm-pda-app-grid[data-v-ffb76d19]{grid-template-columns:repeat(4,1fr);gap:15px 10px;display:grid}.pm-app-icon[data-v-ffb76d19]{cursor:pointer;flex-direction:column;align-items:center;gap:6px;transition:transform .2s;display:flex}.pm-app-icon[data-v-ffb76d19]:hover{transform:scale(1.1)}.app-icon-bg[data-v-ffb76d19]{color:#fff;border:1px solid #ffffff1a;border-radius:14px;justify-content:center;align-items:center;width:50px;height:50px;font-size:22px;display:flex;box-shadow:0 4px 10px #0006}.pm-app-icon span[data-v-ffb76d19]{color:#fff;text-shadow:0 1px 3px #000;white-space:nowrap;font-size:11px;font-weight:500}.app-badge[data-v-ffb76d19]{color:#fff;background:#f44;border:1px solid #fff;border-radius:10px;padding:2px 6px;font-size:10px;font-weight:700;position:absolute;top:-5px;right:-5px}.pm-app-header[data-v-ffb76d19]{background:#0000004d;border-bottom:1px solid #b89f7d33;flex-shrink:0;justify-content:space-between;align-items:center;height:50px;padding:0 15px;display:flex}.pm-back-btn[data-v-ffb76d19]{color:#b89f7d;cursor:pointer;background:0 0;border:none;font-size:18px}.pm-app-title[data-v-ffb76d19]{color:#e2e8f0;letter-spacing:1px;font-size:16px;font-weight:700}.pm-scroll-area[data-v-ffb76d19]{flex-direction:column;flex:1;gap:15px;padding:15px;display:flex;overflow-y:auto}.pm-scroll-area[data-v-ffb76d19]::-webkit-scrollbar{width:4px}.pm-scroll-area[data-v-ffb76d19]::-webkit-scrollbar-thumb{background:#b89f7d;border-radius:2px}.pm-dossier-card[data-v-ffb76d19]{background:#ffffff08;border:1px solid #b89f7d33;border-radius:12px;padding:15px;box-shadow:inset 0 0 20px #00000080}.pm-dossier-title[data-v-ffb76d19]{color:#b89f7d;border-bottom:1px dashed #b89f7d4d;margin-bottom:10px;padding-bottom:5px;font-size:13px;font-weight:700}.pm-info-row[data-v-ffb76d19]{color:#ccc;justify-content:space-between;margin-bottom:8px;font-size:13px;display:flex}.pm-item-row[data-v-ffb76d19]{color:#ccc;background:#0003;border-radius:6px;flex-direction:column;margin-bottom:8px;padding:8px;font-size:13px;display:flex}.pm-gold-text[data-v-ffb76d19]{color:#d4af37;font-weight:700}.pm-bar-row[data-v-ffb76d19]{align-items:center;gap:10px;margin-bottom:8px;font-family:monospace;font-size:12px;display:flex}.pm-bar-track[data-v-ffb76d19]{background:#000;border:1px solid #333;border-radius:4px;flex:1;height:8px;overflow:hidden}.pm-bar-fill[data-v-ffb76d19]{height:100%;transition:width .3s}.pm-limbs-grid[data-v-ffb76d19]{grid-template-columns:repeat(2,1fr);gap:8px;display:grid}.pm-limb-box[data-v-ffb76d19]{text-align:center;background:#0006;border:1px solid #444;border-radius:6px;padding:8px}.limb-name[data-v-ffb76d19]{color:#888;font-size:11px}.limb-stat[data-v-ffb76d19]{color:#ccc;font-size:13px;font-weight:700}.limb-warn[data-v-ffb76d19]{color:#d4af37;border-color:#d4af37}.limb-danger[data-v-ffb76d19]{color:#f44;border-color:#f44;text-decoration:line-through;animation:1s infinite pulse}.pm-stats-grid[data-v-ffb76d19]{grid-template-columns:repeat(3,1fr);gap:8px;display:grid}.pm-stat-box[data-v-ffb76d19]{background:#0006;border:1px solid #444;border-radius:6px;flex-direction:column;align-items:center;padding:8px;display:flex}.pm-stat-box span[data-v-ffb76d19]{color:#888;font-size:11px}.pm-stat-box strong[data-v-ffb76d19]{color:#d4af37;font-family:monospace;font-size:16px}.pm-chat-list-item[data-v-ffb76d19]{cursor:pointer;background:#ffffff0d;border-radius:12px;align-items:center;gap:12px;padding:12px;transition:background .2s;display:flex}.pm-chat-list-item[data-v-ffb76d19]:hover{background:#ffffff1a}.chat-avatar[data-v-ffb76d19]{color:#fff;border-radius:50%;justify-content:center;align-items:center;width:45px;height:45px;font-size:20px;font-weight:700;display:flex}.chat-info[data-v-ffb76d19]{flex:1;overflow:hidden}.chat-name[data-v-ffb76d19]{color:#e2e8f0;font-size:15px;font-weight:700}.chat-preview[data-v-ffb76d19]{color:#888;white-space:nowrap;text-overflow:ellipsis;margin-top:4px;font-size:12px;overflow:hidden}.pm-chat-window[data-v-ffb76d19]{flex-direction:column;height:100%;display:flex}.chat-window-header[data-v-ffb76d19]{color:#fff;background:#00000080;border-bottom:1px solid #333;justify-content:space-between;align-items:center;height:50px;padding:0 15px;font-weight:700;display:flex}.chat-window-header button[data-v-ffb76d19]{color:#b89f7d;cursor:pointer;background:0 0;border:none;font-size:18px}.chat-messages-area[data-v-ffb76d19]{flex-direction:column;flex:1;gap:15px;padding:15px;display:flex;overflow-y:auto}.chat-bubble-wrapper[data-v-ffb76d19]{width:100%;display:flex}.chat-bubble-wrapper.mine[data-v-ffb76d19]{justify-content:flex-end}.chat-bubble-wrapper.other[data-v-ffb76d19]{justify-content:flex-start}.chat-bubble[data-v-ffb76d19]{word-wrap:break-word;border-radius:16px;max-width:75%;padding:10px 15px;font-size:14px;line-height:1.5}.mine .chat-bubble[data-v-ffb76d19]{color:#fff;background:linear-gradient(135deg,#8b0000,#f44);border-bottom-right-radius:4px}.other .chat-bubble[data-v-ffb76d19]{color:#e2e8f0;background:#ffffff1a;border:1px solid #444;border-bottom-left-radius:4px}.chat-input-area[data-v-ffb76d19]{background:#000c;border-top:1px solid #333;align-items:center;gap:10px;height:60px;padding:10px;display:flex}.chat-input-area input[data-v-ffb76d19]{color:#fff;background:#222;border:1px solid #444;border-radius:20px;outline:none;flex:1;height:40px;padding:0 15px}.chat-input-area input[data-v-ffb76d19]:focus{border-color:#b89f7d}.chat-input-area button[data-v-ffb76d19]{color:#fff;cursor:pointer;background:#8b0000;border:none;border-radius:50%;width:40px;height:40px;transition:transform .2s}.chat-input-area button[data-v-ffb76d19]:hover{transform:scale(1.1)}.pm-forum-post[data-v-ffb76d19]{background:#ffffff0d;border:1px solid #444;border-radius:12px;margin-bottom:15px;padding:15px}.post-header[data-v-ffb76d19]{align-items:center;gap:10px;margin-bottom:10px;display:flex}.post-avatar[data-v-ffb76d19]{color:#fff;background:#555;border-radius:50%;justify-content:center;align-items:center;width:30px;height:30px;font-size:14px;font-weight:700;display:flex}.post-author[data-v-ffb76d19]{color:#d4af37;font-size:14px;font-weight:700}.post-time[data-v-ffb76d19]{color:#888;font-size:11px}.post-title[data-v-ffb76d19]{color:#fff;margin-bottom:8px;font-size:16px;font-weight:700}.post-content[data-v-ffb76d19]{color:#ccc;margin-bottom:12px;font-size:13px;line-height:1.6}.post-footer[data-v-ffb76d19]{color:#888;border-top:1px solid #333;gap:15px;padding-top:10px;font-size:12px;display:flex}.pm-input-dark[data-v-ffb76d19]{color:#fff;background:#00000080;border:1px solid #444;border-radius:6px;outline:none;padding:8px 12px}.pm-input-dark[data-v-ffb76d19]:focus{border-color:#b89f7d}.pm-glass-btn-small[data-v-ffb76d19]{color:#b89f7d;cursor:pointer;background:#ffffff1a;border:1px solid #b89f7d;border-radius:6px;padding:8px 15px;font-weight:700;transition:all .2s}.pm-glass-btn-small[data-v-ffb76d19]:hover{color:#000;background:#b89f7d}\n/*$vite$:1*/";
+                  style.textContent = ".stb-pm-dossier-wrapper[data-v-ef3e6a64]{box-sizing:border-box;color:#2c241b;background:#f4ebd8d9;border:1px solid #b89f7d;border-top:4px solid #8b0000;border-bottom-width:4px;border-radius:4px;width:100%;max-width:100%;margin-top:15px;margin-bottom:10px;padding:16px;font-family:Noto Serif SC,Songti SC,serif;position:relative;box-shadow:0 4px 15px #0000001a,inset 0 0 20px #b89f7d33}.stb-pm-dossier-header[data-v-ef3e6a64]{border-bottom:2px dashed #8b0000;justify-content:space-between;align-items:flex-start;margin-bottom:12px;padding-bottom:12px;display:flex}.stb-pm-dossier-location[data-v-ef3e6a64]{color:#8b0000;letter-spacing:1px;font-size:18px;font-weight:700}.stb-pm-dossier-env-col[data-v-ef3e6a64]{gap:6px;margin-top:5px;display:flex}.stb-pm-dossier-tag[data-v-ef3e6a64]{color:#8b0000;background:#8b00001a;border:1px solid #8b0000;border-radius:2px;padding:2px 8px;font-family:Courier New,monospace;font-size:12px;font-weight:700}.stb-pm-dossier-dm-box[data-v-ef3e6a64]{background:#fff;border:2px solid #8b0000;border-radius:4px;width:50px;height:50px;position:relative;overflow:hidden;transform:rotate(5deg);box-shadow:2px 2px 5px #0003}.stb-pm-dossier-dm-avatar[data-v-ef3e6a64]{object-fit:cover;filter:sepia(.5)contrast(1.2);width:100%;height:100%}.stb-pm-dossier-dm-label[data-v-ef3e6a64]{color:#fff;text-align:center;background:#8b0000;width:100%;font-family:Courier New,monospace;font-size:9px;font-weight:700;position:absolute;bottom:0;left:0}.stb-pm-dossier-bgm details[data-v-ef3e6a64]{background:#ffffff80;border:1px solid #b89f7d;border-left:3px solid #8b0000;border-radius:2px;margin-bottom:16px}.stb-pm-dossier-bgm summary[data-v-ef3e6a64]{color:#8b0000;cursor:pointer;justify-content:space-between;padding:10px;font-size:14px;font-weight:700;list-style:none;display:flex}.stb-pm-dossier-bgm-content[data-v-ef3e6a64]{border-top:1px dashed #b89f7d;padding:10px}.stb-pm-dossier-actions[data-v-ef3e6a64]{gap:10px;margin-bottom:16px;display:flex}.stb-pm-dossier-btn[data-v-ef3e6a64]{text-align:center;color:#555;background:#e8dcc4;border:1px solid #b89f7d;border-radius:2px;flex:1;padding:8px;font-weight:700;text-decoration:none;transition:all .1s;box-shadow:2px 2px #b89f7d}.stb-pm-dossier-btn[data-v-ef3e6a64]:active{transform:translate(2px,2px);box-shadow:0 0 #b89f7d}.stb-pm-dossier-tabs-container[data-v-ef3e6a64]{flex-wrap:wrap;gap:2px;display:flex}.stb-pm-dossier-tab-label[data-v-ef3e6a64]{display:contents}.stb-pm-dossier-tab-radio[data-v-ef3e6a64]{display:none}.stb-dossier-tab-btn[data-v-ef3e6a64]{color:#555;cursor:pointer;text-align:center;background:#e8dcc4;border:1px solid #b89f7d;border-bottom:none;border-radius:4px 4px 0 0;flex-grow:1;order:1;padding:8px 12px;font-size:13px}.stb-pm-dossier-tab-content[data-v-ef3e6a64]{border-top:2px solid #8b0000;flex-direction:column;order:2;gap:12px;width:100%;padding:16px 8px;display:none}.stb-pm-dossier-tab-radio:checked~.stb-dossier-tab-btn[data-v-ef3e6a64]{color:#fff;background:#8b0000;border-color:#8b0000;font-weight:700}.stb-pm-dossier-tab-radio:checked~.stb-pm-dossier-tab-content[data-v-ef3e6a64]{display:flex}.stb-pm-dossier-badges[data-v-ef3e6a64]{flex-wrap:wrap;gap:8px;display:flex}.stb-pm-dossier-badge[data-v-ef3e6a64]{background:#fff9;border:1px solid #b89f7d;border-radius:2px;padding:4px 10px;font-size:13px}.stb-pm-dossier-panel[data-v-ef3e6a64]{background:#ffffff80;border:1px solid #b89f7d;border-left:4px solid #8b0000;border-radius:2px;padding:12px}.stb-pm-dossier-panel-title[data-v-ef3e6a64]{color:#8b0000;border-bottom:1px solid #b89f7d;margin-bottom:10px;padding-bottom:4px;font-size:14px;font-weight:700}.stb-pm-dossier-typewriter[data-v-ef3e6a64]{color:#1a1105;white-space:pre-wrap;word-break:break-all;font-family:Courier New,monospace;font-weight:700}.stb-pm-dossier-bar-container[data-v-ef3e6a64]{margin-bottom:10px}.stb-pm-dossier-bar-header[data-v-ef3e6a64]{justify-content:space-between;margin-bottom:4px;font-size:13px;display:flex}.stb-pm-dossier-bar-track[data-v-ef3e6a64]{background:#e8dcc4;border:1px solid #b89f7d;width:100%;height:10px}.stb-pm-dossier-bar-fill[data-v-ef3e6a64]{height:100%;transition:width .3s}.stb-pm-dossier-limbs-grid[data-v-ef3e6a64]{grid-template-columns:repeat(2,1fr);gap:8px;display:grid}.stb-pm-dossier-limb-card[data-v-ef3e6a64]{text-align:center;background:#ffffff4d;border:1px dashed #b89f7d;padding:8px}.stb-pm-dossier-limb-name[data-v-ef3e6a64]{color:#555;font-size:12px}.stb-pm-dossier-limb-stat[data-v-ef3e6a64]{color:#1a1105;font-size:13px;font-weight:700}.stb-pm-dossier-limb-card[data-status*=重伤][data-v-ef3e6a64]{background:#d4af371a;border-color:#d4af37}.stb-pm-dossier-limb-card[data-status*=残废][data-v-ef3e6a64],.stb-pm-dossier-limb-card[data-status*=断裂][data-v-ef3e6a64]{color:#8b0000;background:#8b00001a;border-color:#8b0000;text-decoration:line-through}.stb-pm-dossier-stats-grid[data-v-ef3e6a64]{grid-template-columns:repeat(3,1fr);gap:8px;display:grid}.stb-pm-dossier-stat-box[data-v-ef3e6a64]{text-align:center;background:#fff;border:1px solid #b89f7d;flex-direction:column;padding:6px;display:flex}.stb-pm-dossier-folder[data-v-ef3e6a64]{background:#fff;border:1px solid #b89f7d;margin-bottom:8px}.stb-pm-dossier-folder summary[data-v-ef3e6a64]{cursor:pointer;justify-content:space-between;padding:8px;font-weight:700;display:flex}.stb-pm-dossier-folder-content[data-v-ef3e6a64]{background:#f4ebd84d;border-top:1px dashed #b89f7d;padding:8px}.stb-pm-dossier-info-row[data-v-ef3e6a64]{border-bottom:1px dashed #b89f7d;justify-content:space-between;padding:4px 0;font-size:13px;display:flex}.stb-pm-dossier-rumor-card[data-v-ef3e6a64]{border-left:3px solid #b89f7d;margin-bottom:10px;padding-left:8px}.stb-pm-dossier-rumor-title[data-v-ef3e6a64]{color:#b89f7d;font-size:13px;font-weight:700}.stb-pm-dossier-text-block[data-v-ef3e6a64]{font-size:14px;line-height:1.6}.pm-glass-panel[data-v-ab5c7fd8]{backdrop-filter:blur(8px)!important;color:#e2e8f0!important;background:#1a1a1e66!important;border:1px solid #d4af374d!important;box-shadow:0 8px 32px #0000004d!important}.pm-glass-btn[data-v-ab5c7fd8]{backdrop-filter:blur(4px)!important;color:#d4af37!important;background:#1a1a1e99!important;border:1px solid #d4af3780!important;transition:all .3s!important}.pm-glass-btn[data-v-ab5c7fd8]:hover:not(:disabled){color:#fff!important;background:#8b000099!important;border-color:#f44!important;transform:translateY(-2px)!important;box-shadow:0 0 15px #8b0000cc!important}.pm-glass-input[data-v-ab5c7fd8]{color:#d4af37!important;background:#00000080!important;border:none!important;border-bottom:2px solid #d4af3780!important;transition:all .3s!important}.pm-glass-input[data-v-ab5c7fd8]:focus{border-bottom-color:#f44!important;outline:none!important;box-shadow:0 5px 10px #8b00004d!important}.pm-pda-container[data-v-acabf947]{display:contents}.pm-pda-trigger[data-v-acabf947]{cursor:grab;z-index:100000;background:#141419e6;border:2px solid #b89f7d;border-radius:50%;justify-content:center;align-items:center;width:50px;height:50px;transition:transform .2s;display:flex;position:fixed;box-shadow:0 0 15px #b89f7d4d,inset 0 0 10px #000}.pm-pda-trigger.dragging[data-v-acabf947]{cursor:grabbing;transition:none}.pm-pda-trigger[data-v-acabf947]:hover{transform:scale(1.1);box-shadow:0 0 20px #d4af37}.pm-pda-icon-glow[data-v-acabf947]{color:#d4af37;text-shadow:0 0 8px #d4af37;font-size:20px}.pm-pda-overlay[data-v-acabf947]{backdrop-filter:blur(5px);z-index:99999;background:#0009;justify-content:center;align-items:center;width:100vw;height:100vh;display:none;position:fixed;top:0;left:0}.pm-pda-overlay.active[data-v-acabf947]{display:flex}.pm-pda-overlay.pinned[data-v-acabf947]{backdrop-filter:none;pointer-events:none;background:0 0}.pm-pda-overlay.pinned .pm-pda-frame[data-v-acabf947]{pointer-events:auto}.pm-pda-frame[data-v-acabf947]{background:#111;border:1px solid #333;border-radius:35px;padding:8px;animation:.3s cubic-bezier(.175,.885,.32,1.275) pdaSlideUp-acabf947;position:relative;overflow:hidden;box-shadow:0 20px 50px #000c,inset 0 0 10px #ffffff1a}@keyframes pdaSlideUp-acabf947{0%{opacity:0;transform:translateY(50px)scale(.9)}to{opacity:1;transform:translateY(0)scale(1)}}.pm-pda-screen[data-v-acabf947]{background-color:#1a1a1a;background-position:50%;background-size:cover;border-radius:28px;flex-direction:column;width:100%;height:100%;display:flex;position:relative;overflow:hidden}.pm-pda-screen[data-v-acabf947]:before{content:\"\";pointer-events:none;z-index:0;background:#0f0f1266;position:absolute;inset:0}.pm-pda-statusbar[data-v-acabf947]{color:#fff;z-index:10;background:linear-gradient(#000c,#0000);justify-content:space-between;align-items:center;height:35px;padding:0 20px;font-size:12px;font-weight:700;display:flex}.dynamic-island[data-v-acabf947]{background:#000;border-radius:15px;align-items:center;gap:8px;padding:4px 15px;display:flex;box-shadow:0 0 10px #00000080}.island-dot[data-v-acabf947]{background:#10b981;border-radius:50%;width:6px;height:6px;animation:2s infinite pulse}.pin-btn[data-v-acabf947]{color:#888;cursor:pointer;background:0 0;border:none;transition:color .3s}.pin-btn.active[data-v-acabf947]{color:#d4af37;transform:rotate(45deg)}.pm-pda-home[data-v-acabf947]{z-index:1;flex-direction:column;flex:1;gap:25px;padding:20px;display:flex}.pm-glass-panel[data-v-acabf947]{backdrop-filter:blur(12px);color:#e2e8f0;background:#141419a6;border:1px solid #b89f7d4d;border-radius:16px;box-shadow:0 8px 32px #00000080}.pm-glass-panel-heavy[data-v-acabf947]{backdrop-filter:blur(20px);z-index:10;background:#0f0f12d9;flex-direction:column;width:100%;height:100%;display:flex}.pm-pda-widget-weather[data-v-acabf947]{text-align:center;padding:20px}.widget-time[data-v-acabf947]{color:#fff;text-shadow:0 2px 10px #000c;font-size:42px;font-weight:300}.widget-date[data-v-acabf947]{color:#b89f7d;margin-top:5px;font-size:14px}.widget-loc[data-v-acabf947]{color:#888;margin-top:10px;font-size:12px}.pm-pda-app-grid[data-v-acabf947]{grid-template-columns:repeat(4,1fr);gap:15px 10px;display:grid}.pm-app-icon[data-v-acabf947]{cursor:pointer;flex-direction:column;align-items:center;gap:6px;transition:transform .2s;display:flex}.pm-app-icon[data-v-acabf947]:hover{transform:scale(1.1)}.app-icon-bg[data-v-acabf947]{color:#fff;border:1px solid #ffffff1a;border-radius:14px;justify-content:center;align-items:center;width:50px;height:50px;font-size:22px;display:flex;box-shadow:0 4px 10px #0006}.pm-app-icon span[data-v-acabf947]{color:#fff;text-shadow:0 1px 3px #000;white-space:nowrap;font-size:11px;font-weight:500}.app-badge[data-v-acabf947]{color:#fff;background:#f44;border:1px solid #fff;border-radius:10px;padding:2px 6px;font-size:10px;font-weight:700;position:absolute;top:-5px;right:-5px}.pm-app-header[data-v-acabf947]{background:#0000004d;border-bottom:1px solid #b89f7d33;flex-shrink:0;justify-content:space-between;align-items:center;height:50px;padding:0 15px;display:flex}.pm-back-btn[data-v-acabf947]{color:#b89f7d;cursor:pointer;background:0 0;border:none;font-size:18px}.pm-app-title[data-v-acabf947]{color:#e2e8f0;letter-spacing:1px;font-size:16px;font-weight:700}.pm-scroll-area[data-v-acabf947]{flex-direction:column;flex:1;gap:15px;padding:15px;display:flex;overflow-y:auto}.pm-scroll-area[data-v-acabf947]::-webkit-scrollbar{width:4px}.pm-scroll-area[data-v-acabf947]::-webkit-scrollbar-thumb{background:#b89f7d;border-radius:2px}.pm-dossier-card[data-v-acabf947]{background:#ffffff08;border:1px solid #b89f7d33;border-radius:12px;padding:15px;box-shadow:inset 0 0 20px #00000080}.pm-dossier-title[data-v-acabf947]{color:#b89f7d;border-bottom:1px dashed #b89f7d4d;margin-bottom:10px;padding-bottom:5px;font-size:13px;font-weight:700}.pm-info-row[data-v-acabf947]{color:#ccc;justify-content:space-between;margin-bottom:8px;font-size:13px;display:flex}.pm-item-row[data-v-acabf947]{color:#ccc;background:#0003;border-radius:6px;flex-direction:column;margin-bottom:8px;padding:8px;font-size:13px;display:flex}.pm-gold-text[data-v-acabf947]{color:#d4af37;font-weight:700}.pm-bar-row[data-v-acabf947]{align-items:center;gap:10px;margin-bottom:8px;font-family:monospace;font-size:12px;display:flex}.pm-bar-track[data-v-acabf947]{background:#000;border:1px solid #333;border-radius:4px;flex:1;height:8px;overflow:hidden}.pm-bar-fill[data-v-acabf947]{height:100%;transition:width .3s}.pm-limbs-grid[data-v-acabf947]{grid-template-columns:repeat(2,1fr);gap:8px;display:grid}.pm-limb-box[data-v-acabf947]{text-align:center;background:#0006;border:1px solid #444;border-radius:6px;padding:8px}.limb-name[data-v-acabf947]{color:#888;font-size:11px}.limb-stat[data-v-acabf947]{color:#ccc;font-size:13px;font-weight:700}.limb-warn[data-v-acabf947]{color:#d4af37;border-color:#d4af37}.limb-danger[data-v-acabf947]{color:#f44;border-color:#f44;text-decoration:line-through;animation:1s infinite pulse}.pm-stats-grid[data-v-acabf947]{grid-template-columns:repeat(3,1fr);gap:8px;display:grid}.pm-stat-box[data-v-acabf947]{background:#0006;border:1px solid #444;border-radius:6px;flex-direction:column;align-items:center;padding:8px;display:flex}.pm-stat-box span[data-v-acabf947]{color:#888;font-size:11px}.pm-stat-box strong[data-v-acabf947]{color:#d4af37;font-family:monospace;font-size:16px}.pm-npc-card[data-v-acabf947]{background:#0000004d;border:1px solid #444;border-radius:8px;margin-bottom:10px;padding:10px}.npc-header[data-v-acabf947]{color:#e2e8f0;justify-content:space-between;margin-bottom:5px;font-weight:700;display:flex}.npc-thought[data-v-acabf947]{color:#888;margin-bottom:5px;font-size:12px;font-style:italic}.npc-stats[data-v-acabf947]{color:#b89f7d;justify-content:space-between;font-size:11px;display:flex}.pm-chat-list-item[data-v-acabf947]{cursor:pointer;background:#ffffff0d;border-radius:12px;align-items:center;gap:12px;padding:12px;transition:background .2s;display:flex}.pm-chat-list-item[data-v-acabf947]:hover{background:#ffffff1a}.chat-avatar[data-v-acabf947]{color:#fff;border-radius:50%;justify-content:center;align-items:center;width:45px;height:45px;font-size:20px;font-weight:700;display:flex}.chat-info[data-v-acabf947]{flex:1;overflow:hidden}.chat-name[data-v-acabf947]{color:#e2e8f0;font-size:15px;font-weight:700}.chat-preview[data-v-acabf947]{color:#888;white-space:nowrap;text-overflow:ellipsis;margin-top:4px;font-size:12px;overflow:hidden}.pm-chat-window[data-v-acabf947]{flex-direction:column;height:100%;display:flex}.chat-window-header[data-v-acabf947]{color:#fff;background:#00000080;border-bottom:1px solid #333;justify-content:space-between;align-items:center;height:50px;padding:0 15px;font-weight:700;display:flex}.chat-window-header button[data-v-acabf947]{color:#b89f7d;cursor:pointer;background:0 0;border:none;font-size:18px}.chat-messages-area[data-v-acabf947]{flex-direction:column;flex:1;gap:15px;padding:15px;display:flex;overflow-y:auto}.chat-bubble-wrapper[data-v-acabf947]{flex-direction:column;width:100%;display:flex}.chat-bubble-wrapper.mine[data-v-acabf947]{align-items:flex-end}.chat-bubble-wrapper.other[data-v-acabf947]{align-items:flex-start}.chat-sender-name[data-v-acabf947]{color:#b89f7d;margin-bottom:4px;margin-left:10px;font-size:11px}.chat-bubble[data-v-acabf947]{word-wrap:break-word;border-radius:16px;max-width:75%;padding:10px 15px;font-size:14px;line-height:1.5}.mine .chat-bubble[data-v-acabf947]{color:#fff;background:linear-gradient(135deg,#8b0000,#f44);border-bottom-right-radius:4px}.other .chat-bubble[data-v-acabf947]{color:#e2e8f0;background:#ffffff1a;border:1px solid #444;border-bottom-left-radius:4px}.chat-input-area[data-v-acabf947]{background:#000c;border-top:1px solid #333;align-items:center;gap:10px;height:60px;padding:10px;display:flex}.chat-input-area input[data-v-acabf947]{color:#fff;background:#222;border:1px solid #444;border-radius:20px;outline:none;flex:1;height:40px;padding:0 15px}.chat-input-area input[data-v-acabf947]:focus{border-color:#b89f7d}.chat-input-area button[data-v-acabf947]{color:#fff;cursor:pointer;background:#8b0000;border:none;border-radius:50%;width:40px;height:40px;transition:transform .2s}.chat-input-area button[data-v-acabf947]:hover{transform:scale(1.1)}.pm-forum-post[data-v-acabf947]{background:#ffffff0d;border:1px solid #444;border-radius:12px;margin-bottom:15px;padding:15px}.post-header[data-v-acabf947]{align-items:center;gap:10px;margin-bottom:10px;display:flex}.post-avatar[data-v-acabf947]{color:#fff;background:#555;border-radius:50%;justify-content:center;align-items:center;width:30px;height:30px;font-size:14px;font-weight:700;display:flex}.post-author[data-v-acabf947]{color:#d4af37;font-size:14px;font-weight:700}.post-time[data-v-acabf947]{color:#888;font-size:11px}.post-title[data-v-acabf947]{color:#fff;margin-bottom:8px;font-size:16px;font-weight:700}.post-content[data-v-acabf947]{color:#ccc;margin-bottom:12px;font-size:13px;line-height:1.6}.post-footer[data-v-acabf947]{color:#888;border-top:1px solid #333;gap:15px;padding-top:10px;font-size:12px;display:flex}.pm-input-dark[data-v-acabf947]{color:#fff;background:#00000080;border:1px solid #444;border-radius:6px;outline:none;padding:8px 12px}.pm-input-dark[data-v-acabf947]:focus{border-color:#b89f7d}.pm-glass-btn-small[data-v-acabf947]{color:#b89f7d;cursor:pointer;background:#ffffff1a;border:1px solid #b89f7d;border-radius:6px;padding:8px 15px;font-weight:700;transition:all .2s}.pm-glass-btn-small[data-v-acabf947]:hover:not(:disabled){color:#000;background:#b89f7d}.pm-glass-btn-small[data-v-acabf947]:disabled{opacity:.5;cursor:not-allowed}\n/*$vite$:1*/";
                   document.head.appendChild(style);
                 }
               })();
@@ -3888,7 +3888,7 @@ var $ = /* @__PURE__ */ Dt({
 		position: "relative",
 		"z-index": "10"
 	}
-}, Gp = /* @__PURE__ */ Yn({
+}, Gp = /* @__PURE__ */ Xl(/* @__PURE__ */ Yn({
 	__name: "SetupModal",
 	setup(e) {
 		let t = /* @__PURE__ */ U(!0), n = /* @__PURE__ */ U("check"), r = /* @__PURE__ */ U(!1), i = /* @__PURE__ */ U(!1), a = /* @__PURE__ */ U(!1), o = /* @__PURE__ */ U(!1), s = /* @__PURE__ */ U(""), c = /* @__PURE__ */ U(""), l = /* @__PURE__ */ U(localStorage.getItem("pm_dm_avatar_v1") || "https://files.catbox.moe/wfjl6u.png"), u = /* @__PURE__ */ U(null), d = () => {
@@ -4862,12 +4862,41 @@ var $ = /* @__PURE__ */ Dt({
 					Y("div", Cu, [Y("div", wu, [w[69] ||= Y("div", { class: "cp-box-title" }, "核心概念", -1), Y("div", Tu, L(e.concept), 1)]), Y("div", Eu, [w[70] ||= Y("div", { class: "cp-box-title" }, "生存难度", -1), Y("div", Du, L(e.diff), 1)])]),
 					Y("div", Ou, [Y("div", {
 						class: "pm-glass-btn",
+						style: {
+							padding: "15px 50px",
+							"font-size": "1.2em",
+							"font-weight": "bold",
+							cursor: "pointer",
+							"border-radius": "4px"
+						},
 						onClick: (t) => O(e.id)
 					}, "确认降临", 8, ku)])
 				])])), 64)), Y("div", {
 					class: "dossier-custom pm-glass-panel",
+					style: {
+						display: "flex",
+						"align-items": "center",
+						padding: "15px 20px",
+						cursor: "pointer",
+						"margin-top": "10px"
+					},
 					onClick: be
-				}, [...w[71] ||= [Y("span", { class: "ds-type" }, "CUSTOM", -1), Y("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (q(), J("div", Au, [ae.value === "pre-roll" ? (q(), J("div", ju, [
+				}, [...w[71] ||= [Y("span", {
+					class: "ds-type",
+					style: {
+						color: "#aaa",
+						width: "80px",
+						"font-family": "monospace"
+					}
+				}, "CUSTOM", -1), Y("span", {
+					class: "ds-name",
+					style: {
+						color: "#d4af37",
+						"font-size": "1.5em",
+						"font-weight": "900",
+						"letter-spacing": "3px"
+					}
+				}, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (q(), J("div", Au, [ae.value === "pre-roll" ? (q(), J("div", ju, [
 					w[72] ||= Y("h2", {
 						class: "settings-title",
 						style: { border: "none" }
@@ -5834,7 +5863,7 @@ var $ = /* @__PURE__ */ Dt({
 			}, " [ ◀ 重新选择命运轨迹 ] ")])) : Z("", !0)
 		])) : Z("", !0);
 	}
-}), Kp = new class {
+}), [["__scopeId", "data-v-ab5c7fd8"]]), Kp = new class {
 	settings = {
 		enabled: !1,
 		apiUrl: "",
@@ -5915,46 +5944,46 @@ var $ = /* @__PURE__ */ Dt({
 			content: r
 		}]);
 	}
-}(), qp = { class: "pm-pda-statusbar" }, Jp = { class: "status-left" }, Yp = { class: "status-center dynamic-island" }, Xp = { class: "status-right" }, Zp = {
+}(), qp = { class: "pm-pda-container" }, Jp = { class: "pm-pda-statusbar" }, Yp = { class: "status-left" }, Xp = { class: "status-center dynamic-island" }, Zp = { class: "status-right" }, Qp = {
 	key: 0,
 	class: "pm-pda-home"
-}, Qp = { class: "pm-pda-widget-weather pm-glass-panel" }, $p = { class: "widget-time" }, em = { class: "widget-date" }, tm = { class: "widget-loc" }, nm = { class: "pm-pda-app-grid" }, rm = {
+}, $p = { class: "pm-pda-widget-weather pm-glass-panel" }, em = { class: "widget-time" }, tm = { class: "widget-date" }, nm = { class: "widget-loc" }, rm = { class: "pm-pda-app-grid" }, im = {
 	class: "app-icon-bg",
 	style: {
 		background: "linear-gradient(135deg, #1e3a8a, #3b82f6)",
 		position: "relative"
 	}
-}, im = {
+}, am = {
 	key: 0,
 	class: "app-badge"
-}, am = {
+}, om = {
 	key: 1,
 	class: "pm-pda-app-view pm-glass-panel-heavy"
-}, om = { class: "pm-app-header" }, sm = { class: "pm-app-title" }, cm = { class: "pm-app-content" }, lm = {
+}, sm = { class: "pm-app-header" }, cm = { class: "pm-app-title" }, lm = { class: "pm-app-content" }, um = {
 	key: 0,
 	class: "pm-scroll-area"
-}, um = { class: "pm-dossier-card" }, dm = { class: "pm-bar-row" }, fm = { class: "pm-bar-track" }, pm = { class: "pm-bar-row" }, mm = { class: "pm-bar-track" }, hm = { class: "pm-bar-row" }, gm = { class: "pm-bar-track" }, _m = { class: "pm-dossier-card" }, vm = { class: "pm-limbs-grid" }, ym = { class: "limb-name" }, bm = { class: "limb-stat" }, xm = {
+}, dm = { class: "pm-dossier-card" }, fm = { class: "pm-bar-row" }, pm = { class: "pm-bar-track" }, mm = { class: "pm-bar-row" }, hm = { class: "pm-bar-track" }, gm = { class: "pm-bar-row" }, _m = { class: "pm-bar-track" }, vm = { class: "pm-dossier-card" }, ym = { class: "pm-limbs-grid" }, bm = { class: "limb-name" }, xm = { class: "limb-stat" }, Sm = {
 	key: 1,
 	class: "pm-scroll-area"
-}, Sm = { class: "pm-dossier-card" }, Cm = { class: "pm-stats-grid" }, wm = { class: "pm-dossier-card" }, Tm = { class: "pm-info-row" }, Em = { class: "pm-gold-text" }, Dm = { class: "pm-info-row" }, Om = { class: "pm-gold-text" }, km = { class: "pm-dossier-card" }, Am = { style: {
+}, Cm = { class: "pm-dossier-card" }, wm = { class: "pm-stats-grid" }, Tm = { class: "pm-dossier-card" }, Em = { class: "pm-info-row" }, Dm = { class: "pm-gold-text" }, Om = { class: "pm-info-row" }, km = { class: "pm-gold-text" }, Am = { class: "pm-dossier-card" }, jm = { style: {
 	"font-size": "11px",
 	color: "#888"
-} }, jm = {
+} }, Mm = {
 	key: 2,
 	class: "pm-scroll-area"
-}, Mm = { class: "pm-dossier-card" }, Nm = { class: "pm-info-row" }, Pm = { style: { color: "#ff4444" } }, Fm = { class: "pm-info-row" }, Im = { class: "pm-dossier-card" }, Lm = {
+}, Nm = { class: "pm-dossier-card" }, Pm = { class: "pm-info-row" }, Fm = { style: { color: "#ff4444" } }, Im = { class: "pm-info-row" }, Lm = { class: "pm-dossier-card" }, Rm = {
 	key: 3,
 	class: "pm-scroll-area"
-}, Rm = { class: "pm-dossier-card" }, zm = { class: "pm-info-row" }, Bm = { class: "pm-info-row" }, Vm = { class: "pm-gold-text" }, Hm = { class: "pm-dossier-card" }, Um = {
+}, zm = { class: "pm-dossier-card" }, Bm = { class: "pm-info-row" }, Vm = { class: "pm-info-row" }, Hm = { class: "pm-gold-text" }, Um = { class: "pm-dossier-card" }, Wm = {
 	key: 4,
 	class: "pm-scroll-area"
-}, Wm = { class: "pm-dossier-card" }, Gm = { class: "pm-dossier-card" }, Km = { key: 0 }, qm = { class: "npc-header" }, Jm = { style: { color: "#ff4444" } }, Ym = { class: "npc-thought" }, Xm = { class: "npc-stats" }, Zm = {
+}, Gm = { class: "pm-dossier-card" }, Km = { class: "pm-dossier-card" }, qm = { key: 0 }, Jm = { class: "npc-header" }, Ym = { style: { color: "#ff4444" } }, Xm = { class: "npc-thought" }, Zm = { class: "npc-stats" }, Qm = {
 	key: 5,
 	class: "pm-scroll-area"
-}, Qm = { class: "pm-dossier-card" }, $m = { class: "pm-info-row" }, eh = { class: "pm-info-row" }, th = { class: "pm-info-row" }, nh = { style: { color: "#00e676" } }, rh = { class: "pm-dossier-card" }, ih = {
+}, $m = { class: "pm-dossier-card" }, eh = { class: "pm-info-row" }, th = { class: "pm-info-row" }, nh = { class: "pm-info-row" }, rh = { style: { color: "#00e676" } }, ih = { class: "pm-dossier-card" }, ah = {
 	key: 6,
 	class: "pm-scroll-area"
-}, ah = { class: "pm-dossier-card" }, oh = { class: "pm-info-row" }, sh = { style: { color: "#ff4444" } }, ch = { class: "pm-info-row" }, lh = { class: "pm-dossier-card" }, uh = { class: "pm-gold-text" }, dh = {
+}, oh = { class: "pm-dossier-card" }, sh = { class: "pm-info-row" }, ch = { style: { color: "#ff4444" } }, lh = { class: "pm-info-row" }, uh = { class: "pm-dossier-card" }, dh = { class: "pm-gold-text" }, fh = {
 	key: 7,
 	class: "pm-scroll-area",
 	style: {
@@ -5963,40 +5992,46 @@ var $ = /* @__PURE__ */ Dt({
 		"justify-content": "center",
 		height: "100%"
 	}
-}, fh = {
+}, ph = {
 	key: 8,
 	class: "pm-chat-app"
-}, ph = {
+}, mh = {
 	key: 0,
 	class: "pm-scroll-area"
-}, mh = ["onClick"], hh = {
-	class: "chat-avatar",
-	style: { background: "#1e3a8a" }
-}, gh = { class: "chat-info" }, _h = { class: "chat-name" }, vh = { class: "chat-preview" }, yh = {
+}, hh = ["onClick"], gh = {
+	key: 0,
+	class: "fas fa-users"
+}, _h = { key: 1 }, vh = { class: "chat-info" }, yh = { class: "chat-name" }, bh = {
 	key: 1,
 	class: "pm-chat-window"
-}, bh = { class: "chat-window-header" }, xh = { class: "chat-bubble" }, Sh = { class: "chat-input-area" }, Ch = {
+}, xh = { class: "chat-window-header" }, Sh = {
+	key: 0,
+	class: "chat-sender-name"
+}, Ch = { class: "chat-bubble" }, wh = { class: "chat-input-area" }, Th = {
 	key: 9,
 	class: "pm-scroll-area"
-}, wh = { style: {
+}, Eh = { class: "pm-dossier-card" }, Dh = { style: {
 	display: "flex",
 	"justify-content": "space-between",
 	"align-items": "center",
 	"margin-bottom": "15px"
-} }, Th = ["disabled"], Eh = {
+} }, Oh = ["disabled"], kh = {
 	key: 0,
 	style: {
 		"text-align": "center",
 		color: "#666",
-		"margin-top": "50px"
+		"margin-top": "20px"
 	}
-}, Dh = { class: "post-header" }, Oh = { class: "post-avatar" }, kh = { class: "post-author" }, Ah = { class: "post-title" }, jh = { class: "post-content" }, Mh = { class: "post-footer" }, Nh = {
+}, Ah = { class: "post-header" }, jh = { class: "post-avatar" }, Mh = { class: "post-author" }, Nh = { class: "post-title" }, Ph = { class: "post-content" }, Fh = { class: "post-footer" }, Ih = {
 	key: 10,
 	class: "pm-scroll-area"
-}, Ph = { class: "pm-dossier-card" }, Fh = {
+}, Lh = { class: "pm-dossier-card" }, Rh = {
 	key: 11,
 	class: "pm-scroll-area"
-}, Ih = { class: "pm-dossier-card" }, Lh = { class: "pm-info-row" }, Rh = { class: "pm-info-row" }, zh = /* @__PURE__ */ Xl(/* @__PURE__ */ Yn({
+}, zh = {
+	key: 12,
+	class: "pm-scroll-area"
+}, Bh = { class: "pm-dossier-card" }, Vh = { class: "pm-info-row" }, Hh = { class: "pm-info-row" }, Uh = /* @__PURE__ */ Xl(/* @__PURE__ */ Yn({
 	__name: "PdaTerminal",
 	setup(e) {
 		let t = /* @__PURE__ */ U(!1), n = /* @__PURE__ */ U(!1), r = /* @__PURE__ */ U(!1), i = /* @__PURE__ */ U("home"), a = /* @__PURE__ */ U("00:00"), o = /* @__PURE__ */ U(parseInt(localStorage.getItem("pm_pda_width") || "360")), s = /* @__PURE__ */ U(parseInt(localStorage.getItem("pm_pda_height") || "700")), c = /* @__PURE__ */ U(localStorage.getItem("pm_pda_wallpaper") || "https://files.catbox.moe/wfjl6u.png"), l = /* @__PURE__ */ U(""), u = /* @__PURE__ */ U(window.innerWidth - 80), d = /* @__PURE__ */ U(window.innerHeight / 2), f = 0, p = 0, m = 0, h = 0, g = !1, _ = wa(() => $.mvuDataMap[$.latestMesId] || {}), v = (e) => {
@@ -6032,50 +6067,99 @@ var $ = /* @__PURE__ */ Dt({
 			messages: "终端通讯",
 			forum: "废土暗网",
 			gallery: "羁绊画廊",
+			calendar: "日程记录",
 			settings: "终端设置"
 		})[i.value] || "App"), te = (e, t) => {
 			let n = Number(e) || 0, r = Number(t) || 1;
 			return r === 0 ? "0%" : Math.min(100, Math.max(0, Math.round(n / r * 100))) + "%";
-		}, ne = (e) => e ? e.includes("重伤") ? "limb-warn" : e.includes("残废") || e.includes("断裂") ? "limb-danger" : "" : "", T = /* @__PURE__ */ U(0), E = /* @__PURE__ */ U(null), D = /* @__PURE__ */ U(""), re = /* @__PURE__ */ U(""), ie = /* @__PURE__ */ U({}), O = /* @__PURE__ */ U(null), ae = (e, t) => {
-			E.value = e, D.value = t, ie.value[e] || (ie.value[e] = []), un(() => oe());
-		}, k = async () => {
-			if (!re.value.trim() || !E.value) return;
+		}, ne = (e) => e ? e.includes("重伤") ? "limb-warn" : e.includes("残废") || e.includes("断裂") ? "limb-danger" : "" : "", T = /* @__PURE__ */ U(null), E = /* @__PURE__ */ U(""), D = /* @__PURE__ */ U("private"), re = /* @__PURE__ */ U(""), ie = /* @__PURE__ */ U({}), O = /* @__PURE__ */ U(null), ae = wa(() => k.value.length > 0 ? 1 : 0), k = wa(() => {
+			let e = [];
+			try {
+				let t = window.top?.SillyTavern?.getContext?.()?.chat || [], n = /\[对方消息\|([^|]+)\|([^|]+)\|/g, r = /\[群聊\|([^|]+)\|([^|]+)\|/g;
+				t.forEach((t) => {
+					if (!t.mes) return;
+					let i;
+					for (; (i = n.exec(t.mes)) !== null;) e.some((e) => e.id === i[2]) || e.push({
+						id: i[2],
+						name: i[1],
+						type: "private"
+					});
+					for (; (i = r.exec(t.mes)) !== null;) e.some((e) => e.id === i[2]) || e.push({
+						id: i[2],
+						name: i[1],
+						type: "group"
+					});
+				});
+			} catch (e) {
+				console.warn("[PDA] 解析好友列表失败:", e);
+			}
+			return e;
+		}), oe = (e) => e.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), se = (e, t, n) => {
+			if (T.value = e, E.value = t, D.value = n, !ie.value[e]) {
+				ie.value[e] = [];
+				try {
+					let r = window.top?.SillyTavern?.getContext?.()?.chat || [], i = RegExp(`\\[对方消息\\|${oe(t)}\\|${oe(e)}\\|文字\\|([^\\]]+)\\]`, "g"), a = RegExp(`\\[我方消息\\|我\\|${oe(e)}\\|文字\\|([^\\]]+)\\]`, "g"), o = RegExp(`\\[群聊消息\\|${oe(e)}\\|([^|]+)\\|文字\\|([^\\]]+)\\]`, "g");
+					r.forEach((t) => {
+						if (!t.mes) return;
+						let r;
+						if (n === "private") {
+							for (; (r = i.exec(t.mes)) !== null;) ie.value[e].push({
+								text: r[1],
+								isMine: !1
+							});
+							for (; (r = a.exec(t.mes)) !== null;) ie.value[e].push({
+								text: r[1],
+								isMine: !0
+							});
+						} else if (n === "group") for (; (r = o.exec(t.mes)) !== null;) {
+							let t = r[1], n = r[2];
+							ie.value[e].push({
+								text: n,
+								isMine: t === "我",
+								sender: t
+							});
+						}
+					});
+				} catch (e) {
+					console.warn("[PDA] 解析聊天记录失败:", e);
+				}
+			}
+			un(() => le());
+		}, ce = async () => {
+			if (!re.value.trim() || !T.value) return;
 			let e = re.value.trim();
-			if (re.value = "", ie.value[E.value].push({
+			re.value = "", ie.value[T.value].push({
 				text: e,
 				isMine: !0
-			}), oe(), E.value === "DM") rs(`【系统指令：终端直连】${e}`), ie.value[E.value].push({
+			}), le(), T.value === "DM" ? (rs(`【系统指令：终端直连】${e}`), ie.value[T.value].push({
 				text: "观测者已收到信号，正在处理...",
 				isMine: !1
-			});
-			else try {
-				let t = await Kp.generateNpcReply(D.value, e, "当前处于废土探索中");
-				ie.value[E.value].push({
-					text: t,
-					isMine: !1
-				});
-			} catch {
-				ie.value[E.value].push({
-					text: "[信号丢失，发送失败]",
-					isMine: !1
-				});
-			}
-			oe();
-		}, oe = () => {
+			})) : D.value === "group" ? rs(`[群聊消息|${T.value}|我|文字|${e}]`) : rs(`[我方消息|我|${T.value}|文字|${e}]`), le();
+		}, le = () => {
 			O.value && (O.value.scrollTop = O.value.scrollHeight);
-		}, se = /* @__PURE__ */ U([]), ce = /* @__PURE__ */ U(!1), le = async () => {
-			ce.value = !0;
+		}, j = /* @__PURE__ */ U([]), M = /* @__PURE__ */ U(!1), ue = /* @__PURE__ */ U(Kp.settings.apiUrl), de = /* @__PURE__ */ U(Kp.settings.apiKey), P = /* @__PURE__ */ U(Kp.settings.model), fe = () => {
+			Kp.saveSettings({
+				apiUrl: ue.value,
+				apiKey: de.value,
+				model: P.value
+			}), alert("API 设置已保存！");
+		}, pe = async () => {
+			if (!Kp.isAvailable()) {
+				alert("请先配置并保存 API 设置！");
+				return;
+			}
+			M.value = !0;
 			try {
 				let e = (window.top?.SillyTavern?.getContext?.()?.chat || []).slice(-10).map((e) => e.mes).join("\n");
-				se.value = await Kp.generateForumPosts(e);
+				j.value = await Kp.generateForumPosts(e);
 			} catch {
-				alert("截获暗网信号失败，请检查 API 设置。");
+				alert("截获暗网信号失败，请检查 API 设置或网络。");
 			} finally {
-				ce.value = !1;
+				M.value = !1;
 			}
-		}, j = () => {
+		}, me = () => {
 			l.value &&= (c.value = l.value, localStorage.setItem("pm_pda_wallpaper", c.value), "");
-		}, M = () => {
+		}, F = () => {
 			u.value = window.innerWidth - 80, d.value = window.innerHeight / 2, o.value = 360, s.value = 700, localStorage.removeItem("pm_pda_width"), localStorage.removeItem("pm_pda_height");
 		};
 		return On(o, (e) => localStorage.setItem("pm_pda_width", String(e))), On(s, (e) => localStorage.setItem("pm_pda_height", String(e))), ur(() => {
@@ -6083,7 +6167,7 @@ var $ = /* @__PURE__ */ Dt({
 				let e = /* @__PURE__ */ new Date();
 				a.value = `${String(e.getHours()).padStart(2, "0")}:${String(e.getMinutes()).padStart(2, "0")}`;
 			}, 1e3);
-		}), (e, f) => (q(), J(K, null, [W(Y("div", {
+		}), (e, f) => (q(), J("div", qp, [W(Y("div", {
 			class: N(["pm-pda-trigger", { dragging: r.value }]),
 			style: A({
 				left: u.value + "px",
@@ -6092,7 +6176,7 @@ var $ = /* @__PURE__ */ Dt({
 			title: "打开观测者终端",
 			onMousedown: v,
 			onTouchstartPassive: v
-		}, [...f[18] ||= [Y("div", { class: "pm-pda-trigger-inner" }, [Y("i", { class: "fas fa-eye pm-pda-icon-glow" })], -1)]], 38), [[io, !t.value]]), Y("div", {
+		}, [...f[22] ||= [Y("div", { class: "pm-pda-trigger-inner" }, [Y("i", { class: "fas fa-eye pm-pda-icon-glow" })], -1)]], 38), [[io, !t.value]]), Y("div", {
 			class: N(["pm-pda-overlay", {
 				active: t.value,
 				pinned: n.value
@@ -6107,141 +6191,148 @@ var $ = /* @__PURE__ */ Dt({
 		}, [Y("div", {
 			class: "pm-pda-screen",
 			style: A({ backgroundImage: `url(${c.value})` })
-		}, [Y("div", qp, [
-			Y("div", Jp, [f[19] ||= Y("i", {
+		}, [Y("div", Jp, [
+			Y("div", Yp, [f[23] ||= Y("i", {
 				class: "fas fa-cloud",
 				style: { color: "#b89f7d" }
 			}, null, -1), Y("span", null, L(_.value.当前处境?.当前天象 || "极昼"), 1)]),
-			Y("div", Yp, [f[20] ||= Y("span", { class: "island-dot" }, null, -1), Y("span", null, L(a.value), 1)]),
-			Y("div", Xp, [f[22] ||= Y("i", {
+			Y("div", Xp, [f[24] ||= Y("span", { class: "island-dot" }, null, -1), Y("span", null, L(a.value), 1)]),
+			Y("div", Zp, [f[26] ||= Y("i", {
 				class: "fas fa-battery-full",
 				style: { color: "#10b981" }
 			}, null, -1), Y("button", {
 				class: N(["pin-btn", { active: n.value }]),
 				title: "置顶终端",
 				onClick: S
-			}, [...f[21] ||= [Y("i", { class: "fas fa-thumbtack" }, null, -1)]], 2)])
-		]), i.value === "home" ? (q(), J("div", Zp, [Y("div", Qp, [
-			Y("div", $p, L(a.value), 1),
-			Y("div", em, "生存周期: T+" + L(_.value.当前处境?.累计小时数 || 0) + "H", 1),
-			Y("div", tm, [f[23] ||= Y("i", { class: "fas fa-map-marker-alt" }, null, -1), X(" " + L(_.value.当前处境?.当前地点 || "未知坐标"), 1)])
-		]), Y("div", nm, [
+			}, [...f[25] ||= [Y("i", { class: "fas fa-thumbtack" }, null, -1)]], 2)])
+		]), i.value === "home" ? (q(), J("div", Qp, [Y("div", $p, [
+			Y("div", em, L(a.value), 1),
+			Y("div", tm, "生存周期: T+" + L(_.value.当前处境?.累计小时数 || 0) + "H", 1),
+			Y("div", nm, [f[27] ||= Y("i", { class: "fas fa-map-marker-alt" }, null, -1), X(" " + L(_.value.当前处境?.当前地点 || "未知坐标"), 1)])
+		]), Y("div", rm, [
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[0] ||= (e) => C("vitals")
-			}, [...f[24] ||= [Y("div", {
+			}, [...f[28] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #8b0000, #ff4444)" }
 			}, [Y("i", { class: "fas fa-heartbeat" })], -1), Y("span", null, "生命体征", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[1] ||= (e) => C("inventory")
-			}, [...f[25] ||= [Y("div", {
+			}, [...f[29] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #b89f7d, #d4af37)" }
 			}, [Y("i", { class: "fas fa-toolbox" })], -1), Y("span", null, "武装库", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[2] ||= (e) => C("sanity")
-			}, [...f[26] ||= [Y("div", {
+			}, [...f[30] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #4a148c, #9c27b0)" }
 			}, [Y("i", { class: "fas fa-brain" })], -1), Y("span", null, "深层意识", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[3] ||= (e) => C("loop")
-			}, [...f[27] ||= [Y("div", {
+			}, [...f[31] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #004d40, #009688)" }
 			}, [Y("i", { class: "fas fa-infinity" })], -1), Y("span", null, "轮回档案", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[4] ||= (e) => C("social")
-			}, [...f[28] ||= [Y("div", {
+			}, [...f[32] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #e65100, #ff9800)" }
 			}, [Y("i", { class: "fas fa-users" })], -1), Y("span", null, "社交网络", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[5] ||= (e) => C("facility")
-			}, [...f[29] ||= [Y("div", {
+			}, [...f[33] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #263238, #546e7a)" }
 			}, [Y("i", { class: "fas fa-industry" })], -1), Y("span", null, "据点收容", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[6] ||= (e) => C("quests")
-			}, [...f[30] ||= [Y("div", {
+			}, [...f[34] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #01579b, #03a9f4)" }
 			}, [Y("i", { class: "fas fa-scroll" })], -1), Y("span", null, "任务异闻", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[7] ||= (e) => C("hub")
-			}, [...f[31] ||= [Y("div", {
+			}, [...f[35] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #3e2723, #8d6e63)" }
 			}, [Y("i", { class: "fas fa-map" })], -1), Y("span", null, "时空枢纽", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[8] ||= (e) => C("messages")
-			}, [Y("div", rm, [f[32] ||= Y("i", { class: "fas fa-comment-dots" }, null, -1), T.value > 0 ? (q(), J("span", im, L(T.value), 1)) : Z("", !0)]), f[33] ||= Y("span", null, "终端通讯", -1)]),
+			}, [Y("div", im, [f[36] ||= Y("i", { class: "fas fa-comment-dots" }, null, -1), ae.value > 0 ? (q(), J("span", am, L(ae.value), 1)) : Z("", !0)]), f[37] ||= Y("span", null, "终端通讯", -1)]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[9] ||= (e) => C("forum")
-			}, [...f[34] ||= [Y("div", {
+			}, [...f[38] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #831843, #f59e0b)" }
 			}, [Y("i", { class: "fas fa-globe" })], -1), Y("span", null, "废土暗网", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
 				onClick: f[10] ||= (e) => C("gallery")
-			}, [...f[35] ||= [Y("div", {
+			}, [...f[39] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #064e3b, #ec4899)" }
 			}, [Y("i", { class: "fas fa-images" })], -1), Y("span", null, "羁绊画廊", -1)]]),
 			Y("div", {
 				class: "pm-app-icon",
-				onClick: f[11] ||= (e) => C("settings")
-			}, [...f[36] ||= [Y("div", {
+				onClick: f[11] ||= (e) => C("calendar")
+			}, [...f[40] ||= [Y("div", {
+				class: "app-icon-bg",
+				style: { background: "linear-gradient(135deg, #c0392b, #e74c3c)" }
+			}, [Y("i", { class: "fas fa-calendar-alt" })], -1), Y("span", null, "日程记录", -1)]]),
+			Y("div", {
+				class: "pm-app-icon",
+				onClick: f[12] ||= (e) => C("settings")
+			}, [...f[41] ||= [Y("div", {
 				class: "app-icon-bg",
 				style: { background: "linear-gradient(135deg, #1f2937, #64748b)" }
 			}, [Y("i", { class: "fas fa-cog" })], -1), Y("span", null, "终端设置", -1)]])
-		])])) : (q(), J("div", am, [Y("div", om, [
+		])])) : (q(), J("div", om, [Y("div", sm, [
 			Y("button", {
 				class: "pm-back-btn",
 				onClick: w
-			}, [...f[37] ||= [Y("i", { class: "fas fa-chevron-left" }, null, -1)]]),
-			Y("span", sm, L(ee.value), 1),
-			f[38] ||= Y("div", { style: { width: "30px" } }, null, -1)
-		]), Y("div", cm, [
-			i.value === "vitals" ? (q(), J("div", lm, [Y("div", um, [
-				f[42] ||= Y("div", { class: "pm-dossier-title" }, "HP / MP / SP", -1),
-				Y("div", dm, [
-					f[39] ||= Y("span", { style: { color: "#ff4444" } }, "HP", -1),
-					Y("div", fm, [Y("div", {
+			}, [...f[42] ||= [Y("i", { class: "fas fa-chevron-left" }, null, -1)]]),
+			Y("span", cm, L(ee.value), 1),
+			f[43] ||= Y("div", { style: { width: "30px" } }, null, -1)
+		]), Y("div", lm, [
+			i.value === "vitals" ? (q(), J("div", um, [Y("div", dm, [
+				f[47] ||= Y("div", { class: "pm-dossier-title" }, "HP / MP / SP", -1),
+				Y("div", fm, [
+					f[44] ||= Y("span", { style: { color: "#ff4444" } }, "HP", -1),
+					Y("div", pm, [Y("div", {
 						class: "pm-bar-fill",
 						style: A([{ background: "#8b0000" }, { width: te(_.value.玩家角色?.基础属性?.当前HP, _.value.玩家角色?.基础属性?.最大HP) }])
 					}, null, 4)]),
 					Y("span", null, L(_.value.玩家角色?.基础属性?.当前HP) + "/" + L(_.value.玩家角色?.基础属性?.最大HP), 1)
 				]),
-				Y("div", pm, [
-					f[40] ||= Y("span", { style: { color: "#03a9f4" } }, "MP", -1),
-					Y("div", mm, [Y("div", {
+				Y("div", mm, [
+					f[45] ||= Y("span", { style: { color: "#03a9f4" } }, "MP", -1),
+					Y("div", hm, [Y("div", {
 						class: "pm-bar-fill",
 						style: A([{ background: "#01579b" }, { width: te(_.value.玩家角色?.基础属性?.当前MP, _.value.玩家角色?.基础属性?.最大MP) }])
 					}, null, 4)]),
 					Y("span", null, L(_.value.玩家角色?.基础属性?.当前MP) + "/" + L(_.value.玩家角色?.基础属性?.最大MP), 1)
 				]),
-				Y("div", hm, [
-					f[41] ||= Y("span", { style: { color: "#4caf50" } }, "SP", -1),
-					Y("div", gm, [Y("div", {
+				Y("div", gm, [
+					f[46] ||= Y("span", { style: { color: "#4caf50" } }, "SP", -1),
+					Y("div", _m, [Y("div", {
 						class: "pm-bar-fill",
 						style: A([{ background: "#1b5e20" }, { width: te(_.value.玩家角色?.基础属性?.理智值, 20) }])
 					}, null, 4)]),
 					Y("span", null, L(_.value.玩家角色?.基础属性?.理智值) + "/20", 1)
 				])
-			]), Y("div", _m, [f[43] ||= Y("div", { class: "pm-dossier-title" }, "肢体损毁报告", -1), Y("div", vm, [(q(), J(K, null, G([
+			]), Y("div", vm, [f[48] ||= Y("div", { class: "pm-dossier-title" }, "肢体损毁报告", -1), Y("div", ym, [(q(), J(K, null, G([
 				"头部",
 				"胸部",
 				"左臂",
@@ -6251,70 +6342,70 @@ var $ = /* @__PURE__ */ Dt({
 			], (e) => Y("div", {
 				key: e,
 				class: N(["pm-limb-box", ne(_.value.玩家角色?.肢体伤病?.[e])])
-			}, [Y("div", ym, L(e), 1), Y("div", bm, L(_.value.玩家角色?.肢体伤病?.[e] || "完好"), 1)], 2)), 64))])])])) : Z("", !0),
-			i.value === "inventory" ? (q(), J("div", xm, [
-				Y("div", Sm, [f[44] ||= Y("div", { class: "pm-dossier-title" }, "核心属性", -1), Y("div", Cm, [(q(!0), J(K, null, G(_.value.玩家角色?.基础属性?.六维 || {}, (e, t) => (q(), J("div", {
+			}, [Y("div", bm, L(e), 1), Y("div", xm, L(_.value.玩家角色?.肢体伤病?.[e] || "完好"), 1)], 2)), 64))])])])) : Z("", !0),
+			i.value === "inventory" ? (q(), J("div", Sm, [
+				Y("div", Cm, [f[49] ||= Y("div", { class: "pm-dossier-title" }, "核心属性", -1), Y("div", wm, [(q(!0), J(K, null, G(_.value.玩家角色?.基础属性?.六维 || {}, (e, t) => (q(), J("div", {
 					key: t,
 					class: "pm-stat-box"
 				}, [Y("span", null, L(t), 1), Y("strong", null, L(e), 1)]))), 128))])]),
-				Y("div", wm, [
-					f[47] ||= Y("div", { class: "pm-dossier-title" }, "当前装备", -1),
-					Y("div", Tm, [f[45] ||= Y("span", null, "主武器", -1), Y("span", Em, L(_.value.玩家角色?.武装战力?.主武器 || "空"), 1)]),
-					Y("div", Dm, [f[46] ||= Y("span", null, "防具", -1), Y("span", Om, L(_.value.玩家角色?.武装战力?.防具 || "空"), 1)])
+				Y("div", Tm, [
+					f[52] ||= Y("div", { class: "pm-dossier-title" }, "当前装备", -1),
+					Y("div", Em, [f[50] ||= Y("span", null, "主武器", -1), Y("span", Dm, L(_.value.玩家角色?.武装战力?.主武器 || "空"), 1)]),
+					Y("div", Om, [f[51] ||= Y("span", null, "防具", -1), Y("span", km, L(_.value.玩家角色?.武装战力?.防具 || "空"), 1)])
 				]),
-				Y("div", km, [f[48] ||= Y("div", { class: "pm-dossier-title" }, "背包物资", -1), (q(!0), J(K, null, G(_.value.玩家角色?.武装战力?.背包道具 || {}, (e, t) => (q(), J("div", {
+				Y("div", Am, [f[53] ||= Y("div", { class: "pm-dossier-title" }, "背包物资", -1), (q(!0), J(K, null, G(_.value.玩家角色?.武装战力?.背包道具 || {}, (e, t) => (q(), J("div", {
 					key: t,
 					class: "pm-item-row"
-				}, [Y("span", null, "📦 " + L(t) + " (x" + L(e.数量 || 1) + ")", 1), Y("span", Am, L(e.描述), 1)]))), 128))])
+				}, [Y("span", null, "📦 " + L(t) + " (x" + L(e.数量 || 1) + ")", 1), Y("span", jm, L(e.描述), 1)]))), 128))])
 			])) : Z("", !0),
-			i.value === "sanity" ? (q(), J("div", jm, [Y("div", Mm, [
-				f[51] ||= Y("div", { class: "pm-dossier-title" }, "理智演化", -1),
-				Y("div", Nm, [f[49] ||= Y("span", null, "当前阶段", -1), Y("strong", Pm, L(_.value.玩家角色?.理智演化?.当前阶段 || "正常"), 1)]),
-				Y("div", Fm, [f[50] ||= Y("span", null, "理智稳定性", -1), Y("strong", null, L(_.value.玩家角色?.基础属性?.理智稳定性 || 100), 1)])
-			]), Y("div", Im, [f[52] ||= Y("div", { class: "pm-dossier-title" }, "专属业障", -1), (q(!0), J(K, null, G(_.value.玩家角色?.基础属性?.专属业障 || {}, (e, t) => (q(), J("div", {
+			i.value === "sanity" ? (q(), J("div", Mm, [Y("div", Nm, [
+				f[56] ||= Y("div", { class: "pm-dossier-title" }, "理智演化", -1),
+				Y("div", Pm, [f[54] ||= Y("span", null, "当前阶段", -1), Y("strong", Fm, L(_.value.玩家角色?.理智演化?.当前阶段 || "正常"), 1)]),
+				Y("div", Im, [f[55] ||= Y("span", null, "理智稳定性", -1), Y("strong", null, L(_.value.玩家角色?.基础属性?.理智稳定性 || 100), 1)])
+			]), Y("div", Lm, [f[57] ||= Y("div", { class: "pm-dossier-title" }, "专属业障", -1), (q(!0), J(K, null, G(_.value.玩家角色?.基础属性?.专属业障 || {}, (e, t) => (q(), J("div", {
 				key: t,
 				class: "pm-item-row",
 				style: { color: "#ff4444" }
 			}, [Y("span", null, "⚡ [" + L(t) + "]", 1), Y("span", null, L(e), 1)]))), 128))])])) : Z("", !0),
-			i.value === "loop" ? (q(), J("div", Lm, [Y("div", Rm, [
-				f[55] ||= Y("div", { class: "pm-dossier-title" }, "心灵镜牢", -1),
-				Y("div", zm, [f[53] ||= Y("span", null, "当前层数", -1), Y("strong", null, L(_.value.玩家角色?.特殊机制?.心灵镜牢?.当前层数 || 0) + " / 15", 1)]),
-				Y("div", Bm, [f[54] ||= Y("span", null, "星光余额", -1), Y("strong", Vm, L(_.value.玩家角色?.特殊机制?.心灵镜牢?.星光余额 || 0), 1)])
-			]), Y("div", Hm, [f[56] ||= Y("div", { class: "pm-dossier-title" }, "永久创伤", -1), (q(!0), J(K, null, G(_.value.玩家角色?.轮回线索?.永久精神创伤 || {}, (e, t) => (q(), J("div", {
+			i.value === "loop" ? (q(), J("div", Rm, [Y("div", zm, [
+				f[60] ||= Y("div", { class: "pm-dossier-title" }, "心灵镜牢", -1),
+				Y("div", Bm, [f[58] ||= Y("span", null, "当前层数", -1), Y("strong", null, L(_.value.玩家角色?.特殊机制?.心灵镜牢?.当前层数 || 0) + " / 15", 1)]),
+				Y("div", Vm, [f[59] ||= Y("span", null, "星光余额", -1), Y("strong", Hm, L(_.value.玩家角色?.特殊机制?.心灵镜牢?.星光余额 || 0), 1)])
+			]), Y("div", Um, [f[61] ||= Y("div", { class: "pm-dossier-title" }, "永久创伤", -1), (q(!0), J(K, null, G(_.value.玩家角色?.轮回线索?.永久精神创伤 || {}, (e, t) => (q(), J("div", {
 				key: t,
 				class: "pm-item-row",
 				style: { color: "#ff4444" }
 			}, [Y("span", null, "⚠️ [" + L(t) + "]", 1), Y("span", null, L(e), 1)]))), 128))])])) : Z("", !0),
-			i.value === "social" ? (q(), J("div", Um, [Y("div", Wm, [f[57] ||= Y("div", { class: "pm-dossier-title" }, "势力声望", -1), (q(!0), J(K, null, G(_.value.社交网络?.势力声望 || {}, (e, t) => (q(), J("div", {
+			i.value === "social" ? (q(), J("div", Wm, [Y("div", Gm, [f[62] ||= Y("div", { class: "pm-dossier-title" }, "势力声望", -1), (q(!0), J(K, null, G(_.value.社交网络?.势力声望 || {}, (e, t) => (q(), J("div", {
 				key: t,
 				class: "pm-info-row"
-			}, [Y("span", null, "🏛️ " + L(t), 1), Y("strong", { style: A({ color: Number(e) < 0 ? "#ff4444" : "#d4af37" }) }, L(e), 5)]))), 128))]), Y("div", Gm, [f[58] ||= Y("div", { class: "pm-dossier-title" }, "核心同伴", -1), (q(!0), J(K, null, G(_.value.核心同伴 || {}, (e, t) => (q(), J("div", {
+			}, [Y("span", null, "🏛️ " + L(t), 1), Y("strong", { style: A({ color: Number(e) < 0 ? "#ff4444" : "#d4af37" }) }, L(e), 5)]))), 128))]), Y("div", Km, [f[63] ||= Y("div", { class: "pm-dossier-title" }, "核心同伴", -1), (q(!0), J(K, null, G(_.value.核心同伴 || {}, (e, t) => (q(), J("div", {
 				key: t,
 				class: "pm-npc-card"
-			}, [t !== "$meta" && t !== "无" ? (q(), J("div", Km, [
-				Y("div", qm, [Y("span", null, "👥 " + L(t) + " (Lv." + L(e.等级 || 1) + ")", 1), Y("span", Jm, "❤ " + L(e.好感度 || 0), 1)]),
-				Y("div", Ym, "💭 \"" + L(e.心里话 || "...") + "\"", 1),
-				Y("div", Xm, [Y("span", null, "HP: " + L(e.当前HP) + "/" + L(e.最大HP), 1), Y("span", null, "SP: " + L(e.理智值), 1)])
+			}, [t !== "$meta" && t !== "无" ? (q(), J("div", qm, [
+				Y("div", Jm, [Y("span", null, "👥 " + L(t) + " (Lv." + L(e.等级 || 1) + ")", 1), Y("span", Ym, "❤ " + L(e.好感度 || 0), 1)]),
+				Y("div", Xm, "💭 \"" + L(e.心里话 || "...") + "\"", 1),
+				Y("div", Zm, [Y("span", null, "HP: " + L(e.当前HP) + "/" + L(e.最大HP), 1), Y("span", null, "SP: " + L(e.理智值), 1)])
 			])) : Z("", !0)]))), 128))])])) : Z("", !0),
-			i.value === "facility" ? (q(), J("div", Zm, [Y("div", Qm, [
-				f[62] ||= Y("div", { class: "pm-dossier-title" }, "设施状态", -1),
-				Y("div", $m, [f[59] ||= Y("span", null, "供电等级", -1), Y("strong", null, L(_.value.据点收容?.设施状态?.供电等级 || "未知"), 1)]),
-				Y("div", eh, [f[60] ||= Y("span", null, "防御等级", -1), Y("strong", null, "Lv." + L(_.value.据点收容?.设施状态?.防御等级 || 0), 1)]),
-				Y("div", th, [f[61] ||= Y("span", null, "脑啡肽储量", -1), Y("strong", nh, L(_.value.据点收容?.资源储备?.脑啡肽储量 || 0), 1)])
-			]), Y("div", rh, [f[63] ||= Y("div", { class: "pm-dossier-title" }, "收容单元", -1), (q(!0), J(K, null, G(_.value.据点收容?.收容单元 || {}, (e, t) => (q(), J("div", {
+			i.value === "facility" ? (q(), J("div", Qm, [Y("div", $m, [
+				f[67] ||= Y("div", { class: "pm-dossier-title" }, "设施状态", -1),
+				Y("div", eh, [f[64] ||= Y("span", null, "供电等级", -1), Y("strong", null, L(_.value.据点收容?.设施状态?.供电等级 || "未知"), 1)]),
+				Y("div", th, [f[65] ||= Y("span", null, "防御等级", -1), Y("strong", null, "Lv." + L(_.value.据点收容?.设施状态?.防御等级 || 0), 1)]),
+				Y("div", nh, [f[66] ||= Y("span", null, "脑啡肽储量", -1), Y("strong", rh, L(_.value.据点收容?.资源储备?.脑啡肽储量 || 0), 1)])
+			]), Y("div", ih, [f[68] ||= Y("div", { class: "pm-dossier-title" }, "收容单元", -1), (q(!0), J(K, null, G(_.value.据点收容?.收容单元 || {}, (e, t) => (q(), J("div", {
 				key: t,
 				class: "pm-item-row",
 				style: A({ borderLeft: e.状态 === "归零出逃" ? "3px solid #ff4444" : "3px solid #d4af37" })
 			}, [Y("span", null, "📦 [" + L(t) + "]", 1), Y("span", { style: A({ color: e.状态 === "归零出逃" ? "#ff4444" : "#aaa" }) }, L(e.危险等级) + " | " + L(e.状态), 5)], 4))), 128))])])) : Z("", !0),
-			i.value === "quests" ? (q(), J("div", ih, [Y("div", ah, [
-				f[66] ||= Y("div", { class: "pm-dossier-title" }, "当前遭遇", -1),
-				Y("div", oh, [f[64] ||= Y("span", null, "状态", -1), Y("strong", sh, L(_.value.当前处境?.当前遭遇?.状态 || "无"), 1)]),
-				Y("div", ch, [f[65] ||= Y("span", null, "危险度", -1), Y("strong", null, L(_.value.当前处境?.当前遭遇?.危险度 || "无"), 1)])
-			]), Y("div", lh, [f[67] ||= Y("div", { class: "pm-dossier-title" }, "委托档案", -1), (q(!0), J(K, null, G(_.value.当前处境?.任务列表 || {}, (e, t) => (q(), J("div", {
+			i.value === "quests" ? (q(), J("div", ah, [Y("div", oh, [
+				f[71] ||= Y("div", { class: "pm-dossier-title" }, "当前遭遇", -1),
+				Y("div", sh, [f[69] ||= Y("span", null, "状态", -1), Y("strong", ch, L(_.value.当前处境?.当前遭遇?.状态 || "无"), 1)]),
+				Y("div", lh, [f[70] ||= Y("span", null, "危险度", -1), Y("strong", null, L(_.value.当前处境?.当前遭遇?.危险度 || "无"), 1)])
+			]), Y("div", uh, [f[72] ||= Y("div", { class: "pm-dossier-title" }, "委托档案", -1), (q(!0), J(K, null, G(_.value.当前处境?.任务列表 || {}, (e, t) => (q(), J("div", {
 				key: t,
 				class: "pm-item-row"
-			}, [Y("span", null, "📌 [" + L(t) + "]", 1), Y("span", uh, L(e.状态), 1)]))), 128))])])) : Z("", !0),
-			i.value === "hub" ? (q(), J("div", dh, [...f[68] ||= [Y("div", { style: {
+			}, [Y("span", null, "📌 [" + L(t) + "]", 1), Y("span", dh, L(e.状态), 1)]))), 128))])])) : Z("", !0),
+			i.value === "hub" ? (q(), J("div", fh, [...f[73] ||= [Y("div", { style: {
 				"text-align": "center",
 				color: "#888"
 			} }, [
@@ -6333,58 +6424,99 @@ var $ = /* @__PURE__ */ Dt({
 					X("将在后续世界线更新中开放。")
 				])
 			], -1)]])) : Z("", !0),
-			i.value === "messages" ? (q(), J("div", fh, [E.value ? (q(), J("div", yh, [
-				Y("div", bh, [
-					Y("button", { onClick: f[13] ||= (e) => E.value = null }, [...f[70] ||= [Y("i", { class: "fas fa-arrow-left" }, null, -1)]]),
-					Y("span", null, L(D.value), 1),
-					f[71] ||= Y("div", { style: { width: "20px" } }, null, -1)
+			i.value === "messages" ? (q(), J("div", ph, [T.value ? (q(), J("div", bh, [
+				Y("div", xh, [
+					Y("button", { onClick: f[14] ||= (e) => T.value = null }, [...f[76] ||= [Y("i", { class: "fas fa-arrow-left" }, null, -1)]]),
+					Y("span", null, L(E.value), 1),
+					f[77] ||= Y("div", { style: { width: "20px" } }, null, -1)
 				]),
 				Y("div", {
 					ref_key: "chatScrollRef",
 					ref: O,
 					class: "chat-messages-area"
-				}, [(q(!0), J(K, null, G(ie.value[E.value] || [], (e, t) => (q(), J("div", {
+				}, [(q(!0), J(K, null, G(ie.value[T.value] || [], (e, t) => (q(), J("div", {
 					key: t,
 					class: N(["chat-bubble-wrapper", e.isMine ? "mine" : "other"])
-				}, [Y("div", xh, L(e.text), 1)], 2))), 128))], 512),
-				Y("div", Sh, [W(Y("input", {
-					"onUpdate:modelValue": f[14] ||= (e) => re.value = e,
+				}, [!e.isMine && D.value === "group" ? (q(), J("div", Sh, L(e.sender), 1)) : Z("", !0), Y("div", Ch, L(e.text), 1)], 2))), 128))], 512),
+				Y("div", wh, [W(Y("input", {
+					"onUpdate:modelValue": f[15] ||= (e) => re.value = e,
 					type: "text",
 					placeholder: "输入短信...",
-					onKeypress: Yo(k, ["enter"])
-				}, null, 544), [[Q, re.value]]), Y("button", { onClick: k }, [...f[72] ||= [Y("i", { class: "fas fa-paper-plane" }, null, -1)]])])
-			])) : (q(), J("div", ph, [Y("div", {
+					onKeypress: Yo(ce, ["enter"])
+				}, null, 544), [[Q, re.value]]), Y("button", { onClick: ce }, [...f[78] ||= [Y("i", { class: "fas fa-paper-plane" }, null, -1)]])])
+			])) : (q(), J("div", mh, [Y("div", {
 				class: "pm-chat-list-item",
-				onClick: f[12] ||= (e) => ae("DM", "观测者/跑团娘")
-			}, [...f[69] ||= [Zi("<div class=\"chat-avatar\" style=\"background:#8b0000;\" data-v-ffb76d19><i class=\"fas fa-eye\" data-v-ffb76d19></i></div><div class=\"chat-info\" data-v-ffb76d19><div class=\"chat-name\" data-v-ffb76d19>观测者 (DM)</div><div class=\"chat-preview\" data-v-ffb76d19>请求规则裁定或向导指引...</div></div>", 2)]]), (q(!0), J(K, null, G(_.value.核心同伴 || {}, (e, t) => (q(), J("div", {
-				key: t,
+				onClick: f[13] ||= (e) => se("DM", "观测者/跑团娘", "private")
+			}, [...f[74] ||= [Zi("<div class=\"chat-avatar\" style=\"background:#8b0000;\" data-v-acabf947><i class=\"fas fa-eye\" data-v-acabf947></i></div><div class=\"chat-info\" data-v-acabf947><div class=\"chat-name\" data-v-acabf947>观测者 (DM)</div><div class=\"chat-preview\" data-v-acabf947>请求规则裁定或向导指引...</div></div>", 2)]]), (q(!0), J(K, null, G(k.value, (e) => (q(), J("div", {
+				key: e.id,
 				class: "pm-chat-list-item",
-				onClick: (e) => ae(String(t), String(t))
-			}, [t !== "$meta" && t !== "无" ? (q(), J(K, { key: 0 }, [Y("div", hh, L(String(t).charAt(0)), 1), Y("div", gh, [Y("div", _h, L(t), 1), Y("div", vh, "\"" + L(e.心里话 || "...") + "\"", 1)])], 64)) : Z("", !0)], 8, mh))), 128))]))])) : Z("", !0),
-			i.value === "forum" ? (q(), J("div", Ch, [
-				Y("div", wh, [f[74] ||= Y("span", { style: {
+				onClick: (t) => se(e.id, e.name, e.type)
+			}, [Y("div", {
+				class: "chat-avatar",
+				style: A({ background: e.type === "group" ? "#004d40" : "#1e3a8a" })
+			}, [e.type === "group" ? (q(), J("i", gh)) : (q(), J("span", _h, L(e.name.charAt(0)), 1))], 4), Y("div", vh, [Y("div", yh, L(e.name), 1), f[75] ||= Y("div", { class: "chat-preview" }, "点击查看历史消息...", -1)])], 8, hh))), 128))]))])) : Z("", !0),
+			i.value === "forum" ? (q(), J("div", Th, [
+				Y("div", Eh, [
+					f[79] ||= Y("div", { class: "pm-dossier-title" }, "API 设置 (独立调用)", -1),
+					W(Y("input", {
+						"onUpdate:modelValue": f[16] ||= (e) => ue.value = e,
+						type: "text",
+						placeholder: "API URL (如: https://api.openai.com/v1)",
+						class: "pm-input-dark",
+						style: {
+							width: "100%",
+							"margin-bottom": "10px"
+						}
+					}, null, 512), [[Q, ue.value]]),
+					W(Y("input", {
+						"onUpdate:modelValue": f[17] ||= (e) => de.value = e,
+						type: "password",
+						placeholder: "API Key (sk-...)",
+						class: "pm-input-dark",
+						style: {
+							width: "100%",
+							"margin-bottom": "10px"
+						}
+					}, null, 512), [[Q, de.value]]),
+					W(Y("input", {
+						"onUpdate:modelValue": f[18] ||= (e) => P.value = e,
+						type: "text",
+						placeholder: "Model (如: gpt-3.5-turbo)",
+						class: "pm-input-dark",
+						style: {
+							width: "100%",
+							"margin-bottom": "10px"
+						}
+					}, null, 512), [[Q, P.value]]),
+					Y("button", {
+						class: "pm-glass-btn-small",
+						style: { width: "100%" },
+						onClick: fe
+					}, "保存 API 设置")
+				]),
+				Y("div", Dh, [f[81] ||= Y("span", { style: {
 					color: "#d4af37",
 					"font-weight": "bold"
 				} }, "暗网热帖", -1), Y("button", {
 					class: "pm-glass-btn-small",
-					disabled: ce.value,
-					onClick: le
-				}, [Y("i", { class: N(["fas", ce.value ? "fa-spinner fa-spin" : "fa-sync"]) }, null, 2), f[73] ||= X(" 截获信号 ", -1)], 8, Th)]),
-				se.value.length === 0 ? (q(), J("div", Eh, " 暂无截获的暗网信号，请点击右上角刷新。 ")) : Z("", !0),
-				(q(!0), J(K, null, G(se.value, (e, t) => (q(), J("div", {
+					disabled: M.value,
+					onClick: pe
+				}, [Y("i", { class: N(["fas", M.value ? "fa-spinner fa-spin" : "fa-sync"]) }, null, 2), f[80] ||= X(" 截获信号 ", -1)], 8, Oh)]),
+				j.value.length === 0 ? (q(), J("div", kh, " 暂无截获的暗网信号，请配置 API 后点击刷新。 ")) : Z("", !0),
+				(q(!0), J(K, null, G(j.value, (e, t) => (q(), J("div", {
 					key: t,
 					class: "pm-forum-post"
 				}, [
-					Y("div", Dh, [Y("div", Oh, L(e.author.charAt(0)), 1), Y("div", null, [Y("div", kh, L(e.author), 1), f[75] ||= Y("div", { class: "post-time" }, "刚刚", -1)])]),
-					Y("div", Ah, L(e.title), 1),
-					Y("div", jh, L(e.content), 1),
-					Y("div", Mh, [Y("span", null, [f[76] ||= Y("i", { class: "fas fa-thumbs-up" }, null, -1), X(" " + L(e.likes), 1)]), Y("span", null, [f[77] ||= Y("i", { class: "fas fa-comment" }, null, -1), X(" " + L(e.replies?.length || 0), 1)])])
+					Y("div", Ah, [Y("div", jh, L(e.author.charAt(0)), 1), Y("div", null, [Y("div", Mh, L(e.author), 1), f[82] ||= Y("div", { class: "post-time" }, "刚刚", -1)])]),
+					Y("div", Nh, L(e.title), 1),
+					Y("div", Ph, L(e.content), 1),
+					Y("div", Fh, [Y("span", null, [f[83] ||= Y("i", { class: "fas fa-thumbs-up" }, null, -1), X(" " + L(e.likes), 1)]), Y("span", null, [f[84] ||= Y("i", { class: "fas fa-comment" }, null, -1), X(" " + L(e.replies?.length || 0), 1)])])
 				]))), 128))
 			])) : Z("", !0),
-			i.value === "gallery" ? (q(), J("div", Nh, [Y("div", Ph, [
-				f[78] ||= Y("div", { class: "pm-dossier-title" }, "自定义壁纸", -1),
+			i.value === "gallery" ? (q(), J("div", Ih, [Y("div", Lh, [
+				f[85] ||= Y("div", { class: "pm-dossier-title" }, "自定义壁纸", -1),
 				W(Y("input", {
-					"onUpdate:modelValue": f[15] ||= (e) => l.value = e,
+					"onUpdate:modelValue": f[19] ||= (e) => l.value = e,
 					type: "text",
 					placeholder: "输入图片URL...",
 					class: "pm-input-dark",
@@ -6396,9 +6528,9 @@ var $ = /* @__PURE__ */ Dt({
 				Y("button", {
 					class: "pm-glass-btn-small",
 					style: { width: "100%" },
-					onClick: j
+					onClick: me
 				}, "设为终端壁纸")
-			]), f[79] ||= Y("div", { class: "pm-dossier-card" }, [Y("div", { class: "pm-dossier-title" }, "记忆碎片 (CG)"), Y("div", { style: {
+			]), f[86] ||= Y("div", { class: "pm-dossier-card" }, [Y("div", { class: "pm-dossier-title" }, "记忆碎片 (CG)"), Y("div", { style: {
 				"text-align": "center",
 				color: "#888",
 				padding: "20px"
@@ -6413,10 +6545,25 @@ var $ = /* @__PURE__ */ Dt({
 				Y("br"),
 				X("当您与NPC的好感度突破阈值时，相关的记忆画面将在此处解锁。")
 			])])], -1)])) : Z("", !0),
-			i.value === "settings" ? (q(), J("div", Fh, [Y("div", Ih, [
-				f[82] ||= Y("div", { class: "pm-dossier-title" }, "终端尺寸调节", -1),
-				Y("div", Lh, [f[80] ||= Y("span", null, "宽度 (px)", -1), W(Y("input", {
-					"onUpdate:modelValue": f[16] ||= (e) => o.value = e,
+			i.value === "calendar" ? (q(), J("div", Rh, [...f[87] ||= [Y("div", { class: "pm-dossier-card" }, [Y("div", { class: "pm-dossier-title" }, "废土历法"), Y("div", { style: {
+				"text-align": "center",
+				color: "#888",
+				padding: "20px"
+			} }, [Y("i", {
+				class: "fas fa-calendar-alt",
+				style: {
+					"font-size": "32px",
+					"margin-bottom": "10px"
+				}
+			}), Y("p", null, [
+				X("当前处于白夜黑昼循环中。"),
+				Y("br"),
+				X("时间流逝已由系统接管。")
+			])])], -1)]])) : Z("", !0),
+			i.value === "settings" ? (q(), J("div", zh, [Y("div", Bh, [
+				f[90] ||= Y("div", { class: "pm-dossier-title" }, "终端尺寸调节", -1),
+				Y("div", Vh, [f[88] ||= Y("span", null, "宽度 (px)", -1), W(Y("input", {
+					"onUpdate:modelValue": f[20] ||= (e) => o.value = e,
 					type: "number",
 					class: "pm-input-dark",
 					style: {
@@ -6424,8 +6571,8 @@ var $ = /* @__PURE__ */ Dt({
 						"text-align": "right"
 					}
 				}, null, 512), [[Q, o.value]])]),
-				Y("div", Rh, [f[81] ||= Y("span", null, "高度 (px)", -1), W(Y("input", {
-					"onUpdate:modelValue": f[17] ||= (e) => s.value = e,
+				Y("div", Hh, [f[89] ||= Y("span", null, "高度 (px)", -1), W(Y("input", {
+					"onUpdate:modelValue": f[21] ||= (e) => s.value = e,
 					type: "number",
 					class: "pm-input-dark",
 					style: {
@@ -6433,7 +6580,7 @@ var $ = /* @__PURE__ */ Dt({
 						"text-align": "right"
 					}
 				}, null, 512), [[Q, s.value]])])
-			]), Y("div", { class: "pm-dossier-card" }, [f[83] ||= Y("div", { class: "pm-dossier-title" }, "系统操作", -1), Y("button", {
+			]), Y("div", { class: "pm-dossier-card" }, [f[91] ||= Y("div", { class: "pm-dossier-title" }, "系统操作", -1), Y("button", {
 				class: "pm-glass-btn-small",
 				style: {
 					width: "100%",
@@ -6441,11 +6588,11 @@ var $ = /* @__PURE__ */ Dt({
 					color: "#ff4444",
 					"border-color": "#ff4444"
 				},
-				onClick: M
+				onClick: F
 			}, "重置终端位置与数据")])])) : Z("", !0)
-		])]))], 4)], 4)], 2)], 64));
+		])]))], 4)], 4)], 2)]));
 	}
-}), [["__scopeId", "data-v-ffb76d19"]]);
+}), [["__scopeId", "data-v-acabf947"]]);
 //#endregion
 //#region src/seven-days1/index.ts
 if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
@@ -6458,20 +6605,18 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 		return e;
 	}, i = () => {
 		let e = r(), t = e.getElementById("pm-global-styles");
-		t || (t = e.createElement("style"), t.id = "pm-global-styles", e.head.appendChild(t)), t.innerHTML = "\n      /* 隐藏原生标签 */\n      .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n      .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n          display: none !important;\n      }\n      .mes_text narrative { display: block !important; }\n\n      /* =========================================\n         全局羊皮纸基底与动态边缘 (绝对保留)\n         ========================================= */\n      :root {\n        --pm-gold: #d4af37;\n        --pm-dark-red: #8b0000;\n        --pm-black: #1a1105;\n        --pm-text: #2c241b;\n        --pm-bg-light: #ffffff;\n        --pm-bg-mid: #fcfaf5;\n        --pm-bg-dark: #f4ebd8;\n      }\n\n      /* 聊天区全局羊皮纸化 */\n      body, #chat {\n          background-color: var(--pm-bg-dark) !important;\n          background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noiseFilter\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noiseFilter)\" opacity=\"0.08\"/></svg>') !important;\n      }\n\n      /* 剧情正文复古字体 */\n      .mes_text {\n          font-family: 'Noto Serif SC', 'Songti SC', serif !important;\n          color: var(--pm-text) !important;\n          text-shadow: 0 0 1px rgba(0,0,0,0.1);\n          line-height: 1.8;\n      }\n\n      /* =========================================\n         悬念骰子特效 (Gacha Dice)\n         ========================================= */\n      .pm-gacha-dice {\n          display: inline-block;\n          background: rgba(26, 26, 30, 0.8);\n          border: 1px solid var(--pm-gold);\n          color: transparent;\n          padding: 2px 10px;\n          border-radius: 4px;\n          cursor: pointer;\n          position: relative;\n          font-family: 'Courier New', monospace;\n          font-weight: bold;\n          overflow: hidden;\n          user-select: none;\n          box-shadow: 0 2px 5px rgba(0,0,0,0.5);\n          transition: all 0.3s;\n      }\n      .pm-gacha-dice::before {\n          content: '点击判定';\n          color: var(--pm-gold);\n          position: absolute;\n          top: 50%; left: 50%;\n          transform: translate(-50%, -50%);\n          font-size: 12px;\n          white-space: nowrap;\n      }\n      .pm-gacha-dice:hover { box-shadow: 0 0 10px var(--pm-gold); }\n\n      /* 揭晓动画 */\n      .pm-gacha-dice.revealing::before {\n          content: '10101010';\n          color: #fff;\n          animation: pm-glitch-anim 0.1s infinite;\n      }\n      .pm-gacha-dice.revealed {\n          background: transparent;\n          color: var(--pm-gold);\n          text-shadow: 0 0 8px var(--pm-gold);\n          border-color: transparent;\n          cursor: default;\n      }\n      .pm-gacha-dice.revealed::before { display: none; }\n\n      /* 大成功/大失败印章 */\n      .pm-crit-success {\n          display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #d4af37, #ffeb3b);\n          padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);\n          transform: rotate(-5deg); border: 2px solid #fff;\n      }\n      .pm-crit-fail {\n          display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #8b0000, #ff4444);\n          padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(139, 0, 0, 0.8);\n          transform: rotate(5deg); border: 2px solid #fff;\n      }\n\n      /* =========================================\n         卡门低语全屏污染\n         ========================================= */\n      .carmen-whisper-overlay {\n          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;\n          background: rgba(139, 0, 0, 0.3); backdrop-filter: blur(2px);\n          z-index: 999999; pointer-events: none;\n          display: flex; align-items: center; justify-content: center;\n          animation: carmenFadeIn 0.5s forwards, carmenFadeOut 2s 4s forwards;\n      }\n      .carmen-whisper-text {\n          font-size: 4vw; font-weight: 900; color: #ff4444;\n          text-shadow: 0 0 20px #8b0000, 2px 2px 0px #000;\n          animation: pm-glitch-anim 0.2s infinite, floatUpDown 3s ease-in-out infinite;\n          text-align: center; padding: 20px;\n      }\n      @keyframes carmenFadeIn { from { opacity: 0; } to { opacity: 1; } }\n      @keyframes carmenFadeOut { from { opacity: 1; } to { opacity: 0; } }\n      @keyframes floatUpDown { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }\n\n      /* =========================================\n         真·全屏沉浸按钮\n         ========================================= */\n      .pm-fullscreen-btn {\n          position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;\n          border-radius: 50%; background: rgba(26, 26, 30, 0.8); backdrop-filter: blur(10px);\n          border: 2px solid var(--pm-gold); color: var(--pm-gold);\n          display: flex; align-items: center; justify-content: center;\n          font-size: 24px; cursor: pointer; z-index: 100000;\n          box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); transition: all 0.3s;\n      }\n      .pm-fullscreen-btn:hover { transform: scale(1.1) rotate(90deg); box-shadow: 0 0 25px var(--pm-gold); }\n\n      /* 屏幕震动与血液飞溅 */\n      @keyframes screenShake {\n          0% { transform: translate(1px, 1px) rotate(0deg); }\n          10% { transform: translate(-1px, -2px) rotate(-1deg); }\n          20% { transform: translate(-3px, 0px) rotate(1deg); }\n          30% { transform: translate(3px, 2px) rotate(0deg); }\n          40% { transform: translate(1px, -1px) rotate(1deg); }\n          50% { transform: translate(-1px, 2px) rotate(-1deg); }\n          60% { transform: translate(-3px, 1px) rotate(0deg); }\n          70% { transform: translate(3px, 1px) rotate(-1deg); }\n          80% { transform: translate(-1px, -1px) rotate(1deg); }\n          90% { transform: translate(1px, 2px) rotate(0deg); }\n          100% { transform: translate(1px, -2px) rotate(-1deg); }\n      }\n      .blood-splatter {\n          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;\n          box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.8);\n          pointer-events: none; z-index: 999998;\n          animation: carmenFadeOut 1.5s forwards;\n      }\n    ";
+		t || (t = e.createElement("style"), t.id = "pm-global-styles", e.head.appendChild(t)), t.innerHTML = "\n      /* 隐藏原生标签 */\n      .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n      .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary {\n          display: none !important;\n      }\n      .mes_text narrative { display: block !important; }\n\n      :root {\n        --pm-gold: #d4af37;\n        --pm-dark-red: #8b0000;\n        --pm-black: #1a1105;\n        --pm-text: #2c241b;\n        --pm-bg-light: #ffffff;\n        --pm-bg-mid: #fcfaf5;\n        --pm-bg-dark: #f4ebd8;\n      }\n\n      body, #chat, #chat_and_input {\n          background-color: var(--pm-bg-dark) !important;\n          background-image: url('data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"noiseFilter\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/></filter><rect width=\"100%\" height=\"100%\" filter=\"url(%23noiseFilter)\" opacity=\"0.08\"/></svg>') !important;\n      }\n\n      .mes_text {\n          font-family: 'Noto Serif SC', 'Songti SC', serif !important;\n          color: var(--pm-text) !important;\n          text-shadow: 0 0 1px rgba(0,0,0,0.1);\n          line-height: 1.8;\n      }\n\n      body.pm-true-fullscreen #sheld,\n      body.pm-true-fullscreen #rmenu,\n      body.pm-true-fullscreen #top-bar,\n      body.pm-true-fullscreen .nav-bar,\n      body.pm-true-fullscreen #send_form {\n          display: none !important;\n      }\n      body.pm-true-fullscreen #chat_and_input {\n          width: 100vw !important;\n          height: 100vh !important;\n          max-width: 100% !important;\n          margin: 0 !important;\n          padding: 0 !important;\n          position: fixed !important;\n          top: 0 !important;\n          left: 0 !important;\n          z-index: 99990 !important;\n      }\n\n      .pm-fullscreen-btn {\n          position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;\n          border-radius: 50%; background: rgba(26, 26, 30, 0.8); backdrop-filter: blur(10px);\n          border: 2px solid var(--pm-gold); color: var(--pm-gold);\n          display: flex; align-items: center; justify-content: center;\n          font-size: 24px; cursor: pointer; z-index: 100000;\n          box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); transition: all 0.3s;\n      }\n      .pm-fullscreen-btn:hover { transform: scale(1.1) rotate(90deg); box-shadow: 0 0 25px var(--pm-gold); }\n\n      .pm-gacha-dice {\n          display: inline-block; background: rgba(26, 26, 30, 0.8); border: 1px solid var(--pm-gold);\n          color: transparent; padding: 2px 10px; border-radius: 4px; cursor: pointer;\n          position: relative; font-family: 'Courier New', monospace; font-weight: bold;\n          overflow: hidden; user-select: none; box-shadow: 0 2px 5px rgba(0,0,0,0.5); transition: all 0.3s;\n      }\n      .pm-gacha-dice::before {\n          content: '点击判定'; color: var(--pm-gold); position: absolute; top: 50%; left: 50%;\n          transform: translate(-50%, -50%); font-size: 12px; white-space: nowrap;\n      }\n      .pm-gacha-dice:hover { box-shadow: 0 0 10px var(--pm-gold); }\n      .pm-gacha-dice.revealing::before { content: '10101010'; color: #fff; animation: pm-glitch-anim 0.1s infinite; }\n      .pm-gacha-dice.revealed { background: transparent; color: var(--pm-gold); text-shadow: 0 0 8px var(--pm-gold); border-color: transparent; cursor: default; }\n      .pm-gacha-dice.revealed::before { display: none; }\n\n      .pm-crit-success { display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #d4af37, #ffeb3b); padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.8); transform: rotate(-5deg); border: 2px solid #fff; }\n      .pm-crit-fail { display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #8b0000, #ff4444); padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(139, 0, 0, 0.8); transform: rotate(5deg); border: 2px solid #fff; position: relative; }\n      .pm-crit-fail::before { content: attr(data-text); position: absolute; left: -2px; text-shadow: 2px 0 red; top: 0; color: white; background: transparent; overflow: hidden; animation: pm-glitch-anim 2s infinite linear alternate-reverse; }\n\n      .carmen-whisper-overlay {\n          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;\n          background: rgba(139, 0, 0, 0.3); backdrop-filter: blur(2px);\n          z-index: 999999; pointer-events: none; display: flex; align-items: center; justify-content: center;\n          animation: carmenFadeIn 0.5s forwards, carmenFadeOut 2s 4s forwards;\n      }\n      .carmen-whisper-text {\n          font-size: 4vw; font-weight: 900; color: #ff4444; text-shadow: 0 0 20px #8b0000, 2px 2px 0px #000;\n          animation: pm-glitch-anim 0.2s infinite, floatUpDown 3s ease-in-out infinite; text-align: center; padding: 20px;\n      }\n      @keyframes carmenFadeIn { from { opacity: 0; } to { opacity: 1; } }\n      @keyframes carmenFadeOut { from { opacity: 1; } to { opacity: 0; } }\n      @keyframes floatUpDown { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }\n      @keyframes pm-glitch-anim { 0% { transform: translate(-2px, 2px); } 50% { transform: translate(2px, -2px); } 100% { transform: translate(-2px, -2px); } }\n\n      @keyframes screenShake {\n          0% { transform: translate(1px, 1px) rotate(0deg); }\n          20% { transform: translate(-3px, 0px) rotate(1deg); }\n          40% { transform: translate(1px, -1px) rotate(1deg); }\n          60% { transform: translate(-3px, 1px) rotate(0deg); }\n          80% { transform: translate(-1px, -1px) rotate(1deg); }\n          100% { transform: translate(1px, -2px) rotate(-1deg); }\n      }\n      .blood-splatter {\n          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;\n          box-shadow: inset 0 0 150px rgba(139, 0, 0, 0.8); pointer-events: none; z-index: 999998;\n          animation: carmenFadeOut 1.5s forwards;\n      }\n    ";
 	}, a = () => {
 		let e = r();
 		if (!e.getElementById("pm-fullscreen-btn")) {
 			let t = e.createElement("button");
 			t.id = "pm-fullscreen-btn", t.className = "pm-fullscreen-btn", t.innerHTML = "👁️", t.title = "进入纯净剧场模式", t.onclick = () => {
-				e.fullscreenElement ? e.exitFullscreen() : e.documentElement.requestFullscreen().catch((e) => {
-					console.log(`Error attempting to enable fullscreen: ${e.message}`);
-				});
+				e.body.classList.toggle("pm-true-fullscreen"), e.body.classList.contains("pm-true-fullscreen") ? (t.innerHTML = "❌", t.style.borderColor = "#ff4444", t.style.color = "#ff4444") : (t.innerHTML = "👁️", t.style.borderColor = "#d4af37", t.style.color = "#d4af37");
 			}, e.body.appendChild(t);
 		}
 		if (!e.getElementById("pm-pda-root")) {
 			let t = e.createElement("div");
-			t.id = "pm-pda-root", e.body.appendChild(t), n = $o(zh), n.mount(t);
+			t.id = "pm-pda-root", e.body.appendChild(t), n = $o(Uh), n.mount(t);
 		}
 	};
 	window.triggerDiceReveal = (e) => {
@@ -6529,7 +6674,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 				}
 				if (!u && e.innerHTML) {
 					let t = e.innerHTML, n = !1, r = t.match(/<carmen_whisper>([\s\S]*?)<\/carmen_whisper>/i);
-					r && (s(r[1]), t = t.replace(/<carmen_whisper>([\s\S]*?)<\/carmen_whisper>/gi, "<div style=\"color:#ff4444; font-weight:bold; font-style:italic;\">「$1」</div>"), n = !0), (t.includes("重伤") || t.includes("断裂") || t.includes("残废")) && i === $.latestMesId && o(), t.includes("大成功") && (t = t.replace(/大成功/g, "<span class=\"pm-crit-success\">大成功</span>"), n = !0), t.includes("大失败") && (t = t.replace(/大失败/g, "<span class=\"pm-crit-fail\">大失败</span>"), n = !0), /(1d100|1d20|1d10|1d8|1d6|1d4)/i.test(t) && (t = t.replace(/(1d100|1d20|1d10|1d8|1d6|1d4)/gi, "<span class=\"pm-gacha-dice\" onclick=\"window.triggerDiceReveal(this)\">$&</span>"), n = !0), /检定[:：]\s*\d+/i.test(t) && (t = t.replace(/(检定[:：]\s*\d+)/gi, "<span class=\"pm-gacha-dice\" onclick=\"window.triggerDiceReveal(this)\">$&</span>"), n = !0), n && (e.innerHTML = t);
+					r && (s(r[1]), t = t.replace(/<carmen_whisper>([\s\S]*?)<\/carmen_whisper>/gi, "<div style=\"color:#ff4444; font-weight:bold; font-style:italic;\">「$1」</div>"), n = !0), (t.includes("重伤") || t.includes("断裂") || t.includes("残废")) && i === $.latestMesId && o(), t.includes("大成功") && (t = t.replace(/大成功/g, "<span class=\"pm-crit-success\">大成功</span>"), n = !0), t.includes("大失败") && (t = t.replace(/大失败/g, "<span class=\"pm-crit-fail\" data-text=\"大失败\">大失败</span>"), n = !0), /\b(1d100|1d20|1d10|1d8|1d6|1d4)\b/i.test(t) && (t = t.replace(/\b(1d100|1d20|1d10|1d8|1d6|1d4)\b/gi, "<span class=\"pm-gacha-dice\" onclick=\"window.triggerDiceReveal(this)\">$&</span>"), n = !0), /检定[:：]\s*\d+/i.test(t) && (t = t.replace(/(检定[:：]\s*\d+)/gi, "<span class=\"pm-gacha-dice\" onclick=\"window.triggerDiceReveal(this)\">$&</span>"), n = !0), n && (e.innerHTML = t);
 				}
 				e.setAttribute("data-pm-parsed", "true");
 			}), l.includes("pm-custom-char-mount-point")) {
