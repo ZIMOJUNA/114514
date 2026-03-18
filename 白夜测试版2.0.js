@@ -3,7 +3,7 @@
                 if (typeof document !== 'undefined' && !document.getElementById('seven-days-injected-styles')) {
                   var style = document.createElement('style');
                   style.id = 'seven-days-injected-styles';
-                  style.textContent = ".pm-master-container[data-v-c36a5467]{color:#e0e0e0;box-sizing:border-box;background:#0f0f12d9;border:1px solid #333;border-radius:12px;width:100%;padding:20px;font-family:Noto Serif SC,Songti SC,serif;position:relative;box-shadow:0 10px 30px #000c}.bgm-player[data-v-c36a5467]{opacity:0;pointer-events:none;transition:opacity 1s;position:absolute;top:-60px;right:10px}.bgm-player.is-visible[data-v-c36a5467]{opacity:.8;pointer-events:auto}.pm-btn-small[data-v-c36a5467]{color:#d4af37;cursor:pointer;background:#d4af371a;border:1px solid #d4af37;border-radius:4px;padding:6px 12px;font-size:12px;font-weight:700;transition:all .3s}.pm-btn-small[data-v-c36a5467]:hover{color:#000;background:#d4af37}.modal-overlay[data-v-c36a5467]{z-index:9999999;background:#000c;justify-content:center;align-items:center;width:100vw;height:100vh;display:flex;position:fixed;top:0;left:0}.modal-content[data-v-c36a5467]{background:#1a1105;border:2px solid #8b0000;border-radius:8px;width:80%;max-width:600px;padding:20px}.modal-title[data-v-c36a5467]{color:#f44;text-align:center;margin-bottom:15px;font-size:18px;font-weight:700}.modal-textarea[data-v-c36a5467]{color:#0f0;resize:none;box-sizing:border-box;background:#000;border:1px solid #333;width:100%;height:200px;margin-bottom:15px;padding:10px;font-family:monospace}.modal-btn[data-v-c36a5467]{color:#fff;cursor:pointer;background:#8b0000;border:none;border-radius:4px;width:100%;padding:12px;font-weight:700}.page-check[data-v-c36a5467]{text-align:center;flex-direction:column;justify-content:center;align-items:center;min-height:300px;display:flex}.sys-title[data-v-c36a5467]{color:#d4af37;letter-spacing:4px;text-shadow:0 0 15px #d4af3780;margin-bottom:5px;font-size:32px;font-weight:900}.sys-subtitle[data-v-c36a5467]{color:#888;letter-spacing:2px;margin-bottom:30px;font-family:Courier New,monospace;font-size:14px}.sys-check-box[data-v-c36a5467]{background:#00000080;border:1px solid #333;border-radius:8px;width:100%;max-width:400px;margin-bottom:30px;padding:20px}.sys-row[data-v-c36a5467]{justify-content:space-between;margin-bottom:10px;font-family:monospace;font-size:14px;display:flex}.status-loading[data-v-c36a5467]{color:#81d4fa;animation:1.5s infinite pulse}.status-ok[data-v-c36a5467]{color:#81c784;font-weight:700}.status-warn[data-v-c36a5467]{color:#ffb74d;font-weight:700}.sys-actions[data-v-c36a5467]{gap:15px;display:flex}.sys-btn[data-v-c36a5467]{color:#aaa;cursor:pointer;background:0 0;border:1px solid #555;border-radius:4px;padding:10px 25px;transition:all .3s}.sys-btn[data-v-c36a5467]:hover:not(:disabled){color:#fff;border-color:#fff}.sys-btn-primary[data-v-c36a5467]{color:#d4af37;border-color:#d4af37;font-weight:700}.sys-btn-primary[data-v-c36a5467]:hover:not(:disabled){color:#000;background:#d4af37;box-shadow:0 0 15px #d4af3780}.sys-btn[data-v-c36a5467]:disabled{opacity:.5;cursor:not-allowed}.transition-note[data-v-c36a5467]{background:#0009;border-left:4px solid #81d4fa;border-radius:8px;padding:40px 20px}.note-title[data-v-c36a5467]{color:#81d4fa;margin-bottom:20px;font-size:18px;font-weight:700}.note-content[data-v-c36a5467]{color:#ccc;padding-left:20px;font-size:15px;line-height:1.8}.note-content li[data-v-c36a5467]{margin-bottom:10px}.library-scene[data-v-c36a5467]{padding:20px}.scene-text[data-v-c36a5467]{color:#d0d0d0;margin-bottom:40px;font-size:16px;line-height:1.8}.scene-text p[data-v-c36a5467]{margin-bottom:15px}.highlight-gold[data-v-c36a5467]{color:#d4af37;text-shadow:0 0 5px #d4af3780;font-weight:700}.highlight-red[data-v-c36a5467]{color:#f44;text-shadow:0 0 5px #ff444480;font-weight:700}.trauma-text[data-v-c36a5467]{color:#ff6b6b;background:#8b000033;border-left:3px solid #f44;margin-bottom:10px;padding:8px;font-family:monospace}.dm-portrait-box[data-v-c36a5467]{float:right;border:3px solid #d4af37;border-radius:50%;width:150px;height:150px;margin:0 0 20px 20px;overflow:hidden;box-shadow:0 0 20px #d4af374d}.dm-portrait-img[data-v-c36a5467]{object-fit:cover;width:100%;height:100%}.dossier-container[data-v-c36a5467]{flex-direction:column;gap:15px;display:flex}.dossier-folder[data-v-c36a5467]{background:#ffffff08;border:1px solid #444;border-radius:6px;transition:all .3s;overflow:hidden}.dossier-folder[data-v-c36a5467]:hover{background:#d4af370d;border-color:#d4af37}.dossier-summary[data-v-c36a5467]{cursor:pointer;background:#0006;align-items:center;gap:15px;padding:15px 20px;list-style:none;display:flex}.dossier-summary[data-v-c36a5467]::-webkit-details-marker{display:none}.ds-type[data-v-c36a5467]{color:#888;background:#222;border-radius:4px;padding:2px 6px;font-family:monospace;font-size:12px}.ds-name[data-v-c36a5467]{color:#fff;min-width:80px;font-size:18px;font-weight:700}.ds-desc[data-v-c36a5467]{color:#aaa;flex:1;font-size:14px}.dossier-content[data-v-c36a5467]{background:#0003;border-top:1px solid #333;padding:20px}.cp-quote[data-v-c36a5467]{color:#d4af37;border-left:3px solid #d4af37;margin-bottom:20px;padding-left:15px;font-size:15px;font-style:italic}.cp-grid[data-v-c36a5467]{grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;display:grid}.cp-box[data-v-c36a5467]{background:#0006;border:1px solid #333;border-radius:6px;padding:15px}.cp-box-title[data-v-c36a5467]{color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-size:12px}.cp-box-content[data-v-c36a5467]{color:#eee;font-size:14px;line-height:1.5}.cp-actions[data-v-c36a5467]{text-align:right}.cp-btn-confirm[data-v-c36a5467]{color:#fff;cursor:pointer;background:#8a0303;border:1px solid #f44;border-radius:4px;padding:10px 30px;font-weight:700;transition:all .3s;display:inline-block}.cp-btn-confirm[data-v-c36a5467]:hover{background:#f44;box-shadow:0 0 15px #ff444480}.dossier-custom[data-v-c36a5467]{cursor:pointer;background:repeating-linear-gradient(45deg,#00000080,#00000080 10px,#14141480 10px 20px);border:1px dashed #888;border-radius:6px;align-items:center;gap:15px;padding:15px 20px;transition:all .3s;display:flex}.dossier-custom[data-v-c36a5467]:hover{background:#ffffff1a;border-color:#fff}.custom-char-page[data-v-c36a5467]{flex-direction:column;align-items:center;padding:20px;display:flex}.roll-screen[data-v-c36a5467]{text-align:center;margin-top:50px}.roll-btn[data-v-c36a5467]{color:#fff;cursor:pointer;user-select:none;background:radial-gradient(circle,#d4af37,#8a0303);border-radius:50%;justify-content:center;align-items:center;width:120px;height:120px;margin:0 auto;font-size:24px;font-weight:900;transition:all .2s;display:flex;box-shadow:0 0 30px #d4af3780}.roll-btn[data-v-c36a5467]:hover{transform:scale(1.05);box-shadow:0 0 50px #d4af37cc}.roll-btn.rolling[data-v-c36a5467]{pointer-events:none;animation:.5s linear infinite spin-c36a5467}@keyframes spin-c36a5467{to{transform:rotate(360deg)}}.points-header[data-v-c36a5467]{box-sizing:border-box;background:#0009;border:1px solid #d4af37;border-radius:8px;justify-content:space-between;align-items:center;width:100%;margin-bottom:20px;padding:15px 20px;display:flex}.points-header h2[data-v-c36a5467]{color:#d4af37;margin:0;font-size:20px}.points-display[data-v-c36a5467]{color:#81c784;text-shadow:0 0 10px #81c78480;font-family:monospace;font-size:32px;font-weight:900}.points-display.negative[data-v-c36a5467]{color:#f44;text-shadow:0 0 10px #ff444480}.preset-bar[data-v-c36a5467]{box-sizing:border-box;background:#ffffff0d;border-radius:6px;flex-wrap:wrap;justify-content:space-between;gap:10px;width:100%;margin-bottom:20px;padding:10px 15px;display:flex}.preset-select[data-v-c36a5467],.preset-input[data-v-c36a5467]{color:#fff;background:#111;border:1px solid #444;border-radius:4px;outline:none;padding:6px 10px}.preset-btn[data-v-c36a5467]{color:#fff;cursor:pointer;background:#333;border:1px solid #555;border-radius:4px;padding:6px 15px;transition:all .2s}.preset-btn[data-v-c36a5467]:hover:not(:disabled){background:#555;border-color:#888}.preset-btn[data-v-c36a5467]:disabled{opacity:.5;cursor:not-allowed}.shop-container[data-v-c36a5467]{flex-direction:column;gap:20px;width:100%;display:flex}.shop-section[data-v-c36a5467]{background:#0006;border:1px solid #333;border-radius:8px;padding:20px}.shop-title[data-v-c36a5467]{color:#fff;border-bottom:1px solid #444;margin-bottom:15px;padding-bottom:10px;font-size:16px;font-weight:700}.image-upload-row[data-v-c36a5467]{justify-content:center;gap:40px;margin-bottom:20px;display:flex}.player-portrait-box[data-v-c36a5467]{background:#00000080;border:2px dashed #555;border-radius:8px;justify-content:center;align-items:center;width:120px;height:120px;display:flex;overflow:hidden}.player-portrait-img[data-v-c36a5467]{object-fit:cover;width:100%;height:100%}.player-portrait-placeholder[data-v-c36a5467]{color:#555;font-size:12px}.persona-grid[data-v-c36a5467]{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:15px;display:grid}.pm-input[data-v-c36a5467],.pm-textarea[data-v-c36a5467],.pm-select[data-v-c36a5467]{color:#eee;box-sizing:border-box;background:#00000080;border:1px solid #444;border-radius:4px;outline:none;width:100%;padding:10px;font-family:inherit;transition:border-color .3s}.pm-input[data-v-c36a5467]:focus,.pm-textarea[data-v-c36a5467]:focus,.pm-select[data-v-c36a5467]:focus{border-color:#d4af37}.pm-textarea[data-v-c36a5467]{resize:vertical;height:80px}.stat-grid[data-v-c36a5467]{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;display:grid}.stat-row[data-v-c36a5467]{background:#ffffff08;border-radius:4px;justify-content:space-between;align-items:center;padding:10px 15px;display:flex}.stat-name[data-v-c36a5467]{color:#aaa;font-weight:700}.stat-controls[data-v-c36a5467]{align-items:center;gap:15px;display:flex}.stat-btn[data-v-c36a5467]{color:#fff;cursor:pointer;background:#222;border:1px solid #555;border-radius:50%;justify-content:center;align-items:center;width:28px;height:28px;font-weight:700;display:flex}.stat-btn[data-v-c36a5467]:hover:not(:disabled){background:#444;border-color:#fff}.stat-btn[data-v-c36a5467]:disabled{opacity:.3;cursor:not-allowed}.stat-val[data-v-c36a5467]{text-align:center;width:30px;font-family:monospace;font-size:18px;font-weight:700}.stat-cost[data-v-c36a5467]{color:#666;text-align:right;width:50px;font-size:12px}.dm-warning[data-v-c36a5467]{color:#ccc;background:#8b00001a;border-left:4px solid #8b0000;margin-bottom:20px;padding:15px;font-size:13px;line-height:1.6}.diy-list[data-v-c36a5467]{flex-direction:column;gap:15px;display:flex}.diy-box[data-v-c36a5467]{background:#ffffff05;border:1px solid #444;border-radius:6px;flex-direction:column;gap:10px;padding:15px;display:flex;position:relative}.diy-header[data-v-c36a5467]{justify-content:space-between;align-items:center;display:flex}.diy-title[data-v-c36a5467]{color:#81d4fa;font-weight:700}.diy-cost-display[data-v-c36a5467]{color:#ff6b6b;background:#ff6b6b1a;border-radius:4px;padding:4px 8px;font-family:monospace;font-weight:700}.diy-cost-display.refund[data-v-c36a5467]{color:#81c784;background:#81c7841a}.diy-roll-btn[data-v-c36a5467]{color:#000;cursor:pointer;background:#d4af37;border:none;border-radius:4px;padding:4px 12px;font-weight:700}.diy-roll-btn[data-v-c36a5467]:disabled{color:#888;cursor:not-allowed;background:#555}.btn-remove-diy[data-v-c36a5467]{color:#f44;cursor:pointer;background:0 0;border:none;font-size:20px}.btn-add-diy[data-v-c36a5467]{color:#888;cursor:pointer;background:0 0;border:1px dashed #555;border-radius:6px;padding:10px;transition:all .2s}.btn-add-diy[data-v-c36a5467]:hover{color:#fff;background:#ffffff0d;border-color:#fff}.rl-grid[data-v-c36a5467]{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;display:grid}.rl-card[data-v-c36a5467]{cursor:pointer;background:#0009;border:1px solid #444;border-radius:6px;padding:15px;transition:all .2s;position:relative;overflow:hidden}.rl-card[data-v-c36a5467]:hover{border-color:#888;transform:translateY(-2px)}.rl-card.selected[data-v-c36a5467]{background:#d4af371a;border-color:#d4af37;box-shadow:0 0 15px #d4af3733}.rl-card.selected[data-v-c36a5467]:after{content:\"✓\";color:#d4af37;font-size:18px;font-weight:700;position:absolute;top:10px;right:10px}.rl-type[data-v-c36a5467]{color:#888;margin-bottom:5px;font-size:11px}.rl-name[data-v-c36a5467]{color:#fff;margin-bottom:8px;font-size:16px;font-weight:700}.rl-desc[data-v-c36a5467]{color:#aaa;margin-bottom:15px;font-size:13px;line-height:1.4}.rl-cost[data-v-c36a5467]{color:#ff6b6b;text-align:right;font-family:monospace;font-weight:700}.rl-cost.refund[data-v-c36a5467]{color:#81c784}.custom-idea-box[data-v-c36a5467]{background:#00000080;border:1px dashed #888;border-radius:6px;padding:15px}.custom-idea-box textarea[data-v-c36a5467]{color:#fff;resize:none;background:0 0;border:none;outline:none;width:100%;height:100px;font-family:inherit}.negative-warning[data-v-c36a5467]{color:#ffb74d;background:#8b000033;border:1px solid #f44;border-radius:6px;margin-bottom:20px;padding:15px;font-weight:700;line-height:1.5}.page-settings[data-v-c36a5467]{max-width:800px;margin:0 auto;padding:20px}.settings-title[data-v-c36a5467]{color:#fff;border-bottom:2px solid #8a0303;margin-bottom:10px;padding-bottom:10px;font-size:24px;font-weight:700}.settings-warning[data-v-c36a5467]{color:#ff6b6b;margin-bottom:30px;font-style:italic}.mbti-diff-grid[data-v-c36a5467]{grid-template-columns:1fr 1fr;gap:20px;margin-bottom:30px;display:grid}@media (width<=600px){.mbti-diff-grid[data-v-c36a5467]{grid-template-columns:1fr}}.mbti-box[data-v-c36a5467],.diff-box[data-v-c36a5467]{background:#0006;border:1px solid #333;border-radius:8px;padding:20px}.mbti-row[data-v-c36a5467]{gap:10px;margin-bottom:10px;display:flex}.mbti-btn[data-v-c36a5467]{color:#888;cursor:pointer;background:#111;border:1px solid #444;border-radius:4px;flex:1;padding:8px;transition:all .2s}.mbti-btn.active[data-v-c36a5467]{color:#81d4fa;background:#81d4fa33;border-color:#81d4fa;font-weight:700}.mbti-result[data-v-c36a5467]{text-align:center;color:#fff;letter-spacing:4px;text-shadow:0 0 10px #ffffff80;margin-top:15px;font-size:24px;font-weight:900}.diff-btn[data-v-c36a5467]{color:#aaa;cursor:pointer;text-align:left;background:#111;border:1px solid #444;border-radius:4px;width:100%;margin-bottom:10px;padding:12px;transition:all .2s;display:block}.diff-btn.active[data-v-c36a5467]{color:#d4af37;background:#d4af371a;border-color:#d4af37;border-left-style:solid;border-left-width:4px;font-weight:700}.toggles-grid[data-v-c36a5467]{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:30px;display:grid}.toggle-btn[data-v-c36a5467]{color:#666;text-align:center;cursor:pointer;user-select:none;background:#111;border:1px solid #333;border-radius:6px;padding:15px;font-weight:700;transition:all .3s}.toggle-btn.active[data-v-c36a5467]{color:#f44;background:#8b000033;border-color:#f44;box-shadow:inset 0 0 15px #f443}.dm-section[data-v-c36a5467]{background:#0006;border:1px solid #333;border-radius:8px;margin-bottom:40px;padding:20px}.dm-title[data-v-c36a5467]{color:#d4af37;margin-bottom:10px;font-size:18px;font-weight:700}.dm-desc[data-v-c36a5467]{color:#aaa;margin-bottom:20px;font-size:14px;font-style:italic}.dm-presets[data-v-c36a5467]{flex-wrap:wrap;gap:10px;margin-bottom:15px;display:flex}.pm-preset-btn[data-v-c36a5467]{color:#ccc;cursor:pointer;background:#222;border:1px solid #555;border-radius:20px;padding:8px 16px;transition:all .2s}.pm-preset-btn[data-v-c36a5467]:hover{background:#444}.pm-preset-btn.active[data-v-c36a5467]{color:#000;background:#d4af37;border-color:#fff;font-weight:700}.custom-btn[data-v-c36a5467]{border-style:dashed}.pm-btn-embark[data-v-c36a5467]{color:#fff;letter-spacing:4px;cursor:pointer;background:linear-gradient(90deg,#8a0303,#f44);border:none;border-radius:8px;width:100%;padding:15px;font-size:18px;font-weight:900;transition:all .3s;display:block;box-shadow:0 5px 15px #8b000080}.pm-btn-embark[data-v-c36a5467]:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 25px #f449}.pm-btn-embark[data-v-c36a5467]:disabled{color:#888;cursor:not-allowed;box-shadow:none;background:#555}.fade-enter-active[data-v-c36a5467],.fade-leave-active[data-v-c36a5467]{transition:opacity .5s,transform .5s}.fade-enter-from[data-v-c36a5467],.fade-leave-to[data-v-c36a5467]{opacity:0;transform:translateY(10px)}.pm-glassmorphism[data-v-ee9d78a2]{-webkit-backdrop-filter:blur(16px)saturate(120%);pointer-events:auto;background:#0f0f12d9;border:1px solid #d4af374d;box-shadow:0 10px 40px #000c}.pm-pda-fab[data-v-ee9d78a2]{cursor:grab;z-index:999999;border:2px solid #d4af37;border-radius:50%;justify-content:center;align-items:center;width:50px;height:50px;display:flex;position:fixed;top:0;left:0}.pm-pda-fab[data-v-ee9d78a2]:active{cursor:grabbing}.fab-icon[data-v-ee9d78a2]{font-size:24px}.fab-badge[data-v-ee9d78a2]{color:#fff;background:#f44;border-radius:50%;justify-content:center;align-items:center;width:20px;height:20px;font-size:12px;font-weight:700;animation:1s infinite pulse;display:flex;position:absolute;top:-5px;right:-5px}.pm-pda-panel[data-v-ee9d78a2]{z-index:999999;color:#ddd;border-radius:16px;flex-direction:column;width:320px;height:550px;font-family:Noto Sans SC,sans-serif;display:flex;position:fixed;top:0;left:0;overflow:hidden}.pda-header[data-v-ee9d78a2]{cursor:grab;background:linear-gradient(#d4af3733,#0000);border-bottom:1px solid #d4af374d;justify-content:space-between;align-items:center;height:40px;padding:0 15px;display:flex}.pda-header[data-v-ee9d78a2]:active{cursor:grabbing}.pda-title[data-v-ee9d78a2]{color:#d4af37;letter-spacing:1px;font-family:Courier New,monospace;font-size:14px;font-weight:700}.pda-close-btn[data-v-ee9d78a2]{color:#888;cursor:pointer;background:0 0;border:none;padding-bottom:8px;font-size:18px}.pda-close-btn[data-v-ee9d78a2]:hover{color:#fff}.pda-screen[data-v-ee9d78a2]{scrollbar-width:none;flex:1;padding:15px;overflow-y:auto}.pda-screen[data-v-ee9d78a2]::-webkit-scrollbar{display:none}.pda-nav[data-v-ee9d78a2]{background:#0009;border-top:1px solid #333;justify-content:space-around;align-items:center;height:50px;display:flex}.nav-btn[data-v-ee9d78a2]{cursor:pointer;opacity:.5;background:0 0;border:none;font-size:20px;transition:all .2s}.nav-btn.active[data-v-ee9d78a2]{opacity:1;text-shadow:0 0 10px #d4af37;transform:scale(1.2)}.pda-section-title[data-v-ee9d78a2]{color:#888;text-transform:uppercase;letter-spacing:2px;border-bottom:1px dashed #444;margin-bottom:10px;padding-bottom:4px;font-size:12px}.pda-text-highlight[data-v-ee9d78a2]{color:#d4af37;font-size:16px;font-weight:700}.pda-stat-row[data-v-ee9d78a2]{background:#ffffff0d;border-radius:4px;justify-content:space-between;margin-bottom:8px;padding:8px 12px;font-family:monospace;font-size:14px;display:flex}.pda-warning-box[data-v-ee9d78a2]{color:#ffb74d;background:#8b000033;border-left:3px solid #f44;padding:10px;font-size:13px;line-height:1.5}.pda-npc-card[data-v-ee9d78a2]{background:#0006;border:1px solid #333;border-radius:8px;margin-bottom:12px;padding:12px}.npc-header[data-v-ee9d78a2]{justify-content:space-between;margin-bottom:8px;display:flex}.npc-name[data-v-ee9d78a2]{color:#81d4fa;font-weight:700}.npc-level[data-v-ee9d78a2]{color:#888;font-family:monospace}.npc-mind-box[data-v-ee9d78a2]{background:#ffffff08;border-left:2px solid #ce93d8;border-radius:4px;margin-bottom:10px;padding:8px}.mind-label[data-v-ee9d78a2]{color:#888;margin-bottom:4px;font-size:10px}.mind-text[data-v-ee9d78a2]{color:#ccc;font-size:13px;font-style:italic}.npc-bars[data-v-ee9d78a2]{grid-template-columns:1fr 1fr;gap:6px;font-family:monospace;font-size:12px;display:grid}.bar-item[data-v-ee9d78a2]{background:#00000080;border-radius:2px;justify-content:space-between;padding:2px 6px;display:flex}.pda-select[data-v-ee9d78a2]{color:#d4af37;background:#111;border:1px solid #444;border-radius:4px;outline:none;width:100%;margin-bottom:15px;padding:8px}.gallery-grid[data-v-ee9d78a2]{grid-template-columns:1fr 1fr;gap:10px;display:grid}.gallery-item[data-v-ee9d78a2]{aspect-ratio:1;border:1px solid #444;border-radius:6px;position:relative;overflow:hidden}.gallery-img[data-v-ee9d78a2]{object-fit:cover;cursor:pointer;width:100%;height:100%;transition:transform .3s}.gallery-img[data-v-ee9d78a2]:hover{transform:scale(1.1)}.gallery-del-btn[data-v-ee9d78a2]{color:#fff;cursor:pointer;background:#8b0000cc;border:none;border-radius:50%;justify-content:center;align-items:center;width:20px;height:20px;font-size:12px;display:flex;position:absolute;top:5px;right:5px}.upload-box[data-v-ee9d78a2]{text-align:center;margin-top:15px}.pda-btn[data-v-ee9d78a2]{color:#d4af37;cursor:pointer;background:#d4af3733;border:1px solid #d4af37;border-radius:20px;padding:8px 20px;font-size:14px;transition:all .2s;display:inline-block}.pda-btn[data-v-ee9d78a2]:hover{color:#000;background:#d4af37}.setting-row[data-v-ee9d78a2]{border-bottom:1px solid #333;justify-content:space-between;align-items:center;padding:12px 0;display:flex}.pda-toggle-btn[data-v-ee9d78a2]{color:#888;cursor:pointer;background:#222;border:1px solid #555;border-radius:12px;padding:4px 12px;font-weight:700;transition:all .3s}.pda-toggle-btn.active[data-v-ee9d78a2]{color:#fff;background:#8a0303;border-color:#f44;box-shadow:0 0 10px #ff444480}.image-preview-overlay[data-v-ee9d78a2]{z-index:9999999;cursor:zoom-out;background:#000000e6;justify-content:center;align-items:center;width:100vw;height:100vh;display:flex;position:fixed;top:0;left:0}.preview-img-full[data-v-ee9d78a2]{border:2px solid #d4af37;border-radius:8px;max-width:90%;max-height:90%;box-shadow:0 0 30px #d4af374d}.pm-hub-overlay[data-v-10f27d5b]{z-index:9999999;backdrop-filter:blur(10px);pointer-events:auto;background:#000000d9;justify-content:center;align-items:center;width:100vw;height:100vh;display:flex;position:fixed;top:0;left:0}.pm-hub-container[data-v-10f27d5b]{color:#e0e0e0;background:radial-gradient(circle,#1a1105f2 0%,#0a0500fa 100%);border:2px solid #d4af37;border-radius:12px;flex-direction:column;width:90vw;max-width:1200px;height:85vh;font-family:Noto Serif SC,serif;display:flex;overflow:hidden;box-shadow:0 0 50px #d4af3733,inset 0 0 30px #000c}.hub-header[data-v-10f27d5b]{background:#00000080;border-bottom:1px solid #d4af374d;justify-content:space-between;align-items:center;height:70px;padding:0 30px;display:flex}.hub-title[data-v-10f27d5b]{align-items:center;gap:15px;display:flex}.hub-icon[data-v-10f27d5b]{font-size:32px}.hub-close-btn[data-v-10f27d5b]{color:#f44;cursor:pointer;background:0 0;border:1px solid #f44;border-radius:4px;padding:8px 20px;font-weight:700;transition:all .3s}.hub-close-btn[data-v-10f27d5b]:hover{color:#fff;background:#f44;box-shadow:0 0 15px #ff444480}.hub-body[data-v-10f27d5b]{flex:1;display:flex;overflow:hidden}.hub-sidebar[data-v-10f27d5b]{background:#0009;border-right:1px solid #333;flex-direction:column;width:220px;padding:20px 0;display:flex}.hub-nav-btn[data-v-10f27d5b]{color:#888;text-align:left;cursor:pointer;background:0 0;border:none;border-left:4px solid #0000;padding:15px 30px;font-family:inherit;font-size:16px;transition:all .3s}.hub-nav-btn[data-v-10f27d5b]:hover{color:#d4af37;background:#d4af371a}.hub-nav-btn.active[data-v-10f27d5b]{color:#d4af37;background:linear-gradient(90deg,#d4af3733,#0000);border-left-color:#d4af37;font-weight:700}.hub-content[data-v-10f27d5b]{flex:1;padding:40px;overflow-y:auto}.panel-title[data-v-10f27d5b]{color:#d4af37;letter-spacing:2px;border-bottom:1px dashed #555;margin-bottom:20px;padding-bottom:10px;font-size:24px}.panel-desc[data-v-10f27d5b]{color:#aaa;margin-bottom:30px;font-size:15px;line-height:1.6}.resource-grid[data-v-10f27d5b]{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;display:grid}.resource-card[data-v-10f27d5b]{background:#ffffff08;border:1px solid #444;border-radius:8px;flex-direction:column;padding:20px;display:flex;position:relative;overflow:hidden}.resource-card[data-v-10f27d5b]:before{content:\"\";background:#d4af37;width:4px;height:100%;position:absolute;top:0;left:0}.res-icon[data-v-10f27d5b]{opacity:.2;font-size:36px;position:absolute;top:20px;right:20px}.res-info[data-v-10f27d5b]{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}.res-name[data-v-10f27d5b]{color:#fff;font-size:18px;font-weight:700}.res-val[data-v-10f27d5b]{color:#d4af37;font-family:monospace;font-size:28px;font-weight:900}.res-desc[data-v-10f27d5b]{color:#888;font-size:13px}.facility-list[data-v-10f27d5b]{flex-direction:column;gap:15px;display:flex}.facility-item[data-v-10f27d5b]{background:#0006;border:1px solid #333;border-radius:6px;justify-content:space-between;align-items:center;padding:15px 20px;display:flex}.fac-name[data-v-10f27d5b]{font-size:16px;font-weight:700}.fac-status[data-v-10f27d5b]{color:#888;font-family:monospace;font-size:16px}.anchor-grid[data-v-10f27d5b]{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;display:grid}.anchor-card[data-v-10f27d5b]{background:#00000080;border:1px solid #444;border-radius:8px;padding:15px;transition:all .3s}.anchor-card.is-anchored[data-v-10f27d5b]{background:#d4af370d;border-color:#d4af37;box-shadow:0 0 15px #d4af371a}.anchor-header[data-v-10f27d5b]{border-bottom:1px solid #333;justify-content:space-between;margin-bottom:10px;padding-bottom:5px;display:flex}.anchor-name[data-v-10f27d5b]{color:#81d4fa;font-size:18px;font-weight:700}.anchor-lv[data-v-10f27d5b]{color:#888;font-family:monospace}.anchor-status[data-v-10f27d5b]{color:#aaa;margin-bottom:15px;font-size:14px}.btn-anchor[data-v-10f27d5b]{color:#81d4fa;cursor:pointer;background:0 0;border:1px solid #81d4fa;border-radius:4px;width:100%;padding:10px;transition:all .2s}.btn-anchor[data-v-10f27d5b]:hover{color:#000;background:#81d4fa}.btn-anchored[data-v-10f27d5b]{color:#d4af37;cursor:not-allowed;background:#d4af3733;border:1px solid #d4af37;border-radius:4px;width:100%;padding:10px}.meta-dm-box[data-v-10f27d5b]{background:#0006;border:1px solid #333;border-radius:8px;gap:20px;margin-bottom:20px;padding:20px;display:flex}.meta-dm-avatar[data-v-10f27d5b]{object-fit:cover;border:2px solid #8a0303;border-radius:50%;width:80px;height:80px}.meta-dm-info[data-v-10f27d5b]{flex-direction:column;flex:1;justify-content:center;gap:8px;display:flex}.meta-dm-name[data-v-10f27d5b]{color:#ff6b6b;font-size:20px;font-weight:700}.meta-dm-affinity[data-v-10f27d5b]{font-size:16px}.meta-dm-topic[data-v-10f27d5b]{color:#aaa;font-size:14px;font-style:italic}.meta-chat-box[data-v-10f27d5b]{flex-direction:column;gap:15px;display:flex}.meta-textarea[data-v-10f27d5b]{color:#fff;resize:none;box-sizing:border-box;background:#ffffff0d;border:1px solid #555;border-radius:6px;outline:none;width:100%;height:120px;padding:15px;font-family:inherit;font-size:15px}.meta-textarea[data-v-10f27d5b]:focus{background:#ffffff1a;border-color:#d4af37}.btn-meta-send[data-v-10f27d5b]{color:#fff;cursor:pointer;background:#8a0303;border:1px solid #f44;border-radius:4px;align-self:flex-end;padding:12px 30px;font-size:16px;font-weight:700;transition:all .2s}.btn-meta-send[data-v-10f27d5b]:hover:not(:disabled){background:#f44;box-shadow:0 0 15px #ff444480}.btn-meta-send[data-v-10f27d5b]:disabled{opacity:.5;cursor:not-allowed}.empty-state[data-v-10f27d5b]{text-align:center;color:#666;border:1px dashed #444;border-radius:8px;padding:40px;font-style:italic}.hub-fade-enter-active[data-v-10f27d5b],.hub-fade-leave-active[data-v-10f27d5b]{transition:opacity .3s,transform .3s}.hub-fade-enter-from[data-v-10f27d5b],.hub-fade-leave-to[data-v-10f27d5b]{opacity:0;transform:scale(.95)}.pm-global-layer[data-v-c942b4c8]{pointer-events:none;z-index:999998;width:100%;height:100%;position:absolute;top:0;left:0}.pm-env-overlay[data-v-c942b4c8]{pointer-events:none;z-index:-1;background:url(\"data:image/svg+xml;utf8,<svg viewBox=\\\"0 0 200 200\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\"><filter id=\\\"noise\\\"><feTurbulence type=\\\"fractalNoise\\\" baseFrequency=\\\"0.8\\\" numOctaves=\\\"3\\\" stitchTiles=\\\"stitch\\\"/></filter><rect width=\\\"100%\\\" height=\\\"100%\\\" filter=\\\"url(%23noise)\\\" opacity=\\\"0.05\\\"/></svg>\");width:100vw;height:100vh;transition:all 2s ease-in-out;position:fixed;top:0;left:0}.env-daylight[data-v-c942b4c8]{background-color:#fffaf00d;box-shadow:inset 0 0 150px #d4af3766}.env-night[data-v-c942b4c8]{background-color:#0006;box-shadow:inset 0 0 200px #000000e6}.env-danger[data-v-c942b4c8]{background-color:#8b00001a;animation:3s infinite alternate danger-pulse-c942b4c8;box-shadow:inset 0 0 150px #8b000099}.env-safe[data-v-c942b4c8]{box-shadow:inset 0 0 100px #8b45134d}@keyframes danger-pulse-c942b4c8{0%{box-shadow:inset 0 0 150px #8b000099}to{box-shadow:inset 0 0 200px #f006}}\n/*$vite$:1*/";
+                  style.textContent = ".pm-master-container[data-v-302dbbdf]{color:#e0e0e0;box-sizing:border-box;z-index:10;border:1px solid #333;border-radius:12px;width:100%;padding:20px;font-family:Noto Serif SC,Songti SC,serif;position:relative;overflow:hidden;box-shadow:0 10px 30px #000c;background:#0f0f12f2!important;margin-top:40px!important}.bgm-player[data-v-302dbbdf]{opacity:0;pointer-events:none;transition:opacity 1s;position:absolute;top:-60px;right:10px}.bgm-player.is-visible[data-v-302dbbdf]{opacity:.8;pointer-events:auto}.pm-btn-small[data-v-302dbbdf]{color:#d4af37;cursor:pointer;background:#d4af371a;border:1px solid #d4af37;border-radius:4px;padding:6px 12px;font-size:12px;font-weight:700;transition:all .3s}.pm-btn-small[data-v-302dbbdf]:hover{color:#000;background:#d4af37}.pm-btn-back-stealth[data-v-302dbbdf]{color:#888;cursor:pointer;background:0 0;border:none;font-family:monospace;font-size:12px;transition:color .3s}.pm-btn-back-stealth[data-v-302dbbdf]:hover{color:#d4af37;text-shadow:0 0 5px #d4af3780}.modal-overlay[data-v-302dbbdf]{z-index:9999999;background:#000c;justify-content:center;align-items:center;width:100vw;height:100vh;display:flex;position:fixed;top:0;left:0}.modal-content[data-v-302dbbdf]{background:#1a1105;border:2px solid #8b0000;border-radius:8px;width:80%;max-width:600px;padding:20px}.modal-title[data-v-302dbbdf]{color:#f44;text-align:center;margin-bottom:15px;font-size:18px;font-weight:700}.modal-textarea[data-v-302dbbdf]{color:#0f0;resize:none;box-sizing:border-box;background:#000;border:1px solid #333;width:100%;height:200px;margin-bottom:15px;padding:10px;font-family:monospace}.modal-btn[data-v-302dbbdf]{color:#fff;cursor:pointer;background:#8b0000;border:none;border-radius:4px;width:100%;padding:12px;font-weight:700}.page-check[data-v-302dbbdf]{text-align:center;flex-direction:column;justify-content:center;align-items:center;min-height:300px;display:flex}.sys-title[data-v-302dbbdf]{color:#d4af37;letter-spacing:4px;text-shadow:0 0 15px #d4af3780;margin-bottom:5px;font-size:32px;font-weight:900}.sys-subtitle[data-v-302dbbdf]{color:#888;letter-spacing:2px;margin-bottom:30px;font-family:Courier New,monospace;font-size:14px}.sys-check-box[data-v-302dbbdf]{background:#00000080;border:1px solid #333;border-radius:8px;width:100%;max-width:400px;margin-bottom:30px;padding:20px}.sys-row[data-v-302dbbdf]{justify-content:space-between;margin-bottom:10px;font-family:monospace;font-size:14px;display:flex}.status-loading[data-v-302dbbdf]{color:#81d4fa;animation:1.5s infinite pulse}.status-ok[data-v-302dbbdf]{color:#81c784;font-weight:700}.status-warn[data-v-302dbbdf]{color:#ffb74d;font-weight:700}.sys-actions[data-v-302dbbdf]{gap:15px;display:flex}.sys-btn[data-v-302dbbdf]{color:#aaa;cursor:pointer;background:0 0;border:1px solid #555;border-radius:4px;padding:10px 25px;transition:all .3s}.sys-btn[data-v-302dbbdf]:hover:not(:disabled){color:#fff;border-color:#fff}.sys-btn-primary[data-v-302dbbdf]{color:#d4af37;border-color:#d4af37;font-weight:700}.sys-btn-primary[data-v-302dbbdf]:hover:not(:disabled){color:#000;background:#d4af37;box-shadow:0 0 15px #d4af3780}.sys-btn[data-v-302dbbdf]:disabled{opacity:.5;cursor:not-allowed}.transition-note[data-v-302dbbdf]{background:#0009;border-left:4px solid #81d4fa;border-radius:8px;padding:40px 20px}.note-title[data-v-302dbbdf]{color:#81d4fa;margin-bottom:20px;font-size:18px;font-weight:700}.note-content[data-v-302dbbdf]{color:#ccc;padding-left:20px;font-size:15px;line-height:1.8}.note-content li[data-v-302dbbdf]{margin-bottom:10px}.library-scene[data-v-302dbbdf]{padding:10px}.library-layout[data-v-302dbbdf]{align-items:flex-start;gap:30px;margin-bottom:40px;display:flex}@media (width<=768px){.library-layout[data-v-302dbbdf]{flex-direction:column-reverse;align-items:center}}.scene-text[data-v-302dbbdf]{color:#d0d0d0;flex:1;font-size:16px;line-height:1.8}.scene-text p[data-v-302dbbdf]{margin-bottom:15px}.highlight-gold[data-v-302dbbdf]{color:#d4af37;text-shadow:0 0 5px #d4af3780;font-weight:700}.highlight-red[data-v-302dbbdf]{color:#f44;text-shadow:0 0 5px #ff444480;font-weight:700}.trauma-text[data-v-302dbbdf]{color:#ff6b6b;background:#8b000033;border-left:3px solid #f44;margin-bottom:10px;padding:8px;font-family:monospace}.dm-portrait-wrapper[data-v-302dbbdf]{flex-shrink:0;justify-content:center;width:160px;display:flex}.dm-portrait-box[data-v-302dbbdf]{background:#000;border:3px solid #d4af37;border-radius:50%;width:150px;height:150px;overflow:hidden;box-shadow:0 0 20px #d4af374d}.dm-portrait-img[data-v-302dbbdf]{object-fit:cover!important;width:100%!important;height:100%!important;display:block!important}.dossier-container[data-v-302dbbdf]{z-index:2;flex-direction:column;gap:15px;display:flex;position:relative}.dossier-folder[data-v-302dbbdf]{background:#ffffff08;border:1px solid #444;border-radius:6px;transition:all .3s;overflow:hidden}.dossier-folder[data-v-302dbbdf]:hover{background:#d4af370d;border-color:#d4af37}.dossier-summary[data-v-302dbbdf]{cursor:pointer!important;background:#0009!important;align-items:center!important;gap:15px!important;margin:0!important;padding:15px 20px!important;list-style:none!important;display:flex!important}.dossier-summary[data-v-302dbbdf]::-webkit-details-marker{display:none!important}.ds-type[data-v-302dbbdf]{color:#888;background:#222;border-radius:4px;flex-shrink:0;padding:2px 6px;font-family:monospace;font-size:12px}.ds-name[data-v-302dbbdf]{color:#fff;flex-shrink:0;min-width:80px;font-size:18px;font-weight:700}.ds-desc[data-v-302dbbdf]{color:#aaa;white-space:nowrap;text-overflow:ellipsis;flex:1;font-size:14px;overflow:hidden}.dossier-content[data-v-302dbbdf]{background:#0006;border-top:1px solid #333;padding:20px}.cp-quote[data-v-302dbbdf]{color:#d4af37;border-left:3px solid #d4af37;margin-bottom:20px;padding-left:15px;font-size:15px;font-style:italic}.cp-grid[data-v-302dbbdf]{grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;display:grid}@media (width<=600px){.cp-grid[data-v-302dbbdf]{grid-template-columns:1fr}}.cp-box[data-v-302dbbdf]{background:#0006;border:1px solid #333;border-radius:6px;padding:15px}.cp-box-title[data-v-302dbbdf]{color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-size:12px}.cp-box-content[data-v-302dbbdf]{color:#eee;font-size:14px;line-height:1.5}.cp-actions[data-v-302dbbdf]{text-align:right}.cp-btn-confirm[data-v-302dbbdf]{color:#fff;cursor:pointer;background:#8a0303;border:1px solid #f44;border-radius:4px;padding:10px 30px;font-weight:700;transition:all .3s;display:inline-block}.cp-btn-confirm[data-v-302dbbdf]:hover{background:#f44;box-shadow:0 0 15px #ff444480}.dossier-custom[data-v-302dbbdf]{cursor:pointer;background:repeating-linear-gradient(45deg,#00000080,#00000080 10px,#14141480 10px 20px);border:1px dashed #888;border-radius:6px;align-items:center;gap:15px;padding:15px 20px;transition:all .3s;display:flex}.dossier-custom[data-v-302dbbdf]:hover{background:#ffffff1a;border-color:#fff}.custom-char-page[data-v-302dbbdf]{flex-direction:column;align-items:center;padding:20px;display:flex}.roll-screen[data-v-302dbbdf]{text-align:center;margin-top:50px}.roll-btn[data-v-302dbbdf]{color:#fff;cursor:pointer;user-select:none;background:radial-gradient(circle,#d4af37,#8a0303);border-radius:50%;justify-content:center;align-items:center;width:120px;height:120px;margin:0 auto;font-size:24px;font-weight:900;transition:all .2s;display:flex;box-shadow:0 0 30px #d4af3780}.roll-btn[data-v-302dbbdf]:hover{transform:scale(1.05);box-shadow:0 0 50px #d4af37cc}.roll-btn.rolling[data-v-302dbbdf]{pointer-events:none;animation:.5s linear infinite spin-302dbbdf}@keyframes spin-302dbbdf{to{transform:rotate(360deg)}}.points-header[data-v-302dbbdf]{box-sizing:border-box;background:#0009;border:1px solid #d4af37;border-radius:8px;justify-content:space-between;align-items:center;width:100%;margin-bottom:20px;padding:15px 20px;display:flex}.points-header h2[data-v-302dbbdf]{color:#d4af37;margin:0;font-size:20px}.points-display[data-v-302dbbdf]{color:#81c784;text-shadow:0 0 10px #81c78480;font-family:monospace;font-size:32px;font-weight:900}.points-display.negative[data-v-302dbbdf]{color:#f44;text-shadow:0 0 10px #ff444480}.preset-bar[data-v-302dbbdf]{box-sizing:border-box;background:#ffffff0d;border-radius:6px;flex-wrap:wrap;justify-content:space-between;gap:10px;width:100%;margin-bottom:20px;padding:10px 15px;display:flex}.preset-select[data-v-302dbbdf],.preset-input[data-v-302dbbdf]{color:#fff;background:#111;border:1px solid #444;border-radius:4px;outline:none;padding:6px 10px}.preset-btn[data-v-302dbbdf]{color:#fff;cursor:pointer;background:#333;border:1px solid #555;border-radius:4px;padding:6px 15px;transition:all .2s}.preset-btn[data-v-302dbbdf]:hover:not(:disabled){background:#555;border-color:#888}.preset-btn[data-v-302dbbdf]:disabled{opacity:.5;cursor:not-allowed}.shop-container[data-v-302dbbdf]{flex-direction:column;gap:20px;width:100%;display:flex}.shop-section[data-v-302dbbdf]{background:#0006;border:1px solid #333;border-radius:8px;padding:20px}.shop-title[data-v-302dbbdf]{color:#fff;border-bottom:1px solid #444;margin-bottom:15px;padding-bottom:10px;font-size:16px;font-weight:700}.image-upload-row[data-v-302dbbdf]{flex-wrap:wrap;justify-content:center;gap:40px;margin-bottom:20px;display:flex}.player-portrait-box[data-v-302dbbdf]{background:#00000080;border:2px dashed #555;border-radius:8px;justify-content:center;align-items:center;width:120px;height:120px;display:flex;overflow:hidden}.player-portrait-img[data-v-302dbbdf]{object-fit:cover;width:100%;height:100%}.player-portrait-placeholder[data-v-302dbbdf]{color:#555;font-size:12px}.persona-grid[data-v-302dbbdf]{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:15px;display:grid}.pm-input[data-v-302dbbdf],.pm-textarea[data-v-302dbbdf],.pm-select[data-v-302dbbdf]{color:#eee;box-sizing:border-box;background:#00000080;border:1px solid #444;border-radius:4px;outline:none;width:100%;padding:10px;font-family:inherit;transition:border-color .3s}.pm-input[data-v-302dbbdf]:focus,.pm-textarea[data-v-302dbbdf]:focus,.pm-select[data-v-302dbbdf]:focus{border-color:#d4af37}.pm-textarea[data-v-302dbbdf]{resize:vertical;height:80px}.stat-grid[data-v-302dbbdf]{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;display:grid}.stat-row[data-v-302dbbdf]{background:#ffffff08;border-radius:4px;justify-content:space-between;align-items:center;padding:10px 15px;display:flex}.stat-name[data-v-302dbbdf]{color:#aaa;font-weight:700}.stat-controls[data-v-302dbbdf]{align-items:center;gap:15px;display:flex}.stat-btn[data-v-302dbbdf]{color:#fff;cursor:pointer;background:#222;border:1px solid #555;border-radius:50%;justify-content:center;align-items:center;width:28px;height:28px;font-weight:700;display:flex}.stat-btn[data-v-302dbbdf]:hover:not(:disabled){background:#444;border-color:#fff}.stat-btn[data-v-302dbbdf]:disabled{opacity:.3;cursor:not-allowed}.stat-val[data-v-302dbbdf]{text-align:center;width:30px;font-family:monospace;font-size:18px;font-weight:700}.stat-cost[data-v-302dbbdf]{color:#666;text-align:right;width:50px;font-size:12px}.dm-warning[data-v-302dbbdf]{color:#ccc;background:#8b00001a;border-left:4px solid #8b0000;margin-bottom:20px;padding:15px;font-size:13px;line-height:1.6}.diy-list[data-v-302dbbdf]{flex-direction:column;gap:15px;display:flex}.diy-box[data-v-302dbbdf]{background:#ffffff05;border:1px solid #444;border-radius:6px;flex-direction:column;gap:10px;padding:15px;display:flex;position:relative}.diy-header[data-v-302dbbdf]{justify-content:space-between;align-items:center;display:flex}.diy-title[data-v-302dbbdf]{color:#81d4fa;font-weight:700}.diy-cost-display[data-v-302dbbdf]{color:#ff6b6b;background:#ff6b6b1a;border-radius:4px;padding:4px 8px;font-family:monospace;font-weight:700}.diy-cost-display.refund[data-v-302dbbdf]{color:#81c784;background:#81c7841a}.diy-roll-btn[data-v-302dbbdf]{color:#000;cursor:pointer;background:#d4af37;border:none;border-radius:4px;padding:4px 12px;font-weight:700}.diy-roll-btn[data-v-302dbbdf]:disabled{color:#888;cursor:not-allowed;background:#555}.btn-remove-diy[data-v-302dbbdf]{color:#f44;cursor:pointer;background:0 0;border:none;font-size:20px}.btn-add-diy[data-v-302dbbdf]{color:#888;cursor:pointer;background:0 0;border:1px dashed #555;border-radius:6px;padding:10px;transition:all .2s}.btn-add-diy[data-v-302dbbdf]:hover{color:#fff;background:#ffffff0d;border-color:#fff}.rl-grid[data-v-302dbbdf]{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;display:grid}.rl-card[data-v-302dbbdf]{cursor:pointer;background:#0009;border:1px solid #444;border-radius:6px;padding:15px;transition:all .2s;position:relative;overflow:hidden}.rl-card[data-v-302dbbdf]:hover{border-color:#888;transform:translateY(-2px)}.rl-card.selected[data-v-302dbbdf]{background:#d4af371a;border-color:#d4af37;box-shadow:0 0 15px #d4af3733}.rl-card.selected[data-v-302dbbdf]:after{content:\"✓\";color:#d4af37;font-size:18px;font-weight:700;position:absolute;top:10px;right:10px}.rl-type[data-v-302dbbdf]{color:#888;margin-bottom:5px;font-size:11px}.rl-name[data-v-302dbbdf]{color:#fff;margin-bottom:8px;font-size:16px;font-weight:700}.rl-desc[data-v-302dbbdf]{color:#aaa;margin-bottom:15px;font-size:13px;line-height:1.4}.rl-cost[data-v-302dbbdf]{color:#ff6b6b;text-align:right;font-family:monospace;font-weight:700}.rl-cost.refund[data-v-302dbbdf]{color:#81c784}.custom-idea-box[data-v-302dbbdf]{background:#00000080;border:1px dashed #888;border-radius:6px;padding:15px}.custom-idea-box textarea[data-v-302dbbdf]{color:#fff;resize:none;background:0 0;border:none;outline:none;width:100%;height:100px;font-family:inherit}.negative-warning[data-v-302dbbdf]{color:#ffb74d;background:#8b000033;border:1px solid #f44;border-radius:6px;margin-bottom:20px;padding:15px;font-weight:700;line-height:1.5}.page-settings[data-v-302dbbdf]{max-width:800px;margin:0 auto;padding:20px}.settings-title[data-v-302dbbdf]{color:#fff;border-bottom:2px solid #8a0303;margin-bottom:10px;padding-bottom:10px;font-size:24px;font-weight:700}.settings-warning[data-v-302dbbdf]{color:#ff6b6b;margin-bottom:30px;font-style:italic}.mbti-diff-grid[data-v-302dbbdf]{grid-template-columns:1fr 1fr;gap:20px;margin-bottom:30px;display:grid}@media (width<=600px){.mbti-diff-grid[data-v-302dbbdf]{grid-template-columns:1fr}}.mbti-box[data-v-302dbbdf],.diff-box[data-v-302dbbdf]{background:#0006;border:1px solid #333;border-radius:8px;padding:20px}.mbti-row[data-v-302dbbdf]{gap:10px;margin-bottom:10px;display:flex}.mbti-btn[data-v-302dbbdf]{color:#888;cursor:pointer;cursor:pointer;background:#111;border:1px solid #444;border-radius:4px;flex:1;padding:8px;transition:all .2s}.mbti-btn.active[data-v-302dbbdf]{color:#81d4fa;background:#81d4fa33;border-color:#81d4fa;font-weight:700}.mbti-result[data-v-302dbbdf]{text-align:center;color:#fff;letter-spacing:4px;text-shadow:0 0 10px #ffffff80;margin-top:15px;font-size:24px;font-weight:900}.diff-btn[data-v-302dbbdf]{color:#aaa;cursor:pointer;text-align:left;background:#111;border:1px solid #444;border-radius:4px;width:100%;margin-bottom:10px;padding:12px;transition:all .2s;display:block}.diff-btn.active[data-v-302dbbdf]{color:#d4af37;background:#d4af371a;border-color:#d4af37;border-left-style:solid;border-left-width:4px;font-weight:700}.toggles-grid[data-v-302dbbdf]{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:30px;display:grid}.toggle-btn[data-v-302dbbdf]{color:#666;text-align:center;cursor:pointer;user-select:none;background:#111;border:1px solid #333;border-radius:6px;padding:15px;font-weight:700;transition:all .3s}.toggle-btn.active[data-v-302dbbdf]{color:#f44;background:#8b000033;border-color:#f44;box-shadow:inset 0 0 15px #f443}.dm-section[data-v-302dbbdf]{background:#0006;border:1px solid #333;border-radius:8px;margin-bottom:40px;padding:20px}.dm-title[data-v-302dbbdf]{color:#d4af37;margin-bottom:10px;font-size:18px;font-weight:700}.dm-desc[data-v-302dbbdf]{color:#aaa;margin-bottom:20px;font-size:14px;font-style:italic}.dm-presets[data-v-302dbbdf]{flex-wrap:wrap;gap:10px;margin-bottom:15px;display:flex}.pm-preset-btn[data-v-302dbbdf]{color:#ccc;cursor:pointer;background:#222;border:1px solid #555;border-radius:20px;padding:8px 16px;transition:all .2s}.pm-preset-btn[data-v-302dbbdf]:hover{background:#444}.pm-preset-btn.active[data-v-302dbbdf]{color:#000;background:#d4af37;border-color:#fff;font-weight:700}.custom-btn[data-v-302dbbdf]{border-style:dashed}.pm-btn-embark[data-v-302dbbdf]{color:#fff;letter-spacing:4px;cursor:pointer;background:linear-gradient(90deg,#8a0303,#f44);border:none;border-radius:8px;width:100%;padding:15px;font-size:18px;font-weight:900;transition:all .3s;display:block;box-shadow:0 5px 15px #8b000080}.pm-btn-embark[data-v-302dbbdf]:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 25px #f449}.pm-btn-embark[data-v-302dbbdf]:disabled{color:#888;cursor:not-allowed;box-shadow:none;background:#555}.fade-enter-active[data-v-302dbbdf],.fade-leave-active[data-v-302dbbdf]{transition:opacity .5s,transform .5s}.fade-enter-from[data-v-302dbbdf],.fade-leave-to[data-v-302dbbdf]{opacity:0;transform:translateY(10px)}.pm-glassmorphism[data-v-ee9d78a2]{-webkit-backdrop-filter:blur(16px)saturate(120%);pointer-events:auto;background:#0f0f12d9;border:1px solid #d4af374d;box-shadow:0 10px 40px #000c}.pm-pda-fab[data-v-ee9d78a2]{cursor:grab;z-index:999999;border:2px solid #d4af37;border-radius:50%;justify-content:center;align-items:center;width:50px;height:50px;display:flex;position:fixed;top:0;left:0}.pm-pda-fab[data-v-ee9d78a2]:active{cursor:grabbing}.fab-icon[data-v-ee9d78a2]{font-size:24px}.fab-badge[data-v-ee9d78a2]{color:#fff;background:#f44;border-radius:50%;justify-content:center;align-items:center;width:20px;height:20px;font-size:12px;font-weight:700;animation:1s infinite pulse;display:flex;position:absolute;top:-5px;right:-5px}.pm-pda-panel[data-v-ee9d78a2]{z-index:999999;color:#ddd;border-radius:16px;flex-direction:column;width:320px;height:550px;font-family:Noto Sans SC,sans-serif;display:flex;position:fixed;top:0;left:0;overflow:hidden}.pda-header[data-v-ee9d78a2]{cursor:grab;background:linear-gradient(#d4af3733,#0000);border-bottom:1px solid #d4af374d;justify-content:space-between;align-items:center;height:40px;padding:0 15px;display:flex}.pda-header[data-v-ee9d78a2]:active{cursor:grabbing}.pda-title[data-v-ee9d78a2]{color:#d4af37;letter-spacing:1px;font-family:Courier New,monospace;font-size:14px;font-weight:700}.pda-close-btn[data-v-ee9d78a2]{color:#888;cursor:pointer;background:0 0;border:none;padding-bottom:8px;font-size:18px}.pda-close-btn[data-v-ee9d78a2]:hover{color:#fff}.pda-screen[data-v-ee9d78a2]{scrollbar-width:none;flex:1;padding:15px;overflow-y:auto}.pda-screen[data-v-ee9d78a2]::-webkit-scrollbar{display:none}.pda-nav[data-v-ee9d78a2]{background:#0009;border-top:1px solid #333;justify-content:space-around;align-items:center;height:50px;display:flex}.nav-btn[data-v-ee9d78a2]{cursor:pointer;opacity:.5;background:0 0;border:none;font-size:20px;transition:all .2s}.nav-btn.active[data-v-ee9d78a2]{opacity:1;text-shadow:0 0 10px #d4af37;transform:scale(1.2)}.pda-section-title[data-v-ee9d78a2]{color:#888;text-transform:uppercase;letter-spacing:2px;border-bottom:1px dashed #444;margin-bottom:10px;padding-bottom:4px;font-size:12px}.pda-text-highlight[data-v-ee9d78a2]{color:#d4af37;font-size:16px;font-weight:700}.pda-stat-row[data-v-ee9d78a2]{background:#ffffff0d;border-radius:4px;justify-content:space-between;margin-bottom:8px;padding:8px 12px;font-family:monospace;font-size:14px;display:flex}.pda-warning-box[data-v-ee9d78a2]{color:#ffb74d;background:#8b000033;border-left:3px solid #f44;padding:10px;font-size:13px;line-height:1.5}.pda-npc-card[data-v-ee9d78a2]{background:#0006;border:1px solid #333;border-radius:8px;margin-bottom:12px;padding:12px}.npc-header[data-v-ee9d78a2]{justify-content:space-between;margin-bottom:8px;display:flex}.npc-name[data-v-ee9d78a2]{color:#81d4fa;font-weight:700}.npc-level[data-v-ee9d78a2]{color:#888;font-family:monospace}.npc-mind-box[data-v-ee9d78a2]{background:#ffffff08;border-left:2px solid #ce93d8;border-radius:4px;margin-bottom:10px;padding:8px}.mind-label[data-v-ee9d78a2]{color:#888;margin-bottom:4px;font-size:10px}.mind-text[data-v-ee9d78a2]{color:#ccc;font-size:13px;font-style:italic}.npc-bars[data-v-ee9d78a2]{grid-template-columns:1fr 1fr;gap:6px;font-family:monospace;font-size:12px;display:grid}.bar-item[data-v-ee9d78a2]{background:#00000080;border-radius:2px;justify-content:space-between;padding:2px 6px;display:flex}.pda-select[data-v-ee9d78a2]{color:#d4af37;background:#111;border:1px solid #444;border-radius:4px;outline:none;width:100%;margin-bottom:15px;padding:8px}.gallery-grid[data-v-ee9d78a2]{grid-template-columns:1fr 1fr;gap:10px;display:grid}.gallery-item[data-v-ee9d78a2]{aspect-ratio:1;border:1px solid #444;border-radius:6px;position:relative;overflow:hidden}.gallery-img[data-v-ee9d78a2]{object-fit:cover;cursor:pointer;width:100%;height:100%;transition:transform .3s}.gallery-img[data-v-ee9d78a2]:hover{transform:scale(1.1)}.gallery-del-btn[data-v-ee9d78a2]{color:#fff;cursor:pointer;background:#8b0000cc;border:none;border-radius:50%;justify-content:center;align-items:center;width:20px;height:20px;font-size:12px;display:flex;position:absolute;top:5px;right:5px}.upload-box[data-v-ee9d78a2]{text-align:center;margin-top:15px}.pda-btn[data-v-ee9d78a2]{color:#d4af37;cursor:pointer;background:#d4af3733;border:1px solid #d4af37;border-radius:20px;padding:8px 20px;font-size:14px;transition:all .2s;display:inline-block}.pda-btn[data-v-ee9d78a2]:hover{color:#000;background:#d4af37}.setting-row[data-v-ee9d78a2]{border-bottom:1px solid #333;justify-content:space-between;align-items:center;padding:12px 0;display:flex}.pda-toggle-btn[data-v-ee9d78a2]{color:#888;cursor:pointer;background:#222;border:1px solid #555;border-radius:12px;padding:4px 12px;font-weight:700;transition:all .3s}.pda-toggle-btn.active[data-v-ee9d78a2]{color:#fff;background:#8a0303;border-color:#f44;box-shadow:0 0 10px #ff444480}.image-preview-overlay[data-v-ee9d78a2]{z-index:9999999;cursor:zoom-out;background:#000000e6;justify-content:center;align-items:center;width:100vw;height:100vh;display:flex;position:fixed;top:0;left:0}.preview-img-full[data-v-ee9d78a2]{border:2px solid #d4af37;border-radius:8px;max-width:90%;max-height:90%;box-shadow:0 0 30px #d4af374d}.pm-hub-overlay[data-v-10f27d5b]{z-index:9999999;backdrop-filter:blur(10px);pointer-events:auto;background:#000000d9;justify-content:center;align-items:center;width:100vw;height:100vh;display:flex;position:fixed;top:0;left:0}.pm-hub-container[data-v-10f27d5b]{color:#e0e0e0;background:radial-gradient(circle,#1a1105f2 0%,#0a0500fa 100%);border:2px solid #d4af37;border-radius:12px;flex-direction:column;width:90vw;max-width:1200px;height:85vh;font-family:Noto Serif SC,serif;display:flex;overflow:hidden;box-shadow:0 0 50px #d4af3733,inset 0 0 30px #000c}.hub-header[data-v-10f27d5b]{background:#00000080;border-bottom:1px solid #d4af374d;justify-content:space-between;align-items:center;height:70px;padding:0 30px;display:flex}.hub-title[data-v-10f27d5b]{align-items:center;gap:15px;display:flex}.hub-icon[data-v-10f27d5b]{font-size:32px}.hub-close-btn[data-v-10f27d5b]{color:#f44;cursor:pointer;background:0 0;border:1px solid #f44;border-radius:4px;padding:8px 20px;font-weight:700;transition:all .3s}.hub-close-btn[data-v-10f27d5b]:hover{color:#fff;background:#f44;box-shadow:0 0 15px #ff444480}.hub-body[data-v-10f27d5b]{flex:1;display:flex;overflow:hidden}.hub-sidebar[data-v-10f27d5b]{background:#0009;border-right:1px solid #333;flex-direction:column;width:220px;padding:20px 0;display:flex}.hub-nav-btn[data-v-10f27d5b]{color:#888;text-align:left;cursor:pointer;background:0 0;border:none;border-left:4px solid #0000;padding:15px 30px;font-family:inherit;font-size:16px;transition:all .3s}.hub-nav-btn[data-v-10f27d5b]:hover{color:#d4af37;background:#d4af371a}.hub-nav-btn.active[data-v-10f27d5b]{color:#d4af37;background:linear-gradient(90deg,#d4af3733,#0000);border-left-color:#d4af37;font-weight:700}.hub-content[data-v-10f27d5b]{flex:1;padding:40px;overflow-y:auto}.panel-title[data-v-10f27d5b]{color:#d4af37;letter-spacing:2px;border-bottom:1px dashed #555;margin-bottom:20px;padding-bottom:10px;font-size:24px}.panel-desc[data-v-10f27d5b]{color:#aaa;margin-bottom:30px;font-size:15px;line-height:1.6}.resource-grid[data-v-10f27d5b]{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;display:grid}.resource-card[data-v-10f27d5b]{background:#ffffff08;border:1px solid #444;border-radius:8px;flex-direction:column;padding:20px;display:flex;position:relative;overflow:hidden}.resource-card[data-v-10f27d5b]:before{content:\"\";background:#d4af37;width:4px;height:100%;position:absolute;top:0;left:0}.res-icon[data-v-10f27d5b]{opacity:.2;font-size:36px;position:absolute;top:20px;right:20px}.res-info[data-v-10f27d5b]{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}.res-name[data-v-10f27d5b]{color:#fff;font-size:18px;font-weight:700}.res-val[data-v-10f27d5b]{color:#d4af37;font-family:monospace;font-size:28px;font-weight:900}.res-desc[data-v-10f27d5b]{color:#888;font-size:13px}.facility-list[data-v-10f27d5b]{flex-direction:column;gap:15px;display:flex}.facility-item[data-v-10f27d5b]{background:#0006;border:1px solid #333;border-radius:6px;justify-content:space-between;align-items:center;padding:15px 20px;display:flex}.fac-name[data-v-10f27d5b]{font-size:16px;font-weight:700}.fac-status[data-v-10f27d5b]{color:#888;font-family:monospace;font-size:16px}.anchor-grid[data-v-10f27d5b]{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;display:grid}.anchor-card[data-v-10f27d5b]{background:#00000080;border:1px solid #444;border-radius:8px;padding:15px;transition:all .3s}.anchor-card.is-anchored[data-v-10f27d5b]{background:#d4af370d;border-color:#d4af37;box-shadow:0 0 15px #d4af371a}.anchor-header[data-v-10f27d5b]{border-bottom:1px solid #333;justify-content:space-between;margin-bottom:10px;padding-bottom:5px;display:flex}.anchor-name[data-v-10f27d5b]{color:#81d4fa;font-size:18px;font-weight:700}.anchor-lv[data-v-10f27d5b]{color:#888;font-family:monospace}.anchor-status[data-v-10f27d5b]{color:#aaa;margin-bottom:15px;font-size:14px}.btn-anchor[data-v-10f27d5b]{color:#81d4fa;cursor:pointer;background:0 0;border:1px solid #81d4fa;border-radius:4px;width:100%;padding:10px;transition:all .2s}.btn-anchor[data-v-10f27d5b]:hover{color:#000;background:#81d4fa}.btn-anchored[data-v-10f27d5b]{color:#d4af37;cursor:not-allowed;background:#d4af3733;border:1px solid #d4af37;border-radius:4px;width:100%;padding:10px}.meta-dm-box[data-v-10f27d5b]{background:#0006;border:1px solid #333;border-radius:8px;gap:20px;margin-bottom:20px;padding:20px;display:flex}.meta-dm-avatar[data-v-10f27d5b]{object-fit:cover;border:2px solid #8a0303;border-radius:50%;width:80px;height:80px}.meta-dm-info[data-v-10f27d5b]{flex-direction:column;flex:1;justify-content:center;gap:8px;display:flex}.meta-dm-name[data-v-10f27d5b]{color:#ff6b6b;font-size:20px;font-weight:700}.meta-dm-affinity[data-v-10f27d5b]{font-size:16px}.meta-dm-topic[data-v-10f27d5b]{color:#aaa;font-size:14px;font-style:italic}.meta-chat-box[data-v-10f27d5b]{flex-direction:column;gap:15px;display:flex}.meta-textarea[data-v-10f27d5b]{color:#fff;resize:none;box-sizing:border-box;background:#ffffff0d;border:1px solid #555;border-radius:6px;outline:none;width:100%;height:120px;padding:15px;font-family:inherit;font-size:15px}.meta-textarea[data-v-10f27d5b]:focus{background:#ffffff1a;border-color:#d4af37}.btn-meta-send[data-v-10f27d5b]{color:#fff;cursor:pointer;background:#8a0303;border:1px solid #f44;border-radius:4px;align-self:flex-end;padding:12px 30px;font-size:16px;font-weight:700;transition:all .2s}.btn-meta-send[data-v-10f27d5b]:hover:not(:disabled){background:#f44;box-shadow:0 0 15px #ff444480}.btn-meta-send[data-v-10f27d5b]:disabled{opacity:.5;cursor:not-allowed}.empty-state[data-v-10f27d5b]{text-align:center;color:#666;border:1px dashed #444;border-radius:8px;padding:40px;font-style:italic}.hub-fade-enter-active[data-v-10f27d5b],.hub-fade-leave-active[data-v-10f27d5b]{transition:opacity .3s,transform .3s}.hub-fade-enter-from[data-v-10f27d5b],.hub-fade-leave-to[data-v-10f27d5b]{opacity:0;transform:scale(.95)}.pm-global-layer[data-v-c942b4c8]{pointer-events:none;z-index:999998;width:100%;height:100%;position:absolute;top:0;left:0}.pm-env-overlay[data-v-c942b4c8]{pointer-events:none;z-index:-1;background:url(\"data:image/svg+xml;utf8,<svg viewBox=\\\"0 0 200 200\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\"><filter id=\\\"noise\\\"><feTurbulence type=\\\"fractalNoise\\\" baseFrequency=\\\"0.8\\\" numOctaves=\\\"3\\\" stitchTiles=\\\"stitch\\\"/></filter><rect width=\\\"100%\\\" height=\\\"100%\\\" filter=\\\"url(%23noise)\\\" opacity=\\\"0.05\\\"/></svg>\");width:100vw;height:100vh;transition:all 2s ease-in-out;position:fixed;top:0;left:0}.env-daylight[data-v-c942b4c8]{background-color:#fffaf00d;box-shadow:inset 0 0 150px #d4af3766}.env-night[data-v-c942b4c8]{background-color:#0006;box-shadow:inset 0 0 200px #000000e6}.env-danger[data-v-c942b4c8]{background-color:#8b00001a;animation:3s infinite alternate danger-pulse-c942b4c8;box-shadow:inset 0 0 150px #8b000099}.env-safe[data-v-c942b4c8]{box-shadow:inset 0 0 100px #8b45134d}@keyframes danger-pulse-c942b4c8{0%{box-shadow:inset 0 0 150px #8b000099}to{box-shadow:inset 0 0 200px #f006}}\n/*$vite$:1*/";
                   document.head.appendChild(style);
                 }
               })();
@@ -3906,144 +3906,142 @@ var $ = /* @__PURE__ */ kt({
 }, yu = {
 	key: "library",
 	class: "library-scene"
-}, bu = {
-	class: "scene-text",
-	style: {
-		position: "relative",
-		"z-index": "1"
-	}
-}, xu = { class: "highlight-gold" }, Su = {
-	key: 2,
-	class: "dm-portrait-box"
-}, Cu = ["src"], wu = {
-	class: "dossier-container",
-	style: {
-		position: "relative",
-		"z-index": "1"
-	}
-}, Tu = { class: "dossier-summary" }, Eu = { class: "ds-type" }, Du = { class: "ds-name" }, Ou = { class: "ds-desc" }, ku = { class: "dossier-content" }, Au = {
+}, bu = { class: "library-layout" }, xu = { class: "scene-text" }, Su = { class: "highlight-gold" }, Cu = {
+	key: 0,
+	class: "dm-portrait-wrapper"
+}, wu = { class: "dm-portrait-box" }, Tu = ["src"], Eu = { class: "dossier-container" }, Du = { class: "dossier-summary" }, Ou = { class: "ds-type" }, ku = { class: "ds-name" }, Au = { class: "ds-desc" }, ju = { class: "dossier-content" }, Mu = {
 	key: 0,
 	class: "cp-quote"
-}, ju = { class: "cp-grid" }, Mu = { class: "cp-box" }, Nu = { class: "cp-box-content" }, Pu = { class: "cp-box" }, Fu = { class: "cp-box-content" }, Iu = { class: "cp-actions" }, Lu = ["onClick"], Ru = {
+}, Nu = { class: "cp-grid" }, Pu = { class: "cp-box" }, Fu = { class: "cp-box-content" }, Iu = { class: "cp-box" }, Lu = { class: "cp-box-content" }, Ru = { class: "cp-actions" }, zu = ["onClick"], Bu = {
 	key: "custom_char",
 	class: "custom-char-page"
-}, zu = {
+}, Vu = {
 	key: 0,
 	class: "roll-screen"
-}, Bu = { key: 0 }, Vu = { key: 1 }, Hu = {
+}, Hu = { key: 0 }, Uu = { key: 1 }, Wu = {
 	key: 1,
 	style: { width: "100%" }
-}, Uu = { class: "points-header" }, Wu = { style: {
+}, Gu = { class: "points-header" }, Ku = { style: {
 	"font-size": "0.8em",
 	opacity: "0.8"
-} }, Gu = { style: { color: "white" } }, Ku = { style: { "text-align": "right" } }, qu = { class: "preset-bar" }, Ju = { style: {
+} }, qu = { style: { color: "white" } }, Ju = { style: { "text-align": "right" } }, Yu = { class: "preset-bar" }, Xu = { style: {
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, Yu = ["value"], Xu = ["disabled"], Zu = { style: {
+} }, Zu = ["value"], Qu = ["disabled"], $u = { style: {
 	display: "flex",
 	gap: "10px",
 	"align-items": "center"
-} }, Qu = ["disabled"], $u = { class: "shop-container" }, ed = { class: "shop-section" }, td = { class: "image-upload-row" }, nd = { style: {
+} }, ed = ["disabled"], td = { class: "shop-container" }, nd = { class: "shop-section" }, rd = { class: "image-upload-row" }, id = { style: {
 	display: "flex",
 	"flex-direction": "column",
 	"align-items": "center",
 	gap: "10px"
-} }, rd = { class: "player-portrait-box" }, id = ["src"], ad = {
+} }, ad = { class: "player-portrait-box" }, od = ["src"], sd = {
 	key: 1,
 	class: "player-portrait-placeholder"
-}, od = { style: {
+}, cd = { style: {
 	display: "flex",
 	"flex-direction": "column",
 	"align-items": "center",
 	gap: "10px"
-} }, sd = {
+} }, ld = {
 	class: "player-portrait-box",
 	style: { "border-color": "#8a0303" }
-}, cd = ["src"], ld = {
+}, ud = ["src"], dd = {
 	key: 1,
 	class: "player-portrait-placeholder",
 	style: { color: "#8a0303" }
-}, ud = { class: "persona-grid" }, dd = { class: "shop-section" }, fd = { class: "stat-grid" }, pd = { class: "stat-row" }, md = { class: "stat-controls" }, hd = ["disabled"], gd = { class: "stat-val" }, _d = ["disabled"], vd = { class: "stat-row" }, yd = { class: "stat-controls" }, bd = ["disabled"], xd = { class: "stat-val" }, Sd = { class: "stat-row" }, Cd = { class: "stat-controls" }, wd = ["disabled"], Td = { class: "stat-val" }, Ed = { class: "stat-row" }, Dd = { class: "stat-controls" }, Od = ["disabled"], kd = { class: "stat-val" }, Ad = ["disabled"], jd = { class: "stat-row" }, Md = { class: "stat-controls" }, Nd = ["disabled"], Pd = { class: "stat-val" }, Fd = ["disabled"], Id = { class: "stat-grid" }, Ld = { class: "stat-name" }, Rd = { class: "stat-controls" }, zd = ["disabled", "onClick"], Bd = { class: "stat-val" }, Vd = ["disabled", "onClick"], Hd = { class: "shop-section" }, Ud = { class: "diy-list" }, Wd = { class: "diy-header" }, Gd = { class: "diy-title" }, Kd = { style: {
+}, fd = { class: "persona-grid" }, pd = { class: "shop-section" }, md = { class: "stat-grid" }, hd = { class: "stat-row" }, gd = { class: "stat-controls" }, _d = ["disabled"], vd = { class: "stat-val" }, yd = ["disabled"], bd = { class: "stat-row" }, xd = { class: "stat-controls" }, Sd = ["disabled"], Cd = { class: "stat-val" }, wd = { class: "stat-row" }, Td = { class: "stat-controls" }, Ed = ["disabled"], Dd = { class: "stat-val" }, Od = { class: "stat-row" }, kd = { class: "stat-controls" }, Ad = ["disabled"], jd = { class: "stat-val" }, Md = ["disabled"], Nd = { class: "stat-row" }, Pd = { class: "stat-controls" }, Fd = ["disabled"], Id = { class: "stat-val" }, Ld = ["disabled"], Rd = { class: "stat-grid" }, zd = { class: "stat-name" }, Bd = { class: "stat-controls" }, Vd = ["disabled", "onClick"], Hd = { class: "stat-val" }, Ud = ["disabled", "onClick"], Wd = { class: "shop-section" }, Gd = { class: "diy-list" }, Kd = { class: "diy-header" }, qd = { class: "diy-title" }, Jd = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, qd = {
+} }, Yd = {
 	key: 0,
 	class: "diy-cost-display"
-}, Jd = ["disabled", "onClick"], Yd = ["onClick"], Xd = ["onUpdate:modelValue", "onInput"], Zd = ["onUpdate:modelValue", "onInput"], Qd = ["onUpdate:modelValue", "onChange"], $d = ["value"], ef = { class: "diy-list" }, tf = { class: "diy-header" }, nf = { class: "diy-title" }, rf = { style: {
+}, Xd = ["disabled", "onClick"], Zd = ["onClick"], Qd = ["onUpdate:modelValue", "onInput"], $d = ["onUpdate:modelValue", "onInput"], ef = ["onUpdate:modelValue", "onChange"], tf = ["value"], nf = { class: "diy-list" }, rf = { class: "diy-header" }, af = { class: "diy-title" }, of = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, af = {
+} }, sf = {
 	key: 0,
 	class: "diy-cost-display"
-}, of = ["disabled", "onClick"], sf = ["onClick"], cf = ["onUpdate:modelValue", "onInput"], lf = ["onUpdate:modelValue", "onInput"], uf = ["onUpdate:modelValue", "onChange"], df = ["value"], ff = { class: "diy-list" }, pf = { class: "diy-header" }, mf = { class: "diy-title" }, hf = { style: {
+}, cf = ["disabled", "onClick"], lf = ["onClick"], uf = ["onUpdate:modelValue", "onInput"], df = ["onUpdate:modelValue", "onInput"], ff = ["onUpdate:modelValue", "onChange"], pf = ["value"], mf = { class: "diy-list" }, hf = { class: "diy-header" }, gf = { class: "diy-title" }, _f = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, gf = {
+} }, vf = {
 	key: 0,
 	class: "diy-cost-display"
-}, _f = ["disabled", "onClick"], vf = ["onClick"], yf = ["onUpdate:modelValue", "onInput"], bf = ["onUpdate:modelValue", "onInput"], xf = ["onUpdate:modelValue", "onChange"], Sf = ["value"], Cf = { class: "diy-list" }, wf = { class: "diy-header" }, Tf = { class: "diy-title" }, Ef = { style: {
+}, yf = ["disabled", "onClick"], bf = ["onClick"], xf = ["onUpdate:modelValue", "onInput"], Sf = ["onUpdate:modelValue", "onInput"], Cf = ["onUpdate:modelValue", "onChange"], wf = ["value"], Tf = { class: "diy-list" }, Ef = { class: "diy-header" }, Df = { class: "diy-title" }, Of = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Df = {
+} }, kf = {
 	key: 0,
 	class: "diy-cost-display"
-}, Of = ["disabled", "onClick"], kf = ["onClick"], Af = ["onUpdate:modelValue", "onInput"], jf = ["onUpdate:modelValue", "onInput"], Mf = ["onUpdate:modelValue", "onChange"], Nf = ["value"], Pf = { class: "diy-list" }, Ff = { class: "diy-header" }, If = { class: "diy-title" }, Lf = { style: {
+}, Af = ["disabled", "onClick"], jf = ["onClick"], Mf = ["onUpdate:modelValue", "onInput"], Nf = ["onUpdate:modelValue", "onInput"], Pf = ["onUpdate:modelValue", "onChange"], Ff = ["value"], If = { class: "diy-list" }, Lf = { class: "diy-header" }, Rf = { class: "diy-title" }, zf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Rf = {
+} }, Bf = {
 	key: 0,
 	class: "diy-cost-display"
-}, zf = ["disabled", "onClick"], Bf = ["onClick"], Vf = ["onUpdate:modelValue", "onInput"], Hf = ["onUpdate:modelValue", "onInput"], Uf = ["onUpdate:modelValue", "onChange"], Wf = ["value"], Gf = { class: "diy-list" }, Kf = { class: "diy-header" }, qf = {
+}, Vf = ["disabled", "onClick"], Hf = ["onClick"], Uf = ["onUpdate:modelValue", "onInput"], Wf = ["onUpdate:modelValue", "onInput"], Gf = ["onUpdate:modelValue", "onChange"], Kf = ["value"], qf = { class: "diy-list" }, Jf = { class: "diy-header" }, Yf = {
 	class: "diy-title",
 	style: { color: "var(--pm-dark-red)" }
-}, Jf = { style: {
+}, Xf = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px"
-} }, Yf = {
+} }, Zf = {
 	key: 0,
 	class: "diy-cost-display refund"
-}, Xf = ["disabled", "onClick"], Zf = ["onClick"], Qf = ["onUpdate:modelValue", "onInput"], $f = ["onUpdate:modelValue", "onInput"], ep = ["onUpdate:modelValue", "onChange"], tp = ["value"], np = { class: "shop-section" }, rp = { class: "rl-grid" }, ip = ["onClick"], ap = { class: "rl-type" }, op = { class: "rl-name" }, sp = { class: "rl-desc" }, cp = { class: "rl-cost" }, lp = { class: "rl-grid" }, up = ["onClick"], dp = { class: "rl-type" }, fp = { class: "rl-name" }, pp = { class: "rl-desc" }, mp = { class: "rl-cost" }, hp = { class: "rl-grid" }, gp = ["onClick"], _p = { class: "rl-type" }, vp = { class: "rl-name" }, yp = { class: "rl-desc" }, bp = { class: "rl-cost" }, xp = { class: "rl-grid" }, Sp = ["onClick"], Cp = { class: "rl-type" }, wp = { class: "rl-name" }, Tp = { class: "rl-desc" }, Ep = { class: "rl-cost refund" }, Dp = { class: "shop-section" }, Op = { style: {
+}, Qf = ["disabled", "onClick"], $f = ["onClick"], ep = ["onUpdate:modelValue", "onInput"], tp = ["onUpdate:modelValue", "onInput"], np = ["onUpdate:modelValue", "onChange"], rp = ["value"], ip = { class: "shop-section" }, ap = { class: "rl-grid" }, op = ["onClick"], sp = { class: "rl-type" }, cp = { class: "rl-name" }, lp = { class: "rl-desc" }, up = { class: "rl-cost" }, dp = { class: "rl-grid" }, fp = ["onClick"], pp = { class: "rl-type" }, mp = { class: "rl-name" }, hp = { class: "rl-desc" }, gp = { class: "rl-cost" }, _p = { class: "rl-grid" }, vp = ["onClick"], yp = { class: "rl-type" }, bp = { class: "rl-name" }, xp = { class: "rl-desc" }, Sp = { class: "rl-cost" }, Cp = { class: "rl-grid" }, wp = ["onClick"], Tp = { class: "rl-type" }, Ep = { class: "rl-name" }, Dp = { class: "rl-desc" }, Op = { class: "rl-cost refund" }, kp = { class: "shop-section" }, Ap = { style: {
 	display: "flex",
 	"align-items": "center",
 	gap: "10px",
 	cursor: "pointer",
 	"font-weight": "bold",
 	"margin-bottom": "15px"
-} }, kp = {
+} }, jp = {
 	key: 0,
 	style: {
 		display: "grid",
 		gap: "15px"
 	}
-}, Ap = { class: "shop-section" }, jp = { class: "custom-idea-box" }, Mp = { style: {
+}, Mp = { class: "shop-section" }, Np = { class: "custom-idea-box" }, Pp = { style: {
 	"text-align": "center",
 	"margin-top": "40px"
-} }, Np = {
+} }, Fp = {
 	key: 0,
 	class: "negative-warning"
-}, Pp = {
+}, Ip = {
 	key: 1,
 	style: {
 		color: "red",
 		"font-weight": "bold",
 		"margin-top": "15px"
 	}
-}, Fp = ["disabled"], Ip = {
+}, Lp = ["disabled"], Rp = {
 	key: "settings",
 	class: "page-settings"
-}, Lp = { style: {
+}, zp = { style: {
 	"font-size": "1.2em",
 	color: "var(--pm-dark-red)",
 	"font-weight": "bold",
 	"margin-bottom": "30px"
-} }, Rp = { style: { "text-decoration": "underline" } }, zp = { class: "mbti-diff-grid" }, Bp = { class: "mbti-box" }, Vp = { class: "mbti-row" }, Hp = { class: "mbti-row" }, Up = { class: "mbti-row" }, Wp = { class: "mbti-row" }, Gp = { class: "mbti-result" }, Kp = { class: "diff-box" }, qp = { class: "toggles-grid" }, Jp = ["onClick"], Yp = { class: "dm-section" }, Xp = { class: "dm-presets" }, Zp = ["disabled"], Qp = /* @__PURE__ */ Zn({
+} }, Bp = { style: { "text-decoration": "underline" } }, Vp = { class: "mbti-diff-grid" }, Hp = { class: "mbti-box" }, Up = { class: "mbti-row" }, Wp = { class: "mbti-row" }, Gp = { class: "mbti-row" }, Kp = { class: "mbti-row" }, qp = { class: "mbti-result" }, Jp = { class: "diff-box" }, Yp = { class: "toggles-grid" }, Xp = ["onClick"], Zp = { class: "dm-section" }, Qp = { class: "dm-presets" }, $p = ["disabled"], em = {
+	key: 1,
+	style: {
+		width: "100%",
+		"text-align": "center",
+		"margin-top": "40px",
+		"padding-bottom": "20px",
+		position: "relative",
+		"z-index": "10"
+	}
+}, tm = /* @__PURE__ */ Zn({
 	__name: "SetupModal",
 	setup(e) {
 		let t = /* @__PURE__ */ V(!0), n = /* @__PURE__ */ V("check"), r = /* @__PURE__ */ V(!1), i = /* @__PURE__ */ V(!1), a = /* @__PURE__ */ V(!1), o = /* @__PURE__ */ V(!1), s = /* @__PURE__ */ V(""), c = /* @__PURE__ */ V(""), l = /* @__PURE__ */ V(localStorage.getItem("pm_dm_avatar_v1") || "https://files.catbox.moe/wfjl6u.png"), u = /* @__PURE__ */ V(null), d = () => {
@@ -4918,19 +4916,6 @@ var $ = /* @__PURE__ */ kt({
 					onClick: Re
 				}, "一键复制并关闭")
 			])])) : Y("", !0),
-			n.value !== "check" && n.value !== "already_started" && n.value !== "transition" ? (G(), K("button", {
-				key: 1,
-				class: "pm-btn-small",
-				style: {
-					position: "absolute",
-					top: "20px",
-					left: "20px",
-					"z-index": "300",
-					background: "rgba(255,255,255,0.9)",
-					"box-shadow": "0 2px 10px rgba(0,0,0,0.2)"
-				},
-				onClick: _
-			}, " ◀ 返回上一步 ")) : Y("", !0),
 			Yi(Ba, {
 				name: "fade",
 				mode: "out-in"
@@ -4989,13 +4974,13 @@ var $ = /* @__PURE__ */ kt({
 						J("按钮，可一键脱下装备或使用背包道具。")
 					]),
 					q("li", null, [q("strong", null, "极端复杂的世界模拟与情感管理系统："), J("你所遇见的，都是一个个鲜活的个体，请好好善待她/他/它们吧~")])
-				], -1)]])) : n.value === "library" ? (G(), K("div", yu, [q("div", bu, [
+				], -1)]])) : n.value === "library" ? (G(), K("div", yu, [q("div", bu, [q("div", xu, [
 					x.value ? (G(), K(W, { key: 1 }, [
 						w[64] ||= q("p", null, "骨骼断裂的回音与神经烧焦的幻痛依然在脑海深处轰鸣。但此刻，你只是静静地站在温暖的图书室内，面前是那位戴着单片眼镜的少女。", -1),
 						q("p", null, [
 							q("q", null, [
 								w[60] ||= J("“死亡并未宽恕你，", -1),
-								q("span", xu, P(b.value ? b.value : "伤痕累累的轮回者"), 1),
+								q("span", Su, P(b.value ? b.value : "伤痕累累的轮回者"), 1),
 								w[61] ||= J("。”", -1)
 							]),
 							w[62] ||= J("她微微欠身，目光扫过你灵魂上烙印的扭曲伤痕，", -1),
@@ -5025,32 +5010,31 @@ var $ = /* @__PURE__ */ kt({
 					])], -1),
 					w[66] ||= q("p", null, [q("q", null, "在这里，每一次挥剑都可能伴随着肢体的断裂，每一次绝望都可能引来卡门的低语。但请记住，你遇到的每一个灵魂，都有着自己的恐惧与渴望。你的选择，将决定他们是成为你的利刃，还是刺入你后背的毒牙。")], -1),
 					w[67] ||= q("p", null, "幻影散去，她重新坐回桌后，从抽屉里取出了五枚质地各异的档案夹，在桌面上依次排开。", -1),
-					w[68] ||= q("p", null, [q("q", null, "那么，演出即将开始。请翻开你的‘档案’，决定你将以何种姿态，降临这片绝望的焦土。")], -1),
-					l.value ? (G(), K("div", Su, [q("img", {
-						src: l.value,
-						class: "dm-portrait-img",
-						alt: "DM Sprite",
-						onError: w[1] ||= (e) => l.value = ""
-					}, null, 40, Cu)])) : Y("", !0)
-				]), q("div", wu, [(G(), K(W, null, U(T, (e) => q("details", {
+					w[68] ||= q("p", null, [q("q", null, "那么，演出即将开始。请翻开你的‘档案’，决定你将以何种姿态，降临这片绝望的焦土。")], -1)
+				]), l.value ? (G(), K("div", Cu, [q("div", wu, [q("img", {
+					src: l.value,
+					class: "dm-portrait-img",
+					alt: "DM Sprite",
+					onError: w[1] ||= (e) => l.value = ""
+				}, null, 40, Tu)])])) : Y("", !0)]), q("div", Eu, [(G(), K(W, null, U(T, (e) => q("details", {
 					key: e.id,
 					name: "char-accordion",
 					class: "dossier-folder"
-				}, [q("summary", Tu, [
-					q("span", Eu, P(e.type), 1),
-					q("span", Du, P(e.name), 1),
-					q("span", Ou, P(e.desc), 1)
-				]), q("div", ku, [
-					e.quote ? (G(), K("div", Au, [q("q", null, P(e.quote), 1)])) : Y("", !0),
-					q("div", ju, [q("div", Mu, [w[69] ||= q("div", { class: "cp-box-title" }, "核心概念", -1), q("div", Nu, P(e.concept), 1)]), q("div", Pu, [w[70] ||= q("div", { class: "cp-box-title" }, "生存难度", -1), q("div", Fu, P(e.diff), 1)])]),
-					q("div", Iu, [q("div", {
+				}, [q("summary", Du, [
+					q("span", Ou, P(e.type), 1),
+					q("span", ku, P(e.name), 1),
+					q("span", Au, P(e.desc), 1)
+				]), q("div", ju, [
+					e.quote ? (G(), K("div", Mu, [q("q", null, P(e.quote), 1)])) : Y("", !0),
+					q("div", Nu, [q("div", Pu, [w[69] ||= q("div", { class: "cp-box-title" }, "核心概念", -1), q("div", Fu, P(e.concept), 1)]), q("div", Iu, [w[70] ||= q("div", { class: "cp-box-title" }, "生存难度", -1), q("div", Lu, P(e.diff), 1)])]),
+					q("div", Ru, [q("div", {
 						class: "cp-btn-confirm",
 						onClick: (t) => oe(e.id)
-					}, "确认降临", 8, Lu)])
+					}, "确认降临", 8, zu)])
 				])])), 64)), q("div", {
 					class: "dossier-custom",
 					onClick: Ce
-				}, [...w[71] ||= [q("span", { class: "ds-type" }, "CUSTOM", -1), q("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (G(), K("div", Ru, [se.value === "pre-roll" ? (G(), K("div", zu, [
+				}, [...w[71] ||= [q("span", { class: "ds-type" }, "CUSTOM", -1), q("span", { class: "ds-name" }, "命运掷骰 (自定义车卡)", -1)]])])])) : n.value === "custom_char" ? (G(), K("div", Bu, [se.value === "pre-roll" ? (G(), K("div", Vu, [
 					w[72] ||= q("h2", {
 						class: "settings-title",
 						style: { border: "none" }
@@ -5062,13 +5046,13 @@ var $ = /* @__PURE__ */ kt({
 					q("div", {
 						class: A([{ rolling: D.value }, "roll-btn"]),
 						onClick: ke
-					}, [D.value ? (G(), K("span", Vu, "...")) : (G(), K("span", Bu, "ROLL"))], 2)
-				])) : Y("", !0), se.value === "shopping" ? (G(), K("div", Hu, [
-					q("div", Uu, [q("div", null, [w[75] ||= q("h2", null, "黑市终端", -1), q("div", Wu, [w[74] ||= J("商店品质评级: ", -1), q("span", Gu, P(Ae.value) + " (Roll: " + P(le.value) + ")", 1)])]), q("div", Ku, [w[76] ||= q("div", { style: {
+					}, [D.value ? (G(), K("span", Uu, "...")) : (G(), K("span", Hu, "ROLL"))], 2)
+				])) : Y("", !0), se.value === "shopping" ? (G(), K("div", Wu, [
+					q("div", Gu, [q("div", null, [w[75] ||= q("h2", null, "黑市终端", -1), q("div", Ku, [w[74] ||= J("商店品质评级: ", -1), q("span", qu, P(Ae.value) + " (Roll: " + P(le.value) + ")", 1)])]), q("div", Ju, [w[76] ||= q("div", { style: {
 						"font-size": "0.8em",
 						opacity: "0.8"
 					} }, "剩余可用点数", -1), q("div", { class: A([{ negative: Me.value < 0 }, "points-display"]) }, P(Me.value), 3)])]),
-					q("div", qu, [q("div", Ju, [
+					q("div", Yu, [q("div", Xu, [
 						w[78] ||= q("span", { style: {
 							"font-weight": "bold",
 							color: "var(--pm-dark-red)"
@@ -5079,13 +5063,13 @@ var $ = /* @__PURE__ */ kt({
 						}, [w[77] ||= q("option", { value: -1 }, "-- 选择预设 --", -1), (G(!0), K(W, null, U(ye.value, (e, t) => (G(), K("option", {
 							key: t,
 							value: t
-						}, P(e.name), 9, Yu))), 128))], 512), [[Vo, be.value]]),
+						}, P(e.name), 9, Zu))), 128))], 512), [[Vo, be.value]]),
 						q("button", {
 							disabled: be.value === -1,
 							class: "preset-btn",
 							onClick: I
-						}, "读取", 8, Xu)
-					]), q("div", Zu, [H(q("input", {
+						}, "读取", 8, Qu)
+					]), q("div", $u, [H(q("input", {
 						"onUpdate:modelValue": w[3] ||= (e) => F.value = e,
 						type: "text",
 						class: "preset-input",
@@ -5094,17 +5078,17 @@ var $ = /* @__PURE__ */ kt({
 						disabled: !F.value,
 						class: "preset-btn",
 						onClick: Se
-					}, "保存当前配置", 8, Qu)])]),
-					q("div", $u, [
-						q("div", ed, [
+					}, "保存当前配置", 8, ed)])]),
+					q("div", td, [
+						q("div", nd, [
 							w[79] ||= q("div", { class: "shop-title" }, "身份档案 (Profile)", -1),
-							q("div", td, [q("div", nd, [
-								q("div", rd, [p.value ? (G(), K("img", {
+							q("div", rd, [q("div", id, [
+								q("div", ad, [p.value ? (G(), K("img", {
 									key: 0,
 									src: p.value,
 									class: "player-portrait-img",
 									onError: w[4] ||= (e) => p.value = ""
-								}, null, 40, id)) : (G(), K("div", ad, "玩家无图"))]),
+								}, null, 40, od)) : (G(), K("div", sd, "玩家无图"))]),
 								q("input", {
 									ref_key: "playerFileInput",
 									ref: m,
@@ -5122,13 +5106,13 @@ var $ = /* @__PURE__ */ kt({
 									class: "pm-btn-small",
 									onClick: w[5] ||= (e) => p.value = ""
 								}, "🗑️ 清除")) : Y("", !0)
-							]), q("div", od, [
-								q("div", sd, [l.value ? (G(), K("img", {
+							]), q("div", cd, [
+								q("div", ld, [l.value ? (G(), K("img", {
 									key: 0,
 									src: l.value,
 									class: "player-portrait-img",
 									onError: w[6] ||= (e) => l.value = ""
-								}, null, 40, cd)) : (G(), K("div", ld, "DM无图"))]),
+								}, null, 40, ud)) : (G(), K("div", dd, "DM无图"))]),
 								q("input", {
 									ref_key: "dmFileInput",
 									ref: u,
@@ -5155,7 +5139,7 @@ var $ = /* @__PURE__ */ kt({
 									onClick: w[7] ||= (e) => l.value = ""
 								}, "🗑️ 清除")) : Y("", !0)
 							])]),
-							q("div", ud, [
+							q("div", fd, [
 								H(q("input", {
 									"onUpdate:modelValue": w[8] ||= (e) => fe.name = e,
 									type: "text",
@@ -5186,35 +5170,35 @@ var $ = /* @__PURE__ */ kt({
 								"margin-top": "5px"
 							} }, "* 开局降临坐标将由命运（系统）在L巢废墟及周边区域中随机空投。", -1)
 						]),
-						q("div", dd, [
+						q("div", pd, [
 							w[91] ||= q("div", { class: "shop-title" }, "常驻市价表 (基础属性)", -1),
-							q("div", fd, [
-								q("div", pd, [
+							q("div", md, [
+								q("div", hd, [
 									w[81] ||= q("span", { class: "stat-name" }, "等级 (Max 30)", -1),
-									q("div", md, [
+									q("div", gd, [
 										q("button", {
 											disabled: O.level <= 1,
 											class: "stat-btn",
 											onClick: w[12] ||= (e) => O.level--
-										}, "-", 8, hd),
-										q("span", gd, P(O.level), 1),
+										}, "-", 8, _d),
+										q("span", vd, P(O.level), 1),
 										q("button", {
 											disabled: O.level >= 30,
 											class: "stat-btn",
 											onClick: w[13] ||= (e) => O.level++
-										}, "+", 8, _d)
+										}, "+", 8, yd)
 									]),
 									w[82] ||= q("span", { class: "stat-cost" }, "100/级", -1)
 								]),
-								q("div", vd, [
+								q("div", bd, [
 									w[83] ||= q("span", { class: "stat-name" }, "最大 HP", -1),
-									q("div", yd, [
+									q("div", xd, [
 										q("button", {
 											disabled: O.hp <= 10,
 											class: "stat-btn",
 											onClick: w[14] ||= (e) => O.hp -= 10
-										}, "-", 8, bd),
-										q("span", xd, P(O.hp), 1),
+										}, "-", 8, Sd),
+										q("span", Cd, P(O.hp), 1),
 										q("button", {
 											class: "stat-btn",
 											onClick: w[15] ||= (e) => O.hp += 10
@@ -5222,15 +5206,15 @@ var $ = /* @__PURE__ */ kt({
 									]),
 									w[84] ||= q("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								q("div", Sd, [
+								q("div", wd, [
 									w[85] ||= q("span", { class: "stat-name" }, "最大 MP", -1),
-									q("div", Cd, [
+									q("div", Td, [
 										q("button", {
 											disabled: O.mp <= 10,
 											class: "stat-btn",
 											onClick: w[16] ||= (e) => O.mp -= 10
-										}, "-", 8, wd),
-										q("span", Td, P(O.mp), 1),
+										}, "-", 8, Ed),
+										q("span", Dd, P(O.mp), 1),
 										q("button", {
 											class: "stat-btn",
 											onClick: w[17] ||= (e) => O.mp += 10
@@ -5238,37 +5222,37 @@ var $ = /* @__PURE__ */ kt({
 									]),
 									w[86] ||= q("span", { class: "stat-cost" }, "20/点", -1)
 								]),
-								q("div", Ed, [
+								q("div", Od, [
 									w[87] ||= q("span", { class: "stat-name" }, "理智值 (SP)", -1),
-									q("div", Dd, [
+									q("div", kd, [
 										q("button", {
 											disabled: O.sp <= 10,
 											class: "stat-btn",
 											onClick: w[18] ||= (e) => O.sp--
-										}, "-", 8, Od),
-										q("span", kd, P(O.sp), 1),
+										}, "-", 8, Ad),
+										q("span", jd, P(O.sp), 1),
 										q("button", {
 											disabled: O.sp >= 50,
 											class: "stat-btn",
 											onClick: w[19] ||= (e) => O.sp++
-										}, "+", 8, Ad)
+										}, "+", 8, Md)
 									]),
 									w[88] ||= q("span", { class: "stat-cost" }, "50/点", -1)
 								]),
-								q("div", jd, [
+								q("div", Nd, [
 									w[89] ||= q("span", { class: "stat-name" }, "理智稳定性", -1),
-									q("div", Md, [
+									q("div", Pd, [
 										q("button", {
 											disabled: O.stability <= 10,
 											class: "stat-btn",
 											onClick: w[20] ||= (e) => O.stability -= 5
-										}, "-", 8, Nd),
-										q("span", Pd, P(O.stability), 1),
+										}, "-", 8, Fd),
+										q("span", Id, P(O.stability), 1),
 										q("button", {
 											disabled: O.stability >= 100,
 											class: "stat-btn",
 											onClick: w[21] ||= (e) => O.stability += 5
-										}, "+", 8, Fd)
+										}, "+", 8, Ld)
 									]),
 									w[90] ||= q("span", { class: "stat-cost" }, "30/点", -1)
 								])
@@ -5280,7 +5264,7 @@ var $ = /* @__PURE__ */ kt({
 									"font-size": "1.2em"
 								}
 							}, "六维属性 (10-15: 50点/级 | 16-20: 150点/级)", -1),
-							q("div", Id, [(G(), K(W, null, U([
+							q("div", Rd, [(G(), K(W, null, U([
 								"str",
 								"dex",
 								"con",
@@ -5290,21 +5274,21 @@ var $ = /* @__PURE__ */ kt({
 							], (e) => q("div", {
 								key: e,
 								class: "stat-row"
-							}, [q("span", Ld, P(ue[e]), 1), q("div", Rd, [
+							}, [q("span", zd, P(ue[e]), 1), q("div", Bd, [
 								q("button", {
 									disabled: O[e] <= 10,
 									class: "stat-btn",
 									onClick: (t) => O[e]--
-								}, "-", 8, zd),
-								q("span", Bd, P(O[e]), 1),
+								}, "-", 8, Vd),
+								q("span", Hd, P(O[e]), 1),
 								q("button", {
 									disabled: O[e] >= 20,
 									class: "stat-btn",
 									onClick: (t) => O[e]++
-								}, "+", 8, Vd)
+								}, "+", 8, Ud)
 							])])), 64))])
 						]),
-						q("div", Hd, [
+						q("div", Wd, [
 							w[105] ||= q("div", { class: "shop-title" }, "DIY 锻造与深渊契约端口", -1),
 							w[106] ||= q("div", { class: "dm-warning" }, [
 								q("strong", null, "【跑团娘的善意提醒】"),
@@ -5312,7 +5296,7 @@ var $ = /* @__PURE__ */ kt({
 								q("br"),
 								q("span", { style: { color: "var(--pm-dark-red)" } }, "* 提示：如果你不知道具体的伤害数值（如1d8），可以只写效果，AI 会根据你选择的评级自动为你补全合理的数值。")
 							], -1),
-							q("div", Ud, [
+							q("div", Gd, [
 								w[94] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5326,18 +5310,18 @@ var $ = /* @__PURE__ */ kt({
 									key: "skill" + t,
 									class: "diy-box"
 								}, [
-									q("div", Wd, [q("span", Gd, "技能 #" + P(t + 1), 1), q("div", Kd, [
-										e.rolled ? (G(), K("span", qd, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", Kd, [q("span", qd, "技能 #" + P(t + 1), 1), q("div", Jd, [
+										e.rolled ? (G(), K("span", Yd, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => _e("skills", t)
-										}, "评估代价 (Roll)", 8, Jd),
+										}, "评估代价 (Roll)", 8, Xd),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => ge("skills", t)
-										}, "×", 8, Yd)
+										}, "×", 8, Zd)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5345,13 +5329,13 @@ var $ = /* @__PURE__ */ kt({
 										class: "pm-input",
 										placeholder: "技能名称 (如: 拔刀斩)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Xd), [[Z, e.name]]),
+									}, null, 40, Qd), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "技能效果与消耗描述... (如: 消耗5MP，造成1d10伤害)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Zd), [[Z, e.desc]]),
+									}, null, 40, $d), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5359,14 +5343,14 @@ var $ = /* @__PURE__ */ kt({
 									}, [w[93] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(pe, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, P(e.label), 9, $d)), 64))], 40, Qd), [[Vo, e.tier]])
+									}, P(e.label), 9, tf)), 64))], 40, ef), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: w[22] ||= (e) => he("skills")
 								}, "➕ 添加自定义技能")
 							]),
-							q("div", ef, [
+							q("div", nf, [
 								w[96] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5380,18 +5364,18 @@ var $ = /* @__PURE__ */ kt({
 									key: "trait" + t,
 									class: "diy-box"
 								}, [
-									q("div", tf, [q("span", nf, "特质 #" + P(t + 1), 1), q("div", rf, [
-										e.rolled ? (G(), K("span", af, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", rf, [q("span", af, "特质 #" + P(t + 1), 1), q("div", of, [
+										e.rolled ? (G(), K("span", sf, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => _e("traits", t)
-										}, "评估代价 (Roll)", 8, of),
+										}, "评估代价 (Roll)", 8, cf),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => ge("traits", t)
-										}, "×", 8, sf)
+										}, "×", 8, lf)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5399,13 +5383,13 @@ var $ = /* @__PURE__ */ kt({
 										class: "pm-input",
 										placeholder: "特质名称 (如: 异想体血肉共生)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, cf), [[Z, e.name]]),
+									}, null, 40, uf), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "特质效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, lf), [[Z, e.desc]]),
+									}, null, 40, df), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5413,14 +5397,14 @@ var $ = /* @__PURE__ */ kt({
 									}, [w[95] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(pe, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, P(e.label), 9, df)), 64))], 40, uf), [[Vo, e.tier]])
+									}, P(e.label), 9, pf)), 64))], 40, ff), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: w[23] ||= (e) => he("traits")
 								}, "➕ 添加自定义特质")
 							]),
-							q("div", ff, [
+							q("div", mf, [
 								w[98] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5434,18 +5418,18 @@ var $ = /* @__PURE__ */ kt({
 									key: "weapon" + t,
 									class: "diy-box"
 								}, [
-									q("div", pf, [q("span", mf, "武器 #" + P(t + 1), 1), q("div", hf, [
-										e.rolled ? (G(), K("span", gf, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", hf, [q("span", gf, "武器 #" + P(t + 1), 1), q("div", _f, [
+										e.rolled ? (G(), K("span", vf, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => _e("weapons", t)
-										}, "评估代价 (Roll)", 8, _f),
+										}, "评估代价 (Roll)", 8, yf),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => ge("weapons", t)
-										}, "×", 8, vf)
+										}, "×", 8, bf)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5453,13 +5437,13 @@ var $ = /* @__PURE__ */ kt({
 										class: "pm-input",
 										placeholder: "武器名称 (如: ALEPH级·拟态幼体)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, yf), [[Z, e.name]]),
+									}, null, 40, xf), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "武器效果与【副作用代价】描述... (未写明伤害骰子AI将自动补全)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, bf), [[Z, e.desc]]),
+									}, null, 40, Sf), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5467,14 +5451,14 @@ var $ = /* @__PURE__ */ kt({
 									}, [w[97] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(pe, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, P(e.label), 9, Sf)), 64))], 40, xf), [[Vo, e.tier]])
+									}, P(e.label), 9, wf)), 64))], 40, Cf), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: w[24] ||= (e) => he("weapons")
 								}, "➕ 添加自定义武器")
 							]),
-							q("div", Cf, [
+							q("div", Tf, [
 								w[100] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5488,18 +5472,18 @@ var $ = /* @__PURE__ */ kt({
 									key: "armor" + t,
 									class: "diy-box"
 								}, [
-									q("div", wf, [q("span", Tf, "防具 #" + P(t + 1), 1), q("div", Ef, [
-										e.rolled ? (G(), K("span", Df, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", Ef, [q("span", Df, "防具 #" + P(t + 1), 1), q("div", Of, [
+										e.rolled ? (G(), K("span", kf, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => _e("armors", t)
-										}, "评估代价 (Roll)", 8, Of),
+										}, "评估代价 (Roll)", 8, Af),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => ge("armors", t)
-										}, "×", 8, kf)
+										}, "×", 8, jf)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5507,13 +5491,13 @@ var $ = /* @__PURE__ */ kt({
 										class: "pm-input",
 										placeholder: "防具名称 (如: W公司清剿服)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Af), [[Z, e.name]]),
+									}, null, 40, Mf), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "防具效果与代价描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, jf), [[Z, e.desc]]),
+									}, null, 40, Nf), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5521,14 +5505,14 @@ var $ = /* @__PURE__ */ kt({
 									}, [w[99] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(pe, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, P(e.label), 9, Nf)), 64))], 40, Mf), [[Vo, e.tier]])
+									}, P(e.label), 9, Ff)), 64))], 40, Pf), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: w[25] ||= (e) => he("armors")
 								}, "➕ 添加自定义防具")
 							]),
-							q("div", Pf, [
+							q("div", If, [
 								w[102] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5542,18 +5526,18 @@ var $ = /* @__PURE__ */ kt({
 									key: "item" + t,
 									class: "diy-box"
 								}, [
-									q("div", Ff, [q("span", If, "道具 #" + P(t + 1), 1), q("div", Lf, [
-										e.rolled ? (G(), K("span", Rf, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
+									q("div", Lf, [q("span", Rf, "道具 #" + P(t + 1), 1), q("div", zf, [
+										e.rolled ? (G(), K("span", Bf, "-" + P(e.cost) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											onClick: (e) => _e("items", t)
-										}, "评估代价 (Roll)", 8, zf),
+										}, "评估代价 (Roll)", 8, Vf),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => ge("items", t)
-										}, "×", 8, Bf)
+										}, "×", 8, Hf)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5561,13 +5545,13 @@ var $ = /* @__PURE__ */ kt({
 										class: "pm-input",
 										placeholder: "道具名称 (如: K公司高浓度安瓿)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Vf), [[Z, e.name]]),
+									}, null, 40, Uf), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "道具效果描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Hf), [[Z, e.desc]]),
+									}, null, 40, Wf), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5575,14 +5559,14 @@ var $ = /* @__PURE__ */ kt({
 									}, [w[101] ||= q("option", { value: "" }, "-- 选择评级区间 --", -1), (G(), K(W, null, U(pe, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, P(e.label), 9, Wf)), 64))], 40, Uf), [[Vo, e.tier]])
+									}, P(e.label), 9, Kf)), 64))], 40, Gf), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
 									onClick: w[26] ||= (e) => he("items")
 								}, "➕ 添加自定义道具")
 							]),
-							q("div", Gf, [
+							q("div", qf, [
 								w[104] ||= q("div", {
 									class: "shop-title",
 									style: {
@@ -5601,19 +5585,19 @@ var $ = /* @__PURE__ */ kt({
 										background: "rgba(139, 0, 0, 0.02)"
 									}
 								}, [
-									q("div", Kf, [q("span", qf, "业障 #" + P(t + 1), 1), q("div", Jf, [
-										e.rolled ? (G(), K("span", Yf, "+" + P(e.refund) + " 点", 1)) : Y("", !0),
+									q("div", Jf, [q("span", Yf, "业障 #" + P(t + 1), 1), q("div", Xf, [
+										e.rolled ? (G(), K("span", Zf, "+" + P(e.refund) + " 点", 1)) : Y("", !0),
 										q("button", {
 											disabled: !e.tier,
 											class: "diy-roll-btn",
 											style: { background: "var(--pm-dark-red)" },
 											onClick: (e) => _e("karmas", t)
-										}, "评估返还 (Roll)", 8, Xf),
+										}, "评估返还 (Roll)", 8, Qf),
 										q("button", {
 											class: "btn-remove-diy",
 											title: "删除",
 											onClick: (e) => ge("karmas", t)
-										}, "×", 8, Zf)
+										}, "×", 8, $f)
 									])]),
 									H(q("input", {
 										"onUpdate:modelValue": (t) => e.name = t,
@@ -5621,13 +5605,13 @@ var $ = /* @__PURE__ */ kt({
 										class: "pm-input",
 										placeholder: "业障名称 (如: 注定的扭曲)",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, Qf), [[Z, e.name]]),
+									}, null, 40, ep), [[Z, e.name]]),
 									H(q("textarea", {
 										"onUpdate:modelValue": (t) => e.desc = t,
 										class: "pm-textarea",
 										placeholder: "业障的负面效果与触发条件描述...",
 										onInput: (t) => e.rolled = !1
-									}, null, 40, $f), [[Z, e.desc]]),
+									}, null, 40, tp), [[Z, e.desc]]),
 									H(q("select", {
 										"onUpdate:modelValue": (t) => e.tier = t,
 										class: "pm-select",
@@ -5635,7 +5619,7 @@ var $ = /* @__PURE__ */ kt({
 									}, [w[103] ||= q("option", { value: "" }, "-- 选择痛苦评级 --", -1), (G(), K(W, null, U(me, (e) => q("option", {
 										key: e.label,
 										value: e.label
-									}, P(e.label), 9, tp)), 64))], 40, ep), [[Vo, e.tier]])
+									}, P(e.label), 9, rp)), 64))], 40, np), [[Vo, e.tier]])
 								]))), 128)),
 								q("button", {
 									class: "btn-add-diy",
@@ -5647,7 +5631,7 @@ var $ = /* @__PURE__ */ kt({
 								}, "➕ 添加自定义业障")
 							])
 						]),
-						q("div", np, [
+						q("div", ip, [
 							w[107] ||= q("div", { class: "shop-title" }, "本局限定商品 (Roguelike 刷新池)", -1),
 							w[108] ||= q("p", { style: {
 								color: "#555",
@@ -5658,65 +5642,65 @@ var $ = /* @__PURE__ */ kt({
 								color: "var(--pm-text)",
 								"margin-bottom": "10px"
 							} }, "特殊背景 / 特质", -1),
-							q("div", rp, [(G(!0), K(W, null, U(M.backgrounds, (e) => (G(), K("div", {
+							q("div", ap, [(G(!0), K(W, null, U(M.backgrounds, (e) => (G(), K("div", {
 								key: e.name,
 								class: A([{ selected: Pe("backgrounds", e) }, "rl-card"]),
 								onClick: (t) => Ne("backgrounds", e)
 							}, [
-								q("div", ap, P(e.type), 1),
-								q("div", op, P(e.name), 1),
-								q("div", sp, P(e.desc), 1),
-								q("div", cp, "-" + P(e.cost) + " 点", 1)
-							], 10, ip))), 128))]),
+								q("div", sp, P(e.type), 1),
+								q("div", cp, P(e.name), 1),
+								q("div", lp, P(e.desc), 1),
+								q("div", up, "-" + P(e.cost) + " 点", 1)
+							], 10, op))), 128))]),
 							w[110] ||= q("h4", { style: {
 								color: "var(--pm-text)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "稀有遗物 / E.G.O", -1),
-							q("div", lp, [(G(!0), K(W, null, U(M.egos, (e) => (G(), K("div", {
+							q("div", dp, [(G(!0), K(W, null, U(M.egos, (e) => (G(), K("div", {
 								key: e.name,
 								class: A([{ selected: Pe("egos", e) }, "rl-card"]),
 								onClick: (t) => Ne("egos", e)
 							}, [
-								q("div", dp, P(e.type), 1),
-								q("div", fp, P(e.name), 1),
-								q("div", pp, P(e.desc), 1),
-								q("div", mp, "-" + P(e.cost) + " 点", 1)
-							], 10, up))), 128))]),
+								q("div", pp, P(e.type), 1),
+								q("div", mp, P(e.name), 1),
+								q("div", hp, P(e.desc), 1),
+								q("div", gp, "-" + P(e.cost) + " 点", 1)
+							], 10, fp))), 128))]),
 							w[111] ||= q("h4", { style: {
 								color: "var(--pm-text)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "失落战技 / 奇点魔法", -1),
-							q("div", hp, [(G(!0), K(W, null, U(M.skills, (e) => (G(), K("div", {
+							q("div", _p, [(G(!0), K(W, null, U(M.skills, (e) => (G(), K("div", {
 								key: e.name,
 								class: A([{ selected: Pe("skills", e) }, "rl-card"]),
 								onClick: (t) => Ne("skills", e)
 							}, [
-								q("div", _p, P(e.type), 1),
-								q("div", vp, P(e.name), 1),
-								q("div", yp, P(e.desc), 1),
-								q("div", bp, "-" + P(e.cost) + " 点", 1)
-							], 10, gp))), 128))]),
+								q("div", yp, P(e.type), 1),
+								q("div", bp, P(e.name), 1),
+								q("div", xp, P(e.desc), 1),
+								q("div", Sp, "-" + P(e.cost) + " 点", 1)
+							], 10, vp))), 128))]),
 							w[112] ||= q("h4", { style: {
 								color: "var(--pm-dark-red)",
 								"margin-top": "25px",
 								"margin-bottom": "10px"
 							} }, "专属业障 (必须至少选择一项，可返还点数)", -1),
-							q("div", xp, [(G(!0), K(W, null, U(M.karmas, (e) => (G(), K("div", {
+							q("div", Cp, [(G(!0), K(W, null, U(M.karmas, (e) => (G(), K("div", {
 								key: e.name,
 								class: A([{ selected: Pe("karmas", e) }, "rl-card"]),
 								onClick: (t) => Ne("karmas", e)
 							}, [
-								q("div", Cp, P(e.type), 1),
-								q("div", wp, P(e.name), 1),
-								q("div", Tp, P(e.desc), 1),
-								q("div", Ep, "+" + P(e.refund) + " 点", 1)
-							], 10, Sp))), 128))])
+								q("div", Tp, P(e.type), 1),
+								q("div", Ep, P(e.name), 1),
+								q("div", Dp, P(e.desc), 1),
+								q("div", Op, "+" + P(e.refund) + " 点", 1)
+							], 10, wp))), 128))])
 						]),
-						q("div", Dp, [
+						q("div", kp, [
 							w[114] ||= q("div", { class: "shop-title" }, "同行伙伴 (Companion) - 消耗 2000 点", -1),
-							q("label", Op, [H(q("input", {
+							q("label", Ap, [H(q("input", {
 								"onUpdate:modelValue": w[28] ||= (e) => k.enabled = e,
 								type: "checkbox",
 								style: {
@@ -5724,7 +5708,7 @@ var $ = /* @__PURE__ */ kt({
 									height: "20px"
 								}
 							}, null, 512), [[Ro, k.enabled]]), w[113] ||= J(" 携带一名自定义伙伴降临废土 ", -1)]),
-							k.enabled ? (G(), K("div", kp, [H(q("input", {
+							k.enabled ? (G(), K("div", jp, [H(q("input", {
 								"onUpdate:modelValue": w[29] ||= (e) => k.name = e,
 								type: "text",
 								class: "pm-input",
@@ -5737,7 +5721,7 @@ var $ = /* @__PURE__ */ kt({
 								placeholder: "伙伴的身份、能力与性格设定..."
 							}, null, 512), [[Z, k.desc]])])) : Y("", !0)
 						]),
-						q("div", Ap, [
+						q("div", Mp, [
 							w[115] ||= q("div", { class: "shop-title" }, "完全自定义议约", -1),
 							w[116] ||= q("p", { style: {
 								color: "#555",
@@ -5747,30 +5731,30 @@ var $ = /* @__PURE__ */ kt({
 								q("br"),
 								J("注意：DM 会在游戏开始后为你进行点数估价，并强行缝合一个恶毒的专属业障。")
 							], -1),
-							q("div", jp, [H(q("textarea", {
+							q("div", Np, [H(q("textarea", {
 								"onUpdate:modelValue": w[31] ||= (e) => ve.value = e,
 								placeholder: "在此输入你的自定义设定..."
 							}, null, 512), [[Z, ve.value]])])
 						])
 					]),
-					q("div", Mp, [
-						Me.value < 0 ? (G(), K("div", Np, [...w[117] ||= [
+					q("div", Pp, [
+						Me.value < 0 ? (G(), K("div", Fp, [...w[117] ||= [
 							J(" 【跑团娘的嘲弄】哎呀呀，点数透支了呢？没关系，你可以带着这身华丽的负债降临。", -1),
 							q("br", null, null, -1),
 							J(" 只不过……开局负数骰子意味着你已经被都市的厄运标记。准备好在『心灵镜牢』里打一辈子黑工还债了吗，可怜的耗子？ ", -1)
 						]])) : Y("", !0),
-						!Fe.value && !ve.value ? (G(), K("p", Pp, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : Y("", !0),
+						!Fe.value && !ve.value ? (G(), K("p", Ip, "必须至少选择一项【专属业障】（商店或DIY），或填写【自定义议约】。")) : Y("", !0),
 						q("button", {
 							disabled: !Fe.value && !ve.value,
 							class: "pm-btn-embark",
 							onClick: Ie
-						}, "确认降临姿态", 8, Fp)
+						}, "确认降临姿态", 8, Lp)
 					])
-				])) : Y("", !0)])) : n.value === "settings" ? (G(), K("div", Ip, [
+				])) : Y("", !0)])) : n.value === "settings" ? (G(), K("div", Rp, [
 					w[125] ||= q("div", { class: "settings-title" }, "契约与法则", -1),
 					w[126] ||= q("div", { class: "settings-warning" }, "“深渊的边界由你划定。一旦铭刻，不可反悔。”", -1),
-					q("div", Lp, [w[118] ||= J("已选定降临姿态：", -1), q("span", Rp, P(ae.value), 1)]),
-					q("div", zp, [q("div", Bp, [
+					q("div", zp, [w[118] ||= J("已选定降临姿态：", -1), q("span", Bp, P(ae.value), 1)]),
+					q("div", Vp, [q("div", Hp, [
 						w[119] ||= q("div", {
 							class: "dm-title",
 							style: {
@@ -5783,36 +5767,36 @@ var $ = /* @__PURE__ */ kt({
 							color: "#666",
 							"margin-bottom": "15px"
 						} }, "决定你的理智恢复机制与卡门破防逻辑。", -1),
-						q("div", Vp, [q("button", {
+						q("div", Up, [q("button", {
 							class: A([{ active: L.ei === "E" }, "mbti-btn"]),
 							onClick: w[32] ||= (e) => L.ei = "E"
 						}, "E (外向)", 2), q("button", {
 							class: A([{ active: L.ei === "I" }, "mbti-btn"]),
 							onClick: w[33] ||= (e) => L.ei = "I"
 						}, "I (内向)", 2)]),
-						q("div", Hp, [q("button", {
+						q("div", Wp, [q("button", {
 							class: A([{ active: L.sn === "S" }, "mbti-btn"]),
 							onClick: w[34] ||= (e) => L.sn = "S"
 						}, "S (感觉)", 2), q("button", {
 							class: A([{ active: L.sn === "N" }, "mbti-btn"]),
 							onClick: w[35] ||= (e) => L.sn = "N"
 						}, "N (直觉)", 2)]),
-						q("div", Up, [q("button", {
+						q("div", Gp, [q("button", {
 							class: A([{ active: L.tf === "T" }, "mbti-btn"]),
 							onClick: w[36] ||= (e) => L.tf = "T"
 						}, "T (思考)", 2), q("button", {
 							class: A([{ active: L.tf === "F" }, "mbti-btn"]),
 							onClick: w[37] ||= (e) => L.tf = "F"
 						}, "F (情感)", 2)]),
-						q("div", Wp, [q("button", {
+						q("div", Kp, [q("button", {
 							class: A([{ active: L.jp === "J" }, "mbti-btn"]),
 							onClick: w[38] ||= (e) => L.jp = "J"
 						}, "J (判断)", 2), q("button", {
 							class: A([{ active: L.jp === "P" }, "mbti-btn"]),
 							onClick: w[39] ||= (e) => L.jp = "P"
 						}, "P (知觉)", 2)]),
-						q("div", Gp, P(Le.value), 1)
-					]), q("div", Kp, [
+						q("div", qp, P(Le.value), 1)
+					]), q("div", Jp, [
 						w[121] ||= q("div", {
 							class: "dm-title",
 							style: {
@@ -5842,15 +5826,15 @@ var $ = /* @__PURE__ */ kt({
 							onClick: w[43] ||= (e) => R.value = "地狱 (Hell)"
 						}, "地狱 (Hell) - 机制杀频发，卡门时刻注视", 2)
 					])]),
-					q("div", qp, [(G(!0), K(W, null, U(E.sensitiveToggles, (e, t) => (G(), K("div", {
+					q("div", Yp, [(G(!0), K(W, null, U(E.sensitiveToggles, (e, t) => (G(), K("div", {
 						key: t,
 						class: A(["toggle-btn", { active: e }]),
 						onClick: (n) => E.sensitiveToggles[t] = !e
-					}, P(String(t).replace(/_/g, " / ")), 11, Jp))), 128))]),
-					q("div", Yp, [
+					}, P(String(t).replace(/_/g, " / ")), 11, Xp))), 128))]),
+					q("div", Zp, [
 						w[123] ||= q("div", { class: "dm-title" }, "观测者化身设定", -1),
 						w[124] ||= q("div", { class: "dm-desc" }, "“接下来，我的化身将与你同行，但她只会作为无情的DM存在。你希望她用什么态度来见证你的挣扎？”", -1),
-						q("div", Xp, [
+						q("div", Qp, [
 							q("button", {
 								class: A([{ active: E.dmPersonality === "三无机娘，冷酷客观，毫无感情波动" }, "pm-preset-btn"]),
 								onClick: w[44] ||= (e) => E.dmPersonality = "三无机娘，冷酷客观，毫无感情波动"
@@ -5885,26 +5869,30 @@ var $ = /* @__PURE__ */ kt({
 						disabled: r.value,
 						class: "pm-btn-embark",
 						onClick: ze
-					}, P(r.value ? "引擎连接中..." : "踏上旅程"), 9, Zp)
+					}, P(r.value ? "引擎连接中..." : "踏上旅程"), 9, $p)
 				])) : Y("", !0)]),
 				_: 1
-			})
+			}),
+			n.value !== "check" && n.value !== "already_started" && n.value !== "transition" ? (G(), K("div", em, [q("button", {
+				class: "pm-btn-back-stealth",
+				onClick: _
+			}, " [ ◀ 重新选择命运轨迹 ] ")])) : Y("", !0)
 		])) : Y("", !0);
 	}
-}), $p = (e, t) => {
+}), nm = (e, t) => {
 	let n = e.__vccOpts || e;
 	for (let [e, r] of t) n[e] = r;
 	return n;
-}, em = /* @__PURE__ */ $p(Qp, [["__scopeId", "data-v-c36a5467"]]), tm = {
+}, rm = /* @__PURE__ */ nm(tm, [["__scopeId", "data-v-302dbbdf"]]), im = {
 	key: 0,
 	class: "fab-badge"
-}, nm = { class: "pda-screen" }, rm = { class: "pda-tab-content" }, im = { class: "pda-text-highlight" }, am = { class: "pda-stat-row" }, om = { style: { color: "#ff6b6b" } }, sm = { class: "pda-stat-row" }, cm = { style: { color: "#81c784" } }, lm = { class: "pda-warning-box" }, um = { class: "pda-tab-content" }, dm = {
+}, am = { class: "pda-screen" }, om = { class: "pda-tab-content" }, sm = { class: "pda-text-highlight" }, cm = { class: "pda-stat-row" }, lm = { style: { color: "#ff6b6b" } }, um = { class: "pda-stat-row" }, dm = { style: { color: "#81c784" } }, fm = { class: "pda-warning-box" }, pm = { class: "pda-tab-content" }, mm = {
 	key: 0,
 	class: "pda-empty"
-}, fm = { class: "npc-header" }, pm = { class: "npc-name" }, mm = { class: "npc-level" }, hm = { class: "npc-mind-box" }, gm = { class: "mind-text" }, _m = { class: "npc-bars" }, vm = { class: "bar-item" }, ym = { class: "bar-item" }, bm = { class: "bar-item" }, xm = { class: "bar-item" }, Sm = { class: "pda-tab-content" }, Cm = ["value"], wm = {
+}, hm = { class: "npc-header" }, gm = { class: "npc-name" }, _m = { class: "npc-level" }, vm = { class: "npc-mind-box" }, ym = { class: "mind-text" }, bm = { class: "npc-bars" }, xm = { class: "bar-item" }, Sm = { class: "bar-item" }, Cm = { class: "bar-item" }, wm = { class: "bar-item" }, Tm = { class: "pda-tab-content" }, Em = ["value"], Dm = {
 	key: 0,
 	style: { "margin-top": "15px" }
-}, Tm = { class: "gallery-grid" }, Em = ["src", "onClick"], Dm = ["onClick"], Om = { class: "upload-box" }, km = { class: "pda-tab-content" }, Am = { class: "setting-row" }, jm = { class: "setting-row" }, Mm = { class: "pda-nav" }, Nm = ["src"], Pm = /* @__PURE__ */ $p(/* @__PURE__ */ Zn({
+}, Om = { class: "gallery-grid" }, km = ["src", "onClick"], Am = ["onClick"], jm = { class: "upload-box" }, Mm = { class: "pda-tab-content" }, Nm = { class: "setting-row" }, Pm = { class: "setting-row" }, Fm = { class: "pda-nav" }, Im = ["src"], Lm = /* @__PURE__ */ nm(/* @__PURE__ */ Zn({
 	__name: "PDA",
 	setup(e) {
 		let t = /* @__PURE__ */ V(!1), n = /* @__PURE__ */ V(window.innerWidth - 350), r = /* @__PURE__ */ V(100), i = !1, a = 0, o = 0, s = 0, c = 0, l = () => {
@@ -5965,40 +5953,40 @@ var $ = /* @__PURE__ */ kt({
 				title: "最小化",
 				onClick: l
 			}, "_")], 32),
-			q("div", nm, [
-				H(q("div", rm, [
+			q("div", am, [
+				H(q("div", om, [
 					i[13] ||= q("div", { class: "pda-section-title" }, "当前坐标", -1),
-					q("div", im, P(h.value?.当前处境?.当前地点 || "信号丢失"), 1),
+					q("div", sm, P(h.value?.当前处境?.当前地点 || "信号丢失"), 1),
 					i[14] ||= q("div", {
 						class: "pda-section-title",
 						style: { "margin-top": "15px" }
 					}, "生命体征", -1),
-					q("div", am, [i[11] ||= q("span", null, "HP", -1), q("span", om, P(h.value?.玩家角色?.基础属性?.当前HP || 0) + " / " + P(h.value?.玩家角色?.基础属性?.最大HP || 0), 1)]),
-					q("div", sm, [i[12] ||= q("span", null, "SP", -1), q("span", cm, P(h.value?.玩家角色?.基础属性?.理智值 || 0) + " / 20", 1)]),
+					q("div", cm, [i[11] ||= q("span", null, "HP", -1), q("span", lm, P(h.value?.玩家角色?.基础属性?.当前HP || 0) + " / " + P(h.value?.玩家角色?.基础属性?.最大HP || 0), 1)]),
+					q("div", um, [i[12] ||= q("span", null, "SP", -1), q("span", dm, P(h.value?.玩家角色?.基础属性?.理智值 || 0) + " / 20", 1)]),
 					i[15] ||= q("div", {
 						class: "pda-section-title",
 						style: { "margin-top": "15px" }
 					}, "系统警告", -1),
-					q("div", lm, P(h.value?.当前处境?.战术聚焦 || "一切正常。"), 1)
+					q("div", fm, P(h.value?.当前处境?.战术聚焦 || "一切正常。"), 1)
 				], 512), [[io, p.value === "status"]]),
-				H(q("div", um, [
+				H(q("div", pm, [
 					i[21] ||= q("div", { class: "pda-section-title" }, "心理监控网络 (Mind Tracker)", -1),
-					g.value.length === 0 ? (G(), K("div", dm, "暂无已录入的实体信号。")) : Y("", !0),
+					g.value.length === 0 ? (G(), K("div", mm, "暂无已录入的实体信号。")) : Y("", !0),
 					(G(!0), K(W, null, U(g.value, (e) => (G(), K("div", {
 						key: e.name,
 						class: "pda-npc-card"
 					}, [
-						q("div", fm, [q("span", pm, P(e.name), 1), q("span", mm, "Lv." + P(e.data?.等级 || "?"), 1)]),
-						q("div", hm, [i[16] ||= q("div", { class: "mind-label" }, "截获心里话：", -1), q("div", gm, "\"" + P(e.data?.心里话 || "...") + "\"", 1)]),
-						q("div", _m, [
-							q("div", vm, [i[17] ||= q("span", { style: { color: "#ffb74d" } }, "好感", -1), q("span", null, P(e.data?.好感度 || 0), 1)]),
-							q("div", ym, [i[18] ||= q("span", { style: { color: "#81d4fa" } }, "信任", -1), q("span", null, P(e.data?.信任度 || 0), 1)]),
-							q("div", bm, [i[19] ||= q("span", { style: { color: "#ce93d8" } }, "恐惧", -1), q("span", null, P(e.data?.恐惧度 || 0), 1)]),
-							q("div", xm, [i[20] ||= q("span", { style: { color: "#ff6b6b" } }, "欲望", -1), q("span", null, P(e.data?.欲望度 || 0), 1)])
+						q("div", hm, [q("span", gm, P(e.name), 1), q("span", _m, "Lv." + P(e.data?.等级 || "?"), 1)]),
+						q("div", vm, [i[16] ||= q("div", { class: "mind-label" }, "截获心里话：", -1), q("div", ym, "\"" + P(e.data?.心里话 || "...") + "\"", 1)]),
+						q("div", bm, [
+							q("div", xm, [i[17] ||= q("span", { style: { color: "#ffb74d" } }, "好感", -1), q("span", null, P(e.data?.好感度 || 0), 1)]),
+							q("div", Sm, [i[18] ||= q("span", { style: { color: "#81d4fa" } }, "信任", -1), q("span", null, P(e.data?.信任度 || 0), 1)]),
+							q("div", Cm, [i[19] ||= q("span", { style: { color: "#ce93d8" } }, "恐惧", -1), q("span", null, P(e.data?.恐惧度 || 0), 1)]),
+							q("div", wm, [i[20] ||= q("span", { style: { color: "#ff6b6b" } }, "欲望", -1), q("span", null, P(e.data?.欲望度 || 0), 1)])
 						])
 					]))), 128))
 				], 512), [[io, p.value === "mind"]]),
-				H(q("div", Sm, [
+				H(q("div", Tm, [
 					i[24] ||= q("div", { class: "pda-section-title" }, "实体影像记录 (Gallery)", -1),
 					H(q("select", {
 						"onUpdate:modelValue": i[0] ||= (e) => _.value = e,
@@ -6006,18 +5994,18 @@ var $ = /* @__PURE__ */ kt({
 					}, [i[22] ||= q("option", { value: "" }, "-- 选择要查看的实体 --", -1), (G(!0), K(W, null, U(g.value, (e) => (G(), K("option", {
 						key: e.name,
 						value: e.name
-					}, P(e.name), 9, Cm))), 128))], 512), [[Vo, _.value]]),
-					_.value ? (G(), K("div", wm, [q("div", Tm, [(G(!0), K(W, null, U(x(_.value), (e, t) => (G(), K("div", {
+					}, P(e.name), 9, Em))), 128))], 512), [[Vo, _.value]]),
+					_.value ? (G(), K("div", Dm, [q("div", Om, [(G(!0), K(W, null, U(x(_.value), (e, t) => (G(), K("div", {
 						key: t,
 						class: "gallery-item"
 					}, [q("img", {
 						src: e,
 						class: "gallery-img",
 						onClick: (t) => y.value = e
-					}, null, 8, Em), q("button", {
+					}, null, 8, km), q("button", {
 						class: "gallery-del-btn",
 						onClick: (e) => C(_.value, t)
-					}, "×", 8, Dm)]))), 128))]), q("div", Om, [q("input", {
+					}, "×", 8, Am)]))), 128))]), q("div", jm, [q("input", {
 						id: "pda-upload",
 						type: "file",
 						accept: "image/*",
@@ -6028,13 +6016,13 @@ var $ = /* @__PURE__ */ kt({
 						class: "pda-btn"
 					}, "📁 上传新影像", -1)])])) : Y("", !0)
 				], 512), [[io, p.value === "gallery"]]),
-				H(q("div", km, [
+				H(q("div", Mm, [
 					i[27] ||= q("div", { class: "pda-section-title" }, "终端设置", -1),
-					q("div", Am, [i[25] ||= q("span", null, "沉浸式废土滤镜", -1), q("button", {
+					q("div", Nm, [i[25] ||= q("span", null, "沉浸式废土滤镜", -1), q("button", {
 						class: A(["pda-toggle-btn", { active: Ut($).ui.environmentOverlay }]),
 						onClick: i[2] ||= (e) => Ut($).ui.environmentOverlay = !Ut($).ui.environmentOverlay
 					}, P(Ut($).ui.environmentOverlay ? "ON" : "OFF"), 3)]),
-					q("div", jm, [i[26] ||= q("span", null, "真·全屏模式", -1), q("button", {
+					q("div", Pm, [i[26] ||= q("span", null, "真·全屏模式", -1), q("button", {
 						class: A(["pda-toggle-btn", { active: Ut($).ui.isFullscreen }]),
 						onClick: i[3] ||= (...e) => Ut(is) && Ut(is)(...e)
 					}, P(Ut($).ui.isFullscreen ? "ON" : "OFF"), 3)]),
@@ -6044,7 +6032,7 @@ var $ = /* @__PURE__ */ kt({
 					}, " 提示：开启全屏模式将隐藏浏览器地址栏，获得最佳沉浸体验。开启废土滤镜将在底层背景上叠加极昼/极夜特效。 ", -1)
 				], 512), [[io, p.value === "settings"]])
 			]),
-			q("div", Mm, [
+			q("div", Fm, [
 				q("button", {
 					class: A(["nav-btn", { active: p.value === "status" }]),
 					onClick: i[4] ||= (e) => p.value = "status"
@@ -6069,7 +6057,7 @@ var $ = /* @__PURE__ */ kt({
 			}, [q("img", {
 				src: y.value,
 				class: "preview-img-full"
-			}, null, 8, Nm)])) : Y("", !0)
+			}, null, 8, Im)])) : Y("", !0)
 		], 4)) : (G(), K("div", {
 			key: 0,
 			class: "pm-pda-fab pm-glassmorphism",
@@ -6077,22 +6065,22 @@ var $ = /* @__PURE__ */ kt({
 			title: "双击展开观测者终端",
 			onMousedown: u,
 			onDblclick: l
-		}, [i[9] ||= q("div", { class: "fab-icon" }, "👁️", -1), m.value ? (G(), K("div", tm, "!")) : Y("", !0)], 36));
+		}, [i[9] ||= q("div", { class: "fab-icon" }, "👁️", -1), m.value ? (G(), K("div", im, "!")) : Y("", !0)], 36));
 	}
-}), [["__scopeId", "data-v-ee9d78a2"]]), Fm = {
+}), [["__scopeId", "data-v-ee9d78a2"]]), Rm = {
 	key: 0,
 	class: "pm-hub-overlay"
-}, Im = { class: "pm-hub-container pm-glassmorphism" }, Lm = { class: "hub-body" }, Rm = { class: "hub-sidebar" }, zm = { class: "hub-content" }, Bm = { class: "hub-tab-panel" }, Vm = { class: "resource-grid" }, Hm = { class: "resource-card" }, Um = { class: "res-info" }, Wm = { class: "res-val" }, Gm = { class: "resource-card" }, Km = { class: "res-info" }, qm = { class: "res-val" }, Jm = { class: "facility-list" }, Ym = { class: "facility-item" }, Xm = { class: "fac-status" }, Zm = { class: "facility-item" }, Qm = { class: "fac-status" }, $m = { class: "facility-item" }, eh = {
+}, zm = { class: "pm-hub-container pm-glassmorphism" }, Bm = { class: "hub-body" }, Vm = { class: "hub-sidebar" }, Hm = { class: "hub-content" }, Um = { class: "hub-tab-panel" }, Wm = { class: "resource-grid" }, Gm = { class: "resource-card" }, Km = { class: "res-info" }, qm = { class: "res-val" }, Jm = { class: "resource-card" }, Ym = { class: "res-info" }, Xm = { class: "res-val" }, Zm = { class: "facility-list" }, Qm = { class: "facility-item" }, $m = { class: "fac-status" }, eh = { class: "facility-item" }, th = { class: "fac-status" }, nh = { class: "facility-item" }, rh = {
 	class: "fac-status",
 	style: { color: "#d4af37" }
-}, th = { class: "hub-tab-panel" }, nh = {
+}, ih = { class: "hub-tab-panel" }, ah = {
 	key: 0,
 	class: "empty-state"
-}, rh = { class: "anchor-grid" }, ih = { class: "anchor-header" }, ah = { class: "anchor-name" }, oh = { class: "anchor-lv" }, sh = { class: "anchor-status" }, ch = { style: { color: "#ffb74d" } }, lh = { class: "anchor-action" }, uh = {
+}, oh = { class: "anchor-grid" }, sh = { class: "anchor-header" }, ch = { class: "anchor-name" }, lh = { class: "anchor-lv" }, uh = { class: "anchor-status" }, dh = { style: { color: "#ffb74d" } }, fh = { class: "anchor-action" }, ph = {
 	key: 0,
 	class: "btn-anchored",
 	disabled: ""
-}, dh = ["onClick"], fh = { class: "hub-tab-panel" }, ph = { class: "meta-dm-box" }, mh = ["src"], hh = { class: "meta-dm-info" }, gh = { class: "meta-dm-affinity" }, _h = { class: "meta-dm-topic" }, vh = { class: "meta-chat-box" }, yh = ["disabled"], bh = /* @__PURE__ */ $p(/* @__PURE__ */ Zn({
+}, mh = ["onClick"], hh = { class: "hub-tab-panel" }, gh = { class: "meta-dm-box" }, _h = ["src"], vh = { class: "meta-dm-info" }, yh = { class: "meta-dm-affinity" }, bh = { class: "meta-dm-topic" }, xh = { class: "meta-chat-box" }, Sh = ["disabled"], Ch = /* @__PURE__ */ nm(/* @__PURE__ */ Zn({
 	__name: "Hub",
 	setup(e) {
 		let t = /* @__PURE__ */ V("overview"), n = /* @__PURE__ */ V(""), r = /* @__PURE__ */ V(localStorage.getItem("pm_dm_avatar_v1") || "https://files.catbox.moe/wfjl6u.png"), i = X(() => rs($.latestMesId)), a = X(() => i.value?.时空枢纽_基地 || {}), o = X(() => i.value?.核心同伴 || {}), s = X(() => a.value?.观测者互动_Meta?.跑团娘好感度 || 0), c = () => {
@@ -6103,7 +6091,7 @@ var $ = /* @__PURE__ */ kt({
 			n.value && (ts(`【Meta互动：观测者之厢】\n玩家在基地中对跑团娘说：\n"${n.value}"\n\n(请DM以跑团娘的身份直接回应，并根据交流内容更新跑团娘好感度或扣除资源)`), n.value = "", c());
 		};
 		return (e, i) => (G(), Wi(Ba, { name: "hub-fade" }, {
-			default: wn(() => [Ut($).ui.hubVisible ? (G(), K("div", Fm, [q("div", Im, [q("div", { class: "hub-header" }, [i[5] ||= q("div", { class: "hub-title" }, [q("span", { class: "hub-icon" }, "🏛️"), q("div", null, [q("div", { style: {
+			default: wn(() => [Ut($).ui.hubVisible ? (G(), K("div", Rm, [q("div", zm, [q("div", { class: "hub-header" }, [i[5] ||= q("div", { class: "hub-title" }, [q("span", { class: "hub-icon" }, "🏛️"), q("div", null, [q("div", { style: {
 				"font-size": "24px",
 				"font-weight": "900",
 				"letter-spacing": "4px",
@@ -6115,7 +6103,7 @@ var $ = /* @__PURE__ */ kt({
 			} }, "TIME-SPACE HUB / LOOP ANCHOR")])], -1), q("button", {
 				class: "hub-close-btn",
 				onClick: c
-			}, "返回废土 ✖")]), q("div", Lm, [q("div", Rm, [
+			}, "返回废土 ✖")]), q("div", Bm, [q("div", Vm, [
 				q("button", {
 					class: A(["hub-nav-btn", { active: t.value === "overview" }]),
 					onClick: i[0] ||= (e) => t.value = "overview"
@@ -6128,66 +6116,66 @@ var $ = /* @__PURE__ */ kt({
 					class: A(["hub-nav-btn", { active: t.value === "meta" }]),
 					onClick: i[2] ||= (e) => t.value = "meta"
 				}, "👁️ 观测者之厢", 2)
-			]), q("div", zm, [
-				H(q("div", Bm, [
+			]), q("div", Hm, [
+				H(q("div", Um, [
 					i[15] ||= q("h2", { class: "panel-title" }, "资源储备 (Cross-Loop Resources)", -1),
-					q("div", Vm, [q("div", Hm, [
+					q("div", Wm, [q("div", Gm, [
 						i[7] ||= q("div", {
 							class: "res-icon",
 							style: { color: "#81d4fa" }
 						}, "💠", -1),
-						q("div", Um, [i[6] ||= q("div", { class: "res-name" }, "时空结晶", -1), q("div", Wm, P(a.value?.资源储备?.时空结晶 || 0), 1)]),
+						q("div", Km, [i[6] ||= q("div", { class: "res-name" }, "时空结晶", -1), q("div", qm, P(a.value?.资源储备?.时空结晶 || 0), 1)]),
 						i[8] ||= q("div", { class: "res-desc" }, "跨越周目的特殊货币，用于锚定灵魂或升级基地。", -1)
-					]), q("div", Gm, [
+					]), q("div", Jm, [
 						i[10] ||= q("div", {
 							class: "res-icon",
 							style: { color: "#d4af37" }
 						}, "🧩", -1),
-						q("div", Km, [i[9] ||= q("div", { class: "res-name" }, "真相碎片", -1), q("div", qm, P(a.value?.资源储备?.真相碎片 || 0), 1)]),
+						q("div", Ym, [i[9] ||= q("div", { class: "res-name" }, "真相碎片", -1), q("div", Xm, P(a.value?.资源储备?.真相碎片 || 0), 1)]),
 						i[11] ||= q("div", { class: "res-desc" }, "拼凑世界真相的关键，集齐可解锁真结局路线。", -1)
 					])]),
 					i[16] ||= q("h2", {
 						class: "panel-title",
 						style: { "margin-top": "30px" }
 					}, "设施状态 (Facilities)", -1),
-					q("div", Jm, [
-						q("div", Ym, [i[12] ||= q("span", { class: "fac-name" }, "🛏️ 休息区", -1), q("span", Xm, P(a.value?.设施状态?.休息区 || "简陋"), 1)]),
-						q("div", Zm, [i[13] ||= q("span", { class: "fac-name" }, "🛠️ 跨界工坊", -1), q("span", Qm, P(a.value?.设施状态?.工坊 || "未解锁"), 1)]),
-						q("div", $m, [i[14] ||= q("span", { class: "fac-name" }, "📚 记忆档案室", -1), q("span", eh, P(a.value?.设施状态?.档案室 || "已解锁"), 1)])
+					q("div", Zm, [
+						q("div", Qm, [i[12] ||= q("span", { class: "fac-name" }, "🛏️ 休息区", -1), q("span", $m, P(a.value?.设施状态?.休息区 || "简陋"), 1)]),
+						q("div", eh, [i[13] ||= q("span", { class: "fac-name" }, "🛠️ 跨界工坊", -1), q("span", th, P(a.value?.设施状态?.工坊 || "未解锁"), 1)]),
+						q("div", nh, [i[14] ||= q("span", { class: "fac-name" }, "📚 记忆档案室", -1), q("span", rh, P(a.value?.设施状态?.档案室 || "已解锁"), 1)])
 					])
 				], 512), [[io, t.value === "overview"]]),
-				H(q("div", th, [
+				H(q("div", ih, [
 					i[19] ||= q("h2", { class: "panel-title" }, "灵魂锚定 (Soul Anchoring)", -1),
 					i[20] ||= q("p", { class: "panel-desc" }, "消耗【时空结晶】，将核心同伴的灵魂刻印在庇护所中。当世界线重置（死亡回溯）时，被锚定的同伴将保留记忆与力量，直接在基地与你重逢。", -1),
-					Object.keys(o.value).length === 0 || Object.keys(o.value).length === 1 && o.value.无 ? (G(), K("div", nh, " 当前时间线暂无结下深厚羁绊的核心同伴。 ")) : Y("", !0),
-					q("div", rh, [(G(!0), K(W, null, U(o.value, (e, t) => (G(), K(W, { key: t }, [t !== "无" && t !== "$meta" ? (G(), K("div", {
+					Object.keys(o.value).length === 0 || Object.keys(o.value).length === 1 && o.value.无 ? (G(), K("div", ah, " 当前时间线暂无结下深厚羁绊的核心同伴。 ")) : Y("", !0),
+					q("div", oh, [(G(!0), K(W, null, U(o.value, (e, t) => (G(), K(W, { key: t }, [t !== "无" && t !== "$meta" ? (G(), K("div", {
 						key: 0,
 						class: A(["anchor-card", { "is-anchored": l(String(t)) }])
 					}, [
-						q("div", ih, [q("span", ah, P(t), 1), q("span", oh, "Lv." + P(e?.等级 || 1), 1)]),
-						q("div", sh, [
+						q("div", sh, [q("span", ch, P(t), 1), q("span", lh, "Lv." + P(e?.等级 || 1), 1)]),
+						q("div", uh, [
 							i[17] ||= J(" 好感度: ", -1),
-							q("span", ch, P(e?.好感度 || 0), 1),
+							q("span", dh, P(e?.好感度 || 0), 1),
 							i[18] ||= J(" | 状态: ", -1),
 							q("span", { style: O({ color: e?.战斗状态 === "死亡" ? "#ff4444" : "#81c784" }) }, P(e?.战斗状态 || "正常"), 5)
 						]),
-						q("div", lh, [l(String(t)) ? (G(), K("button", uh, "已锚定 (保留 " + P(u(String(t))) + "%)", 1)) : (G(), K("button", {
+						q("div", fh, [l(String(t)) ? (G(), K("button", ph, "已锚定 (保留 " + P(u(String(t))) + "%)", 1)) : (G(), K("button", {
 							key: 1,
 							class: "btn-anchor",
 							onClick: (e) => d(String(t))
-						}, "请求锚定 (消耗结晶)", 8, dh))])
+						}, "请求锚定 (消耗结晶)", 8, mh))])
 					], 2)) : Y("", !0)], 64))), 128))])
 				], 512), [[io, t.value === "anchor"]]),
-				H(q("div", fh, [
+				H(q("div", hh, [
 					i[24] ||= q("h2", { class: "panel-title" }, "观测者之厢 (Observer's Room)", -1),
 					i[25] ||= q("p", { class: "panel-desc" }, "打破第四面墙的交涉。在这里，你可以直接与跑团娘（DM）对话，甚至用真相碎片贿赂她修改底层法则。", -1),
-					q("div", ph, [q("img", {
+					q("div", gh, [q("img", {
 						src: r.value,
 						class: "meta-dm-avatar",
 						onError: i[3] ||= (e) => r.value = "https://files.catbox.moe/wfjl6u.png"
-					}, null, 40, mh), q("div", hh, [
+					}, null, 40, _h), q("div", vh, [
 						i[23] ||= q("div", { class: "meta-dm-name" }, "跑团娘 (DM)", -1),
-						q("div", gh, [
+						q("div", yh, [
 							i[21] ||= J(" 观测者好感度: ", -1),
 							q("span", { style: O({ color: s.value >= 0 ? "#d4af37" : "#ff4444" }) }, P(s.value), 5),
 							i[22] ||= q("span", { style: {
@@ -6196,9 +6184,9 @@ var $ = /* @__PURE__ */ kt({
 								"margin-left": "10px"
 							} }, "(影响暗骰偏向与特殊服务)", -1)
 						]),
-						q("div", _h, "当前话题: " + P(a.value?.观测者互动_Meta?.当前话题 || "暂无"), 1)
+						q("div", bh, "当前话题: " + P(a.value?.观测者互动_Meta?.当前话题 || "暂无"), 1)
 					])]),
-					q("div", vh, [H(q("textarea", {
+					q("div", xh, [H(q("textarea", {
 						"onUpdate:modelValue": i[4] ||= (e) => n.value = e,
 						class: "meta-textarea",
 						placeholder: "输入你想对跑团娘说的话（例如：【系统指令：消耗1个真相碎片，要求复活某人】）..."
@@ -6206,36 +6194,36 @@ var $ = /* @__PURE__ */ kt({
 						class: "btn-meta-send",
 						disabled: !n.value,
 						onClick: f
-					}, "发送跨维通讯", 8, yh)])
+					}, "发送跨维通讯", 8, Sh)])
 				], 512), [[io, t.value === "meta"]])
 			])])])])) : Y("", !0)]),
 			_: 1
 		}));
 	}
-}), [["__scopeId", "data-v-10f27d5b"]]), xh = { class: "pm-global-layer" }, Sh = /* @__PURE__ */ $p(/* @__PURE__ */ Zn({
+}), [["__scopeId", "data-v-10f27d5b"]]), wh = { class: "pm-global-layer" }, Th = /* @__PURE__ */ nm(/* @__PURE__ */ Zn({
 	__name: "GlobalUI",
 	setup(e) {
 		let t = X(() => {
 			let e = rs($.latestMesId)?.当前处境?.环境氛围 || "";
 			return e.includes("极昼") ? "env-daylight" : e.includes("极夜") ? "env-night" : e.includes("高危") || e.includes("污染") ? "env-danger" : "env-safe";
 		});
-		return (e, n) => (G(), K("div", xh, [
+		return (e, n) => (G(), K("div", wh, [
 			Ut($).ui.environmentOverlay ? (G(), K("div", {
 				key: 0,
 				class: A(["pm-env-overlay", t.value])
 			}, null, 2)) : Y("", !0),
-			Yi(Pm),
-			Yi(bh)
+			Yi(Lm),
+			Yi(Ch)
 		]));
 	}
-}), [["__scopeId", "data-v-c942b4c8"]]), Ch = (e) => {
+}), [["__scopeId", "data-v-c942b4c8"]]), Eh = (e) => {
 	if (e.getElementById("pm-effects-styles")) return;
 	let t = e.createElement("style");
 	t.id = "pm-effects-styles", t.innerHTML = "\n    .pm-fx-overlay {\n      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;\n      pointer-events: none; z-index: 9999999;\n      display: flex; justify-content: center; align-items: center;\n      overflow: hidden;\n    }\n    .pm-fx-carmen {\n      background: rgba(139, 0, 0, 0.4);\n      box-shadow: inset 0 0 200px rgba(255, 0, 0, 0.8);\n      animation: pm-carmen-fade 5s forwards ease-in-out;\n    }\n    .pm-fx-carmen-text {\n      font-family: 'Noto Serif SC', serif; font-size: 3vw; font-weight: 900;\n      color: #fff; text-shadow: 2px 0 red, -2px 0 blue;\n      animation: pm-glitch-text 0.2s infinite alternate-reverse;\n      text-align: center; padding: 0 10%;\n    }\n    @keyframes pm-carmen-fade { 0% { opacity: 0; } 10% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }\n    @keyframes pm-glitch-text { 0% { transform: translate(2px, 2px); } 100% { transform: translate(-2px, -2px); } }\n\n    .pm-fx-gacha {\n      background: rgba(0, 0, 0, 0.8);\n      backdrop-filter: blur(10px);\n      animation: pm-gacha-fade 4s forwards;\n    }\n    .pm-fx-gacha-card {\n      background: linear-gradient(135deg, #111, #222);\n      border: 4px solid var(--rarity-color, #fff);\n      border-radius: 12px; padding: 40px;\n      box-shadow: 0 0 50px var(--rarity-color, #fff);\n      transform: scale(0);\n      animation: pm-card-pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;\n      text-align: center;\n    }\n    .pm-fx-gacha-title { font-size: 24px; color: #888; letter-spacing: 4px; margin-bottom: 10px; }\n    .pm-fx-gacha-name { font-size: 40px; font-weight: 900; color: var(--rarity-color, #fff); text-shadow: 0 0 20px var(--rarity-color, #fff); }\n    @keyframes pm-gacha-fade { 0% { opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }\n    @keyframes pm-card-pop { to { transform: scale(1); } }\n\n    .pm-fx-flashback {\n      background: rgba(0, 0, 0, 0.9);\n      animation: pm-flashback-fade 6s forwards;\n    }\n    .pm-fx-polaroid {\n      background: #eee; padding: 20px 20px 60px 20px;\n      box-shadow: 0 20px 50px rgba(0,0,0,0.8);\n      transform: rotate(-3deg);\n      filter: sepia(0.8) contrast(1.2) grayscale(0.8);\n    }\n    .pm-fx-polaroid-img {\n      width: 60vw; max-width: 600px; height: 30vh; background: #111;\n      display: flex; justify-content: center; align-items: center;\n      border: 1px solid #333;\n    }\n    .pm-fx-polaroid-text {\n      font-family: 'Courier New', monospace; font-size: 18px; color: #333;\n      margin-top: 20px; font-weight: bold; text-align: center;\n    }\n    @keyframes pm-flashback-fade { 0% { opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }\n\n    .pm-fx-blood {\n      box-shadow: inset 0 0 150px rgba(255, 0, 0, 0.8);\n      background: radial-gradient(circle, transparent 50%, rgba(139, 0, 0, 0.4) 100%);\n      animation: pm-blood-fade 2s forwards;\n    }\n    @keyframes pm-blood-fade { 0% { opacity: 1; } 100% { opacity: 0; } }\n    .pm-shake-screen { animation: pm-shake 0.4s cubic-bezier(.36,.07,.19,.97) both; }\n    @keyframes pm-shake {\n      10%, 90% { transform: translate3d(-4px, 2px, 0); }\n      20%, 80% { transform: translate3d(4px, -2px, 0); }\n      30%, 50%, 70% { transform: translate3d(-8px, 4px, 0); }\n      40%, 60% { transform: translate3d(8px, -4px, 0); }\n    }\n  ", e.head.appendChild(t);
-}, wh = (e, t) => {
+}, Dh = (e, t) => {
 	let n = e.createElement("div");
 	n.className = "pm-fx-overlay pm-fx-carmen", n.innerHTML = `<div class="pm-fx-carmen-text">${t}</div>`, e.body.appendChild(n), setTimeout(() => n.remove(), 5e3);
-}, Th = (e, t, n) => {
+}, Oh = (e, t, n) => {
 	let r = e.createElement("div");
 	r.className = "pm-fx-overlay pm-fx-gacha";
 	let i = "#fff";
@@ -6245,7 +6233,7 @@ var $ = /* @__PURE__ */ kt({
       <div class="pm-fx-gacha-name">${n}</div>
     </div>
   `, e.body.appendChild(r), setTimeout(() => r.remove(), 4e3);
-}, Eh = (e, t) => {
+}, kh = (e, t) => {
 	let n = e.createElement("div");
 	n.className = "pm-fx-overlay pm-fx-flashback", n.innerHTML = `
     <div class="pm-fx-polaroid">
@@ -6253,16 +6241,16 @@ var $ = /* @__PURE__ */ kt({
       <div class="pm-fx-polaroid-text">${t}</div>
     </div>
   `, e.body.appendChild(n), setTimeout(() => n.remove(), 6e3);
-}, Dh = (e) => {
+}, Ah = (e) => {
 	let t = e.createElement("div");
 	t.className = "pm-fx-overlay pm-fx-blood", e.body.appendChild(t), e.body.classList.add("pm-shake-screen"), setTimeout(() => {
 		t.remove(), e.body.classList.remove("pm-shake-screen");
 	}, 2e3);
-}, Oh = (e, t) => {
+}, jh = (e, t) => {
 	let n = $o();
-	Ch(n);
+	Eh(n);
 	let r = e;
-	return r = r.replace(/<carmen_whisper>([\s\S]*?)<\/carmen_whisper>/gi, (e, r) => (t && wh(n, r), `<div style="color: #ff4444; font-style: italic; font-weight: bold; text-align: center; margin: 10px 0;">「 ${r} 」</div>`)), r = r.replace(/<mirror_gacha rarity="(.*?)">([\s\S]*?)<\/mirror_gacha>/gi, (e, r, i) => (t && Th(n, r, i), `<div style="color: #d4af37; font-weight: bold; text-align: center; border: 1px dashed #d4af37; padding: 10px; margin: 10px 0;">✨ 提取成功：[${r}] ${i}</div>`)), r = r.replace(/<memory_flashback>([\s\S]*?)<\/memory_flashback>/gi, (e, r) => (t && Eh(n, r), `<div style="color: #888; font-family: monospace; border-left: 3px solid #555; padding-left: 10px; margin: 10px 0;">[记忆闪回] ${r}</div>`)), t && /(大失败|断裂|重伤|残废|致命伤)/.test(e) && (window.__PM_SHAKE_COOLDOWN || (Dh(n), window.__PM_SHAKE_COOLDOWN = !0, setTimeout(() => {
+	return r = r.replace(/<carmen_whisper>([\s\S]*?)<\/carmen_whisper>/gi, (e, r) => (t && Dh(n, r), `<div style="color: #ff4444; font-style: italic; font-weight: bold; text-align: center; margin: 10px 0;">「 ${r} 」</div>`)), r = r.replace(/<mirror_gacha rarity="(.*?)">([\s\S]*?)<\/mirror_gacha>/gi, (e, r, i) => (t && Oh(n, r, i), `<div style="color: #d4af37; font-weight: bold; text-align: center; border: 1px dashed #d4af37; padding: 10px; margin: 10px 0;">✨ 提取成功：[${r}] ${i}</div>`)), r = r.replace(/<memory_flashback>([\s\S]*?)<\/memory_flashback>/gi, (e, r) => (t && kh(n, r), `<div style="color: #888; font-family: monospace; border-left: 3px solid #555; padding-left: 10px; margin: 10px 0;">[记忆闪回] ${r}</div>`)), t && /(大失败|断裂|重伤|残废|致命伤)/.test(e) && (window.__PM_SHAKE_COOLDOWN || (Ah(n), window.__PM_SHAKE_COOLDOWN = !0, setTimeout(() => {
 		window.__PM_SHAKE_COOLDOWN = !1;
 	}, 3e3))), r;
 };
@@ -6272,7 +6260,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 	window.__PM_SEVEN_DAYS_MOUNTED__ = !0;
 	let e = /* @__PURE__ */ new Map(), t = !1, n = () => {
 		let e = $o(), t = e.getElementById("pm-global-root");
-		t || (t = e.createElement("div"), t.id = "pm-global-root", t.style.cssText = "position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999999; overflow: hidden;", e.body.appendChild(t), Xo(Sh).mount(t));
+		t || (t = e.createElement("div"), t.id = "pm-global-root", t.style.cssText = "position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999999; overflow: hidden;", e.body.appendChild(t), Xo(Th).mount(t));
 	}, r = () => {
 		let e = $o(), t = e.getElementById("pm-global-styles");
 		t || (t = e.createElement("style"), t.id = "pm-global-styles", e.head.appendChild(t)), t.innerHTML = "\n      .mes_text initvar, .mes_text updatevariable, .mes_text variable_log,\n      .mes_text statusbar_data, .mes_text context_options, .mes_text context_summary { display: none !important; }\n      .mes_text narrative { display: block !important; }\n\n      /* 🚨 真全屏模式下隐藏酒馆原生UI */\n      body.pm-true-fullscreen #sheld,\n      body.pm-true-fullscreen #nav-bar,\n      body.pm-true-fullscreen #form { display: none !important; }\n      body.pm-true-fullscreen #chat { height: 100vh !important; padding-bottom: 20px !important; }\n\n      :root { --pm-gold: #d4af37; --pm-dark-red: #8b0000; --pm-black: #1a1105; --pm-text: #2c241b; --pm-bg-light: #ffffff; --pm-bg-mid: #fcfaf5; --pm-bg-dark: #f4ebd8; }\n\n      .pm-glassmorphism {\n        background: rgba(15, 15, 18, 0.65) !important;\n        backdrop-filter: blur(12px) saturate(120%);\n        -webkit-backdrop-filter: blur(12px) saturate(120%);\n        border: 1px solid rgba(255, 255, 255, 0.1) !important;\n        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;\n      }\n\n      .pm-dm-text {\n        font-family: 'Noto Serif SC', 'Songti SC', serif; color: #ff6b6b;\n        background: linear-gradient(90deg, rgba(138, 3, 3, 0.15), transparent);\n        border-left: 4px solid #8a0303; padding: 10px 15px; margin: 10px 0;\n        border-radius: 0 8px 8px 0; font-weight: bold; text-shadow: 0 0 5px rgba(138, 3, 3, 0.4);\n        letter-spacing: 1px; line-height: 1.8;\n      }\n\n      .pm-skill-cast {\n        display: inline-block; font-weight: 900; padding: 2px 6px; border-radius: 4px;\n        color: #fff; background: rgba(0, 0, 0, 0.5); border: 1px solid var(--skill-color, #d4af37);\n        box-shadow: 0 0 10px var(--skill-color, #d4af37); text-shadow: 0 0 5px #fff;\n        animation: pm-skill-pulse 2s infinite alternate;\n      }\n      @keyframes pm-skill-pulse { 0% { transform: scale(1); box-shadow: 0 0 5px var(--skill-color, #d4af37); } 100% { transform: scale(1.05); box-shadow: 0 0 15px var(--skill-color, #d4af37); } }\n\n      .pm-fog-cover { position: relative; cursor: pointer; user-select: none; display: block; }\n      .pm-fog-cover::after {\n        content: '点击揭晓命运'; position: absolute; top: 0; left: 0; right: 0; bottom: 0;\n        background: repeating-linear-gradient(45deg, #111, #111 10px, #222 10px, #222 20px);\n        color: #888; display: flex; align-items: center; justify-content: center;\n        font-size: 12px; font-weight: bold; border-radius: 4px; transition: opacity 0.3s ease; z-index: 2;\n      }\n      .pm-fog-cover.revealed::after { opacity: 0; pointer-events: none; }\n\n      .stb-pm-wrapper {\n        width: 100%; max-width: 100%; overflow-x: hidden; overflow-wrap: anywhere; box-sizing: border-box;\n        border-top: 4px solid #8a0303; border-bottom: 4px solid #d4af37; border-radius: 12px;\n        font-family: 'Nunito', 'Quicksand', 'Segoe UI Rounded', 'Helvetica Rounded', Arial, sans-serif;\n        color: #d0d0d0; padding: 16px; position: relative; margin-top: 15px; margin-bottom: 10px;\n      }\n\n      @keyframes pm-glitch-anim {\n        0% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 2px); }\n        20% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }\n        40% { clip-path: inset(40% 0 40% 0); transform: translate(2px, 2px); }\n        60% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, -2px); }\n        80% { clip-path: inset(60% 0 20% 0); transform: translate(2px, 2px); }\n        100% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, -2px); }\n      }\n      .pm-dice-roll {\n        display: inline-block; font-family: 'Courier New', monospace; font-weight: bold; color: #d4af37;\n        background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; padding: 2px 6px; border-radius: 4px;\n        text-shadow: 0 0 5px rgba(212, 175, 55, 0.8); margin: 0 4px;\n      }\n      .pm-crit-success {\n        display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #d4af37, #ffeb3b);\n        padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);\n        animation: pulse 1.5s infinite;\n      }\n      .pm-crit-fail {\n        display: inline-block; font-weight: 900; color: #fff; background: linear-gradient(45deg, #8b0000, #ff4444);\n        padding: 2px 8px; border-radius: 4px; text-shadow: 0 0 10px #fff; box-shadow: 0 0 15px rgba(139, 0, 0, 0.8);\n        position: relative;\n      }\n      .pm-crit-fail::before {\n        content: attr(data-text); position: absolute; left: -2px; text-shadow: 2px 0 red; top: 0; color: white;\n        background: transparent; overflow: hidden; animation: pm-glitch-anim 2s infinite linear alternate-reverse;\n      }\n\n      .stb-pm-terminal-data { font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 13.5px; color: #81d4fa; white-space: pre-wrap; word-break: break-all; line-height: 1.6; letter-spacing: 0.5px; }\n      .stb-pm-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 12px; margin-bottom: 12px; position: relative; }\n      .stb-pm-location { font-family: 'Quicksand', 'Georgia', serif; font-size: clamp(16px, 4vw, 18px); font-weight: bold; color: #d4af37; letter-spacing: 1px; text-shadow: 0 0 12px rgba(212, 175, 55, 0.6); word-break: break-word; display: flex; align-items: center; gap: 8px; flex: 1; }\n      .stb-pm-env-col { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }\n      .stb-pm-tag { background: rgba(0, 0, 0, 0.8); border: 1px solid #444; padding: 4px 10px; border-radius: 12px; white-space: nowrap; font-size: 12px; box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05); letter-spacing: 0.5px; }\n      .stb-pm-tag-time { color: #aaa; border-color: #555; }\n      .stb-pm-tag-weather { color: #ff6b6b; border-color: #8a0303; text-shadow: 0 0 5px rgba(138, 3, 3, 0.8); }\n      .stb-pm-dm-avatar-box { position: absolute; top: -10px; right: -10px; width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--pm-gold); overflow: hidden; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); z-index: 10; background: #000; }\n      .stb-pm-dm-avatar { width: 100%; height: 100%; object-fit: cover; }\n      .stb-pm-dm-label { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(138, 3, 3, 0.8); color: #fff; font-size: 10px; text-align: center; font-weight: bold; letter-spacing: 1px; }\n      .stb-pm-actions { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }\n      .stb-pm-btn { flex: 1; min-width: 140px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 14px; font-weight: bold; letter-spacing: 1px; border-radius: 20px; transition: all 0.2s ease; cursor: pointer; touch-action: manipulation; }\n      .stb-pm-btn-guide { background: linear-gradient(180deg, rgba(212, 175, 55, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #d4af37; color: #f4e7c1; }\n      .stb-pm-btn-mirror { background: linear-gradient(180deg, rgba(129, 212, 250, 0.15), rgba(0, 0, 0, 0.8)); border: 1px solid #81d4fa; color: #e1f5fe; }\n      .stb-pm-tabs-container { display: flex; flex-wrap: wrap; gap: 4px; position: relative; width: 100%; }\n      .stb-pm-tab-label { display: contents; }\n      .stb-pm-tab-radio { display: none; }\n      .stb-tab-btn { order: 1; padding: 10px 16px; font-size: 14px; color: #777; background: linear-gradient(to bottom, rgba(10,10,10,0.5), rgba(17,17,17,0.5)); border: 1px solid #222; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; position: relative; letter-spacing: 1px; user-select: none; flex-grow: 1; text-align: center; }\n      .stb-pm-tab-content { order: 2; width: 100%; display: none; flex-direction: column; gap: 16px; max-height: 65vh; overflow-y: auto; padding-right: 8px; padding-top: 16px; border-top: 1px solid #222; scrollbar-width: thin; scrollbar-color: #555 transparent; }\n      .stb-pm-tab-radio:checked ~ .stb-tab-btn { color: #fff; background: linear-gradient(to bottom, rgba(138, 3, 3, 0.4), rgba(10,10,10,0.6)); border-color: #555; text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); font-weight: bold; }\n      .stb-pm-tab-radio:checked ~ .stb-tab-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: #d4af37; box-shadow: 0 -2px 12px #d4af37, 0 0 6px #fff; border-radius: 2px; z-index: 2; }\n      .stb-pm-tab-radio:checked ~ .stb-pm-tab-content { display: flex; }\n      .stb-pm-panel { background: rgba(15, 15, 18, 0.4); border: 1px solid rgba(255,255,255,0.1); border-left: 4px solid #555; border-radius: 8px; padding: 16px; min-width: 0; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3); transition: border-color 0.3s ease; }\n      .stb-pm-panel-title { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); padding-bottom: 6px; display: flex; align-items: center; font-weight: bold; }\n      .stb-pm-bar-container { margin-bottom: 14px; }\n      .stb-pm-bar-header { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }\n      .stb-pm-bar-track { width: 100%; height: 14px; background: rgba(0,0,0,0.6); border: 1px solid #333; border-radius: 7px; overflow: hidden; position: relative; }\n      .stb-pm-bar-fill { height: 100%; transition: width 0.5s ease; border-radius: 7px; }\n      .stb-pm-bar-hp { background: linear-gradient(90deg, #ff6b6b, #8a0303); box-shadow: 0 0 8px rgba(255, 107, 107, 0.6); }\n      .stb-pm-bar-mp { background: linear-gradient(90deg, #81d4fa, #0277bd); box-shadow: 0 0 8px rgba(129, 212, 250, 0.6); }\n      .stb-pm-bar-sp { background: linear-gradient(90deg, #81c784, #2e7d32); box-shadow: 0 0 8px rgba(129, 199, 132, 0.6); }\n      .stb-pm-limbs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }\n      .stb-pm-limb-card { background: rgba(0,0,0,0.4); border: 1px solid #333; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }\n      .stb-pm-limb-name { font-size: 12px; color: #888; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }\n      .stb-pm-limb-stat { font-size: 14px; font-weight: bold; text-align: center; word-break: break-word; white-space: normal; }\n      .stb-pm-folder { background: rgba(255, 255, 255, 0.03); border: 1px solid #333; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }\n      .stb-pm-folder summary { padding: 12px 14px; font-size: 14px; color: #eee; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: bold; background: rgba(0, 0, 0, 0.4); }\n      .stb-pm-folder-content { padding: 12px; border-top: 1px solid #333; }\n      .stb-pm-info-row { display: flex; flex-direction: row; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #333; padding-bottom: 4px; }\n      .stb-pm-info-label { font-size: 14px; color: #999; }\n      .stb-pm-info-value { font-size: 14px; font-weight: bold; color: #ccc; }\n    ";
@@ -6390,7 +6378,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 				let a = r === $.latestMesId;
 				if (!c && e.innerHTML) {
 					let t = e.innerHTML;
-					t = Oh(t, a), t = i(t);
+					t = jh(t, a), t = i(t);
 					let n = !1;
 					t !== e.innerHTML && (n = !0), (t.includes("【DM裁定】") || t.includes("[跑团娘的低语]")) && (t = t.replace(/(【DM裁定】.*?)(<br>|<\/p>|$)/g, "<span class=\"pm-dm-text\" style=\"display:block\">$1</span>$2"), t = t.replace(/(\[跑团娘的低语\].*?)(<br>|<\/p>|$)/g, "<span class=\"pm-dm-text\" style=\"display:block\">$1</span>$2"), n = !0), t.includes("大成功") && (t = t.replace(/大成功/g, "<span class=\"pm-crit-success\">大成功</span>"), n = !0), t.includes("大失败") && (t = t.replace(/大失败/g, "<span class=\"pm-crit-fail\" data-text=\"大失败\">大失败</span>"), n = !0), /(1d100|1d20|1d10|1d8|1d6|1d4)/i.test(t) && (t = t.replace(/(1d100|1d20|1d10|1d8|1d6|1d4)/gi, "<span class=\"pm-dice-roll\">$&</span>"), n = !0), /检定[:：]\s*\d+/i.test(t) && (t = t.replace(/(检定[:：]\s*\d+)/gi, "<span class=\"pm-dice-roll\">$&</span>"), n = !0), n && (e.innerHTML = t);
 				}
@@ -6399,7 +6387,7 @@ if (!window.__PM_SEVEN_DAYS_MOUNTED__) {
 				let n = `pm-setup-root-${r}`, i = t.getElementById(n);
 				if (!i) {
 					i = t.createElement("div"), i.id = n, i.style.cssText = "margin-top: 15px; width: 100%; position: relative; clear: both;", u.appendChild(i);
-					let a = Xo(em);
+					let a = Xo(rm);
 					a.mount(i), e.set(`setup_${r}`, a);
 				}
 			}
