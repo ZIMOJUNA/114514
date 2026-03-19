@@ -4178,7 +4178,13 @@ var $ = /* @__PURE__ */ Ot({
 	"margin-top": "40px"
 } }, Yp = {
 	key: 0,
-	class: "negative-warning"
+	class: "negative-warning",
+	style: {
+		animation: "none",
+		"border-color": "#8b0000",
+		color: "#8b0000",
+		"box-shadow": "0 0 10px rgba(139,0,0,0.3)"
+	}
 }, Xp = {
 	key: 1,
 	style: {
@@ -4216,14 +4222,14 @@ var $ = /* @__PURE__ */ Ot({
 			n.onload = (e) => {
 				e.target?.result && (l.value = e.target.result, localStorage.setItem("pm_dm_avatar_v1", l.value));
 			}, n.readAsDataURL(t), e.target.value = "";
-		}, p = /* @__PURE__ */ H(""), m = /* @__PURE__ */ H(null), h = () => {
+		}, p = /* @__PURE__ */ H(localStorage.getItem("pm_player_avatar_v1") || ""), m = /* @__PURE__ */ H(null), h = () => {
 			m.value && m.value.click();
 		}, g = (e) => {
 			let t = e.target.files?.[0];
 			if (!t) return;
 			let n = new FileReader();
 			n.onload = (e) => {
-				e.target?.result && (p.value = e.target.result);
+				e.target?.result && (p.value = e.target.result, localStorage.setItem("pm_player_avatar_v1", p.value));
 			}, n.readAsDataURL(t), e.target.value = "";
 		}, _ = () => {
 			n.value === "custom_char" ? n.value = "library" : n.value === "settings" && (E.character === "custom" ? n.value = "custom_char" : n.value = "library");
@@ -4839,6 +4845,19 @@ var $ = /* @__PURE__ */ Ot({
 						欲望度: 0,
 						复合状态: "\"无\""
 					} },
+					时空枢纽_基地: {
+						解锁状态: !1,
+						观测者互动: {
+							DM好感度: 0,
+							当前态度: "愉悦的旁观者"
+						},
+						设施状态: {
+							灵魂锚定室: "未激活",
+							废土工坊: "基础锻造台",
+							记忆档案馆: "空白"
+						},
+						资源储备: { 镜牢星光: 0 }
+					},
 					系统设置: { BGM配置: { 状态: "开启" } }
 				};
 				if (E.character === "custom") {
