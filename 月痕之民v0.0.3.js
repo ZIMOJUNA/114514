@@ -24,6 +24,12 @@ const 枚举 = (可选值, 默认) =>
   z.enum(可选值).catch(默认).prefault(默认);
 const 开关 = (默认 = false) => z.coerce.boolean().catch(默认).prefault(默认);
 const 字典 = (值schema) => z.record(z.string(), 值schema).catch({}).prefault({});
+// 限长字典：只保留**最后 N 条**（按插入顺序）。🔴 只给「旧的就该退场、丢了不心疼」的容器用 ——
+// 对 技能/装备/背包/角色 做位置截断是**静默删数据**，理由见 `_B6B7方案.md` §3.2。
+const 限长字典 = (值schema, 上限) =>
+  z.record(z.string(), 值schema)
+    .transform(r => _.fromPairs(_.takeRight(_.toPairs(r), 上限)))
+    .catch({}).prefault({});
 const 对象 = (形状) => z.object(形状).catch({}).prefault({});
 const 属性词条Schema = z.array(z.object({
   入口: 枚举(['常驻', '触发', '主动', '反应'], '常驻'),
@@ -220,8 +226,7 @@ const 世界Schema = 对象({
   大区: 串(''),
   新闻: 新闻Schema,
   // 🔴 只留最近 20 条局势（`B7`，2026-09-19）—— 口径与理由见 `_MVU变量字段总表.md`，本文件不重复论证
-  局势: 字典(局势条目Schema)
-    .transform(r => _(r).entries().takeRight(20).fromPairs().value()),
+  局势: 限长字典(局势条目Schema, 20),
   主线: 字典(主线条目Schema),
 });
 export const Schema = z.object({
