@@ -37,20 +37,17 @@
 
 *{box-sizing:border-box}
 html,body{margin:0}
-/* 🔴 **底色两份都要**（2026-09-21 驾驶员裁定「灰绿」）。
-   起因：`.host` 封顶 860px，容器比它宽时两侧露出的是 **iframe 默认白底** —— 白边。
-   写在这里 ⇒ 真身与原型页一起拿。
-   ⚠ 它顺带兜住另一件事：**html 没有背景时，body 的背景会传播到 canvas**
-     ⇒ 宽屏那两条、以及 `.host` 上方那 26px 外边距，露的都是这个色，不会闪白。
-   ⚠ 现值是**硬编码的中明度灰绿**，不跟随酒馆的明暗主题。窄屏（容器 ≤860）根本看不到它，
-     只有宽屏才露 —— 四套皮肤在宽屏下配不配这个色，**看实物再判**，别现在推。
-   🔴 `display:flow-root` 不是装饰，是**让上面那个 background 真的铺到顶**。
-     没有它：`.host` 的 `margin-top:26px` 会**合并到 body 外面** ⇒ body 的背景框从
-     第 26px 才起画 ⇒ 顶上那 26px 露的是**下一层**（预览页里是 iframe 元素的 `#fff`，
-     真机里是酒馆消息区的底色）⇒ **卡片两侧是灰绿、正上方却换了个色**，一条横向色差。
-     `flow-root` 就地建 BFC ⇒ 合并断掉，26px 归 body 内部 ⇒ 卡片位置**一个像素不变**，
-     只是那 26px 从此归灰绿管。 */
-body{font:13px/1.5 system-ui,sans-serif;background:#5E5F5A;display:flow-root}
+/* 🔴 **不铺底色**（2026-09-24 驾驶员裁定「乙」，**覆盖 2026-09-21 的「灰绿」**）。
+   去掉的理由：`display:flow-root` 让旧的 `background:#5E5F5A` 铺到顶 ⇒ `.host` 上方那
+   26px 外边距也归灰绿管 ⇒ **每一层楼顶上多一条 26px 灰带**。
+   ⚠ 旧注释那句「窄屏（容器 ≤860）根本看不到它」**是错的** —— 看不到的只有**左右两条**，
+     **顶上那 26px 在任何宽度都露**。
+   ⚠ 两侧不再有白边风险：透明露的是 `.mes` 自己的底色（酒馆主题色），不是白 ——
+     2026-09-21 那次的**意图**（不出现白边）照旧成立，只是换了手段。
+   ⚠ `display:flow-root` **留着**：`.host` 现在 margin-top 是 0，它已不起作用；
+     但删掉会在将来任何 margin 回来时**静默破坏高度测量**（助手按 body.scrollHeight 定高，
+     合并出去的 margin 会让卡片底被切掉）。留着零成本。 */
+body{font:13px/1.5 system-ui,sans-serif;display:flow-root}
 /* 🔴 **页面壳 vs 组件** 的分界（2026-09-21，投递形态逼出来的）。
    这一条以前是 `body{background:#5E5F5A;…;padding:0 0 70px}`，跟组件挤在同一条规则里，
    拆成真身之后**整条跟着过去了**，于是 iframe 里每条消息底下都多挂 70px 灰绿。
@@ -516,7 +513,7 @@ body{--k:1} body.lv1{--k:.45} body.lv2{--k:1} body.lv3{--k:1.9}
    🔴 `overflow:hidden` 是**出血的收口**：锡箔 `.fo` 在天幕档是 `inset:auto -70px -80px auto`，
      原型页里出血压在页面背景上不要紧，进了 iframe 就**被 `scrollHeight` 算进高度** ——
      每条消息底下挂一条 79px 的带子。框外的出血在 iframe 里本来就看不见，裁掉零损失。 */
-.host{width:min(100%,860px);margin:26px auto 0;background:var(--bg);color:var(--ink);
+.host{width:min(100%,860px);margin:0 auto;background:var(--bg);color:var(--ink);
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),
                    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
   background-size:46px 46px;border:1px solid var(--line);position:relative;overflow:hidden}
