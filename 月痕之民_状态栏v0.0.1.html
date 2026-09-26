@@ -7,17 +7,234 @@
      托管：ZIMOJUNA/114514@main/月痕之民_状态栏v0.0.1.html
      卡里那条 `状态栏_渲染` 正则的壳（249 字符）用 $('body').load() 把这一份拉进消息 iframe。
      壳里不放数据、不放视觉 —— 界面全在这个文件里。
-     零依赖：不引任何库、不引任何外部资源。
-     🔴 轮 1-1 的内容**只是占位** —— 真身（读那一楼的 MVU 快照、画出来）在轮 1-2 起。
-        这是占位、不是美术：虚线框只为「看得见」，不做任何视觉判断（视觉是轮 1-10）。 -->
+     🔴 托管节奏 = 甲（D137 ①a）：**固定这个文件名、原地改、不逐轮升版本号、每次改完必 purge**。
+        回溯靠 GitHub 提交历史，不靠文件名。
+
+     ── 轮 1-2 做什么 ──────────────────────────────────────────────────────
+     真身脚本**骨架**：挂载 / 等 Mvu 就绪 / 读**那一楼自己的**快照 / 画一个空的框。
+     框里**不放任何游戏数据**（三值·在场·主线·任务·连携·地图 —— 轮 1-3～1-9），
+     **不做任何美术判断**（选色定字体是轮 1-10）。
+     框里那一行是**诊断**：楼层号 · 读没读到 · 顶层键数 —— 它是证据，不是内容。
+
+     ── 硬约束 ────────────────────────────────────────────────────────────
+     ① **零依赖**：不 import、不引任何外部资源（`$` 是酒馆助手注入的，不算 import —— D137 ②）。
+     ② 不碰 `tavern_helper.variables`（现在是 `{}`，保持空着）。
+     ③ JS 字符串里**不出现** `</script`（HTML 解析器会提前结束脚本）。
+        ⚠ §8.1 那五条禁序列是**壳**的约束（壳要过 ST 正则管线）；**真身是托管文件、不过那条管线**。
+     ④ 这一段是 `<script type="module">`：**必须**是，因为要顶层 await。
+        已干跑验过：`$('body').load()` 拉进来的 module 脚本**会执行**（`_435干跑.mjs`）。
+
+     ── 🔴 读取链（D138 裁的死口径）────────────────────────────────────────
+     1. `Mvu.getMvuData({type:'message', message_id: 本楼})`   ← 正路
+     2. `getVariables({type:'message', message_id: 本楼})`      ← Mvu 不在时的等价路
+     3. 都不成 ⇒ **把失败原因画在框里**
+
+     🔴 **绝不降级到 `message_id:'latest'`，也绝不降级到不带 id。**
+        `'latest'` = 最新楼。对着 5 楼用它，画出来的是**现在的**血量 ——
+        正是「滚回去看 5 楼前的战况就该看到当时的血量」裁死不许出现的那种错。
+        降级在这儿不是「聊胜于无」，是「**画错还装对**」⇒ 宁可空着报错。
+     依据：`C1` §5.1 类型契约 `message_id` 在 `type='message'` 时**必填**；
+        `C2` §4.1 把显式带 id 那一档标「更稳定」；`mvu-variables.md` 写法 B 同形。 -->
 <style>
-html,body{margin:0}
-.yh-sb{max-width:860px;margin:12px auto;border:1px dashed #c9c4be;color:#8a837b;
-  padding:10px 14px;font-size:12px;line-height:1.6;
-  font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+  /* 只到「看得见」为止 —— 不选色、不定字体族、不做视觉判断（轮 1-10 才是美术） */
+  html, body { margin: 0; }
+  .yh-sb {
+    box-sizing: border-box;
+    max-width: 860px;
+    margin: 12px auto;
+    border: 1px solid #c9c4be;
+    border-radius: 4px;
+    padding: 9px 13px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #4a443d;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    overflow-wrap: anywhere;
+  }
+  .yh-sb .yh-t { font-weight: 700; letter-spacing: .02em; }
+  .yh-sb .yh-d { color: #8a837b; }
+  .yh-sb .yh-ok { color: #2f6b3a; }
+  .yh-sb .yh-no { color: #8f2f2f; font-weight: 700; }
+  .yh-sb .yh-err {
+    margin-top: 5px; padding-top: 5px; border-top: 1px dashed #d8d2ca;
+    color: #8f2f2f; white-space: pre-wrap;
+  }
 </style>
 </head>
 <body>
-<div class="yh-sb">楼层状态栏 · 占位（轮 1-1）</div>
+<div class="yh-sb"><span class="yh-d">楼层状态栏 · 正在读…</span></div>
+<script type="module">
+/* ══════════════════════════════════════════════════════════════════════════
+   骨架 v0.0.1 · 轮 1-2
+   ══════════════════════════════════════════════════════════════════════════ */
+const 版本 = 'v0.0.1';
+const 单例键 = '__yuehenStatusBar__';
+
+/* ── 0. 小工具 ─────────────────────────────────────────────────────────── */
+
+// 取一个全局：先看自己这一层，再看上一层。
+// ⚠ 酒馆助手把 API 注入**消息楼层 iframe**（C1 §3）；但版本差异下未必都在本层 ⇒ 往上找一层。
+function 取全局(名) {
+  try { const v = window[名]; if (typeof v !== 'undefined' && v !== null) return v; } catch (_) {}
+  try { const v = window.parent[名]; if (typeof v !== 'undefined' && v !== null) return v; } catch (_) {}
+  return undefined;
+}
+const 睡 = (毫秒) => new Promise((r) => setTimeout(r, 毫秒));
+
+/* ── 1. 去重（照 C2 §5.6 的思路：**优先保自己**）────────────────────────
+   swipe / edit 会再注入一个 iframe；不处理就是同一楼两个框。
+   只删**同一楼里带 .yh-sb 的同类 iframe**，不碰别的东西。
+
+   🔴 **必须等 `.yh-sb` 画出来之后再调**。它不在壳里、在托管那份真身里 ——
+      壳一跑就调去重，此刻 iframe 里只有一段 `<script>`、`.yh-sb` 还不存在，
+      同类框数永远是 0 ⇒ **去重静默失效、一个框都不删**（看着像"没触发"，其实是从没生效）。
+      ⇒ 由 `画()` 末尾触发（画完必调），另外挂两个延时兜底。 */
+function 去重() {
+  try {
+    const 我 = window.frameElement;
+    if (!我 || !我.closest) return;
+    const 楼 = 我.closest('.mes');
+    if (!楼) return;
+    const 同类 = [];
+    const 全部 = 楼.querySelectorAll('iframe');
+    for (let i = 0; i < 全部.length; i++) {
+      try {
+        const d = 全部[i].contentDocument;
+        if (d && d.querySelector('.yh-sb')) 同类.push(全部[i]);
+      } catch (_) { /* 跨源读不到就跳过 */ }
+    }
+    if (同类.length <= 1) return;
+    const 留 = 同类.indexOf(我) >= 0 ? 我 : 同类[同类.length - 1];
+    for (const x of 同类) if (x !== 留) x.remove();
+  } catch (_) {}
+}
+
+/* ── 2. 等 Mvu 就绪 ─────────────────────────────────────────────────────── */
+async function 等Mvu(毫秒) {
+  if (取全局('Mvu')) return true;
+  const 等 = 取全局('waitGlobalInitialized');
+  if (typeof 等 === 'function') {
+    try { await Promise.race([等('Mvu'), 睡(毫秒)]); } catch (_) {}
+  }
+  return !!取全局('Mvu');
+}
+
+/* ── 3. 取本楼楼号 ──────────────────────────────────────────────────────── */
+function 取楼号() {
+  const f = 取全局('getCurrentMessageId');
+  if (typeof f !== 'function') return { 楼: null, 报: '这一层没有 getCurrentMessageId' };
+  try {
+    const n = f();
+    if (typeof n !== 'number' || !isFinite(n)) return { 楼: null, 报: 'getCurrentMessageId 返回的不是数字：' + String(n) };
+    return { 楼: n, 报: null };
+  } catch (e) {
+    return { 楼: null, 报: 'getCurrentMessageId 抛错：' + (e && e.message ? e.message : e) };
+  }
+}
+
+/* ── 4. 读那一楼自己的快照（只有两条路，第三档是报错）─────────────────── */
+function 读快照(楼) {
+  const 报 = [];
+  const 选 = { type: 'message', message_id: 楼 };   // 🔴 楼号必带 —— 这是全部的重点
+
+  const M = 取全局('Mvu');
+  if (M && typeof M.getMvuData === 'function') {
+    try {
+      const d = M.getMvuData(选);
+      if (d && typeof d === 'object') return { 路: 'Mvu.getMvuData', 数据: d, 报 };
+      报.push('Mvu.getMvuData 返回的不是对象');
+    } catch (e) { 报.push('Mvu.getMvuData 抛错：' + (e && e.message ? e.message : e)); }
+  } else {
+    报.push('这一层没有 Mvu');
+  }
+
+  const G = 取全局('getVariables');
+  if (typeof G === 'function') {
+    try {
+      const d = G(选);
+      if (d && typeof d === 'object') return { 路: 'getVariables', 数据: d, 报 };
+      报.push('getVariables 返回的不是对象');
+    } catch (e) { 报.push('getVariables 抛错：' + (e && e.message ? e.message : e)); }
+  } else {
+    报.push('这一层没有 getVariables');
+  }
+
+  return { 路: null, 数据: null, 报 };
+}
+
+/* ── 5. 画（一律 createElement ＋ textContent，不拼字符串）──────────────── */
+function 画(行) {
+  const 框 = document.querySelector('.yh-sb') || document.body;
+  while (框.firstChild) 框.removeChild(框.firstChild);
+
+  const 加 = (文, 类) => {
+    const d = document.createElement('div');
+    if (类) d.className = 类;
+    d.textContent = 文;
+    框.appendChild(d);
+    return d;
+  };
+
+  加('月痕之民 · 楼层状态栏', 'yh-t');
+
+  const 二 = document.createElement('div');
+  二.className = 'yh-d';
+  二.appendChild(document.createTextNode(行.甲));
+  if (行.甲尾) {
+    const s = document.createElement('span');
+    s.className = 行.甲好 ? 'yh-ok' : 'yh-no';
+    s.textContent = 行.甲尾;
+    二.appendChild(s);
+  }
+  二.appendChild(document.createTextNode(行.乙));
+  框.appendChild(二);
+
+  加('骨架 ' + 版本 + ' · 轮 1-2 —— 数据页从轮 1-3 起', 'yh-d');
+  if (行.错) 加(行.错, 'yh-err');
+
+  去重();   // 🔴 画完才调 —— 这一刻 .yh-sb 才存在，别处调都是空转
+}
+
+/* ── 6. 一轮 ────────────────────────────────────────────────────────────── */
+async function 一轮() {
+  try {
+    await 等Mvu(4000);
+
+    const { 楼, 报: 楼报 } = 取楼号();
+    if (楼 === null) {
+      画({ 甲: '读不到本楼楼号', 甲尾: ' ✗', 甲好: false, 乙: '', 错: 楼报 });
+      return;
+    }
+
+    const { 路, 数据, 报 } = 读快照(楼);
+    const 键数 = 数据 && 数据.stat_data && typeof 数据.stat_data === 'object'
+      ? Object.keys(数据.stat_data).length : 0;
+
+    if (路) {
+      画({
+        甲: '第 ' + 楼 + ' 楼 · 快照 ', 甲尾: '✅ 读到', 甲好: true,
+        乙: ' · ' + 键数 + ' 个顶层键 · 走的是 ' + 路,
+        错: 报.length ? '（前一档没成：' + 报.join('；') + '）' : '',
+      });
+    } else {
+      画({
+        甲: '第 ' + 楼 + ' 楼 · 快照 ', 甲尾: '✗ 没读到', 甲好: false, 乙: ' · 两条路都没成',
+        错: 报.join('\n'),
+      });
+    }
+  } catch (e) {
+    // 🔴 失败必须画出来 —— C2 §7.2：分区渲染抛错不隔离 ⇒ 整面板空白且什么都不报
+    画({ 甲: '骨架自己抛错了', 甲尾: ' ✗', 甲好: false, 乙: '', 错: (e && e.stack) ? String(e.stack) : String(e) });
+  }
+}
+
+/* ── 7. 装 ──────────────────────────────────────────────────────────────── */
+try { window[单例键] = 版本; } catch (_) {}
+
+一轮();
+setTimeout(一轮, 600);    // 二次兜底：照 C2 §5.1，应对酒馆助手延迟注入变量
+setTimeout(去重, 1500);   // 另一个框可能比我晚画完 —— 那时它的 `画()` 会调，
+setTimeout(去重, 3000);   // 但万一它先删了我、自己又没走完，这两下补上
+</script>
 </body>
 </html>
