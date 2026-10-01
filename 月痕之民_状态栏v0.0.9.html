@@ -1,0 +1,5120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>月痕之民 · 楼层状态栏</title>
+<!-- 月痕之民 · 楼层状态栏 真身 v0.0.9
+     托管：ZIMOJUNA/114514@main/月痕之民_状态栏v0.0.9.html
+     卡里那条 `状态栏_渲染` 正则的壳（249 字符）用 $('body').load() 把这一份拉进消息 iframe。
+     壳里不放数据、不放视觉 —— 界面全在这个文件里。
+     🔴 托管节奏 = A（2026-09-26 驾驶员改裁，**取代 `D137` ①a 的「甲」**；见 `D140`）：
+         **文件名带版本号、每发布一次 +1**（一推一版）。
+         新文件名 ＝ 一个**从没存在过的 URL** ⇒ 浏览器 / jsDelivr 主站 / 镜像**三层都不可能有旧版**；
+         而且**同一路径上的内容永远不变** ⇒ 那一层永远没有"过期"这回事。
+         ⇒ **不再需要靠 purge 保鲜**（推脚本仍会自动 purge 一次，防的是 `@main` 分支解析
+            缓存对**新路径**的短暂 404）。
+         代价：**每轮发布要动一次卡**，只改卡里 `R` 的版本号字符串（工具 `工具/_换状态栏版本.mjs`）。
+         ⚠ **「甲」为什么被换掉** —— 固定文件名 ⇒ 浏览器按 `max-age=604800`（7 天）存住旧版，
+            壳的 `$('body').load()` 全程走本地缓存、**一次都不碰网络** ⇒ purge 再成功也没用。
+         回溯靠 GitHub 提交历史 ＋ 本文件名。
+
+     🔴🔴 **特许的性质（`D140` ③′，驾驶员 2026-09-26 原话）** ——
+         上面那个「改版本号可以不走审批门」的轻量流程，**只**因为美化线第 3 步 F 期间
+         状态栏这个组件**改动与推送特别频繁**才给的**特许**。
+         **它不是先例、不许推广**（不许推「别的组件也频繁 ⇒ 也免」「别的线也免」）。
+         **判据：豁免跟着「状态栏 · 美化线 第 3 步 F · 期间」三个限定词走，缺一个就不成立。**
+         🔴 **日落条款** —— 美化线第 3 步 F 全部 10 轮做完后，**本豁免自动失效**，
+            回到 `CLAUDE.md` §3 原始流程：**任何一次动卡，一律先出方案、经驾驶员点头才动手**。
+            「做完了」**由驾驶员判定，不由我判定**。
+
+     ── 轮 1-3 做过什么（留着，别丢）────────────────────────────────────────
+     **顶部常驻条**：历法 · 时刻 · 地点（大区·地点两层）· 危机 —— 四格，**不分页**。
+     数据 ＝ **那一楼自己的**快照里 `世界` 底下那四个格子。
+     口径（含逐格卡文依据）见 `备份与存档/归档/方案稿/_楼层栏轮1-3_方案.md` §2/§4。
+     刷新已接上 —— `Mvu.events` 事件驱动（`D139` ④）。
+
+     ── 轮 1-5 做什么 ──────────────────────────────────────────────────────
+     **页 ·「在场」** —— 只列**在场**的人：名字 ＋ 好感度。
+     数据 ＝ 那一楼快照的 `stat_data.角色`（**字典，键就是角色名**）。
+
+     🔴 **必须过滤 `离队`** —— 卡文 `9900044` 五、`### 角色`：「`在场: 离队` 是状态、
+        **不是删除理由**：人还在，`好感度` 与 `关系` 都得留着。」
+        ⇒ 字典里**同时躺着在场与离队的人**，不过滤就会把已经走了的人画成在场。
+     🔴 **键就是名字**的判据（卡文没有一句直说）＝ 两条旁证：
+        ① 同一条卡文的 JSONPatch 示例写 `/角色/薇拉/好感度`（路径里那段就是名字）；
+        ② 同一条卡文对同类字典立过通例「`特质` / `状态`：都是字典，**键 = 名字**」。
+     🔴 **好感度降序**（驾驶员 2026-09-26「都按你说的做」）—— 最铁的在最上。
+     🔴 **正数带 `+`**（卡文 `9900042` 三、5 自己就是 `好感度 −12 → +8`）；
+        ⚠ 用的是 **ASCII 减号**，不是卡文散文里那个全角 `−`（要跟数字拼成一体才对得齐）。
+     🔴 **「暂无人在场」≠「未开放」** —— 后者是「这页还没建」（地图页就是这种 —— 未排期），
+        前者是「页建好了、现在没人」。混用玩家就分不清「功能没做」和「现在没人」。
+     🔴 **不限行数** —— 真机现在 `角色: {}`，任何上限都是凭空定的（归 1-10 拿真机数据再定）。
+     口径与逐条依据见 `备份与存档/归档/方案稿/_楼层栏轮1-5_方案.md` §3/§4。
+     ── 轮 1-4 做什么 ──────────────────────────────────────────────────────
+     **① 页签机制** ＋ **② 页 ·「状态」**。
+     页签 6 个（状态/在场/主线/任务/连携/地图），**未建的写「未开放」** ——
+     驾驶员 2026-09-26 六答之①「**六个，写未开放**」。
+     「状态」页 ＝ 5 组 15 格：三值 / 五维 / 三抗 / 心智 / 成长，**全部来自已有的 MVU 变量**
+     （`zod_schema.js` 的 `主角`），🔴 **一个 MVU 格子都不新建、`月痕之民.json` 一字不动**。
+     口径与逐格卡文依据见 `备份与存档/归档/方案稿/_楼层栏轮1-4_方案.md` §3/§4。
+
+     🔴 **理智画「值/上限」**（驾驶员六答之②）—— 理智是全卡唯一一个**上限会变**的值
+        （月蚀度升一阶，上限从 100 压到 90/70/40，`D40`）。只画 `理智 55` 会被读成 55/100，**那是错的**。
+        ⚠ `心智.理智上限` 在 schema 里是**字符串枚举** `'100'|'90'|'70'|'40'`，**不是数** ——
+          拿「是数字吗」去判它会**永远判不过 ⇒ 那格永远「读不到」**，而且不报错。
+
+     🔴 **缺一块不塌另一块**（驾驶员六答之④，**改轮 1-3 的行为**）——
+        1-3 时只有常驻条一块，所以「没有 `世界` ⇒ 整条不画」＝ 一格坏塌整条；
+        本轮有两块（常驻条 ＋ 状态页）了，照 `C2` §7.2「分区渲染抛错不隔离 ⇒
+        整面板空白且什么都不报」的精神**各判各的**：缺 `世界` 只不画常驻条，缺 `主角` 只不画状态页。
+
+     🔴 **页签状态本轮就得记**（模块级 `当前页`）—— `画()` 是整框重建，
+        不记就会**每次变量更新把你踢回第一页**，那这东西就是不可用的。
+        ⏸ 剩下的一半（跨刷新/跨楼记住 ＋ 滚动位置）归轮 1-10。
+
+     🔴 **标签一律用卡文/schema 的原词，不做缩写**（驾驶员六答之⑥）——
+        `理智稳定性` 不缩成 `稳定`、`晋升进度` 不缩成 `晋升`。真挤了是 1-10 那轮调的事。
+     🔴 **格式能引卡文的一律引卡文**（不是我自己拟的）——
+        三值 `HP 88/100` ＝ `254984` 五、2 的 `<battle_status>` 原文写法；
+        三抗带 `%` ＝ `9900031` 四、「各落 0%~100%」；
+        成长 `阶位 2 · 晋升进度 40% / 200%` ＝ `9900037` 七、字段化原文。
+
+     ⚠ 轮 1-2 那行「第 N 楼 · 读没读到」的**诊断收窄成出处行**（「轮 1-6 · 第 N 楼快照 · 走 xxx」）
+       —— 它仍是**可被证伪的证据**，不是装饰。带上轮次是为了**知道这条是哪一轮的代码**（🔴 那串轮次**每轮跟着版本号一起改**，现值看 `源:` 那行 —— **别照这段注释抄**）。
+       ⚠ 判断"拿到的是不是旧版"**改由文件名承担** —— A 下文件名就是版本号。
+
+      ── 轮 1-6 做什么 ──────────────────────────────────────────────────────
+      **页 ·「主线」** —— 一条线一行：线名 · 类型 · 状态 · 章节 · 当前节点 · 已完成 N。
+      数据 ＝ 那一楼快照的 `stat_data.世界.主线`（**字典，键就是线名**）。
+
+      🔴 **`主线` 是保留线名，同时只允许一条**（卡文 `9900044` 254 / `9900050` 二、）；
+         其余三类（支线 / 地域 / 个人）**可并行、条数不限** ⇒ 这页会有多行。
+      🔴 **「当前节点」就是 `节点` 格**（`9900050` 四、：它写的是**正在做的那个**，不是列表）；
+         **「已完成数」＝ `已完成节点` 那个列表的长度**（不是一个格）。
+      🔴 **四档状态全画**（未启/进行中/已完成/已失败）—— 与任务页**同一个口径**。
+         ⚠ 我原来把「§3.6 主线行无限定词、任务行有」读成有意的差别、并据此让任务页只画
+            「进行中」；**驾驶员 2026-09-27 拍「四挡都要」，两页由此统一**（见轮 1-7 段）。
+         ⚠ 顺带：`9900050` 六、要求**已完成的线 remove 掉** ⇒ 那一档实际画不出来几次。
+      🔴 **顺序 ＝ 类型序**（主线→支线→地域→个人，＝卡文自己的列举顺序）；同类内按键名。
+         ⚠ 键名比较走 **UTF-16 码点序、不是拼音序** —— 稳定可复现，但别当成中文习惯序。
+      🔴 **全页唯一一处翻译：`未启` → `未开始`**（驾驶员 2026-09-26 拍，见 `写状态()`）。
+         **边界是闭集** —— 只翻这一个词；类型四值、状态另外三值**一律照变量原样**。
+         **要翻下一个词，得驾驶员点名。**
+      🔴 **「暂无主线」≠「未开放」** —— 后者是「这页还没建」；空字典（真机现状 `{}`）是真·没有线。
+      🔴 **`分支` / `配乐` 本轮不画** —— §3.6 这页的表里没有（同 1-4 决策③「一个不多一个不少」）。
+      🔴 **本轮相对 §3.6 的表多了「线名」一格，且状态那格有一处翻译** ——
+         两条都记进 `确定项清单.md` 的 D 行，否则以后查「§3.6 明明只写五项」会当成 bug。
+      口径与逐条依据见 `备份与存档/归档/方案稿/_楼层栏轮1-6_方案.md` §3/§4。
+
+
+     ── 轮 1-7 做什么 ──────────────────────────────────────────────────────
+     **页 ·「任务」** —— 一条委托一行：任务名 · 级别 D · 状态 · 委托方 · 目标 · 期限。
+     数据 ＝ 那一楼快照的 `stat_data.任务`
+     （🔴 **顶层字典，不是 `世界.任务`** —— 主线在 `世界` 底下，任务不在，别照 1-6 抄路径）。
+
+     🔴 **四档状态全画、什么都不筛**（驾驶员 2026-09-27 拍「四挡都要」）——
+        `进行中` / `已完成` / `已结算` / `已失败` 全画，**任何不在这四值里的状态也照画**（不吞不猜）。
+        ⚠ 这一拍**推翻了 §3.6 任务行那个「进行中的」限定词**（推翻的是我的读法，不是卡文）。
+        🔴 **因此 `状态` 那格必须画出来** —— 四档同屏而不画状态，一行 `已完成` 和一行
+           `进行中` 在画面上长得一模一样。**原词直出、不带「状态」标签**（中文词自明）。
+     🔴 **任务名 ＝ 字典的键**（七格里**没有名字格**；`委托方` 是"具体是谁"，不是任务名）——
+        相对 §3.6 的表**多了这一格**（同轮 1-6 的「线名」）。
+     🔴 **`级别` 那格带标签**画成 `级别 D` —— 一个光秃秃的拉丁字母夹在中文行里读不出是什么；
+        §3.6 自己就写「级别 D–S」。（标签用的是**原词**，不是翻译。）
+     🔴 **期限照顶部条 `格历法()` 的写法**：`1916年3月5日`（同一屏两处日期必须一种写法）。
+        三格**全 0** ⇒ 灰 `未定`（schema 默认值就是 0，空是**合法状态**，不是故障）；
+        **半填**（有的 0 有的不是）⇒ 红 `读不到`（**不猜** —— 方案 §4.3 不变量 5）；
+        **只验是不是整数、不验范围**（同 `格历法()`：模型真写了 `13月`，画出来才看得见）。
+     🔴 **顺序 ＝ 级别序 S→D** —— 🔴 **`U60`（2026-09-27 驾驶员拍「改」）把它从 D→S 倒了过来**：
+        卡文 `9900044`「### `任务`」列的是 `D` / `C` / `B` / `A` / `S`（**D 在前**），
+        而「照那个列举顺序当排序键」本来就**是我拟的**（`D144` ⑦ 已写明卡文没规定过排序）
+        ⇒ 倒过来之后**依据只剩驾驶员的裁定**，**别再引卡文那句**。见 `D145`。
+        同级按**期限近的在前**（未定排同级最后），再按任务名。
+        ⚠ **状态不参与排序** —— 一条已完成的 D 级会排在一条进行中的 C 级前面（**知情的**）。
+        ⚠ 键名比较走 **UTF-16 码点序、不是拼音序**（同轮 1-6）。
+     🔴 **不算超期** —— 卡文〈委托与任务生成〉七、把「失败超期」定成**结算侧的触发条件**，
+        状态栏再算一遍 ＝ **第二个真源**（历法在 `世界.历法`、任务在顶层，跨容器比对只会拉大耦合面）。
+     🔴 **「暂无任务」≠「未开放」** —— 后者是「这页还没建」；空字典（真机现状 `{}`）是真·没有委托。
+     🔴 **`来源` / `奖励` 不画** —— §3.6 这页的表里没有（同 1-4 决策③「一个不多一个不少」）。
+     🔴 **本轮相对 §3.6 的表多了「任务名」与「状态」两格** ⇒ 要记进 `确定项清单.md` 的 D 行，
+        否则以后查「§3.6 明明只有四项」会当成 bug。
+      口径与逐条依据见 `备份与存档/归档/方案稿/_楼层栏轮1-7_方案.md` §3/§4。
+
+     ── 轮 1-8 做什么 ──────────────────────────────────────────────────────
+     **页 ·「连携」** —— 一条连携一行：连携名 · 参与者 · 已解锁 · 冷却 · 效果〔折叠〕。
+     数据 ＝ 那一楼快照的 `stat_data.连携`
+     （🔴 **顶层字典，不是 `世界.连携`** —— 同 1-7 的 `任务`，别照 1-6 抄路径）。
+     卡文出处：`9900044`「### `连携`」四格 ＋ `9900049`〈连携与总合击〉。
+
+     🔴 **判据一：这本账不下「能不能放」的结论**（卡文 `9900044` 原话）——
+        「**能不能放，不看你这一格**……**账本只管他会不会这一招、还有几轮好。**」
+        ⇒ 本页**不标**「某人不在场 ⇒ 这条放不出」、**不标**「集合条件不成立」——
+          卡文明写那要「**读正文里的检定记录**现判」，**账本里根本没有这个信息**。
+        ⚠ **一处知情偏离**：`冷却计数 0` 画成「**就绪**」（驾驶员 2026-09-27 点名要的）。
+          严格说它只覆盖「冷却这一项就绪」—— 已记 `D145`，**不是实现错误**，别拿卡文来对账。
+     🔴 **判据二：`已解锁: false` 是正常状态、不是坏数据** ——
+        卡文：「还没学会的写 `false`，**先占个位**」＋「任一条不再成立……**写回 `false`**」
+        （schema 默认值就是 `false`）⇒ 它**进不了「坏」那一类**。
+     🔴 **什么都不筛**（驾驶员 2026-09-27：「**你都tm不知道会遇到什么人，解锁什么技能你tm就画啊**」）——
+        `已解锁: false` 的条目**照样出现**、那一格写灰字「未解锁」。
+        ⚠ 这是对 §3.6 那句「**已解锁的**」（＝一个筛选）的**知情偏离**，见 `D145`。
+        ⚠ **连带**：页脚**不再有**「另有 N 条未解锁」那一行 —— 没有筛选，就没有被筛掉的东西要报；
+          页脚**只报坏条目**。
+     🔴 **`参与者` 只列名字**（驾驶员六答之④）—— 用 `、` 连成一串，**不标谁不在场**。
+        两条理由：① 卡文「能不能放永远不看账本」；② 在场是 1-5 页的活，这里再标一次
+        ＝ 同一件事写两处，将来一处改了一处不改就打架。
+        ⚠ 卡文三、1 那句「**至少两个名字**」是**生成侧对模型的要求**，**不是本页的校验** ——
+          状态栏不是校验器（见记忆「账本不筛」），一人 / 三人 / 五人都照画。
+     🔴 **顺序 ＝ 冷却升序**（`就绪` 最前），同级按连携名。
+        判据 ＝ §3.6 说这页「**战斗当回合要用**」⇒ 冷却好了的最该先看见。
+        ⚠ 1-7 拍过「状态不参与排序」，本轮冷却**参与** —— 驾驶员在知悉这个张力的前提下拍的，
+          记 `D145`。
+        ⚠ 键名比较走 **UTF-16 码点序、不是拼音序**（同 1-6 / 1-7）。
+     🔴 **`效果` 默认折叠**（驾驶员六答之⑥）—— 行尾一个**真 `<button>`** ＋ `aria-expanded`。
+        `效果` 是**空串就不画按钮** —— 画一个点开是空的控件比不画更糟。
+        ⚠ **本轮一并做了「展开状态保持」**（模块级 `展开的`）—— `画()` 是整框重建，
+          不记就会「点开一刷新就弹回去」（同 1-4「页签状态保持」的成法，**不是新机制**）。
+          **页签**状态保持仍归轮 1-10，本轮不动它。
+        ⚠ `效果` 里的「冷却 2 回合」是**生成时定下的总轮数**，`冷却计数` 是**现在还剩几轮**
+          —— 两个数不是一个东西，别当重复（卡文六、2 vs 六、1）。
+     🔴 **「暂无连携」≠「未开放」** —— 后者是「这页还没建」；空字典（真机现状 `{}`）是真·没有连携。
+     🔴 **本轮相对 §3.6 的表多了「连携名」与「效果」两格、且删掉了「已解锁的」那个筛选** ⇒
+        要记进 `确定项清单.md` 的 D 行，否则以后查「§3.6 明明只有两项」会当成 bug。
+      口径与逐条依据见 `备份与存档/归档/方案稿/_楼层栏轮1-8_方案.md` §3/§4。
+
+     ── 轮 1-9 做什么（本轮零改动）──────────────────────────────────────────
+     **页 ·「地图」** —— 🔴 **只留空页签**，里面恒是灰字「未开放」。
+     🔴 **本轮一个字都没改**（本步头一回）：不推托管、不改卡、不动本文件。
+        ⇒ 托管上**没有对应 1-9 的那一版**，这是知情的；
+          `变更记录.md` **不加行** —— 卡没动，加一行等于谎报一版卡。
+     🔴 **这一页现在还没装东西 —— 是排期问题，不是不做。**
+        它在 `待办.md` 的路线图里挂着「**地图 / 路程 —— 未排期 · 未出方案**」
+        （驾驶员 2026-09-19 把参考卡对位查出的三条缺口定了「**都要加**」，这是其中一条）。
+        眼下填不进去，缺的是**三样卡外的东西**（逐条见 `_小手机与楼层状态栏方案.md` §3.6.1）：
+        地图数据（变量层只有 `世界.地点` / `世界.大区` 两串字，**没坐标、没连线、没层级**）·
+        地图图片（图床未定，跟 CG 同一条船）· 谁来做这份数据（命定有地理数据文件，月痕没有）。
+        ⇒ **本轮不建 MVU 格子、不画图、不猜数据形状**；三样都要先在卡外定下来
+          （`D82` 的 wiki 层是候选去处）。
+     ✅ **验收在 `v0.0.7` 上已经成立** —— §9 要的「页签在，里面是「未开放」」是
+        轮 1-4 六答之①「六个，写未开放」的必然后果 ⇒ **本轮没有代码可写**。
+     ⚠ **两张参考卡都有地图**（命定 `map` 页签有低清/高清/超清三档；创世楼层栏有
+        `statusbar-dungeon-map-frame` ＋ `statusbar-world-map-frame`）⇒ **这个位置留得对**。
+
+     ── 轮 1-10 做什么（视觉重做）───────────────────────────────────────────
+     **视觉层整个重做** —— 令牌层 · 卡片 · 图标 · chip · 左竖条 · 池子条 · 页签条。
+     🔴 **起因是驾驶员两句话**：「**命定的你是一点没学啊**」「**你原型现在的烂完了，
+        也没有把各种分开**」⇒ 本轮**照命定源码重做**，不再自己发明形态。
+        四条成法（逐条对照见 `_分栏_样式.css` 头注释）：淡卡底 ＋ 1px 边 ＋ 4px 圆角 ＋
+        内顶高光 · **标签在左、值在右**（我原来标签在上：卡长一倍、右半幅全空）·
+        语义色降饱和偏矿物（暖米纸上不能用荧光色）· 图标走 `mask: var(--icon)`。
+     📌 **另把「主线」「连携」两页补出图** —— 这两页的代码轮 1-6 / 1-8 就写完了、
+        量尺也一直量着（六页循环里有它们），**唯独从没拍过图** ⇒「量过」掩盖了「没人看过」。
+        **探针全绿 ≠ 看见了** —— 补图当场的 4× 特写就逮出一条量尺量不出的毛病（见下）。
+     🔴 **本轮修掉一处「注释与画面不符」**：卡内标签值行的细线，注释写着「视觉上接成通长
+        的一条」，4× 特写下**断成两截** —— `column-gap` 正开在两格之间，线画在格上就跟着断
+        （命定那边不断，是因为它的线画在「行」元素上，我这边是扁平 `k,v` 没有行盒子）。
+        修法：列距从 `gap` 挪到值格自己的 `padding-left` ⇒ 实测 `56px/313px/列距12px`
+        → `56px/325px/列距0px`，**值文字的起点一格没挪**，线接上了。
+        ⚠ 教训已写进那条注释：**注释里写「视觉上如何」，必须出图看过再写** —— 这句是推的，推错了。
+     ⚠ **真机一个字没验** —— 本轮全程在本地假 Mvu 垫片上跑（`_量分栏.mjs` 顶部那份 shim）。
+     🔴 **本轮不只在 CSS** —— 上面那几样里有五样**同时改了 JS**（`_分栏_骨架.js` /
+        `_分栏_内容区.js`）：自绘图标集（`图标源` ＋ `图标()`，外加页签条的 `签图标源`）·
+        标签值**拆成 `签`/`值`/`副` 三件**（`好对()` ＋ `装格()` —— 值列不再被
+        「（状态）」后缀吃掉：那就是轮 1-9 记的那条 69% 格宽）· 详情层抽屉＋子页签
+        （`画详情`/`开详情`/`关详情`）· 页签条徽记（`徽记`）· 池子条（`池子`/`造条`）。
+     🔴 **这条是「跑出来的」，不是估的** —— 我原来在这儿写的是「JS 逻辑一个字没动」，
+        推之前那条预检拿远端 `v0.0.7` 逐字节比，**当场红了**。
+        ⇒ 现在钉的判据是**顶层标识符差集**：与 `v0.0.7` 剥掉 `<style>` 与注释后比，
+          **新增恰好 25 个、删除恰好 0 个**（白名单见 `_推_状态栏v0.0.8.mjs` 的【69】）。
+        ⚠ 教训：**「本轮只动了 X」是个可验的断言，别当形容词用。**
+
+     ── 阶段 1·续 · 样式层加厚（v0.0.9）────────────────────────────────────
+     **这不是轮 1-11** —— 是 1-10 之后接着改的同一段活儿（`待办.md` 管它叫
+     「阶段 1·续 · 样式层加厚」，2026-09-28 起）。驾驶员 2026-09-28 把「先出 8 轮方案」
+     那条路也否了：「**你八轮一点美化都不做，就只做个图标就觉得自己能做好？**」
+     ⇒ **不再写轮次方案，直接一页一页改真页面**；节奏 ＝ 改完一页出图 → 点头 → 才铺其余页。
+     🔴 **尺子** ＝ **净 CSS（去注释）**，目标 ≥ 153,685 字节（＝创世组件库快照）。
+        本版 **37,174**；起点 `v0.0.8` ＝ 18,920 ⇒ **24.2%**。
+        ⚠ 量 `<style>` 必须锚**行首** —— 本文件里另有两处 `<style>` 字样（一处在上面
+          1-10 那段的正文里、一处在下面样式块自己的注释里），不锚就从那儿开始吃、
+          **多吞 2,078 字节**：错口径报 20,998，官方 18,920。同一份文件、同一个名字的两把尺。
+     🔴 **本版相对 `v0.0.8` 的差是数出来的，不是估的**：
+        顶层标识符 79 → **146**，**删/改名 0 个**，新增 **67 个**
+        （白名单见 `_推_状态栏v0.0.9.mjs` 的【69】）。按块分：
+        · **头像**（31 个：`头*` ＋ `画在场头`/`画主角头`）—— 主角与在场角色能自己上传头像
+          （本地图压缩后存本机，**不占卡、不占提示词**）；主角**跟随人格头像**
+          （照 `组件库/道渊` 的成法），「粘贴链接」只留给 NPC。🔴 **图床只留位置、不实现**。
+        · **状态页分组卡换血**（`组色`/`组精神`/`组攻`/`组质点`/`画组` ＋ `yh-gcard`）
+          —— 每张卡顶一条组色横杠，一套色编码；`画组` 提出来给状态页与详情层共用。
+        · **在场详情层加厚**（22 个：`格*` 家族 ＋ `相貌节`/`来历节`/`性格节`/`持有节` …）。
+        · **主线 / 任务两页加筛选条**（`主线筛`/`任务筛`/`画筛`/`筛要聚焦`）—— 默认「全部」、
+          **每档带条数**、用户自己点、点回「全部」即还原。**不是默认把哪一档吞掉。**
+        · **主线页节点树**（`节点树`/`节点轨`/`线图标`/`类图标`）。
+        · **窄屏折叠**（`折序号` ＋ `.yh-cl`/`.yh-ar`/`.yh-sr`）—— ≤640 分组卡可点开合，
+          **零 JS**（开关是视觉隐藏的复选框，显隐全交给 `:has()`）。
+        ⇒ **JS 侧跟着长了一大截**，别照 1-10 那句「本轮不只在 CSS」估量级。
+     🔴 **未决（如实记）**—— 这一版里改动最大的「状态」页，驾驶员 2026-09-29 判
+        「**方向不点头**」（`待办.md`）。本版**照原样带上去、一个字没改**，等他的下一句。
+     🔴 **本版推上去时，卡的指向没动**（仍指 `v0.0.8`）—— 换指向是另一步、要另说。
+     ⚠ **头注释本身也在长**（现 30 KB 量级）—— `CLAUDE.md` §0 那条「不要再增值冗余内容」
+        对它同样成立，压掉哪些等驾驶员点头，别自己删。
+
+     ── 硬约束 ────────────────────────────────────────────────────────────
+     ① **零依赖**：不 import、不引任何外部资源（`$` 是酒馆助手注入的，不算 import —— D137 ②）。
+     ② 不碰 `tavern_helper.variables`（现在是 `{}`，保持空着）。
+     ③ JS 字符串里**不出现** `</script`（HTML 解析器会提前结束脚本）。
+        ⚠ §8.1 那五条禁序列是**壳**的约束（壳要过 ST 正则管线）；**真身是托管文件、不过那条管线**。
+     ④ 这一段是 `<script type="module">`：**必须**是，因为要顶层 await。
+        已干跑验过：`$('body').load()` 拉进来的 module 脚本**会执行**（`_435干跑.mjs`）。
+
+     ── 🔴 读取链（D138 裁的死口径）────────────────────────────────────────
+     1. `Mvu.getMvuData({type:'message', message_id: 本楼})`   ← 正路
+     2. `getVariables({type:'message', message_id: 本楼})`      ← Mvu 不在时的等价路
+     3. 都不成 ⇒ **把失败原因画在框里**
+
+     🔴 **绝不降级到 `message_id:'latest'`，也绝不降级到不带 id。**
+        `'latest'` = 最新楼。对着 5 楼用它，画出来的是**现在的**血量 ——
+        正是「滚回去看 5 楼前的战况就该看到当时的血量」裁死不许出现的那种错。
+        降级在这儿不是「聊胜于无」，是「**画错还装对**」⇒ 宁可空着报错。
+     依据：`C1` §5.1 类型契约 `message_id` 在 `type='message'` 时**必填**；
+        `C2` §4.1 把显式带 id 那一档标「更稳定」；`mvu-variables.md` 写法 B 同形。 -->
+<style>
+/* 轮 1-10 · 乙 · 排版重做 —— 由 _排版.mjs 拼入，勿手改本文件 */
+
+/* ── 轮 1-10 · 乙 · 排版重做 ── */
+
+
+html, body { margin: 0; }
+
+.yh-sb {
+  /* ── 令牌 ── */
+  --p-card:   #F7F3EA;   /* 面板底：莫兰迪米 */
+  --p-sunk:   #E6E2D9;   /* 凹槽：页签条 / 页脚 / 进度条轨道 */
+  --p-ink:    #33302B;   /* 主字色 */
+  --p-ink2:   #55504A;   /* 次级 */
+  --p-ink3:   #6F6A62;   /* 三级 —— 标签/组名就住这一档 */
+  --p-line:   rgba(51, 48, 43, .22);   /* 强描边 */
+  --p-line2:  rgba(51, 48, 43, .14);   /* 中层：凹槽边 */
+  --p-line3:  rgba(51, 48, 43, .09);   /* 弱：数据行分隔 */
+  --p-urgent: #A05C4C;   /* 告急 —— 危险 */
+  --p-fault:  #8E7E93;   /* 故障 —— 坏掉，不是危险，故意换个色相 */
+
+  /* ── 字号阶梯 ── */
+  --fs-1: 11.5px;   /* 标签 / 组名 / 页签 / 备注 */
+  --fs-2: 13.5px;   /* 值 */
+  --fs-3: 15.5px;   /* 次级抬头 */
+  --fs-4: 19px;     /* 报头：历法 */
+  /* ── 间距：4 的倍数 ── */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px;
+  --pad-x: clamp(11px, 3.2vw, 16px);
+
+  box-sizing: border-box;
+  /* ── 幅面 ── */
+  max-width: 860px;
+  margin: 12px auto;
+  background: var(--p-card);
+  color: var(--p-ink);
+  border: 1px solid var(--p-line);
+  
+  border-top: 3px solid var(--p-ink);
+  border-radius: 0;
+  /* ── 2026-09-28 四改：**投影全撤，走扁平** ── */
+  
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC",
+               "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  font-size: var(--fs-2);
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;   /* 🔴 数字对齐只靠这个 —— 三家共识，不换等宽字族 */
+  overflow-wrap: anywhere;
+  
+}
+
+/* ── 徽记 ── */
+.yh-sb .yh-crest {
+  width: 18px; height: 18px;
+  flex: 0 0 auto;
+  align-self: center;
+  margin: 0 var(--sp-3) 0 2px;
+  color: var(--p-ink);
+}
+
+/* ── 常驻条：报头 ── */
+.yh-sb .yh-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: var(--sp-2);            /* 原 4px —— 报头有字号差了，折行后两行要分得开 */
+  padding: var(--sp-3) var(--pad-x);
+  
+  background: var(--p-raise);
+  border-bottom: 1px solid var(--p-line2);
+  
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--p-ink) 5%, transparent);
+  column-gap: var(--sp-3);        /* 12px —— 没有竖线，分隔全交给留白 */
+}
+
+.yh-sb .yh-bar > span { font-size: var(--fs-2); color: var(--p-ink2); }
+
+.yh-sb .yh-bar > span > .yh-k {
+  font-size: var(--fs-1);
+  font-weight: 600;
+  color: var(--p-ink3);
+  letter-spacing: .1em;
+  margin-right: 2px;
+}
+.yh-sb .yh-bar > span:first-child .yh-v {   /* 历法 —— 全面板唯一到第四档的地方 */
+  font-size: var(--fs-4);
+  font-weight: 700;
+  color: var(--p-ink);
+  letter-spacing: .01em;
+  line-height: 1.25;
+}
+
+.yh-sb .yh-bar > span:last-child {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 10px 4px;
+  border: 1px solid color-mix(in srgb, var(--p-ink) 20%, transparent);
+  border-radius: var(--r-1);
+  background: rgba(255, 255, 255, .6);
+}
+.yh-sb .yh-bar > span:last-child > .yh-k { margin-right: 0; }
+.yh-sb .yh-bar > span:last-child .yh-v {
+  font-size: var(--fs-3);
+  font-weight: 700;
+  color: var(--p-ink);
+  letter-spacing: .04em;
+}
+
+
+
+.yh-sb .yh-bar > .yh-sep { display: none; }
+.yh-sb .yh-grp .yh-sep { display: none; }
+
+/* ── 页签条：压成一道凹槽 ── */
+.yh-sb .yh-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0 clamp(7px, 2.4vw, 11px);
+  
+  background: var(--p-sunk);
+  border-bottom: 1px solid var(--p-line2);
+}
+.yh-sb .yh-tab {
+  --tab-pad: 10px;   /* 页签横向内边距 —— 一处定义，宽窄两档各一个值 */
+  position: relative;
+  
+  flex: 1 1 0;
+  min-width: max-content;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  font: inherit;
+  font-size: var(--fs-1);
+  line-height: 1.5;
+  letter-spacing: .05em;
+  
+  
+  padding: 12px var(--tab-pad) 11px;
+  color: var(--p-ink2);
+  background: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+/* ── 「当前在哪」的指示器：**底部横条** ── */
+.yh-sb .yh-tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;                    /* 压在 `.yh-tabs` 那条 1px 底边上，横条跨住两边 */
+  height: 2px;
+  background: var(--p-ink);
+  transform: scaleX(.3);
+  transform-origin: 50% 100%;      /* 从中心长出去 —— 短→长是一个"到位"的动作 */
+  opacity: 0;
+  transition: transform .18s cubic-bezier(.2, .75, .25, 1), opacity .18s ease;
+}
+
+.yh-sb .yh-tab.yh-on {
+  color: var(--p-ink);
+  font-weight: 700;
+  
+  background: var(--p-raise);
+  border-radius: var(--r-1);
+}
+.yh-sb .yh-tab.yh-on::after { transform: scaleX(1); opacity: 1; }
+.yh-sb .yh-tab.yh-off { color: var(--p-ink3); }
+
+/* ── 页签图标 ── */
+.yh-sb .yh-ti {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  background: currentColor;
+  -webkit-mask: var(--i) center / contain no-repeat;
+  mask: var(--i) center / contain no-repeat;
+  opacity: .72;
+  transition: opacity .15s ease;
+}
+.yh-sb .yh-tab.yh-on .yh-ti { opacity: 1; }
+
+
+@media (max-width: 430px) {
+  
+  .yh-sb .yh-tab { --tab-pad: 4px; gap: 2px; padding: 11px var(--tab-pad) 10px; }
+  .yh-sb .yh-ti { width: 11px; height: 11px; }
+  .yh-sb .yh-crest { margin: 0 var(--sp-2) 0 2px; }
+}
+
+/* ── 内容区 ── */
+.yh-sb .yh-pane { margin: 0; padding: var(--sp-1) var(--pad-x) var(--sp-2); }
+.yh-sb .yh-grp {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--sp-3);
+  row-gap: var(--sp-1);            /* 原 1px —— 折行后两行会粘成一坨 */
+  padding: var(--sp-1) 0 var(--sp-1) 10px;
+  border-bottom: 1px solid var(--p-line3);
+  border-left: 2px solid transparent;     /* 指示灯竖条的位置 —— 默认不亮 */
+  transition: border-left-color .2s ease;
+}
+.yh-sb .yh-grp > span { flex: 0 0 auto; }  /* 🔴 宁可整格折行，不许压字 */
+.yh-sb .yh-grp:last-child { border-bottom-color: transparent; }
+
+.yh-sb .yh-grp .yh-gn {
+  font-size: var(--fs-1);
+  letter-spacing: .16em;
+  margin-right: -.16em;            /* 🔴 字距尾巴补偿，见页签那条 */
+  color: var(--p-ink3);
+}
+.yh-sb .yh-grp .yh-sep { color: var(--p-line2); margin: 0 1px; }
+.yh-sb .yh-grp > span:not(.yh-gn):not(.yh-sep) { font-size: var(--fs-2); color: var(--p-ink); }
+
+/* ── 名 / 值（本轮 JS 拆出来的那两个 span，就是为这里） ── */
+.yh-sb .yh-k { color: var(--p-ink3); font-size: var(--fs-1); }
+.yh-sb .yh-v { color: var(--p-ink);  font-size: var(--fs-2); }
+
+
+.yh-sb .yh-grp:has(.yh-no) { border-left-color: var(--p-fault); }
+.yh-sb .yh-grp:has(.yh-err) { border-left-color: var(--p-urgent); }
+
+/* ── 三种非正常态 ── */
+.yh-sb .yh-no  { color: var(--p-fault); font-size: var(--fs-2); font-weight: 700; }
+.yh-sb .yh-d   { color: var(--p-ink3); font-size: var(--fs-1); }
+.yh-sb .yh-ok  { color: var(--p-ink2); font-size: var(--fs-1); }
+.yh-sb .yh-err {
+  margin-top: var(--sp-2);
+  padding: 5px 8px;
+  background: #eee7df;                                            /* 兜底：手算的 7% 混色 */
+  background: color-mix(in srgb, var(--p-urgent) 7%, var(--p-card));
+  border-left: 2px solid var(--p-urgent);
+  color: var(--p-urgent);
+  white-space: pre-wrap;
+}
+
+/* ── 页脚（源行）也压一道冷灰带，跟徽记呼应 ── */
+.yh-sb .yh-src {
+  margin: 0;
+  padding: 5px var(--pad-x) 6px;
+  background: var(--p-sunk);
+  border-top: 1px solid var(--p-line2);
+}
+
+/* ── 折叠 ── */
+.yh-sb .yh-fb {
+  font: inherit;
+  font-size: var(--fs-1);
+  line-height: 1.5;
+  letter-spacing: .05em;
+  color: var(--p-ink2);
+  padding: 0 6px;
+  background: none;
+  border: 1px solid var(--p-line2);
+  border-radius: 0;
+  cursor: pointer;
+  transition: color .16s ease, border-color .16s ease;
+}
+.yh-sb .yh-fb:hover { color: var(--p-ink); border-color: var(--p-ink2); }
+.yh-sb .yh-fold { margin-top: 3px; padding-left: 10px; color: var(--p-ink2); font-size: var(--fs-1); }
+.yh-sb .yh-fold[hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .yh-sb *, .yh-sb *::before, .yh-sb *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* ── 内容区：卡片 ＋ 池子条 ＋ 详情层（视觉重做 · 2026-09-27） ── */
+
+/* ── 令牌补层 ── */
+.yh-sb {
+  
+  --p-raise:  #FCFAF5;                    /* 抬升面：卡片 / 报头 / 选中页签 —— 比面板亮 ⇒ 浮起来 */
+  --p-raise2: #FFFFFF;                    /* 抬升面·悬停 —— 只再亮一档，不加投影（四改的口径） */
+  --p-onpool: #FFFFFF;                    /* 压在**池子填充色**上的字（条内数值）—— 色上色，不是纸上色 */
+  --p-well:   color-mix(in srgb, var(--p-ink) 7%, transparent);      /* 凹槽：选中页签底 */
+  --p-chip:   color-mix(in srgb, var(--p-ink) 5.5%, transparent);    /* chip 底（中性） */
+
+  
+  --r-1: 4px;  --r-2: 8px;  --r-3: 12px;  --r-pill: 999px;
+
+  
+  --c-hp-a: #B0746A;  --c-hp-b: #CBA79C;   /* HP 陶玫 */
+  --c-mp-a: #7F92A6;  --c-mp-b: #A8B6C4;   /* MP 雾蓝 */
+  --c-sp-a: #5F7A5A;  --c-sp-b: #9DAE93;   /* SP 瓶绿 */
+  --c-exp-a:#A8894A;  --c-exp-b:#C8A357;   /* EXP 赭金 */
+  --c-ok:   #5F7A5A;                        /* 增益/已解锁 —— 同 SP 色系 */
+  --c-bad:  #A05C4C;                        /* 告急（＝ --p-urgent） */
+  --c-spec: #A8894A;                        /* 特殊（＝ 赭金） */
+  --c-main: #6B5F4A;                        /* 主色：影褐 —— 选中/指示器 */
+
+  /* ── 分组色（2026-09-28 加） ── */
+  --g-life: #A9736A;   /* 三值 —— 陶玫（生命体征） */
+  --g-dim:  #C8A357;   /* 五维 —— 赭金（星） */
+  --g-res:  #7F92A6;   /* 三抗 —— 雾蓝（盾） */
+  --g-mind: #8E7E93;   /* 心智 —— 灰紫（眼） */
+  --g-grow: #5F7A5A;   /* 成长 —— 瓶绿（升） */
+  /* 2026-09-30 加两组（卡文 `1108` 三、的「八 攻」「五 质点」两行）——
+     同一条判据：**矿物色、在暖米纸上降过饱和**，不与 `--p-urgent` 抢读。 */
+  --g-atk:  #9A6A55;   /* 攻 —— 熟赭（剑） */
+  --g-node: #6E7F86;   /* 质点 —— 青灰（钻石切面） */
+}
+
+/* ── 网格 ── */
+.yh-sb .yh-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--sp-3);
+  row-gap: var(--sp-3);            /* 16→12：卡片自己有边有底了，不再需要大间距扛分组 */
+  align-items: start;
+}
+
+.yh-sb .yh-grid > .yh-g-life { grid-column: 1 / -1; }
+@media (max-width: 860px) {
+  .yh-sb .yh-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ── 卡 ── */
+.yh-sb .yh-card {
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  
+  
+  background: var(--p-raise);
+  border: 1px solid var(--p-line2);
+  border-radius: var(--r-1);
+  
+  
+  width: 100%;
+  
+  box-sizing: border-box;
+  min-width: 0;                     /* 网格项的老规矩：不写会被长内容撑破 */
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  
+  padding: var(--sp-3);
+  transition: background .15s ease, border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.yh-sb button.yh-card:hover {
+  
+  background: var(--p-raise2);
+  border-color: var(--p-line);
+}
+.yh-sb button.yh-card:focus-visible {
+  outline: 2px solid var(--c-main);
+  outline-offset: 1px;
+}
+.yh-sb div.yh-card { cursor: default; }
+
+/* ── 分组卡：五张卡各自的色带（「状态」页专用） ── */
+.yh-sb .yh-gcard {
+  --g: var(--g-dim);                       /* 兜底：认不出的组走赭金，不是空白 */
+  
+  border-top: 3px solid var(--g);
+}
+.yh-sb .yh-g-life { --g: var(--g-life); }
+.yh-sb .yh-g-dim  { --g: var(--g-dim);  }
+.yh-sb .yh-g-res  { --g: var(--g-res);  }
+.yh-sb .yh-g-mind { --g: var(--g-mind); }
+.yh-sb .yh-g-grow { --g: var(--g-grow); }
+.yh-sb .yh-g-atk  { --g: var(--g-atk);  }
+.yh-sb .yh-g-node { --g: var(--g-node); }
+
+
+.yh-sb .yh-c-h {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.yh-sb .yh-c-n {
+  font-size: var(--fs-3);
+  font-weight: 700;
+  color: var(--p-ink);
+  line-height: 1.3;
+  word-break: break-word;
+  min-width: 0;
+}
+/* 卡头的图标 —— 跟着名字走，不抢焦点 */
+.yh-sb .yh-c-h .yh-i { color: var(--p-ink3); }
+
+.yh-sb .yh-c-go { margin-left: auto; }
+
+
+.yh-sb .yh-c-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-width: 0;
+}
+.yh-sb .yh-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 22px;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--p-line3);
+  background: var(--p-chip);
+  color: var(--p-ink2);
+  font-size: var(--fs-1);
+  line-height: 1.3;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.yh-sb .yh-chip-on   { border-color: color-mix(in srgb, var(--c-ok)   42%, var(--p-line3) 58%);
+                       background:   color-mix(in srgb, var(--c-ok)   12%, transparent); color: var(--c-ok); }
+.yh-sb .yh-chip-off  { border-color: var(--p-line3); background: var(--p-chip); color: var(--p-ink3); }
+.yh-sb .yh-chip-bad  { border-color: color-mix(in srgb, var(--c-bad)  42%, var(--p-line3) 58%);
+                       background:   color-mix(in srgb, var(--c-bad)  12%, transparent); color: var(--c-bad); }
+.yh-sb .yh-chip-spec { border-color: color-mix(in srgb, var(--c-spec) 42%, var(--p-line3) 58%);
+                       background:   color-mix(in srgb, var(--c-spec) 12%, transparent); color: var(--c-spec); }
+
+.yh-sb .yh-c-sum {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+  padding: 6px 9px 0;
+  border-left: 2px solid color-mix(in srgb, var(--c-main) 44%, transparent);
+  border-radius: 0 var(--r-1) var(--r-1) 0;
+  background: color-mix(in srgb, var(--p-ink) 4%, transparent);
+  color: var(--p-ink2);
+  font-size: var(--fs-2);
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+
+.yh-sb .yh-c-kv {
+  display: grid;
+  grid-template-columns: minmax(56px, auto) minmax(0, 1fr);
+  gap: 3px var(--sp-3);
+  align-items: baseline;
+  min-width: 0;
+}
+.yh-sb .yh-c-kv > .yh-k {
+  color: var(--p-ink3);
+  font-size: var(--fs-1);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.yh-sb .yh-c-kv > .yh-v {
+  color: var(--p-ink);
+  font-size: var(--fs-2);
+  min-width: 0;
+  word-break: break-word;
+}
+
+.yh-sb .yh-c-kv { row-gap: 0; column-gap: 0; }
+.yh-sb .yh-c-kv > .yh-k,
+.yh-sb .yh-c-kv > .yh-v {
+  padding-block: 3px;
+  border-bottom: 1px solid color-mix(in srgb, var(--p-ink) 9%, transparent);
+}
+
+.yh-sb .yh-c-kv > .yh-v { padding-left: var(--sp-3); }
+.yh-sb .yh-c-kv > :nth-last-child(-n+2) { border-bottom: 0; }
+
+
+
+.yh-sb .yh-no { color: var(--p-fault); font-weight: 700; }
+.yh-sb .yh-d  { color: var(--p-ink3); }
+
+/* ── 空页（还没装东西的页签 —— 现值只有地图页）──
+   🔴 画的不是「错误」，是**一个留好的空位**（缺数据 / 缺图 / 缺归属，三样全在卡外）。
+   🔴 全部走细线：底下**不许出现任何实心色块**（「大面积实心填充 ＝ 廉价」，与颜色无关）。
+   🔴 板子**贴着内容收**（'fit-content'），不给死宽度 —— 给宽度就得跟着字号档位改，
+      而刻线离字一远就从「框」变成「噪声」（260px 那版实拍就是这个下场）。 */
+.yh-sb .yh-空 {
+  position: relative;
+  box-sizing: border-box;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 26px 44px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--p-ink3);
+}
+.yh-sb .yh-空 > .yh-i { width: 32px; height: 32px; opacity: .68; }
+.yh-sb .yh-空 > .yh-d {
+  font-size: var(--fs-2);
+  letter-spacing: .2em;
+  text-indent: .2em;      /* 字距把整行往右推了 ⇒ 等量缩进压回视觉居中 */
+}
+
+/* 四角刻线 —— 8 条 1px 的线（最大 13×1），是**刻线不是填充** */
+.yh-sb .yh-空::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --c: color-mix(in srgb, var(--p-ink) 28%, transparent);
+  background-image:
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c));
+  background-repeat: no-repeat;
+  background-size: 1px 13px, 13px 1px, 1px 13px, 13px 1px,
+                   1px 13px, 13px 1px, 1px 13px, 13px 1px;
+  background-position: 0 0, 0 0, 100% 0, 100% 0,
+                       0 100%, 0 100%, 100% 100%, 100% 100%;
+}
+
+/* ── 图标 ── */
+.yh-sb .yh-i {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  -webkit-mask: var(--i) center / contain no-repeat;
+          mask: var(--i) center / contain no-repeat;
+}
+.yh-sb .yh-i-16 { width: 16px; height: 16px; }
+.yh-sb .yh-i-18 { width: 18px; height: 18px; }
+
+/* ── 池子条 ── */
+
+.yh-sb .yh-pools { display: flex; flex-direction: column; gap: var(--sp-3); }
+
+.yh-sb .yh-pool {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+.yh-sb .yh-pool-l {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  min-width: 52px;
+}
+.yh-sb .yh-pool-k {
+  font-size: var(--fs-2);
+  font-weight: 700;
+  color: var(--p-ink2);
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.yh-sb .yh-pool-l .yh-i { color: var(--bar-a); }
+
+.yh-sb .yh-pool-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-2);
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;   /* 数字等宽 —— 数值变的时候字不会左右跳 */
+  white-space: nowrap;
+  pointer-events: none;                  /* 它压在轨道上，别把点击吃掉 */
+  color: var(--p-ink2);
+}
+.yh-sb .yh-pool-num-w { color: var(--p-onpool); }
+
+.yh-sb .yh-pool-t {
+  position: relative;
+  display: block;
+  flex: 1 1 auto;
+  height: 24px;
+  border-radius: 999px;      /* 2026-09-28 四改：胶囊 —— 参考图的轨道是圆的 */
+  overflow: hidden;          /* 上层白字靠这道裁 —— 数值层不许越出胶囊 */
+  min-width: 0;
+  background: var(--p-sunk);
+}
+
+.yh-sb .yh-pool-f {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  border-radius: 999px;
+  background: var(--bar-a);
+  transition: width .25s ease;
+}
+.yh-sb .yh-hp  { --bar-a: var(--c-hp-a);  --bar-b: var(--c-hp-b); }
+.yh-sb .yh-mp  { --bar-a: var(--c-mp-a);  --bar-b: var(--c-mp-b); }
+.yh-sb .yh-sp  { --bar-a: var(--c-sp-a);  --bar-b: var(--c-sp-b); }
+.yh-sb .yh-exp { --bar-a: var(--c-exp-a); --bar-b: var(--c-exp-b); }
+
+.yh-sb .yh-pool-na .yh-pool-f { display: none; }
+.yh-sb .yh-pool-na .yh-pool-num { color: var(--p-fault); font-weight: 700; font-size: var(--fs-2); }
+
+/* ── 统计小格 ── */
+
+.yh-sb { overflow-wrap: normal; }
+.yh-sb .yh-c-sum { overflow-wrap: anywhere; }
+.yh-sb .yh-f .yh-v { overflow-wrap: anywhere; }
+
+/* ── 统计小格 ── */
+/* ── 读数格：列数按 `--格数` 均分 ／ 分格走格顶刻度线（2026-09-30 重做） ── */
+.yh-sb .yh-stats {
+  display: grid;
+  grid-template-columns: repeat(var(--格数, 3), minmax(0, 1fr));
+  gap: 2px var(--sp-3);
+}
+@media (max-width: 430px) {
+  .yh-sb .yh-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.yh-sb .yh-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 4px 0 2px;
+  border-top: 1px solid color-mix(in srgb, var(--p-ink) 13%, transparent);
+}
+/* ── 墓碑：`.yh-stat:last-child { grid-column-end: -1 }` ＋ `.yh-stat-w`（2026-09-28 撤） ── */
+
+.yh-sb .yh-stat-k {
+  color: var(--p-ink3);
+  
+  font-size: var(--fs-1);
+  font-weight: 700;
+  letter-spacing: .04em;
+  
+  overflow-wrap: normal;
+  min-width: 0;
+}
+.yh-sb .yh-stat-v {
+  color: var(--p-ink);
+  
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  
+  word-break: keep-all;
+  overflow-wrap: normal;
+  
+  white-space: nowrap;
+}
+
+.yh-sb .yh-stat-row {
+  flex-direction: row;
+  /* 🔴 **两行都贴格顶**（2026-09-30 改，原 `flex-end`）——
+     原意是"主行贴底、副行往下长"，可**带副的格是三行、不带的是两行**，
+     底部对齐 ⇒ 三行那格整体上移一行 ⇒ **它的标签比别人高一行**
+     （实拍「心智」：`月蚀度` 的标签比 `理智/理智稳定性/人性` 高 15px；
+      「成长」的 `晋升进度` 比 `阶位/属性点` 高得更多）。
+     贴顶之后：**标签一条线、值一条线**，副行挂在值下面 —— 同排读数照样对齐。 */
+  align-items: baseline;
+  align-content: flex-start;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+  gap: 2px 6px;
+}
+
+/* 标签下限 3.6em → 2.4em（窄格不再把值折到第二行） */
+/* 🔴 **标签恒占一行、值恒在下一行**（2026-09-30 改）——
+   原先是 `flex: 1 1 auto` ＋ `justify-content: space-between`：**装得下就一行、
+   装不下才折**。后果不是"有的格折行"，是**同组里混着单行格和双行格**
+   ⇒ 同排的值落在**两条不同的基线**上：实拍「心智」那组，
+   `人性 74` 是单行、`理智稳定性 85` 是双行，`74` 正好停在 `85` 旁边，读起来像"85 74"。
+   `flex-basis: 100%` ⇒ 每格恒两行、标签同一条线、值同一条线。
+   ⚠ 这是「宁可整格折行」那条规矩的延伸：折行可以，**但必须整组一起折**。 */
+.yh-sb .yh-stat-row > .yh-stat-k { flex: 1 0 100%; min-width: 0; }
+.yh-sb .yh-stat-row > .yh-stat-v { flex: 1 1 auto; min-width: 0; text-align: right; }
+/* ── 值组：数值在上、**品阶/状态在下一行**（2026-09-28 加，驾驶员裁定「用命定」） ── */
+/* ⚠ 上一行把标签顶成独占一行之后，值组也**必须自己占满一行** ——
+   它是 flex 容器、`text-align: right` 对它不生效，而 `justify-content: space-between`
+   在"一行只有一个元素"时把它**贴左**。实测：五个维度 ＋ 月蚀度 ＋ 律座 ＋ 晋升进度
+   共 8 格的值右偏 44~69px（量具当场报 🔴）。`flex-basis: 100%` ⇒ 值组占满、
+   内部 `align-items: flex-end` 把值送到右边。 */
+.yh-sb .yh-stat-row > .yh-stat-vg {
+  flex: 1 0 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.yh-sb .yh-stat-vs {
+  font-size: var(--fs-1);
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--p-ink3);
+}
+
+@media (max-width: 430px) {
+  .yh-sb .yh-stat-v { font-size: 17px; }
+  .yh-sb .yh-stat { padding: 5px 7px; }
+}
+
+
+
+/* ── 组名（状态页的分组抬头） ── */
+.yh-sb .yh-gcard > .yh-gn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--p-ink);
+  font-size: var(--fs-2);
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.yh-sb .yh-gcard > .yh-gn .yh-i { color: var(--g); }
+.yh-sb .yh-gcard > .yh-gn::after {
+  content: '';
+  flex: 1 1 auto;
+  min-width: 12px;
+  height: 1px;
+  margin-left: 3px;
+  
+  background: color-mix(in srgb, var(--g) 32%, transparent);
+}
+
+.yh-sb .yh-gn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--p-ink);
+  font-size: var(--fs-1);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+/* 组抬头右边的副题（`组攻` 的 `主手段`）—— 小一号、二级墨，**不抢抬头**；
+   长了就换行，**不截断**（截断＝静默吞数据）。 */
+.yh-sb .yh-gn-sub {
+  min-width: 0;
+  color: var(--p-ink2);
+  font-size: var(--fs-1);
+  font-weight: 400;
+  letter-spacing: .03em;
+  word-break: break-word;
+}
+.yh-sb .yh-gn .yh-i { color: var(--c-main); opacity: .85; }
+
+/* ── 状态筛：主线 / 任务两页顶上那一条（2026-09-29） ──
+   🔴 这一层**没有任何实心块** —— 连页签条那条 '--psunk' 凹槽都刻意不画。
+      选中的那一档靠**竖刻度 ＋ 字重**立起来；给底、给胶囊、给色块都是"常见 AI 设计"。
+   🔴 记号是页签条那支竖刻度（见 '候选乙2.html' 的 '.yh-tab::before'）**小一号**：
+      2×15 → 2×11。同一个「你在这」手势，低一层换尺寸就够，不另造一套语言。
+   ⚠ 底下那道 1px 就是普通的弱分隔线（同数据行），不是"选中态的底"。 */
+.yh-sb .yh-flt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 2px;
+  margin: 0 0 var(--sp-3);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--p-line3);
+}
+.yh-sb .yh-fl {
+  position: relative;
+  font: inherit;
+  font-size: var(--fs-1);
+  line-height: 1.5;
+  letter-spacing: .05em;
+  color: var(--p-ink3);
+  background: none;
+  border: 0;
+  border-radius: 0;
+  /* 🔴 **它是个控件，不是一行字** —— 2026-09-29 量出来只有 23.25px 高
+     （`3+3` 内边距 ＋ 17.25 的行盒），量具当场报「🔴矮」。
+     地板取 **32px**：那是**命定关闭键的实测值**（见 `_量分栏.mjs` 里那句
+     "44 ＝ 创世明写的'主要操作'下限 · 32 ＝ 命定关闭键实测"）。
+     筛不是主要操作，够不到 44；但它得按得着，23 太小了。
+     ⚠ 内容靠 `inline-flex` 居中 —— 只给 `min-height` 的话字会贴着上边。 */
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 3px 10px 3px 11px;
+  cursor: pointer;
+  transition: color .16s ease;
+}
+.yh-sb .yh-fl::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  transform: translateY(-50%);
+  background: var(--pink);
+  opacity: 0;
+  transition: height .18s cubic-bezier(.2, .75, .25, 1), opacity .18s ease;
+}
+.yh-sb .yh-fl.yh-fl-on { color: var(--pink); font-weight: 700; }
+.yh-sb .yh-fl.yh-fl-on::before { height: 11px; opacity: 1; }
+.yh-sb .yh-fl:hover { color: var(--p-ink2); }
+.yh-sb .yh-fl:focus-visible { outline: 2px solid var(--c-main); outline-offset: -1px; }
+/* 条数 —— 恒为 400 ／ 三级墨，**不吃选中态的加粗**：它是账尾，不是标签的一部分 */
+.yh-sb .yh-fl-n {
+  margin-left: 4px;
+  font-weight: 400;
+  color: var(--p-ink3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 好感度刻度轴：卡上一行（小）／详情层一整块（大）（2026-09-29） ──
+   🔴 值域 `−200…200` 是**卡文硬封**（`D71` ②「撞到两端停住」），不是这里定的。
+   🔴 **通体单色、零实心填充。** 「当前在哪」一律走 `--p-ink` ——
+      `--p-urgent` 那套信号色只管「告急」，好感度没有告急这一说。正负两侧靠
+      **位置**分，不靠颜色分：轴本来就是为了不必上色才存在的。
+   🔴 记号是页签条（`.yh-tab::before`）／状态筛（`.yh-fl::before`）那支竖记号的
+      **第三处** —— 同一支笔画，不另造一套记号。
+   🔴 记号与刻度靠**方向**分（记号向上穿出线，刻度一律在线下），**不靠长度分**：
+      两个都从线往下长的时候，`+30` 的记号与 `0` 那根刻度只差 4px，扫一眼是一团。见 `.yh-ax-m`。
+   🔴 `0` 那条刻度**加高**：它是语义铰链（左＝恶感 / 右＝好感），不是普通刻度。
+      这不是装饰 —— 没有它，一枚孤零零的记号读不出在哪一侧。
+   ⚠ 一套 DOM、两套布局：大档三行（签+值 / 轨 / 刻度字），小档一行（签 / 轨 / 值）。
+     小档靠 `.yh-ax-s` 改 `grid-template-areas` 就够，不另造一棵子树。 */
+.yh-sb .yh-ax {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "k v v" "t t t" "n n n";
+  align-items: center;
+  gap: 5px 8px;
+  min-width: 0;
+}
+.yh-sb .yh-ax-k { grid-area: k; font-size: var(--fs-1); color: var(--p-ink3); letter-spacing: .04em; }
+.yh-sb .yh-ax-v {
+  grid-area: v; justify-self: end;
+  font-size: var(--fs-2); font-weight: 700; color: var(--p-ink);
+  font-variant-numeric: tabular-nums;
+}
+/* 轨的容器：`position: relative` 是给刻度与记号定位用的，本身不画东西 */
+.yh-sb .yh-ax-t { grid-area: t; position: relative; height: 18px; min-width: 0; }
+.yh-sb .yh-ax-l { position: absolute; left: 0; right: 0; top: 8px; height: 1px; background: var(--p-line2); }
+.yh-sb .yh-ax-tk { position: absolute; top: 8px; width: 1px; height: 4px; background: var(--p-line3); }
+.yh-sb .yh-ax-tk.z { height: 9px; background: var(--p-ink3); }
+/* 🔴 **记号要「骑在线上」，不是「挂在线下」**（2026-09-29 改）。
+   原来它跟刻度一样从线**向下**长（4px vs 记号 8px），差别只有 4px——
+   而 900 档实拍下面，`+30` 那枚记号与 `0` 那根刻度**只隔 60px、两根都是深色**，
+   扫一眼读成"一根粗记号"（卡上更糟：`+30 / +12 / +8` 三张卡全挤在 0 附近，
+   每张都是这么一团）。
+   ⇒ 判据改成**方向**，不是长度：**线以上只可能是记号，线以下才是刻度。**
+      记号向上穿出 7px、刻度一律在线下 —— 一个像素都不用数，扫一眼就分得开。
+   ⚠ 长度差保留（记号 17px / 零刻度 9px / 普通刻度 4px），但**它不再是主要判据**。 */
+.yh-sb .yh-ax-m {
+  position: absolute; top: 1px; width: 2px; height: 17px;
+  margin-left: -1px;                       /* 记号**骑在**刻度上，不是从它右边起 */
+  border-radius: 1px;
+  background: var(--p-ink);
+  transition: left .22s cubic-bezier(.2, .75, .25, 1);
+}
+.yh-sb .yh-ax-n {
+  grid-area: n; position: relative; height: 12px;
+  font-size: 10px; line-height: 12px; color: var(--p-ink3);
+  letter-spacing: .02em; font-variant-numeric: tabular-nums;
+}
+.yh-sb .yh-ax-n span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.yh-sb .yh-ax-n span:first-child { transform: none; }
+.yh-sb .yh-ax-n span:last-child { transform: translateX(-100%); }
+
+/* 小档（卡上那一行）：签 / 轨 / 值 一行放下，刻度字不画 */
+.yh-sb .yh-ax-s { grid-template-areas: "k t v"; gap: 0 8px; }
+.yh-sb .yh-ax-s .yh-ax-t { height: 13px; }
+.yh-sb .yh-ax-s .yh-ax-l { top: 6px; }
+.yh-sb .yh-ax-s .yh-ax-tk { top: 6px; height: 3px; }
+.yh-sb .yh-ax-s .yh-ax-tk.z { height: 6px; }
+.yh-sb .yh-ax-s .yh-ax-m { top: 2px; height: 11px; }
+.yh-sb .yh-ax-s .yh-ax-n { display: none; }
+.yh-sb .yh-ax-s .yh-ax-v { font-size: var(--fs-1); }
+
+/* 读不到好感度 ⇒ **轨照画、记号不画**，值写「读不到」——
+   跟池子条那条同一个口径：画一枚停在 0 的记号会被读成「好感度是 0」，那是另一个意思。 */
+.yh-sb .yh-ax-na .yh-ax-v { font-weight: 400; color: var(--p-ink3); }
+.yh-sb .yh-ax-na .yh-ax-l { background: var(--p-line3); }
+
+/* ── 主线 · 节点树（2026-09-30 加）──
+   竖轨 ＋ 记号：走完的＝实心点，当前＝圆环 ＋ 尾签，轨在末尾往下淡出（底下是还没走的路）。
+   ⚠ 记号一律 **CSS 画**，不引图标 —— 图标答「这是什么」，这一块答「走到哪了」。 */
+.yh-sb .yh-tree { margin-top: 2px; }
+.yh-sb .yh-tr-h {
+  display: flex; align-items: baseline; gap: 8px;
+  padding-bottom: 7px; border-bottom: 1px solid var(--p-line3);
+}
+.yh-sb .yh-tr-hk { font-size: var(--fs-1); font-weight: 600; color: var(--p-ink2); }
+.yh-sb .yh-tr-hv {
+  margin-left: auto; font-size: var(--fs-1); color: var(--p-ink3);
+  font-variant-numeric: tabular-nums;
+}
+.yh-sb .yh-tr { list-style: none; margin: 0; padding: 0; }
+.yh-sb .yh-tr-n {
+  position: relative; display: flex; align-items: baseline; gap: 8px;
+  padding: 9px 0 9px 22px;
+}
+/* 竖轨 —— 贯穿本节点、接上下一个；`left:3.5px` 与 9px 记号的中心（4.5px）对齐。
+   走完的那几段＝**实线**（`--p-ink3`，比线色重一档 ⇒ 一眼看出是走过的路）。 */
+.yh-sb .yh-tr-n::before {
+  content: ''; position: absolute; left: 3.5px; top: 18px; bottom: 0; width: 2px;
+  background: var(--p-ink3);
+}
+/* 最后一个（＝当前节点）往下＝**虚线** —— 底下是还没走的路。
+   虚线的意思是「路还在」，不是「线断了」；参考图（探索与成长手册·成就道路）
+   走的正是这一套：实路 ＝ 走过，虚路 ＝ 还没走。 */
+.yh-sb .yh-tr-n:last-child::before {
+  background: repeating-linear-gradient(to bottom, var(--p-line2) 0 3px, transparent 3px 7px);
+  bottom: 6px;
+}
+/* 末尾留出这一段 —— 虚线才有地方跑，「前面还有路」才看得见 */
+.yh-sb .yh-tr-n:last-child { padding-bottom: 26px; }
+/* 路到头了（`已完成` / `已失败`）⇒ 虚线掐掉、尾距收回。**断掉的路不许画成还能走。** */
+.yh-sb .yh-tree.is-end .yh-tr-n:last-child { padding-bottom: 9px; }
+.yh-sb .yh-tree.is-end .yh-tr-n:last-child::before { display: none; }
+.yh-sb .yh-tr-m { position: absolute; left: 0; top: 11px; width: 9px; height: 9px; border-radius: 50%; }
+.yh-sb .yh-tr-n.is-done .yh-tr-m { background: var(--p-ink3); }
+.yh-sb .yh-tr-n.is-now .yh-tr-m { background: var(--p-raise); box-shadow: 0 0 0 2px var(--p-ink); }
+.yh-sb .yh-tr-t { font-size: var(--fs-2); line-height: 1.55; color: var(--p-ink2); overflow-wrap: anywhere; }
+.yh-sb .yh-tr-n.is-now .yh-tr-t { color: var(--p-ink); font-weight: 600; }
+.yh-sb .yh-tr-g { flex: 0 0 auto; margin-left: auto; padding-left: 10px; font-size: var(--fs-1); color: var(--p-ink3); }
+/* 岔口 —— 一小段四分之一圆弧从轨尾拐出去，比另起一行字更说明「这里分叉」 */
+.yh-sb .yh-tr-f {
+  position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr);
+  gap: 3px 10px; align-items: baseline; padding: 9px 0 2px 22px;
+}
+.yh-sb .yh-tr-f::before {
+  content: ''; position: absolute; left: 3.5px; top: -1px; width: 12.5px; height: 12.5px;
+  border-left: 2px solid var(--p-ink3); border-bottom: 2px solid var(--p-ink3);
+  border-bottom-left-radius: 7px;
+}
+.yh-sb .yh-tr-fk { font-size: var(--fs-1); font-weight: 600; color: var(--p-ink3); white-space: nowrap; }
+.yh-sb .yh-tr-fv { font-size: var(--fs-2); line-height: 1.6; color: var(--p-ink2); overflow-wrap: anywhere; }
+
+/* ── 主线 · 卡面记号轨（只卡）—— 走完的串成一串点，当前一颗圆环 ── */
+.yh-sb .yh-rail { display: flex; align-items: center; gap: 5px; margin-top: 8px; }
+.yh-sb .yh-rail i { position: relative; display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--p-ink3); }
+.yh-sb .yh-rail i:not(:last-child)::after {
+  content: ''; position: absolute; left: 100%; top: 50%; width: 5px; height: 1px;
+  background: var(--p-line2); transform: translateY(-50%);
+}
+.yh-sb .yh-rail i.is-now { width: 9px; height: 9px; background: var(--p-raise); box-shadow: 0 0 0 1.5px var(--p-ink); }
+.yh-sb .yh-rail i.is-more {
+  width: auto; height: auto; border-radius: 0; background: none;
+  font-size: var(--fs-1); color: var(--p-ink3); font-variant-numeric: tabular-nums;
+}
+
+/* ── 详情层：**取代**内容区（不是盖在上面） ── */
+.yh-sb { position: relative; }
+.yh-sb .yh-pane { position: relative; }
+.yh-sb .yh-pane:has(.yh-ovl) > .yh-grid,
+.yh-sb .yh-pane:has(.yh-ovl) > .yh-flt { display: none; }
+
+.yh-sb .yh-pane:has(.yh-ovl) { padding: 0; }
+.yh-sb .yh-ovl { position: relative; display: flex; }
+.yh-sb .yh-sheet {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--p-card);
+  
+  animation: yh-浮现 .18s ease;
+  outline: none;
+}
+.yh-sb .yh-sh-h {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--pad-x) var(--sp-2);
+}
+
+.yh-sb .yh-sh-x {
+  font: inherit;
+  font-size: var(--fs-1);
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  
+  min-height: 44px;
+  margin-left: -10px;
+  background: color-mix(in srgb, var(--p-ink) 5%, transparent);
+  border: 1px solid var(--p-line3);
+  border-radius: var(--r-pill);
+  color: var(--p-ink2);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s ease, border-color .15s ease;
+}
+.yh-sb .yh-sh-x:hover,
+.yh-sb .yh-sh-x:focus-visible { background: color-mix(in srgb, var(--p-ink) 9%, transparent); border-color: var(--p-line2); color: var(--p-ink); }
+
+.yh-sb .yh-sh-x:focus-visible,
+.yh-sb .yh-sh-tab:focus-visible {
+  outline: 2px solid var(--c-main);
+  outline-offset: 1px;
+}
+.yh-sb .yh-sh-t {
+  font-size: var(--fs-3);
+  font-weight: 700;
+  color: var(--p-ink);
+  line-height: 1.3;
+  min-width: 0;
+  word-break: break-word;
+}
+/* ── 详情层的子页签条（2026-09-28 加 · 任务 #14「详情里再分子页签」） ── */
+.yh-sb .yh-sh-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0;
+  margin: 0 var(--pad-x) var(--sp-2);
+  border: 0;
+  border-bottom: 1px solid var(--p-line3);
+  background: none;
+  border-radius: 0;
+}
+.yh-sb .yh-sh-tab {
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  min-height: 44px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--p-ink3);
+  font-size: var(--fs-2);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  word-break: break-word;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.yh-sb .yh-sh-tab:hover,
+.yh-sb .yh-sh-tab:focus-visible {
+  background: color-mix(in srgb, var(--p-ink) 6%, transparent);
+  color: var(--p-ink2);
+}
+.yh-sb .yh-sh-tab-on {
+  color: var(--p-ink);
+  box-shadow: inset 0 -2px 0 var(--p-ink);
+}
+.yh-sb .yh-sh-b {
+  overflow-y: auto;
+  overscroll-behavior: contain;   /* 万一超长要内部滚，别把聊天页带着一起滚 */
+  
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--p-ink) 22%, transparent) transparent;
+  padding: 0 var(--pad-x) var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.yh-sb .yh-sh-b::-webkit-scrollbar { width: 6px; height: 6px; }
+.yh-sb .yh-sh-b::-webkit-scrollbar-track { background: transparent; }
+.yh-sb .yh-sh-b::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--p-ink) 22%, transparent);
+  border-radius: 3px;
+}
+
+.yh-sb .yh-f {
+  display: grid;
+  grid-template-columns: minmax(56px, auto) minmax(0, 1fr);
+  gap: 3px var(--sp-3);
+  align-items: baseline;
+}
+.yh-sb .yh-f .yh-v { white-space: pre-wrap; }
+.yh-sb .yh-f .yh-v { color: var(--p-ink); font-size: var(--fs-2); word-break: break-word; }
+.yh-sb .yh-f .yh-k { color: var(--p-ink3); font-size: var(--fs-1); font-weight: 600; white-space: nowrap; }
+
+
+.yh-sb .yh-body { display: flex; flex-direction: column; gap: var(--sp-3); }
+.yh-sb .yh-meta {
+  display: flex;
+  flex-wrap: wrap;
+  
+  gap: var(--sp-1);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--p-line3);
+}
+
+.yh-sb .yh-meta > .yh-f {
+  flex: 0 0 auto;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 3px 10px;
+  border: 1px solid color-mix(in srgb, var(--p-ink) 14%, transparent);
+  border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--p-ink) 4%, transparent);
+}
+.yh-sb .yh-meta > .yh-f > .yh-k {
+  color: var(--p-ink3);
+  font-size: var(--fs-1);
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+.yh-sb .yh-meta > .yh-f > .yh-v {
+  color: var(--p-ink);
+  font-size: var(--fs-2);
+  font-weight: 700;
+}
+
+
+/* ── 签里的散文 ＋ 名录块（2026-09-30 加）────────────────────────────────
+   「相貌 / 来历 / 性格 / 持有」四签的正文。改前每一签只有一段裸散文 —— 一整屏
+   只有三五行字，所以驾驶员的原话是「人物这三个里面内容我记得还是太少了」。
+   现在每签 ＝ 一段散文（主角）＋ 一到三片名录（旁证）。 */
+
+/* 散文 —— 就是 `.yh-f > .yh-v` 那一档字，但**没有标签列** ⇒ 独占整幅。
+   `max-width` 走 `62ch`：一行超过大约 60 个汉字，眼睛回行会找错行
+   （中文比西文更吃这个 —— 没有词间空格当"路标"）。 */
+.yh-sb .yh-prose {
+  max-width: 62ch;
+  color: var(--p-ink);
+  font-size: var(--fs-2);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+/* 段落之间那点气口 —— 散文自己带 `\n`（`pre-wrap` 照画），这里只管块与块的间距 */
+.yh-sb .yh-tabbox { display: flex; flex-direction: column; gap: var(--sp-3); }
+.yh-sb .yh-tabsec { display: flex; flex-direction: column; gap: var(--sp-2); }
+
+/* ── 名录块：字典型容器（技能 / 装备 / 背包 / 特质 / 节点 / 金钱）──
+   抬头 ＋ 一条一目。**不上卡底**（这一层已经在 `.yh-sheet` 那块板子里，
+   再给每条铺一块实心底就是"大面积实心填充"—— 廉价跟它是什么颜色无关）。
+   分条只走**一道发丝线**，同 `.yh-meta` 那条。 */
+.yh-sb .yh-rec { display: flex; flex-direction: column; }
+.yh-sb .yh-rec-h {
+  display: flex; align-items: center; gap: 6px;
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px solid var(--p-line3);
+  color: var(--p-ink3);
+  font-size: var(--fs-1);
+}
+.yh-sb .yh-rec-hn { font-weight: 700; letter-spacing: .06em; }
+.yh-sb .yh-rec-hc {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--p-ink3);
+}
+.yh-sb .yh-rec-h .yh-i { opacity: .85; }
+
+.yh-sb .yh-rec-l { list-style: none; margin: 0; padding: 0; }
+.yh-sb .yh-rec-i {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--p-line3) 55%, transparent);
+}
+.yh-sb .yh-rec-i:last-child { border-bottom: 0; padding-bottom: 0; }
+/* 条目名 —— 左缘一道 2px 记号，跟 `.yh-c-sum` 那条同源（同一个"这是一条"的记号） */
+.yh-sb .yh-rec-n {
+  padding-left: 8px;
+  border-left: 2px solid var(--p-line2);
+  color: var(--p-ink);
+  font-size: var(--fs-2);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+/* 字段对 —— 一排可折行的「标签 值」胶囊。**不折字**（`nowrap` 在标签上），
+   值可以折（`word-break`）—— 同「数据行宁可整格折行，不许压字」。 */
+.yh-sb .yh-rec-d { display: flex; flex-wrap: wrap; gap: 3px var(--sp-2); padding-left: 10px; }
+.yh-sb .yh-tabkv { display: flex; flex-wrap: wrap; gap: 3px var(--sp-2); }
+.yh-sb .yh-rec-p { display: inline-flex; align-items: baseline; gap: 5px; min-width: 0; }
+.yh-sb .yh-rec-k {
+  color: var(--p-ink3);
+  font-size: var(--fs-1);
+  white-space: nowrap;
+  letter-spacing: .03em;
+}
+.yh-sb .yh-rec-v {
+  color: var(--p-ink2);
+  font-size: var(--fs-1);
+  font-variant-numeric: tabular-nums;
+  word-break: break-word;
+}
+
+@keyframes yh-浮现 { from { transform: translateY(2px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ── 主角头 ＋ 头像（2026-09-28 加） ── */
+
+/* ── 外壳：定位锚。面板挂它里面，跟着内容滚（见 `_分栏_头像.js` 第 8 节） ── */
+.yh-sb .yh-av-w { position: relative; display: inline-flex; flex: 0 0 auto; }
+
+/* ── 头像本体：三层共用的底 ── */
+.yh-sb .yh-av {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--p-line2);
+  background: var(--p-sunk);
+  color: var(--p-ink3);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.yh-sb span.yh-av { cursor: default; }
+.yh-sb button.yh-av:hover { border-color: var(--p-line); background: var(--p-raise); }
+.yh-sb button.yh-av:focus-visible { outline: 2px solid var(--c-main); outline-offset: 2px; }
+
+/* 竖幅（立绘）：主角头 ＋ 详情层 */
+.yh-sb .yh-av-w-p .yh-av { width: 132px; height: 176px; border-radius: var(--r-3); }
+/* 正圆（记号）：在场页卡头 */
+.yh-sb .yh-av-w-c .yh-av { width: 40px; height: 40px; border-radius: var(--r-pill); }
+
+/* ── 第 ③ 层：首字（永远在最底下，上面两层不在时露出来） ── */
+.yh-sb .yh-av-t {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--p-ink3);
+  user-select: none;
+}
+.yh-sb .yh-av-w-c .yh-av-t { font-size: 15px; }
+
+/* ── 第 ② / ① 层：人格头像 与 上传图，**同尺寸同位置**，谁在上谁盖住 ── */
+.yh-sb .yh-av-g,
+.yh-sb .yh-av-i {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.yh-sb .yh-av-g { background-repeat: no-repeat; background-size: cover; background-position: center; }
+
+/* ── 上传角标 —— **常驻可见**，不是 hover 才显 ── */
+.yh-sb .yh-av-e {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--p-line2);
+  border-radius: var(--r-pill);
+  background: var(--p-raise2);
+  color: var(--p-ink2);
+  opacity: .92;
+  transition: opacity .15s ease, transform .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.yh-sb .yh-av-w-c .yh-av-e { display: none; }
+.yh-sb button.yh-av:hover .yh-av-e,
+.yh-sb button.yh-av:focus-visible .yh-av-e {
+  opacity: 1;
+  transform: scale(1.06);
+  border-color: var(--c-main);
+  color: var(--c-main);
+}
+
+/* ── 上传面板 ── */
+.yh-sb .yh-av-pop {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 246px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--sp-2);
+  border: 1px solid var(--p-line);
+  border-radius: var(--r-2);
+  background: var(--p-raise2);
+  text-align: left;
+  font-size: var(--fs-1);
+  color: var(--p-ink);
+}
+.yh-sb .yh-av-pop-t { font-weight: 700; color: var(--p-ink); word-break: break-word; }
+.yh-sb .yh-av-pop-in {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 8px;
+  border: 1px solid var(--p-line2);
+  border-radius: var(--r-1);
+  background: var(--p-sunk);
+  color: var(--p-ink);
+  font: inherit;
+  font-size: var(--fs-1);
+}
+.yh-sb .yh-av-pop-in::placeholder { color: var(--p-ink3); }
+.yh-sb .yh-av-pop-in:focus-visible { outline: 2px solid var(--c-main); outline-offset: 1px; }
+.yh-sb .yh-av-pop-r { display: flex; flex-wrap: wrap; gap: 6px; }
+.yh-sb .yh-av-pop-b {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 26px;
+  padding: 3px 9px;
+  border: 1px solid var(--p-line2);
+  border-radius: var(--r-pill);
+  background: var(--p-chip);
+  color: var(--p-ink2);
+  font: inherit;
+  font-size: var(--fs-1);
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease, color .15s ease;
+}
+.yh-sb .yh-av-pop-b:hover { border-color: var(--p-line); background: var(--p-raise); color: var(--p-ink); }
+.yh-sb .yh-av-pop-b:focus-visible { outline: 2px solid var(--c-main); outline-offset: 1px; }
+
+.yh-sb .yh-av-pop-x { color: var(--p-urgent); border-color: color-mix(in srgb, var(--p-urgent) 34%, transparent); }
+.yh-sb .yh-av-pop-x:hover {
+  border-color: var(--p-urgent);
+  background: color-mix(in srgb, var(--p-urgent) 10%, transparent);
+  color: var(--p-urgent);
+}
+
+.yh-sb .yh-av-pop-h { color: var(--p-ink3); line-height: 1.45; word-break: break-word; }
+.yh-sb .yh-av-pop-er { color: var(--p-urgent); }
+
+/* ── 🔴 图床的样式**已撤**（2026-09-28 驾驶员：「只是叫你预留位置而已」） ── */
+
+
+/* ── 主角头 ── */
+.yh-sb .yh-hero {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--sp-3);
+  box-sizing: border-box;
+  min-width: 0;
+  margin-bottom: var(--sp-3);
+  padding: var(--sp-3);
+  border: 1px solid var(--p-line2);
+  border-radius: var(--r-1);
+  background: var(--p-raise);
+}
+.yh-sb .yh-hero-id { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.yh-sb .yh-hero-n { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; min-width: 0; }
+
+.yh-sb .yh-hero-name {
+  font-size: var(--fs-4);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--p-ink);
+  word-break: break-word;
+}
+
+.yh-sb .yh-hero-blank { color: var(--p-ink3); font-weight: 400; }
+.yh-sb .yh-hero-title { font-size: var(--fs-2); color: var(--p-ink2); word-break: break-word; }
+.yh-sb .yh-hero-meta { font-size: var(--fs-1); color: var(--p-ink3); line-height: 1.5; word-break: break-word; }
+
+/* ── 头盒里的「关系」行（2026-09-30 从头盒下方的独立行挪进来） ── */
+.yh-sb .yh-hero-rel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3px 10px;
+  align-items: baseline;
+  margin-top: 2px;
+  padding-top: 8px;
+  border-top: 1px solid var(--p-line3);
+}
+.yh-sb .yh-hero-rel-k {
+  color: var(--p-ink3);
+  font-size: var(--fs-1);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.yh-sb .yh-hero-rel-v {
+  color: var(--p-ink);
+  font-size: var(--fs-2);
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+
+.yh-sb .yh-hero-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.yh-sb .yh-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  min-height: 22px;
+  padding: 2px 8px;
+  border: 1px solid var(--p-line2);
+  border-radius: var(--r-pill);
+  background: var(--p-chip);
+  font-size: var(--fs-1);
+  line-height: 1.25;
+  color: var(--p-ink2);
+}
+.yh-sb .yh-hero-tag-k { flex: 0 0 auto; color: var(--p-ink3); }
+.yh-sb .yh-hero-tag strong { min-width: 0; font-weight: 600; color: var(--p-ink); word-break: break-word; }
+
+/* ── 详情层里那份「图 ＋ 身份」：**裸的**（2026-09-29） ──
+   🔴 为什么不像状态页那样套一张卡（`--p-raise` 实心底 ＋ 边框）：
+      `.yh-hero` 在状态页是**整页的开头**，它需要一块底把自己跟下面的网格分开；
+      在详情层里，`.yh-sheet` 已经是那块有底有边的板子，**开头再套一块板就是两块板**。
+      分界改走底下一道发丝线（`--p-line3`，跟 `.yh-meta` 那条同一支）。
+   ⚠ **这只针对头盒，不是"详情层里不许有卡"** —— 属性那五张 `.yh-gcard` 照旧带底带边：
+      它们是**内容条目**（每条自带组色横杠，那根杠就是编码），
+      而头盒是**这一页的抬头**。抬头不该长得像条目。
+   🔴 为什么要并排：并排之前，132×176 的立绘孤零零挂在左边，
+      右边 1400px 全空（900 档实拍 `_分栏_分栏①对齐_在场详情_宽.png`）。
+      **立绘不是问题，"立绘旁边什么都没有"才是问题** —— 身份行挪到它右边就治好了。 */
+.yh-sb .yh-hero-flat {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--p-line3);
+  border-radius: 0;
+  padding: 0 0 var(--sp-3);
+  margin-bottom: 0;
+}
+
+
+.yh-sb .yh-hero-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--fs-1);
+  line-height: 1.55;
+  color: var(--p-ink2);
+  overflow-wrap: anywhere;
+}
+
+/* ── 窄档 ── */
+@media (max-width: 540px) {
+  .yh-sb .yh-hero { display: block; padding: var(--sp-2); }
+  /* 🔴 **必须重报一次**：上面那条 `.yh-hero` 跟 `.yh-hero-flat` **同特异度**（都是 0-2-0），
+     而媒体查询在文件更后面 ⇒ 它会连"裸的"那套 padding 一起盖掉，头盒在窄档悄悄长出内边距。
+     同特异度下**靠位置赢**，所以这里不是重复，是拿回本属于自己的那条。 */
+  .yh-sb .yh-hero-flat { padding: 0 0 var(--sp-2); }
+  .yh-sb .yh-hero-id { display: block; }
+  .yh-sb .yh-av-w { float: left; margin: 0 var(--sp-2) 6px 0; }
+  .yh-sb .yh-hero-n { margin-bottom: 4px; }
+  .yh-sb .yh-hero-meta { margin-bottom: 6px; }
+  .yh-sb .yh-hero-tags { clear: both; }
+  .yh-sb .yh-hero-desc { margin-top: 6px; }
+  .yh-sb .yh-av-w-p .yh-av { width: 96px; height: 128px; }
+  .yh-sb .yh-av-pop { width: 212px; }
+  .yh-sb .yh-hero-name { font-size: var(--fs-3); }
+}
+
+/* ── 窄屏：分组点击展开 / 收起（2026-10-01 驾驶员工单） ──────────────────────
+   窄屏下分组卡塌成一列，「状态」页拖成一根长条 ⇒ 组抬头可点、组内容默认收起，
+   抬头本身就是索引。**零 JS**：开关是一个视觉隐藏的复选框，显隐全交给 `:has()`。
+   ⚠ `.yh-sr` 与 `.yh-ar` 的基础规则**必须在媒体查询外面** ——
+     复选框在任何宽度都存在，基础规则漏在外面它会在宽档露出来；
+     箭是空的 `<i>`，不给 `display:none` 它会吃掉 `.yh-gn` 那 7px 的 `gap`，宽档布局会挪。 */
+.yh-sb .yh-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.yh-sb .yh-gn > .yh-ar { display: none; }
+
+@media (max-width: 640px) {
+  .yh-sb .yh-gcard:has(> .yh-cl) > .yh-gn {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .yh-sb .yh-gcard > .yh-gn > .yh-ar {
+    display: block;
+    flex: none;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--p-ink3);
+    transition: transform .18s cubic-bezier(.2, .75, .25, 1);
+  }
+  .yh-sb .yh-gcard:has(> .yh-cl:not(:checked)) > .yh-gn > .yh-ar { transform: rotate(-90deg); }
+  .yh-sb .yh-gcard:has(> .yh-cl:not(:checked)) > *:not(.yh-cl):not(.yh-gn) { display: none; }
+  /* 键盘可达 —— 复选框视觉隐藏了，焦点环得画在抬头这一行上，不然 Tab 过去什么都看不见 */
+  .yh-sb .yh-gcard > .yh-cl:focus-visible + .yh-gn { outline: 2px solid var(--c-main); outline-offset: 2px; }
+}
+</style>
+</head>
+<body>
+<div class="yh-sb"><span class="yh-d">楼层状态栏 · 正在读…</span></div>
+<script type="module">
+/* ══════════════════════════════════════════════════════════════════════════
+   骨架 v0.0.9 · 阶段 1·续（样式层加厚 —— 见头注释那一段）
+   ══════════════════════════════════════════════════════════════════════════ */
+const 版本 = 'v0.0.9';
+const 单例键 = '__yuehenStatusBar__';
+
+/* ── 页表 ────────────────────────────────────────────────────────────────
+   6 页照 `_小手机与楼层状态栏方案.md` §3.6；**未建的写「未开放」**。
+   ⚠ 「未开放」是**要长期保留的真实状态**（地图页就是这种 —— **未排期**，不是因为不做；§3.6.1），
+     不是临时占位。 */
+const 页表 = ['状态', '在场', '主线', '任务', '连携', '地图'];
+const 已建 = { 状态: true, 在场: true, 主线: true, 任务: true, 连携: true };
+let 当前页 = '状态';
+let 最后行 = null;   // 🔴 切页重画用它 —— **不重读快照**（重读会多打一次 MVU 接口）
+// 🔴 **展开状态保持**（轮 1-8）—— `画()` 是整框重建，不记就会「点开一刷新就弹回去」。
+//    存的是**连携名**（字典的键），不是下标 —— 重排之后下标会串位，名字不会。
+//    ⚠ 与 1-4 的 `当前页` 同构：模块级一份、跨重画活着；**页签**那一半归轮 1-10。
+const 展开的 = new Set();
+
+/* ── 0. 小工具 ─────────────────────────────────────────────────────────── */
+
+// 取一个全局：先看自己这一层，再看上一层。
+// ⚠ 酒馆助手把 API 注入**消息楼层 iframe**（C1 §3）；但版本差异下未必都在本层 ⇒ 往上找一层。
+function 取全局(名) {
+  try { const v = window[名]; if (typeof v !== 'undefined' && v !== null) return v; } catch (_) {}
+  try { const v = window.parent[名]; if (typeof v !== 'undefined' && v !== null) return v; } catch (_) {}
+  return undefined;
+}
+const 睡 = (毫秒) => new Promise((r) => setTimeout(r, 毫秒));
+
+/* ── 1. 去重（照 C2 §5.6 的思路：**优先保自己**）────────────────────────
+   swipe / edit 会再注入一个 iframe；不处理就是同一楼两个框。
+   只删**同一楼里带 .yh-sb 的同类 iframe**，不碰别的东西。
+
+   🔴 **必须等 `.yh-sb` 画出来之后再调**。它不在壳里、在托管那份真身里 ——
+      壳一跑就调去重，此刻 iframe 里只有一段 `<script>`、`.yh-sb` 还不存在，
+      同类框数永远是 0 ⇒ **去重静默失效、一个框都不删**（看着像"没触发"，其实是从没生效）。
+      ⇒ 由 `画()` 末尾触发（画完必调），另外挂两个延时兜底。 */
+function 去重() {
+  try {
+    const 我 = window.frameElement;
+    if (!我 || !我.closest) return;
+    const 楼 = 我.closest('.mes');
+    if (!楼) return;
+    const 同类 = [];
+    const 全部 = 楼.querySelectorAll('iframe');
+    for (let i = 0; i < 全部.length; i++) {
+      try {
+        const d = 全部[i].contentDocument;
+        if (d && d.querySelector('.yh-sb')) 同类.push(全部[i]);
+      } catch (_) { /* 跨源读不到就跳过 */ }
+    }
+    if (同类.length <= 1) return;
+    const 留 = 同类.indexOf(我) >= 0 ? 我 : 同类[同类.length - 1];
+    for (const x of 同类) if (x !== 留) x.remove();
+  } catch (_) {}
+}
+
+/* ── 2. 等 Mvu 就绪 ─────────────────────────────────────────────────────── */
+async function 等Mvu(毫秒) {
+  if (取全局('Mvu')) return true;
+  const 等 = 取全局('waitGlobalInitialized');
+  if (typeof 等 === 'function') {
+    try { await Promise.race([等('Mvu'), 睡(毫秒)]); } catch (_) {}
+  }
+  return !!取全局('Mvu');
+}
+
+/* ── 3. 取本楼楼号 ──────────────────────────────────────────────────────── */
+function 取楼号() {
+  const f = 取全局('getCurrentMessageId');
+  if (typeof f !== 'function') return { 楼: null, 报: '这一层没有 getCurrentMessageId' };
+  try {
+    const n = f();
+    if (typeof n !== 'number' || !isFinite(n)) return { 楼: null, 报: 'getCurrentMessageId 返回的不是数字：' + String(n) };
+    return { 楼: n, 报: null };
+  } catch (e) {
+    return { 楼: null, 报: 'getCurrentMessageId 抛错：' + (e && e.message ? e.message : e) };
+  }
+}
+
+/* ── 4. 读那一楼自己的快照（只有两条路，第三档是报错）─────────────────── */
+function 读快照(楼) {
+  const 报 = [];
+  const 选 = { type: 'message', message_id: 楼 };   // 🔴 楼号必带 —— 这是全部的重点
+
+  const M = 取全局('Mvu');
+  if (M && typeof M.getMvuData === 'function') {
+    try {
+      const d = M.getMvuData(选);
+      if (d && typeof d === 'object') return { 路: 'Mvu.getMvuData', 数据: d, 报 };
+      报.push('Mvu.getMvuData 返回的不是对象');
+    } catch (e) { 报.push('Mvu.getMvuData 抛错：' + (e && e.message ? e.message : e)); }
+  } else {
+    报.push('这一层没有 Mvu');
+  }
+
+  const G = 取全局('getVariables');
+  if (typeof G === 'function') {
+    try {
+      const d = G(选);
+      if (d && typeof d === 'object') return { 路: 'getVariables', 数据: d, 报 };
+      报.push('getVariables 返回的不是对象');
+    } catch (e) { 报.push('getVariables 抛错：' + (e && e.message ? e.message : e)); }
+  } else {
+    报.push('这一层没有 getVariables');
+  }
+
+  return { 路: null, 数据: null, 报 };
+}
+
+/* ── 5. 取值 —— 逐层防御 ─────────────────────────────────────────────────
+   🔴 这里防的是「**形状没验过**」，不是「内容会不会错」。
+      轮 1-2 只验到 `数据.stat_data` 有 6 个顶层键 —— 那是**本地假 shim 造的形状**
+      （`_435干跑.mjs`）；真机上 `Mvu.getMvuData` 到底回什么，**没验过**（方案 §5 头号风险）。
+      ⇒ 只判**类型/结构**，任何一层不对就返回 undefined，**绝不抛错**。
+   ⚠ **不判取值范围、不判枚举** —— 那是 zod 的活（schema 里全是 clamp/catch），
+      在这儿再判一遍是重复投入，还会把 zod 已经修好的值误报成「读不到」。 */
+function 取(对象, 路) {
+  let 当 = 对象;
+  for (const 段 of 路) {
+    if (当 === null || typeof 当 !== 'object') return undefined;
+    当 = 当[段];
+  }
+  return 当;
+}
+const 是串 = (v) => typeof v === 'string';
+// `是数` 允许小数 —— 三值/三抗/理智/理智稳定性/人性/月蚀度/晋升进度/进度满值 在 schema 里都是 `数`
+const 是数 = (v) => typeof v === 'number' && isFinite(v);
+const 是整 = (v) => 是数(v) && Math.trunc(v) === v;
+
+// 给失败路径用：把读到的对象缩成一小段能看的字（免得画出 "object Object"）
+function 摘要(v) {
+  try {
+    const s = JSON.stringify(v);
+    if (typeof s !== 'string') return String(v);
+    return s.length > 200 ? s.slice(0, 200) + '…' : s;
+  } catch (_) { return String(v); }
+}
+
+/* ── 6. 四个格子（顶部常驻条，轮 1-3 的东西，一个字没改）─────────────────
+   每格自己负责「不对就说读不到」—— **一格坏不塌整条**（C2 §7.2）。
+   返回 { 类: '好'|'未定'|'坏' }，怎么显示由 画() 定。 */
+const 好 = (文) => ({ 类: '好', 文 });
+const 坏 = () => ({ 类: '坏', 文: '读不到' });
+/* 好对(签, 值, 副) —— 跟 好() 唯一的差别是**多带两个字段**：
+   `文` 仍然是拼好的整串（**文本层一个字不变**），`签`/`值` 只给渲染层用。
+   🔴 字段名**不能叫 `名`** —— 本文件 `行.sort(... a.名 ...)` 那批条目对象上已经有了
+   （⚠ 原文写的是"第 644 行"，我自己加了三行就把它顶歪了 ⇒ 改成指认写法，不再写行号）。
+   🔴 `副`（2026-09-28 加）＝ 值的**品阶/状态**。依据 ＝ 命定 `StatusTab.module.scss`
+   `.heroTitleRow` 的成法：`heroLevel`(26px/800) 在上、`heroTier`(15px/700) 在**下一行** ——
+   **数值和它的品阶是上下两行，不挤在一行**。月痕「月蚀度 66（蚀刻）」走这条。
+   ⚠ `文` 照旧拼成 `签 值（副）`，一个字不变 —— 它是**文本层的兜底**，
+     渲染层只有在 `值 == null` 时才回落到它。 */
+const 好对 = (签, 值, 副) => ({ 类: '好', 文: 签 + ' ' + 值 + (副 == null ? '' : '（' + 副 + '）'), 签, 值, 副 });
+
+/* 装格(盒, g) —— 5 个渲染点共用的**唯一一处**格子渲染逻辑。
+   有 `签`/`值` ⇒ 拆成两个 span（CSS 才能分别调字号与颜色）；
+   没有 ⇒ 落兜底，`textContent = g.文`，**与重构前逐字相同**（时刻/地点/字典键那批走这条）。 */
+const 装格 = (盒, g) => {
+  if (g.签 != null && g.值 != null) {
+    const a = document.createElement('span'); a.className = 'yh-k'; a.textContent = g.签;
+    const b = document.createElement('span'); b.className = 'yh-v'; b.textContent = g.值;
+    // 🔴 中间那个空格**不是排版用的，是给文本层的** —— 直接 `append(a, b)` 会让
+    //    textContent 从 `HP 412/500` 变成 `HP412/500`，屏幕阅读器会念成一串
+    //    （第 1092-1094 行已经专门记过这个坑）。空格同时充当名值之间的间隙。
+    盒.append(a, ' ', b);
+  } else {
+    盒.textContent = g.文;
+  }
+  return 盒;
+};
+
+// 历法 —— 卡文（世界书 `1090` 历法系统）：新月历 · 元年 1 月 1 日 ＝ 星期一 · 每月固定 30 天。
+// 🔴 卡文点名「换日时必须同时改 `星期`……这是本卡最容易犯的错」⇒ 四个格子**都要画出来**，
+//    画全了驾驶员一眼就能看出「日改了星期没改」。
+function 格历法(世) {
+  const 历 = 取(世, ['历法']);
+  if (历 === null || typeof 历 !== 'object') return 坏();
+  const 年 = 取(历, ['年']), 月 = 取(历, ['月']), 日 = 取(历, ['日']), 星 = 取(历, ['星期']);
+  if (!是整(年) || !是整(月) || !是整(日) || !是串(星)) return 坏();
+  return 好对('新月历', 年 + '年' + 月 + '月' + 日 + '日 · ' + 星);
+}
+
+// 时刻 —— 卡文（`9900044`）：「24 个标准魔导时（对应 60 分/3600 秒）」；
+// 🔴「**账本上只记数字**」＋「清晨/傍晚是**叙事用语**……**别写进这一格**」
+//    ⇒ 条上照钟点画，不画时段词（钟点才是对原文最贴的读法，方案 §2 注）。
+// 补零两位：这一行每回合都要扫，不该因位数变化而跳字（口径 ②）。
+function 格时刻(世) {
+  const 时 = 取(世, ['时刻']);
+  if (!是整(时)) return 坏();
+  return 好((时 < 10 ? '0' : '') + 时 + ':00');
+}
+
+// 地点 —— 卡文：层级 **大区 → 地点** 两层；`大区` 空串 ＝ 不在任何已生成大区内。
+// 🔴 空串**有含义**，不是「没数据」⇒ 大区空就只画地点（口径 ③）；
+//    两个都空才画「未定」—— **不许静默留白**，留白分不清「没设」和「坏了」（口径 ④）。
+function 格地点(世) {
+  const 大 = 取(世, ['大区']), 地 = 取(世, ['地点']);
+  if (!是串(大) && !是串(地)) return 坏();
+  const 大串 = (是串(大) ? 大 : '').trim();
+  const 地串 = (是串(地) ? 地 : '').trim();
+  if (!大串 && !地串) return { 类: '未定', 文: '未定' };
+  return 好(大串 && 地串 ? 大串 + ' · ' + 地串 : (大串 || 地串));
+}
+
+// 危机 —— 卡文：只写 无/低/中/高/致命 之一，「**这一刻世界有多紧张**」的刻度
+//        （遭遇难度读它），**不是剧情、不是任务进度**。
+// ⚠ **本轮纯文字不上色**：「危险该是什么颜色」是审美判断，归轮 1-10（口径 ⑤）。
+function 格危机(世) {
+  const 危 = 取(世, ['危机']);
+  if (!是串(危) || !危) return 坏();
+  return 好对('危机', 危);
+}
+
+/* ── 7. 「状态」页 —— 5 组 15 格（轮 1-4 新增）──────────────────────────
+   全部取自 `zod_schema.js` 的 `主角`，**没有新变量**。
+   取值根 ＝ `stat_data.主角`。每格自己判、自己降级；**一格坏不塌一组，一组坏不塌一页**。 */
+
+// 一组 ＝ 一个标签 ＋ 若干格。**容器不是对象 ⇒ 整组一格「读不到」**（不逐格刷四遍"读不到"）。
+function 组(标签, 容器, 造格) {
+  if (容器 === null || typeof 容器 !== 'object') return { 标签, 格: [坏()] };
+  try { return { 标签, 格: 造格(容器) }; }
+  catch (_) { return { 标签, 格: [坏()] }; }   // 🔴 造格自己抛错也只塌这一组
+}
+
+// 三值 —— 格式照卡文 `254984` 五、2 的 `<battle_status>` 原文：`HP <x>/<y>`
+// 🔴 **两个都要是数才画**：只画 `HP 88` 会让人以为上限不重要，而它恰恰是必读的一半
+//    —— 依据 `D135` ③「**宁可空着，不许猜**」。
+const 值对 = (三, 名) => {
+  const 当前 = 取(三, [名, '当前']), 上限 = 取(三, [名, '上限']);
+  if (!是数(当前) || !是数(上限)) return 坏();
+  return 好对(名, 当前 + '/' + 上限);
+};
+const 组三值 = (主) => 组('三值', 取(主, ['三值']),
+  (c) => [值对(c, 'HP'), 值对(c, 'MP'), 值对(c, 'SP')]);
+
+// 五维 —— 🔴 **2026-09-30 补调整值副行**：卡文 `1108` 三、**六 五维**写的原文是
+//        `力 12(+1) / 敏 10(0) / 体 14(+2) / 智 10(0) / 魅 11(0)` —— **调整值就在同一个格里**，
+//        而前端先前只画前半截（`力 12`）⇒ 面板比卡自己的规格少一半。
+//        ⚠ 走 `副` 而不是拼进值串（同 `月蚀度`）：`12 (+1)` 拼一串在 900 档那格会折行。
+const 组五维 = (主) => 组('五维', 取(主, ['五维']), (c) => {
+  const 调 = 取(主, ['调整值']);
+  const 取调 = (k) => {
+    const v = 取(调, [k]);
+    return 是整(v) ? (v > 0 ? '+' : '') + v : '';
+  };
+  return ['力', '敏', '体', '智', '魅'].map((k) => {
+    const v = 取(c, [k]);
+    if (!是整(v)) return 坏();
+    const 副 = 取调(k);
+    return 好对(k, String(v), 副 || null);
+  });
+});
+
+// 三抗 —— 卡文 `9900031` 四、「三抗性各按它的构造定，**落 0%~100%**」⇒ **带 `%`**
+const 组三抗 = (主) => 组('三抗', 取(主, ['三抗']),
+  (c) => ['物理', '魔法', '污染'].map((k) => (是数(取(c, [k])) ? 好对(k, 取(c, [k]) + '%') : 坏())));
+
+// 心智 —— 🔴 `理智上限` 是**字符串枚举** `'100'|'90'|'70'|'40'`，**不是数**！
+//         拿「是数字吗」判它 ⇒ 永远判不过 ⇒ 那格永远「读不到」，**还不报错**。
+//         `理智稳定性` 照 `254984` 二、2 的原词（⚠ `调整值` 底下那个叫 `稳定性`，**是另一格**，别混）。
+const 组心智 = (主) => 组('心智', 取(主, ['心智']), (c) => {
+  const 理智 = 取(c, ['理智']), 上限 = 取(c, ['理智上限']);
+  const 稳定 = 取(c, ['理智稳定性']), 人性 = 取(c, ['人性']);
+  const 月蚀 = 取(c, ['月蚀度']), 阶段 = 取(c, ['月蚀度阶段']);
+  return [
+    (是数(理智) && 是串(上限) && 上限) ? 好对('理智', 理智 + '/' + 上限) : 坏(),
+    是数(稳定) ? 好对('理智稳定性', String(稳定)) : 坏(),
+    是数(人性) ? 好对('人性', String(人性)) : 坏(),
+    // 🔴 **2026-09-28 改：阶段从「值串里」挪成「副行」**（驾驶员裁定「用命定」）。
+    //    原文是 `好对('月蚀度', 月蚀 + '（' + 阶段 + '）')`，量出来一格要 136.09px、
+    //    而 900 档那格只有 104px ⇒ 整串折行、格子高一倍、右半边三分之二全空。
+    //    病根是**全角括号**：`（蚀刻）` 这 4 个字符每个都是 18px 满宽 ＝ 72px，
+    //    占了 104px 格宽的 **69%** —— 而真正的数字 `66` 只占 20px。
+    //    ⇒ 照命定 `.heroTitleRow`（数值上、品阶下）拆成两行后：格需 71.3px，余 33px。
+    //    ⚠ 判据 `(是数(月蚀) && 是串(阶段) && 阶段)` **一个字没动** —— 这次只改呈现，
+    //      不改"什么算读得出"。缺阶段仍然整格判坏，跟以前一样。
+    (是数(月蚀) && 是串(阶段) && 阶段) ? 好对('月蚀度', String(月蚀), 阶段) : 坏(),
+  ];
+});
+
+/* 精神类 —— 🔴 **2026-09-30 新增的第六组**（`幸运值` / `感知`，各 −100…100）。
+   卡文 `9900029` 明说装备词条可写「精神类点数（理智・稳定性・人性・**感知・幸运**）」，
+   而前端先前这两格**一个字都没有** ⇒ 装备能改、面板表示不了（`D83` ④ 原话）。
+
+   ⚠ **为什么单开一组、不并进「心智」** —— 两条，第二条是本轮实测出来的：
+     ① **形状**：`精神类` 在 schema 里是 `主角` 的**同级字段**，不是 `心智` 的子键
+        （`心智` 自己的子键是 理智/理智稳定性/人性/月蚀度/月蚀度阶段/理智上限）；
+     ② **量具**：并进「心智」后那一组变 6 格，而 `.yh-stats` 的列数是
+        `repeat(var(--格数), …)` —— **格数＝列数、不换行** ⇒ 列宽从 `内86` 掉到 `内54`，
+        当场报出 3 格「放不下」（`理智 需82.84` / `理智稳定性 需76.05` / `月蚀度 需65.81`）。
+        拆出来之后「心智」回到 4 格 ＝ **改前的宽度，一格不差**。
+   ⚠ 有符号（−100…100）⇒ 正数带 `+`，同 `写好感` / `先攻`。 */
+const 组精神 = (主) => 组('精神类', 主, (c) => {
+  const 精 = 取(c, ['精神类']);
+  const 号 = (v) => (是整(v) ? (v > 0 ? '+' : '') + v : null);
+  const 幸 = 号(取(精, ['幸运值'])), 感 = 号(取(精, ['感知']));
+  return [
+    幸 == null ? 坏() : 好对('幸运值', 幸),
+    感 == null ? 坏() : 好对('感知', 感),
+  ];
+});
+
+// 成长 —— 格式照卡文 `9900037` 七、字段化**原文**：`初次写全: 阶位 2 · 晋升进度 40% / 200%`
+//        ⚠ `进度满值` **我不算**（卡文 `9900044` 五、：「`进度满值` 是**只读的**」）⇒ 直接读变量。
+const 组成长 = (主) => 组('成长', 主, (c) => {
+  const 阶 = 取(c, ['阶位']), 进 = 取(c, ['晋升进度']);
+  const 满 = 取(c, ['进度满值']), 点 = 取(c, ['属性点']);
+  return [
+    是整(阶) ? 好对('阶位', String(阶)) : 坏(),
+    // 上限走副行（同 `组心智` 的『月蚀度』；'% / %' 拼一串会折行）
+    是数(进) && 是数(满) ? 好对('晋升进度', 进 + '%', 满 + '%') : 坏(),
+    是整(点) ? 好对('属性点', String(点)) : 坏(),
+  ];
+});
+
+/* ── 7.2 「攻」组（2026-09-30 加）────────────────────────────────────────
+   依据 ＝ 卡文 `1108` 三、**八 攻** ＋ **九 先攻**（面板十二行里的两行）——
+   前端先前这两行**一格都没画**，所以驾驶员问「mvu字段表里不是还有东西吗」。
+
+   ⚠ **`阶级` 不在这里** —— `画主角头` / `画在场头` 的 `.yh-hero-meta` 已经画过
+     `种族 · 性别 · 阶级 · 归属`，而头盒在**每一签上方**、永远看得见 ⇒
+     再画一遍就是「同一屏里同一个值画两遍」（`格签卡` 那条判据）。
+   ⚠ `个体浮动` 是**算式里的乘数**（`1108` 七/八 都带 `× 个体浮动`）⇒ 跟攻放一起，
+     放五维里会读成"第六维"。 */
+const 组攻 = (主) => {
+  const 手 = 取(取(主, ['攻']), ['主手段']);
+  const g = 组('攻', 主, (c) => {
+    const 攻 = 取(c, ['攻']);
+    const 值 = 取(攻, ['值']);
+    const 先 = 取(c, ['先攻修正']), 浮 = 取(c, ['个体浮动']);
+    return [
+      是数(值) ? 好对('攻值', String(值)) : 坏(),
+      // 先攻可能是负的（值域 −12…12）⇒ 正数带 `+`，同 `写好感`
+      是整(先) ? 好对('先攻', (先 > 0 ? '+' : '') + 先) : 坏(),
+      // 个体浮动恒为 1.00 时**照画** —— 它是账本的一格，不是"异常值"
+      是数(浮) ? 好对('个体浮动', '×' + 浮.toFixed(2)) : 坏(),
+    ];
+  });
+  // 🔴 **主手段走组抬头右边的副题，不走统计小格**（2026-09-30 改）——
+  //    它是"这一行叫什么"（`1108` 三、**八 攻**：「**主手段名** ＝ 基准 × 倍率 × … ＝ 结果」），
+  //    不是跟"攻值"并排的一格。塞进小格的实测代价：`蚀相·断纤刀` 六个汉字需 139.81px，
+  //    而 900 档那一格内宽只有 86px ⇒ **压字 12px，值当场压到隔壁「攻值」的标签上**
+  //    （量具原话 `压字 🔴 stat-v 蚀相·断纤刀 溢12`，实拍两串字叠成一串）。
+  //    挪走之后攻组 4 格 → 3 格，`个体浮动` 那格也从「放不下 需106」回到装得下。
+  if (是串(手) && 手.trim()) g.副 = 手.trim();
+  return g;
+};
+
+/* ── 7.3 「质点」组（2026-09-30 加）──────────────────────────────────────
+   依据 ＝ 卡文 `1108` 三、**五 质点**（乙截第一行，人 → 力的那道桥）。
+   🔴 前端先前**整块没画** —— `节点` 是个字典、下面五格全是只读派生值，
+      `_MVU变量字段总表.md` §2.5 有，面板上一个字都没有。
+
+   ⚠ 这一组在**卡上只出数**（共鸣度 / 解锁进度 / 律座 / 条数）；
+     节点逐条与 `已凝` 名单走**详情层的「来历」签**（那里有整幅宽度）。
+     这不是"卡上少画"—— 同 `三值`：卡上一根条、详情层才是数，**两个深度两个画法**。
+   `节点` 的键形如 `源质·X` / `蚀相·X`，值形如 `{档: 共鸣|凝质|登座}`。 */
+const 组质点 = (主) => 组('质点', 主, (c) => {
+  const 节 = 取(c, ['节点']), 已凝 = 取(c, ['已凝']);
+  const 律 = 取(c, ['律座']);
+  const 共 = 取(c, ['共鸣度']), 进 = 取(c, ['解锁进度']);
+  const 有 = 取(律, ['有无']), 偏 = 取(律, ['偏向']);
+  const 节数 = (节 && typeof 节 === 'object') ? Object.keys(节).length : 0;
+  const 凝数 = Array.isArray(已凝) ? 已凝.filter((s) => 是串(s) && s.trim()).length : 0;
+  const 偏数 = Array.isArray(偏) ? 偏.filter((s) => 是串(s) && s.trim()).length : 0;
+  return [
+    // 未立约 ＝ 0 个节点，是**合法状态**（`1108` 五：「没有就写「未立约」」）⇒ 照画 `0 个`，不判坏
+    (节 && typeof 节 === 'object') ? 好对('节点', 节数 + ' 个') : 坏(),
+    是数(共) ? 好对('共鸣度', String(共)) : 坏(),
+    // 0~4 是 schema 封顶；副行给封顶值，同 `晋升进度`
+    是数(进) ? 好对('解锁进度', 进 + '%') : 坏(),
+    // 律座是**开/关 ＋ 一张偏向名单**：开关走值、条数走副行（名单本身在详情层）
+    (typeof 有 === 'boolean') ? 好对('律座', 有 ? '已立' : '未立', 有 ? (偏数 + ' 向') : '') : 坏(),
+    是数(凝数) ? 好对('已凝', 凝数 + ' 个') : 坏(),
+  ];
+});
+
+/* ── 7.4 「状态」字典 → 统计行（2026-09-30 加）────────────────────────────
+   `状态` 是 `字典(状态条目Schema)`（6 格/条：来源/剩余/检定修正/劣势/资源/抗性）。
+   ⚠ **它不是统计卡** —— 条目数不定、每条的六个数都要看 ⇒ 详情层走**列表块**
+     （`_分栏_内容区.js` 的 `录块`），卡上**不出**（`格详` 包着）。
+     这里这枚只干一件事：把"有几条"报出来，**空字典也报 `0 条`**，不许静默留白。 */
+
+/* ── 7.5 「在场」页 —— 名字 ＋ 好感度（轮 1-5 新增）──────────────────────
+   数据根 ＝ `stat_data.角色`，**一个字典：键就是角色名**，值是那一整套角色字段。
+   只取两格：键（名字）与 `好感度`。
+   🔴 `关系` 那一格**本轮不画** —— §3.6 写的这页只有「名字 ＋ 好感度」（一个不多一个不少）。
+   🔴 `在场` / `好感度` 的六档、颜色、间距 —— **全是审美，归轮 1-10**（本轮只到看得见）。 */
+
+// 好感度写法 —— 🔴 正数带 `+`（卡文 `9900042` 三、5：`好感度 −12 → +8`）。
+//    ⚠ 减号用 **ASCII `-`**：它要跟数字拼成一体，全角 `−` 排在数字里对不齐。
+const 写好感 = (n) => (n > 0 ? '+' : '') + n;
+
+// 名单 —— 挑出在场的人。返回 { 名: [{名, 感}], 坏: [键] }。
+// 🔴 判据**只认 `'离队'` 一个串**（其余一律算在场）—— schema 里 `在场` 的默认值就是 `'在场'`，
+//    字段缺了算在场，**不静默漏人**。
+// 🔴 `在场` 或 `好感度` 读不出来 ⇒ 记进 `坏`（**跳过它，但页脚要报数**，不许静默留白）。
+// ⚠ 名字取自 `Object.keys()`：整数-like 的键会被 V8 强制重排到最前（项目踩过这个坑）。
+//    角色名是中文，正常不触发；而且下面按好感度**重排**过，这一层不影响最终顺序。
+function 取在场(角) {
+  const 名 = [], 坏 = [];
+  for (const k of Object.keys(角)) {
+    const 条 = 角[k];
+    if (条 === null || typeof 条 !== 'object') { 坏.push(k); continue; }
+    if (取(条, ['在场']) === '离队') continue;      // 🔴 卡文：离队是状态，不是删除理由
+    const 感 = 取(条, ['好感度']);
+    if (!是数(感)) { 坏.push(k); continue; }
+    名.push({ 名: k, 感 });
+  }
+  // 好感度降序。⚠ `sort` 在 V8 里是**稳定**的 ⇒ 同分的两人保持字典序，位置可复现。
+  名.sort((a, b) => b.感 - a.感);
+  return { 名, 坏 };
+}
+
+// 在场页。`角` 是 `stat_data.角色`；**不是对象 ⇒ 故障态**（与「空」分开画）。
+/* ══ 内容区渲染层：卡片 ＋ 池子条 ＋ 详情层 ══════════════════════════════════
+   替换 '排版①*.html' 里 画在场 / 画主线 / 画任务 / 画连携 / 画页 五个函数。
+   🔴 **数据层（取在场 / 取线 / 取务 / 取连 与它们的全部判据）一个字没动** ——
+      本轮只改「怎么画」，不改「读什么、怎么判」。「一个不多一个不少」照旧。
+
+   ── 本轮（2026-09-27 视觉重做）改了什么 ──────────────────────────────────
+   上一版是「一行横排流式 ＋ '·' 分隔 ＋ 零圆角零填充」，驾驶员判「命定的你一点没学」。
+   读过命定源码后重做的**三件事**：
+
+   ① **卡的形态：横排流式 → 纵向分区**（依据 ＝ 命定 'QuestsTab.module.scss' '.questCard'）
+      '卡头（名字 15.5px/700）→ chip 行 → 摘要（左竖条＋clamp 2 行）→ 标签值行'
+      横排流式的问题是**所有字段一样重** —— 名字、级别、日期、目标全挤一行，眼睛没有落点。
+      分区之后层级是：**名字最重 → chip 次之 → 正文再次 → 元数据最轻**。
+
+   ② **标签在左、值在右**（依据 ＝ 命定 '.basicInfoRow' 'minmax(82px,.24fr) minmax(0,1fr)'）
+      上一版标签在上、值在下（竖排）⇒ 一屏十张卡每张长一倍、右半幅全空。
+      横排之后卡矮一半，且**标签列在卡内自动对齐成一条竖线**（grid 的列是整卡共享的）。
+
+   ③ **短枚举进 chip、自由文本进摘要**（依据 ＝ 命定 '.buffChipBuff' / '.questProgress'）
+      chip 只放**一词自明**的短枚举（进行中 / 已解锁 / 就绪 / 在场）。
+      ⚠ '级别'（S/C）与 '类型'（主线）**不进 chip** —— 光一个拉丁字母在胶囊里
+        读不出是什么（方案 §3 决策④那条照旧）；"高/中/低"那种词才自明。
+
+   ── 为什么整行是一颗真 '<button>' ────────────────────────────────────────
+   · 组件库与方案 §4.3 不变量 6 都要求 **不许 '<div>' 加点击**；
+   · 触摸目标 ＝ 整行，不是"名字那三个字"一小块；
+   · 卡里**不再有任何别的按钮**（连携那个「效果」折叠已并进详情层），
+     所以不存在 button 套 button（那是无效 HTML）。
+     ⚠ 代价：'展开的' Set / '.yh-fb' / '.yh-fold' / 'aria-controls' 这套（轮 1-8 的）
+       **整套退役**，由详情层接替 —— 这是升级不是删功能。
+
+   ── 为什么详情层铺满「内容区」而不是 'position: fixed' ───────────────────
+   本页是**楼层内嵌 iframe**，'fixed' 的参照系是 iframe 自己。
+   🔴 而且详情层**参与正常流**（'position: relative'）不是 'absolute' 铺满 ——
+      铺满会把详情压进只有 110px 高的内容区、变成内部滚动，"长文本一次看全"就丢了。 */
+
+/* ── 图标 ──────────────────────────────────────────────────────────────────
+   命定用 Font Awesome；月痕**不能引外链**（状态栏活在楼层内嵌 iframe 里，
+   引外网就是引一个会失效的依赖）⇒ 自绘单色 SVG ＋ CSS 'mask' 上色。
+   🔴 'mask' 取的是图片的 **alpha 通道** ⇒ 图标本身**不带颜色**
+      （'stroke: black' 只是为了让 alpha 是 1），颜色由 'background: currentColor' 决定，
+      跟着上下文自动变 —— 这是命定 '.resourceBarIcon' / '.sectionIcon' 的同一手法。
+   🔴 走 'data:' URI 而不是文档内 '<use>'：data URI 在 iframe / 各种沙箱里都稳，
+      且每个图标自带一份、不依赖文档里还有个 sprite 节点活着。
+   ⚠ 'encodeURIComponent' 编码**整个 SVG 源** —— '#' / '<' / 引号全部转义，
+     不编码的话 'url()' 里遇到 '#' 会被当片段标识符截断。 */
+const 图标源 = {
+  心: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+  滴: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+  叶: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+  星: '<path d="M12 2.5 14.6 8l6 .9-4.3 4.2 1 6-5.3-2.8L6.7 19l1-6L3.4 8.9 9.4 8Z"/>',
+  盾: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+  眼: '<path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/>',
+  升: '<path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/>',
+  // 🔴 `脉` 是给「三值」卡头补的（2026-09-27）—— 原来那儿用的是 `心`，
+  //    而 HP 那一行**也用 `心`**（池子条左边的行内图标）⇒ 同一个形状在一张卡里出现两次。
+  //    「三值」是 HP/MP/SP **三条资源**的总称，`心` 只是其中 HP 一个的符号 ⇒ 语义也错位。
+  //    `脉` 取"生命体征"的意思，罩得住三条；形状是**尖刺波**，和 `升` 的单调上扬折线不同。
+  脉: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+  旗: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/>',
+  图: '<path d="M14.1 5.55a2 2 0 0 0 1.79 0l3.66-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.56 2.27a2 2 0 0 1-1.78 0l-4.22-2.1a2 2 0 0 0-1.78 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.56-2.27a2 2 0 0 1 1.78 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/>',
+  链: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+  人: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+  卷: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/>',
+  沙: '<path d="M5 3h14"/><path d="M5 21h14"/><path d="M7 3v3a5 5 0 0 0 10 0V3"/><path d="M7 21v-3a5 5 0 0 1 10 0v3"/>',
+  // 🔴 `返` 是给详情层的返回按钮补的（2026-09-28）—— 原来那儿是**文字箭头** `←`
+  //    （`x.textContent = '← 返回'`）。问题：`←` 是**字符**，笔画粗细由字体的字重决定，
+  //    和全套 `stroke-width: 2.1` 的 SVG 图标放在一起**明显偏细、偏小、基线还偏**；
+  //    而且 `←` 在不同字体下形状不一样（有的带衬线、有的尾巴短）。
+  //    ⇒ 换成 lucide `arrow-left`，也就是这套图标里唯一一支"方向"符号。
+  //    ⚠ 别图省事用 `‹` / `«` / `◀` 那类字符替代 —— 病根是"字符描边不受控"，换字符不解决。
+  返: '<path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>',
+  // 🔴 `进` 是给「这张卡点得进去」这个提示补的（2026-09-28）——
+  //    依据 ＝ 命定 `StatusTab.module.scss` `.detailEntryChevron`：可点进详情的入口卡
+  //    **在标题行右端常驻一个弱色 chevron**（`color: text-muted; font-size: 11px`）。
+  //    为什么必须有它：月痕原来只有 `cursor: pointer` ＋ hover 那一套 —— 那是
+  //    **鼠标碰上去之后**才有的反馈，**碰之前整张卡跟不可点的卡长得一模一样**
+  //    （`.yh-card` 同为淡底＋1px 边＋4px 圆角），玩家没有任何理由去点它。
+  //    ⚠ 命定用的是**字符** `›`；月痕不用字符 —— 病根同 `返` 那条（字符描边不受控）。
+  //    ⚠ 它同时是 `aria-hidden`（`图标()` 里设的）：卡本身已经用 `aria-label`
+  //      说了「打开「X」的详情」，这个箭头对读屏是废话。
+  进: '<path d="m9 18 6-6-6-6"/>',
+  /* 🔴 `摄` / `删` 是给头像上传补的（2026-09-28）——
+     `摄` ＝ 头像右上角那个**"能点进去换"的常驻提示**。为什么不能只靠 hover：
+     月痕的头像在「状态」页顶上，玩家第一次看到时**没有任何理由知道它能点**
+     （它长得就像一个静态头像）。命定 `AvatarPanel` 的 `.editHintButton` 是
+     **常驻可见**（`opacity: .82`，hover 才浮起变 1）—— 照这条，不照"藏起来 hover 才显"。
+     `删` ＝ 面板里的「恢复默认」。用图标不用 `×` 字符：病根同 `返` 那条
+     （字符描边不受控，跟 `stroke-width: 2.1` 摆一起粗细对不上）。 */
+  摄: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+  删: '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/>',
+  // 🔴 `空态` 是给「还没装东西的页签」（现值只有地图页）补的（2026-09-29）——
+  //    形状取**空托盘**：说的是「这个容器现在是空的」，**不是**「图丢了 / 坏了」。
+  //    ⚠ 别用地图 / 罗盘 / 卷轴那类形状 —— 那等于**替这一页许了一个它还没有的内容**。
+  空态: '<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>',
+  /* 🔴 `剑` / `质` 是给卡文 `1108` 三、那两行补的（2026-09-30）——
+     **八 攻** 与 **五 质点** 是面板十二行里的两行，前端先前一个字都没画，
+     所以这两组抬头没有形状可用。同 `脉` / `返` / `进`：**lucide 原形状**，不自造。
+     `剑` ＝ lucide `sword`（刃身 ＋ 护手 ＋ 柄尾三截，18px 下认得出是兵器不是十字）。
+     `质` ＝ lucide `gem`（切面钻石），取"质点"字面。
+     ⚠ 一条 path 里多段用 `M` 起头、空格分点 —— 与 `脉` / `返` 同写法；
+       别写成 `<polyline>` / `<line>`：`图标()` 只认 `d`，别的元素名会被浏览器接受但
+       **`stroke-width: 2.1` 那套属性挂在 `<svg>` 上照旧生效**，形状却和其余 19 枚不一致。 */
+  剑: '<path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="M13 19 19 13"/><path d="m16 16 4 4"/><path d="m19 21 2-2"/>',
+  质: '<path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/>',
+};
+
+// 图标元素 —— 名字给了但没画出来的，出个**空位**（留白），不出一个破图。
+function 图标(名, 大) {
+  const el = document.createElement('span');
+  el.className = 'yh-i' + (大 ? ' yh-i-' + 大 : '');
+  el.setAttribute('aria-hidden', 'true');   // 纯装饰 —— 旁边的文字已经说清了
+  const p = 图标源[名];
+  if (p) {
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" ' +
+      'stroke="black" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>';
+    el.style.setProperty('--i', 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")');
+  }
+  return el;
+}
+
+/* ── 格子 ────────────────────────────────────────────────────────────────
+   'g' ＝ '{类, 文, 签?, 值?, 长?}' —— **这三个包装函数不改数据，只加渲染记号**：
+   · '格长(g)'   ⇒ 进**摘要区**（clamp 2 行，全文进详情层）
+   · '格片(色, g)' ⇒ 进 **chip 行**
+   · 其余 ⇒ 进**标签值行**
+   ⚠ 必须包在**最外层**：这些函数都会 'Object.assign({}, g, …)' 造新对象，
+     写反了（'格长(格签(…))'）记号会被后造的对象丢掉。 */
+const 格长 = (g) => Object.assign({}, g, { 长: true });
+const 格片 = (色, g) => Object.assign({}, g, { 片: 色 });
+
+// 无标签的纯文本格（在场的好感度那种）
+const 格文 = (文) => ({ 类: '好', 文 });
+
+/* 🔴 只设 '签'、**绝不设 '值'** —— '装格()' 判的是 'g.签 != null && g.值 != null'，
+   两个都设会把卡上的「官署」变成「委托方 官署」，**卡面文字层就变了**。
+   只设 '签' ⇒ 卡上走兜底 'textContent = g.文'，一个字不动；详情层拿得到标签。 */
+const 格签 = (签, g) => Object.assign({}, g, { 签 });
+
+// 取一格的显示文字（'值' 优先，没有就用 '文'）
+const 格文2 = (g) => (g.值 != null ? g.值 : g.文);
+
+/* 🔴 详情层专用两枚记号（2026-09-29 加）。
+   起因：在场详情层先前只有名字 / 在场 / 好感度三格 —— 驾驶员原话「**像角色这种点进去
+   没有任何东西**」，并指着创世回廊与命定之诗说「他们都有东西」。
+   根因不在数据：`stat_data.角色.<名>` 每项 **77 格**（`_MVU变量字段总表.md` §3），
+   而 `取在场` 只返回 `{名, 感}`、`画在场` 只画那三格 ⇒ **七十几格被渲染层扔了**。
+
+   · `格轴(值)`      ⇒ 好感度刻度轴。**卡上画小档、详情层画大档**（同一棵树，CSS 换布局）。
+                       卡上它落在标签值行**之后** —— `.yh-c-kv` 是两列网格，块级子树塞不进去。
+   · `格详(格)`      ⇒ **只在详情层出**的格。包住普通格就照普通格画（`长` 照旧自成一签）；
+                       包住 `格块` 就把一整棵 DOM 塞进去。
+                       属性那一段是五张 `.yh-gcard`，不是「格」，没有 `文`/`值` 可给 ——
+                       硬塞进格子系统只会压成一行字。
+   · `格块(节点,签)` ⇒ `格详` 的 DOM 形态。有签 ⇒ 自成一签；无签 ⇒ 留在当前那一签的正文里。
+
+   ⚠ `块: true` 的用处只有一个：详情层里进 `.yh-body`（整行块），而**不自成一签**。
+     自成一签的判据是 `长`（长文本「一次看不完」才自己一签）；轴和属性卡是
+     "一眼看得完的一片"，留在它那一签里。**两个记号分开是有意的，别合并。**
+   ⚠ `组卡` 必须**跳过** `只详` 的格（卡片上画不出这些）。 */
+const 格详 = (g) => Object.assign({}, g, { 只详: true });
+const 格轴 = (值) => ({ 类: '轴', 值, 块: true });
+const 格块 = (节点, 签) => 格详({ 类: '块', 节点, 块: true, 长: 签 != null, 签 });
+/* 🔴 反过来的一枚：**只在卡片上出**的片。
+   在场页那个「在场」片，详情层由头盒（`画在场头` 的身份行）负责 ——
+   不标的话，详情层里 `造格` 会照画一遍，同一个词在 60px 内出现两次。
+   ⚠ 这跟 `格块`（只在详情层出）是**方向相反的一对**，别把两者看成同一个东西。 */
+const 格片卡 = (色, g) => Object.assign({}, g, { 片: 色, 只卡: true });
+
+/* 只卡的**记号轨**（2026-09-30 加，主线节点树用）—— 同 `格片卡` 的理由：
+   卡片上是一串 CSS 记号、详情层里是整棵树，两边画的不是同一个东西 ⇒ 记号不带进详情层。
+   `造格` 不认识这一型，不挡就会掉进兜底那条 `textContent = 格文2(g)` 画成 `undefined`。 */
+const 格轨 = (完, 节, 态) => ({ 类: '轨', 完, 节, 态, 只卡: true });
+/* 只卡的**标签值**格（2026-09-30 加，主线 '分支' 用）—— 卡面上走标签值行，
+   详情层里由节点树尾巴那个岔口画。**同一屏里同一个值画两遍**是这个面板的禁忌
+   （§9C.4「一页一张图」那条判据的反面），所以两边各认一个，别都画。 */
+const 格签卡 = (签, g) => Object.assign({}, g, { 签, 只卡: true });
+/* 带签的**整行块**：进 `.yh-body`（值 `pre-wrap`、标签左列），但**不自成一签**。
+   用在「关系」这种"一段自由文本、但短到不必单独占一签"的格子上。
+   ⚠ 它**也只走详情层**（`格详` 包着）—— 「关系」在卡上是一段长度不可控的自由文本，
+     落进 `.yh-c-kv` 那个两列网格会把值列挤成一条竖缝（同 `.yh-ax` 那条判据）。 */
+const 格段 = (签, 文) => 格详({ 类: '好', 签, 文, 块: true });
+
+/* ── 好感度刻度轴（2026-09-29 加）──────────────────────────────────────────
+   值域 `−200…200` 是**卡文硬封**（`D71` ②「硬封，撞到两端停住」），记号位置按它算。
+   🔴 **一个 DOM，两套布局** —— 小档不是"另画一根简易条"，是同一棵树换
+      `grid-template-areas`（见样式表 `.yh-ax-s`）。两处永远同源 ⇒
+      卡上那根与详情层那根**不可能对不上**。
+   ⚠ 刻度只有五个、位置 0/25/50/75/100%，**算一遍**：JS 和 CSS 各存一半，
+      迟早有一天对不上，而且对不上时两边都"看着对"。
+   ⚠ 减号用 **ASCII `-`**，与 `写好感` 同口径（卡文 `9900042` 三、5 那处定的：
+     全角 `−` 排在数字里对不齐）。 */
+const 轴刻度 = ['-200', '-100', '0', '+100', '+200'];
+function 好感轴(感, 小) {
+  const 盒 = document.createElement('div');
+  盒.className = 'yh-ax' + (小 ? ' yh-ax-s' : '');
+  const 好 = 是数(感);
+
+  const k = document.createElement('span');
+  k.className = 'yh-ax-k';
+  k.textContent = '好感度';
+  盒.appendChild(k);
+
+  const t = document.createElement('span');
+  t.className = 'yh-ax-t';
+  const l = document.createElement('span');
+  l.className = 'yh-ax-l';
+  t.appendChild(l);
+  // 五条刻度。中间那条（`0`）加高 —— 它是语义铰链（左＝恶感 / 右＝好感），
+  // 没有它，一枚孤零零的记号读不出自己在哪一侧。
+  轴刻度.forEach((_, i) => {
+    const tk = document.createElement('span');
+    tk.className = 'yh-ax-tk' + (i === 2 ? ' z' : '');
+    tk.style.left = (i * 25) + '%';
+    t.appendChild(tk);
+  });
+  if (好) {
+    // 记号位置夹在 0~100：模型可能写超值域 ⇒ 不夹会捅出轨道。
+    // ⚠ 夹的是**记号位置**；值本身照实报原值（同 `造条` 那条口径，不粉饰数据）。
+    const 百 = Math.max(0, Math.min(100, ((感 + 200) / 400) * 100));
+    const m = document.createElement('span');
+    m.className = 'yh-ax-m';
+    m.style.left = (Math.round(百 * 10) / 10) + '%';
+    t.appendChild(m);
+  } else {
+    // 读不到 ⇒ 轨照画、记号不画。画一枚停在 0 的记号会被读成「好感度是 0」，那是另一个意思。
+    盒.classList.add('yh-ax-na');
+  }
+  盒.appendChild(t);
+
+  const v = document.createElement('span');
+  v.className = 'yh-ax-v';
+  v.textContent = 好 ? 写好感(感) : '读不到';
+  盒.appendChild(v);
+
+  // 刻度字。小档由 CSS 藏掉，**DOM 照旧在** —— 树只有一棵，这是它只有一棵的代价。
+  const n = document.createElement('div');
+  n.className = 'yh-ax-n';
+  轴刻度.forEach((名, i) => {
+    const s = document.createElement('span');
+    s.style.left = (i * 25) + '%';
+    s.textContent = 名;
+    n.appendChild(s);
+  });
+  盒.appendChild(n);
+  return 盒;
+}
+
+/* ── 🔴 状态**片色表**（闭集，全页唯一一处）────────────────────────────────
+   驾驶员 2026-09-28 拍：「**胶囊，且每档不同色**」。
+   ⚠ 这**推翻了 1-7 方案的「不上色」** —— 但那份方案自己留了口子：
+     「本轮**不上色**……美术是**轮 1-10**」，而**本轮就是 1-10** ⇒ 是照口子改，不是推翻。
+   ⚠ 色记号只有四个（见样式表 `.yh-chip-*`）：'好' 绿 / '特殊' 土黄 / '坏' 红褐 / '中性' 灰。
+     ⇒ 四档正好一一对应，**零新增 CSS**。
+   🔴 **两个页面的「四档」不是同一套**（`zod_schema.js` 是形状真源）：
+      · 主线：未启 / 进行中 / 已完成 / 已失败
+      · 委托：进行中 / 已完成 / **已结算** / 已失败 ← 有「已结算」、**没有**「未启」
+     ⇒ 五个词、四个色。**「未启」与「已结算」永远不会同页出现**，故共用 '中性'
+       —— 任何一页上的四档**仍然是四个不同色**。
+   🔴 表外落 '中性' **照画不报错** —— 同 1-6 决策③「不在表里的类型排最后、照画不报错，
+     楼层面不当裁判」。 */
+const 态色 = { 未启: '中性', 进行中: '好', 已完成: '特殊', 已结算: '中性', 已失败: '坏' };
+const 片色 = (态) => 态色[态] || '中性';
+
+/* ── 网格容器 ──────────────────────────────────────────────────────────── */
+function 网格(子们) {
+  const g = document.createElement('div');
+  g.className = 'yh-grid';
+  子们.forEach((x) => { if (x) g.appendChild(x); });
+  return g;
+}
+
+/* ── 造一张卡 ──────────────────────────────────────────────────────────────
+   '格们' ＝ [{类,文,签?,值?,长?,片?}]，**第一格是这条的名字**。
+   '可点' ＝ 挂不挂详情层。判据：**这一行的信息一次看不看得完** ——
+   🔴 **2026-09-28 改：在场页也挂**（驾驶员原话「**在场肯定是要挂详情层的**」）。
+      原判据是「≤4 对短值就不挂」，那等于替用户判断"你不必看全"；
+      卡是随机生成 ＋ RP 驱动的，**模型的字段会变**，今天两格不代表明天两格。
+      ⇒ 现在只有**状态页的五组**不挂（它不是条目，是五张汇总卡，没有"某一条"可点）。
+   '图名' ＝ 卡头图标（可选）。 */
+function 组卡(名, 格们, 可点, 图名, 头图, 传头) {
+  const el = document.createElement(可点 ? 'button' : 'div');
+  if (可点) {
+    el.type = 'button';                       // ⚠ 不写就是 submit 语义
+    el.setAttribute('aria-haspopup', 'dialog');
+    // 🔴 整卡当按钮 ⇒ 无障碍名会是整卡内容（长且跳）。给一个说人话的。
+    el.setAttribute('aria-label', '打开「' + 名 + '」的详情');
+  }
+  el.className = 'yh-card';
+
+  // ── 卡头：图标 ＋ 名字。**名字是卡里最重的一档**（15.5px/700，见样式表）
+  const 头 = document.createElement('span');
+  头.className = 'yh-c-h';
+  /* 🔴 **头图优先于图名**（2026-09-28 加）——「在场」页拿它放角色头像。
+     为什么是**替换**、不是"图标旁边再加一个头像"：卡头那一行只有
+     `图标 ＋ 名字 ＋ 箭头` 三件，再塞一个 44px 的圆进去会把名字挤到折行。
+     ⚠ 头图是**纯展示**的（`可点:false`）—— 整张卡本身是 `<button>`，
+       里面放可点的东西是非法结构；上传入口在**详情层**（见 `_分栏_头像.js` 文件头）。 */
+  if (头图) 头.appendChild(头图);
+  else if (图名) 头.appendChild(图标(图名));
+  const 名格 = document.createElement('span');
+  名格.className = 'yh-c-n';
+  名格.textContent = 名;                      // 🔴 textContent —— 名字是模型写的自由文本
+  头.appendChild(名格);
+  // 🔴 **只有可点的卡才挂这个箭头**（见 `图标源.进` 的注释）。判据就是 `可点` 本身 ——
+  //    不可点的卡（现在只剩状态页那五组汇总卡）挂上它就是骗人去点，跟 `.yh-card` 那条
+  //    「`button` 才给 hover 位移、`div` 不给」是同一条规矩。
+  if (可点) { const 进 = 图标('进'); 进.classList.add('yh-c-go'); 头.appendChild(进); }
+  el.appendChild(头);
+
+  // ── 分拣：chip / 摘要 / 标签值 / 轴。第一格（名字）已经在卡头里了，跳过。
+  //    ⚠ **`只详` 的先走** —— 它跨好几种类别（轴 / 块 / 好），搁后面会被别的分支先接走。
+  const 片们 = [], 摘们 = [], 对们 = [], 轴们 = [], 轨们 = [];
+  格们.forEach((g, i) => {
+    if (i === 0) return;
+    if (g.只详) return;                    // 详情层专用，卡片上画不出（见 `格详` 的说明）
+    if (g.类 === '轴') 轴们.push(g);        // 块级子树，进不了两列的 `.yh-c-kv`
+    else if (g.类 === '轨') 轨们.push(g);   // 同上 —— 记号轨也是块级子树
+    else if (g.片) 片们.push(g);
+    else if (g.长) 摘们.push(g);
+    else 对们.push(g);
+  });
+
+  // ── chip 行
+  if (片们.length) {
+    const c = document.createElement('span');
+    c.className = 'yh-c-chips';
+    片们.forEach((g) => {
+      const s = document.createElement('span');
+      // '片' 是语义色名：好/坏/特殊/中性。类名走 'yh-chip-*'
+      s.className = 'yh-chip' + (g.片 === '好' ? ' yh-chip-on'
+        : g.片 === '坏' ? ' yh-chip-bad'
+        : g.片 === '特殊' ? ' yh-chip-spec' : '');
+      s.textContent = 格文2(g);
+      c.appendChild(s);
+    });
+    el.appendChild(c);
+  }
+
+  // ── 记号轨（只卡）—— 主线走的节点串。落在 chip 行**之后**：
+  //    它答的是「走到哪了」，跟 chip 答的「现在什么状态」是同一层的问题，挨着放。
+  轨们.forEach((g) => {
+    const r = 节点轨(g.完, g.节, g.态);
+    if (r) el.appendChild(r);
+  });
+
+  // ── 摘要（可能不止一条：任务只有 '目标'，连携只有 '效果'，但结构上不假设只有一条）
+  摘们.forEach((g) => {
+    const s = document.createElement('span');
+    s.className = 'yh-c-sum';
+    s.textContent = 格文2(g);
+    el.appendChild(s);
+  });
+
+  // ── 标签值行。**成对 append** —— CSS 是 'grid-template-columns: 标签列 值列'，
+      // grid 自动把第 1、3、5… 个放标签列、第 2、4、6… 个放值列，
+      // ⇒ **同一张卡里所有标签自动对齐成一条竖线**（列宽是整卡共享的）。
+  if (对们.length) {
+    const kv = document.createElement('span');
+    kv.className = 'yh-c-kv';
+    对们.forEach((g) => {
+      const k = document.createElement('span');
+      k.className = 'yh-k';
+      // 没有标签的格（在场的好感度那种）⇒ 标签位**留空但占位**，值照旧对齐
+      k.textContent = g.签 != null ? g.签 : '';
+      const v = document.createElement('span');
+      v.className = g.类 === '坏' ? 'yh-no' : g.类 === '未定' ? 'yh-d' : 'yh-v';
+      v.textContent = 格文2(g);
+      kv.append(k, v);
+    });
+    el.appendChild(kv);
+  }
+
+  // ── 好感度刻度轴（小档）—— 落在标签值行**之后**：
+  //    `.yh-c-kv` 是「标签列 值列」两列网格，块级子树塞进去会把那张网格撑歪。
+  轴们.forEach((g) => el.appendChild(好感轴(g.值, true)));
+
+  // `传头` 是**函数**不是元素：详情层关着的时候不该建那一棵子树（在场页可能有十几个人）
+  if (可点) el.addEventListener('click', () => 开详情(名, 格们, 传头 ? 传头() : null));
+  return el;
+}
+
+/* ── 详情层 ────────────────────────────────────────────────────────────── */
+// 当前打开的那一条；'null' ＝ 没开。**跨重画活着**（同 '当前页' 那套）。
+let 详情 = null;
+let 详情要聚焦 = false;      // 只在"刚打开"那一帧聚焦，重画不抢焦点
+// 🔴 **子页签的选中位**（2026-09-28 加 · 任务 #14）。同 '详情' 一样跨重画活着。
+let 详情签 = 0;
+let 签要聚焦 = false;        // 点页签换节之后，焦点要落回**新选中的那一签**（不是掉到 body）
+
+function 开详情(名, 格们, 头盒) {
+  详情 = { 名, 格们, 头盒 };
+  详情要聚焦 = true;
+  // 🔴 **换条目 ⇒ 回到第一签** —— 照命定 `DestinyTab.tsx`：换伙伴时三处调用点都写
+  //    `setActivePartnerDetailSection('overview')`。不重置的话，从「任务·目标」退出去
+  //    再点开另一条，会**停在上一条的第 2 签**上，而那一签在新条目里可能是另一个字段
+  //    —— 用户看到的是「我明明点的是 A，怎么显示 B 的正文」。
+  详情签 = 0;
+  if (最后行) 画(最后行);     // 🔴 只重画、**不重读快照**（同 '切页()'）
+}
+function 关详情() {
+  详情 = null;
+  详情签 = 0;                 // 同上：关了就该回到第一签，别把位次留给下一条
+  if (最后行) 画(最后行);
+}
+
+/* 造详情层。'role="dialog"'，Esc 关、「返回」关。
+   🔴 **不给 'aria-modal'** —— 它宣称"背景不可访问"，而这里页眉带与页签条**照旧是活的**
+      （鼠标点得到、Tab 也走得到），列表只是被抽走。写 'aria-modal="true"' 是对屏幕阅读器
+      说假话。'role="dialog"' 留着是因为它确实有标题、有关闭、Esc 收焦点 —— 那套是对的。
+   🔴 **没有"点遮罩空白处关"** —— 详情层**取代**内容区，没有可点的空白。 */
+function 画详情(d) {
+  const ovl = document.createElement('div');
+  ovl.className = 'yh-ovl';
+
+  const sh = document.createElement('div');
+  sh.className = 'yh-sheet';
+  sh.setAttribute('role', 'dialog');
+  sh.setAttribute('aria-label', '「' + d.名 + '」的详情');
+  sh.tabIndex = -1;                          // 收 Esc 用
+
+  const h = document.createElement('div');
+  h.className = 'yh-sh-h';
+  const x = document.createElement('button');
+  x.type = 'button';
+  x.className = 'yh-sh-x';
+  // 🔴 「返回」不是「关闭」—— 详情层**取代**内容区，用户要的是"回到刚才那张列表"，
+  //    而箭头给出方向。⚠ 'aria-label' 必须**包含**可见文字（WCAG 2.5.3 标签名一致）：
+  //    可见是「返回」，无障碍名就必须以「返回」打头，不能只写「关闭详情」。
+  // 🔴 箭头是 **SVG 图标**不是 `←` 字符（2026-09-28 改，见 `图标源.返` 的注释）：
+  //    字符的笔画由字体决定，跟全套 `stroke-width: 2.1` 摆一起粗细对不上。
+  //    ⚠ 图标 `aria-hidden="true"`（`图标()` 里设的），所以**文字节点必须留着** ——
+  //      否则按钮就成了纯图形，无障碍名只剩 aria-label 里那个词，可见文字归零。
+  x.append(图标('返'), document.createTextNode('返回'));
+  x.setAttribute('aria-label', '返回列表');
+  x.addEventListener('click', 关详情);
+  const t = document.createElement('div');
+  t.className = 'yh-sh-t';
+  t.textContent = d.名;                       // 🔴 textContent —— 名字是模型写的自由文本
+  h.append(x, t);
+
+  const body = document.createElement('div');
+  body.className = 'yh-sh-b';
+  /* 🔴 头像（**只有「在场」页传了 `头盒`**）。
+     位置在**标题之下、字段之上** —— 命定 `DetailSheet` 也是这个次序：
+     先"这是谁"，再"他怎么样"。放进 `.yh-sh-b` 而不是 `.yh-sh-h`：
+     标题行是 `返回 ＋ 名字` 的定高横条，塞进一张 3:4 的竖幅会把它撑歪。 */
+  if (d.头盒) body.appendChild(d.头盒);
+  // 🔴 字段分两类画：
+  //    · **短字段**（'长' 没标的）⇒ 挤进一条横排的**胶囊带**（'.yh-meta'，flex-wrap）
+  //      —— 860px 宽放四五个绰绰有余，横排才不浪费宽度；
+  //    · **长字段**（'长' 标的：目标/效果/节点）⇒ **独占整行**，值 'pre-wrap' 全文出。
+  //    ⚠ chip 那类在详情层里**照旧走胶囊带**（详情层不需要"再强调一次状态"，
+  //      它要的是"查得到"）。
+  const 元 = document.createElement('div');
+  元.className = 'yh-meta';
+  const 正 = document.createElement('div');
+  正.className = 'yh-body';
+  const 造格 = (g) => {
+    // 🔴 两枚块级记号**直接还节点**，不套 `.yh-f` 那层壳：
+    //    轴自带「好感度 ＋ 值」那一行，属性卡自带组抬头 —— 再套一层标签就是同一个词画两遍。
+    if (g.类 === '轴') return 好感轴(g.值, false);
+    if (g.类 === '块') return g.节点;
+    const f = document.createElement('div');
+    f.className = 'yh-f';
+    if (g.签 != null) {
+      const a = document.createElement('span');
+      a.className = 'yh-k';
+      a.textContent = g.签;
+      f.appendChild(a);
+    }
+    const v = document.createElement('span');
+    if (g.类 === '坏') v.className = 'yh-no';
+    else if (g.类 === '未定') v.className = 'yh-d';
+    else v.className = 'yh-v';
+    v.textContent = 格文2(g);                  // 🔴 自由文本原样出，**不 clamp**
+    f.appendChild(v);
+    return f;
+  };
+
+  // ── 分节：短字段归「概览」，**每个长字段自成一签**（2026-09-28 · 任务 #14）──────
+  //    依据 ＝ 命定 `DestinyTab.tsx` 的 `detailSections`：「概览 / 状态 / 装备 / 技能 /
+  //    背包 / 资产 / 相册」—— **第一节永远是"概览"，后面每节是一类子内容**。
+  //    月痕没有"多份子集合"那种数据；月痕的**长文本本身就是子内容** ⇒ 长字段一签一节。
+  //    ⚠ 签题直接取该字段的**标签**（'目标' / '效果' / '当前节点'）—— 它就是用户在
+  //      列表上看到的那个词。**别另起一套名字**（另起就要维护一张对照表，迟早对不上，
+  //      而且模型写的字段名是自由的，对照表天生漏）。
+  const 短 = [], 长 = [];
+  d.格们.forEach((g, i) => {
+    if (i === 0) return;                      // 第一格就是名字，标题里已经有了，别画两遍
+    if (g.只卡) return;                       // 只在卡上出的片（头盒已经画过同一个词）
+    (g.长 ? 长 : 短).push(g);
+  });
+  const 节 = [];
+  if (短.length) 节.push({ 名: '概览', 格们: 短 });
+  长.forEach((g) => 节.push({ 名: g.签 != null ? g.签 : '正文', 格们: [g] }));
+  // 🔴 兜底：**一个字段都没有时也要有且只有一节（空的）** —— 否则 `节[0]` 是 undefined，
+  //    下面 `节[详情签]` 直接抛，整块白屏。这不是防想象的问题：连携页的 '效果' 是空串就
+  //    **整格不出**（见 `画连携` 那条注释），"只剩名字"的条目是造得出来的。
+  if (!节.length) 节.push({ 名: '概览', 格们: [] });
+  // 位次夹回合法范围（切页 / 换条目都可能把上一条的位次带过来）
+  if (详情签 >= 节.length) 详情签 = 节.length - 1;
+  if (详情签 < 0) 详情签 = 0;
+  const 选中 = 节[详情签];
+
+  // 🔴 **只画选中那一节** —— 同命定 `activePartnerDetailSection === 'overview' && (…)`。
+  //    **不是「全画出来再 display:none 藏起来」**：藏起来的内容照样进 DOM，
+  //    照样被读屏念出来、照样被 find-in-page 搜到 —— 那是"假装没在页面上"。
+  选中.格们.forEach((g) => ((g.长 || g.块) ? 正 : 元).appendChild(造格(g)));
+  // 空的那一组**不出**（'.yh-meta:empty' 也会撑出 gap —— 明确不 append）
+  if (元.childElementCount) body.appendChild(元);
+  if (正.childElementCount) body.appendChild(正);
+
+  // ── 子页签条（'.yh-sh-nav'）─────────────────────────────────────────────
+  //    ⚠ **只有一节时不画这条** —— 一个签的"页签条"没有任何可切的东西，
+  //      纯粹是白占 44px（在场页那种"短字段都没有、只剩名字"的条目就是这种）。
+  //      命定那边恒有 7 节所以恒画；月痕的节数是**数据决定的**，不能照抄这个恒字。
+  let nav = null;
+  if (节.length > 1) {
+    nav = document.createElement('div');
+    nav.className = 'yh-sh-nav';
+    nav.setAttribute('role', 'tablist');
+    nav.setAttribute('aria-label', '详情分节');
+    节.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.id = 'yh-sht-' + i;
+      b.className = 'yh-sh-tab' + (i === 详情签 ? ' yh-sh-tab-on' : '');
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-selected', i === 详情签 ? 'true' : 'false');
+      b.setAttribute('aria-controls', 'yh-shp');
+      b.textContent = s.名;
+      b.addEventListener('click', () => {
+        if (i === 详情签) return;
+        详情签 = i;
+        // 🔴 重画会把整层换掉 ⇒ 焦点会掉到 <body>。**点页签的人焦点必须落回新选中的那一签**
+        //    —— 否则键盘用户点一下就"失踪"了（同 `切页()` 那条「键盘够得着」的教训）。
+        签要聚焦 = true;
+        if (最后行) 画(最后行);
+      });
+      nav.appendChild(b);
+    });
+    body.id = 'yh-shp';
+    body.setAttribute('role', 'tabpanel');
+    body.setAttribute('aria-labelledby', 'yh-sht-' + 详情签);
+    body.tabIndex = 0;                        // tabpanel 可聚焦（读屏的"下一个"落点）
+  }
+
+  sh.append(h);
+  if (nav) sh.appendChild(nav);
+  sh.appendChild(body);
+  sh.addEventListener('keydown', (e) => { if (e.key === 'Escape') 关详情(); });
+  ovl.appendChild(sh);
+  return ovl;
+}
+
+/* ══ 各页 ══════════════════════════════════════════════════════════════════ */
+
+/* ── 名录块（2026-09-30 加）──────────────────────────────────────────────
+   **字典型容器**（技能 / 装备 / 背包 / 特质 / 节点 / 状态）在详情层里的画法：
+   一条一目，目里"名称"在上、其余字段是下面一行「标签 值」对。
+
+   🔴 **为什么不复用 `.yh-stats`**：那套统计小格的列数是**开卡时按格数现推的**
+     （`--格数`），前提是"这一组的格数固定"（三值恒 3、五维恒 5）。
+     字典的**条目数不定、每条的字段数也不定**（技能 14 格、装备 17 格、背包 4 格），
+     铺成网格就是一片砖，而且列数会随数据抖动。
+   🔴 **空字典照画**：抬头右边报 `无`＋计数，**不许静默留白**（口径④：
+     留白分不清「没设」和「坏了」）。
+   ⚠ 名称取 `Object.keys()`。整数-like 的键会被 V8 强制重排到最前（项目踩过），
+     技能/装备名是中文，正常不触发；**不额外排序** —— 插入顺序就是模型写下的顺序，
+     替它排序等于替它决定什么重要。 */
+function 录块(签, 图名, 行们, 空文) {
+  const b = document.createElement('div');
+  b.className = 'yh-rec';
+  const h = document.createElement('div');
+  h.className = 'yh-rec-h';
+  if (图名) h.appendChild(图标(图名, 16));
+  const hn = document.createElement('span');
+  hn.className = 'yh-rec-hn';
+  hn.textContent = 签;
+  const hc = document.createElement('span');
+  hc.className = 'yh-rec-hc';
+  hc.textContent = 行们.length ? 行们.length + ' 条' : 空文;
+  h.append(hn, hc);
+  b.appendChild(h);
+  if (!行们.length) return b;
+  const ul = document.createElement('ul');
+  ul.className = 'yh-rec-l';
+  for (const r of 行们) {
+    const li = document.createElement('li');
+    li.className = 'yh-rec-i';
+    const n = document.createElement('div');
+    n.className = 'yh-rec-n';
+    n.textContent = r.名;
+    li.appendChild(n);
+    if (r.对们 && r.对们.length) {
+      const dl = document.createElement('div');
+      dl.className = 'yh-rec-d';
+      for (const p of r.对们) {
+        const s = document.createElement('span');
+        s.className = 'yh-rec-p';
+        const kk = document.createElement('span');
+        kk.className = 'yh-rec-k';
+        kk.textContent = p[0];
+        const vv = document.createElement('span');
+        vv.className = 'yh-rec-v';
+        vv.textContent = p[1];
+        s.append(kk, vv);
+        dl.appendChild(s);
+      }
+      li.appendChild(dl);
+    }
+    ul.appendChild(li);
+  }
+  b.appendChild(ul);
+  return b;
+}
+
+/* 字典 → 行们。`造对(条)` 回一张 `[签, 值]` 表；`过滤(条)` 不要的条目直接跳过。
+   ⚠ 非对象的条目**跳过**（模型可能把一整本写成字符串）—— 跳过会被页脚报数吗？
+     不会，这一层没有页脚。⇒ 所以条数用**真进列表的条数**算，不是 `Object.keys().length`。 */
+function 字典行(典, 造对, 过滤) {
+  const 出 = [];
+  if (!典 || typeof 典 !== 'object') return 出;
+  for (const 名 of Object.keys(典)) {
+    const 条 = 典[名];
+    if (!条 || typeof 条 !== 'object') continue;
+    if (过滤 && !过滤(条)) continue;
+    出.push({ 名: String(名).trim() || '（无名）', 对们: 造对(条) });
+  }
+  return 出;
+}
+
+/* 一串短字段 → 一张 `[签, 值]` 表。空串 / 非串 / 占位词（`无`）**都不进**。
+   ⚠ `无` 是 schema 的默认值（战技.名称 / 子词条 / 消耗 都是 `串('无')`），
+     它跟"没写"是同一个意思 ⇒ 不画。这不是筛数据，是**不把默认值当内容报**。 */
+const 占位 = (s) => !s || s === '无' || s === '未定' || s === '—';
+function 短字段(条, 键们) {
+  const 对 = [];
+  for (const k of 键们) {
+    const v = 取(条, [k]);
+    const s = (是串(v) ? v : (是数(v) ? String(v) : '')).trim();
+    if (!占位(s)) 对.push([k, s]);
+  }
+  return 对;
+}
+
+/* 装备条目（17 格）→ `[签, 值]` 表。字段名照 `zod_schema.js` 的 `装备条目Schema`。
+   ⚠ `状态` **不在这里出** —— 相貌签只收 `在装`、持有签两份都收，
+     两边各自知道自己在画哪一档 ⇒ 再画一行「状态 在装」是废话。
+   ⚠ `数量 === 1` 不画 —— schema 默认值就是 1，画出来满屏「数量 1」。 */
+function 装备对(v) {
+  const 对 = [];
+  const 类 = 取(v, ['类型']), 位 = 取(v, ['部位']);
+  const 名 = [是串(类) ? 类.trim() : '', 是串(位) ? 位.trim() : ''].filter(Boolean).join(' · ');
+  if (名) 对.push(['类型', 名]);
+  const 型 = 取(v, ['型级']), 炼 = 取(v, ['精炼']);
+  if (是串(型) && 型.trim()) 对.push(['型级', 型.trim() + (是整(炼) && 炼 > 0 ? ' +' + 炼 : '')]);
+  const 数 = 取(v, ['数量']);
+  if (是整(数) && 数 !== 1) 对.push(['数量', String(数)]);
+  const 战 = 取(v, ['战技']);
+  const 战名 = 取(战, ['名称']);
+  if (是串(战名) && !占位(战名.trim())) {
+    const 修 = 取(战, ['精炼修正']);
+    对.push(['战技', 战名.trim() + (是整(修) && 修 > 0 ? ' +' + 修 : '')]);
+  }
+  const 质 = 取(v, ['象征质点']);
+  if (Array.isArray(质)) {
+    const s = 质.filter((x) => 是串(x) && x.trim()).map((x) => x.trim()).join(' / ');
+    if (s) 对.push(['象征质点', s]);
+  }
+  对.push(...短字段(v, ['子词条', '消耗']));
+  // 属性词条：数组，每条 `{入口, 极性, 写法, 值}` ⇒ 拼成「常驻 检定修正 +2」
+  const 词 = 取(v, ['属性词条']);
+  if (Array.isArray(词) && 词.length) {
+    const 串们 = 词.map((w) => {
+      const a = 取(w, ['入口']), b = 取(w, ['写法']), c = 取(w, ['值']);
+      const 极 = 取(w, ['极性']);
+      return [是串(a) ? a : '', 是串(b) ? b : '', (是串(c) || 是数(c)) ? String(c) : '']
+        .filter(Boolean).join(' ') + (是串(极) ? '（' + 极 + '）' : '');
+    }).filter((s) => s.trim());
+    if (串们.length) 对.push(['属性词条', 串们.join('；')]);
+  }
+  return 对;
+}
+
+/* 技能条目（14 格）→ `[签, 值]` 表。`封顶` / `倍率` / `归属` 是**只读派生**，
+   照旧画 —— 账本不筛（`D83`：面板要能跟装备词条对得上）。
+   ⚠ `消耗` 是一整格卡文原样（`"[主动作: 39 MP]"`），**不拆不裁**。 */
+function 技能对(v) {
+  const 对 = [];
+  const 类 = 取(v, ['类型']), 属 = 取(v, ['归属']);
+  const 名 = [是串(类) ? 类.trim() : '', 是串(属) ? 属.trim() : ''].filter(Boolean).join(' · ');
+  if (名 && 名 !== '主动 · 无源系') 对.push(['类型', 名]);
+  const lv = 取(v, ['Lv']), 熟 = 取(v, ['熟练度']), 顶 = 取(v, ['封顶']);
+  if (是整(lv)) {
+    // 熟练度带出「/封顶」—— `封顶` 是只读的 `'3'|'5'|'6'`（字符串枚举，别当数）
+    对.push(['Lv', String(lv) + (是数(熟) ? ' · ' + 熟 + '%' : '') + (是串(顶) && 顶 ? ' / ' + 顶 : '')]);
+  }
+  const 冷 = 取(v, ['冷却']), 计 = 取(v, ['冷却计数']);
+  if (是整(冷) && 冷 > 0) 对.push(['冷却', String(计) + ' / ' + String(冷)]);
+  const 倍 = 取(v, ['倍率']);
+  if (是数(倍) && 倍 !== 1) 对.push(['倍率', String(倍)]);
+  对.push(...短字段(v, ['关联属性', '目标类型', '核心功能', '触发', '消耗']));
+  const 质 = 取(v, ['象征质点']);
+  if (Array.isArray(质)) {
+    const s = 质.filter((x) => 是串(x) && x.trim()).map((x) => x.trim()).join(' / ');
+    if (s) 对.push(['象征质点', s]);
+  }
+  return 对;
+}
+
+/* ── 四个签的正文（2026-09-30 加）──────────────────────────────────────
+   每一支回一个**节点数组**；`节()` 把它包成一个只详的块级格。
+   ⚠ 每一支的第一项恒是那段散文（没有就跳过），同伴跟在后面 ——
+     **散文是这个签的主角，同伴是它的旁证**，次序不能倒。 */
+const 散文 = (文) => {
+  const d = document.createElement('div');
+  d.className = 'yh-prose';
+  d.textContent = 文;
+  return d;
+};
+
+// 行二 · 相貌 ＝ 散文 ＋ 在装装备（行二自己写的「外貌与着装…穿什么」）
+function 相貌节(条) {
+  const 子 = [];
+  const s = (是串(取(条, ['相貌'])) ? 取(条, ['相貌']).trim() : '');
+  if (s) 子.push(散文(s));
+  // `状态` 三选一里只有 `在装` 是"穿在身上"（`在包` 属于行十二·持有）⇒ 这里只要 `在装`
+  const 在装 = 字典行(取(条, ['装备']), 装备对, (v) => 取(v, ['状态']) === '在装');
+  子.push(录块('着装', null, 在装, '无'));
+  return 子;
+}
+
+// 行三 · 来历 ＝ 散文 ＋ 质点（行五：他力量的来处）
+function 来历节(条) {
+  const 子 = [];
+  const s = (是串(取(条, ['来历'])) ? 取(条, ['来历']).trim() : '');
+  if (s) 子.push(散文(s));
+  // 节点条目的键形如 `源质·X` / `蚀相·X`（`_MVU变量字段总表.md` §2.5），值只有一格 `档`
+  const 行们 = 字典行(取(条, ['节点']), (v) => 短字段(v, ['档']));
+  // `已凝` 是一张**只读派生**的名单（凝到登座的节点名）⇒ 拿它给对应的那几行标一下，
+  // **不另算一格**（`组质点` 已经在卡上报了条数）。
+  const 已凝 = Array.isArray(取(条, ['已凝'])) ? 取(条, ['已凝']).filter((x) => 是串(x) && x.trim()) : [];
+  const 已集 = new Set(已凝.map((x) => x.trim()));
+  for (const r of 行们) {
+    if (已集.has(r.名)) r.对们.push(['已凝', '是']);
+  }
+  const 律 = 取(条, ['律座']);
+  const 偏 = 取(律, ['偏向']);
+  const 偏们 = Array.isArray(偏) ? 偏.filter((x) => 是串(x) && x.trim()) : [];
+  const 有律 = 取(律, ['有无']);
+  const 共 = 取(条, ['共鸣度']), 进 = 取(条, ['解锁进度']);
+  // 桩：质点那一节的"数"（律座 / 共鸣度 / 解锁进度）走一行小字，逐条节点走名录
+  const 数行 = [];
+  if (typeof 有律 === 'boolean') 数行.push(['律座', 有律 ? (偏们.length ? '已立 · ' + 偏们.join(' / ') : '已立') : '未立']);
+  if (是数(共)) 数行.push(['共鸣度', String(共)]);
+  if (是数(进)) 数行.push(['解锁进度', 进 + '%']);
+  if (已凝.length) 数行.push(['已凝', 已凝.join(' / ')]);
+  const 壳 = document.createElement('div');
+  壳.className = 'yh-tabsec';
+  壳.appendChild(录块('质点', '质', 行们, '未立约'));
+  if (数行.length) {
+    const d = document.createElement('div');
+    d.className = 'yh-tabkv';
+    for (const p of 数行) {
+      const s2 = document.createElement('span');
+      s2.className = 'yh-rec-p';
+      const kk = document.createElement('span');
+      kk.className = 'yh-rec-k';
+      kk.textContent = p[0];
+      const vv = document.createElement('span');
+      vv.className = 'yh-rec-v';
+      vv.textContent = p[1];
+      s2.append(kk, vv);
+      d.appendChild(s2);
+    }
+    壳.appendChild(d);
+  }
+  子.push(壳);
+  return 子;
+}
+
+// 行四 · 性格 ＝ 散文 ＋ 性格码 ＋ 特质（行十三）
+function 性格节(条) {
+  const 子 = [];
+  const s = (是串(取(条, ['性格'])) ? 取(条, ['性格']).trim() : '');
+  if (s) 子.push(散文(s));
+  const 码 = 取(条, ['性格码']);
+  if (是串(码) && 码.trim()) {
+    const d = document.createElement('div');
+    d.className = 'yh-tabkv';
+    const p = document.createElement('span');
+    p.className = 'yh-rec-p';
+    const kk = document.createElement('span');
+    kk.className = 'yh-rec-k';
+    kk.textContent = '性格码';
+    const vv = document.createElement('span');
+    vv.className = 'yh-rec-v';
+    vv.textContent = 码.trim();
+    p.append(kk, vv);
+    d.appendChild(p);
+    子.push(d);
+  }
+  子.push(录块('特质', '叶', 字典行(取(条, ['特质']), (v) => 短字段(v, ['标签', '描述'])), '无'));
+  return 子;
+}
+
+/* 只详的**整签块** —— `子们` 为空 ⇒ **回空数组**（这一签不出）。
+   ⚠ 为什么不是"总是出"：`段()` 原来的判据就是"散文非空才出这一签"，
+     保留它 —— 一个连散文带同伴都没有的签，是一片空壳。
+   🔴 **回的是数组（0 或 1 个格），不是节点** —— 调用处写 `...节(...)`（展开）。
+     下面的 `持有节` 回的是**节点**、调用处直接 `格块(持有节(条), '持有')`，
+     两者形状不同是**故意的**：持有那一签恒出（空手也是信息），其余三签按内容出。 */
+function 节(签, 子们) {
+  const 实 = 子们.filter(Boolean);
+  if (!实.length) return [];
+  return [格块(包签(实), 签)];
+}
+/* 把一片子节点裹成一个「一签的盒子」。`格块()` 的 `节点` 必须是**一个 Node** ——
+   🔴 2026-09-30 踩过：`持有节` 原来回的是数组，直接喂给 `格块()` ⇒
+     `造格` 里 `正.appendChild(数组)` 抛 TypeError ⇒ `画()` 半路中断 ⇒
+     **整个详情层没挂上**（量具报「焦点跑到 BODY」，那不是读数错，是元素真没了）。
+     量具当时报 `选中 undefined · 正文块 —` —— **它是对的，我错了**。 */
+function 包签(子们) {
+  const d = document.createElement('div');
+  d.className = 'yh-tabbox';
+  for (const x of 子们) d.appendChild(x);
+  return d;
+}
+
+// 行十二 · 持有 ＝ 技能 / 装备 / 背包 ＋ 金钱。**恒出**（空手本身是信息）。
+function 持有节(条) {
+  return 包签([
+    录块('技能', '卷', 字典行(取(条, ['技能']), 技能对), '无'),
+    录块('装备', '盾', 字典行(取(条, ['装备']), 装备对), '无'),
+    录块('背包', '空态', 字典行(取(条, ['背包']), (v) => 短字段(v, ['数量', '型级', '类别', '备注'])), '无'),
+    // 🔴 `金钱` 只有 `主角` 有（`角色条目Schema` 是 `主角本体.omit({金钱:true})` 派生）
+    //    ⇒ 取不到就**整节不出**，不是"读不到"。这是形状差异，不是故障。
+    (取(条, ['金钱']) && typeof 取(条, ['金钱']) === 'object')
+      ? 录块('金钱', null, [{ 名: '持有', 对们: 短字段(取(条, ['金钱']), ['现金', '资产总值']) }], '无')
+      : null,
+  ].filter(Boolean));
+}
+
+// 7.5 「在场」页 —— 名字 ＋ 好感度。
+// 🔴 **2026-09-28 改：这一页也挂详情层**（驾驶员原话：「**在场肯定是要挂详情层的**」）。
+//    原判据是「两格，点开还是这两格（清一色短值，没有"一次看不完"的问题）」——
+//    **那条判据本身就是错的**：它等于替用户判断"你不必看全"。
+//    卡是**随机生成 ＋ RP 驱动**的，模型的字段会变，今天两格不代表明天两格；
+//    而且"在场"这一页恰恰是最想点开看某个人详情的（好感度怎么来的、现在在干什么）。
+//    ⇒ 现在**只有状态页那五组汇总卡不挂**（它不是条目，是五张汇总卡，没有"某一条"可点）。
+/* ══ 头像引擎（2026-09-28 加）═══════════════════════════════════════════════
+   🔴 **这一块治的是什么**：驾驶员问过一句「**你给主角，给头像留下来余地没有？**」
+     当时的实况是——**一点余地都没有**：`画状态()` 的第一个元素是三值卡，
+     全页没有主角的名字、没有称号、没有相貌，**更没有图片字段**。
+     我核过卡里的 `[InitVar]变量初始值`（uid 9900047）：`主角` 底下
+     `全名 / 称号 / 性别 / 种族 / 归属 / 身份[] / 职业[] / 性格码 / 相貌 /
+     来历 / 性格 / 阶级 / 阶位 …` **一个都没画**，而**没有任何图片字段**。
+     ⇒ 图片只能从**卡外面**进来，这就是上传功能存在的唯一理由。
+
+   🔴 **三条头像来源，按优先级叠（同一条链，不是三个分支）**：
+     ① **玩家自己传的**（存本地，见下）—— 覆盖一切
+     ② **ST 人格头像**（`.user-avatar`）—— **只给主角**，零代码，见 `头挂人格`
+     ③ **首字圆**（名字第一个字）—— 永远在**最底层**，上面两层没东西时露出来
+     ⚠ 三层是**叠在一起的三个 DOM 层**，不是 if/else 选一个画。这样任何一层
+       加载失败/不存在，**下面的自动露出来**，不需要 JS 去"判断该画哪层"。
+     ⚠ ② **只给主角**：在场页那些是 NPC，套玩家的人格头像 ＝ 每个 NPC 都长玩家的脸。
+
+   🔴 **主角这一格没有「粘链接」这个入口**（2026-09-28 撤。驾驶员原话
+     「**让你主角用网站链了吗**」）—— 主角只认**酒馆人格头像 ＋ 本地图**两条，
+     理由和参照卡（`组件库/道渊`）出处写在 `头开面板` 里 `是主角` 那一段。
+
+   🔴 **还有一个入口没做 ＝ 图床**（预设头像池）。驾驶员 2026-09-28 明确它只要
+     「**预留位置**」⇒ **位置留在 `头开面板` 末尾那一行注释里，代码不实现**。
+     ⚠ 它是**取图的一个入口**（点一张预设图 ⇒ 存那个网址 ⇒ 走 `头存链`），
+       **不是第四层** —— 不进 `头存` 那条压缩/配额链，别把它当成一层往上叠。
+     ⚠ 图床在规划里是「未定」（`扩展规划.md` §1.11 / §8），定了才做。
+
+   🔴 **成法来源 ＝ 创世回廊**（`组件库/创世回廊/modules/regex-set/assets/parts/
+     07_正文美化.script.js`，读了 240-299 与 420-549 两段）。它那套
+     「选图 → 压 → 配额 → 存 → 回落」是**有成品背书的**，我不另发明一套：
+       · 5MB 选图上限 / 480KB 单张目标 / 4MB 总量 / 最长边 1024 / 最短边 256
+       · 质量梯 [0.98, 0.95, 0.92, 0.88, 0.84, 0.8]，一档不够就缩 0.85 再来一轮
+       · **精确估字节**（不是 `length * 0.75` 那种粗估 —— 那样要么白压要么超）
+     ⚠ **不照抄的部分**：它的键按"角色名"直接拼，月痕要区分**主角 / 在场角色**，
+       而且它没有"移除"入口 ⇒ 键结构我自己定（见 `头钥匙`）。
+
+   🔴 **嵌套按钮这个坑（设计被它逼着改过一次，先说清楚）**：
+     「在场」页每张卡**本身就是一个 `<button>`**（`组卡(…, true, …)` ⇒ 整卡可点、
+     触摸目标大、键盘可达）。HTML 的 content model **禁止 `<button>` 里有可交互后代**
+     —— 往卡里塞一个 `<button>` 头像是**非法结构**：读屏会把「按钮里还有个按钮」
+     念出来，而且外层按钮的语义会被内层吃掉一块。
+     ⇒ 分工改成：
+       · **卡里**放一个**纯展示**的圆头像（`<span>`，不可点）—— 让人**看得见**
+         "这个人有没有立绘"；
+       · **上传入口**放**详情层**（点卡进去）—— 那儿有整幅宽度，立绘能画大，
+         而且详情层本来就是一个独立视图，不存在嵌套问题。
+     ⇒ `头画()` 因此有 `可点` 这一档；`可点:false` 时**不建按钮、不挂事件、
+       连上传角标都不画**（画了就是一个骗人去点的东西）。 */
+
+// ── 1. 常量（值照创世回廊，来源见文件头）──────────────────────────────────
+const 头键前缀 = 'yh_av_v1|';                 // 三层存储里唯一一处命名，改就改这儿
+const 头选图上限 = 5 * 1024 * 1024;           // 选图阶段先拦一道，避免白读一张 20MB 的
+const 头总配额 = 4 * 1024 * 1024;             // 全部头像合计（含所有 NPC）
+const 头质量梯 = [0.98, 0.95, 0.92, 0.88, 0.84, 0.8];
+
+/* 两档压缩参数 —— **立绘要清楚、小圆点不要**。
+   ⚠ 不给 NPC 用立绘那档：在场页可能有十几个角色，每个 480KB 会当场撑爆 4MB。
+   档 = { 最长边, 目标 }，`头压()` 按它压。 */
+const 头档立绘 = { 最长边: 1024, 目标: 480 * 1024 };
+const 头档小圆 = { 最长边: 320, 目标: 110 * 1024 };
+
+// ── 2. 仓库（三层回退，见文件头）─────────────────────────────────────────
+const 头内存 = {};        // 第三层：内存兜底。⚠ 刷新即失，`头临时` 会把它标出来
+let 头临时 = false;       // true ⇒ 当前用的是内存层，UI 必须说出来
+
+function 头探仓() {
+  // 🔴 探路要**先写一次再删**：有的实现 `localStorage` 拿得到、`setItem` 才抛
+  //    （配额满 / 隐私模式）。只判 `!!window.localStorage` 会把这种当成功。
+  const 试 = [];
+  try { if (window.parent && window.parent !== window && window.parent.localStorage) 试.push(window.parent.localStorage); } catch (_) { /* 跨源会抛，属正常 */ }
+  try { if (window.localStorage) 试.push(window.localStorage); } catch (_) { /* 同上 */ }
+  for (const 仓 of 试) {
+    try { const k = '__yh_探'; 仓.setItem(k, '1'); 仓.removeItem(k); return 仓; } catch (_) { /* 换下一个 */ }
+  }
+  return null;
+}
+const 头仓 = 头探仓();
+头临时 = 头仓 === null;
+
+const 头钥匙 = (名) => 头键前缀 + 名;
+
+function 头读(名) {
+  const k = 头钥匙(名);
+  if (头仓) { try { return 头仓.getItem(k) || ''; } catch (_) { /* 读也可能抛 */ } }
+  return 头内存[k] || '';
+}
+function 头存(名, 值) {
+  const k = 头钥匙(名);
+  if (头仓) {
+    try { 头仓.setItem(k, 值); return true; } catch (_) { return false; }   // 配额满 ⇒ false
+  }
+  头内存[k] = 值; return true;
+}
+function 头删(名) {
+  const k = 头钥匙(名);
+  if (头仓) { try { 头仓.removeItem(k); } catch (_) { /* 删不掉不拦着 */ } }
+  delete 头内存[k];
+}
+
+// ── 3. 字节估算 —— 照抄创世回廊 `estimateDataUrlBytes` ────────────────────
+/* 🔴 为什么不用 `len * 3 / 4`：base64 的 `=` 补位**不算数据**，粗估会偏大，
+   于是明明塞得下的图被当成塞不下、白压一轮。它这份把补位减掉了，是准的。 */
+function 头估(串) {
+  if (typeof 串 !== 'string') return 0;
+  const 逗 = 串.indexOf(',');
+  if (逗 < 0) return 0;
+  const b64 = 串.slice(逗 + 1);
+  const 补 = (b64.match(/=+$/) || [''])[0].length;
+  return Math.floor((b64.length * 3) / 4) - 补;
+}
+function 头可读(n) {
+  if (!(n >= 0)) return '0 B';
+  if (n < 1024) return n + ' B';
+  if (n < 1024 * 1024) return (n / 1024).toFixed(0) + ' KB';
+  return (n / 1024 / 1024).toFixed(2) + ' MB';
+}
+// 已用字节 —— **按真值累加**，不拿 `JSON.stringify` 估（估出来和浏览器算的不是一个数）
+function 头已用() {
+  let 和 = 0;
+  if (头仓) {
+    try {
+      for (let i = 0; i < 头仓.length; i++) {
+        const k = 头仓.key(i);
+        if (k && k.indexOf(头键前缀) === 0) 和 += 头估(头仓.getItem(k) || '');
+      }
+    } catch (_) { /* 遍历失败 ⇒ 报 0，不报假数 */ }
+  } else {
+    for (const k in 头内存) 和 += 头估(头内存[k] || '');
+  }
+  return 和;
+}
+
+// ── 4. 压缩 —— 照抄创世回廊 `encodeAvatarDataUrl`，只把两个常量变成入参 ────
+/* 🔴 为什么必须压：手机拍一张就是 4~8MB，`readAsDataURL` 之后还要 ×1.37
+   （base64 膨胀），塞进 4MB 的仓里必炸。压完通常 80~300KB。
+   ⚠ 返回 `''` ＝ **压不出来**（canvas 被污染 / 拿不到 2d 上下文），
+     调用方必须**当成失败报出来**，不许当成"没头像"静默回落。 */
+function 头压(图, 档) {
+  const 源长 = Math.max(图.width, 图.height);
+  if (!(源长 > 0)) return '';
+  let 比 = 源长 > 档.最长边 ? 档.最长边 / 源长 : 1;
+  let 保底 = '';
+  // 每一轮缩一档；缩到 320 以下就停（再小就糊成马赛克，不如不压）
+  while (比 > 0) {
+    const w = Math.max(1, Math.round(图.width * 比));
+    const h = Math.max(1, Math.round(图.height * 比));
+    const 布 = document.createElement('canvas');
+    布.width = w; 布.height = h;
+    const 笔 = 布.getContext('2d');
+    if (!笔) break;
+    笔.imageSmoothingEnabled = true;
+    笔.imageSmoothingQuality = 'high';
+    笔.drawImage(图, 0, 0, w, h);
+    let 本档最好 = '';
+    for (const q of 头质量梯) {
+      const 试 = 布.toDataURL('image/webp', q);
+      本档最好 = 试;
+      if (头估(试) <= 档.目标) return 试;
+    }
+    保底 = 本档最好;
+    if (Math.max(w, h) <= 320) break;
+    比 *= 0.85;
+  }
+  return 保底;
+}
+
+// ── 5. 首字圆（第 ③ 层，永远在底下）─────────────────────────────────────
+/* ⚠ 取**第一个字**用 `Array.from` 而不是 `[0]` —— 名字里可能有 emoji 或
+   星平面字（`𠮷` 在 UTF-16 里是两个码元），`[0]` 会切出半个字，显示成一个 `�`。 */
+function 头首字(名) {
+  const s = String(名 == null ? '' : 名).trim();
+  if (!s) return '?';
+  return Array.from(s)[0];
+}
+
+// ── 6. 画一个头像 ────────────────────────────────────────────────────────
+/* `头画(名, 形, 选项)`：
+     名   —— 存储键用的名字（主角固定 '主角'，NPC 用角色名）
+     形   —— '立绘'（3:4 竖幅，主角头/详情层）| '圆'（小圆点，在场页卡里）
+     选项 —— { 人格: 挂不挂 `.user-avatar`（**只给主角 true**）
+               可点: 建不建上传入口（false ⇒ 纯展示，见文件头"嵌套按钮"那段） }
+   返回的**外壳** `.yh-av-w`（`position: relative`）：
+     .yh-av-w
+       button.yh-av | span.yh-av      ← 可点 / 纯展示
+         .yh-av-t    首字（③ 底）
+         .yh-av-g    `.user-avatar` 人格层（②，可能被摘掉）
+         img.yh-av-i 上传层（①，可能不存在）
+         .yh-av-e    上传角标（只有可点才画）
+       .yh-av-pop                      ← 面板，**与按钮平级、不在按钮里**（同上）
+   🔴 返回**外壳**不是按钮：调用方要拿它挂进 DOM，而面板必须是按钮的**兄弟**。 */
+function 头画(名, 形, 选项) {
+  const o = 选项 || {};
+  const 可点 = o.可点 !== false;
+  const 立 = 形 === '立绘' ? 'p' : 'c';
+
+  const 壳 = document.createElement('span');
+  壳.className = 'yh-av-w yh-av-w-' + 立;
+
+  const 盒 = document.createElement(可点 ? 'button' : 'span');
+  if (可点) 盒.type = 'button';
+  盒.className = 'yh-av yh-av-' + 立;
+  if (可点) 盒.setAttribute('aria-label', '设置「' + 名 + '」的头像');
+
+  const 首 = document.createElement('span');
+  首.className = 'yh-av-t';
+  首.setAttribute('aria-hidden', 'true');
+  首.textContent = 头首字(名);
+  盒.appendChild(首);
+
+  if (o.人格) {
+    const 人 = document.createElement('span');
+    人.className = 'yh-av-g user-avatar';   // 🔴 TH 的注入 CSS 认这个类名
+    盒.appendChild(人);
+  }
+
+  const 值 = 头读(名);
+  if (值) {
+    const 图 = document.createElement('img');
+    图.className = 'yh-av-i';
+    图.alt = '';                             // 名字就在旁边，再念一遍是噪音
+    图.decoding = 'async';
+    图.src = 值;
+    盒.appendChild(图);
+  }
+
+  if (可点) {
+    const 角 = document.createElement('span');
+    角.className = 'yh-av-e';
+    角.setAttribute('aria-hidden', 'true');
+    角.appendChild(图标('摄', 12));
+    盒.appendChild(角);
+  }
+
+  壳.appendChild(盒);
+  if (可点) 头挂传(壳, 盒, 名, 形 === '立绘' ? 头档立绘 : 头档小圆, !!o.人格);
+  return 壳;
+}
+
+/* ── 6b. 第 ② 层的可用性探测 ───────────────────────────────────────────────
+   🔴 **为什么不能直接信任 `.user-avatar`**：TH 往 iframe 的 `<head>` 里注入的是
+        .user_avatar,.user-avatar{background-image:url('./User Avatars/<file>')}
+      —— 只有 `background-image`，**没有 size / position**，也没保证那张图真的在。
+      ST 里每个用户都有一张人格图（没设过就是默认剪影），所以这一层**大概率会亮**，
+      而"亮出来是默认剪影"和"亮出来是玩家设的立绘"在 CSS 层面**长得一样**。
+   ⇒ 只在**真能取到一个 User Avatars 链接**时才认这一层；取不到、或图打不开，
+     就把这一层**摘掉**，让第 ③ 层的首字露出来
+     （首字至少是**这张卡自己的数据**，不会拿一张陌生人的剪影骗人）。
+   ⚠ 用 `getComputedStyle` 读**计算后**的值，不是读 `style` 属性 —— 注入的 CSS
+     在样式表里，元素自身的 `style` 上什么都没有，读 `style` 会永远读到空。 */
+function 头挂人格(盒) {
+  const 层 = 盒.querySelector('.yh-av-g');
+  if (!层) return;
+  let 链 = '';
+  try { 链 = String(getComputedStyle(层).backgroundImage || ''); } catch (_) { 链 = ''; }
+  const m = /^url\(["']?(.+?)["']?\)$/.exec(链.trim());
+  // 没注入（读到 `none`）或形状不认识 ⇒ **摘掉这一层**，首字露出来
+  if (!m || !m[1] || m[1].indexOf('User Avatars') < 0) { 层.remove(); return; }
+  // 形状对不代表图存在 —— 真去取一次，取不到也摘掉
+  const 探 = new Image();
+  探.onerror = () => { 层.remove(); };
+  探.src = m[1];
+}
+
+// ── 7. 重画一格（不整页重画，免得把滚动位置和焦点弄丢）──────────────────
+function 头重画(壳, 名, 形, 选项) {
+  const 新 = 头画(名, 形, 选项);
+  壳.replaceWith(新);
+  const 盒 = 新.querySelector('.yh-av');
+  if (盒 && 选项 && 选项.人格) 头挂人格(盒);
+  return 新;
+}
+
+// ── 8. 上传面板 ──────────────────────────────────────────────────────────
+/* 🔴 一页**只留一个面板**（`头面板今`）。同时开两个的话：配额那行会显示两个
+      不一样的数（一个存前、一个存后），点外面的"关闭"逻辑也会互相打架。
+   🔴 面板挂在**外壳**里（`.yh-av-w` 是 `position: relative`）⇒ 跟着内容滚，
+      不用处理"父窗口滚了而 `fixed` 面板不动"那类跨 iframe 的麻烦。 */
+let 头面板今 = null;
+let 头目标今 = '';
+
+function 头关面板() {
+  if (头面板今) { 头面板今.remove(); 头面板今 = null; 头目标今 = ''; }
+}
+
+/* ── 把面板滚进可视区（2026-09-28 量出来的，不修就是死按钮）──────────────────
+   🔴 **病灶**：「在场」页的头像上传入口在**详情层**里，面板挂在头像下面
+      （`top: calc(100% + 8px)`）。而详情层正文 `.yh-sh-b` 是 `overflow-y: auto`，
+      面板又是 `position: absolute` —— **不参与流 ⇒ 不撑高详情层**。
+      900 档实测：正文 178→423、面板 361→486 ⇒ **下半截 63px（正好是两颗按钮）
+      落在可滚区外**，不滚根本看不见，滚到了又被页脚 `.yh-src`（423→452，不透明底）
+      接着盖。首屏只能看见那个输入框。
+   🔴 **为什么之前的探针全绿**：程序化 `.click()` **绕过可见性** ——
+      "按钮在不在 DOM 里 / 点了有没有反应"这两条都答"在、有"。
+      这一条只有**命中测试**（`elementFromPoint`）答得出来。
+   ⇒ 开完面板，把**最近的滚动祖先**滚最小的一截。已经全露出来时**一个像素都不动**，
+      主角那侧根本没有滚动祖先，这一句是空转。 */
+function 头滚进(盒) {
+  for (let p = 盒.parentElement; p && p !== document.body; p = p.parentElement) {
+    const 纵 = getComputedStyle(p).overflowY;
+    // 'hidden' 也算：它一样裁，而且**照样可以用 scrollTop 推**（只是没有滚动条）
+    if (纵 !== 'auto' && 纵 !== 'scroll' && 纵 !== 'hidden') continue;
+    const 容 = p.getBoundingClientRect();
+    const 我 = 盒.getBoundingClientRect();
+    if (我.height >= 容.height) p.scrollTop += 我.top - 容.top - 8;            // 装不下 ⇒ 对齐面板顶
+    else if (我.bottom > 容.bottom) p.scrollTop += 我.bottom - 容.bottom + 8;  // 装得下 ⇒ 只补下沿
+    return;   // 只认最近的那一个：外层的滚动不是这一句该管的事
+  }
+}
+
+function 头开面板(壳, 盒, 名, 档, 回画) {
+  if (头面板今 && 头目标今 === 名) { 头关面板(); return; }   // 再点一次＝收起
+  头关面板();
+  头目标今 = 名;
+
+  /* 🔴 **主角这一格没有「粘链接」这条路**（2026-09-28 撤。驾驶员当场点的，
+     原话「**让你主角用网站链了吗**」）。
+     参照卡 `组件库/道渊` 的做法：它的主角头像 `window.refreshUserAvatar` 是
+     **自动跟随玩家在酒馆里选的那个人格头像** —— 先问 `getPersonaAvatarPath("current")`，
+     取不到再读父窗口 `#user_avatar_block .avatar-container.selected img` 的 `src`；
+     **没有输入框、没有按钮、连面板都没有**。它那个带地址框的弹窗
+     （`dy-missing-portrait-modal`）是**给 NPC 缺头像时用的**，不是给主角的。
+     ⇒ 主角这边**只留本地图片**：要换脸就去酒馆的人格面板换，卡片不另开口子。
+     ⚠ **不是"链接不能存"** —— `头存链` 还在（NPC 用，将来图床也用同一条路），
+       是**主角这一格不给这个入口**：网络图存的只是一个字符串，断网 / 图床挂掉，
+       那张脸当场变成一个破图 —— 主角的脸不该挂在别人的服务器上。 */
+  const 是主角 = 名 === '主角';
+
+  const p = document.createElement('div');
+  p.className = 'yh-av-pop';
+  p.setAttribute('role', 'dialog');
+  p.setAttribute('aria-label', '设置「' + 名 + '」的头像');
+
+  const 题 = document.createElement('div');
+  题.className = 'yh-av-pop-t';
+  题.textContent = '「' + 名 + '」的头像';
+  p.appendChild(题);
+
+  // 主角多一行说明：不写的话玩家不知道该去哪儿换脸（面板里只有一颗按钮）
+  if (是主角) {
+    const 说 = document.createElement('div');
+    说.className = 'yh-av-pop-h';   // 样式与状态行共用，不另开一条规则
+    说.textContent = '跟随你在酒馆里选的人格头像；传一张本地图可以盖过它。';
+    p.appendChild(说);
+  }
+
+  let 链 = null;
+  if (!是主角) {
+    链 = document.createElement('input');
+    链.type = 'url';
+    链.className = 'yh-av-pop-in';
+    链.placeholder = '粘贴图片链接 https://…';
+    链.autocomplete = 'off';
+    链.spellcheck = false;
+    p.appendChild(链);
+  }
+
+  const 行 = document.createElement('div');
+  行.className = 'yh-av-pop-r';
+
+  const 钮选 = document.createElement('button');
+  钮选.type = 'button';
+  钮选.className = 'yh-av-pop-b';
+  钮选.appendChild(图标('图', 14));
+  const 选文 = document.createElement('span');
+  选文.textContent = '选本地图片';
+  钮选.appendChild(选文);
+  行.appendChild(钮选);
+
+  /* ⚠ `链文` 必须跟 `钮链` 一样**挂在函数作用域**上（`let` 在外面、里面只赋值）——
+     它被下面的 click 回调用到，而那个回调在 `if` **外面**。写成 `const 链文`
+     塞在 `if` 里 ⇒ 是**块作用域**，回调一跑就 `ReferenceError`；
+     ⚠ 而且**语法闸门抓不到**（那是个运行时错误，不是语法错误）——
+     表现只是"点了「用这个链接」没反应"。 */
+  let 钮链 = null;
+  let 链文 = null;
+  if (!是主角) {
+    钮链 = document.createElement('button');
+    钮链.type = 'button';
+    钮链.className = 'yh-av-pop-b';
+    钮链.appendChild(图标('链', 14));
+    链文 = document.createElement('span');
+    链文.textContent = '用这个链接';
+    钮链.appendChild(链文);
+    行.appendChild(钮链);
+  }
+
+  p.appendChild(行);
+
+  // ── 移除（没有存过就不画：一个点了没反应的按钮比没有按钮更糟）──
+  if (头读(名)) {
+    const 钮删 = document.createElement('button');
+    钮删.type = 'button';
+    钮删.className = 'yh-av-pop-b yh-av-pop-x';
+    钮删.appendChild(图标('删', 14));
+    const 删文 = document.createElement('span');
+    删文.textContent = '恢复默认';
+    钮删.appendChild(删文);
+    钮删.addEventListener('click', () => { 头删(名); 头关面板(); 回画(); });
+    p.appendChild(钮删);
+  }
+
+  // ── 状态行：错误 / 配额 / 内存兜底警告**共用一行**（面板窄，不堆三行）──
+  const 报 = document.createElement('div');
+  报.className = 'yh-av-pop-h';
+  const 刷配额 = (前) => {
+    报.classList.remove('yh-av-pop-er');
+    const 已 = 头已用();
+    报.textContent = (前 ? 前 + ' · ' : '') + '已用 ' + 头可读(已) + ' / ' + 头可读(头总配额) +
+      (头临时 ? ' · ⚠ 本次会话内有效，刷新会丢' : '');
+    if (已 > 头总配额 * 0.9) 报.classList.add('yh-av-pop-er');
+  };
+  刷配额('');
+  p.appendChild(报);
+
+  const 出错 = (文) => { 报.classList.add('yh-av-pop-er'); 报.textContent = 文; };
+
+  // ── 落一张图：先压、再查配额、最后存 ──
+  const 收 = (源图) => {
+    let 出 = '';
+    try { 出 = 头压(源图, 档); } catch (_) { 出 = ''; }
+    if (!出) { 出错('压不出来（图可能损坏，或浏览器不给用 canvas）'); return; }
+    const 字节 = 头估(出);
+    // 🔴 配额**预测式**检查：把"这一张会把总量顶到多少"先算出来再决定。
+    //    差额而不是全额 —— 换头像时旧的那张会被顶掉，不该按两张算。
+    const 差额 = 字节 - 头估(头读(名));
+    if (头已用() + 差额 > 头总配额) {
+      出错('放不下：这张 ' + 头可读(字节) + '，已用 ' + 头可读(头已用()) +
+        '，上限 ' + 头可读(头总配额) + '。先删几张别的头像。');
+      return;
+    }
+    if (!头存(名, 出)) { 出错('写不进去（浏览器存储被占满或禁用了）'); return; }
+    头关面板();
+    回画();
+  };
+
+  /* ── 本地文件 ──
+     🔴 输入框**每次用完清空**（`文.value = ''`）。不清的话选同一个文件第二次
+        `change` 不触发 —— 玩家会以为"点了没反应"。 */
+  const 文 = document.createElement('input');
+  文.type = 'file';
+  文.accept = 'image/*';
+  文.style.display = 'none';
+  钮选.addEventListener('click', () => 文.click());
+  文.addEventListener('change', () => {
+    const f = 文.files && 文.files[0];
+    文.value = '';
+    if (!f) return;
+    if (String(f.type || '').indexOf('image/') !== 0) { 出错('这不是图片文件（' + (f.type || '未知类型') + '）'); return; }
+    if (f.size > 头选图上限) { 出错('图太大了：' + 头可读(f.size) + '，上限 ' + 头可读(头选图上限)); return; }
+    const 读 = new FileReader();
+    读.onerror = () => 出错('这个文件读不出来');
+    读.onload = () => {
+      const 图 = new Image();
+      图.onerror = () => 出错('这个文件不是能显示的图片');
+      图.onload = () => 收(图);
+      图.src = String(读.result || '');
+    };
+    读.readAsDataURL(f);
+  });
+  p.appendChild(文);
+
+  // ── 网络链接（**只有 NPC 走到这儿** —— `是主角` 为真时上面压根没建这颗钮）──
+  /* ⚠ 链接这条路**不走压缩**（跨域图 canvas 会被污染，`toDataURL` 直接抛），
+     存的就是**链接本身**。代价：断网 / 图床挂了就没了 —— 这条要在占位符里
+     说清楚（写"粘贴图片链接"，不写"上传"），不能让人以为它和本地图一样稳。 */
+  /* ⚠ 用 `?.` 而不是 `if (钮链) { … }`：包一层 `if` 就要多一个收尾大括号，
+     而这个函数里已经有一堆回调套回调 —— **少一次括号手术少一次错**。
+     主角那侧 `钮链` / `链` 都是 null，`?.` 直接短路，一行都不用多。 */
+  钮链?.addEventListener('click', () => {
+    const u = String(链.value || '').trim();
+    if (!u) { 出错('先粘一个链接进来'); return; }
+    if (!/^https?:\/\//i.test(u)) { 出错('链接要以 http:// 或 https:// 开头'); return; }
+    // 🔴 先探一次再存 —— 存一个打不开的链接＝画一个破图
+    链文.textContent = '取图中…';
+    const 探 = new Image();
+    探.onerror = () => { 链文.textContent = '用这个链接'; 出错('这个链接取不到图'); };
+    探.onload = () => {
+      链文.textContent = '用这个链接';
+      头存链(名, u, 回画, 出错);   // 长度/协议/写入 全在里头，错因它自己写进面板
+    };
+    探.src = u;
+  });
+
+  /* ── 🔴 图床：**位置留在这儿，现在不画**（2026-09-28 驾驶员更正）─────────
+     驾驶员原话：「**只是叫你预留位置而已**」。
+     ⇒ 这一块**不实现**。图床在规划里明写着「**未定**」：
+       · `扩展规划.md` §1.11 整节标【规划】—— 免费图床 / jsDelivr / R2 **三选一没挑**；
+       · 同文 §8「待你决定」第 1 条就是「**图床域名**」；
+       · `_小手机与楼层状态栏方案.md` §9.2 也记着「CG 里真的放图 —— **图床未定**」。
+     ⇒ **位置 ＝ 这一行**。图床定了之后在这儿加**一个入口** —— 点开铺一格一格的
+       预设图，点一张 ⇒ 走 `头存链` 存下那个网址，**和 NPC 手粘链接是同一条路**。
+     ⚠ **只给 NPC 加**：主角那侧连「用这个链接」都没有（见 `是主角` 那段），
+       图床是同一类"存网址"的路子 ⇒ **主角也不该有图床**，别顺手铺过去。
+       接的时候写成 `if (!是主角) 画图床(p, 名, 回画, 出错);`。
+     🔴 **界面上为什么不画一块空的**：一块永远空的「图床」玩家看着像坏了
+       （本项目红线：**不许静默留白** —— 留白分不清「没设」和「坏了」）。
+       项目里两处「预留」先例分得很清：`_MVU变量字段总表.md` §12.3
+       「**要预留的东西一个都不用现在建**」（那条关掉的空条目现在开 ＝ 增值冗余）
+       ↔ `_小手机与楼层状态栏方案.md` §4.6「界面、分类…都做，**图库位置留出来**」
+       （那是 UI 骨架 ＋ 空格子）。⚠ **这一处属前者**：图床是**一个入口**、
+       不是**一块版面**，画个空壳只是多一个死控件。
+     ⚠ 撤下来的那份实现（拉清单 JSON / 24 小时缓存 / 格子墙 / 刷新钮 /
+       120 张上限 / 扩展名白名单）已归档在
+       `备份与存档/归档/_图床_预留稿/`，图床定了直接拿来接。 */
+
+  壳.appendChild(p);
+  头面板今 = p;
+  头滚进(p);   // 🔴 必须在 appendChild **之后** —— 挂上去才量得到几何
+  // 有链接框就聚焦它，主角没那一格 ⇒ 落到「选本地图片」上（键盘进来就有落点）
+  try { (链 || 钮选).focus(); } catch (_) { /* 聚焦不到不拦着 */ }
+}
+
+// ── 9. 挂上传：点按钮开面板 ──────────────────────────────────────────────
+function 头挂传(壳, 盒, 名, 档, 人格) {
+  盒.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();   // 🔴 头像若落在可点的卡里，拦掉"连带打开详情层"
+    const 形 = 盒.classList.contains('yh-av-p') ? '立绘' : '圆';
+    头开面板(壳, 盒, 名, 档, () => 头重画(壳, 名, 形, { 人格: 人格, 可点: true }));
+  });
+}
+
+/* ── 10. 存一个**网络网址**当头图（2026-09-28 抽出来）────────────────────────
+   ⚠ **现在只有一个调用方**：「用这个链接」（手粘）。
+     之所以抽成函数而不是就地写：**图床**要用同一颗（预留位见 `头开面板` 末尾）。
+     两个入口各写各的，配额算法 / 长度上限 / 协议校验只要有一份写漏，
+     表现就是"手粘的能存、点图床的存不进去"（或者反过来），**两个入口都不会报错**。
+   ⚠ **网络图只存一个字符串 ⇒ 不占 4MB 配额**（那 4MB 是给本地图 base64 的）。
+   ⚠ 校验放这儿、**探测不放这儿**：
+     · 「用这个链接」要探（玩家粘的网址谁也不知道通不通，不探就是画一个破图）；
+     · 将来图床格子**不探**（图已经画在那一格上了，能画出来就说明取得到，
+       再探一次是白等一个 RTT）。
+   ⇒ 返回 true ＝ 存进去了（面板已关、已重画）；false ＝ 没成，**错因已经写进面板**。 */
+function 头存链(名, 网址, 回画, 出错) {
+  const u = String(网址 == null ? '' : 网址).trim();
+  if (!u) { 出错('先粘一个链接进来'); return false; }
+  if (!/^https?:\/\//i.test(u)) { 出错('链接要以 http:// 或 https:// 开头'); return false; }
+  if (u.length > 2048) { 出错('链接太长了（' + u.length + ' 字符）'); return false; }
+  if (!头存(名, u)) { 出错('写不进去（浏览器存储被占满或禁用了）'); return false; }
+  头关面板();
+  回画();
+  return true;
+}
+
+/* 全局只装一次：点空白处 / 按 Esc 收面板。
+   ⚠ 用**捕获**阶段（第三参 true）：面板自己 `stopPropagation` 之后
+     冒泡阶段就收不到外面的点击了，捕获能先一步看到。 */
+document.addEventListener('click', (e) => {
+  if (!头面板今) return;
+  const 壳 = 头面板今.parentNode;
+  if (壳 && 壳.contains(e.target)) return;
+  头关面板();
+}, true);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && 头面板今) 头关面板();
+});
+function 画在场(角) {
+  const 框 = document.createElement('div');
+  框.className = 'yh-pane';
+  框.setAttribute('role', 'tabpanel');
+
+  if (角 === null || typeof 角 !== 'object') {
+    const d = document.createElement('div');
+    d.className = 'yh-no';
+    d.textContent = '读不到';
+    框.appendChild(d);
+    return 框;
+  }
+
+  const { 名, 坏: 坏们 } = 取在场(角);
+
+  if (名.length === 0) {
+    const d = document.createElement('div');
+    if (坏们.length) {
+      // 🔴 有人读不出来 ⇒ **不许说「暂无人在场」** —— 那句话只在"能读的都读到了"的前提下成立
+      d.className = 'yh-no';
+      d.textContent = '读不到';
+    } else {
+      // 空字典与「全员离队」都落这儿 —— 两个都是**真·没人**，不是故障
+      d.className = 'yh-d';
+      d.textContent = '暂无人在场';
+    }
+    框.appendChild(d);
+  } else {
+    // 🔴 好感度走 **chip**：它是一个"一眼看数值"的短值，散在标签值行里不显眼。
+    //    在场/离队也走 chip（'在场' 绿、'离队' 中性）—— 那是这一页最要紧的状态词。
+    // 🔴 **2026-09-28 修：这一格原来读的是 `r.场`，而 `取在场` 根本不返回 `场`。**
+    //    `取在场`（在 `候选乙2.html`，**数据层，本轮一个字没动**）里有一句
+    //    `if (取(条, ['在场']) === '离队') continue;` —— 它**只返回在场的人**，
+    //    返回的是 `{名, 感}`，**没有 `场` 这个字段**。
+    //    ⇒ `r.场` 恒为 `undefined`，于是：
+    //      · `r.场 === '在场' ? '好' : ''` 恒为 `''` ⇒ `片` 是假的 ⇒ **chip 一次都没画出来**，
+    //        这一格掉进"标签值行"；
+    //      · 值取 `格文2` ⇒ `g.文` 是 `undefined` ⇒ `textContent = undefined`
+    //        被 WebIDL 的 `[LegacyNullToEmptyString]` 折成**空串**
+    //        ⇒ 卡上就是**一个「在场」标签后面跟着一段空白**（390 档实拍：
+    //        `_轮110/_分栏_分栏①对齐_在场_窄.png`），看着像"这一格没读出来"。
+    //    ⇒ 取值改成**写死 '在场'**：这一页的语义就是"这些人现在在"，那个值来自
+    //      **数据层的筛选**，不是来自某条数据。🔴 **改 `取在场` 必须同时改这里**。
+    //    ⚠ 也**不给它设 `签`** —— 设了详情层就会画成「在场 在场」两遍
+    //      （`造格` 是"有签画签、再画值"）。不设签 ⇒ 卡上是绿 chip「在场」，
+    //      详情层是一颗胶囊「在场」，两边都不重字。
+    /* 🔴 头像分两处（2026-09-28 加），**这不是重复，是分工**（理由见 `_分栏_头像.js` 文件头）：
+         · 卡里那颗是**纯展示**（`可点:false`）—— 让人**看得见**"这个人有没有立绘"；
+         · 详情层那颗才是**上传入口**（`可点:true`）—— 那儿有整幅宽度，立绘画得大，
+           而且详情层是独立视图，不存在"按钮套按钮"那个非法结构。
+       ⚠ 详情层那颗走 `传头` **函数**、点开才建 —— 在场页可能有十几个人，
+         十几棵 3:4 的子树白建着不用是纯浪费。 */
+    框.appendChild(网格(名.map((r) => {
+      /* 🔴 **原始条目**（2026-09-29 加）—— `取在场` 只回 `{名, 感}` 两格，而
+         `stat_data.角色.<名>` 每项 **77 格**（`_MVU变量字段总表.md` §3）。
+         `角` 就在手上 ⇒ `角[r.名]` 拿得到全条目：**数据层一个字不用动、`取在场` 也不用改**
+         （§9B.7：本轮只动**画法**）。
+         ⚠ 取不到就退回空对象 —— 这一条照样画得出来（名 ＋ 在场片 ＋ 好感度轴），
+           只是属性那五张卡会是「读不到」。**比整条不画强，也比抛异常强。**
+         ⚠ `取在场` 只返回**在场的人**（它内部 `continue` 掉离队的），所以这里的 `条`
+           一定是"现在在"的那一条，跟 `格片卡('在场')` 那个写死的词是同一件事的两种取法。 */
+      const 条 = (角[r.名] && typeof 角[r.名] === 'object') ? 角[r.名] : {};
+      const 文 = (k) => { const v = 取(条, [k]); return (是串(v) && v.trim()) ? v.trim() : ''; };
+      return 组卡(r.名, [
+        格文(r.名),
+        // ⚠ `格片卡` 不是 `格片` —— 这个「在场」**详情层里由头盒负责**（`.yh-sh-t` 底下
+        //   那行身份就是它），不标 `只卡` 的话同一个词会在 60px 内出现两次。
+        格片卡('好', 格文('在场')),
+        格轴(r.感),
+        // 「关系」——**数字管「多深」、文本管「是什么」，两格不互相推导**
+        // （`_MVU变量字段总表.md` §3 那句硬话）。⇒ 它跟好感度轴**分开画、不合并**：
+        // 轴留在原地（全幅那把尺），文本挪进头盒（跟人走）。**"不合并"是内容判据，
+        // "画在哪一行"是画法** —— 两者不冲突。见 `画在场头` 里那段。
+        // 属性 —— **直接复用状态页那五张卡**（`画组`，2026-09-29 从 `画状态` 挪出来的）。
+        // `角色` 项的形状 ＝ `主角` 减 `金钱` 加 `在场/好感度/关系` ⇒ `组三值(条)` 与
+        // `组三值(主)` 是**同一支函数**，一个字都不用改（同表 §3）。
+        // ⚠ **不给签**：五张卡各自带着组抬头（'三值'/'五维'/…），再套一层「属性」标签
+        //   就是同一个词画两遍；而且它**落在「概览」那一签里**（签为空 ⇒ `长` 为假），
+        //   这正是要的 —— 点开一个人，第一屏就得是满的，不能只有一个轴。
+        // ⚠ 外面套 `网格()`：`.yh-body` 是**竖排 flex**，五张卡直接塞进去是五块通长砖；
+        //   套一层网格才跟状态页一样两栏铺开（窄档由 CSS 塌成一栏）。
+        格块(网格(画组([组三值(条), 组五维(条), 组攻(条), 组三抗(条), 组心智(条), 组精神(条), 组质点(条), 组成长(条)]))),
+        // 🔴 **2026-09-30：三个长字段从"光秃秃一段散文"改成"一段散文 ＋ 它那一行的同伴"**
+        //    —— 驾驶员原话「人物这三个里面内容我记得还是太少了，再加」。
+        //    同伴全部取自卡文 `1108` 三、面板十二行，**每一签就是那一行**：
+        //      · 相貌（行二）＝ 散文 ＋ **在装装备** —— 行二自己写着「外貌与着装…穿什么」；
+        //      · 来历（行三）＝ 散文 ＋ **质点** —— 行五那句「源质·节点名」是**他力量的来处**，
+        //        跟行三「从哪来、怎么走到今天」同一条轴；且质点**先前整块没画**；
+        //      · 性格（行四）＝ 散文 ＋ **性格码 ＋ 特质** —— 行四写行为、特质写"他身上带什么"，
+        //        两者是同一件事的两面（`玩法设计_技能与特质.md` §1.8 那条分界管的是"别混"，不是"别并排"）。
+        //    ⚠ **同伴为空时整块同伴不画**，散文照旧独占一签 —— 与改前逐字节相同，不制造空壳。
+        //    ⚠ `头盒` 里已经画过的（称号/种族/性别/阶级/归属/身份/职业/关系）**一个都不重复**，
+        //      它在每一签上方常驻 ⇒ 再画一遍就是同一屏里同一个值画两遍。
+        ...节('相貌', 相貌节(条)),
+        ...节('来历', 来历节(条)),
+        ...节('性格', 性格节(条)),
+        // 🔴 卡文 `1108` 三、**十二 持有** —— 面板十二行的最后一行，前端先前整行没画。
+        //    `持有` 这一签**恒出**（哪怕四本全是空的）：它报的是"这个人手上有什么"，
+        //    空手本身是信息；「没这一签」和「这一签是空的」在界面上必须分得开。
+        格块(持有节(条), '持有'),
+      ], true, '人',
+        头画(r.名, '圆', { 可点: false }),
+         () => 画在场头(条, r.名)
+      );
+    })));
+  }
+
+  // 页脚 —— 🔴 有读不出来的就报数，**不许静默跳过**（方案 §3 决策⑥）
+  if (坏们.length) {
+    const d = document.createElement('div');
+    d.className = 'yh-d';
+    d.textContent = '另有 ' + 坏们.length + ' 个读不到';
+    框.appendChild(d);
+  }
+  return 框;
+}
+
+/* 「在场」详情层的头盒 —— **裸的一行**：左立绘、右身份（2026-09-29 加）。
+   🔴 起因：驾驶员点开秦无咎，「**没有任何东西**」。原头盒只有一颗 126×176 的立绘，
+      它在 900 档下面**右边 1400px 全空**（实拍 `_分栏_分栏①对齐_在场详情_宽.png`）
+      —— **立绘不是问题，"立绘旁边什么都没有"才是问题**，身份行挪到它右边就治好了。
+   🔴 为什么不复用 `画主角头`：**四处不一样**，硬合要给四个开关 ——
+      · **不画名字**：详情层的标题行（`.yh-sh-t`）已经写着名字，再画一遍就是同一个词
+        在 60px 内出现两次；
+      · **不挂 `人格`**：立绘第 ② 层是 ST 人格头像，NPC 挂上去就是"每个 NPC 都长玩家的脸"
+        （见 `_分栏_头像.js` 文件头）；
+      · **不画相貌**：相貌在卡里是整段自由文本，它是这一层**自己的一节**（`段('相貌')`），
+        在这儿再截两行等于同一份文本画两遍；
+      · **不套卡底**：详情层自己已经是一块有边有底的板子，**板子里再套一张卡就是盒中盒**
+        （`.yh-hero-flat` 把底色/边框/圆角全抹掉，只留底下一道发丝线，与数据行同一支）。
+   ⚠ `条` 是 `stat_data.角色.<名>` 的**原始条目**（77 格），**不是** `取在场` 给的
+      `{名, 感}` —— 后者只有两格，画不出这一行。 */
+function 画在场头(条, 名) {
+  const c = (条 && typeof 条 === 'object') ? 条 : {};
+  const 文 = (k) => { const v = 取(c, [k]); return (是串(v) && v.trim()) ? v.trim() : ''; };
+
+  const 盒 = document.createElement('div');
+  盒.className = 'yh-hero yh-hero-flat';
+  // 🔴 **可点** —— 这一颗是上传入口（第 ① 层，卡自己的立绘）。卡上那颗是 `可点:false`
+  //    的纯展示（见 `_分栏_头像.js` 文件头那段分工）。
+  盒.appendChild(头画(名, '立绘', { 可点: true }));
+
+  const 身 = document.createElement('div');
+  身.className = 'yh-hero-id';
+
+  // ── 称号。⚠ 空着就**整段不画** —— 画一对空「」比不画更难看（同 `画主角头`）。
+  //    名字不在这儿：它在标题行上，见上面那条。
+  const 称号 = 文('称号');
+  if (称号) {
+    const t = document.createElement('div');
+    t.className = 'yh-hero-title';
+    t.textContent = '「' + 称号 + '」';
+    身.appendChild(t);
+  }
+
+  // ── 元数据行：种族 · 性别 · 阶级 · 归属 ──
+  // ⚠ 逐项判空**再拼**，不是先拼再 trim —— 中间那个 `·` 会跟着空项留下来，
+  //   出现「人族 ·  · 爪牙」这种中间空一格的串（`归属` 是模型自由写的，常为空）。
+  const 元 = ['种族', '性别', '阶级', '归属'].map(文).filter(Boolean);
+  if (元.length) {
+    const m = document.createElement('div');
+    m.className = 'yh-hero-meta';
+    m.textContent = 元.join(' · ');
+    身.appendChild(m);
+  }
+
+  // ── 身份 / 职业 —— chip 行 ──
+  // 🔴 **每片自带标签**（`身份 灰烬会` / `职业 剑士`），不裸放值：这两个字段**值域重叠**
+  //    （都可能是"XX会"这种组织名），裸放一串之后分不出哪个是身份、哪个是职业。
+  // ⚠ 数组里非字符串的项**跳过**，不 `String()` 强转 —— 强转会画出 `[object Object]`。
+  const 片 = [];
+  const 收片 = (arr, 签) => {
+    if (!Array.isArray(arr)) return;
+    for (const s of arr) if (是串(s) && s.trim()) 片.push({ 签, 值: s.trim() });
+  };
+  收片(取(c, ['身份']), '身份');
+  收片(取(c, ['职业']), '职业');
+  if (片.length) {
+    const 带 = document.createElement('div');
+    带.className = 'yh-hero-tags';
+    for (const p of 片) {
+      const t = document.createElement('span');
+      t.className = 'yh-hero-tag';
+      const a = document.createElement('span');
+      a.className = 'yh-hero-tag-k';
+      a.textContent = p.签;
+      const b = document.createElement('strong');
+      b.textContent = p.值;
+      t.append(a, b);
+      带.appendChild(t);
+    }
+    身.appendChild(带);
+  }
+
+  // 「关系」—— 画进头盒（原来在轴底下单占一行）
+  const 关 = 文('关系');
+  if (关) {
+    const r = document.createElement('div');
+    r.className = 'yh-hero-rel';
+    const rk = document.createElement('span');
+    rk.className = 'yh-hero-rel-k';
+    rk.textContent = '关系';
+    const rv = document.createElement('span');
+    rv.className = 'yh-hero-rel-v';
+    rv.textContent = 关;
+    r.append(rk, rv);
+    身.appendChild(r);
+  }
+
+  // 🔴 身份列**整列空着**是可能的（NPC 刚生成时 种族/性别/阶级/归属/身份/职业 全空）。
+  //    那时候**不留一条空的右列** —— 不 append 就是，立绘退回"独自一行"。
+  if (身.childElementCount) 盒.appendChild(身);
+  return 盒;
+}
+
+/* ══ 状态筛（「主线」/「任务」两页共用）══════════════════════════════════════
+   🔴 **默认恒为「全部」** —— 这一页是**账本**：默认视图一条都不许藏。
+      筛是驾驶员**自己按下去**的，而且每一档旁边挂着条数 ⇒ 藏没藏、藏了几条，
+      抬眼就看得见。（1-7「四档都要」/ 1-8「你就画啊」连着两轮的口径照旧：
+      **不是"要不要筛掉某一档"，是"谁按的、按完还看不看得见账"。**）
+   🔴 **档位从数据现推，不写死** —— 状态的取值是**模型写的自由串**（`取线`/`取务` 只验
+      "是非空串"，见那两处注释）。写死一张四值表 ⇒ 模型写个「搁置」，
+      那一条就**永远点不出来** ＝ 静默吞数据。现推的表里，「搁置」自成一项。
+   🔴 记号沿用页签条那支竖刻度（`.yh-tab::before`）**小一号**（15px → 11px）——
+      同一个「你在这」手势低一层换尺寸就够；**另造一套记号才是"常见 AI 设计"的来源**。
+      底下**没有任何实心块**（页签条那条 '--psunk' 凹槽这一层刻意不画）。
+   ⚠ 跨页不重置是**刻意的**：他选了「进行中」，翻去任务页再回来还是它 ——
+     中途自己跳回「全部」才是真丢数据。 */
+let 主线筛 = null;      // 'null' ＝ 全部；否则存**变量里的原值**（'未启'，不是 '未开始'）
+let 任务筛 = null;
+/* 🔴 重画后把焦点落回选中那一档（键盘用户；同 '详情要聚焦' / '签要聚焦' 那两条的教训）。
+   ⚠ **必须在骨架挂载那一步消费**（`_分栏_骨架.js` 的 `if (行.快照)` 块），**不能在本文件里 .focus()** ——
+     本文件造整棵 `.yh-pane` 时它**还没进文档**，而**游离节点上的 `.focus()` 是静默空操作**
+     （不报错、不抛异常、`document.activeElement` 照旧是 `<body>`）。
+     第一版就写在这儿：探针量出来「焦点落在 (BODY)」，而肉眼在截图上**永远看不出来**。 */
+let 筛要聚焦 = false;
+
+/* 造筛选条。`行` ＝ 已解析的行数组 · `取值` ＝ 从一行里取状态原值 · `现选` ＝ 当前选中。
+   `设选` 是写回**模块级那个变量**的 setter（`画筛` 自己够不着调用方的变量）。
+   返回 `{条, 选, 行}` —— `选` 是**归一后的**选中值，调用方必须把它写回去。 */
+function 画筛(行, 取值, 现选, 设选) {
+  const 数 = new Map();
+  for (const r of 行) { const v = 取值(r); 数.set(v, (数.get(v) || 0) + 1); }
+
+  // 🔴 选中的那一档**这一帧已经没了** ⇒ 退回「全部」。不退回的话：这一页画成空网格，
+  //    而空网格上**没有任何一档可点** ⇒ 卡死在"筛出零条"上，只能刷新页面才出得来。
+  //    ⚠ 这不是假想故障 —— 条目是模型写的，上一轮有「进行中」这一轮可能一条都没有。
+  if (现选 !== null && !数.has(现选)) 现选 = null;
+
+  // 档序：对上的走枚举序（同 `取线`/`取务` 的 `序[..] ?? 9` 那套），对不上的按码点序吊在后面。
+  const 序 = { 未启: 0, 进行中: 1, 已完成: 2, 已结算: 3, 已失败: 4 };
+  const 档们 = [...数.keys()].sort((a, b) => (序[a] ?? 9) - (序[b] ?? 9)
+                                || (a < b ? -1 : a > b ? 1 : 0));
+
+  const 条 = document.createElement('div');
+  条.className = 'yh-flt';
+  条.setAttribute('role', 'group');
+  条.setAttribute('aria-label', '按状态筛选');
+
+  const 造 = (值, 签, 个) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'yh-fl' + (现选 === 值 ? ' yh-fl-on' : '');
+    b.setAttribute('aria-pressed', 现选 === 值 ? 'true' : 'false');
+    b.appendChild(document.createTextNode(签));
+    const n = document.createElement('span');
+    n.className = 'yh-fl-n';
+    n.textContent = String(个);
+    b.appendChild(n);
+    b.addEventListener('click', () => {
+      if (现选 === 值) return;        // 点已经选中的那一档＝什么都不做（不重画、不闪一下）
+      设选(值);
+      筛要聚焦 = true;                 // ⚠ 消费在骨架挂载那一步，理由见 `筛要聚焦` 的声明处
+      if (最后行) 画(最后行);          // 🔴 只重画、**不重读快照**（同 `切页()`）
+    });
+    return b;
+  };
+
+  // 「全部」挂在最前，条数 ＝ 总条数 ⇒ 各档的条数加起来必须对得上它（自洽，一眼能核）
+  条.appendChild(造(null, '全部', 行.length));
+  for (const v of 档们) 条.appendChild(造(v, 写状态(v), 数.get(v)));
+
+  // ⚠ 焦点**不在这儿落**（`筛要聚焦` 由骨架挂载那一步消费）—— 此刻整棵 pane 还是游离的。
+  //   落点用 `.yh-fl-on` 找（唯一一颗）⇒ 不必拿 `CSS.escape` 拼属性选择器
+  //   （状态值是模型写的任意串，带引号就炸）。
+  return { 条, 选: 现选, 行: 现选 === null ? 行 : 行.filter((r) => 取值(r) === 现选) };
+}
+
+/* ── 主线 · 类型图标 ──────────────────────────────────────────────────────
+   四类型各有对得上的**已有**形状，不新画：主线＝旗 · 支线＝卷 · 地域＝图 · 个人＝人。
+   对不上的（模型写了第五个词）⇒ 回落到 `图`，**不空着** —— 这一格是装饰，不是判据。 */
+const 线图标 = { 主线: '旗', 支线: '卷', 地域: '图', 个人: '人' };
+const 类图标 = (类) => 线图标[类] || '图';
+
+/* ── 主线 · 节点树（2026-09-30 加）────────────────────────────────────────
+   `已完成节点` 是 `z.array(z.string())`，先前 `取线` 只把 `.length` 带出来 ⇒
+   **节点名字一个都没到过渲染层**，画面上只剩「已完成 4」。这条链把它画出来。
+
+   · 走完的 ⇒ 实心点；当前节点 ⇒ 圆环 ＋ 一枚尾签（词随 `状态` 走）。
+   · 竖轨在**当前节点之后淡出** —— 底下是还没走的路，没画出来的东西不假装有。
+   · `分支` 是岔口，画在轨尾；空串就不出这一行（不写「分支：无」）。
+   ⚠ 一个节点都没有 ⇒ 返回 `null`，由调用方跳过（别画一个空壳）。 */
+function 节点树(完, 节, 分, 态) {
+  const 走完 = (Array.isArray(完) ? 完 : []).filter((s) => 是串(s) && s.trim());
+  const 当前 = (是串(节) && 节.trim()) ? 节.trim() : '';
+  const 岔 = (是串(分) && 分.trim()) ? 分.trim() : '';
+  if (!走完.length && !当前) return null;
+
+  const 尾签 = { 进行中: '当前', 未启: '起点', 已完成: '已结', 已失败: '已断' }[态] || '当前';
+
+  const 盒 = document.createElement('div');
+  盒.className = 'yh-tree';
+  // 🔴 **这条路到不到头** —— `已完成` / `已失败` ⇒ 到头（CSS 把尾巴那条虚线掐掉）；
+  //    `进行中` / `未启` ⇒ 没到头，末尾留一段虚线，意思是「前面还有路」。
+  //    ⚠ 这条**是从 `态` 读出来的事实**，不是装饰：断掉的路还画着"路还在"就是假读数。
+  if (态 === '已完成' || 态 === '已失败') 盒.classList.add('is-end');
+
+  const 头 = document.createElement('div');
+  头.className = 'yh-tr-h';
+  const 名 = document.createElement('span');
+  名.className = 'yh-tr-hk';
+  名.textContent = '节点';
+  const 数 = document.createElement('span');
+  数.className = 'yh-tr-hv';
+  数.textContent = 走完.length + (当前 ? ' ＋ 当前' : '');
+  头.append(名, 数);
+  盒.appendChild(头);
+
+  const 列 = document.createElement('ol');
+  列.className = 'yh-tr';
+  const 造 = (文, 记号, 签) => {
+    const li = document.createElement('li');
+    li.className = 'yh-tr-n' + (记号 === 'done' ? ' is-done' : ' is-now');
+    const m = document.createElement('span');
+    m.className = 'yh-tr-m';                   // 记号是纯 CSS 画的（点／环／钩）
+    m.setAttribute('aria-hidden', 'true');
+    const t = document.createElement('span');
+    t.className = 'yh-tr-t';
+    t.textContent = 文;                        // 🔴 textContent —— 节点名是模型写的自由文本
+    li.append(m, t);
+    if (签) {
+      const g = document.createElement('span');
+      g.className = 'yh-tr-g';
+      g.textContent = 签;
+      li.appendChild(g);
+    }
+    列.appendChild(li);
+  };
+  走完.forEach((s) => 造(s.trim(), 'done'));
+  if (当前) 造(当前, 'now', 尾签);
+  盒.appendChild(列);
+
+  if (岔) {
+    const f = document.createElement('div');
+    f.className = 'yh-tr-f';
+    const k = document.createElement('span');
+    k.className = 'yh-tr-fk';
+    k.textContent = '分支';
+    const v = document.createElement('span');
+    v.className = 'yh-tr-fv';
+    v.textContent = 岔;                        // 🔴 自由文本
+    f.append(k, v);
+    盒.appendChild(f);
+  }
+  return 盒;
+}
+
+/* ── 主线 · 卡面小节轨 ────────────────────────────────────────────────────
+   卡上不铺节点名（那是详情层的事），只把**走到哪了**画成一串记号：
+   走完的＝实心点，当前＝圆环。多于 `上限` 个时**报余数**，不静默截断。 */
+function 节点轨(完, 节, 态) {
+  const 走完 = (Array.isArray(完) ? 完 : []).filter((s) => 是串(s) && s.trim());
+  const 当前 = (是串(节) && 节.trim()) ? 1 : 0;
+  if (!走完.length && !当前) return null;
+
+  const 轨 = document.createElement('span');
+  轨.className = 'yh-rail';
+  轨.setAttribute('aria-hidden', 'true');       // 纯记号 —— 旁边的「已完成 N」已经把话说清了
+  const 上限 = 8;
+  const 显 = 走完.slice(0, 上限);
+  显.forEach(() => {
+    const i = document.createElement('i');
+    i.className = 'is-done';
+    轨.appendChild(i);
+  });
+  if (走完.length > 上限) {
+    const i = document.createElement('i');
+    i.className = 'is-more';
+    i.textContent = '＋' + (走完.length - 上限);
+    轨.appendChild(i);
+  }
+  if (当前) {
+    const i = document.createElement('i');
+    i.className = 'is-now';
+    轨.appendChild(i);
+  }
+  return 轨;
+}
+
+/* ── 7.6 「主线」页 —— 线名 ＋ 五项（轮 1-6 新增）─────────────────────────
+   数据根 ＝ `stat_data.世界.主线`，**一个字典：键就是线名**，值是那条线的七格。
+   本页只取六样：键（线名）＋ `类型` / `状态` / `章节` / `节点` / `已完成节点`（取长度）。
+   🔴 `分支` / `配乐` **本轮不画** —— §3.6 这页的表里没有这两项（同 1-4 决策③「一个不多一个不少」）。
+   🔴 数据侧三条卡文（`9900044` 252–266 / `9900050` 二、四、六、）：
+      · **`主线` 是保留线名，同时只允许一条**；其余三类可并行、条数不限。
+      · **「当前节点」＝ `节点` 格** —— 它写的是**正在做的那一个**，不是列表。
+      · **「已完成数」＝ `已完成节点` 列表的长度** —— 不是字典里的某一格。
+   ⚠ 颜色、间距、六档 —— 全是审美，归轮 1-10（本轮只到看得见）。 */
+
+// 🔴 **全页唯一一处翻译**（驾驶员 2026-09-26 拍）—— 屏幕上画 `未开始`，变量里是 `未启`。
+//    边界是**闭集**：只翻这一个词。`类型` 四值、`状态` 另外三值一律照变量原样。
+//    **要翻下一个词，得驾驶员点名** —— 这条防的是「翻译层自己长大」（方案 §4.3 不变量 7）。
+const 写状态 = (态) => (态 === '未启' ? '未开始' : 态);
+
+// 一格文本：空串画「未定」（灰）—— schema 里 `章节`/`节点` 的默认**就是空串** ⇒ 空是**合法状态**，不是故障。
+// 🔴 不许静默留白（轮 1-3 口径④）：留白分不清「没设」和「坏了」。
+function 格文本(文) {
+  const s = (是串(文) ? 文 : '').trim();
+  return s ? 好(s) : { 类: '未定', 文: '未定' };
+}
+
+// 挑线。返回 { 行: [{名, 类, 态, 章, 节, 完数}], 坏: [键] }。
+// 🔴 `条` 除了 `null`/非对象，**还要挡数组** —— `typeof [] === 'object'`，
+//    漏了就会把 `[]` 当合法条目、逐格读出 undefined ⇒ 静默变「读不到」，看不出是坏数据。
+//    ⚠ 名字取自 `Object.keys()`：整数-like 的键会被 V8 强制重排到最前（项目踩过这个坑）。
+//      线名是中文，正常不触发；而且下面按类型**重排**过，这一层不影响最终顺序。
+function 取线(线典) {
+  const 行 = [], 坏 = [];
+  for (const k of Object.keys(线典)) {
+    const 条 = 线典[k];
+    if (条 === null || typeof 条 !== 'object' || Array.isArray(条)) { 坏.push(k); continue; }
+    const 类 = 取(条, ['类型']), 态 = 取(条, ['状态']);
+    const 章 = 取(条, ['章节']), 节 = 取(条, ['节点']), 完 = 取(条, ['已完成节点']);
+    const 分 = 取(条, ['分支']), 乐 = 取(条, ['配乐']);
+    // 🔴 枚举**只验「是非空串」**，不验取值在不在四值里
+    //    —— 先例：轮 1-4 `组心智` 对 `理智上限`（字符串枚举）与 `月蚀度阶段` 就是这么判的。
+    //    理由：不知道怎么读的值，**画出来比吞掉强**（画出来才看得见、才诊断得了）。
+    if (!是串(类) || !类) { 坏.push(k); continue; }
+    if (!是串(态) || !态) { 坏.push(k); continue; }
+    if (!是串(章) || !是串(节)) { 坏.push(k); continue; }   // 空串合法（＝未定），类型不对才坏
+    if (!Array.isArray(完)) { 坏.push(k); continue; }        // 🔴 不是数组 ⇒ 不猜 0，整条算坏
+    行.push({
+      名: k, 类, 态, 章, 节,
+      完,                       // 🔴 节点名**原样带出去** —— 渲染层要画那条链，不是只数个数
+      完数: 完.length,          // 卡面摘要沿用（不动既有消费者）
+      分: 是串(分) ? 分 : '',   // 不是串 ⇒ 当空（不猜），不因此判整条坏
+      乐: 是串(乐) ? 乐 : '',
+    });
+  }
+  // 类型序：主线 → 支线 → 地域 → 个人（＝卡文 `9900050` 一、的列举顺序）；同类内按键名。
+  // ⚠ `sort` 在 V8 里是**稳定**的 ⇒ 同类型的几条保持字典序，位置可复现。
+  // ⚠ 键名比较走 **UTF-16 码点序、不是拼音序** —— 稳定可复现，但别当成中文习惯序（方案 §3 决策③）。
+  const 序 = { 主线: 0, 支线: 1, 地域: 2, 个人: 3 };
+  行.sort((a, b) => (序[a.类] ?? 9) - (序[b.类] ?? 9) || (a.名 < b.名 ? -1 : a.名 > b.名 ? 1 : 0));
+  return { 行, 坏 };
+}
+
+// 主线页。`线典` 是 `stat_data.世界.主线`；**不是对象 ⇒ 故障态**（与「空」分开画）。
+function 画主线(线典) {
+  const 框 = document.createElement('div');
+  框.className = 'yh-pane';
+  框.setAttribute('role', 'tabpanel');
+
+  // 🔴 数组也是 object —— 必须单独挡掉，否则 'Object.keys([])' 得 '[]'，
+  //    会**静默画成「暂无主线」**，看着完全正常（方案 §4.3 不变量 3）。
+  if (线典 === null || typeof 线典 !== 'object' || Array.isArray(线典)) {
+    const d = document.createElement('div');
+    d.className = 'yh-no';
+    d.textContent = '读不到';
+    框.appendChild(d);
+    return 框;
+  }
+
+  const { 行, 坏: 坏们 } = 取线(线典);
+
+  if (行.length === 0) {
+    const d = document.createElement('div');
+    if (坏们.length) {
+      d.className = 'yh-no';
+      d.textContent = '读不到';
+    } else {
+      d.className = 'yh-d';
+      d.textContent = '暂无主线';
+    }
+    框.appendChild(d);
+  } else {
+    // 🔴 筛选条**在行一条都没有时不画**（那种情况走上面那支，画「暂无」/「读不到」）——
+    //    只有「全部 0」一颗的筛选条没有可筛的东西，是纯噪声。
+    const 筛 = 画筛(行, (r) => r.态, 主线筛, (v) => { 主线筛 = v; });
+    主线筛 = 筛.选;
+    框.appendChild(筛.条);
+    框.appendChild(网格(筛.行.map((r) => {
+      // 树**只建一次** —— 建两次会得到两棵不同的子树（DOM 节点不能被 append 到两处），而且白跑
+      const 树 = 节点树(r.完, r.节, r.分, r.态);
+      const 格们 = [
+        格文(r.名),                 // 线名 ＝ 字典的键（模型写的自由文本）
+        // ⚠ '类型' **不进 chip** —— 「主线」两个字在胶囊里跟标题重了，且它不是状态。
+        格签('类型', 格文(r.类)),   // 类型四值：**照变量原样，不翻**
+        // 🔴 '状态' 进 chip：**不带标签**（1-7 方案：原词直出，中文词自明），色走 `态色` 表
+        //    ⚠ 查表用**变量里的原值**（可能是 '未启'）、画出来的是 `写状态()` 译过的词 ——
+        //      表是照 schema 的枚举建的，两边别串。
+        格片(片色(r.态), 格文(写状态(r.态))),
+        // 🆕 记号轨（只卡）—— 走的节点串成一串点，答「走到哪了」
+        格轨(r.完, r.节, r.态),
+        // ⚠ '章节' **不进摘要** —— 它是标题（「第三章·沉钟之下」），clamp 两行是浪费。
+        格签('章节', 格文本(r.章)),
+        // 🔴 '节点' **进摘要** —— 它是**半散文**（「补封印——把那口钟从潮线底下起出来…」），
+        //    驾驶员 2026-09-27 点名的那类值。
+        // 🔴 **空值不进摘要**：`格文本('')` 兜出「未定」，摘要块把它画成一整条灰底实心 ——
+        //    既是大面积实心填充，又把「这格空着」装成「待定」。空串照画（轮 1-3 口径④
+        //    不许静默留白），但**退成标签值行**：一行「当前节点　未定」，没有底。
+        格签('当前节点', r.节 ? 格长(格文本(r.节)) : 格文本(r.节)),
+        好对('已完成', String(r.完数)),
+        // 🆕 '配乐' / '分支' —— 这两格一直在变量里，先前**连读都没读**（`取线` 没往外带）
+        ...(r.乐 ? [格签('配乐', 格文(r.乐))] : []),
+        // 🔴 '分支' **不进摘要**（2026-09-30 改）—— 摘要块**画不出标签**（`组卡` 只取 `格文2(g)`），
+        //    而 `节点` 已经是摘要了 ⇒ 一张卡上两条灰块、**谁也分不清哪条是分支**。
+        //    `分支` 是自由文本但通常一句话（`zod` 只写 `串('')`，不封长度），走标签值行 ⇒
+        //    有「分支」两个字撑着、**不 clamp、全文看得见**（摘要反倒只出两行）。
+        //    ⚠ **建出树时改标「只卡」** —— 详情层里这条值由树尾那个岔口画，
+        //      同一屏画两遍是这个面板的禁忌；卡面上没有树 ⇒ 卡面照画。
+        ...(r.分 ? [(树 ? 格签卡 : 格签)('分支', 格文本(r.分))] : []),
+      ];
+      // 🆕 节点树进「概览」（`签: null` ⇒ 不占一个子页签）—— 打开一条线**第一眼就是那条链**
+      if (树) 格们.push(格块(树, null));
+      return 组卡(r.名, 格们, true, 类图标(r.类));
+    })));
+  }
+
+  if (坏们.length) {
+    const d = document.createElement('div');
+    d.className = 'yh-d';
+    d.textContent = '另有 ' + 坏们.length + ' 条读不到';
+    框.appendChild(d);
+  }
+  return 框;
+}
+
+/* ── 7.7 「任务」页 —— 任务名 ＋ 五项（轮 1-7 新增）───────────────────────
+   数据根 ＝ `stat_data.任务`，**一个顶层字典：键就是任务名**，值是那条委托的七格。
+   🔴 **是顶层，不是 `世界.任务`** —— 主线在 `世界` 底下，任务不在（别照 1-6 抄路径）。
+   本页取六样：键（任务名）＋ `级别` / `状态` / `委托方` / `目标` / `期限`。
+   🔴 `来源` / `奖励` **不画** —— §3.6 这页的表里没有（同 1-4 决策③「一个不多一个不少」）。
+   🔴 **四档状态全画、什么都不筛**（驾驶员 2026-09-27「四挡都要」）—— §3.6 任务行那个
+      「进行中的」限定词**本轮不照做**（推翻的是我的读法，见方案 §3 决策②）。
+   🔴 数据侧三条卡文（`9900044` 一、/「### 任务」/ 五、）：
+      · **键 = 任务名**（七格里**没有名字格**）。
+      · **`状态` 走四档**（`进行中`/`已完成`/`已结算`/`已失败`）—— 委托是**接了才进变量**
+        （「只装玩家接了的委托」）⇒ **没有「未启」这一档**（与主线不同）。
+      · **`期限` 是 `{年,月,日}` 三个整数**（schema 默认值**都是 0**）——
+        这是本项目**第一次处理嵌套对象**。
+   ⚠ 颜色、间距、排版 —— 全是审美，归轮 1-10（本轮只到看得见）。 */
+
+// 期限 → 一格。
+// 🔴 **三种返回，两条不同的路**（方案 §6 辛 vs 壬 要求分开处置）：
+//    · `null` ＝ **这一格读不出来**（不是对象 / 三格有非整数）⇒ 调用方**整条跳过**
+//      —— 与 1-6 `取线` 对 `已完成节点` 非数组同构：**数据坏了就不敢用**。
+//    · `坏()` ＝ **半填**（有的 0 有的不是）⇒ **那一格画红「读不到」，但整条照画**
+//      —— 数据读得出来、只是内容说不清 ⇒ **逐格降级**（1-3 ④「一格坏不塌整条」的成法）。
+//    · `好` / `未定` ＝ 正常两态。
+// 🔴 只验「是不是整数」，不验范围（同顶部条 格历法()：只验 是整）。
+function 格期限(限) {
+  if (限 === null || typeof 限 !== 'object' || Array.isArray(限)) return null;
+  const 年 = 取(限, ['年']), 月 = 取(限, ['月']), 日 = 取(限, ['日']);
+  if (!是整(年) || !是整(月) || !是整(日)) return null;
+  const 零 = (n) => n === 0;
+  // 三格全 0 ＝ schema 的默认值 ⇒ **合法空态**（画灰「未定」，不是故障）
+  if (零(年) && 零(月) && 零(日)) return { 类: '未定', 文: '未定', 键: Infinity };
+  // 🔴 半填 ⇒ **不猜**：`1916年0月` 说不清是 1 月还是没定（方案 §4.3 不变量 5）
+  if (零(年) || 零(月) || 零(日)) return 坏();
+  // 写法照 格历法()：`年 + '年' + 月 + '月' + 日 + '日'`（同一屏两处日期必须一种写法）
+  return { 类: '好', 文: 年 + '年' + 月 + '月' + 日 + '日', 键: 年 * 10000 + 月 * 100 + 日 };
+}
+
+// 挑委托。返回 { 行: [{名, 级, 态, 方, 标, 限}], 坏: [键] }。
+// 🔴 `条` 除了 `null`/非对象，**还要挡数组** —— `typeof [] === 'object'`，
+//    漏了就会把 `[]` 当合法条目、逐格读出 undefined ⇒ 静默画成「暂无任务」，看着完全正常。
+//    ⚠ 名字取自 `Object.keys()`：整数-like 的键会被 V8 强制重排到最前（项目踩过这个坑）。
+//      任务名是中文，正常不触发；而且下面按级别**重排**过，这一层不影响最终顺序。
+function 取务(务典) {
+  const 行 = [], 坏 = [];
+  for (const k of Object.keys(务典)) {
+    const 条 = 务典[k];
+    if (条 === null || typeof 条 !== 'object' || Array.isArray(条)) { 坏.push(k); continue; }
+    const 级 = 取(条, ['级别']), 态 = 取(条, ['状态']);
+    const 方 = 取(条, ['委托方']), 标 = 取(条, ['目标']), 限 = 取(条, ['期限']);
+    // 🔴 枚举**只验「是非空串」**，不验取值在不在四值里
+    //    —— 先例：轮 1-4 `组心智` 对字符串枚举、轮 1-6 `取线` 对 `类型`/`状态` 都是这么判的。
+    //    理由：不知道怎么读的值，**画出来比吞掉强**（画出来才看得见、才诊断得了）。
+    if (!是串(级) || !级) { 坏.push(k); continue; }    // 排序主键，缺了这行排不了
+    if (!是串(态) || !态) { 坏.push(k); continue; }    // 要画的一格，读不出来就算坏
+    if (!是串(方) || !是串(标)) { 坏.push(k); continue; }   // 空串合法（＝未定），类型不对才坏
+    // 🔴 `格期限` 返回 `null` ＝ **这一格读不出来** ⇒ **整条跳过**（与 `已完成节点` 非数组同构）。
+    //    ⚠ 与「半填返回 `坏()`」分开：半填那格画红「读不到」但**整条照画**（方案 §6 辛 vs 壬）。
+    const 限格 = 格期限(限);
+    if (限格 === null) { 坏.push(k); continue; }
+    // 🔴 **这里不筛任何状态** —— 四档 ＋ 不认得的**全进 行**（驾驶员 2026-09-27「四挡都要」）
+    行.push({ 名: k, 级, 态, 方, 标, 限: 限格 });
+  }
+  // 级别序 S→D（🔴 `U60`：2026-09-27 驾驶员拍「改」，把原来的 D→S 倒过来 ——
+  //    卡文 `9900044`「### `任务`」列的是 D/C/B/A/S，但**排序键本来就是我拟的**、卡文没规定过，
+  //    见 `D144` ⑦ / `D145`）；同级按期限近的在前
+  // （`键` 小 ＝ 近；未定 ＝ Infinity ⇒ 同级里排最后）；再按任务名。
+  // ⚠ **状态不参与排序**（方案 §3 决策⑤）· 键名比较走 UTF-16 码点序、不是拼音序。
+  // ⚠ `sort` 在 V8 里是**稳定**的 ⇒ 三个键全平时保持字典序，位置可复现。
+  const 序 = { S: 0, A: 1, B: 2, C: 3, D: 4 };
+  行.sort((a, b) => (序[a.级] ?? 9) - (序[b.级] ?? 9)
+                 || (a.限.键 - b.限.键)
+                 || (a.名 < b.名 ? -1 : a.名 > b.名 ? 1 : 0));
+  return { 行, 坏 };
+}
+
+// 任务页。`务典` 是 `stat_data.任务`；**不是对象 ⇒ 故障态**（与「空」分开画）。
+function 画任务(务典) {
+  const 框 = document.createElement('div');
+  框.className = 'yh-pane';
+  框.setAttribute('role', 'tabpanel');
+
+  if (务典 === null || typeof 务典 !== 'object' || Array.isArray(务典)) {
+    const d = document.createElement('div');
+    d.className = 'yh-no';
+    d.textContent = '读不到';
+    框.appendChild(d);
+    return 框;
+  }
+
+  const { 行, 坏: 坏们 } = 取务(务典);
+
+  if (行.length === 0) {
+    const d = document.createElement('div');
+    if (坏们.length) {
+      d.className = 'yh-no';
+      d.textContent = '读不到';
+    } else {
+      d.className = 'yh-d';
+      d.textContent = '暂无任务';
+    }
+    框.appendChild(d);
+  } else {
+    // 🔴 筛选条**在行一条都没有时不画**（同上：只有「全部 0」一颗的条是纯噪声）。
+    //    ⚠ 委托的状态是四档（**没有 '未启'**）—— 档位照样现推，不写死。
+    const 筛 = 画筛(行, (r) => r.态, 任务筛, (v) => { 任务筛 = v; });
+    任务筛 = 筛.选;
+    框.appendChild(筛.条);
+    框.appendChild(网格(筛.行.map((r) => 组卡(r.名, [
+      格文(r.名),                       // 任务名 ＝ 字典的键（模型写的自由文本）
+      // 🔴 '级别' **不进 chip** —— 光一个拉丁字母在胶囊里读不出是什么
+      //    （方案 §3 决策④那条照旧）；它进标签值行，那里有「级别」两个字撑着。
+      好对('级别', String(r.级)),
+      // 🔴 '状态' 进 chip：**不带标签**（1-7 方案：原词直出），色走 `态色` 表
+      //    ⚠ 委托这四档是「进行中 / 已完成 / 已结算 / 已失败」—— **没有 '未启'**（见 `态色` 表）
+      格片(片色(r.态), 格文(r.态)),
+      格签('委托方', 格文本(r.方)),
+      // 🔴 '目标' **进摘要** —— 驾驶员 2026-09-27 原话点的就是它（「把沉钟运出灰港」那种）。
+      格签('目标', 格长(格文本(r.标))),
+      格签('期限', r.限),
+    ], true, '旗'))));
+  }
+
+  // 页脚 —— 🔴 有读不出来的就报数，**不许静默跳过**（方案 §3 决策⑦）
+  //    ⚠ 只报**坏条目**；四档都已画出来，没有"另有 N 条已了结"这回事
+  if (坏们.length) {
+    const d = document.createElement('div');
+    d.className = 'yh-d';
+    d.textContent = '另有 ' + 坏们.length + ' 条读不到';
+    框.appendChild(d);
+  }
+  return 框;
+}
+
+/* ── 7.8 「连携」页 —— 连携名 ＋ 四格（轮 1-8 新增）─────────────────────
+   数据根 ＝ `stat_data.连携`，**一个顶层字典：键就是连携名**，值是那条连携的四格。
+   🔴 **是顶层，不是 `世界.连携`** —— 同 1-7 的 `任务`。卡文 `9900044` 一、那张表列的就是
+      `主角` / `角色` / `世界` / `资产` / `任务` / `连携` 六个顶层容器。
+   本页取五样：键（连携名）＋ `参与者` / `已解锁` / `冷却计数` / `效果`。
+   🔴 **什么都不筛**（驾驶员 2026-09-27）—— `已解锁: false` 的条目**照样画**。
+   🔴 **不下「能不能放」的结论**（卡文判据一）—— 见下面 格冷却() 那段注释。
+   ⚠ 颜色、间距、排版 —— 全是审美，归轮 1-10（本轮只到看得见）。 */
+
+// 冷却计数 → 一格。
+// 🔴 **`0` 写「就绪」是对卡文判据一的知情偏离**（驾驶员 2026-09-27 点名要的，记 `D145`）——
+//    卡文 `9900044`「### `连携`」原话：「**能不能放，不看你这一格**……
+//    **账本只管他会不会这一招、还有几轮好。**」⇒ 本页**没有资格**下「能放」的结论。
+//    「就绪」严格说只覆盖「冷却这一项」：集合条件（读检定记录现判）、参与者是否全在场、
+//    技能是否还在 —— **三样都不在这本账上**。
+// 🔴 「就绪」**只在 `冷 === 0` 时出现**，不许因为别的条件写它（方案 §4.3 不变量 10）。
+function 格冷却(冷) {
+  return 冷 === 0 ? { 类: '好', 文: '就绪' } : { 类: '好', 文: '冷却 ' + 冷 + ' 轮' };
+}
+
+// 挑连携。返回 { 行: [{名, 参, 效, 锁, 冷}], 坏: [键] }。
+// 🔴 `条` 除了 `null`/非对象，**还要挡数组** —— `typeof [] === 'object'`，
+//    漏了就会把 `[]` 当合法条目、逐格读出 undefined ⇒ 静默画成「暂无连携」，看着完全正常。
+function 取连(连典) {
+  const 行 = [], 坏 = [];
+  for (const k of Object.keys(连典)) {
+    const 条 = 连典[k];
+    if (条 === null || typeof 条 !== 'object' || Array.isArray(条)) { 坏.push(k); continue; }
+    const 参 = 取(条, ['参与者']), 效 = 取(条, ['效果']);
+    const 锁 = 取(条, ['已解锁']), 冷 = 取(条, ['冷却计数']);
+    // 🔴 `参与者` **只验「是不是数组、里面是不是全是串」**。
+    //    卡文三、1 那句「至少两个名字」是**生成侧对模型的要求**，不是本页的校验 ——
+    //    状态栏不是校验器（见记忆「账本不筛」）⇒ 空数组 / 一人 / 三人 / 五人都照画。
+    //    ⚠ schema 的默认值就是 `[]`（`.prefault([])`）⇒ 空数组是**合法状态**，不是坏数据。
+    if (!Array.isArray(参) || 参.some((x) => !是串(x))) { 坏.push(k); continue; }
+    if (!是串(效)) { 坏.push(k); continue; }   // 空串**合法**（＝没写效果）⇒ 只是不画那个按钮
+    // 🔴 `已解锁` 只验「是不是布尔」—— `false` **不是坏**（判据二：那是「还没学会、先占位」）。
+    if (typeof 锁 !== 'boolean') { 坏.push(k); continue; }
+    // 🔴 冷却计数：**「是整数」不是「是数」**（同 1-7 的 期限）。卡文六、2 定了取 1~4、
+    //    schema 是 `整数(0, 4, 0)` ⇒ **越界（模型写了 7）按坏条目处理、不夹到 4**：
+    //    夹了就是替卡文改数，画出来的又不是变量里那个值了。
+    if (!是整(冷) || 冷 < 0 || 冷 > 4) { 坏.push(k); continue; }
+    行.push({ 名: k, 参, 效, 锁, 冷 });
+  }
+  // 冷却升序（`就绪` 最前）—— 判据 ＝ §3.6 说这页「**战斗当回合要用**」；
+  // 同级按连携名。⚠ 键名比较走 UTF-16 码点序、不是拼音序（同 1-6 / 1-7）。
+  // ⚠ `sort` 在 V8 里是**稳定**的 ⇒ 两个键全平时保持字典序，位置可复现。
+  行.sort((a, b) => (a.冷 - b.冷) || (a.名 < b.名 ? -1 : a.名 > b.名 ? 1 : 0));
+  return { 行, 坏 };
+}
+
+// 连携页。`连典` 是 `stat_data.连携`；**不是对象 ⇒ 故障态**（与「空」分开画）。
+function 画连携(连典) {
+  const 框 = document.createElement('div');
+  框.className = 'yh-pane';
+  框.setAttribute('role', 'tabpanel');
+
+  if (连典 === null || typeof 连典 !== 'object' || Array.isArray(连典)) {
+    const d = document.createElement('div');
+    d.className = 'yh-no';
+    d.textContent = '读不到';
+    框.appendChild(d);
+    return 框;
+  }
+
+  const { 行, 坏: 坏们 } = 取连(连典);
+
+  if (行.length === 0) {
+    const d = document.createElement('div');
+    if (坏们.length) {
+      d.className = 'yh-no';
+      d.textContent = '读不到';
+    } else {
+      d.className = 'yh-d';
+      d.textContent = '暂无连携';
+    }
+    框.appendChild(d);
+  } else {
+    框.appendChild(网格(行.map((r) => 组卡(r.名, [
+      格文(r.名),                                                  // 连携名 ＝ 字典的键
+      // ⚠ '参与者' **不进摘要** —— 它是名单（「主角、秦无咎」），折行即可（同 '委托方'）。
+      格签('参与者', 格文本(r.参.join('、'))),                      // 🔴 只列名字；空数组 ⇒ 灰「未定」
+      // 🔴 '状态' 进 chip：**不带标签**；色按 `r.锁` 这个**数据**分（不是按词面）——
+      //    已解锁（绿）/ 未解锁（中性）。
+      //    ⚠ 原写法给未解锁那档传**空串** ⇒ `组卡` 判 `if (g.片)` 为假、掉进**带标签**那一支，
+      //      画成「状态 | 未解锁」—— **这次修的就是它**（哨兵值撞车，不是有意改决策④）。
+      格片(r.锁 ? '好' : '中性', r.锁 ? 格文('已解锁') : { 类: '未定', 文: '未解锁' }),
+      // 🔴 '冷却' 进 chip：'就绪' / '冷却 2 轮' 都是短词，散在标签值行里看不出来
+      格片(r.冷 > 0 ? '特殊' : '好', 格签('冷却', 格冷却(r.冷))),
+      // 🔴 '效果' 是空串（或只有空白）就**整格不出** —— 详情层里画一个空字段比不画更糟
+      //    （轮 1-8 不变量 7 那条「不画一个点开是空的控件」，这里同一条理）。
+      ...(r.效.trim() ? [格签('效果', 格长(格文本(r.效)))] : []),
+    ], true, '链'))));
+  }
+
+  if (坏们.length) {
+    const d = document.createElement('div');
+    d.className = 'yh-d';
+    d.textContent = '另有 ' + 坏们.length + ' 条读不到';
+    框.appendChild(d);
+  }
+  return 框;
+}
+
+/* ── 8. 画页签条（轮 1-4 新增）──────────────────────────────────────────
+   真 `<button type="button">` ＋ `role="tab"` ＋ `aria-selected`
+   —— 组件库 `sillytavern-embedded-ui`：「Use semantic controls: real `button`…」
+      「Expose active tabs…through appropriate ARIA state」。
+   🔴 **不靠 `data-*` 属性做绑定**：页名是中文，属性名走 `dataset` 要做 ASCII 大小写转换，
+      没必要冒这个险 ⇒ **闭包捕获页名**（这里是 6 个静态元素，也用不着事件委托）。
+   ⚠ **完整的 roving tabindex（左右方向键换页）不在本轮** —— 归轮 1-10。 */
+/* ── 徽记 ────────────────────────────────────────────────────────────────
+   页眉那条冷灰带并掉之后，「月痕之民」四个字只剩这一个记号。
+   一弯**残月**，外缘被挖掉一道**刻痕** —— 「月痕」二字直译。
+
+   🔴 刻痕是**从路径里挖掉的**（第二个子路径 ＋ `fill-rule="evenodd"` 变成洞），
+      不是在上面画一根底色线 —— 画线的话**换个底色就穿帮**，而这块底是会换的。
+   🔴 单色走 `currentColor` ⇒ 换肤自动跟随，不写死颜色。
+   🔴 纯几何、零光效。禁的是仿电路/仿 PCB/CRT 扫描线/霓虹渐变那一类，不是禁几何。 */
+function 徽记() {
+  const NS = 'http://www.w3.org/2000/svg';
+  const s = document.createElementNS(NS, 'svg');
+  s.setAttribute('class', 'yh-crest');
+  s.setAttribute('viewBox', '0 0 24 24');
+  s.setAttribute('aria-hidden', 'true');   // 纯装饰 —— 读屏别念它
+  const p = document.createElementNS(NS, 'path');
+  p.setAttribute('fill', 'currentColor');
+  // 🔴 `evenodd` 是**刻痕成立的前提**，不是可选装饰 —— 少了它，刻痕四边形不是被"挖掉"，
+  //    而是按 nonzero 规则跟残月**并集**（叠加）。本轮第一版就漏了这一行，出图后形状不对。
+  p.setAttribute('fill-rule', 'evenodd');
+  // 外缘走大圆（心 13.3,12 半径 10）的长弧，内缘走小圆（心 18.8,12 半径 7）的长弧 ⇒ 残月朝右开
+  // 🔴 半径差是**算过的**：最厚处 11.8-3.3 = 8.5 单位，16px 渲染 ≈ 5.7px。
+  //    第一版取 9/8，最厚处只有 5 单位 ≈ 3.3px，刻痕再切掉一半 ⇒ 剩 1.7px 细弧，
+  //    出图后**读成左括号**（特写图实测）。残月本来就吃亏在小尺寸，宁可肥。
+  // 刻痕：一条斜割的四边形，右端停在 x=7.5 —— **没切穿**（切穿了变两段碎弧），
+  //    只咬掉外缘约 1/3，留一道 5.5 单位的桥。
+  // 🔴 **斜 28°** 是 18px 下能不能认出来的分水岭。
+  //    竖直残月出图后读成"肥左括号"（特写图实测）；转 28° 之后同一张形状立刻读成月亮。
+  //    依据：`.tokenicode\tmp\_徽记选样.html` 七个候选 × 18px/48px 一次出图对比，
+  //    A 竖直 / C 瘦 / D 凸月(读成字母 D) / E 咬口圆盘(读成被咬的饼) /
+  //    F 加一点(最易读，但变"星月夜"，冲淡「月痕」) / G 贯通缝(读成土星环) 全败给 B。
+  p.setAttribute('d',
+    'M20.69 5.26A10 10 0 1 0 20.69 18.74A7 7 0 1 1 20.69 5.26Z' +
+    'M2 7.0 7.5 5.9 7.5 8.9 2 10.0Z');
+  p.setAttribute('transform', 'rotate(-28 12 12)');
+  s.appendChild(p);
+  return s;
+}
+
+/* ── 页签图标 ────────────────────────────────────────────────────────────
+   🔴 **命定之诗每个页签前面都有图标**，我这条从第一版起就一直漏着。
+      2026-09-27 驾驶员第十张图摆出来时点破：「也没有把各种分开」——
+      六个纯文字页签排成一条，扫读时只能一个一个读字；
+      图标给的是一条**不用读字的识别通道**（形 → 位置 → 义）。
+      命定 `TabBar.module.scss` 的成法：
+        `.item { gap: 6px }` ＋ `i { opacity: .72 }` ＋ `.itemActive i { opacity: 1 }`
+      ⇒ **未激活时图标压到 72%**，激活才满 —— 图标也参与"你在这格"的表达，
+        不是只跟着文字变色。这条照抄。
+
+   ⚠ 为什么在这儿**重写一份**而不是调 `.yh-i` 那套 `图标()`：
+     `图标()` 定义在 `_分栏_内容区.js`，它是在**下一个构建阶段**才拼进 HTML 的，
+     而 `画签()` 在这个阶段就已经定型 —— 这个函数调不到那个函数。
+     两份 path 是**同源的**（都是从 `图标源` 抄的同一个形状），改一处要改两处，
+     所以在这里点名记一笔：**`图标源` 里对应键改了，这里也得改。**
+   ⚠ 手法与 `.yh-i` 完全一致：data-URI ＋ `mask`，颜色走 `currentColor`
+     （mask 取 alpha 通道，所以 SVG 里 `stroke="black"` 只是为了 alpha=1）。 */
+const 签图标源 = {
+  // 🔴 **页签「状态」原来用的是 ‹脉›，和同一屏「三值」卡头撞了**（2026-09-28 改）。
+  //    全卡图标分三集，各集内部不重复：页签集（状态/在场/主线/任务/连携/地图）·
+  //    卡头集（三值/五维/三抗/心智/成长）· 行内集（心/滴/叶）。**跨集撞车只有这一处。**
+  //    裁定：‹脉›（生命体征）**留给「三值」** —— 它罩的是 HP/MP/SP 三条资源，语义更贴；
+  //    页签「状态」是**整页读数**（三值 ＋ 五维 ＋ 三抗 ＋ 心智 ＋ 成长 五组汇总），
+  //    走**仪表盘**（gauge）才准 —— 一个表盘读数，不是一个波形。
+  //    ⚠ 别拿「都是状态类」当理由留着撞 —— 用户在同一屏里同时看到页签条和卡头，
+  //      两个一模一样的形状会读成"同一个东西出现两次"。
+  状态: '<path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>',
+  在场: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>', // 同 '人'
+  主线: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/>', // 同 '卷'
+  任务: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/>', // 同 '旗'
+  连携: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>', // 同 '链'
+  地图: '<path d="M14.1 5.55a2 2 0 0 0 1.79 0l3.66-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.56 2.27a2 2 0 0 1-1.78 0l-4.22-2.1a2 2 0 0 0-1.78 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.56-2.27a2 2 0 0 1 1.78 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/>', // 同 '图'
+};
+function 签图(名) {
+  const el = document.createElement('span');
+  el.className = 'yh-ti';
+  el.setAttribute('aria-hidden', 'true');   // 纯装饰 —— 旁边的文字已经说清了
+  const p = 签图标源[名];
+  if (p) {
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" ' +
+      'stroke="black" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>';
+    el.style.setProperty('--i', 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")');
+  }
+  return el;
+}
+
+function 画签() {
+  const 条 = document.createElement('div');
+  条.className = 'yh-tabs';
+  条.setAttribute('role', 'tablist');
+  条.appendChild(徽记());   // 左端一个记号，顶替原页眉
+  for (const 名 of 页表) {
+    const b = document.createElement('button');
+    b.type = 'button';                       // ⚠ 不写就是 submit 语义
+    b.className = 'yh-tab' + (名 === 当前页 ? ' yh-on' : '') + (已建[名] ? '' : ' yh-off');
+    // 🔴 图标 ＋ 文字两个节点（不是 textContent）—— 命定 `.item > i + 文字`。
+    //    图标走 `aria-hidden`，无障碍名仍由文字给，不会变成「图标名＋文字」念两遍。
+    b.appendChild(签图(名));
+    const 字 = document.createElement('span');
+    字.textContent = 名;
+    b.appendChild(字);
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', 名 === 当前页 ? 'true' : 'false');
+    b.addEventListener('click', () => 切页(名));
+    条.appendChild(b);
+  }
+  return 条;
+}
+
+// 切页 —— 🔴 **只重画，不重读快照**（重读等于每点一下就多打一次 MVU 接口）
+function 切页(名) {
+  if (名 === 当前页) return;
+  当前页 = 名;
+  // 🔴 **切页要关详情层** —— 详情记的是上一个页签里点开的那一条，页都换了它就不该还在。
+  //    ⚠ 鼠标路径够不着（遮罩铺满内容区、把下面的卡盖住了），但**键盘够得着**：
+  //      tab 焦点不受 z-index 阻拦 —— Tab 走到页签、回车，就会带着详情层切页。
+  //      探针是程序化 .click()，一测就露出来了。
+  详情 = null;
+  if (最后行) 画(最后行);
+}
+
+/* ── 9. 画页内容（轮 1-4 新增）──────────────────────────────────────────── */
+/* ── 「状态」页 ────────────────────────────────────────────────────────────
+   五个组：**三值画池子条**（驾驶员 2026-09-27 点名要的彩色渐变）、
+   其余四组（五维/三抗/心智/成长）画**统计小格**。
+   ⚠ 这五组**不挂详情层** —— 一组最多 4 对短值，一次就看得完。 */
+
+/* ── 主角头（2026-09-28 加）───────────────────────────────────────────────
+   🔴 **它是「状态」页的第一块，也是这张卡里主角第一次有脸。**
+      起因见 `_分栏_头像.js` 文件头 —— 驾驶员问「给主角、给头像留下来余地没有」，
+      而当时的答案是"一点都没有"：全页没有名字、没有称号、没有相貌，没有图片。
+   🔴 **只画短字段**，长字段（`来历` / `性格`）**这一版不画**：
+      它们是一整段叙事，塞进一块"头"里会把身份行挤没，而它们该去的地方是
+      详情层 —— 可详情层这一版**还没给主角开**（`开详情` 是格卡专用的）。
+      ⇒ 宁可空着，**不许把没地方放的东西先挤进来**（`D135` ③）。
+   🔴 **`阶位` / `晋升进度` 不在这儿画** —— 它们在下面「成长」卡里已经有了。
+      同一屏画两遍＝读者会以为那是两个不同的数（`CLAUDE.md` §0 那条"不增值冗余"）。
+
+   版式（照命定 `StatusTab.module.scss` 的 `.heroRow` 成法，左图右身份）：
+     ┌────────┐  凌霜 「月蚀的余烬」
+     │        │  人族 · 女 · 爪牙 · 灰烬会
+     │  立绘   │  身份 灰烬会   职业 剑士
+     │  3:4   │  相貌的两行摘要……
+     └────────┘
+   ⚠ 命定那边头像是 **128px 正圆**，月痕这儿是 **3:4 竖幅** —— 驾驶员要的是
+     「**真立绘**」，正圆会把一张竖构图的画裁掉两头。这是**有意不照抄**的一处。 */
+function 画主角头(主) {
+  const c = (主 && typeof 主 === 'object') ? 主 : {};
+
+  const 盒 = document.createElement('div');
+  盒.className = 'yh-hero';
+  // 🔴 立绘 **只给主角挂 `人格`**（第 ② 层，ST 人格头像）——
+  //    NPC 挂上去就是"每个 NPC 都长玩家的脸"（见 `_分栏_头像.js` 文件头）。
+  盒.appendChild(头画('主角', '立绘', { 人格: true }));
+
+  const 身 = document.createElement('div');
+  身.className = 'yh-hero-id';
+
+  // ── 名 ＋ 称号 ──
+  const 名行 = document.createElement('div');
+  名行.className = 'yh-hero-n';
+  const 全名 = 取(c, ['全名']);
+  const 名文 = document.createElement('span');
+  名文.className = 'yh-hero-name';
+  /* 🔴 **三种情况分开报，不合并**：
+       · 不是字符串  ⇒ 「读不到」（形状不对，是真故障）
+       · 空串        ⇒ 「（未命名）」（**不是故障**：卡开局时全名本来就是空的，
+                        要跑起来才由模型生成 —— 说成"读不到"是在冤枉数据层）
+       · 有内容      ⇒ 照实出 */
+  if (!是串(全名)) {
+    名文.classList.add('yh-no');
+    名文.textContent = '读不到';
+  } else if (!全名.trim()) {
+    名文.classList.add('yh-hero-blank');
+    名文.textContent = '（未命名）';
+  } else {
+    名文.textContent = 全名.trim();
+  }
+  名行.appendChild(名文);
+
+  const 称号 = 取(c, ['称号']);
+  // 称号空着就**整段不画** —— 画一对空「」比不画更难看，而且"没有称号"不需要占位
+  if (是串(称号) && 称号.trim()) {
+    const t = document.createElement('span');
+    t.className = 'yh-hero-title';
+    t.textContent = '「' + 称号.trim() + '」';
+    名行.appendChild(t);
+  }
+  身.appendChild(名行);
+
+  // ── 元数据行：种族 · 性别 · 阶级 · 归属 ──
+  // ⚠ 逐项判空**再拼**，不是先拼再 trim —— 中间那个 `·` 会跟着空项留下来，
+  //   出现「人族 ·  · 爪牙」这种中间空一格的串（`归属` 是模型自由写的，常为空）。
+  const 元 = [];
+  for (const k of ['种族', '性别', '阶级', '归属']) {
+    const v = 取(c, [k]);
+    if (是串(v) && v.trim()) 元.push(v.trim());
+  }
+  if (元.length) {
+    const m = document.createElement('div');
+    m.className = 'yh-hero-meta';
+    m.textContent = 元.join(' · ');
+    身.appendChild(m);
+  }
+
+  // ── 身份 / 职业 —— chip 行 ──
+  /* 🔴 **每个 chip 自带标签**（`身份 灰烬会` / `职业 剑士`），不裸放值。
+       依据 ＝ 命定 `.ascensionPreviewTag` 的结构就是 `<span>标签</span><strong>值</strong>`
+       两段。月痕这两个字段**值域重叠**（都可能是"XX会"这种组织名），
+       裸放一串 chip 之后**分不出哪个是身份、哪个是职业**。
+     ⚠ 数组里非字符串的项**跳过**，不 `String()` 强转 —— 强转会画出 `[object Object]`。 */
+  const 片 = [];
+  const 收片 = (arr, 签) => {
+    if (!Array.isArray(arr)) return;
+    for (const s of arr) if (是串(s) && s.trim()) 片.push({ 签, 值: s.trim() });
+  };
+  收片(取(c, ['身份']), '身份');
+  收片(取(c, ['职业']), '职业');
+  if (片.length) {
+    const 带 = document.createElement('div');
+    带.className = 'yh-hero-tags';
+    for (const p of 片) {
+      const t = document.createElement('span');
+      t.className = 'yh-hero-tag';
+      const a = document.createElement('span');
+      a.className = 'yh-hero-tag-k';
+      a.textContent = p.签;
+      const b = document.createElement('strong');
+      b.textContent = p.值;
+      t.append(a, b);
+      带.appendChild(t);
+    }
+    身.appendChild(带);
+  }
+
+  // ── 相貌：两行摘要，超出截断 ──
+  // ⚠ 它在卡里是**整段自由文本**，不是短值。clamp 在 CSS 里（`.yh-hero-desc`）。
+  const 相貌 = 取(c, ['相貌']);
+  if (是串(相貌) && 相貌.trim()) {
+    const d = document.createElement('div');
+    d.className = 'yh-hero-desc';
+    d.textContent = 相貌.trim();
+    身.appendChild(d);
+  }
+
+  盒.appendChild(身);
+  return 盒;
+}
+
+// 池子条 —— '签' 是 HP/MP/SP，'值' 是 '当前/上限' 形状的串。
+// 🔴 拆不出两个数就**照实报**（灰条 ＋ 写「读不到」），不猜、不画半根条。
+const 池子 = {
+  HP: { 图: '心', 类: 'yh-hp' },
+  MP: { 图: '滴', 类: 'yh-mp' },
+  SP: { 图: '叶', 类: 'yh-sp' },
+};
+/* 🔴 **2026-09-28 五改：数值做进条里。**
+   四改是「上行 = 图标＋名（左）／大数字（右），下行 = 通长轨道」，数值在条**外面**。
+   驾驶员看了参考图（创世回廊 信息页：`[图标 名] [通长胶囊，数值白字居中压在条里]`）
+   之后下令「**做进条里**」。⇒ 一行就是一根条，结构回到：
+
+     [图标 名]  [ 轨道 ▓▓▓▓▓▓▓░░░░   412 / 500 ]
+
+   ⚠ 这条**不是把四改推翻**：四改治的是"标签列吃掉 46px、条只有 300px 宽、
+     数值只有 10px"那三个毛病。五改之后标签仍是**独立一列**（宽度有下限、不压轨道），
+     条仍然通长，数值从 10px 升到 `--fs-2`(13.5px)，那三个毛病一个都没回来。
+
+   🔴 **条内字为什么要画两遍**（这是这一版唯一有点绕的地方，改之前先读完）：
+      · 白字压在**填充色**上够看（`_算对比度.mjs`：SP 4.75 ✓ / HP 3.78 / EXP 3.31 / MP 3.20）
+      · 白字压在**轨道**上是 **1.29:1** —— 等于看不见。
+      · 而"填充有没有盖住中间那个字"取决于**条有多宽**和**字有多宽**，两个都要
+        **排版之后**才知道，可这个函数返回时元素还没进 DOM ⇒ 量不到。
+      ⇒ 不估阈值，改**裁切换色**：
+        底层墨色字永远在（6.17:1，怎么都看得见），上层再画一份白字，
+        用 `clip-path: inset(0 右 0 0)` 按填充宽度裁 —— 填充盖到哪儿白字露到哪儿。
+        **裁切线永远与填充右边缘重合，一步都不用量。**
+        数值高（常见）时整串是白的，跟参考图一样；低的时候自动变墨色；
+        中间状态是"填充到哪、白到哪"，不会出现半截看不见。
+      ⚠ 两份必须**像素级重合**（同一个 `inset:0`、同一套字号/字重/字距，见样式表），
+        改一份就得改另一份，否则会看出双影。
+      ⚠ 上层那份挂 `aria-hidden` —— 不挂的话读屏会把同一个数字念两遍。 */
+function 造条(签, 值文, 坏) {
+  const 盒 = document.createElement('div');
+  const 定 = 池子[签];
+  const row = document.createElement('div');
+  row.className = 'yh-pool ' + (定 ? 定.类 : '');
+
+  // 标签列（图标 ＋ 名）—— 固定在左，`.yh-pool-l` 有下限宽度，三根条的轨道因此起点对齐。
+  const l = document.createElement('span');
+  l.className = 'yh-pool-l';
+  if (定) l.appendChild(图标(定.图, 16));
+  const nm = document.createElement('span');
+  nm.className = 'yh-pool-k';
+  nm.textContent = 签;
+  l.appendChild(nm);
+
+  const t = document.createElement('span');
+  t.className = 'yh-pool-t';
+  const f = document.createElement('span');
+  f.className = 'yh-pool-f';
+  const num = document.createElement('span');        // 底层：墨色，永远在
+  num.className = 'yh-pool-num';
+  const numW = document.createElement('span');       // 上层：白色，被填充宽度裁
+  numW.className = 'yh-pool-num yh-pool-num-w';
+  numW.setAttribute('aria-hidden', 'true');
+  t.append(f, num, numW);
+
+  // '412/500' / '168/200' —— 只认这一种形状（数据层给的就是它）。
+  const m = /^\s*(-?[\d.]+)\s*\/\s*(-?[\d.]+)\s*$/.exec(String(值文));
+  if (坏 || !m || Number(m[2]) <= 0) {
+    // 🔴 读不出来 ⇒ **轨道照画、不填**，条里写「读不到」（'.yh-pool-na'）。
+    //    画一根 0% 的条会被读成"真的一点都没有了"—— 那是**另一个意思**。
+    //    ⚠ 只写底层那份；上层留空（空节点裁不裁都看不见），不必再设一次 clip-path。
+    row.classList.add('yh-pool-na');
+    num.textContent = '读不到';
+  } else {
+    const 当前 = Number(m[1]), 上限 = Number(m[2]);
+    // 🔴 百分比夹在 0~100：模型可能写超额（'600/500'）⇒ 不夹的话条会捅出轨道。
+    //    条画满是 100%，但**文字照实报原值**（不粉饰数据）。
+    const 百 = Math.max(0, Math.min(100, (当前 / 上限) * 100));
+    const 一位 = Math.round(百 * 10) / 10;          // 一位小数 —— 少一位就少一次无谓重排
+    f.style.width = 一位 + '%';
+    // ⚠ 照抄原串，**不重排数字** —— '0412' 这种前导零是数据原样，不是我该"修"的。
+    //    四改那版分 '<b>'/'<i>' 两个字号（读数 vs 量程），条内是一整串，那层区分撤了。
+    num.textContent = m[1] + ' / ' + m[2];
+    numW.textContent = num.textContent;
+    numW.style.clipPath = 'inset(0 ' + (100 - 一位) + '% 0 0)';
+  }
+  row.append(l, t);
+  盒.appendChild(row);
+  return 盒;
+}
+
+function 画状态(主) {
+  const 框 = document.createElement('div');
+  框.className = 'yh-pane';
+  框.setAttribute('role', 'tabpanel');
+
+  if (主 === null || typeof 主 !== 'object') {
+    const d = document.createElement('div');
+    d.className = 'yh-no';
+    d.textContent = '读不到';       // 细节由下面的「错」行给，这儿不重复
+    框.appendChild(d);
+    return 框;
+  }
+
+  // 🔴 主角头 —— **在网格之前**，横贯整幅，不参与 2×2 的排布。
+  //    它是这一页的"是谁"，下面五张卡是"什么状态"；先有人、再有数。
+  框.appendChild(画主角头(主));
+  // 🔴 **2026-09-30 从五组加到七组** —— 补的「攻」与「质点」是卡文 `1108` 三、面板十二行里
+  //    的**第八行与第五行**，前端先前一个字都没画。次序照卡文那张表：
+  //    质点(五) → 五维(六) → 三值(七) → 攻(八) → 三抗(十) → 心智(十一)，
+  //    只把 `三值` 提到最前（它 `grid-column: 1/-1` 横贯整幅，放哪儿都是单独一行），
+  //    再把卡文里没有的 `成长` 收在末尾（它出自 `9900037` 四、，是另一处规格）。
+  框.appendChild(网格(画组([组三值(主), 组五维(主), 组攻(主), 组三抗(主), 组心智(主), 组精神(主), 组质点(主), 组成长(主)])));
+  return 框;
+}
+
+/* 五张分组卡（'.yh-gcard'）—— 状态页与「在场」详情层**共用这一支**（2026-09-29 挪出来的）。
+   🔴 为什么提到外面：在场详情层要画同一个人的属性，而正确做法**不是照抄那 60 行**，
+      是**把那段挪出来、两边都调它**。抄一份的代价不是"多 60 行"，是**从此两处各自长**：
+      今天给组卡加一条横杠、明天改一处字号，改哪一处都只改了一半，而且**不报错**。
+   ⚠ 它吃的 `组们` 是 `组*()` 造的标准结构（`{标签, 格}`）—— **喂谁进去都行**：
+      `组三值(主)` 与 `组三值(条)` 是**同一支函数**，因为 `角色` 项的形状就是
+      `主角` 减 `金钱` 加 `在场/好感度/关系` 三格（`_MVU变量字段总表.md` §3）。
+   ⚠ 返回的是**节点数组**、不是网格：状态页整个交给 `网格()` 铺两栏；
+      在场详情层把它当一棵"进 '.yh-body' 的整行块"，五张卡竖着排。 */
+// 折叠开关的 id 序号 —— 状态页和详情层都会调 `画组`，**必须全局递增**：
+// 每调一次从 0 重数，两处的 id 就会撞，'for' 指到隔壁那张卡的开关上去。
+let 折序号 = 0;
+function 画组(组们) {
+  // 🔴 池子条：只有「三值」这一组走条。判据是**这组的标签**（'组三值' 给的固定串），
+  //    不是"看起来像数字"—— 五维也是数字，但它没有上限、画不出条。
+  const 是三值 = (g) => g.标签 === '三值';
+  return 组们.map((g) => {
+    const el = document.createElement('div');
+    // 🔴 **'.yh-gcard' ＋ '--g' 组色**（2026-09-28 加）——
+    //    起因：五张卡全是「米底 ＋ 1px 线」，扫一屏分不出哪张是哪张，
+    //    而分组抬头那 11.5px 的小字**太轻**，扛不起"分组"这件事。
+    //    改法：每张卡**顶上压一条 3px 组色横杠**，抬头图标同色，抬头右侧再引一条
+    //    组色渐隐的细线通到卡右缘。三处同一个色源，读起来是**一套编码**，不是装饰。
+    //    ⚠ 色走**矿物色**（朱砂/赭金/石青/月靛/苔绿），全部在暖米纸上降过饱和 ——
+    //      荧光色是屏幕色，压在纸上就是"贴上去的"。
+    //    ⚠ 组色**只上横杠／图标／细线**，**不上文字、不上卡底** ——
+    //      文字一上色就开始跟告急色（'--p-urgent'）抢"这是不是危险"的语义。
+    el.className = 'yh-card yh-gcard yh-g-' + (组色[g.标签] || 'dim');
+    // 组名走 '.yh-gn'（小字＋图标），**不是** '.yh-c-n' 的抬头发字号 ——
+    // 分组抬头不该跟条目名一样重，否则一片卡扫下来分不清哪层是哪层。
+    // 🔴 **窄屏折叠**（2026-10-01 驾驶员工单）—— 窄屏下分组卡塌成一列，一页拖成一根长条。
+    //    改法：抬头可点、组内容默认收起，抬头自己就是那张索引。**零 JS** ——
+    //    开关是一个视觉隐藏的复选框，显隐全交给 CSS 的 ':has(> .yh-cl:not(:checked))'。
+    //    ⚠ **只在同级有兄弟时才挂** —— 整组就一张卡时收起它＝把整页藏了。
+    const 可折 = 组们.length > 1;
+    const 名 = document.createElement(可折 ? 'label' : 'span');
+    名.className = 'yh-gn';
+    if (可折) {
+      折序号 += 1;
+      const id = 'yh-cl' + 折序号;
+      const 开 = document.createElement('input');
+      开.type = 'checkbox';
+      开.className = 'yh-sr yh-cl';
+      开.id = id;
+      名.setAttribute('for', id);
+      el.appendChild(开);
+    }
+    const 图名 = 组图标[g.标签];
+    if (图名) 名.appendChild(图标(图名, 18));
+    const 名文 = document.createElement('span');
+    名文.textContent = g.标签;
+    名.appendChild(名文);
+    // 🔴 **组的副题**（2026-09-30 加）—— 见 `组攻`：`主手段` 是"这一行叫什么"，
+    //    走抬头右边的小字，**不跟「攻值」并排抢那 86px**（抢的结果是压字 12px、
+    //    两串字叠在一起）。不带副题的组**一个字节都不变**。
+    if (g.副) {
+      const 副名 = document.createElement('span');
+      副名.className = 'yh-gn-sub';
+      副名.textContent = String(g.副);
+      名.appendChild(副名);
+    }
+    // 折叠箭头：左右两条边透明、顶边有色的三角；收起时转 −90° 朝右（手风琴老规矩）。
+    // ⚠ 抬头右侧那条组色渐隐细线是 '.yh-gn::after' 且 'flex:1 1 auto'
+    //   ⇒ 箭自然被推到卡右缘，不用另做定位。
+    if (可折) {
+      const 箭 = document.createElement('i');
+      箭.className = 'yh-ar';
+      箭.setAttribute('aria-hidden', 'true');
+      名.appendChild(箭);
+    }
+    el.appendChild(名);
+
+    if (是三值(g)) {
+      // 池子条 —— 三根竖着排
+      const 条们 = document.createElement('div');
+      条们.className = 'yh-pools';
+      g.格.forEach((格) => {
+        条们.appendChild(造条(格.签, 格.值 != null ? 格.值 : 格.文, 格.类 === '坏'));
+      });
+      el.appendChild(条们);
+    } else {
+      // 统计小格 —— 列宽见 `_分栏_样式.css` 的 `.yh-stats`（`auto-fit` ＋ 下限 120px）。
+      // ⚠ 这儿原来写死着 `78px`，那是压字的元凶、早改了 —— **别把值抄进注释**，抄了就会过期。
+      const 格们 = document.createElement('div');
+      格们.className = 'yh-stats';
+      g.格.forEach((格) => {
+        const 值文 = String(格.值 != null ? 格.值 : 格.文);
+        const s = document.createElement('div');
+        // 有标签（'好对' 造的）⇒ 一行两列：标签左、值右（命定 '.attributeItem'）
+        s.className = 'yh-stat' + (格.签 != null ? ' yh-stat-row' : '');
+        if (格.签 != null) {
+          const k = document.createElement('span');
+          k.className = 'yh-stat-k';
+          k.textContent = 格.签;
+          s.appendChild(k);
+        }
+        const v = document.createElement('span');
+        v.className = 格.类 === '坏' ? 'yh-stat-v yh-no' : 'yh-stat-v';
+        v.textContent = 值文;
+        // 🔴 `副`（品阶/状态）走**值的下一行**，不挤进值串（2026-09-28，驾驶员裁定「用命定」）。
+        //    依据 ＝ 命定 `StatusTab.module.scss` `.heroTitleRow`：`heroLevel` 在上、
+        //    `heroTier` 在下一行 —— **数值和它的品阶是上下两行**。
+        //    为什么必须拆：全角括号在 18px 下每个都是 18px 满宽，`（蚀刻）` 四个字符
+        //    吃掉 72px ＝ 900 档那格 104px 内宽的 **69%**，而真正的数字只占 20px
+        //    ⇒ 整串折行、格高一倍、右半边三分之二全空（实拍见 `_量分栏` 的图）。
+        //    `.yh-stat-vg` 竖排组：值在上、副在下、**都贴右**（与同组其它格同一条右边缘，
+        //    这样"值右对齐"那条判据在拆开之后仍然成立）。
+        //    ⚠ `副` 为空时**一个字节都不变** —— 只有「月蚀度」这一格带副，其余照旧。
+        if (格.副 != null) {
+          const 值组 = document.createElement('span');
+          值组.className = 'yh-stat-vg';
+          值组.appendChild(v);
+          const vs = document.createElement('span');
+          vs.className = 'yh-stat-vs';
+          vs.textContent = String(格.副);
+          值组.appendChild(vs);
+          s.appendChild(值组);
+        } else {
+          s.appendChild(v);
+        }
+        格们.appendChild(s);
+      });
+      // `--格数` ＝ 这一组真发了几格，列数按它均分（现推不写死）
+      格们.style.setProperty('--格数', String(格们.childElementCount));
+      el.appendChild(格们);
+    }
+    return el;
+  });
+}
+
+// 分组抬头图标 —— 键是 '组*()' 给的固定标签串（不是模型数据，所以可以直接查表）
+// ⚠ 「三值」**不能**用 `心` —— 那会和池子条行内的 HP 图标撞成同一个形状（见 `图标源` 里 `脉` 的说明）。
+const 组图标 = { 三值: '脉', 五维: '星', 三抗: '盾', 心智: '眼', 精神类: '心', 成长: '升', 攻: '剑', 质点: '质' };
+
+// 分组 → 组色记号（'yh-g-*' 五个类在 `_分栏_样式.css` 里，色值也只在那边）
+// ⚠ **只在这五个组之间**分配，不跟 '--p-urgent' / '--c-hp-*' 那套池子色共用 ——
+//    池子色说的是"这条资源是什么"，组色说的是"这是哪一组"，两套语义别混。
+// ⚠ 「心智」与「精神类」**故意同色**（`mind`）—— 它们是同一条轴的两截
+//    （`心智` 是月蚀那一路的侵蚀读数，`精神类` 是装备词条能改的那两个点）。
+//    **不新造第七个色**：矿物色就那么多，硬凑一个就会跟 `--g-res` / `--g-mind` 撞成近色，
+//    而那比"两组同色"更难读 —— 同色至少读得出"这是一家"。
+const 组色 = { 三值: 'life', 五维: 'dim', 三抗: 'res', 心智: 'mind', 精神类: 'mind', 成长: 'grow', 攻: 'atk', 质点: 'node' };
+
+function 画页(主, 角, 线典, 务典, 连典) {
+  // 🔴 「在场」「主线」「任务」「连携」四页由各自那个函数建框 —— 先交出去，别白建一个空 div
+  if (当前页 === '在场') return 画在场(角);
+  if (当前页 === '主线') return 画主线(线典);
+  if (当前页 === '任务') return 画任务(务典);
+  if (当前页 === '连携') return 画连携(连典);
+
+  if (!已建[当前页]) {
+    const 框 = document.createElement('div');
+    框.className = 'yh-pane';
+    框.setAttribute('role', 'tabpanel');
+    // 🔴 **空得体面，不是一行灰字**（方案 §9B.3 乙）——
+    //    但加的**只是画法**：一枚空态图标 ＋ 那三个字 ＋ CSS 画的一圈角刻线，
+    //    **一个字的新文案都没有**，也**不碰数据**（§9B.7）。
+    //    ⚠ 单独给一个类而不是改 `.yh-d`：那一个是**共用的「未定的值」色**
+    //      （`_分栏_内容区.js` 里 11 处在用），动它会连带改掉那 11 处。
+    const 空 = document.createElement('div');
+    空.className = 'yh-空';
+    空.appendChild(图标('空态'));
+    const d = document.createElement('div');
+    d.className = 'yh-d';
+    d.textContent = '未开放';       // 🔴 不许静默留白 —— 空着分不清「没做」和「坏了」
+    空.appendChild(d);
+    框.appendChild(空);
+    return 框;
+  }
+
+  // 「状态」页 —— 五个组铺两栏（⚠ 组**不挂详情层**：一组最多 4 对短值，一次看得完）
+  return 画状态(主);
+}
+/* ── 10. 画（一律 createElement ＋ textContent，不拼字符串）─────────────── */
+function 画(行) {
+  最后行 = 行;      // 🔴 存下来给 切页() 重画用
+  const 框 = document.querySelector('.yh-sb') || document.body;
+  while (框.firstChild) 框.removeChild(框.firstChild);
+
+  const 加 = (文, 类) => {
+    const d = document.createElement('div');
+    if (类) d.className = 类;
+    d.textContent = 文;
+    框.appendChild(d);
+    return d;
+  };
+
+  // 🔴 页眉那条冷灰带**并掉了**（驾驶员 2026-09-27 拍板）：
+  //    标题文字整条删除，身份只剩页签条左端那一个 SVG 徽记。
+  //    省下来的是一整行高度（原页眉 5+15+6 = 26px），且 390 档常驻条能少折一次行。
+
+  // 顶部常驻条（拿不到那一块时整条不画，由 行.错 说明为什么）
+  if (行.格子) {
+    const 条 = document.createElement('div');
+    条.className = 'yh-bar';
+    行.格子.forEach((g, i) => {
+      if (i > 0) {
+        const 隔 = document.createElement('span');
+        隔.className = 'yh-sep';
+        隔.textContent = '│';
+        条.appendChild(隔);
+      }
+      const 格 = document.createElement('span');
+      // 未定 ＝ 卡里本来就是空的（**不是错**）⇒ 灰；坏 ＝ 类型不对/取不到 ⇒ 红
+      格.className = g.类 === '坏' ? 'yh-no' : (g.类 === '未定' ? 'yh-d' : '');
+      装格(格, g);
+      条.appendChild(格);
+    });
+    框.appendChild(条);
+  }
+
+  // 🔴 快照**根本没读到** ⇒ 页签与页内容都不画（同常驻条：错的时候只留一个说清为什么的字）。
+  //    快照读到了、只是缺 `世界` 或 `主角` ⇒ 照画（缺的那一块由 行.错 说明）——
+  //    这就是「缺一块不塌另一块」。
+  if (行.快照) {
+    // 🔴 内容区先造出来、拿住引用 —— 详情层要挂**它**身上（见下）
+    const 内容 = 画页(行.主角, 行.角色, 行.线典, 行.务典, 行.连典);
+    框.appendChild(画签());
+    框.appendChild(内容);
+    // 🔴 详情层挂在**内容区**（'.yh-pane'）里，**取代**列表 —— 不是挂在面板上盖住它。
+    //    挂面板时顶部留一条 26.25px 遮罩带，带里是**页眉带被切掉下半截的字**
+    //    （900 档任务页实拍，看着像渲染坏了）；改挂内容区后遮罩带 0，但详情被压进
+    //    110px 的内容区里**内部滚动**（"长文本一次看全"又丢了）。
+    //    ⇒ 详情层参与正常流、撑开内容区，'.yh-grid' 由 CSS 抽走（见 '_分栏_样式.css'）。
+    //    ⚠ '.yh-pane' 得 'position: relative'（在 '_分栏_样式.css' 里给了）。
+    if (详情) {
+      const 层 = 画详情(详情);
+      内容.appendChild(层);
+      // 🔴 只在**刚打开**那一帧聚焦，重画不抢焦点（否则切页/刷新会把焦点硬拽回来）
+      if (详情要聚焦) { 详情要聚焦 = false; 层.querySelector('.yh-sheet').focus(); }
+      // 🔴 **点页签换节之后，焦点落回新选中的那一签**（2026-09-28 加 · 任务 #14）。
+      //    页签的 click 是"重画整层"（`画详情` 每次造新的 DOM），旧的那个 <button> 已经
+      //    不在文档里了 ⇒ **焦点会掉到 <body>**，键盘用户按一下 Tab 就从页面开头重来。
+      //    ⚠ 这一支是 `if (详情要聚焦)` 的 **else if**（＝"刚打开"和"换了节"二选一，两者
+      //      本来就互斥：`开详情()` 把 `详情要聚焦` 置 true 的同时把 `详情签` 归 0）。
+      //      **但它必须留在 `if (详情)` 这一层里面** —— 挪出去写就够不着 `层` 了。
+      //    ⚠ 只在**有签条**时才找得到；节数 = 1 时没有 `.yh-sh-tab-on`，`?.` 兜住。
+      else if (签要聚焦) { 签要聚焦 = false; 层.querySelector('.yh-sh-tab-on')?.focus(); }
+    }
+    // 🔴 **状态筛换档之后，焦点落回新选中那一颗**（2026-09-29 加）。
+    //    理由同上面签条那条（点一下 <button> 就重画整层，旧的已经不在文档里 ⇒ 焦点掉 body）。
+    //    ⚠ **必须在这儿、不能在 `画筛()` 里** —— `画筛` 跑的时候整棵 `.yh-pane` **还没进文档**，
+    //      游离节点上的 `.focus()` 是**静默空操作**：不报错、不抛异常、`activeElement` 照旧 body。
+    //      截图上永远看不出来，只有探针量 `document.activeElement` 才露 —— 第一版就是这么栽的。
+    //    ⚠ 它**不在** `if (详情)` 里面（筛选条和详情层互斥，详情层一开筛选条就抽走了），
+    //      所以跟上面那两枝是**并列**关系，不是 else if。
+    if (筛要聚焦) { 筛要聚焦 = false; 内容.querySelector('.yh-fl-on')?.focus(); }
+  }
+
+  // 🔴 **「末行留洞」不在这儿治**（2026-09-28 改）——
+  //    原来这儿调 `标长格()`（挂载后实测、给放不下的格挂跨行类）。**整套撤了**：
+  //    它靠"挂载那一刻的宽度"当判据，宽度一变就过期；而且那个类本来就多余，
+  //    `.yh-stat-row` 自己会把长值折到第二行（判据：「宁可整格折行，不许压字」）。
+  //    列宽/末行由 CSS 负责，不需要任何 JS —— `.yh-stats` 是 `auto-fit` 等宽网格，
+  //    空轨道自动塌缩、末行不满就左对齐空着（**这是正常网格行为，不是洞**）。
+  //    完整经过（`grid-column-end` 语义用错 → 换 flex 过度修正 → 撤回）见
+  //    `_分栏_样式.css` 的墓碑，那里记了两种错法各自的样子。
+
+  if (行.报) 加(行.报, 行.报好 ? 'yh-ok' : 'yh-no');
+  if (行.源) 加(行.源, 'yh-src yh-d');
+  if (行.错) 加(行.错, 'yh-err');
+
+  去重();   // 🔴 画完才调 —— 这一刻 .yh-sb 才存在，别处调都是空转
+}
+
+/* ── 11. 一轮 ─────────────────────────────────────────────────────────────
+   🔴 四条读取链一个字不改（轮 1-2 已定）：楼号必带 · 两条路 · 不降级 latest · 失败画出来。 */
+async function 一轮() {
+  try {
+    await 等Mvu(4000);
+
+    const { 楼, 报: 楼报 } = 取楼号();
+    if (楼 === null) {
+      画({ 快照: false, 格子: null, 主角: null, 报: '读不到本楼楼号 ✗', 报好: false, 源: '', 错: 楼报 });
+      return;
+    }
+
+    const { 路, 数据, 报 } = 读快照(楼);
+    if (!路) {
+      画({ 快照: false, 格子: null, 主角: null, 报: '第 ' + 楼 + ' 楼 · 快照没读到 ✗', 报好: false, 源: '', 错: 报.join('\n') });
+      return;
+    }
+
+    // 🔴 **只读一次**快照，常驻条与状态页**共用**（轮 1-3 口径 ⑦）
+    const 世 = 取(数据, ['stat_data', '世界']);
+    const 主 = 取(数据, ['stat_data', '主角']);
+    const 角 = 取(数据, ['stat_data', '角色']);      // 轮 1-5：「在场」页的数据根
+    const 线 = 取(数据, ['stat_data', '世界', '主线']);   // 轮 1-6：「主线」页的数据根
+    const 务 = 取(数据, ['stat_data', '任务']);        // 轮 1-7：「任务」页的数据根（🔴 顶层，不在 世界 底下）
+    const 连 = 取(数据, ['stat_data', '连携']);        // 轮 1-8：「连携」页的数据根（🔴 顶层，同一个道理）
+    const 世好 = 世 !== null && typeof 世 === 'object';
+    const 主好 = 主 !== null && typeof 主 === 'object';
+    const 角好 = 角 !== null && typeof 角 === 'object';
+    // 🔴 线好**多挡一层数组**（角好 没有 —— 那是 1-5 的既有写法，本轮不动它）。
+    //    数组也是 object，放过去就会让诊断行缺席、页面只剩一个没头没尾的「读不到」。
+    const 线好 = 线 !== null && typeof 线 === 'object' && !Array.isArray(线);
+    // 🔴 务好 同 线好，也多挡一层数组（理由同上：数组放过去会让诊断行缺席、页面只剩「读不到」）
+    const 务好 = 务 !== null && typeof 务 === 'object' && !Array.isArray(务);
+    // 🔴 连好 同 务好，也多挡一层数组（理由同上：数组放过去会让诊断行缺席、页面只剩「读不到」）
+    const 连好 = 连 !== null && typeof 连 === 'object' && !Array.isArray(连);
+
+    // 🔴 **缺一块不塌另一块**（轮 1-4 改 1-3 的行为，方案 §5.1）。
+    //    「快照拿到了、里面没有 X」和「两条路都没成」是**两回事** ⇒ 分开报，
+    //    并把真读到的东西摘要出来 —— 形状没验过（§5），这是唯一能看清真相的窗口。
+    const 错 = [];
+    if (!世好) 错.push('`stat_data.世界` 不是对象 ⇒ 常驻条不画。读到的 ＝ ' + 摘要(世));
+    if (!主好) 错.push('`stat_data.主角` 不是对象 ⇒ 状态页不画。读到的 ＝ ' + 摘要(主));
+    if (!角好) 错.push('`stat_data.角色` 不是对象 ⇒ 「在场」页不画。读到的 ＝ ' + 摘要(角));
+    if (!线好) 错.push('`stat_data.世界.主线` 不是对象 ⇒ 「主线」页不画。读到的 ＝ ' + 摘要(线));
+    if (!务好) 错.push('`stat_data.任务` 不是对象 ⇒ 「任务」页不画。读到的 ＝ ' + 摘要(务));
+    if (!连好) 错.push('`stat_data.连携` 不是对象 ⇒ 「连携」页不画。读到的 ＝ ' + 摘要(连));
+
+    画({
+      快照: true,
+      格子: 世好 ? [格历法(世), 格时刻(世), 格地点(世), 格危机(世)] : null,
+      主角: 主好 ? 主 : null,
+      角色: 角好 ? 角 : null,
+      线典: 线好 ? 线 : null,
+      务典: 务好 ? 务 : null,
+      连典: 连好 ? 连 : null,
+      报: '',
+      源: '轮 1-10 · 第 ' + 楼 + ' 楼快照 · 走 ' + 路
+        + (报.length ? ' · 前一档没成：' + 报.join('；') : ''),
+      错: 错.join('\n'),
+    });
+  } catch (e) {
+    // 🔴 失败必须画出来 —— C2 §7.2：分区渲染抛错不隔离 ⇒ 整面板空白且什么都不报
+    画({ 快照: false, 格子: null, 主角: null, 报: '骨架自己抛错了 ✗', 报好: false, 源: '', 错: (e && e.stack) ? String(e.stack) : String(e) });
+  }
+}
+
+/* ── 12. 刷新（轮 1-3 接的，一个字没改）──────────────────────────────────
+   照 C2 §5.1 范式 ＋ §335/336 事件表（均 high·运行时源码）：
+     🔴 ① `await waitGlobalInitialized('Mvu')` **必须在前** —— 漏 await ⇒ `Mvu is not defined`
+     🔴 ② 事件名**一律用枚举，绝不手写字符串**：
+           `Mvu.events.VARIABLE_INITIALIZED` 的真值是 `'mag_variable_initiailized'`
+           （**双 i** —— 上游拼写错误）。手写一遍就**静默失效**：不报错，只是永远不刷新。
+   取不到就**静默跳过** —— 不影响首帧（首帧本来就有 一轮() ＋ 600ms 兜底）。
+   ⚠ 重画会保留**当前页**（模块级 `当前页`）—— 否则每次变量更新都把人踢回第一页。 */
+let 刷新计时 = 0;
+function 排刷新(毫秒) {
+  if (刷新计时) clearTimeout(刷新计时);
+  // debounce 本身就是 C2 范式的防并发手段（`schedulePopulate(80)`，C2 §496）
+  刷新计时 = setTimeout(() => { 刷新计时 = 0; 一轮(); }, 毫秒);
+}
+async function 接刷新() {
+  if (!(await 等Mvu(4000))) return;
+  const M = 取全局('Mvu');
+  const E = M && M.events;
+  const on = 取全局('eventOn');
+  if (!E || typeof on !== 'function') return;
+  try {
+    on(E.VARIABLE_UPDATE_ENDED, () => 排刷新(80));   // ← HUD 刷新主挂点
+    on(E.VARIABLE_INITIALIZED, () => 排刷新(80));    // ← 开局变量首次落地
+  } catch (_) { /* 接不上就不刷，首帧照画 */ }
+}
+
+/* ── 13. 装 ─────────────────────────────────────────────────────────────── */
+try { window[单例键] = 版本; } catch (_) {}
+
+一轮();
+setTimeout(一轮, 600);    // 二次兜底：照 C2 §5.1，应对酒馆助手延迟注入变量
+接刷新();                 // 🔴 在 一轮() 之后接 —— 接刷新自己也要 await 等Mvu，不阻塞首帧
+setTimeout(去重, 1500);   // 另一个框可能比我晚画完 —— 那时它的 `画()` 会调，
+setTimeout(去重, 3000);   // 但万一它先删了我、自己又没走完，这两下补上
+</script>
+</body>
+</html>
