@@ -3,13 +3,15 @@
  *
  * 卡里第 6 条 TH 脚本 import 本文件（卡外托管 D86）。
  * 规格：《卡内桥_方案.md》§4（安全）· §5（协议）· §6.2（canonical）· §7（安装事务）。
- * 铁律：本文件只写「当前聊天的世界书条目」，绝不碰 MVU 变量、绝不发消息、绝不越出 WS.origin。
+ * 铁律：本文件只写「角色绑定的那本世界书的条目」，绝不碰 MVU 变量、绝不发消息、绝不越出 WS.origin。
  */
 (() => {
   'use strict';
 
   // ---- 常量 ----
-  const BRIDGE_VERSION = '0.0.1';
+  // 桥的真身版本。文件名的 `v0.0.1` 是**托管 URL 的一部分**（卡里 import 的就是它），
+  // 换文件名就得改卡 ⇒ 文件名不动，版本以这个常量为准（handshake 里报给页面）。
+  const BRIDGE_VERSION = '0.0.2';
   const RUNTIME_KEY = '__yuehen_workshop_bridge__';
   const WORKSHOP_ORIGIN = 'https://yuehen-workshop.ywl2007128.workers.dev';
   const WORKSHOP_ORIGINS = [WORKSHOP_ORIGIN];
@@ -232,17 +234,32 @@
       }
     }
 
+    /**
+     * 目标世界书 ＝ **角色绑定的那一本**（角色的 `data.extensions.world`），
+     * 也就是酒馆助手 `getCharWorldbookNames('current').primary` 报的那本
+     * （JSR 的 `lorebook.ts` 就是读 `character.data.extensions.world`）。
+     *
+     * 🔴 2026-10-02 变更 1：**不再用「当前聊天那本」**。工坊装的是给这个角色用的世界因子，
+     *   而卡自己的世界书（导入「卡内世界书」得到的那本，月痕是 157 条）就绑在角色上 ——
+     *   装进它，之后**新开的每个聊天都生效**；装进聊天世界书只在那一个对话里生效。
+     *   出处：`卡内桥_方案.md` §0.5（驾驶员 2026-10-02 拍板「改成：月痕之民那本」）。
+     *
+     * `supported=false` ⇒ 酒馆助手太老、根本没有这个接口（老版本只能拿到聊天世界书，
+     * 但那条路已经废弃）—— 页面据此显示「更新酒馆助手」，而不是「没绑书」，两者要分清。
+     */
     function targetSummary() {
-      const getChatName = api('getChatWorldbookName');
+      const getCharBooks = api('getCharWorldbookNames');
+      const supported = typeof getCharBooks === 'function';
       let name = null;
-      if (getChatName) {
+      if (supported) {
         try {
-          name = getChatName('current');
+          const books = getCharBooks('current');
+          const primary = books && books.primary;
+          name = typeof primary === 'string' && primary ? primary : null;
         } catch {
           name = null;
         }
       }
-      if (typeof name !== 'string' || !name) name = null;
       let exists = false;
       if (name) {
         const getNames = api('getWorldbookNames');
@@ -252,7 +269,7 @@
           exists = true;
         }
       }
-      return { worldbookName: name, exists };
+      return { worldbookName: name, exists, supported };
     }
 
     function fnv1a8(text) {
@@ -378,7 +395,7 @@
       const name = payload.worldbookName === undefined ? null : payload.worldbookName;
       if (name !== null && typeof name !== 'string') fail('bad-request', '世界书名不合法。');
       const target = targetSummary();
-      if (name !== target.worldbookName) fail('bad-request', '只能读当前聊天的世界书。');
+      if (name !== target.worldbookName) fail('bad-request', '只能读这个角色绑定的那本世界书。');
       if (!name || !target.exists) return { worldbookName: name, exists: false, entries: [] };
       const entries = await readWorldbook(name);
       return {
@@ -403,9 +420,18 @@
 
       const target = targetSummary();
       if (target.worldbookName !== expected.worldbookName) fail('conflict', '目标世界书和预览时不一样了，请重新预览。');
+      // 🔴 变更 1：目标书缺失一律**拒**，绝不代建。代建只能建出「当前聊天那本」，
+      //   而落点已经改成「角色绑定的那本」—— 建错本比不装更糟（玩家会找不到装到哪去了）。
+      if (!target.supported) fail('internal', '桥没拿到「角色世界书」接口，请把酒馆助手更新到新版。');
+      if (!target.worldbookName) {
+        fail('no-worldbook', '这个角色还没绑定世界书，装不进去。在酒馆里给角色绑上一本（月痕之民就是「导入卡内世界书」得到的那本），再回来装。');
+      }
+      if (!target.exists) {
+        fail('no-worldbook', `角色绑定的世界书「${target.worldbookName}」找不到了，可能被删掉或改了名 —— 先在酒馆里重新绑定，再回来装。`);
+      }
 
-      let wbName = target.worldbookName;
-      let entries = wbName ? await readWorldbook(wbName) : [];
+      const wbName = target.worldbookName;
+      const entries = await readWorldbook(wbName);
       const mine = entries.filter((entry) => isSamePackage(entry, identity));
 
       if (mine.length > 1) fail('conflict', '世界书里有两条同源条目，请先手动处理。');
@@ -416,18 +442,6 @@
 
       if (expected.entryUid !== null) fail('conflict', '预览时那条条目现在找不到了，请重新预览。');
       if (expected.localEntryHash !== null) fail('conflict', '世界书刚被改过，请重新预览。');
-      if (!wbName) {
-        const create = api('getOrCreateChatWorldbook');
-        if (!create) fail('internal', '桥没拿到世界书接口，请更新酒馆助手。');
-        try {
-          wbName = await withTimeout(create('current'), '创建聊天世界书超时了。');
-        } catch (error) {
-          if (error instanceof BridgeError) throw error;
-          fail('worldbook-error', `创建聊天世界书失败了：${shortMessage(error)}`);
-        }
-        if (typeof wbName !== 'string' || !wbName) fail('worldbook-error', '没能建出当前聊天的世界书。');
-        entries = [];
-      }
       return createNew(wbName, entries, { pkg, identity, entryName, text, newHash });
     }
 
