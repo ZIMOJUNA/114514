@@ -538,7 +538,19 @@
   function packageToEntries(pkg) {
     const payload = (pkg && pkg.payload) || {};
     const items = payload.entries;
-    if (!Array.isArray(items) || items.length === 0) fail('package-invalid', '这个包里没有条目（payload.entries）。');
+    // 🔴 **`entries` 这个键必须写**，哪怕一条都没有 —— 判路看形状（`Array.isArray(payload.entries)` ⇒ v2 包），
+    //    缺这个键会被当成 v1 包走另一条路。所以"缺键"与"空数组"给的是**两句不同的话**。
+    if (!Array.isArray(items)) {
+      fail('package-invalid', '这个包没有条目数组（payload.entries 这个键缺失）—— 判路看的是形状，只带正则的扩展也要写成 entries: []。');
+    }
+    if (items.length === 0) {
+      // 命定的 `PROJECT_CONTENT_POLICY`：**扩展是 `anyOf:["worldbook","regex"]`** —— 二选一，但**至少要有一个**。
+      // ⇒ 空 `entries` 只在「类型＝扩展 且 正则 ≥ 1 条」时成立；其余六类照旧硬要世界书条目。
+      const 正则数 = Array.isArray(payload.regexEntries) ? payload.regexEntries.length : 0;
+      if (String((pkg && pkg.type) || '') !== 'extension' || 正则数 === 0) {
+        fail('package-invalid', '这个包里没有世界书条目（payload.entries 是空的）—— 只有「扩展」可以只带正则，而且至少得有一条正则。');
+      }
+    }
     const category = categoryLabelOf(pkg);
     const seen = { keys: {}, names: {} };
     return items.map((item, index) => v2EntryOf(item, index, category, seen));
@@ -1440,11 +1452,14 @@
 
     function validateExpectedV2(expected) {
       if (!expected || typeof expected !== 'object') fail('bad-request', '请求缺少预期值。');
-      if (typeof expected.worldbookName !== 'string' || !expected.worldbookName) fail('bad-request', '目标世界书名不合法。');
+      // 🔴 `worldbookName` **允许为空**：只带正则的扩展根本没有世界书那半（§22.1），页面那里就是 `null`。
+      //    "空计划配空书名"这条一致性**不在这里判** —— 这儿看不见计划，硬判会把合法情形判错。
+      const 书名 = expected.worldbookName;
+      if (v2IsSet(书名) && 书名 !== null && typeof 书名 !== 'string') fail('bad-request', '目标世界书名不合法。');
       if (!/^[0-9a-f]{64}$/.test(String(expected.planHash || ''))) fail('bad-request', '条目清单指纹格式不对。');
       if (!Number.isInteger(expected.revision) || expected.revision < 1) fail('bad-request', '版本号不合法。');
       return {
-        worldbookName: expected.worldbookName,
+        worldbookName: typeof 书名 === 'string' && 书名 ? 书名 : null,
         planHash: String(expected.planHash),
         revision: expected.revision,
         overwriteLocal: expected.overwriteLocal === true,
@@ -1461,9 +1476,13 @@
     }
 
     /** 目标世界书的四道闸（v1 那四道，一字不差地复用判据） */
-    function requireTarget() {
+    function requireTarget(需要世界书) {
       const target = targetSummary();
       if (!target.supported) fail('internal', '桥没拿到「角色世界书」接口，请把酒馆助手更新到新版。');
+      // 🔴 只带正则的包**世界书那半一个字都不写** ⇒ 没绑书也放行（§22.1）。
+      //    `supported` 那道照旧卡着：桥太老的话，这条路上别的地方也走不通，
+      //    与其开一条半通的路，不如让他先把酒馆助手更新了。
+      if (需要世界书 === false) return target;
       if (!target.worldbookName) {
         fail('no-worldbook', '这个角色还没绑定世界书，装不进去。在酒馆里给角色绑上一本（月痕之民就是「导入卡内世界书」得到的那本），再回来装。');
       }
@@ -1480,6 +1499,9 @@
       const identity = packageIdentity(pkg);
       const plan = packageToEntries(pkg);
       const regexEntries = packageToRegexEntries(pkg);
+      // 🔴 「这个包有没有世界书那半」——**只算这一次**，下面几处都看它。
+      //    `plan` 为空是 `packageToEntries` 放行的（类型＝扩展 且 正则 ≥ 1 条），不是随便什么包都能空。
+      const 只装正则 = plan.length === 0;
       // 🔴 带正则的包，**先验能不能装正则，再动世界书**（§15.3 第 4 条）：
       //    两件事分开做的话，会出现"世界书装进去了、正则悄悄没装"——玩家看到条目生效、
       //    正则不生效，而且没地方能看出少了什么。宁可整包拒。
@@ -1497,10 +1519,11 @@
       }
       if (expected.revision !== pkg.revision) fail('bad-request', '预期版本号和包的版本号不一致。');
 
-      const target = requireTarget();
-      if (target.worldbookName !== expected.worldbookName) fail('conflict', '目标世界书和预览时不一样了，请重新预览。');
-      const wbName = target.worldbookName;
-      const live = await readWorldbook(wbName);
+      const target = requireTarget(!只装正则);
+      const wbName = 只装正则 ? null : target.worldbookName;
+      // 目标书对不上＝预览之后世界书被换过 ⇒ 世界书那半必须重看。只带正则时没有目标书，这条不适用。
+      if (!只装正则 && target.worldbookName !== expected.worldbookName) fail('conflict', '目标世界书和预览时不一样了，请重新预览。');
+      const live = 只装正则 ? [] : await readWorldbook(wbName);
       const 预演 = reconcilePlan(live, plan, identity, pkg, expected.overwriteLocal);
       if (预演.conflict.length) throwConflict(预演.conflict);
 
@@ -1533,7 +1556,8 @@
       }
 
       // 写后重读核对：**不依赖 uid 被补上**（§13 未验证项），按包身份数条数、逐条比正文
-      const after = await readWorldbook(wbName);
+      // 只带正则的包没读过世界书 —— `[]` 对 `plan.length === 0`，下面那圈一条都不会进。
+      const after = 只装正则 ? [] : await readWorldbook(wbName);
       const 我的 = after.filter((entry) => v2IsSamePackage(entry, identity));
       if (我的.length !== plan.length) {
         fail('worldbook-error', `写入后核对没通过：世界书里本项目应该有 ${plan.length} 条，实际 ${我的.length} 条 —— 可能只写进去一部分。再点一次安装可以补齐（对账写入是重复安全的）。`);
@@ -1642,18 +1666,24 @@
         regexAllowed: regexEntries.length ? characterRegexAllowed() : null,
         planHash: planDigest(plan, regexEntries),
       };
+      // 正则差分算在分支**之前**：下面那条"没书"的早退也要报真差分，不能全算新增
+      const 正则结果 = regexEntries.length
+        ? reconcileRegexPlan(正则现状, regexEntries, String(pkg.id))
+        : { added: [], modified: [], unchanged: [], removed: [] };
       if (!target.worldbookName || !target.exists) {
+        // 🔴 这里**不判"挡不挡"**，只如实报「没书」＋「本来会做什么」——
+        //    挡不挡是页面的事：要写世界书的包没书＝挡；只带正则的包没书＝照装（§22.1）。
+        //    正则该报**真差分**（不是"全算新增"）：只带正则的包装过之后再预览，
+        //    得看得出"一条都没变"，不能每次都说"要新增 3 条"。
         return {
           ...共同项, exists: false, mode: 'install',
           added: plan.map(行), modified: [], skipped: [], unchanged: [], removed: [], conflict: [],
-          regexAdded: regexEntries.map(正则行), regexModified: [], regexUnchanged: [], regexRemoved: [],
+          regexAdded: 正则结果.added, regexModified: 正则结果.modified,
+          regexUnchanged: 正则结果.unchanged, regexRemoved: 正则结果.removed,
         };
       }
       const live = await readWorldbook(target.worldbookName);
       const 结果 = reconcilePlan(live, plan, identity, pkg, payload.overwriteLocal === true);
-      const 正则结果 = regexEntries.length
-        ? reconcileRegexPlan(正则现状, regexEntries, String(pkg.id))
-        : { added: [], modified: [], unchanged: [], removed: [] };
       const 登记 = 登记里那一版(readRegistry(), String(pkg.id));
       const 首次 = !live.some((entry) => v2IsSamePackage(entry, identity));
       return {
@@ -1899,17 +1929,21 @@
     async function actionRepairScan() {
       const target = targetSummary();
       if (!target.supported) fail('internal', '桥没拿到「角色世界书」接口，请把酒馆助手更新到新版。');
-      if (!target.worldbookName) fail('no-worldbook', '这个角色还没绑定世界书，没有要修的东西。先在酒馆里给它绑上一本，再回来。');
+      // 🔴 **没绑书不硬拒**（与卸载同一条路，§22.1）：只带正则的包根本没有世界书那半，玩家在
+      //    "没绑书"这状态下照样能装、能看已装、能卸 —— 修复扫描要是把他顶回去，他收到的是
+      //    "没有要修的东西"，而真相是**这一遍压根没扫**。候选只从世界书条目里长出来，所以没书
+      //    ⇒ 零候选、重装那条路本来就走不到，`actionRepairProject` 那道的闸照旧留着。
+      const 世界书能读 = Boolean(target.worldbookName && target.exists);
       const 读不出来 = [];
       let rows = [];
-      if (target.exists) {
+      if (世界书能读) {
         try {
           rows = await readWorldbook(target.worldbookName);
         } catch {
           读不出来.push(target.worldbookName); // 读不出来就如实报"没扫全"，不许说成"书里干净"
         }
-      } else {
-        读不出来.push(target.worldbookName);
+      } else if (target.worldbookName) {
+        读不出来.push(target.worldbookName); // 绑了、但书找不到了 —— 与"压根没绑"分开报
       }
 
       const 有角色 = hasCurrentCharacter();
@@ -2013,8 +2047,10 @@
 
       return {
         worldbookName: target.worldbookName,
-        exists: Boolean(target.exists),
-        complete: 读不出来.length === 0,
+        exists: Boolean(target.worldbookName && target.exists),
+        // 🔴 "扫全了" ＝ **真的扫过** 且没读漏。没绑书时 `读不出来` 是空的，光看它报 `complete: true`
+        //    等于说"书里干净" —— 那是假话（这一遍压根没扫）。页面认这个字段决定说不说"没有要修的"。
+        complete: 世界书能读 && 读不出来.length === 0,
         unreadableWorldbookNames: 读不出来,
         registryAvailable: registry !== null,
         repairRegistryAvailable: 修复表 !== null,
