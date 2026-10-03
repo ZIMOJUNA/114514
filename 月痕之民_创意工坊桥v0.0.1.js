@@ -11,9 +11,11 @@
   // ---- 常量 ----
   // 桥的真身版本。文件名的 `v0.0.1` 是**托管 URL 的一部分**（卡里 import 的就是它），
   // 换文件名就得改卡 ⇒ 文件名不动，版本以这个常量为准（handshake 里报给页面）。
-  const BRIDGE_VERSION = '0.0.3';
+  const BRIDGE_VERSION = '0.0.4';
   const RUNTIME_KEY = '__yuehen_workshop_bridge__';
-  const WORKSHOP_ORIGIN = 'https://yuehen-workshop.ywl2007128.workers.dev';
+  // 2026-10-03 驾驶员换了 Cloudflare 账号子域（ywl2007128 → tulink114514），旧网址当场作废。
+  // 子域是**账号级**的，换一次全账号 worker 一起变；卡里 import 的文件名没动 ⇒ 不用改卡。
+  const WORKSHOP_ORIGIN = 'https://yuehen-workshop.tulink114514.workers.dev';
   const WORKSHOP_ORIGINS = [WORKSHOP_ORIGIN];
   const CARD_SCOPE = 'yuehen-zhimin';
   const TEXT_FORMAT = 'yuehen-wf-v1';
