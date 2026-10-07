@@ -407,6 +407,7 @@
   let 换哪件 = null;      // 正在给哪一件找替换（null ＝ 没在换）
   let 提示 = null;        // { 坏: bool, 字: '…' } —— 卸/换/装 的回执，成功后也报一句
   let 人页 = 1;           // 人物五页停在第几页（§17.2）—— 同上，不进存档
+  let 桌面页 = 1;         // 手机桌面停在第几页（两页横轨）—— 同上，不进存档
   let 图鉴选中 = null;    // 图鉴里点开了谁（null ＝ 还在列表）—— 同上
   let 换经营 = null;      // 资产里正在给哪一处换经营者（null ＝ 没在换）—— 同上
   let 风页签 = '地点';    // 风物志顶上那个页签：地点 / 人物（§17.7）—— 同上
@@ -4655,7 +4656,12 @@
 /* 气泡：本体没有原型那层 \`.msg\`（头像包裹），靠右那条得自己给 */
 .yc-win .bub.me{margin-left:auto}
 /* 送信行：老的多行框会跟着拖高，新皮是一行 flex（\`.ta\` 不许再拖） */
-.yc-win .snd>.yc-ta{flex:1;min-height:46px;resize:none}`;
+.yc-win .snd>.yc-ta{flex:1;min-height:46px;resize:none}
+/* 选图那格（CG 屏「存新图」）：老表给的是 \`#1e2219\` 深底 ＋ 深绿虚线 ——
+   旧皮整体是深色所以不显，新皮是浅底 ⇒ 这块变成屏幕上一坨黑。
+   ⚠ 原型没有这个件（它的 CG 屏画的是「已经选完图」那一段），没得照抄 ⇒ 只换颜色三样，
+      几何（通栏 / 内衬 / 圆角 / 下边距）一个字不动。 */
+.yc-win .yc-file{background:transparent;border-color:var(--line);color:var(--dim)}`;
       文档.head.appendChild(s2);
     }
   }
@@ -5236,18 +5242,92 @@
         }
         wall.appendChild(pg);
       }
+      if (!(桌面页 >= 1 && 桌面页 <= 桌面分页.length)) 桌面页 = 1;   // 照 `人页` 那条
       const dots = document.createElement('div');
       dots.className = 'dots';
       for (let i = 1; i <= 桌面分页.length; i++) {
         const d = document.createElement('button');
         d.type = 'button';
-        d.className = i === 1 ? 'on' : '';
-        d.setAttribute('data-pg', String(i));
+        d.className = i === 桌面页 ? 'on' : '';
+        d.setAttribute('data-act', '桌面页');
+        d.setAttribute('data-v', String(i));
         d.title = i === 1 ? '第一页' : '第二页';
         dots.appendChild(d);
       }
-      wall.appendChild(dots);
+      if (桌面页 > 1) wall.style.setProperty('--轨k', String(桌面页 - 1));
       页.appendChild(wall);
+      页.appendChild(dots);
+      /* 桌面左右划 —— 驾驶员原话「改成真手机那样左右翻页」，"左右"得真能划。
+         ⚠ 监听挂**这一趟新建的 `wall`**，不挂常驻元素：`刷新()` 每回把桌面整块换掉，
+           挂常驻上得自己认领新旧，还会一趟趟攒监听；挂这儿随元素一起走。
+         🔴 每回手势都**现读** `--轨k` 当起点，不另存一份"现在第几页" —— 点圆点那条路
+           不经过这里，存一份就跟真实位置脱钩（症状：从第 2 页往回拖，先跳回第 1 页再拖）。
+         🔴 划完那一次 `click` 必须吃掉，否则"翻页顺便开了个 app"（350ms 时间窗，
+           不用一次性捕获监听 —— 那版在"浏览器没补 click"时不会自己摘掉，会吞掉下一次）。 */
+      if (桌面分页.length > 1) (function () {
+        const 点s = dots.querySelectorAll('button');
+        const 页数 = 桌面分页.length;
+        let 在 = 0, 横 = 0, 基 = 0, 旧 = 0, 起x = 0, 起y = 0, 起t = 0, 末x = 0, 末t = 0, 宽 = 1, 挡到 = 0, 亮点 = 0;
+        function 读() { const v = parseFloat(wall.style.getPropertyValue('--轨k')); return isNaN(v) ? 0 : v; }
+        function 摆点(k) {
+          if (k === 亮点) return; 亮点 = k;
+          for (let i = 0; i < 点s.length; i++) 点s[i].classList.toggle('on', i === k);
+        }
+        function 落(n) { 桌面页 = n + 1; wall.style.setProperty('--轨k', String(n)); 摆点(n); }
+        wall.addEventListener('click', (ev) => {
+          if (ev.timeStamp < 挡到) { ev.stopPropagation(); ev.preventDefault(); }
+        }, true);
+        wall.addEventListener('pointerdown', (ev) => {
+          在 = 1; 横 = 0; 基 = 读(); 旧 = Math.round(基); 亮点 = 旧;
+          起x = 末x = ev.clientX; 起y = ev.clientY; 起t = 末t = ev.timeStamp; 宽 = wall.clientWidth || 1;
+          try { wall.setPointerCapture(ev.pointerId); } catch (_) {}
+        });
+        function 夹(v) {
+          if (v < 0) return v * 0.35;
+          if (v > 页数 - 1) return (页数 - 1) + (v - (页数 - 1)) * 0.35;
+          return v;
+        }
+        wall.addEventListener('pointermove', (ev) => {
+          if (!在) return;
+          const dx = ev.clientX - 起x, dy = ev.clientY - 起y;
+          if (!横) {
+            if (Math.abs(dx) < 6) return;
+            if (Math.abs(dx) <= Math.abs(dy)) { 在 = 0; return; }
+            横 = 1; wall.classList.add('拖');
+          }
+          末x = ev.clientX; 末t = ev.timeStamp;
+          const v = 夹(基 - dx / 宽);
+          wall.style.setProperty('--轨k', String(v));
+          摆点(Math.max(0, Math.min(页数 - 1, Math.round(v))));
+        });
+        function 收(ev) {
+          if (!在) return; 在 = 0;
+          const 动过 = 横;
+          if (!动过) {
+            /* 甩得很快时浏览器会把中间的 pointermove 合并掉 ⇒ 一整划只剩"按下 → 松手"。
+               拿这两点补算，横着划出去照样翻页；公式跟下面那条一模一样，两档不分叉。 */
+            const 补x = ev.clientX - 起x;
+            if (Math.abs(补x) < 6 || Math.abs(补x) <= Math.abs(ev.clientY - 起y)) { wall.classList.remove('拖'); return; }
+            const v0 = 夹(基 - 补x / 宽);
+            wall.style.setProperty('--轨k', String(v0));
+            摆点(Math.max(0, Math.min(页数 - 1, Math.round(v0))));
+          }
+          const 末位 = 动过 ? 末x : ev.clientX, 末时 = 动过 ? 末t : ev.timeStamp;
+          const v = 读(); let 到 = 旧; const 甩 = (末位 - 起x) / Math.max(1, 末时 - 起t);
+          if (v > 旧) { if (v - 旧 > 0.5 || 甩 < -0.5) 到 = 旧 + 1; }
+          else if (v < 旧) { if (旧 - v > 0.5 || 甩 > 0.5) 到 = 旧 - 1; }
+          到 = Math.max(0, Math.min(页数 - 1, 到));
+          wall.classList.remove('拖');
+          void wall.offsetWidth;
+          落(到);
+          if (到 !== 旧 || Math.abs(末x - 起x) >= 12) 挡到 = ev.timeStamp + 350;
+        }
+        wall.addEventListener('pointerup', 收);
+        wall.addEventListener('pointercancel', () => {
+          if (!在) return; 在 = 0; wall.classList.remove('拖'); void wall.offsetWidth;
+          落(旧);
+        });
+      })();
       // 回执条 —— 提到公共层（不然在论坛页生成完了，回执只在主角页看得见）
       if (提示) 页.appendChild(提示条(提示));
       return;
@@ -5834,6 +5914,9 @@
           const 新 = act.getAttribute('data-v');
           // 旧名从 `换哪件` 拿（不在按钮上）—— 选单本来就是为它开的
           if (换哪件 && 新) 安全跑(() => 换上(换哪件, 新));
+        } else if (k === '桌面页') {
+          桌面页 = Number(act.getAttribute('data-v')) || 1;
+          刷新();
         }
         return;
       }
